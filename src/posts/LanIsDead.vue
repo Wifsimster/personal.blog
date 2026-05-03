@@ -36,6 +36,30 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>This is a feature, not a bug. The qBittorrent issue tracker has discussed it for years. It is working as designed.</p>
 <p>Here is the problem. <strong>qBit's check uses the TCP source IP</strong> — the actual layer-4 peer that opened the socket. When a request comes through Traefik, qBit's TCP peer is <em>Traefik's container IP</em>, which lives at <code>172.x.x.x</code> on the docker bridge network. <strong>That IP is in the whitelist.</strong> Every request from the public internet, routed through Traefik, looked to qBittorrent like a trusted LAN client.</p>
 <p>There is no header trick, no <code>X-Forwarded-For</code> confusion, no oversight. The bypass is unconditional. The auth was never running.</p>
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A request from the internet hits Traefik, then qBittorrent. The TCP source IP qBit sees is Traefik's container IP, which is inside the LAN whitelist — so authentication is bypassed." class="diagram-svg">
+<g fill="none" stroke="currentColor" stroke-width="1.5">
+<rect x="10" y="60" width="110" height="70" rx="6"></rect>
+<line x1="120" y1="95" x2="208" y2="95"></line>
+<rect x="218" y="60" width="170" height="70" rx="6"></rect>
+<line x1="388" y1="95" x2="476" y2="95"></line>
+<rect x="486" y="60" width="144" height="70" rx="6"></rect>
+</g>
+<g fill="currentColor" stroke="none">
+<polygon points="208,90 216,95 208,100"></polygon>
+<polygon points="476,90 484,95 476,100"></polygon>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" text-anchor="middle">
+<text x="65" y="92">Internet</text>
+<text x="65" y="110" font-size="11">user</text>
+<text x="303" y="92">Traefik</text>
+<text x="303" y="110" font-size="11">@ 172.18.0.5</text>
+<text x="558" y="92">qBittorrent</text>
+<text x="558" y="110" font-size="11">trusts 172.16/12</text>
+<text x="164" y="82" font-size="11">src: 1.2.3.4</text>
+<text x="432" y="82" font-size="11">src: 172.18.0.5 ✓</text>
+<text x="320" y="170" font-size="13" font-style="italic">qBittorrent sees Traefik's IP, not yours. Auth is skipped.</text>
+</g>
+</svg>
 <p>The deeper problem isn't qBit's setting. It is the entire mental model that produced it. <strong>"Trust the LAN" was a defensible default in 2010</strong>, when homelabs were physically air-gapped from the internet and "the network" meant a switch in your basement. In 2026, your "LAN" includes a reverse proxy that's reachable from anywhere on Earth, an SDN docker bridge that contains every container's outbound, an inbound tunnel from your CDN, your phone's Tailscale node sitting in a hotel WiFi, and a half-dozen automation users that exist to talk to your stuff over HTTP. <strong>The LAN is no longer a place. It is an implementation detail of where the auth check happens to fall.</strong></p>
 <p>Self-hosted apps shipped permissive "LAN allow" defaults assuming a LAN nobody actually has anymore. Cloudflare Tunnel, Tailscale Funnel, Traefik, Caddy — they move the perimeter, they do not replace authn. The reverse proxy is a <em>hallway</em>, not a <em>door</em>.</p>
 
@@ -77,6 +101,44 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <li><strong>At the host firewall (iptables).</strong> Drop outbound packets to the C2's IP, both from the host and from any container it routes. Catches the raw-IP case the DNS layer misses. Made permanent so it survives a reboot.</li>
 <li><strong>At the edge router.</strong> The same drop rule on the gateway, pointed at the same C2 IP. Catches anything on the network that doesn't route through the homelab host — IoT devices, phones, the printer, your kid's laptop.</li>
 </ol>
+<svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three layers of blocking the C2 callback: Pi-hole DNS blocks the domain, host iptables blocks the IP, edge firewall blocks the IP at the gateway. Each layer catches what the previous one misses." class="diagram-svg">
+<g fill="none" stroke="currentColor" stroke-width="1.5">
+<rect x="10" y="85" width="80" height="50" rx="6"></rect>
+<line x1="90" y1="110" x2="118" y2="110"></line>
+<rect x="123" y="65" width="120" height="90" rx="6"></rect>
+<line x1="243" y1="110" x2="271" y2="110"></line>
+<rect x="276" y="65" width="120" height="90" rx="6"></rect>
+<line x1="396" y1="110" x2="424" y2="110"></line>
+<rect x="429" y="65" width="120" height="90" rx="6"></rect>
+<line x1="549" y1="110" x2="577" y2="110"></line>
+<rect x="582" y="85" width="50" height="50" rx="6" stroke-dasharray="4,3"></rect>
+</g>
+<g fill="currentColor" stroke="none">
+<polygon points="118,105 126,110 118,115"></polygon>
+<polygon points="271,105 279,110 271,115"></polygon>
+<polygon points="424,105 432,110 424,115"></polygon>
+</g>
+<g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+<line x1="557" y1="100" x2="569" y2="120"></line>
+<line x1="569" y1="100" x2="557" y2="120"></line>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" text-anchor="middle">
+<text x="50" y="105">qBit</text>
+<text x="50" y="123" font-size="11">container</text>
+<text x="183" y="88" font-size="11">layer 1</text>
+<text x="183" y="110">Pi-hole DNS</text>
+<text x="183" y="130" font-size="11">blocks domain</text>
+<text x="336" y="88" font-size="11">layer 2</text>
+<text x="336" y="110">iptables</text>
+<text x="336" y="130" font-size="11">blocks IP (host)</text>
+<text x="489" y="88" font-size="11">layer 3</text>
+<text x="489" y="110">edge firewall</text>
+<text x="489" y="130" font-size="11">blocks IP (gateway)</text>
+<text x="607" y="105">C2</text>
+<text x="607" y="123" font-size="11">blocked</text>
+<text x="320" y="195" font-size="13" font-style="italic">Each layer catches what the previous one misses.</text>
+</g>
+</svg>
 <p>A single layer would be a checkbox. Three layers is defense-in-depth that accepts any one of them might be wrong.</p>
 
 <h3>Sanitize and audit</h3>
@@ -194,6 +256,30 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>C'est une fonctionnalité, pas un bug. Le tracker d'issues qBittorrent en discute depuis des années. Ça fonctionne comme prévu.</p>
 <p>Voilà le problème. <strong>La vérification de qBit utilise l'IP TCP source</strong> — le pair de couche 4 réel qui a ouvert le socket. Quand une requête passe par Traefik, le pair TCP de qBit est <em>l'IP du conteneur Traefik</em>, qui vit en <code>172.x.x.x</code> sur le réseau bridge docker. <strong>Cette IP est dans la whitelist.</strong> Chaque requête depuis l'internet public, routée via Traefik, ressemblait pour qBittorrent à un client LAN de confiance.</p>
 <p>Pas de header trick, pas de confusion <code>X-Forwarded-For</code>, pas d'oubli. Le contournement est inconditionnel. L'authentification ne tournait jamais.</p>
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Une requête depuis internet arrive sur Traefik puis sur qBittorrent. L'IP source TCP que voit qBit est celle du conteneur Traefik, qui est dans la whitelist LAN — l'authentification est donc contournée." class="diagram-svg">
+<g fill="none" stroke="currentColor" stroke-width="1.5">
+<rect x="10" y="60" width="110" height="70" rx="6"></rect>
+<line x1="120" y1="95" x2="208" y2="95"></line>
+<rect x="218" y="60" width="170" height="70" rx="6"></rect>
+<line x1="388" y1="95" x2="476" y2="95"></line>
+<rect x="486" y="60" width="144" height="70" rx="6"></rect>
+</g>
+<g fill="currentColor" stroke="none">
+<polygon points="208,90 216,95 208,100"></polygon>
+<polygon points="476,90 484,95 476,100"></polygon>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" text-anchor="middle">
+<text x="65" y="92">Internet</text>
+<text x="65" y="110" font-size="11">utilisateur</text>
+<text x="303" y="92">Traefik</text>
+<text x="303" y="110" font-size="11">@ 172.18.0.5</text>
+<text x="558" y="92">qBittorrent</text>
+<text x="558" y="110" font-size="11">trust 172.16/12</text>
+<text x="164" y="82" font-size="11">src : 1.2.3.4</text>
+<text x="432" y="82" font-size="11">src : 172.18.0.5 ✓</text>
+<text x="320" y="170" font-size="13" font-style="italic">qBit voit l'IP de Traefik, pas la vôtre. L'auth est zappée.</text>
+</g>
+</svg>
 <p>Le problème plus profond n'est pas le paramètre de qBit. C'est le modèle mental entier qui l'a produit. <strong>"Faire confiance au LAN" était une option par défaut défendable en 2010</strong>, quand les homelabs étaient physiquement séparés d'internet et que "le réseau" voulait dire un switch dans le sous-sol. En 2026, votre "LAN" comprend un reverse proxy joignable depuis n'importe où sur la planète, un bridge docker SDN qui contient le sortant de chaque conteneur, un tunnel entrant depuis votre CDN, le node Tailscale de votre téléphone posé dans le WiFi d'un hôtel, et une demi-douzaine d'utilisateurs d'automatisation qui existent juste pour parler à vos services en HTTP. <strong>Le LAN n'est plus un endroit. C'est un détail d'implémentation sur le lieu où la vérification d'auth se trouve.</strong></p>
 <p>Les applis self-hosted ont livré des défauts permissifs "autoriser le LAN" en supposant un LAN que plus personne n'a. Cloudflare Tunnel, Tailscale Funnel, Traefik, Caddy — ils déplacent le périmètre, ils ne remplacent pas l'authn. Le reverse proxy est un <em>couloir</em>, pas une <em>porte</em>.</p>
 
@@ -235,6 +321,44 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <li><strong>Au niveau du firewall de l'hôte (iptables).</strong> Drop des paquets sortants vers l'IP du C2, depuis l'hôte lui-même comme depuis les conteneurs qu'il route. Rattrape le cas IP brute que le DNS rate. Rendu permanent pour survivre à un reboot.</li>
 <li><strong>Au niveau du routeur edge.</strong> La même règle de drop sur la passerelle, pointée sur la même IP. Rattrape tout ce qui sur le réseau ne passe pas par l'hôte du homelab — objets connectés, téléphones, imprimante, le portable de votre gosse.</li>
 </ol>
+<svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trois couches qui bloquent le callback C2 : Pi-hole bloque le domaine, iptables bloque l'IP côté hôte, le firewall edge bloque l'IP au niveau de la passerelle. Chaque couche rattrape ce que la précédente rate." class="diagram-svg">
+<g fill="none" stroke="currentColor" stroke-width="1.5">
+<rect x="10" y="85" width="80" height="50" rx="6"></rect>
+<line x1="90" y1="110" x2="118" y2="110"></line>
+<rect x="123" y="65" width="120" height="90" rx="6"></rect>
+<line x1="243" y1="110" x2="271" y2="110"></line>
+<rect x="276" y="65" width="120" height="90" rx="6"></rect>
+<line x1="396" y1="110" x2="424" y2="110"></line>
+<rect x="429" y="65" width="120" height="90" rx="6"></rect>
+<line x1="549" y1="110" x2="577" y2="110"></line>
+<rect x="582" y="85" width="50" height="50" rx="6" stroke-dasharray="4,3"></rect>
+</g>
+<g fill="currentColor" stroke="none">
+<polygon points="118,105 126,110 118,115"></polygon>
+<polygon points="271,105 279,110 271,115"></polygon>
+<polygon points="424,105 432,110 424,115"></polygon>
+</g>
+<g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+<line x1="557" y1="100" x2="569" y2="120"></line>
+<line x1="569" y1="100" x2="557" y2="120"></line>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" text-anchor="middle">
+<text x="50" y="105">qBit</text>
+<text x="50" y="123" font-size="11">conteneur</text>
+<text x="183" y="88" font-size="11">couche 1</text>
+<text x="183" y="110">Pi-hole DNS</text>
+<text x="183" y="130" font-size="11">bloque le domaine</text>
+<text x="336" y="88" font-size="11">couche 2</text>
+<text x="336" y="110">iptables</text>
+<text x="336" y="130" font-size="11">bloque l'IP (hôte)</text>
+<text x="489" y="88" font-size="11">couche 3</text>
+<text x="489" y="110">firewall edge</text>
+<text x="489" y="130" font-size="11">bloque l'IP (passerelle)</text>
+<text x="607" y="105">C2</text>
+<text x="607" y="123" font-size="11">bloqué</text>
+<text x="320" y="195" font-size="13" font-style="italic">Chaque couche rattrape ce que la précédente rate.</text>
+</g>
+</svg>
 <p>Une seule couche serait une case à cocher. Trois couches, c'est de la défense en profondeur qui accepte qu'une d'elles peut être fausse.</p>
 
 <h3>Sanitiser et auditer</h3>
