@@ -44,7 +44,7 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p><strong>Three were unauthenticated to the internet.</strong></p>
 <ul>
 <li><strong>qBittorrent</strong> — already on fire. Trust-LAN bypass.</li>
-<li><strong>A real-time docker log viewer.</strong> No auth env, no middleware. Its <code>/api/events/stream</code> endpoint streamed the entire container fleet to anyone with the URL. The companion log endpoint streams stdout/stderr from any container the host runs. That includes every secret, token, request body, OAuth code, webhook signature, and database query that any service in the stack ever logs. <strong>A static dashboard with a hostname guessable from a TLS transparency feed gave a stranger a real-time SIEM of my entire infra.</strong></li>
+<li><strong>A real-time docker log viewer.</strong> No auth env, no middleware. Its <code>/api/events/stream</code> endpoint streamed the entire container fleet to anyone with the URL. The companion log endpoint streams stdout/stderr from any container the host runs. That includes every secret, token, request body, OAuth code, webhook signature, and database query that any service in the stack ever logs. <strong>A static dashboard with a hostname guessable from a TLS transparency feed gave a stranger a real-time <em>SIEM</em> (a security console that aggregates every log and event across an infrastructure into one searchable view) of my entire infra.</strong></li>
 <li><strong>A Plex statistics dashboard.</strong> Empty <code>http_password=""</code> in its config. The full Home view was a <code>GET /home</code> away. Watch history, IP addresses of every viewer, embedded Plex auth tokens, notification webhooks (Discord, Slack — with their secrets in the payload).</li>
 </ul>
 <p>Each of those was one URL guess away. Each was visible from any TLS transparency monitor — <a target="_blank" rel="noopener noreferrer" href="https://crt.sh">crt.sh</a> will happily list every subdomain on a wildcard cert. And each had its own native auth that I had explicitly turned off because — wait for it — <strong>"it's only on the LAN."</strong></p>
@@ -86,7 +86,36 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>For everything else: I walked every service exposed through Traefik, noted which ones had an auth gate in front and which were relying on their own internal login. Three had no auth at all. The rest were either fine on their own merits or <em>arguably</em> fine for their threat model — and <em>arguably</em> is doing work in that sentence. See the next section.</p>
 
 <h3>Default-deny the perimeter</h3>
-<p>The honest fix isn't "secure the three I missed." It is "stop trusting that I will catch the next one." So I put a small auth service in front of every service whose only intended user is <em>me</em>: <a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> (minimal, single-purpose, fits the blast radius I needed; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> or <a target="_blank" rel="noopener noreferrer" href="https://www.authentik.io/">Authentik</a> would do as well). Now Traefik asks the auth service "is this person logged in?" before forwarding any request to the actual app. That covered <strong>17 admin UIs</strong>. Even if the app behind has an unauthenticated bug — and someday one will — the request never reaches it without a valid session first.</p>
+<p>The honest fix isn't "secure the three I missed." It is "stop trusting that I will catch the next one." So I put a small auth service in front of every service whose only intended user is <em>me</em>: <a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> (minimal, single-purpose, fits the blast radius I needed; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> or <a target="_blank" rel="noopener noreferrer" href="https://goauthentik.io/">Authentik</a> would do as well). Now Traefik asks the auth service "is this person logged in?" before forwarding any request to the actual app. That covered <strong>17 admin UIs</strong>. Even if the app behind has an unauthenticated bug — and someday one will — the request never reaches it without a valid session first.</p>
+<svg viewBox="0 0 600 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Request flow: Internet to Traefik, then through TinyAuth which forwards to the app if logged in or to a login page if not" class="diagram-svg">
+<g fill="none" stroke="currentColor" stroke-width="1.5">
+<rect x="10" y="40" width="100" height="50" rx="6"></rect>
+<line x1="110" y1="65" x2="148" y2="65"></line>
+<rect x="158" y="40" width="100" height="50" rx="6"></rect>
+<line x1="258" y1="65" x2="296" y2="65"></line>
+<polygon points="384,20 470,80 384,140 298,80"></polygon>
+<line x1="470" y1="80" x2="498" y2="80"></line>
+<rect x="508" y="55" width="80" height="50" rx="6"></rect>
+<line x1="384" y1="140" x2="384" y2="218"></line>
+<rect x="328" y="228" width="112" height="50" rx="6"></rect>
+</g>
+<g fill="currentColor" stroke="none">
+<polygon points="148,60 156,65 148,70"></polygon>
+<polygon points="296,60 304,65 296,70"></polygon>
+<polygon points="498,75 506,80 498,85"></polygon>
+<polygon points="379,218 384,226 389,218"></polygon>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" text-anchor="middle">
+<text x="60" y="70">Internet</text>
+<text x="208" y="70">Traefik</text>
+<text x="384" y="78">TinyAuth</text>
+<text x="384" y="96" font-size="12">logged in?</text>
+<text x="484" y="74" font-size="12">yes</text>
+<text x="396" y="180" font-size="12">no</text>
+<text x="548" y="85">App</text>
+<text x="384" y="258">Login page</text>
+</g>
+</svg>
 <p>Services that <em>do</em> need to talk to third parties (mobile apps, SDKs, CLIs, webhooks from external systems, password manager clients, photo-sync clients) stayed on their own auth, with the explicit understanding that I owe each of them a much closer look. That list is shorter than the gated list, and every entry on it is a known weak point I'm now actively monitoring.</p>
 <p>The rule going forward is one line in any new service's compose file:</p>
 <pre><code>- "traefik.http.routers.&lt;name&gt;.middlewares=tinyauth@docker"</code></pre>
@@ -119,7 +148,7 @@ done</code></pre>
 <p>And: <strong>do not trust your monitoring to catch this for you.</strong> I had Beszel, Uptime Kuma, Dozzle, Pi-hole's query log, the lot. None of them flagged anything because nothing was <em>failing</em>. The compromise was inside the application, and the application was working <em>better</em> than usual from the attacker's perspective. The signal that found it was visual: a red icon I happened to look at. There is no SIEM in a homelab. You are the SIEM, and your eyes are not a query language.</p>
 
 <h2>Indicators of compromise</h2>
-<p>If you run qBittorrent and want to confirm you weren't hit by the same wave, here's what to look for. These are the IoCs from this incident; they're public defenders' information.</p>
+<p>If you run qBittorrent and want to confirm you weren't hit by the same wave, here's what to look for. These are the <em>IoCs</em> (Indicators of Compromise — the specific artifacts a defender can grep for to confirm a known intrusion) from this incident; they're public defenders' information.</p>
 <ul>
 <li><strong>C2 domain:</strong> <code>yify.foo</code></li>
 <li><strong>C2 IP:</strong> <code>172.245.88.160</code> (ColoCrossing, the same range that hosts a long list of similar mass-exploitation droppers)</li>
@@ -173,7 +202,7 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p><strong>Trois étaient sans authentification depuis internet.</strong></p>
 <ul>
 <li><strong>qBittorrent</strong> — déjà en feu. Contournement trust-LAN.</li>
-<li><strong>Un visualiseur de logs docker en temps réel.</strong> Pas de variable d'env d'auth, pas de middleware. Son endpoint <code>/api/events/stream</code> diffusait toute la flotte de conteneurs à quiconque connaissait l'URL. L'endpoint compagnon de logs streame les stdout/stderr de n'importe quel conteneur tournant sur l'hôte. Ça inclut chaque secret, token, request body, code OAuth, signature de webhook et requête de base de données que n'importe quel service du stack a un jour loggué. <strong>Un dashboard statique avec un hostname devinable depuis un flux TLS transparency a donné à un inconnu un SIEM en temps réel de toute mon infra.</strong></li>
+<li><strong>Un visualiseur de logs docker en temps réel.</strong> Pas de variable d'env d'auth, pas de middleware. Son endpoint <code>/api/events/stream</code> diffusait toute la flotte de conteneurs à quiconque connaissait l'URL. L'endpoint compagnon de logs streame les stdout/stderr de n'importe quel conteneur tournant sur l'hôte. Ça inclut chaque secret, token, request body, code OAuth, signature de webhook et requête de base de données que n'importe quel service du stack a un jour loggué. <strong>Un dashboard statique avec un hostname devinable depuis un flux TLS transparency a donné à un inconnu un <em>SIEM</em> (une console de sécurité qui agrège chaque log et événement d'une infrastructure en une vue interrogeable unique) en temps réel de toute mon infra.</strong></li>
 <li><strong>Un dashboard de statistiques Plex.</strong> <code>http_password=""</code> vide dans sa config. La vue Home complète était à un <code>GET /home</code> de distance. Historique de visionnage, IPs de chaque viewer, tokens d'auth Plex embarqués, webhooks de notification (Discord, Slack — avec leurs secrets dans le payload).</li>
 </ul>
 <p>Chacun était à un guess d'URL près. Chacun était visible depuis n'importe quel monitor TLS transparency — <a target="_blank" rel="noopener noreferrer" href="https://crt.sh">crt.sh</a> liste volontiers chaque sous-domaine sur un certificat wildcard. Et chacun avait sa propre auth native que j'avais explicitement désactivée parce que — attendez — <strong>"c'est juste sur le LAN."</strong></p>
@@ -215,7 +244,36 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>Pour le reste : j'ai parcouru chaque service exposé via Traefik, en notant lesquels avaient une barrière d'auth devant et lesquels comptaient sur leur propre login interne. Trois n'avaient aucune auth. Le reste était soit propre par ses propres mérites soit <em>défendable</em> pour son threat model — et <em>défendable</em> fait du travail dans cette phrase. Voir la section suivante.</p>
 
 <h3>Default-deny au périmètre</h3>
-<p>La correction honnête n'est pas "sécuriser les trois que j'ai ratés." C'est "arrêter de faire confiance au fait que je rattraperai le suivant." Donc j'ai mis un petit service d'auth devant chaque service dont le seul utilisateur prévu c'est <em>moi</em> : <a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> (minimal, mono-tâche, taille de blast radius dont j'avais besoin ; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> ou <a target="_blank" rel="noopener noreferrer" href="https://www.authentik.io/">Authentik</a> feraient aussi l'affaire). Maintenant Traefik demande au service d'auth "est-ce que cette personne est connectée ?" avant de transmettre la requête à l'appli derrière. Ça couvre <strong>17 interfaces d'admin</strong>. Même si l'appli derrière a un bug d'auth — et ça finira par arriver — la requête ne l'atteint jamais sans une session valide.</p>
+<p>La correction honnête n'est pas "sécuriser les trois que j'ai ratés." C'est "arrêter de faire confiance au fait que je rattraperai le suivant." Donc j'ai mis un petit service d'auth devant chaque service dont le seul utilisateur prévu c'est <em>moi</em> : <a target="_blank" rel="noopener noreferrer" href="https://github.com/steveiliop56/tinyauth">TinyAuth</a> (minimal, mono-tâche, taille de blast radius dont j'avais besoin ; <a target="_blank" rel="noopener noreferrer" href="https://www.authelia.com/">Authelia</a> ou <a target="_blank" rel="noopener noreferrer" href="https://goauthentik.io/">Authentik</a> feraient aussi l'affaire). Maintenant Traefik demande au service d'auth "est-ce que cette personne est connectée ?" avant de transmettre la requête à l'appli derrière. Ça couvre <strong>17 interfaces d'admin</strong>. Même si l'appli derrière a un bug d'auth — et ça finira par arriver — la requête ne l'atteint jamais sans une session valide.</p>
+<svg viewBox="0 0 600 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flux d'une requête : Internet vers Traefik, puis TinyAuth qui transmet à l'appli si connecté ou à une page de login sinon" class="diagram-svg">
+<g fill="none" stroke="currentColor" stroke-width="1.5">
+<rect x="10" y="40" width="100" height="50" rx="6"></rect>
+<line x1="110" y1="65" x2="148" y2="65"></line>
+<rect x="158" y="40" width="100" height="50" rx="6"></rect>
+<line x1="258" y1="65" x2="296" y2="65"></line>
+<polygon points="384,20 470,80 384,140 298,80"></polygon>
+<line x1="470" y1="80" x2="498" y2="80"></line>
+<rect x="508" y="55" width="80" height="50" rx="6"></rect>
+<line x1="384" y1="140" x2="384" y2="218"></line>
+<rect x="328" y="228" width="112" height="50" rx="6"></rect>
+</g>
+<g fill="currentColor" stroke="none">
+<polygon points="148,60 156,65 148,70"></polygon>
+<polygon points="296,60 304,65 296,70"></polygon>
+<polygon points="498,75 506,80 498,85"></polygon>
+<polygon points="379,218 384,226 389,218"></polygon>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" text-anchor="middle">
+<text x="60" y="70">Internet</text>
+<text x="208" y="70">Traefik</text>
+<text x="384" y="78">TinyAuth</text>
+<text x="384" y="96" font-size="12">connecté ?</text>
+<text x="484" y="74" font-size="12">oui</text>
+<text x="396" y="180" font-size="12">non</text>
+<text x="548" y="85">Appli</text>
+<text x="384" y="258">Page de login</text>
+</g>
+</svg>
 <p>Les services qui <em>ont besoin</em> de parler à des tiers (apps mobiles, SDKs, CLIs, webhooks d'origine externe, clients de gestionnaires de mot de passe, clients de sync photos) sont restés sur leur propre auth, avec la compréhension explicite que je leur dois à chacun un examen bien plus serré. Cette liste est plus courte que la liste des services barrés, et chaque entrée est un point faible connu que je surveille activement maintenant.</p>
 <p>La règle pour la suite, c'est une ligne dans le compose de tout nouveau service :</p>
 <pre><code>- "traefik.http.routers.&lt;name&gt;.middlewares=tinyauth@docker"</code></pre>
@@ -249,7 +307,7 @@ done</code></pre>
 <p>Et : <strong>ne faites pas confiance à votre monitoring pour rattraper ça à votre place.</strong> J'avais Beszel, Uptime Kuma, Dozzle, le query log de Pi-hole, tout. Aucun n'a tiqué parce que rien ne <em>ratait</em>. Le compromis était à l'intérieur de l'application, et l'application tournait <em>mieux</em> que d'habitude du point de vue de l'attaquant. Le signal qui a trouvé ça, c'était visuel : une icône rouge que j'ai regardée par hasard. Il n'y a pas de SIEM dans un homelab. Vous êtes le SIEM, et vos yeux ne sont pas un langage de requête.</p>
 
 <h2>Indicateurs de compromis</h2>
-<p>Si vous faites tourner qBittorrent et voulez confirmer que vous n'avez pas été touché par la même vague, voilà ce qu'il faut chercher. Ce sont les IoCs de cet incident ; c'est de l'information défenseurs publique.</p>
+<p>Si vous faites tourner qBittorrent et voulez confirmer que vous n'avez pas été touché par la même vague, voilà ce qu'il faut chercher. Ce sont les <em>IoCs</em> (Indicators of Compromise — les artefacts précis qu'un défenseur peut grepper pour confirmer une intrusion connue) de cet incident ; c'est de l'information défenseurs publique.</p>
 <ul>
 <li><strong>Domaine C2 :</strong> <code>yify.foo</code></li>
 <li><strong>IP C2 :</strong> <code>172.245.88.160</code> (ColoCrossing, la même plage qui héberge une longue liste de droppers de mass-exploitation similaires)</li>
