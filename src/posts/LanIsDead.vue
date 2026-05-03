@@ -9,7 +9,7 @@ export const metadata: PostMetadata = {
 }
 
 const englishContent: PostContent = {
-  title: 'The LAN Is Dead. You Built the Reverse Proxy That Killed It.',
+  title: 'How a Trusted-LAN Checkbox Gave a Stranger Root in My Homelab',
   description: 'I run 40+ services behind Traefik. One of them — qBittorrent — trusted my LAN by default. So did my reverse proxy. The internet bypassed my auth, dropped a remote shell, and ran for days before I noticed. Here is what I found, what I changed, and why every homelab with a reverse proxy is one default checkbox away from the same fate.',
   html: `<p><strong>TL;DR:</strong> I run 40+ services behind Traefik on my homelab. One of them — qBittorrent — trusted "the LAN" by default. My reverse proxy <em>lives</em> on the LAN. So every external request, routed through the proxy, looked like a trusted local client. An attacker walked through the front door and injected an <code>OnTorrentAdded</code> autorun pulling a remote shell. I noticed because the UI looked weird. Not because of an alert. Because of a vibe. Then I audited the other 39 services — <strong>3 admin UIs were wide open to the internet.</strong> If you run a homelab with a reverse proxy and any "trust the LAN" toggle is enabled somewhere, you are likely running my homelab from a week ago.</p>
 <hr>
