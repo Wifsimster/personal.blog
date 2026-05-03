@@ -118,6 +118,13 @@
     word-break: normal;
   }
 
+  .prose .diagram-svg {
+    @apply block mx-auto my-8 text-gray-700 dark:text-zinc-300;
+    width: 100%;
+    max-width: 36rem;
+    height: auto;
+  }
+
   .prose blockquote {
     @apply border-l-4 border-primary-500 pl-4 italic my-4 text-gray-600 dark:text-zinc-400;
     line-height: 1.75;
