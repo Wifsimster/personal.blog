@@ -167,7 +167,7 @@ done</code></pre>
 }
 
 const frenchContent: PostContent = {
-  title: 'Le LAN est mort. C\'est votre reverse proxy qui l\'a tué.',
+  title: 'Comment une case « LAN de confiance » a donné root à un inconnu sur mon homelab',
   description: 'Je fais tourner 40+ services derrière Traefik sur mon homelab. L\'un d\'eux — qBittorrent — faisait confiance au "LAN" par défaut. Mon reverse proxy aussi vit sur ce LAN. Internet a contourné mon authentification, déposé un shell distant, et tourné pendant des jours avant que je le remarque. Voici ce que j\'ai trouvé, ce que j\'ai changé, et pourquoi tout homelab avec un reverse proxy est à une case cochée par défaut du même destin.',
   html: `<p><strong>TL;DR :</strong> Je fais tourner 40+ services derrière Traefik sur mon homelab. L'un d'eux — qBittorrent — faisait confiance au "LAN" par défaut. Mon reverse proxy <em>vit</em> sur ce LAN. Donc chaque requête externe, routée via le proxy, ressemblait à un client local de confiance. Un attaquant est entré par la porte d'entrée et a injecté un autorun <code>OnTorrentAdded</code> qui tirait un shell distant. Je l'ai remarqué parce que l'UI avait l'air bizarre. Pas grâce à une alerte. À cause d'une intuition. Puis j'ai audité les 39 autres services — <strong>3 interfaces d'admin étaient grandes ouvertes sur internet.</strong> Si vous faites tourner un homelab avec un reverse proxy et qu'une option "fais confiance au LAN" est activée quelque part, vous faites probablement tourner mon homelab d'il y a une semaine.</p>
 <hr>
