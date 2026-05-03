@@ -27,6 +27,7 @@ import RenovationCellierBureauMaison1970, { metadata as renovationCellierBureauM
 import SdlcIsDead, { metadata as sdlcIsDeadMetadata, getContent as getSdlcIsDeadContent } from './SdlcIsDead.vue'
 import CoderIsDeadEngineerIsBorn, { metadata as coderIsDeadMetadata, getContent as getCoderIsDeadContent } from './CoderIsDeadEngineerIsBorn.vue'
 import AiMarketSegmentation, { metadata as aiMarketSegmentationMetadata, getContent as getAiMarketSegmentationContent } from './AiMarketSegmentation.vue'
+import LanIsDead, { metadata as lanIsDeadMetadata, getContent as getLanIsDeadContent } from './LanIsDead.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -174,6 +175,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: aiMarketSegmentationMetadata,
     getContent: getAiMarketSegmentationContent,
     component: AiMarketSegmentation
+  },
+  'the-lan-is-dead': {
+    metadata: lanIsDeadMetadata,
+    getContent: getLanIsDeadContent,
+    component: LanIsDead
   }
 }
 
