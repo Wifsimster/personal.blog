@@ -71,13 +71,13 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>Cleanup happened in three passes: stop the bleeding, then audit, then harden.</p>
 
 <h3>Stop the bleeding</h3>
-<p>The C2 callback is a known-bad fileless dropper. Three layers of blocking, because each layer catches what the previous one misses:</p>
+<p>The C2 callback is a known-bad fileless dropper. I blocked it at three layers, because each layer catches what the previous one misses:</p>
 <ol>
-<li><strong>DNS sinkhole</strong> at Pi-hole, exact-match deny on the C2 hostname. Catches anything resolving by name. Doesn't help with IP-literal callbacks.</li>
-<li><strong>Host iptables <code>OUTPUT</code> + <code>FORWARD</code> drops</strong> on the C2 IP. Catches the IP-literal path and any container egress that exits via the host's default route. Persisted across reboots via <code>netfilter-persistent</code>.</li>
-<li><strong>Edge firewall (<code>WAN_OUT</code> drop)</strong> on the gateway, scoped to the C2 IP via an address group. Catches anything that bypasses the host (other VLANs, IoT, the printer, your kid's laptop).</li>
+<li><strong>At the DNS layer (Pi-hole).</strong> Block the C2 domain so anything resolving it by name goes nowhere. Cheap, instant — useless if the malware skips DNS and connects to a raw IP.</li>
+<li><strong>At the host firewall (iptables).</strong> Drop outbound packets to the C2's IP, both from the host and from any container it routes. Catches the raw-IP case the DNS layer misses. Made permanent so it survives a reboot.</li>
+<li><strong>At the edge router.</strong> The same drop rule on the gateway, pointed at the same C2 IP. Catches anything on the network that doesn't route through the homelab host — IoT devices, phones, the printer, your kid's laptop.</li>
 </ol>
-<p>A single layer would be a checkbox. Three layers is defense-in-depth that accepts that any one of them might be wrong.</p>
+<p>A single layer would be a checkbox. Three layers is defense-in-depth that accepts any one of them might be wrong.</p>
 
 <h3>Sanitize and audit</h3>
 <p>For the compromised app: removed the entire <code>[AutoRun]</code> block, disabled <code>AuthSubnetWhitelistEnabled</code>, rotated the WebUI password (with proper PBKDF2-HMAC-SHA512 hashing, not a UI form click — generate the salt + hash yourself if you want to know what's in your config), preserved a forensic copy of the config and the dropper for later reference, and pulled the running container's process list looking for the fileless tell:</p>
@@ -200,11 +200,11 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <p>Le nettoyage s'est fait en trois passes : arrêter l'hémorragie, puis auditer, puis durcir.</p>
 
 <h3>Arrêter l'hémorragie</h3>
-<p>Le callback C2 est un dropper fileless connu. Trois couches de blocage, parce que chaque couche rattrape ce que la précédente rate :</p>
+<p>Le callback C2 est un dropper fileless connu. Je l'ai bloqué sur trois couches, parce que chaque couche rattrape ce que la précédente rate :</p>
 <ol>
-<li><strong>Sinkhole DNS</strong> sur Pi-hole, deny exact-match sur le hostname C2. Rattrape tout ce qui résout par nom. N'aide pas avec les callbacks IP littérale.</li>
-<li><strong>iptables hôte <code>OUTPUT</code> + <code>FORWARD</code> drop</strong> sur l'IP C2. Rattrape le chemin IP littérale et tout sortant de conteneur qui passe par la route par défaut de l'hôte. Persisté à travers les reboots via <code>netfilter-persistent</code>.</li>
-<li><strong>Firewall edge (<code>WAN_OUT</code> drop)</strong> sur la passerelle, scopé à l'IP C2 via un address group. Rattrape tout ce qui contourne l'hôte (autres VLANs, IoT, l'imprimante, le portable de votre gosse).</li>
+<li><strong>Au niveau DNS (Pi-hole).</strong> Bloquer le domaine du C2 : tout ce qui le résout par nom n'arrive nulle part. Pas cher, instantané — inutile si le malware saute le DNS et se connecte directement à une IP brute.</li>
+<li><strong>Au niveau du firewall de l'hôte (iptables).</strong> Drop des paquets sortants vers l'IP du C2, depuis l'hôte lui-même comme depuis les conteneurs qu'il route. Rattrape le cas IP brute que le DNS rate. Rendu permanent pour survivre à un reboot.</li>
+<li><strong>Au niveau du routeur edge.</strong> La même règle de drop sur la passerelle, pointée sur la même IP. Rattrape tout ce qui sur le réseau ne passe pas par l'hôte du homelab — objets connectés, téléphones, imprimante, le portable de votre gosse.</li>
 </ol>
 <p>Une seule couche serait une case à cocher. Trois couches, c'est de la défense en profondeur qui accepte qu'une d'elles peut être fausse.</p>
 
