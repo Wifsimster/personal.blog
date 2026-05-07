@@ -28,6 +28,7 @@ import SdlcIsDead, { metadata as sdlcIsDeadMetadata, getContent as getSdlcIsDead
 import CoderIsDeadEngineerIsBorn, { metadata as coderIsDeadMetadata, getContent as getCoderIsDeadContent } from './CoderIsDeadEngineerIsBorn.vue'
 import AiMarketSegmentation, { metadata as aiMarketSegmentationMetadata, getContent as getAiMarketSegmentationContent } from './AiMarketSegmentation.vue'
 import LanIsDead, { metadata as lanIsDeadMetadata, getContent as getLanIsDeadContent } from './LanIsDead.vue'
+import AiTeamReflex, { metadata as aiTeamReflexMetadata, getContent as getAiTeamReflexContent } from './AiTeamReflex.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -180,6 +181,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: lanIsDeadMetadata,
     getContent: getLanIsDeadContent,
     component: LanIsDead
+  },
+  'ai-team-reflex': {
+    metadata: aiTeamReflexMetadata,
+    getContent: getAiTeamReflexContent,
+    component: AiTeamReflex
   }
 }
 
