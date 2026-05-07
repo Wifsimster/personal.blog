@@ -15,47 +15,49 @@ const englishContent: PostContent = {
 <hr>
 <p>In March I wrote that <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">the SDLC is dead</a>. A day later I argued that <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">coding was never the job</a>. Six months into 2026, I want to write the third panel of that triptych — not as a manifesto this time, just a report from the floor. What does an AI-native team actually look like on a Tuesday? Mine. Here is what it does.</p>
 <p>Nobody decided this. There was no kick-off, no PowerPoint, no "AI strategy". The latest Anthropic models landed in January, we tinkered, something stuck, then something else stuck, and four months later the workflow looks nothing like it did in December. <strong>AI didn't replace anyone on my team. It quietly absorbed the parts of the job we hated.</strong></p>
-<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A PR, an issue or a meeting transcript triggers a skill that spawns a panel of persona sub-agents — security, domain, performance, junior — who debate. The output is a structured report and issues automatically opened via the GitHub or GitLab CLI." class="diagram-svg">
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Meeting skill workflow: a transcript feeds a panel of four persona sub-agents — PO, Backend, Security, QA — that runs three rounds (Positions, Debate, Converge), producing a decision and a structured report." class="diagram-svg">
 <g fill="none" stroke="currentColor" stroke-width="1.5">
-<rect x="8" y="95" width="110" height="70" rx="6"></rect>
-<line x1="118" y1="130" x2="144" y2="130"></line>
-<rect x="150" y="108" width="80" height="44" rx="6"></rect>
-<line x1="230" y1="130" x2="256" y2="130"></line>
-<rect x="262" y="40" width="270" height="180" rx="8" stroke-dasharray="4,3"></rect>
-<rect x="275" y="70" width="120" height="40" rx="4"></rect>
-<rect x="405" y="70" width="120" height="40" rx="4"></rect>
-<rect x="275" y="160" width="120" height="40" rx="4"></rect>
-<rect x="405" y="160" width="120" height="40" rx="4"></rect>
-<line x1="395" y1="90" x2="401" y2="90"></line>
-<line x1="465" y1="110" x2="465" y2="156"></line>
-<line x1="405" y1="180" x2="399" y2="180"></line>
-<line x1="335" y1="160" x2="335" y2="114"></line>
-<line x1="532" y1="130" x2="558" y2="130"></line>
-<rect x="564" y="85" width="148" height="90" rx="6"></rect>
+<rect x="8" y="125" width="100" height="50" rx="6"></rect>
+<line x1="108" y1="150" x2="122" y2="150"></line>
+<rect x="128" y="20" width="440" height="210" rx="8" stroke-dasharray="4,3"></rect>
+<rect x="163" y="50" width="85" height="28" rx="14"></rect>
+<rect x="258" y="50" width="85" height="28" rx="14"></rect>
+<rect x="353" y="50" width="85" height="28" rx="14"></rect>
+<rect x="448" y="50" width="85" height="28" rx="14"></rect>
+<rect x="148" y="115" width="120" height="100" rx="6"></rect>
+<rect x="288" y="115" width="120" height="100" rx="6"></rect>
+<rect x="428" y="115" width="120" height="100" rx="6" stroke-width="2.5"></rect>
+<line x1="268" y1="165" x2="280" y2="165"></line>
+<line x1="408" y1="165" x2="420" y2="165"></line>
+<line x1="568" y1="150" x2="582" y2="150"></line>
+<rect x="588" y="125" width="124" height="50" rx="6"></rect>
 </g>
 <g fill="currentColor" stroke="none">
-<polygon points="144,125 152,130 144,135"></polygon>
-<polygon points="256,125 264,130 256,135"></polygon>
-<polygon points="558,125 566,130 558,135"></polygon>
-<polygon points="401,86 405,90 401,94"></polygon>
-<polygon points="461,156 465,160 469,156"></polygon>
-<polygon points="399,176 395,180 399,184"></polygon>
-<polygon points="331,114 335,110 339,114"></polygon>
+<polygon points="122,146 130,150 122,154"></polygon>
+<polygon points="280,161 288,165 280,169"></polygon>
+<polygon points="420,161 428,165 420,169"></polygon>
+<polygon points="582,146 590,150 582,154"></polygon>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle">
-<text x="63" y="120">PR</text>
-<text x="63" y="138">Issue</text>
-<text x="63" y="156">Meeting</text>
-<text x="190" y="134">Skill</text>
-<text x="397" y="58" font-size="11" font-style="italic">Persona panel — sub-agents debate</text>
-<text x="335" y="95">Security</text>
-<text x="465" y="95">Domain</text>
-<text x="335" y="185">Perf</text>
-<text x="465" y="185">Junior</text>
-<text x="638" y="118">Structured report</text>
-<text x="638" y="138">+ assigned issues</text>
-<text x="638" y="158" font-size="11">via gh / glab CLI</text>
-<text x="360" y="262" font-size="13" font-style="italic">One pipeline. PRs, issues, meetings — same panel.</text>
+<text x="58" y="146">Meeting</text>
+<text x="58" y="163">transcript</text>
+<text x="348" y="40" font-size="11" font-style="italic">Sub-agent personas</text>
+<text x="205" y="68">PO</text>
+<text x="300" y="68">Backend</text>
+<text x="395" y="68">Security</text>
+<text x="490" y="68">QA</text>
+<text x="208" y="143" font-size="11" font-style="italic">Round 1</text>
+<text x="208" y="170">Positions</text>
+<text x="208" y="195" font-size="11" font-style="italic">discuss</text>
+<text x="348" y="143" font-size="11" font-style="italic">Round 2</text>
+<text x="348" y="170">Debate</text>
+<text x="348" y="195" font-size="11" font-style="italic">discuss</text>
+<text x="488" y="143" font-size="11" font-style="italic">Round 3</text>
+<text x="488" y="170">Converge</text>
+<text x="488" y="195" font-size="11" font-style="italic">decide</text>
+<text x="650" y="146">Decision</text>
+<text x="650" y="163">+ report</text>
+<text x="360" y="250" font-size="13" font-style="italic">Two rounds of discussion. One round of convergence.</text>
 </g>
 </svg>
 
@@ -67,6 +69,7 @@ const englishContent: PostContent = {
 <p>We use the same panel on incoming issues. Every issue that lands in our backlog goes through it before triage. The output is a structured analysis — what's actually being asked, what's missing, what blockers it implies, what it touches in the codebase. It's the kind of analysis a Tech Lead would do on a good day, except every day, on every issue, in two minutes. The triage meeting that used to take an hour now takes ten because everyone walks in with the panel's notes.</p>
 <p>Quality went up. Nobody on the team had to be convinced. <strong>It just works, and once you've seen a panel of agents tear apart your PR, you don't go back.</strong></p>
 <p>This adversarial-panel pattern isn't unique to code review. <a target="_blank" rel="noopener noreferrer" href="https://www.aihero.dev/skills-grill-me">Matt Pocock's grill-me skill</a> applies the same idea to raw thinking — an agent that interrogates your reasoning until the thin parts surface. I keep one running on the side for product trade-offs, architectural calls, and the half-formed ideas I'd otherwise walk into a meeting with. It hits, every time. Same medicine, different patient.</p>
+<p>The actual skills behind this workflow — <code>meeting</code> (twelve named personas, three rounds: positions, debate, convergence), <code>fast-meeting</code>, <code>issue-review</code>, <code>code-review</code>, <code>meeting-report</code> for the Teams transcripts, <code>grill-me</code> and a few dozen more — are open source in our <a target="_blank" rel="noopener noreferrer" href="https://github.com/Dedalus-ERP-PAS/hexagone-foundation-skills">hexagone-foundation-skills</a> repo. Specialized healthcare, finance and legal personas spawn on demand when the topic asks for them.</p>
 
 <h2>The meeting that records itself</h2>
 <p>Roughly two months ago, something else stuck. Meetings started recording themselves.</p>
@@ -149,47 +152,49 @@ const frenchContent: PostContent = {
 <hr>
 <p>En mars j'ai écrit que <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">le SDLC est mort</a>. Le lendemain, j'ai défendu l'idée que <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">coder n'a jamais été le métier</a>. Six mois après le début 2026, je veux écrire le troisième panneau de ce triptyque — pas comme un manifeste cette fois, juste un retour de terrain. À quoi ressemble vraiment une équipe IA-native un mardi ? La mienne. Voici ce qu'elle fait.</p>
 <p>Personne n'a décidé tout ça. Pas de kick-off, pas de PowerPoint, pas de "stratégie IA". Les derniers modèles Anthropic sont arrivés en janvier, on a bricolé, un truc a tenu, puis un autre a tenu, et quatre mois plus tard le workflow ne ressemble plus du tout à celui de décembre. <strong>L'IA n'a remplacé personne dans mon équipe. Elle a juste absorbé silencieusement les parties du métier qu'on détestait.</strong></p>
-<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Une PR, une issue ou un transcript de réunion déclenche un skill qui convoque un panel de sous-agents avec personas — sécurité, métier, performance, junior — qui débattent. La sortie est un compte rendu structuré et des issues ouvertes automatiquement via la CLI GitHub ou GitLab." class="diagram-svg">
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow du skill réunion : un transcript alimente un panel de quatre sous-agents personas — PO, Backend, Sécurité, QA — qui exécute trois rounds (Positions, Débat, Convergence), produisant une décision et un compte rendu structuré." class="diagram-svg">
 <g fill="none" stroke="currentColor" stroke-width="1.5">
-<rect x="8" y="95" width="110" height="70" rx="6"></rect>
-<line x1="118" y1="130" x2="144" y2="130"></line>
-<rect x="150" y="108" width="80" height="44" rx="6"></rect>
-<line x1="230" y1="130" x2="256" y2="130"></line>
-<rect x="262" y="40" width="270" height="180" rx="8" stroke-dasharray="4,3"></rect>
-<rect x="275" y="70" width="120" height="40" rx="4"></rect>
-<rect x="405" y="70" width="120" height="40" rx="4"></rect>
-<rect x="275" y="160" width="120" height="40" rx="4"></rect>
-<rect x="405" y="160" width="120" height="40" rx="4"></rect>
-<line x1="395" y1="90" x2="401" y2="90"></line>
-<line x1="465" y1="110" x2="465" y2="156"></line>
-<line x1="405" y1="180" x2="399" y2="180"></line>
-<line x1="335" y1="160" x2="335" y2="114"></line>
-<line x1="532" y1="130" x2="558" y2="130"></line>
-<rect x="564" y="85" width="148" height="90" rx="6"></rect>
+<rect x="8" y="125" width="100" height="50" rx="6"></rect>
+<line x1="108" y1="150" x2="122" y2="150"></line>
+<rect x="128" y="20" width="440" height="210" rx="8" stroke-dasharray="4,3"></rect>
+<rect x="163" y="50" width="85" height="28" rx="14"></rect>
+<rect x="258" y="50" width="85" height="28" rx="14"></rect>
+<rect x="353" y="50" width="85" height="28" rx="14"></rect>
+<rect x="448" y="50" width="85" height="28" rx="14"></rect>
+<rect x="148" y="115" width="120" height="100" rx="6"></rect>
+<rect x="288" y="115" width="120" height="100" rx="6"></rect>
+<rect x="428" y="115" width="120" height="100" rx="6" stroke-width="2.5"></rect>
+<line x1="268" y1="165" x2="280" y2="165"></line>
+<line x1="408" y1="165" x2="420" y2="165"></line>
+<line x1="568" y1="150" x2="582" y2="150"></line>
+<rect x="588" y="125" width="124" height="50" rx="6"></rect>
 </g>
 <g fill="currentColor" stroke="none">
-<polygon points="144,125 152,130 144,135"></polygon>
-<polygon points="256,125 264,130 256,135"></polygon>
-<polygon points="558,125 566,130 558,135"></polygon>
-<polygon points="401,86 405,90 401,94"></polygon>
-<polygon points="461,156 465,160 469,156"></polygon>
-<polygon points="399,176 395,180 399,184"></polygon>
-<polygon points="331,114 335,110 339,114"></polygon>
+<polygon points="122,146 130,150 122,154"></polygon>
+<polygon points="280,161 288,165 280,169"></polygon>
+<polygon points="420,161 428,165 420,169"></polygon>
+<polygon points="582,146 590,150 582,154"></polygon>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle">
-<text x="63" y="120">PR</text>
-<text x="63" y="138">Issue</text>
-<text x="63" y="156">Réunion</text>
-<text x="190" y="134">Skill</text>
-<text x="397" y="58" font-size="11" font-style="italic">Panel de personas — les sous-agents débattent</text>
-<text x="335" y="95">Sécurité</text>
-<text x="465" y="95">Métier</text>
-<text x="335" y="185">Perf</text>
-<text x="465" y="185">Junior</text>
-<text x="638" y="118">Compte rendu</text>
-<text x="638" y="138">+ issues assignées</text>
-<text x="638" y="158" font-size="11">via gh / glab CLI</text>
-<text x="360" y="262" font-size="13" font-style="italic">Une seule chaîne. PR, issues, réunions — même panel.</text>
+<text x="58" y="146">Réunion</text>
+<text x="58" y="163">transcript</text>
+<text x="348" y="40" font-size="11" font-style="italic">Sous-agents personas</text>
+<text x="205" y="68">PO</text>
+<text x="300" y="68">Backend</text>
+<text x="395" y="68">Sécurité</text>
+<text x="490" y="68">QA</text>
+<text x="208" y="143" font-size="11" font-style="italic">Round 1</text>
+<text x="208" y="170">Positions</text>
+<text x="208" y="195" font-size="11" font-style="italic">débat</text>
+<text x="348" y="143" font-size="11" font-style="italic">Round 2</text>
+<text x="348" y="170">Débat</text>
+<text x="348" y="195" font-size="11" font-style="italic">débat</text>
+<text x="488" y="143" font-size="11" font-style="italic">Round 3</text>
+<text x="488" y="170">Convergence</text>
+<text x="488" y="195" font-size="11" font-style="italic">décide</text>
+<text x="650" y="146">Décision</text>
+<text x="650" y="163">+ compte rendu</text>
+<text x="360" y="250" font-size="13" font-style="italic">Deux rounds de débat. Un round de convergence.</text>
 </g>
 </svg>
 
@@ -201,6 +206,7 @@ const frenchContent: PostContent = {
 <p>On utilise le même panel sur les issues entrantes. Chaque issue qui atterrit dans notre backlog passe par lui avant le tri. Le résultat est une analyse structurée — ce qui est vraiment demandé, ce qui manque, les blocages que ça implique, ce que ça touche dans le code. C'est le genre d'analyse qu'un Tech Lead ferait un bon jour, sauf que c'est tous les jours, sur toutes les issues, en deux minutes. La réunion de tri qui prenait une heure en prend dix parce que tout le monde arrive avec les notes du panel.</p>
 <p>La qualité a monté. Personne dans l'équipe n'a eu besoin d'être convaincu. <strong>Ça marche, et une fois que tu as vu un panel d'agents démolir ta PR, tu ne reviens plus en arrière.</strong></p>
 <p>Ce schéma de panel adversarial n'est pas propre à la revue de code. <a target="_blank" rel="noopener noreferrer" href="https://www.aihero.dev/skills-grill-me">Le skill grill-me de Matt Pocock</a> applique la même idée à la pensée brute — un agent qui te cuisine sur ton raisonnement jusqu'à ce que les zones fragiles remontent. J'en garde un actif en parallèle pour les arbitrages produit, les choix d'architecture, les idées à moitié formées avec lesquelles j'aurais sinon débarqué en réunion. Ça fait mouche, à chaque fois. Même remède, autre patient.</p>
+<p>Les skills qui font tourner tout ça — <code>meeting</code> (douze personas nommés, trois rounds : positions, débat, convergence), <code>fast-meeting</code>, <code>issue-review</code>, <code>code-review</code>, <code>meeting-report</code> pour les transcripts Teams, <code>grill-me</code> et quelques dizaines d'autres — sont open source dans notre repo <a target="_blank" rel="noopener noreferrer" href="https://github.com/Dedalus-ERP-PAS/hexagone-foundation-skills">hexagone-foundation-skills</a>. Des personas spécialisés santé, finance et juridique sont convoqués à la demande quand le sujet l'exige.</p>
 
 <h2>La réunion qui s'enregistre toute seule</h2>
 <p>Il y a presque deux mois, autre chose s'est installé. Les réunions ont commencé à s'enregistrer toutes seules.</p>
