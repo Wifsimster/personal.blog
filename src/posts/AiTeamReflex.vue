@@ -73,8 +73,46 @@ const englishContent: PostContent = {
 
 <h2>The meeting that records itself</h2>
 <p>Roughly two months ago, something else stuck. Meetings started recording themselves.</p>
-<p>In person, on a phone — yes, a phone in the middle of the table, recording, transcribing locally. It became a default for some of us, the way bringing a notebook to a meeting used to be a default. For remote calls, the Teams transcript already exists. Either way, when the meeting ends, there's a transcript.</p>
+<p>In person, on a phone — yes, a phone in the middle of the table, recording, transcribing locally. It became a default — for me first, then for others on the team — the way bringing a notebook to a meeting used to be a default. For remote calls, the Teams transcript already exists. Either way, when the meeting ends, there's a transcript.</p>
 <p>We pipe the transcript through a skill that generates a structured report. Topics covered, points of interest, blockers, decisions made, and — this is the part that earned the tool its place — <strong>action items assigned to each person</strong>. With names. The kind of summary one of us used to spend forty-five minutes writing the next morning, except now it's done before we leave the room and nobody forgets the action they were handed.</p>
+<svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="meeting-report skill: a Teams .vtt transcript and an optional .csv attendance file go through four phases — identify participants, classify by domain, rewrite in clean French, extract decisions and actions — and produce a structured markdown report." class="diagram-svg">
+<g fill="none" stroke="currentColor" stroke-width="1.5">
+<rect x="30" y="70" width="95" height="80" rx="6"></rect>
+<line x1="125" y1="110" x2="135" y2="110"></line>
+<rect x="143" y="70" width="95" height="80" rx="6"></rect>
+<line x1="238" y1="110" x2="248" y2="110"></line>
+<rect x="256" y="70" width="95" height="80" rx="6"></rect>
+<line x1="351" y1="110" x2="361" y2="110"></line>
+<rect x="369" y="70" width="95" height="80" rx="6"></rect>
+<line x1="464" y1="110" x2="474" y2="110"></line>
+<rect x="482" y="70" width="95" height="80" rx="6"></rect>
+<line x1="577" y1="110" x2="587" y2="110"></line>
+<rect x="595" y="70" width="95" height="80" rx="6"></rect>
+</g>
+<g fill="currentColor" stroke="none">
+<polygon points="135,106 143,110 135,114"></polygon>
+<polygon points="248,106 256,110 248,114"></polygon>
+<polygon points="361,106 369,110 361,114"></polygon>
+<polygon points="474,106 482,110 474,114"></polygon>
+<polygon points="587,106 595,110 587,114"></polygon>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle">
+<text x="360" y="30" font-size="11" font-style="italic">Skill meeting-report</text>
+<text x="77.5" y="105">Teams .vtt</text>
+<text x="77.5" y="125" font-size="11" font-style="italic">+ .csv (opt)</text>
+<text x="190.5" y="105">Identify</text>
+<text x="190.5" y="125" font-size="11" font-style="italic">participants</text>
+<text x="303.5" y="105">Classify</text>
+<text x="303.5" y="125" font-size="11" font-style="italic">domain</text>
+<text x="416.5" y="105">Rewrite</text>
+<text x="416.5" y="125" font-size="11" font-style="italic">+ clean</text>
+<text x="529.5" y="105">Decisions</text>
+<text x="529.5" y="125" font-size="11" font-style="italic">+ Actions</text>
+<text x="642.5" y="105">Report</text>
+<text x="642.5" y="125" font-size="11" font-style="italic">.md</text>
+<text x="360" y="200" font-size="13" font-style="italic">From Teams transcript to structured markdown report.</text>
+</g>
+</svg>
 <p>Then the magic part. The same pipeline can take those action items and turn them into issues — assigned to the right people, in the right project, via the GitHub or GitLab CLI. The meeting ends. The issues are open. The owners are notified. The Tech Lead didn't have to do anything except attend.</p>
 <blockquote><p>"The 45-minute follow-up email I used to write at 11pm doesn't exist anymore. The work it described is already in the backlog before the meeting ends."</p></blockquote>
 <p>The same pipeline keeps the roadmaps current. Dailies, weeklies — the agent reads the summary, updates the project roadmaps I maintain, moves what shipped, surfaces what slipped, flags new dependencies. The roadmap stops being a document I dreaded updating on Friday afternoon and becomes a live artifact that reflects what was just discussed. <strong>Everyone — team, PO, stakeholders — sees the same thing, in sync, without anyone having to merge five versions on Monday morning.</strong></p>
@@ -210,8 +248,46 @@ const frenchContent: PostContent = {
 
 <h2>La réunion qui s'enregistre toute seule</h2>
 <p>Il y a presque deux mois, autre chose s'est installé. Les réunions ont commencé à s'enregistrer toutes seules.</p>
-<p>En présentiel, sur le téléphone — oui, un téléphone au milieu de la table, qui enregistre, transcrit en local. C'est devenu un réflexe pour certains, comme amener un cahier en réunion l'était avant. En distanciel, le transcript Teams existe déjà. Dans les deux cas, à la fin de la réunion, il y a un transcript.</p>
+<p>En présentiel, sur le téléphone — oui, un téléphone au milieu de la table, qui enregistre, transcrit en local. C'est devenu un réflexe — pour moi en premier, et puis pour d'autres dans l'équipe — comme amener un cahier en réunion l'était avant. En distanciel, le transcript Teams existe déjà. Dans les deux cas, à la fin de la réunion, il y a un transcript.</p>
 <p>On passe le transcript dans un skill qui génère un compte rendu structuré. Les sujets traités, les points d'intérêt, les blocages, les décisions prises et — c'est cette partie qui a vraiment imposé l'outil — <strong>les actions assignées à chaque personne</strong>. Avec les noms. Le genre de compte rendu qu'on passait quarante-cinq minutes à écrire le lendemain matin, sauf que là c'est fait avant qu'on ait quitté la pièce et personne n'oublie l'action qu'on lui a confiée.</p>
+<svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Skill meeting-report : un transcript Teams .vtt et un fichier .csv de présence optionnel passent par quatre phases — identifier les participants, classifier par domaine, réécrire en français propre, extraire les décisions et actions — et produisent un compte rendu markdown structuré." class="diagram-svg">
+<g fill="none" stroke="currentColor" stroke-width="1.5">
+<rect x="30" y="70" width="95" height="80" rx="6"></rect>
+<line x1="125" y1="110" x2="135" y2="110"></line>
+<rect x="143" y="70" width="95" height="80" rx="6"></rect>
+<line x1="238" y1="110" x2="248" y2="110"></line>
+<rect x="256" y="70" width="95" height="80" rx="6"></rect>
+<line x1="351" y1="110" x2="361" y2="110"></line>
+<rect x="369" y="70" width="95" height="80" rx="6"></rect>
+<line x1="464" y1="110" x2="474" y2="110"></line>
+<rect x="482" y="70" width="95" height="80" rx="6"></rect>
+<line x1="577" y1="110" x2="587" y2="110"></line>
+<rect x="595" y="70" width="95" height="80" rx="6"></rect>
+</g>
+<g fill="currentColor" stroke="none">
+<polygon points="135,106 143,110 135,114"></polygon>
+<polygon points="248,106 256,110 248,114"></polygon>
+<polygon points="361,106 369,110 361,114"></polygon>
+<polygon points="474,106 482,110 474,114"></polygon>
+<polygon points="587,106 595,110 587,114"></polygon>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle">
+<text x="360" y="30" font-size="11" font-style="italic">Skill meeting-report</text>
+<text x="77.5" y="105">Teams .vtt</text>
+<text x="77.5" y="125" font-size="11" font-style="italic">+ .csv (opt)</text>
+<text x="190.5" y="105">Identifier</text>
+<text x="190.5" y="125" font-size="11" font-style="italic">participants</text>
+<text x="303.5" y="105">Classifier</text>
+<text x="303.5" y="125" font-size="11" font-style="italic">domaine</text>
+<text x="416.5" y="105">Réécrire</text>
+<text x="416.5" y="125" font-size="11" font-style="italic">+ nettoyer</text>
+<text x="529.5" y="105">Décisions</text>
+<text x="529.5" y="125" font-size="11" font-style="italic">+ Actions</text>
+<text x="642.5" y="105">Compte-rendu</text>
+<text x="642.5" y="125" font-size="11" font-style="italic">.md</text>
+<text x="360" y="200" font-size="13" font-style="italic">Du transcript Teams au compte rendu markdown structuré.</text>
+</g>
+</svg>
 <p>Puis la partie magique. La même chaîne peut prendre ces actions et les transformer en issues — assignées aux bonnes personnes, dans le bon projet, via la CLI GitHub ou GitLab. La réunion se termine. Les issues sont ouvertes. Les responsables sont notifiés. Le Tech Lead n'a rien eu à faire à part assister.</p>
 <blockquote><p>"Le mail de relance de quarante-cinq minutes que j'écrivais à 23h n'existe plus. Le travail qu'il décrivait est déjà dans le backlog avant que la réunion ne se termine."</p></blockquote>
 <p>La même chaîne maintient les roadmaps à jour. Daily, weekly — l'agent lit le compte rendu, met à jour les roadmaps des projets que je maintiens, déplace ce qui a été livré, fait remonter ce qui a glissé, signale les nouvelles dépendances. La roadmap arrête d'être un document que je redoutais de mettre à jour le vendredi après-midi pour devenir un artefact vivant qui reflète ce qui vient d'être dit. <strong>Tout le monde — équipe, PO, parties prenantes — voit la même chose, synchronisé, sans que personne n'ait à fusionner cinq versions le lundi matin.</strong></p>
