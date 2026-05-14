@@ -61,10 +61,14 @@ export function processPostImages(html: string): string {
         // Clone the image and apply styles
         const imgClone = img.cloneNode(true) as HTMLImageElement
         imgClone.className = 'w-full h-auto object-contain rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow hover:scale-105'
-        
+
         // Add data attribute to identify images for click handling
         imgClone.setAttribute('data-gallery-image', 'true')
-        
+
+        // Defer off-screen image loading (CWV: LCP/payload)
+        if (!imgClone.getAttribute('loading')) imgClone.setAttribute('loading', 'lazy')
+        if (!imgClone.getAttribute('decoding')) imgClone.setAttribute('decoding', 'async')
+
         imageWrapper.appendChild(imgClone)
         gridContainer.appendChild(imageWrapper)
       }
@@ -100,6 +104,10 @@ export function processPostImages(html: string): string {
       // Apply styles directly to single images
       imgElement.className = 'w-full h-auto object-contain rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow hover:scale-105 block my-4'
       imgElement.setAttribute('data-gallery-image', 'true')
+
+      // Defer off-screen image loading (CWV: LCP/payload)
+      if (!imgElement.getAttribute('loading')) imgElement.setAttribute('loading', 'lazy')
+      if (!imgElement.getAttribute('decoding')) imgElement.setAttribute('decoding', 'async')
     }
   })
 
