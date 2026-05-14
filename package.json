@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/generate-og.mjs && node scripts/generate-rss.mjs && node scripts/generate-sitemap.mjs",
+    "build": "vite build && node scripts/optimize-images.mjs && node scripts/generate-og.mjs && node scripts/generate-rss.mjs && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "docker:build": "docker build -t wifsimster/wifsimster-blog .",
     "docker:run": "docker run -p 8080:80 wifsimster/wifsimster-blog",
@@ -30,12 +30,13 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.1.18",
     "@vitejs/plugin-vue": "^6.0.3",
+    "satori": "^0.12.2",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18",
     "vite": "^7.3.0",
-    "@resvg/resvg-js": "^2.6.2",
-    "satori": "^0.12.2",
     "vite-plugin-vue-devtools": "^8.0.5"
   },
   "engines": {
