@@ -23,8 +23,9 @@ const ROOT = join(__dirname, '..')
 const DIST = join(ROOT, 'dist')
 const POSTS_SRC = join(ROOT, 'src', 'posts')
 
-const SITE_URL = (process.env.SITE_URL || 'https://wifsimster.github.io').replace(/\/$/, '')
+const SITE_URL = (process.env.SITE_URL || 'https://blog.battistella.ovh').replace(/\/$/, '')
 const SITE_NAME = 'Wifsimster Blog'
+const AUTHOR_NAME = 'Wifsimster'
 const OG_WIDTH = 1200
 const OG_HEIGHT = 630
 
@@ -294,11 +295,14 @@ function escapeAttr(str) {
     .replace(/>/g, '&gt;')
 }
 
-function generateOgHtml(template, post, lang) {
+function generateOgHtml(template, post, lang, opts = {}) {
+  const { hasFr = true, hasEn = true } = opts
   const content = lang === 'en' ? post.en : post.fr
   const locale = lang === 'en' ? 'en_US' : 'fr_FR'
   const urlPrefix = lang === 'en' ? '/en' : ''
   const postUrl = `${SITE_URL}${urlPrefix}/posts/${post.slug}`
+  const frUrl = `${SITE_URL}/posts/${post.slug}`
+  const enUrl = `${SITE_URL}/en/posts/${post.slug}`
   const ogImageUrl = `${SITE_URL}/images/og/${post.slug}-${lang}.png`
 
   const ogTags = [
@@ -315,6 +319,46 @@ function generateOgHtml(template, post, lang) {
     `<meta name="twitter:description" content="${escapeAttr(content.description || '')}">`,
     `<meta name="twitter:image" content="${ogImageUrl}">`,
   ].join('\n    ')
+
+  // Canonical + hreflang alternates. FR is the primary locale (x-default).
+  const seoLinks = [
+    `<link rel="canonical" href="${escapeAttr(postUrl)}">`,
+    ...(hasFr ? [`<link rel="alternate" hreflang="fr" href="${escapeAttr(frUrl)}">`] : []),
+    ...(hasEn ? [`<link rel="alternate" hreflang="en" href="${escapeAttr(enUrl)}">`] : []),
+    ...(hasFr ? [`<link rel="alternate" hreflang="x-default" href="${escapeAttr(frUrl)}">`] : []),
+  ].join('\n    ')
+
+  // Article JSON-LD structured data
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: content.title,
+    description: content.description || '',
+    image: ogImageUrl,
+    url: postUrl,
+    datePublished: post.date || undefined,
+    dateModified: post.date || undefined,
+    inLanguage: lang === 'en' ? 'en' : 'fr',
+    keywords: (post.tags || []).join(', '),
+    author: {
+      '@type': 'Person',
+      name: AUTHOR_NAME,
+      url: SITE_URL
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl
+    }
+  }
+  // Strip undefined fields for clean output
+  const jsonLd = JSON.stringify(articleSchema, (_k, v) => v === undefined ? undefined : v)
+    .replace(/</g, '\\u003c')
+  const jsonLdScript = `<script type="application/ld+json">${jsonLd}</script>`
 
   let html = template
 
@@ -340,8 +384,98 @@ function generateOgHtml(template, post, lang) {
   // Set lang attribute
   html = html.replace(/<html lang="[^"]*">/, `<html lang="${lang}">`)
 
-  // Inject OG tags before </head>
-  html = html.replace('</head>', `    ${ogTags}\n  </head>`)
+  // Inject SEO links + OG tags + JSON-LD before </head>
+  html = html.replace(
+    '</head>',
+    `    ${seoLinks}\n    ${ogTags}\n    ${jsonLdScript}\n  </head>`
+  )
+
+  return html
+}
+
+// ─── Homepage HTML generation ──────────────────────────────────────
+
+const HOME_COPY = {
+  fr: {
+    title: 'Wifsimster Blog — DIY, domotique, électronique et rénovation',
+    description: 'Blog personnel de Wifsimster : projets DIY, domotique (ESP8266, Raspberry Pi, Jeedom), électronique et rénovation de maison.'
+  },
+  en: {
+    title: 'Wifsimster Blog — DIY, Home Automation, Electronics & Renovation',
+    description: 'Personal blog by Wifsimster: DIY projects, home automation (ESP8266, Raspberry Pi, Jeedom), electronics, and house renovation.'
+  }
+}
+
+function generateHomeHtml(template, lang) {
+  const copy = HOME_COPY[lang]
+  const locale = lang === 'en' ? 'en_US' : 'fr_FR'
+  const frUrl = `${SITE_URL}/`
+  const enUrl = `${SITE_URL}/en`
+  const homeUrl = lang === 'en' ? enUrl : frUrl
+  const ogImageUrl = `${SITE_URL}/images/og/default.png`
+
+  const ogTags = [
+    `<meta property="og:title" content="${escapeAttr(copy.title)}">`,
+    `<meta property="og:description" content="${escapeAttr(copy.description)}">`,
+    `<meta property="og:image" content="${ogImageUrl}">`,
+    `<meta property="og:image:width" content="${OG_WIDTH}">`,
+    `<meta property="og:image:height" content="${OG_HEIGHT}">`,
+    `<meta property="og:url" content="${homeUrl}">`,
+    `<meta property="og:type" content="website">`,
+    `<meta property="og:locale" content="${locale}">`,
+    `<meta name="twitter:card" content="summary_large_image">`,
+    `<meta name="twitter:title" content="${escapeAttr(copy.title)}">`,
+    `<meta name="twitter:description" content="${escapeAttr(copy.description)}">`,
+    `<meta name="twitter:image" content="${ogImageUrl}">`,
+  ].join('\n    ')
+
+  const seoLinks = [
+    `<link rel="canonical" href="${escapeAttr(homeUrl)}">`,
+    `<link rel="alternate" hreflang="fr" href="${escapeAttr(frUrl)}">`,
+    `<link rel="alternate" hreflang="en" href="${escapeAttr(enUrl)}">`,
+    `<link rel="alternate" hreflang="x-default" href="${escapeAttr(frUrl)}">`,
+  ].join('\n    ')
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: SITE_URL,
+    inLanguage: lang === 'en' ? 'en' : 'fr',
+    description: copy.description,
+    publisher: {
+      '@type': 'Person',
+      name: AUTHOR_NAME,
+      url: SITE_URL
+    }
+  }
+  const jsonLd = JSON.stringify(websiteSchema).replace(/</g, '\\u003c')
+  const jsonLdScript = `<script type="application/ld+json">${jsonLd}</script>`
+
+  let html = template
+
+  html = html.replace(
+    /<title>.*?<\/title>/,
+    `<title>${escapeAttr(copy.title)}</title>`
+  )
+  html = html.replace(
+    /<meta name="description" content="[^"]*">/,
+    `<meta name="description" content="${escapeAttr(copy.description)}">`
+  )
+
+  // Remove default OG/Twitter tags from template (we inject locale-specific ones)
+  html = html.replace(/\s*<meta property="og:type" content="[^"]*">/, '')
+  html = html.replace(/\s*<meta property="og:image" content="[^"]*">/, '')
+  html = html.replace(/\s*<meta property="og:image:width" content="[^"]*">/, '')
+  html = html.replace(/\s*<meta property="og:image:height" content="[^"]*">/, '')
+  html = html.replace(/\s*<meta name="twitter:card" content="[^"]*">/, '')
+
+  html = html.replace(/<html lang="[^"]*">/, `<html lang="${lang}">`)
+
+  html = html.replace(
+    '</head>',
+    `    ${seoLinks}\n    ${ogTags}\n    ${jsonLdScript}\n  </head>`
+  )
 
   return html
 }
@@ -470,11 +604,13 @@ async function main() {
   let htmlCount = 0
 
   for (const post of posts) {
+    const hasFr = !!post.fr.title
+    const hasEn = !!post.en.title
     for (const lang of ['fr', 'en']) {
       const content = lang === 'en' ? post.en : post.fr
       if (!content.title) continue
 
-      const html = generateOgHtml(template, post, lang)
+      const html = generateOgHtml(template, post, lang, { hasFr, hasEn })
 
       const urlPrefix = lang === 'en' ? 'en/posts' : 'posts'
       const outDir = join(DIST, urlPrefix, post.slug)
@@ -483,6 +619,17 @@ async function main() {
       htmlCount++
     }
   }
+
+  // 5b. Generate homepage HTML (FR overwrites dist/index.html, EN writes dist/en/index.html)
+  const frHomeHtml = generateHomeHtml(template, 'fr')
+  writeFileSync(join(DIST, 'index.html'), frHomeHtml)
+  htmlCount++
+
+  const enHomeHtml = generateHomeHtml(template, 'en')
+  const enHomeDir = join(DIST, 'en')
+  mkdirSync(enHomeDir, { recursive: true })
+  writeFileSync(join(enHomeDir, 'index.html'), enHomeHtml)
+  htmlCount++
 
   console.log(`  Generated ${htmlCount} HTML files`)
 

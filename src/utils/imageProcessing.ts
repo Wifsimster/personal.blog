@@ -1,7 +1,29 @@
 /**
+ * Wrap an <img> in a <picture> with an AVIF <source> sibling. The AVIF file is
+ * emitted at build time by scripts/optimize-images.mjs at the same path with a
+ * .avif extension. Browsers without AVIF support fall back to <img>.
+ *
+ * Returns the wrapping <picture> element. The original <img> remains the gallery
+ * target — click handlers in PostContent.vue still attach to <img>.
+ */
+function wrapInPicture(img: HTMLImageElement): HTMLPictureElement {
+  const picture = document.createElement('picture')
+  const src = img.getAttribute('src') || ''
+  const avifSrc = src.replace(/\.(jpe?g|png)(\?.*)?$/i, '.avif$2')
+  if (avifSrc !== src) {
+    const source = document.createElement('source')
+    source.setAttribute('type', 'image/avif')
+    source.setAttribute('srcset', avifSrc)
+    picture.appendChild(source)
+  }
+  picture.appendChild(img)
+  return picture
+}
+
+/**
  * Processes HTML content to wrap consecutive images in responsive Tailwind CSS grid containers.
  * Images are grouped into rows: 2 columns on mobile, 3 columns on desktop.
- * 
+ *
  * @param html - The HTML string to process
  * @returns Processed HTML with images wrapped in grid containers
  */
@@ -61,11 +83,17 @@ export function processPostImages(html: string): string {
         // Clone the image and apply styles
         const imgClone = img.cloneNode(true) as HTMLImageElement
         imgClone.className = 'w-full h-auto object-contain rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow hover:scale-105'
-        
+
         // Add data attribute to identify images for click handling
         imgClone.setAttribute('data-gallery-image', 'true')
-        
-        imageWrapper.appendChild(imgClone)
+
+        // Defer off-screen image loading (CWV: LCP/payload)
+        if (!imgClone.getAttribute('loading')) imgClone.setAttribute('loading', 'lazy')
+        if (!imgClone.getAttribute('decoding')) imgClone.setAttribute('decoding', 'async')
+
+        // Serve AVIF when the browser supports it; <img> stays as the fallback
+        // and the gallery click target.
+        imageWrapper.appendChild(wrapInPicture(imgClone))
         gridContainer.appendChild(imageWrapper)
       }
     })
@@ -95,11 +123,27 @@ export function processPostImages(html: string): string {
   remainingImages.forEach((img) => {
     const imgElement = img as HTMLImageElement
     const parent = imgElement.parentElement
-    
+
     if (parent && parent.tagName === 'P') {
       // Apply styles directly to single images
       imgElement.className = 'w-full h-auto object-contain rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow hover:scale-105 block my-4'
       imgElement.setAttribute('data-gallery-image', 'true')
+
+      // Defer off-screen image loading (CWV: LCP/payload)
+      if (!imgElement.getAttribute('loading')) imgElement.setAttribute('loading', 'lazy')
+      if (!imgElement.getAttribute('decoding')) imgElement.setAttribute('decoding', 'async')
+
+      // Replace the <img> in place with <picture><source AVIF><img></picture>.
+      // wrapInPicture appends the img to picture (which detaches it from parent),
+      // so capture the original sibling first and re-insert the picture there.
+      const next = imgElement.nextSibling
+      imgElement.remove()
+      const picture = wrapInPicture(imgElement)
+      if (next && next.parentNode === parent) {
+        parent.insertBefore(picture, next)
+      } else {
+        parent.appendChild(picture)
+      }
     }
   })
 

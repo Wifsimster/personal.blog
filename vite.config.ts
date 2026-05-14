@@ -4,10 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import { fileURLToPath, URL } from 'node:url'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     vue(),
-    VueDevTools(),
+    ...(mode === 'development' ? [VueDevTools()] : []),
     tailwindcss()
   ],
   resolve: {
@@ -20,4 +20,4 @@ export default defineConfig({
     assetsDir: 'assets'
   },
   publicDir: 'public'
-})
+}))
