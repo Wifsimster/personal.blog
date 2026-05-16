@@ -29,6 +29,7 @@ import CoderIsDeadEngineerIsBorn, { metadata as coderIsDeadMetadata, getContent 
 import AiMarketSegmentation, { metadata as aiMarketSegmentationMetadata, getContent as getAiMarketSegmentationContent } from './AiMarketSegmentation.vue'
 import LanIsDead, { metadata as lanIsDeadMetadata, getContent as getLanIsDeadContent } from './LanIsDead.vue'
 import AiTeamReflex, { metadata as aiTeamReflexMetadata, getContent as getAiTeamReflexContent } from './AiTeamReflex.vue'
+import DoraAiRoiReport, { metadata as doraAiRoiReportMetadata, getContent as getDoraAiRoiReportContent } from './DoraAiRoiReport.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -186,6 +187,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: aiTeamReflexMetadata,
     getContent: getAiTeamReflexContent,
     component: AiTeamReflex
+  },
+  'dora-ai-roi-report': {
+    metadata: doraAiRoiReportMetadata,
+    getContent: getDoraAiRoiReportContent,
+    component: DoraAiRoiReport
   }
 }
 
