@@ -44,7 +44,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-          cache: "npm"
 
       - name: Configure Git
         run: |
@@ -83,9 +82,9 @@ jobs:
           echo "## What's Changed" > CHANGELOG_TEMP.md
           echo "" >> CHANGELOG_TEMP.md
           if [ -z "$PREVIOUS_TAG" ]; then
-            git log --pretty=format:"- %s (%h)" >> CHANGELOG_TEMP.md
+            git log --pretty=format:"- %s (%h)" --no-merges --invert-grep --grep="^chore: bump version" >> CHANGELOG_TEMP.md
           else
-            git log ${PREVIOUS_TAG}..HEAD --pretty=format:"- %s (%h)" --no-merges >> CHANGELOG_TEMP.md
+            git log ${PREVIOUS_TAG}..HEAD --pretty=format:"- %s (%h)" --no-merges --invert-grep --grep="^chore: bump version" >> CHANGELOG_TEMP.md
           fi
           echo "" >> CHANGELOG_TEMP.md
           cat CHANGELOG_TEMP.md
@@ -114,6 +113,7 @@ jobs:
           echo "major=$MAJOR" >> $GITHUB_OUTPUT
           echo "minor=$MINOR" >> $GITHUB_OUTPUT
           echo "full=$VERSION" >> $GITHUB_OUTPUT
+          echo "build_date=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_OUTPUT
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -127,7 +127,7 @@ jobs:
             wifsimster/wifsimster-blog:${{ steps.version_parts.outputs.major }}
           build-args: |
             VERSION=${{ steps.version.outputs.new_version }}
-            BUILD_DATE=${{ github.event.repository.updated_at }}
+            BUILD_DATE=${{ steps.version_parts.outputs.build_date }}
             VCS_REF=${{ github.sha }}
             VITE_STATS_URL=https://stats.battistella.ovh/count
           cache-from: type=gha
@@ -158,5 +158,8 @@ jobs:
     runs-on: self-hosted
     needs: release
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Deploy
-        run: /home/deploy/deploy-personal-blog.sh
+        run: ./deploy/deploy.sh
