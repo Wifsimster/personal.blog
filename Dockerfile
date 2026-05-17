@@ -29,13 +29,19 @@ RUN npm run build
 # Production stage
 FROM nginx:alpine
 
+# Re-declare the global build args so they're visible to LABEL in this stage.
+# ARGs declared before the first FROM are only in scope for FROM lines.
+ARG VERSION=0.0.0
+ARG BUILD_DATE
+ARG VCS_REF
+
 # OCI metadata labels
 LABEL org.opencontainers.image.title="wifsimster-blog" \
       org.opencontainers.image.description="Blog personnel - DIY, domotique et projets électroniques" \
       org.opencontainers.image.version="${VERSION}" \
       org.opencontainers.image.created="${BUILD_DATE}" \
       org.opencontainers.image.revision="${VCS_REF}" \
-      org.opencontainers.image.source="https://github.com/Wifsimster/wifsimster.github.io"
+      org.opencontainers.image.source="https://github.com/wifsimster/personal.blog"
 
 # Copy built assets
 COPY --from=build /app/dist /usr/share/nginx/html
