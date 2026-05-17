@@ -30,6 +30,7 @@ import AiMarketSegmentation, { metadata as aiMarketSegmentationMetadata, getCont
 import LanIsDead, { metadata as lanIsDeadMetadata, getContent as getLanIsDeadContent } from './LanIsDead.vue'
 import AiTeamReflex, { metadata as aiTeamReflexMetadata, getContent as getAiTeamReflexContent } from './AiTeamReflex.vue'
 import DoraAiRoiReport, { metadata as doraAiRoiReportMetadata, getContent as getDoraAiRoiReportContent } from './DoraAiRoiReport.vue'
+import ProxmoxNvmeMigration, { metadata as proxmoxNvmeMigrationMetadata, getContent as getProxmoxNvmeMigrationContent } from './ProxmoxNvmeMigration.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -192,6 +193,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: doraAiRoiReportMetadata,
     getContent: getDoraAiRoiReportContent,
     component: DoraAiRoiReport
+  },
+  'proxmox-nvme-migration': {
+    metadata: proxmoxNvmeMigrationMetadata,
+    getContent: getProxmoxNvmeMigrationContent,
+    component: ProxmoxNvmeMigration
   }
 }
 
