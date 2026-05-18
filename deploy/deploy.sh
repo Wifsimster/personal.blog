@@ -12,7 +12,8 @@ set -euo pipefail
 
 COMPOSE_DIR="${BLOG_COMPOSE_DIR:-/opt/docker/personal-blog}"
 HEALTH_URL="${BLOG_HEALTH_URL:-https://blog.battistella.ovh/}"
-CONTAINER="wifsimster-blog"
+CONTAINER="personal-blog"
+SERVICE="personal-blog"
 IMAGE="wifsimster/wifsimster-blog:latest"
 
 cd "$COMPOSE_DIR"
@@ -21,10 +22,10 @@ cd "$COMPOSE_DIR"
 PREVIOUS_IMAGE="$(docker inspect --format '{{.Image}}' "$CONTAINER" 2>/dev/null || true)"
 
 echo "Pulling latest image..."
-docker compose pull blog
+docker compose pull "$SERVICE"
 
 echo "Restarting service..."
-docker compose up -d blog
+docker compose up -d "$SERVICE"
 
 # Poll the live site instead of trusting `up -d`, which returns as soon as the
 # container *starts* — not when it actually serves content.
@@ -49,7 +50,7 @@ else
   if [ -n "$PREVIOUS_IMAGE" ]; then
     echo "Rolling back to previous image (${PREVIOUS_IMAGE})..." >&2
     docker tag "$PREVIOUS_IMAGE" "$IMAGE"
-    docker compose up -d blog
+    docker compose up -d "$SERVICE"
     echo "Rollback complete. Investigate the failed release before retrying." >&2
   else
     echo "No previous image recorded; manual intervention required." >&2
