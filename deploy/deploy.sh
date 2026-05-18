@@ -7,10 +7,10 @@ set -euo pipefail
 # container, verifies the live site responds, and rolls back on failure.
 #
 # Overridable via environment:
-#   BLOG_COMPOSE_DIR  directory holding compose.yml      (default /opt/blog)
+#   BLOG_COMPOSE_DIR  directory holding compose.yml      (default /opt/docker/personal-blog)
 #   BLOG_HEALTH_URL   URL probed to confirm the deploy   (default public site)
 
-COMPOSE_DIR="${BLOG_COMPOSE_DIR:-/opt/blog}"
+COMPOSE_DIR="${BLOG_COMPOSE_DIR:-/opt/docker/personal-blog}"
 HEALTH_URL="${BLOG_HEALTH_URL:-https://blog.battistella.ovh/}"
 CONTAINER="wifsimster-blog"
 IMAGE="wifsimster/wifsimster-blog:latest"
