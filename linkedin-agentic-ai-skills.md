@@ -18,7 +18,7 @@ Soyons honnêtes : la checklist de frameworks n'aurait pas dû être le critère
 
 Pas parce que la stack ne compte pas. Mais parce qu'elle ne se filtre pas — elle se vérifie en entretien.
 
-La fiche de poste est piégée en amont : l'ATS (le logiciel qui pré-filtre les CV des candidats) exige des mots-clés en clair, la grille SYNTEC standardise les libellés, l'anonymisation CV interdit les critères subjectifs, et le hiring manager dicte les frameworks pour pattern-matcher avec ses pairs.
+La fiche de poste est piégée en amont : ATS (filtre automatique des CV) qui exige des mots-clés en clair, grille SYNTEC qui standardise les libellés, anonymisation CV qui interdit les critères subjectifs, hiring manager qui dicte les frameworks pour pattern-matcher avec ses pairs.
 
 La JD est une vitrine bureaucratique. Le magasin est ailleurs.
 
@@ -36,7 +36,7 @@ Ces compétences apparaissent en décoration dans la plupart des annonces. Jamai
 
 —
 
-Je ne dis pas qu'un junior curieux remplace un senior. Je dis que ce qui fait le senior, ce n'est plus la stack — c'est le jugement sur la stack.
+Je ne dis pas qu'un junior curieux remplace un senior. Je dis que ce qui fait le senior, ce n'est plus la stack — c'est ce qu'on en fait.
 
 Aux entreprises, aux DRH, aux recruteurs : je ne demande pas de retirer React de la fiche de poste. Je demande d'ajouter une 9ème ligne.
 
