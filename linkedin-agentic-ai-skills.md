@@ -63,14 +63,28 @@ Aux entreprises : si votre fiche de poste pourrait être copiée-collée depuis 
 
 ---
 
-Pendant que vous cherchez votre « Lead React 4-5 ans à 65k », des équipes de 3 personnes avec des agents IA livrent en une semaine ce que vos sprints produiront en un trimestre.
+**Aux entreprises, aux DRH, aux recruteurs : il est temps de réagir.**
 
-Ce n'est pas un écart de productivité. C'est un écart d'extinction.
+Cherchez les bonnes compétences. Celles de 2026, pas celles de 2020.
 
-**Réveillez-vous.**
+- 🔍 **La curiosité.** Celle qui pousse à explorer un nouvel outil le lundi et à le mettre en prod le vendredi. Dans un métier où la stack change tous les 18 mois, c'est la seule constante.
+- 🔄 **L'adaptabilité.** Le framework que vous recrutez aujourd'hui sera secondaire dans deux ans. Le profil capable de pivoter, lui, restera.
+- 💬 **La communication.** Traduire un besoin métier flou en contexte exploitable — par un humain comme par un agent. C'est tout le métier maintenant.
+- ⚖️ **L'esprit critique.** Savoir quand l'IA se trompe, quand l'architecture dérape, quand le code livré ne répond pas au vrai problème.
+- 📚 **La capacité d'apprentissage.** La seule compétence durable dans un monde où tout le reste se commoditise tous les six mois.
+
+**Les soft skills et la curiosité n'ont jamais été aussi importantes. Jamais.**
+
+Parce que dans un monde où les agents IA écrivent le code, ce qui reste à un humain, c'est tout ce qui *n'est pas* le code : comprendre, décider, douter, apprendre, transmettre.
+
+Arrêtez de chercher des experts React avec 4-5 ans d'expérience.
+
+Cherchez des gens **curieux, lucides, et capables d'apprendre n'importe quoi en deux semaines**.
+
+Le futur du recrutement tech, c'est ça. Et c'est maintenant.
 
 ---
 
-*P.S. — À Maïssane : rien de personnel. Tu fais ton métier avec la brief que ton client t'a donnée. C'est le brief qui est cassé, pas toi.*
+*P.S. — À Maïssane : rien de personnel. Tu fais ton métier avec le brief que ton client t'a donné. C'est le brief qui est cassé, pas toi.*
 
-#IA #AgenticAI #Recrutement #Tech #SoftwareEngineering #ContextEngineering
+#IA #AgenticAI #Recrutement #Tech #SoftSkills #SoftwareEngineering #ContextEngineering
