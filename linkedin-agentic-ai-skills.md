@@ -18,7 +18,7 @@ Soyons honnêtes : la checklist de frameworks n'aurait pas dû être le critère
 
 Pas parce que la stack ne compte pas. Mais parce qu'elle ne se filtre pas — elle se vérifie en entretien.
 
-La fiche de poste est piégée en amont : ATS qui exige des mots-clés en clair, grille SYNTEC qui standardise les libellés, anonymisation CV qui interdit les critères subjectifs, hiring manager qui dicte les frameworks pour pattern-matcher avec ses pairs.
+La fiche de poste est piégée en amont : l'ATS (le logiciel qui pré-filtre les CV des candidats) exige des mots-clés en clair, la grille SYNTEC standardise les libellés, l'anonymisation CV interdit les critères subjectifs, et le hiring manager dicte les frameworks pour pattern-matcher avec ses pairs.
 
 La JD est une vitrine bureaucratique. Le magasin est ailleurs.
 
@@ -43,5 +43,3 @@ Aux entreprises, aux DRH, aux recruteurs : je ne demande pas de retirer React de
 « Racontez-nous un système que vous avez possédé de bout en bout. L'incident qui vous a appris quelque chose. Et la fois où vous avez dit non au produit. »
 
 Trois questions. Zéro framework. Tout le signal.
-
-#IA #AgenticAI #Recrutement #ContextEngineering #SoftwareEngineering
