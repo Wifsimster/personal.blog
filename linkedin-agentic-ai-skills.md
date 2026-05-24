@@ -41,7 +41,7 @@ Ce qui fait la différence entre un dev qui produit de la valeur et un dev qui p
 
 Ce qu'il faudrait vraiment chercher :
 
-🧠 **Expertise métier.** Comprendre pourquoi un parcours patient à l'hôpital a sept états et pas trois. Comprendre les règles de gestion patrimoniale d'une fintech. C'est ça qui donne à l'agent le bon contexte pour produire le bon code.
+🧠 **Expertise métier.** Comprendre pourquoi un workflow a sept états et pas trois. Connaître les règles de gestion qu'aucune spécification ne capture entièrement. Savoir ce que l'utilisateur fait *vraiment* avec votre produit, et pas ce que la roadmap suppose qu'il fait. C'est ça qui donne à l'agent le bon contexte pour produire le bon code.
 
 🏛️ **Pensée architecturale.** Savoir structurer des systèmes qui restent maintenables, testables, évolutifs. L'agent sait écrire le code. Quelqu'un doit savoir où le mettre.
 
