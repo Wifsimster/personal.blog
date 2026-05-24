@@ -20,7 +20,7 @@ Pas parce que la stack ne compte pas. Mais parce qu'elle ne se filtre pas — el
 
 La fiche de poste est piégée en amont : ATS (filtre automatique des CV) qui exige des mots-clés en clair, grille SYNTEC qui standardise les libellés, anonymisation CV qui interdit les critères subjectifs, hiring manager qui dicte les frameworks pour pattern-matcher avec ses pairs.
 
-La JD est une vitrine bureaucratique. Le magasin est ailleurs.
+L'annonce est une vitrine bureaucratique. Le magasin est ailleurs.
 
 —
 
