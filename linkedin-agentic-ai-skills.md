@@ -21,7 +21,7 @@ Et c'est exactement le problème.
 
 À l'ère des agents IA qui produisent du code de qualité production dans n'importe quel langage en quelques minutes, on cherche encore des « experts React avec 4-5 ans d'expérience ».
 
-C'est comme recruter un pilote automobile sur sa connaissance des chevaux.
+C'est comme recruter un comptable sur sa vitesse au boulier.
 
 L'agent ne demande pas si vous avez 5 ans de React ou 5 mois. Il écrit du React. Il écrit du Vue. Il écrit du Svelte. Il écrit du TypeScript, du Node, du GraphQL. Il écrit ce dont vous avez besoin, souvent mieux que le « senior » que vous essayez de débaucher, parce qu'il a vu plus de codebases qu'aucun humain n'en verra jamais.
 
