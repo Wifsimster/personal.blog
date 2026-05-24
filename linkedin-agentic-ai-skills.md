@@ -10,7 +10,7 @@ Cette annonce aurait pu être écrite en 2020. Mot pour mot.
 
 À l'ère des agents IA qui produisent du React idiomatique en quelques minutes, on cherche encore des « experts React 4-5 ans ».
 
-Le code est devenu abondant. Comme la traduction littéraire après DeepL — suffisant pour 80% des cas, encore dangereux sur les 20% qui comptent : incidents prod, refactors cross-cutting, audits sécu, invariants implicites d'un monolithe de 12 ans, edge cases réglementaires en santé/banque.
+Le code est devenu abondant. Suffisant pour 80% des cas. Encore dangereux sur les 20% qui comptent : incidents prod, refactors cross-cutting, audits sécu, invariants implicites d'un monolithe de 12 ans, edge cases réglementaires en santé/banque.
 
 L'agent écrit le code. Il ne *possède* pas le système.
 
