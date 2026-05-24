@@ -25,6 +25,10 @@ C'est comme recruter un comptable sur sa vitesse au boulier.
 
 L'agent ne demande pas si vous avez 5 ans de React ou 5 mois. Il écrit du React. Il écrit du Vue. Il écrit du Svelte. Il écrit du TypeScript, du Node, du GraphQL. Il écrit ce dont vous avez besoin, souvent mieux que le « senior » que vous essayez de débaucher, parce qu'il a vu plus de codebases qu'aucun humain n'en verra jamais.
 
+**Le code est maintenant une commodité.**
+
+Comme l'électricité. Comme la bande passante. Comme le stockage cloud. Quelque chose qui se produit en quantité illimitée, à un coût qui tend vers zéro, et dont l'avantage concurrentiel ne vient plus de la capacité à le produire — mais de ce qu'on choisit d'en faire.
+
 ---
 
 Mais voilà la vraie vérité — celle qui dérange :
