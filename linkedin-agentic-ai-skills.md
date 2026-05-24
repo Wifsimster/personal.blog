@@ -49,6 +49,14 @@ Ce qu'il faudrait vraiment chercher :
 
 ⚖️ **Jugement.** Savoir quand l'agent se trompe. Savoir quand l'architecture ne tient pas. Savoir quand expédier et quand s'arrêter.
 
+🔍 **Curiosité.** Celle qui pousse à explorer un nouvel outil le lundi et à le mettre en prod le vendredi. Dans un métier où la stack change tous les 18 mois, c'est la seule constante.
+
+🔄 **Adaptabilité.** Le framework que vous recrutez aujourd'hui sera secondaire dans deux ans. Le profil capable de pivoter, lui, restera.
+
+💬 **Communication.** Traduire un besoin métier flou en contexte exploitable — par un humain comme par un agent. C'est tout le métier maintenant.
+
+📚 **Capacité d'apprentissage.** La seule compétence durable dans un monde où tout le reste se commoditise tous les six mois.
+
 Aucune de ces compétences n'apparaît dans une annonce de poste française.
 
 ---
@@ -66,12 +74,6 @@ Aux entreprises : si votre fiche de poste pourrait être copiée-collée depuis 
 **Aux entreprises, aux DRH, aux recruteurs : il est temps de réagir.**
 
 Cherchez les bonnes compétences. Celles de 2026, pas celles de 2020.
-
-- 🔍 **La curiosité.** Celle qui pousse à explorer un nouvel outil le lundi et à le mettre en prod le vendredi. Dans un métier où la stack change tous les 18 mois, c'est la seule constante.
-- 🔄 **L'adaptabilité.** Le framework que vous recrutez aujourd'hui sera secondaire dans deux ans. Le profil capable de pivoter, lui, restera.
-- 💬 **La communication.** Traduire un besoin métier flou en contexte exploitable — par un humain comme par un agent. C'est tout le métier maintenant.
-- ⚖️ **L'esprit critique.** Savoir quand l'IA se trompe, quand l'architecture dérape, quand le code livré ne répond pas au vrai problème.
-- 📚 **La capacité d'apprentissage.** La seule compétence durable dans un monde où tout le reste se commoditise tous les six mois.
 
 **Les soft skills et la curiosité n'ont jamais été aussi importantes. Jamais.**
 
