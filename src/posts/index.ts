@@ -31,6 +31,7 @@ import LanIsDead, { metadata as lanIsDeadMetadata, getContent as getLanIsDeadCon
 import AiTeamReflex, { metadata as aiTeamReflexMetadata, getContent as getAiTeamReflexContent } from './AiTeamReflex.vue'
 import DoraAiRoiReport, { metadata as doraAiRoiReportMetadata, getContent as getDoraAiRoiReportContent } from './DoraAiRoiReport.vue'
 import ProxmoxNvmeMigration, { metadata as proxmoxNvmeMigrationMetadata, getContent as getProxmoxNvmeMigrationContent } from './ProxmoxNvmeMigration.vue'
+import ForfaitJoursSalariesDares, { metadata as forfaitJoursMetadata, getContent as getForfaitJoursContent } from './ForfaitJoursSalariesDares.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -198,6 +199,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: proxmoxNvmeMigrationMetadata,
     getContent: getProxmoxNvmeMigrationContent,
     component: ProxmoxNvmeMigration
+  },
+  'forfait-jours-salaries-france-2024': {
+    metadata: forfaitJoursMetadata,
+    getContent: getForfaitJoursContent,
+    component: ForfaitJoursSalariesDares
   }
 }
 
