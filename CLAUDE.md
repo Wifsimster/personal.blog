@@ -36,8 +36,8 @@ Any new article must match it. The voice rules:
 - **Honest section.** Most posts have a "What still belongs to humans" / "Ce qui reste aux humains" beat — the explicit list of what the post does *not* solve. Include one when it fits.
 - **TL;DR at the top, `<hr>`, then the article.** Blockquotes for punchy single-sentence claims. Inline `<svg class="diagram-svg">` for diagrams.
 - **Diagrams must be editorial-grade — not Excel.** No two-bare-rectangles-and-a-dashed-line. Required elements when you draw something:
-  - **Theme-safe palette via `currentColor`** with opacity layers (`stop-opacity="0.07-0.85"`), not hard-coded hex. The diagram must invert cleanly under dark mode.
-  - **Soft `<linearGradient>` fills**, declared in `<defs>` with a unique id per diagram. Outlined rectangles are not enough on their own.
+  - **Theme-safe palette via `currentColor` + `fill-opacity` directly on shapes** (e.g. `fill="currentColor" fill-opacity="0.15"`), not hard-coded hex. The diagram must invert cleanly under dark mode.
+  - **No `<linearGradient>` with `stop-color="currentColor"`.** Chromium and most mobile browsers don't propagate `currentColor` into `<stop>` elements — the gradient collapses to transparent and the bars vanish. Verified the hard way on the DARES post. Use solid fills with `fill-opacity` and, if you want subtle definition, add a 1 px stroke at low opacity (`stroke="currentColor" stroke-opacity="0.22"`). If you must use a gradient, use explicit hex stops per theme via a CSS variable.
   - **Rounded geometry** — `rx="6"` or `rx="8"` on bars/boxes, `stroke-linecap="round"`, `stroke-linejoin="round"` on paths.
   - **Typographic hierarchy** — at least three levels: a tiny letter-spaced uppercase eyebrow caption, the headline value in 22-28 px / weight 600-700, and a muted small (10-11 px) suffix or annotation. Use `opacity` for tonality, not multiple colors.
   - **Data-storytelling, not data-display.** When comparing two values, show the **shared baseline + the delta** as a stacked bar with a bracket callout — not two independent bars side by side. The reader's eye should land on the delta.
