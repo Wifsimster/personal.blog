@@ -31,22 +31,30 @@ const frenchContent: PostContent = {
 <h2>Le chiffre qui pique : 208 heures de plus par an</h2>
 <p>C'est, pour moi, la donnée centrale de la note.</p>
 <p>En 2024, un salarié au forfait jours travaille en moyenne <strong>1 821 heures par an</strong>, contre <strong>1 613 heures</strong> pour un salarié à temps complet décompté en heures. L'écart : <strong>208 heures</strong>.</p>
-<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparaison des heures travaillées annuellement : 1 613 heures pour un salarié à temps complet décompté en heures, 1 821 heures pour un salarié au forfait en jours, soit 208 heures de plus." class="diagram-svg">
-<g fill="none" stroke="currentColor" stroke-width="1.5">
-<line x1="60" y1="200" x2="700" y2="200"></line>
-<rect x="120" y="100" width="200" height="100"></rect>
-<rect x="400" y="60" width="200" height="140"></rect>
-</g>
-<g fill="currentColor" stroke="none">
-<line x1="320" y1="60" x2="400" y2="60" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"></line>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle">
-<text x="220" y="92" font-size="13" font-weight="600">1 613 h / an</text>
-<text x="220" y="222" font-size="12">Temps complet, heures</text>
-<text x="500" y="52" font-size="13" font-weight="600">1 821 h / an</text>
-<text x="500" y="222" font-size="12">Forfait en jours</text>
-<text x="360" y="55" font-size="12" font-style="italic">+208 h ≈ 5,5 semaines</text>
-</g>
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heures travaillées en moyenne par an en 2024 : un salarié à temps complet décompté en heures travaille 1 613 heures ; un salarié au forfait en jours travaille 1 821 heures, soit 208 heures de plus, l'équivalent d'environ 5,5 semaines." class="diagram-svg">
+<defs>
+<linearGradient id="dares-fr-base" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="currentColor" stop-opacity="0.16"/>
+<stop offset="1" stop-color="currentColor" stop-opacity="0.07"/>
+</linearGradient>
+<linearGradient id="dares-fr-delta" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="currentColor" stop-opacity="0.85"/>
+<stop offset="1" stop-color="currentColor" stop-opacity="0.55"/>
+</linearGradient>
+</defs>
+<text x="40" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" opacity="0.5" letter-spacing="0.12em">HEURES TRAVAILLÉES PAR AN · 2024</text>
+<text x="40" y="78" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.7">Temps complet · décompte horaire</text>
+<rect x="40" y="90" width="460" height="46" rx="8" fill="url(#dares-fr-base)"/>
+<text x="520" y="121" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="600">1 613</text>
+<text x="610" y="121" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" opacity="0.5" letter-spacing="0.04em">h / an</text>
+<text x="40" y="180" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Forfait en jours</text>
+<rect x="40" y="192" width="460" height="46" rx="8" fill="url(#dares-fr-base)"/>
+<rect x="503" y="192" width="59" height="46" rx="8" fill="url(#dares-fr-delta)"/>
+<text x="582" y="223" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="700">1 821</text>
+<text x="672" y="223" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" opacity="0.5" letter-spacing="0.04em">h / an</text>
+<path d="M 503 246 L 503 254 L 562 254 L 562 246" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+<text x="532" y="273" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">+208 h</text>
+<text x="532" y="289" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-style="italic" opacity="0.55">≈ 5,5 semaines de plus</text>
 </svg>
 <p>208 heures, c'est l'équivalent de <strong>cinq semaines et demie</strong> de travail supplémentaires sur une année — ou, si on préfère, environ <strong>52 minutes de plus par jour ouvré</strong>. Ce n'est pas un effet de bord, c'est la nature même du forfait : on troque le décompte horaire contre une charge de travail évaluée en jours, et la moyenne dérive vers le haut.</p>
 <p>À noter que la DARES parle bien d'une <em>moyenne</em>. Une partie des cadres au forfait dépasse largement ce chiffre, une autre est en deçà. Mais la tendance centrale est nette : passer au forfait jours, c'est, statistiquement, allonger sa semaine.</p>
@@ -106,22 +114,30 @@ const englishContent: PostContent = {
 <h2>The number that stings: 208 extra hours a year</h2>
 <p>This is, for me, the central figure of the note.</p>
 <p>In 2024, a day-count employee works on average <strong>1,821 hours a year</strong>, versus <strong>1,613 hours</strong> for an hour-counted full-time employee. The gap: <strong>208 hours</strong>.</p>
-<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of annual hours worked: 1,613 hours for an hour-counted full-time employee, 1,821 hours for a day-count employee — 208 hours more." class="diagram-svg">
-<g fill="none" stroke="currentColor" stroke-width="1.5">
-<line x1="60" y1="200" x2="700" y2="200"></line>
-<rect x="120" y="100" width="200" height="100"></rect>
-<rect x="400" y="60" width="200" height="140"></rect>
-</g>
-<g fill="currentColor" stroke="none">
-<line x1="320" y1="60" x2="400" y2="60" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"></line>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" text-anchor="middle">
-<text x="220" y="92" font-size="13" font-weight="600">1,613 h / year</text>
-<text x="220" y="222" font-size="12">Full-time, hour-counted</text>
-<text x="500" y="52" font-size="13" font-weight="600">1,821 h / year</text>
-<text x="500" y="222" font-size="12">Day-count (forfait jours)</text>
-<text x="360" y="55" font-size="12" font-style="italic">+208 h ≈ 5.5 weeks</text>
-</g>
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Average hours worked per year in 2024: an hour-counted full-time employee works 1,613 hours; a day-count employee works 1,821 hours — 208 hours more, about 5.5 extra weeks." class="diagram-svg">
+<defs>
+<linearGradient id="dares-en-base" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="currentColor" stop-opacity="0.16"/>
+<stop offset="1" stop-color="currentColor" stop-opacity="0.07"/>
+</linearGradient>
+<linearGradient id="dares-en-delta" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="currentColor" stop-opacity="0.85"/>
+<stop offset="1" stop-color="currentColor" stop-opacity="0.55"/>
+</linearGradient>
+</defs>
+<text x="40" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="500" opacity="0.5" letter-spacing="0.12em">HOURS WORKED PER YEAR · 2024</text>
+<text x="40" y="78" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.7">Full-time · hour-counted</text>
+<rect x="40" y="90" width="460" height="46" rx="8" fill="url(#dares-en-base)"/>
+<text x="520" y="121" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="600">1,613</text>
+<text x="610" y="121" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" opacity="0.5" letter-spacing="0.04em">h / year</text>
+<text x="40" y="180" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Day-count (forfait jours)</text>
+<rect x="40" y="192" width="460" height="46" rx="8" fill="url(#dares-en-base)"/>
+<rect x="503" y="192" width="59" height="46" rx="8" fill="url(#dares-en-delta)"/>
+<text x="582" y="223" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="24" font-weight="700">1,821</text>
+<text x="672" y="223" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" opacity="0.5" letter-spacing="0.04em">h / year</text>
+<path d="M 503 246 L 503 254 L 562 254 L 562 246" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+<text x="532" y="273" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">+208 h</text>
+<text x="532" y="289" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" font-style="italic" opacity="0.55">≈ 5.5 extra weeks</text>
 </svg>
 <p>208 hours is the equivalent of <strong>five and a half extra weeks</strong> of work a year — or, if you prefer, about <strong>52 more minutes per working day</strong>. This isn't a side-effect, it's the nature of the scheme: you trade hour-counting for a workload measured in days, and the average drifts upward.</p>
 <p>Worth noting: DARES is talking about an <em>average</em>. Some day-count managers blow well past that figure, others sit below it. But the central tendency is clear: moving to the day-count, statistically, lengthens your week.</p>

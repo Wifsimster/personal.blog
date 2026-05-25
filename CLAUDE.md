@@ -34,7 +34,15 @@ Any new article must match it. The voice rules:
 - **Diagnosis vs. arithmetic.** Always separate what is observed/measurable from what is modeled/illustrative.
 - **Concrete > theoretical.** No abstraction without a worked example. "What to do Monday morning" sections in `<ol>` are part of the canon.
 - **Honest section.** Most posts have a "What still belongs to humans" / "Ce qui reste aux humains" beat — the explicit list of what the post does *not* solve. Include one when it fits.
-- **TL;DR at the top, `<hr>`, then the article.** Blockquotes for punchy single-sentence claims. Inline `<svg class="diagram-svg">` for diagrams (J-Curve, before/after bar, etc.) — see existing posts for the pattern.
+- **TL;DR at the top, `<hr>`, then the article.** Blockquotes for punchy single-sentence claims. Inline `<svg class="diagram-svg">` for diagrams.
+- **Diagrams must be editorial-grade — not Excel.** No two-bare-rectangles-and-a-dashed-line. Required elements when you draw something:
+  - **Theme-safe palette via `currentColor`** with opacity layers (`stop-opacity="0.07-0.85"`), not hard-coded hex. The diagram must invert cleanly under dark mode.
+  - **Soft `<linearGradient>` fills**, declared in `<defs>` with a unique id per diagram. Outlined rectangles are not enough on their own.
+  - **Rounded geometry** — `rx="6"` or `rx="8"` on bars/boxes, `stroke-linecap="round"`, `stroke-linejoin="round"` on paths.
+  - **Typographic hierarchy** — at least three levels: a tiny letter-spaced uppercase eyebrow caption, the headline value in 22-28 px / weight 600-700, and a muted small (10-11 px) suffix or annotation. Use `opacity` for tonality, not multiple colors.
+  - **Data-storytelling, not data-display.** When comparing two values, show the **shared baseline + the delta** as a stacked bar with a bracket callout — not two independent bars side by side. The reader's eye should land on the delta.
+  - **Generous whitespace, accessible labels.** `role="img"` + descriptive `aria-label` that states the chart's conclusion, not just its axes.
+  - Look at the DARES post's bar diagram or the DORA J-Curve for the current floor of what "modern enough" means here. If you're producing something that looks like a default matplotlib chart, redo it.
 - **Bilingual FR + EN, always.** Same file, `frenchContent` and `englishContent` objects, registered in `src/posts/index.ts`. EN is not a verbatim translation of FR — it is a re-write keeping the same beats. (Marc — content persona — has called out that the older posts cheat on this; new posts must not.)
 - **No emojis. No "Conclusion: ..." filler. No "In this article, we will explore..." preambles.** Open on the strongest sentence.
 - **Tags are English** even on FR posts: `Software`, `AI`, `Opinion`, `Homelab`, `Security`, `Work`, `France`, `Analysis`, etc. — keep consistent with `getAllTags()`.
