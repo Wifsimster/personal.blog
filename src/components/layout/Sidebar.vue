@@ -72,7 +72,10 @@
           {{ i18n.t('sidebar.aboutMe') }}
         </h2>
         <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed mb-3">
-          <span v-html="aboutMeTextWithHighlight"></span>
+          <template v-for="(segment, idx) in aboutMeSegments" :key="idx">
+            <span v-if="segment.highlight" class="text-primary-600 dark:text-primary-400">{{ segment.text }}</span>
+            <template v-else>{{ segment.text }}</template>
+          </template>
         </p>
         <a
           href="https://cv.battistella.ovh/"
@@ -183,8 +186,16 @@ const clearSearch = () => {
   clearGlobalSearch()
 }
 
-const aboutMeTextWithHighlight = computed(() => {
+const aboutMeSegments = computed<Array<{ text: string; highlight: boolean }>>(() => {
   const text = i18n.t('sidebar.aboutMeText')
-  return text.replace('Damien BATTISTELLA', '<span class="text-primary-600 dark:text-primary-400">Damien BATTISTELLA</span>')
+  const token = 'Damien BATTISTELLA'
+  const idx = text.indexOf(token)
+  if (idx === -1) return [{ text, highlight: false }]
+  const segments: Array<{ text: string; highlight: boolean }> = []
+  if (idx > 0) segments.push({ text: text.slice(0, idx), highlight: false })
+  segments.push({ text: token, highlight: true })
+  const tail = text.slice(idx + token.length)
+  if (tail) segments.push({ text: tail, highlight: false })
+  return segments
 })
 </script>
