@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-screen bg-white dark:bg-zinc-900">
+  <div class="flex min-h-screen">
     <Sidebar />
     <div class="flex-1 flex flex-col min-w-0">
       <!-- Mobile Header (visible only below lg) -->
