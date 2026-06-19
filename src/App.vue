@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white dark:bg-zinc-900 transition-colors duration-200">
+  <div class="min-h-screen transition-colors duration-200">
     <AppLayout>
       <RouterView />
     </AppLayout>

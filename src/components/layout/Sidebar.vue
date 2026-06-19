@@ -1,5 +1,5 @@
 <template>
-  <aside class="hidden lg:flex lg:flex-col w-80 border-r border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-900/50 sticky top-0 h-screen">
+  <aside class="hidden lg:flex lg:flex-col w-80 border-r border-gray-200/70 dark:border-zinc-800/70 bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md sticky top-0 h-screen">
     <div class="flex-1 overflow-y-auto p-6">
       <!-- Top Section: Name and Theme Toggles -->
       <div class="flex items-center justify-between mb-6">

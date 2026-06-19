@@ -20,12 +20,42 @@
 }
 
 @layer base {
+  /* Techy background system — dot grid + corner glow.
+     CSS/SVG-free (pure CSS gradients), theme-safe, self-hosted.
+     Tuned per theme via variables so it inverts cleanly. */
+  :root {
+    --tech-dot: rgba(15, 23, 42, 0.06);
+    --tech-glow-1: rgba(14, 165, 233, 0.10);
+    --tech-glow-2: rgba(99, 102, 241, 0.05);
+    --tech-grid: 26px;
+  }
+
+  .dark {
+    --tech-dot: rgba(244, 244, 245, 0.05);
+    --tech-glow-1: rgba(14, 165, 233, 0.16);
+    --tech-glow-2: rgba(56, 189, 248, 0.06);
+  }
+
   html {
     @apply antialiased;
   }
 
   body {
     @apply bg-white dark:bg-zinc-900 text-gray-900 dark:text-zinc-100 transition-colors duration-200;
+    background-image:
+      radial-gradient(42rem 32rem at 12% -8%, var(--tech-glow-1), transparent 70%),
+      radial-gradient(38rem 32rem at 102% 104%, var(--tech-glow-2), transparent 70%),
+      radial-gradient(var(--tech-dot) 1.2px, transparent 1.3px);
+    background-size: 100% 100%, 100% 100%, var(--tech-grid) var(--tech-grid);
+    background-position: 0 0, 0 0, 0 0;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-attachment: fixed;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    body {
+      transition: background-color 0.2s ease;
+    }
   }
 }
 
