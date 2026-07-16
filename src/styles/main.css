@@ -160,6 +160,36 @@
     line-height: 1.75;
   }
 
+  .prose table {
+    @apply w-full my-8 border-collapse text-gray-700 dark:text-zinc-300;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  .prose thead th {
+    @apply px-4 py-3 text-left align-bottom font-sans text-xs font-bold uppercase text-primary-600 dark:text-primary-400 border-b-2 border-primary-500/40;
+    letter-spacing: 0.08em;
+  }
+
+  .prose tbody td {
+    @apply px-4 py-3.5 align-top border-b border-gray-200 dark:border-zinc-700/60;
+  }
+
+  .prose tbody tr:nth-child(even) {
+    @apply bg-gray-500/5 dark:bg-zinc-400/5;
+  }
+
+  .prose tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  @media (max-width: 640px) {
+    .prose table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+
   .prose .post-tldr {
     @apply my-6 p-5 rounded-xl border border-primary-500/30 bg-primary-500/10 text-gray-700 dark:text-zinc-200;
     border-left-width: 4px;
