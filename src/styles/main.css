@@ -159,4 +159,18 @@
     @apply border-l-4 border-primary-500 pl-4 italic my-4 text-gray-600 dark:text-zinc-400;
     line-height: 1.75;
   }
+
+  .prose .post-tldr {
+    @apply my-6 p-5 rounded-xl border border-primary-500/30 bg-primary-500/10 text-gray-700 dark:text-zinc-200;
+    border-left-width: 4px;
+  }
+
+  .prose .post-tldr p {
+    @apply mb-0;
+    line-height: 1.7;
+  }
+
+  .prose .post-tldr strong:first-child {
+    @apply block mb-1.5 uppercase tracking-widest text-xs font-bold text-primary-600 dark:text-primary-400;
+  }
 }
