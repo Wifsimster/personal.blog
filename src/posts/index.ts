@@ -32,6 +32,7 @@ import AiTeamReflex, { metadata as aiTeamReflexMetadata, getContent as getAiTeam
 import DoraAiRoiReport, { metadata as doraAiRoiReportMetadata, getContent as getDoraAiRoiReportContent } from './DoraAiRoiReport.vue'
 import ProxmoxNvmeMigration, { metadata as proxmoxNvmeMigrationMetadata, getContent as getProxmoxNvmeMigrationContent } from './ProxmoxNvmeMigration.vue'
 import ForfaitJoursSalariesDares, { metadata as forfaitJoursMetadata, getContent as getForfaitJoursContent } from './ForfaitJoursSalariesDares.vue'
+import AiAgentsH1Verdict, { metadata as aiAgentsH1VerdictMetadata, getContent as getAiAgentsH1VerdictContent } from './AiAgentsH1Verdict.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -204,6 +205,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: forfaitJoursMetadata,
     getContent: getForfaitJoursContent,
     component: ForfaitJoursSalariesDares
+  },
+  'ai-agents-h1-2026-verdict': {
+    metadata: aiAgentsH1VerdictMetadata,
+    getContent: getAiAgentsH1VerdictContent,
+    component: AiAgentsH1Verdict
   }
 }
 
