@@ -37,6 +37,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          # Check out master HEAD, not the triggering commit. The concurrency
+          # group serializes release runs, so HEAD always contains the previous
+          # run's version bump — checking out the trigger SHA instead let two
+          # queued runs compute the same version and collide on the tag
+          # (run #87, 2026-07-16).
+          ref: master
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
