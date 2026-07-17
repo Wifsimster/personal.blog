@@ -9,7 +9,7 @@ export const metadata: PostMetadata = {
 }
 
 const englishContent: PostContent = {
-  title: 'Six Months of Agents: I Graded My Own Predictions',
+  title: '100% Agent-Written: Six Months on a Greenfield Rebuild',
   description: 'Eight frontier models in six months, most sold on self-verification. On Solstice, our greenfield platform, four months of development with redefined working methods turned model quality into velocity: roughly 4,500 commits, close to 1,000 PRs, 120-plus releases. What we automate in July — and what it took to get there.',
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> Six months, eight frontier models: Opus 4.6, 4.7, 4.8, Fable 5, Sonnet 5, GPT-5.5, GPT-5.6, Kimi K3 — a new step every few weeks, and the sales pitch quietly changed with them. Nobody sells "smarter" anymore; they sell "checks its own work". Model quality now means reliability, and it's climbing. On my own project — <abbr title="Fictitious codename: the real project, its products and its vendor are anonymized.">Solstice*</abbr>, the greenfield platform my team started in March — four months spent redefining how we work turned that quality into velocity: roughly 4,500 commits, close to 1,000 pull requests, 120-plus releases, a full frontend rewrite mid-flight. And the unit of delegation keeps widening: a function in January, a sweep in May, a whole flow in July.</p></div>
 <hr>
@@ -333,7 +333,7 @@ const englishContent: PostContent = {
 }
 
 const frenchContent: PostContent = {
-  title: 'Six mois d\'agents : j\'ai corrigé ma propre copie',
+  title: '100 % du code écrit par des agents : six mois sur une refonte greenfield',
   description: 'Huit modèles de pointe en six mois, la plupart vendus sur l\'auto-vérification. Sur Solstice, notre plateforme greenfield, quatre mois de développement avec des méthodes de travail repensées ont transformé cette qualité en vélocité : environ 4 500 commits, près de 1 000 PR, 120 et quelques versions. Ce qu\'on automatise en juillet — et ce que ça a coûté.',
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> Six mois, huit modèles de pointe : Opus 4.6, 4.7, 4.8, Fable 5, Sonnet 5, GPT-5.5, GPT-5.6, Kimi K3 — une marche toutes les quelques semaines — et à chaque marche, l'argument de vente a changé. Plus personne ne vend « plus intelligent » ; on vend « vérifie son propre travail ». La qualité d'un modèle, désormais, c'est sa fiabilité — et elle monte. Sur mon propre projet — <abbr title="Nom de code fictif : le projet réel, ses produits et son éditeur sont anonymisés.">Solstice*</abbr>, la plateforme greenfield que mon équipe a démarrée en mars — quatre mois passés à redéfinir nos méthodes de travail ont transformé cette qualité en vélocité : environ 4 500 commits, près de 1 000 pull requests, 120 et quelques versions, une réécriture frontend complète en vol. Et on confie aux agents des morceaux de plus en plus gros : une fonction en janvier, un chantier en mai, un flux entier en juillet.</p></div>
 <hr>
