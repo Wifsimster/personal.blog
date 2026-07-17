@@ -1,6 +1,6 @@
 {
   "name": "wifsimster-blog",
-  "version": "1.27.12",
+  "version": "1.27.13",
   "description": "Blog personnel",
   "type": "module",
   "scripts": {
