@@ -7,16 +7,17 @@
     role="switch"
     :aria-checked="i18n.language.value === 'en'"
   >
-    <span class="language-toggle__label" :class="{ active: i18n.language.value === 'fr' }">FR</span>
+    <FlagIcon lang="fr" class="language-toggle__flag" :class="{ active: i18n.language.value === 'fr' }" />
     <span class="language-toggle__track">
       <span class="language-toggle__thumb" />
     </span>
-    <span class="language-toggle__label" :class="{ active: i18n.language.value === 'en' }">US</span>
+    <FlagIcon lang="en" class="language-toggle__flag" :class="{ active: i18n.language.value === 'en' }" />
   </button>
 </template>
 
 <script setup lang="ts">
 import { useI18n } from '@/composables/useI18n'
+import FlagIcon from './FlagIcon.vue'
 
 const i18n = useI18n()
 
@@ -38,27 +39,15 @@ function toggle() {
   user-select: none;
 }
 
-.language-toggle__label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.025em;
-  transition: color 0.2s ease;
+.language-toggle__flag {
+  width: 1.125rem;
+  height: 1.125rem;
+  transition: opacity 0.2s ease, filter 0.2s ease;
 }
 
-.language-toggle__label:not(.active) {
-  color: var(--color-gray-400, #9ca3af);
-}
-
-.language-toggle__label.active {
-  color: var(--color-primary-600, #0284c7);
-}
-
-:where(.dark) .language-toggle__label:not(.active) {
-  color: var(--color-zinc-500, #71717a);
-}
-
-:where(.dark) .language-toggle__label.active {
-  color: var(--color-primary-400, #38bdf8);
+.language-toggle__flag:not(.active) {
+  opacity: 0.35;
+  filter: grayscale(1);
 }
 
 .language-toggle__track {
