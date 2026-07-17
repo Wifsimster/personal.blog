@@ -14,10 +14,11 @@
         <div class="flex items-center gap-2">
           <button
             @click="i18n.switchLanguage(lang === 'fr' ? 'en' : 'fr')"
-            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center text-xs font-medium text-gray-700 dark:text-zinc-300"
-            :aria-label="lang === 'fr' ? 'Switch to English' : 'Passer en français'"
+            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center text-gray-700 dark:text-zinc-300"
+            :aria-label="lang === 'fr' ? 'Passer en anglais' : 'Switch to French'"
+            :title="lang === 'fr' ? 'Passer en anglais' : 'Switch to French'"
           >
-            {{ lang === 'fr' ? 'EN' : 'FR' }}
+            <FlagIcon :lang="lang" class="w-5 h-5" />
           </button>
           <button
             @click="darkMode.toggleDark()"
@@ -146,6 +147,7 @@ import { useI18n } from '@/composables/useI18n'
 import { useDarkMode } from '@/composables/useDarkMode'
 import { useSearch } from '@/composables/useSearch'
 import { getAllTags } from '@/posts'
+import FlagIcon from './FlagIcon.vue'
 
 const i18n = useI18n()
 const darkMode = useDarkMode()
