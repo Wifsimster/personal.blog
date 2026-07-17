@@ -1,22 +1,29 @@
 #!/usr/bin/env node
 
 /**
- * Post-build script: emits AVIF siblings next to every JPG/PNG image under
- * dist/images/ (which vite has already copied from public/images/).
+ * Source-prep script: emits AVIF siblings next to every JPG/PNG image under
+ * public/images/. The siblings are committed to the repo, so vite copies them
+ * verbatim into dist/images/ at build time and CI never re-encodes.
+ *
+ * This is why it runs against the *source* tree, not dist/: a git checkout does
+ * not preserve mtimes, so a build container would otherwise re-encode all ~300
+ * images every release. Committing the AVIFs makes the encode a one-time,
+ * local, incremental cost (only newly-added images convert).
  *
  * AVIF compresses 30–50% smaller than the original JPG/PNG and is widely
  * supported (Chrome, Edge, Firefox, Safari 16+). Browsers that don't support
  * AVIF fall back via the <picture><source>/<img> wrapper emitted in
  * src/utils/imageProcessing.ts.
  *
- * The script is idempotent and uses mtime caching — re-running only converts
- * sources newer than their AVIF sibling.
+ * The script is idempotent: it skips any image that already has an AVIF
+ * sibling. Editing an image *in place* (same filename, new content) needs an
+ * explicit IMAGE_AVIF_FORCE=1 to regenerate its stale sibling.
  *
- * Usage: node scripts/optimize-images.mjs
+ * Usage: node scripts/optimize-images.mjs   (aliased as `npm run optimize:images`)
  * Env:   IMAGE_AVIF_QUALITY   (default 65)
  *        IMAGE_AVIF_EFFORT    (default 4 — range 0..9, higher = slower & smaller)
  *        IMAGE_AVIF_MAX_WIDTH (default 1600 — downscale only, never upscale)
- *        IMAGE_AVIF_FORCE     (set to "1" to ignore mtime cache)
+ *        IMAGE_AVIF_FORCE     (set to "1" to regenerate every sibling)
  */
 
 import { readdirSync, statSync, existsSync, unlinkSync } from 'fs'
@@ -26,8 +33,8 @@ import sharp from 'sharp'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
-const DIST = join(ROOT, 'dist')
-const IMAGES_DIR = join(DIST, 'images')
+const SOURCE_DIR = join(ROOT, 'public')
+const IMAGES_DIR = join(SOURCE_DIR, 'images')
 
 const QUALITY = parseInt(process.env.IMAGE_AVIF_QUALITY || '65', 10)
 const EFFORT = parseInt(process.env.IMAGE_AVIF_EFFORT || '4', 10)
@@ -40,7 +47,7 @@ const SOURCE_EXTS = new Set(['.jpg', '.jpeg', '.png'])
 // Process one image at a time and let libvips fan out across all cores.
 const CONCURRENCY = 1
 
-// OG card PNGs (dist/images/og/) are referenced as .png in OG meta and don't
+// OG card PNGs (images/og/) are referenced as .png in OG meta and don't
 // benefit from AVIF siblings, so skip that subtree.
 const SKIP_DIRS = new Set([join(IMAGES_DIR, 'og')])
 
@@ -64,11 +71,13 @@ async function convertOne(srcPath) {
   const dst = avifPathFor(srcPath)
   const srcStat = statSync(srcPath)
 
+  // Skip whenever a sibling already exists. mtime comparison is deliberately
+  // avoided: the AVIFs are committed and a git checkout rewrites mtimes to the
+  // checkout time in no guaranteed order, which would re-encode everything in
+  // CI. Regenerate a stale sibling with IMAGE_AVIF_FORCE=1.
   if (!FORCE && existsSync(dst)) {
     const dstStat = statSync(dst)
-    if (dstStat.mtimeMs >= srcStat.mtimeMs) {
-      return { status: 'skipped', src: srcPath, srcSize: srcStat.size, dstSize: dstStat.size }
-    }
+    return { status: 'skipped', src: srcPath, srcSize: srcStat.size, dstSize: dstStat.size }
   }
 
   const pipeline = sharp(srcPath, { failOn: 'none' }).rotate()
@@ -114,7 +123,7 @@ async function main() {
   console.log(`  Quality=${QUALITY}  Effort=${EFFORT}  MaxWidth=${MAX_WIDTH}  Concurrency=${CONCURRENCY}${FORCE ? '  FORCE' : ''}`)
 
   if (!existsSync(IMAGES_DIR)) {
-    console.error(`  Error: ${IMAGES_DIR} not found. Run "vite build" first.`)
+    console.error(`  Error: ${IMAGES_DIR} not found.`)
     process.exit(1)
   }
 
@@ -137,7 +146,7 @@ async function main() {
       skipped++
     } else if (r.status === 'rejected') {
       rejected++
-      console.log(`  rejected (AVIF >= source): ${relative(DIST, r.src)} (${fmtBytes(r.srcSize)} → ${fmtBytes(r.dstSize)})`)
+      console.log(`  rejected (AVIF >= source): ${relative(SOURCE_DIR, r.src)} (${fmtBytes(r.srcSize)} → ${fmtBytes(r.dstSize)})`)
     }
   }
 
