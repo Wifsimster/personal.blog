@@ -25,13 +25,19 @@
      Tuned per theme via variables so it inverts cleanly. */
   :root {
     --tech-dot: rgba(15, 23, 42, 0.06);
+    --tech-dot-hot: rgba(14, 165, 233, 0.55);
     --tech-glow-1: rgba(14, 165, 233, 0.10);
     --tech-glow-2: rgba(99, 102, 241, 0.05);
     --tech-grid: 26px;
+    /* Cursor spotlight — position tracked from JS, radius fixed. */
+    --spot-x: 50%;
+    --spot-y: 50%;
+    --spot-r: 120px;
   }
 
   .dark {
     --tech-dot: rgba(244, 244, 245, 0.05);
+    --tech-dot-hot: rgba(56, 189, 248, 0.55);
     --tech-glow-1: rgba(14, 165, 233, 0.16);
     --tech-glow-2: rgba(56, 189, 248, 0.06);
   }
@@ -55,6 +61,47 @@
   @media (prefers-reduced-motion: no-preference) {
     body {
       transition: background-color 0.2s ease;
+    }
+  }
+
+  /* Cursor spotlight over the dot grid.
+     A brighter copy of the same grid, aligned via background-attachment: fixed,
+     revealed only inside a soft radius that tracks the pointer. Purely
+     decorative: fixed, non-interactive, sits above the body background but
+     behind all content. */
+  .tech-spotlight {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    background-image: radial-gradient(var(--tech-dot-hot) 1.2px, transparent 1.3px);
+    background-size: var(--tech-grid) var(--tech-grid);
+    background-position: 0 0;
+    background-attachment: fixed;
+    -webkit-mask-image: radial-gradient(
+      circle var(--spot-r) at var(--spot-x) var(--spot-y),
+      #000 0%,
+      rgba(0, 0, 0, 0.35) 55%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      circle var(--spot-r) at var(--spot-x) var(--spot-y),
+      #000 0%,
+      rgba(0, 0, 0, 0.35) 55%,
+      transparent 100%
+    );
+    transition: opacity 0.4s ease;
+  }
+
+  .tech-spotlight.is-active {
+    opacity: 1;
+  }
+
+  /* Motion-sensitive readers get no cursor animation at all. */
+  @media (prefers-reduced-motion: reduce) {
+    .tech-spotlight {
+      display: none;
     }
   }
 }
