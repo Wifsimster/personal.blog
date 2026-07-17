@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/optimize-images.mjs && node scripts/generate-og.mjs && node scripts/generate-rss.mjs && node scripts/generate-sitemap.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "build": "node scripts/optimize-images.mjs && vite build && node scripts/generate-og.mjs && node scripts/generate-rss.mjs && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "docker:build": "docker build -t wifsimster/wifsimster-blog .",
     "docker:run": "docker run -p 8080:80 wifsimster/wifsimster-blog",
