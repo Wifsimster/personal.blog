@@ -243,6 +243,52 @@ const englishContent: PostContent = {
 
 <h2>The ladder someone finally numbered</h2>
 <p>Halfway through writing this, Boris Cherny — who built Claude Code — published a ladder that puts numbers on the thing I keep calling "the widening unit of delegation". Five rungs, counted in agents per engineer: gated (0), assisted (one agent, a supervised pair), parallel (about ten, an orchestrator hopping between worktrees), supervised autonomy (about a hundred, a manager of managers), AI-native (a thousand-plus, steering by intent alone). It's the cleanest map I've read of the climb — and, being a vendor's, every rung comes with a product bolted to it. Keep the ladder. Ignore the catalogue.</p>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Boris Cherny's AI-adoption ladder, counted in agents per engineer, bottom to top: rung 0 gated (0 agents), rung 1 assisted (~1 agent, a supervised pair), rung 2 parallel (~10 agents, an orchestrator), rung 3 supervised autonomy (~100 agents, a manager of managers), rung 4 AI-native (~1,000+ agents, steering by intent). Each rung is won with one more guardrail, not more tokens. My team sits at rung 2, reaching into rung 3." class="diagram-svg">
+<text x="64" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">CHERNY'S ADOPTION LADDER · AGENTS PER ENGINEER</text>
+<text x="64" y="60" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="700">Five rungs, one guardrail per rung</text>
+<text x="64" y="80" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" opacity="0.6">You climb by removing the next bottleneck — not by spending more tokens</text>
+<g fill="currentColor">
+<rect x="230" y="126" width="470" height="32" rx="8" fill-opacity="0.19"></rect>
+<rect x="230" y="178" width="320" height="32" rx="8" fill-opacity="0.17"></rect>
+<rect x="230" y="230" width="178" height="32" rx="8" fill-opacity="0.15"></rect>
+<rect x="230" y="282" width="84" height="32" rx="8" fill-opacity="0.12"></rect>
+<rect x="230" y="334" width="36" height="32" rx="8" fill-opacity="0.09"></rect>
+</g>
+<rect x="230" y="230" width="178" height="32" rx="8" fill="none" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6"></rect>
+<rect x="230" y="178" width="320" height="32" rx="8" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.4" stroke-dasharray="5,4"></rect>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.4" text-anchor="middle">
+<text x="50" y="146">4</text>
+<text x="50" y="198">3</text>
+<text x="50" y="250">2</text>
+<text x="50" y="302">1</text>
+<text x="50" y="354">0</text>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650">
+<text x="68" y="146">AI-native</text>
+<text x="68" y="198">Supervised autonomy</text>
+<text x="68" y="250">Parallel</text>
+<text x="68" y="302">Assisted</text>
+<text x="68" y="354">Gated</text>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9.5" opacity="0.6">
+<text x="68" y="160">steering by intent</text>
+<text x="68" y="212">a manager of managers</text>
+<text x="68" y="264">an orchestrator</text>
+<text x="68" y="316">a supervised pair</text>
+<text x="68" y="368">access locked</text>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="650">
+<text x="712" y="146">~1,000+ agents</text>
+<text x="562" y="198">~100 agents</text>
+<text x="420" y="250">~10 agents</text>
+<text x="326" y="302">~1 agent</text>
+<text x="278" y="354">0</text>
+</g>
+<path d="M 408 262 C 448 282 470 298 488 310" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.3" stroke-linecap="round"></path>
+<circle cx="408" cy="262" r="3" fill="currentColor" fill-opacity="0.8"></circle>
+<text x="492" y="314" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700">our team</text>
+<text x="492" y="330" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" opacity="0.65">at rung 2 — reaching into 3</text>
+</svg>
 <p>Because the part worth keeping is the thesis, and it's the one this series has circled for six months: <em>tokens don't move you up.</em> In Cherny's own words, reaching the next rung means you "find and break down the next set of bottlenecks, and build up the next set of guardrails". That's the verification tax rewritten as a career ladder — every rung bought with a guardrail, not a bigger budget. He even hands over the value test I keep groping for: a usage dashboard measures activity, not return; the honest question is whether you'd have spent the engineering hours anyway, and what they would have cost in manual eng-hours. That's a ruler I can finally hold up to Solstice.</p>
 <p>So I'll answer his closing question — where's your team? Rung two, honestly: the orchestrator, five to ten agents at once, each on its own lane, a human reviewing final diffs instead of keystrokes. On the bounded lanes where the verification gate has earned trust, we lean into rung three — work that kicks itself off, maintenance that used to wait for a free afternoon now running in the background, which is exactly where Cherny says the real payoff starts: the team stops firefighting and builds things that weren't in range before. We are nowhere near the thousand-agent top rung, and I distrust anyone who says they are; that's where the ladder stops being a maturity model and turns into a roadmap slide.</p>
 <p>The line from his piece I'd underline is the humblest one: "there's no one right path through the steps". The trap he names — scaling agent count before the loop has earned trust — is the precise failure this series keeps warning about, now written from the vendor's side of the table. Same gate, same tax; we just approach it from opposite ends.</p>
@@ -520,11 +566,57 @@ const frenchContent: PostContent = {
 <p>C'est ma lecture du semestre, vue du terrain : chaque marche de l'escalier ne rend pas l'agent plus intelligent, elle élargit ce qu'on ose lui confier. Une fonction en janvier, un chantier en mai, un flux en juillet — la vitesse à laquelle grossit ce qu'on ose leur confier, voilà la vraie mesure de l'autonomie. Pas les benchmarks.</p>
 
 <h2>L'échelle que quelqu'un a enfin chiffrée</h2>
-<p>À mi-chemin de ce billet, Boris Cherny — l'auteur de Claude Code — a publié une échelle qui met des chiffres sur ce que j'appelle depuis le début « l'unité de délégation qui s'élargit ». Cinq barreaux, comptés en agents par ingénieur : bloqué (0), assisté (un agent, une paire supervisée), parallèle (une dizaine, un orchestrateur qui saute d'un worktree à l'autre), autonomie supervisée (une centaine, un manager de managers), IA-native (mille et plus, on pilote à la seule intention). C'est la carte la plus nette que j'aie lue de cette montée — et, venant d'un éditeur, chaque barreau arrive avec un produit vissé dessus. Gardez l'échelle. Oubliez le catalogue.</p>
-<p>Parce que ce qu'il faut garder, c'est la thèse, et c'est celle que cette série tourne depuis six mois : <em>les tokens ne vous font pas monter.</em> Les mots de Cherny : pour atteindre le barreau suivant, il faut « trouver et démonter le prochain lot de goulots d'étranglement, et construire le prochain lot de garde-fous ». C'est la taxe de vérification réécrite en plan de carrière — chaque barreau s'achète avec un garde-fou, pas avec un budget plus gros. Il livre même le test de valeur que je cherche à tâtons depuis des mois : un tableau de bord d'usage mesure l'activité, pas le retour ; la vraie question, c'est de savoir si vous auriez dépensé ces heures d'ingénierie de toute façon, et ce qu'elles auraient coûté en heures-homme. Voilà une règle que je peux enfin poser sur Solstice.</p>
-<p>Alors je réponds à sa question de clôture — où en est votre équipe ? Barreau deux, honnêtement : l'orchestrateur, cinq à dix agents à la fois, chacun sur son périmètre, un humain qui relit des diffs finaux plutôt que des frappes clavier. Sur les périmètres balisés où le point de contrôle a gagné notre confiance, on mord sur le barreau trois — du travail qui se déclenche seul, de la maintenance qui attendait un après-midi libre et qui tourne désormais en fond, précisément là où Cherny situe le vrai gain : l'équipe cesse d'éteindre des incendies et construit des choses hors de portée jusque-là. On est très loin du sommet à mille agents, et je me méfie de quiconque prétend y être : c'est là que l'échelle cesse d'être un modèle de maturité pour devenir une diapo de feuille de route.</p>
+<p>À mi-chemin de ce billet, Boris Cherny — l'auteur de Claude Code — a publié une échelle qui met des chiffres sur ce que j'appelle depuis le début « l'unité de délégation qui s'élargit ». Cinq échelons, comptés en agents par ingénieur : bloqué (0), assisté (un agent, une paire supervisée), parallèle (une dizaine, un orchestrateur qui saute d'un worktree à l'autre), autonomie supervisée (une centaine, un manager de managers), IA-native (mille et plus, on pilote à la seule intention). C'est la carte la plus nette que j'aie lue de cette montée — et, venant d'un éditeur, chaque échelon arrive avec un produit vissé dessus. Gardez l'échelle. Oubliez le catalogue.</p>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="L'échelle d'adoption de l'IA selon Boris Cherny, comptée en agents par ingénieur, du bas vers le haut : échelon 0 bloqué (0 agent), échelon 1 assisté (~1 agent, une paire supervisée), échelon 2 parallèle (~10 agents, un orchestrateur), échelon 3 autonomie supervisée (~100 agents, un manager de managers), échelon 4 IA-native (~1 000+ agents, piloté à l'intention). Chaque échelon se gagne avec un garde-fou de plus, pas avec plus de tokens. Mon équipe est à l'échelon 2 et mord sur le 3." class="diagram-svg">
+<text x="64" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.55" letter-spacing="0.14em">L'ÉCHELLE D'ADOPTION · AGENTS PAR INGÉNIEUR</text>
+<text x="64" y="60" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="700">Cinq échelons, un garde-fou par échelon</text>
+<text x="64" y="80" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" opacity="0.6">On monte en démontant le prochain goulot d'étranglement — pas en dépensant plus de tokens</text>
+<g fill="currentColor">
+<rect x="230" y="126" width="470" height="32" rx="8" fill-opacity="0.19"></rect>
+<rect x="230" y="178" width="320" height="32" rx="8" fill-opacity="0.17"></rect>
+<rect x="230" y="230" width="178" height="32" rx="8" fill-opacity="0.15"></rect>
+<rect x="230" y="282" width="84" height="32" rx="8" fill-opacity="0.12"></rect>
+<rect x="230" y="334" width="36" height="32" rx="8" fill-opacity="0.09"></rect>
+</g>
+<rect x="230" y="230" width="178" height="32" rx="8" fill="none" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.6"></rect>
+<rect x="230" y="178" width="320" height="32" rx="8" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.4" stroke-dasharray="5,4"></rect>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.4" text-anchor="middle">
+<text x="50" y="146">4</text>
+<text x="50" y="198">3</text>
+<text x="50" y="250">2</text>
+<text x="50" y="302">1</text>
+<text x="50" y="354">0</text>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650">
+<text x="68" y="146">IA-native</text>
+<text x="68" y="198">Autonomie supervisée</text>
+<text x="68" y="250">Parallèle</text>
+<text x="68" y="302">Assisté</text>
+<text x="68" y="354">Bloqué</text>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9.5" opacity="0.6">
+<text x="68" y="160">on pilote à l'intention</text>
+<text x="68" y="212">un manager de managers</text>
+<text x="68" y="264">un orchestrateur</text>
+<text x="68" y="316">une paire supervisée</text>
+<text x="68" y="368">accès verrouillé</text>
+</g>
+<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" font-weight="650">
+<text x="712" y="146">~1 000+ agents</text>
+<text x="562" y="198">~100 agents</text>
+<text x="420" y="250">~10 agents</text>
+<text x="326" y="302">~1 agent</text>
+<text x="278" y="354">0</text>
+</g>
+<path d="M 408 262 C 448 282 470 298 488 310" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.3" stroke-linecap="round"></path>
+<circle cx="408" cy="262" r="3" fill="currentColor" fill-opacity="0.8"></circle>
+<text x="492" y="314" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700">notre équipe</text>
+<text x="492" y="330" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="10" opacity="0.65">à l'échelon 2 — et on mord sur le 3</text>
+</svg>
+<p>Parce que ce qu'il faut garder, c'est la thèse, et c'est celle que cette série tourne depuis six mois : <em>les tokens ne vous font pas monter.</em> Les mots de Cherny : pour atteindre l'échelon suivant, il faut « trouver et démonter le prochain lot de goulots d'étranglement, et construire le prochain lot de garde-fous ». C'est la taxe de vérification réécrite en plan de carrière — chaque échelon s'achète avec un garde-fou, pas avec un budget plus gros. Il livre même le test de valeur que je cherche à tâtons depuis des mois : un tableau de bord d'usage mesure l'activité, pas le retour ; la vraie question, c'est de savoir si vous auriez dépensé ces heures d'ingénierie de toute façon, et ce qu'elles auraient coûté en heures-homme. Voilà une règle que je peux enfin poser sur Solstice.</p>
+<p>Alors je réponds à sa question de clôture — où en est votre équipe ? Échelon deux, honnêtement : l'orchestrateur, cinq à dix agents à la fois, chacun sur son périmètre, un humain qui relit des diffs finaux plutôt que des frappes clavier. Sur les périmètres balisés où le point de contrôle a gagné notre confiance, on mord sur l'échelon trois — du travail qui se déclenche seul, de la maintenance qui attendait un après-midi libre et qui tourne désormais en fond, précisément là où Cherny situe le vrai gain : l'équipe cesse d'éteindre des incendies et construit des choses hors de portée jusque-là. On est très loin du sommet à mille agents, et je me méfie de quiconque prétend y être : c'est là que l'échelle cesse d'être un modèle de maturité pour devenir une diapo de feuille de route.</p>
 <p>La phrase de son billet que je soulignerais est la plus humble : « il n'y a pas un seul bon chemin à travers les étapes ». Le piège qu'il nomme — faire grossir le nombre d'agents avant que la boucle ait gagné la confiance — c'est exactement le danger que cette série répète, écrit cette fois depuis le côté éditeur de la table. Même point de contrôle, même taxe ; on l'aborde juste par les deux bouts.</p>
-<blockquote><p>« Chaque barreau s'achète avec un garde-fou, pas avec un budget de tokens plus gros. »</p></blockquote>
+<blockquote><p>« Chaque échelon s'achète avec un garde-fou, pas avec un budget de tokens plus gros. »</p></blockquote>
 
 <h2>Ce qui reste aux humains</h2>
 <p>Comme dans chaque article de cette série, la liste honnête. Six mois de progrès n'ont rien retiré de tout ceci de nos épaules.</p>
@@ -559,7 +651,7 @@ const frenchContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2607.01418">Murphy-Hill et al. — Adoption and Impact of Command-Line AI Coding Agents (Microsoft, 2026)</a> : les ~24 % de PR fusionnées en plus, et l'aveu « une PR fusionnée n'est pas la valeur ».</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">Model Context Protocol — sortie 2026</a> : le cœur stateless qui a transformé les flottes d'agents en infrastructure.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://code.claude.com/docs/en/workflows">Claude Code — Dynamic Workflows</a> : la répartition déterministe sur jusqu'à 1 000 agents par exécution (~16 en parallèle).</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://x.com/bcherny/status/2077929379661844559">Boris Cherny — <em>Steps of AI Adoption</em></a> (16 juillet 2026) : l'échelle à cinq barreaux — bloqué, assisté, parallèle, autonomie supervisée, IA-native — comptée en agents par ingénieur (~1 à ~1 000+), et la thèse selon laquelle on monte en démontant le prochain goulot d'étranglement et en construisant le prochain garde-fou, pas en dépensant des tokens. Un cadrage d'éditeur, catalogue produit compris — gardez l'échelle, écartez les références.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://x.com/bcherny/status/2077929379661844559">Boris Cherny — <em>Steps of AI Adoption</em></a> (16 juillet 2026) : l'échelle à cinq échelons — bloqué, assisté, parallèle, autonomie supervisée, IA-native — comptée en agents par ingénieur (~1 à ~1 000+), et la thèse selon laquelle on monte en démontant le prochain goulot d'étranglement et en construisant le prochain garde-fou, pas en dépensant des tokens. Un cadrage d'éditeur, catalogue produit compris — gardez l'échelle, écartez les références.</li>
 <li>Solstice* — télémétrie interne du dépôt (commits, PR, tests, ADR), instantané au 16 juillet 2026, et rationnel produit interne (arbitrage de refonte, feuille de route 2026→2028). Pas de lien : c'est une base de code privée, et « Solstice » est un nom de code fictif — le projet réel, ses produits et ses technologies legacy sont anonymisés. Des chiffres de débit, pas de valeur — à lire avec le même scepticisme que ceux d'un éditeur.</li>
 </ul>`
 }
