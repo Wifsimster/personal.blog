@@ -197,11 +197,9 @@
 
   .prose .diagram-svg {
     @apply block my-10 text-gray-700 dark:text-zinc-300;
-    width: min(68rem, calc(100vw - 2.5rem));
-    max-width: none;
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    margin-left: 50%;
-    transform: translateX(-50%);
   }
 
   .prose blockquote {
