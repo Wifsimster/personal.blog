@@ -33,6 +33,7 @@ import DoraAiRoiReport, { metadata as doraAiRoiReportMetadata, getContent as get
 import ProxmoxNvmeMigration, { metadata as proxmoxNvmeMigrationMetadata, getContent as getProxmoxNvmeMigrationContent } from './ProxmoxNvmeMigration.vue'
 import ForfaitJoursSalariesDares, { metadata as forfaitJoursMetadata, getContent as getForfaitJoursContent } from './ForfaitJoursSalariesDares.vue'
 import AiAgentsH1Verdict, { metadata as aiAgentsH1VerdictMetadata, getContent as getAiAgentsH1VerdictContent } from './AiAgentsH1Verdict.vue'
+import AgenticAddiction, { metadata as agenticAddictionMetadata, getContent as getAgenticAddictionContent } from './AgenticAddiction.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -210,6 +211,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: aiAgentsH1VerdictMetadata,
     getContent: getAiAgentsH1VerdictContent,
     component: AiAgentsH1Verdict
+  },
+  'agentic-ai-addiction': {
+    metadata: agenticAddictionMetadata,
+    getContent: getAgenticAddictionContent,
+    component: AgenticAddiction
   }
 }
 
