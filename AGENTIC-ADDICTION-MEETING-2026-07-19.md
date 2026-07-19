@@ -155,6 +155,11 @@ Where they disagreed, and the resolution:
 
 ## Decisions
 
+- **Post-publication ruling (2026-07-19, author):** the HPI passage must stay
+  respectful — it is a psychometric reality people live with. Keep the sourced
+  point (no demonstrated link to addiction/fragility) but frame it as a
+  measured answer to a fair question, not a "myth"/"folklore" takedown.
+  Applied same day; rule promoted to CLAUDE.md §6.
 - Title: « La friction était le frein » / "The Friction Was the Brake".
 - The word "addiction" stays, with the clinical tension held explicitly.
 - HPI appears only to be debunked; ADHD appears only as sourced correlation;
