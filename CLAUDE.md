@@ -94,6 +94,7 @@ Don't use it for one-shot tasks — a typo fix doesn't need four personas.
 ## 5. Working rules
 
 - **PRs are not draft.** They are created `draft: false` and merged through GitHub. (Override on the harness instruction to default-to-draft.)
+- **Merge without asking.** Standing order (2026-07-19): once the build passes, Claude squash-merges its own PRs immediately — no confirmation round-trip.
 - **Branch name** is preset per task (e.g. `claude/forfait-workers-analysis-3PXht`). Develop and push only there.
 - **Merge style:** squash, on `master`. The commit-title convention used in this repo is finer-grained than plain Conventional Commits:
   - **New posts:** `post(<slug>): <short headline>` (e.g. `post(dora-ai-roi-report): DORA just confirmed what my team already lived`).
