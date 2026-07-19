@@ -164,11 +164,12 @@ Where they disagreed, and the resolution:
 
 ## Follow-ups for Wifsimster (the human)
 
-1. **Count your real funnel** — repos created since ~January, deployed, used
-   by someone other than you, still alive at 6 months. Then replace the
-   illustrative funnel widths with the real ones (`edit(agentic-ai-addiction)`).
-2. **Your actual monthly spend** (subscription + tokens + homelab kWh) for the
-   cost section — same edit.
+1. ~~**Count your real funnel**~~ — DONE 2026-07-19, same day: public GitHub
+   readout added to the post (14 repos in 2026 vs 1 in 2022–2025, 3,665 public
+   contributions/year, per-year evolution SVG). Still open: the "deployed" and
+   "used by someone else" stages beyond stars — only the human knows those.
+2. ~~**Your actual monthly spend**~~ — DONE 2026-07-19: Max 20× tier,
+   $200/month, added to the cost section. Homelab kWh still unstated.
 3. **Click through the sources** before sharing widely: the session proxy
    blocked direct fetches, so URLs were verified via search metadata only.
 4. Decide whether the ADHD detour ever becomes personal disclosure in a
