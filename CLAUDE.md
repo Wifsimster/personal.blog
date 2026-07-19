@@ -119,6 +119,7 @@ Don't use it for one-shot tasks — a typo fix doesn't need four personas.
 - **Never commit secrets.** `VITE_STATS_URL` is fine (public beacon URL). Anything sensitive lives in GitHub Actions secrets or the host's `.env`, not in the repo.
 - **Don't translate FR → EN word-for-word.** Re-write the EN so it lands. Don't fake bilinguality by duplicating the FR.
 - **Don't ship "Conclusion:" boilerplate or "Hope you enjoyed this article!" lines.** The reader doesn't need to be told they read an article.
+- **No negativity toward medical or psychological notions people live with** (HPI, TDAH, etc.). Debunking an unsupported *link* is fine and encouraged — sourced, as always — but frame it as a measured answer to a fair question, never as sneering at the label or the people who carry it. Words like "folklore", "mythe", "vendu en prime time" are out (author's ruling, 2026-07-19, on the agentic-ai-addiction post).
 
 ---
 
