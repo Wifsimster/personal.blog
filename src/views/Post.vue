@@ -104,6 +104,7 @@
       :images="galleryImages"
       :initial-index="galleryCurrentIndex"
     />
+    <BackToTop v-if="postInfo && post" />
   </div>
 </template>
 
@@ -123,6 +124,7 @@ import { sortPostsByDate } from '@/utils/posts'
 import TagList from '@/components/blog/TagList.vue'
 import ImageGallery from '@/components/blog/ImageGallery.vue'
 import PostContent from '@/components/blog/PostContent.vue'
+import BackToTop from '@/components/blog/BackToTop.vue'
 import { getPostBySlug as getPostInfoBySlug } from '@/posts'
 import type { GalleryImage } from '@/components/blog/ImageGallery.vue'
 
