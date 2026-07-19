@@ -45,6 +45,7 @@ Any new article must match it. The voice rules:
   - Look at the DARES post's bar diagram or the DORA J-Curve for the current floor of what "modern enough" means here. If you're producing something that looks like a default matplotlib chart, redo it.
 - **Bilingual FR + EN, always.** Same file, `frenchContent` and `englishContent` objects, registered in `src/posts/index.ts`. EN is not a verbatim translation of FR — it is a re-write keeping the same beats. (Marc — content persona — has called out that the older posts cheat on this; new posts must not.)
 - **No emojis. No "Conclusion: ..." filler. No "In this article, we will explore..." preambles.** Open on the strongest sentence.
+- **Keep sentences simple** (author's note, 2026-07-19): avoid heavily nested em-dash/parenthetical constructions and long multi-clause sentences. One idea per sentence when possible; move caveats to their own sentence. Add `<abbr title="...">` on every technical term, acronym, and researcher name at first occurrence in each language.
 - **Tags are English** even on FR posts: `Software`, `AI`, `Opinion`, `Homelab`, `Security`, `Work`, `France`, `Analysis`, etc. — keep consistent with `getAllTags()`.
 
 Series cross-links are part of the brand. When adding a new opinion post that
