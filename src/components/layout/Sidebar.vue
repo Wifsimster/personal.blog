@@ -14,7 +14,7 @@
         <div class="flex items-center gap-2">
           <button
             @click="i18n.switchLanguage(lang === 'fr' ? 'en' : 'fr')"
-            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center text-gray-700 dark:text-zinc-300"
+            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center focus-ring text-gray-700 dark:text-zinc-300"
             :aria-label="lang === 'fr' ? 'Passer en anglais' : 'Switch to French'"
             :title="lang === 'fr' ? 'Passer en anglais' : 'Switch to French'"
           >
@@ -22,7 +22,7 @@
           </button>
           <button
             @click="darkMode.toggleDark()"
-            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center"
+            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center focus-ring"
             :aria-label="darkMode.isDark.value ? 'Switch to light mode' : 'Switch to dark mode'"
           >
             <i :class="darkMode.isDark.value ? 'pi pi-moon' : 'pi pi-sun'" class="text-sm text-gray-700 dark:text-zinc-300"></i>
@@ -40,13 +40,13 @@
             type="text"
             :placeholder="i18n.t('home.searchPlaceholder')"
             @keyup.enter="handleSearch"
-            class="w-full px-4 py-2 pl-10 pr-10 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 text-sm"
+            class="w-full px-4 py-2 pl-10 pr-10 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-900 text-sm"
           />
           <i class="pi pi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-500 text-sm"></i>
           <button
             v-if="localSearchQuery"
             @click="clearSearch"
-            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-500 hover:text-gray-600 dark:hover:text-zinc-300 transition-colors"
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 rounded text-gray-500 dark:text-zinc-500 hover:text-gray-700 dark:hover:text-zinc-300 transition-colors focus-ring"
             aria-label="Clear search"
           >
             <i class="pi pi-times text-sm"></i>
@@ -58,7 +58,7 @@
             v-for="tag in topKeywords"
             :key="tag"
             :to="`${i18n.langPrefix.value}/tags/${encodeURIComponent(tag)}`"
-            class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-zinc-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+            class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-zinc-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors focus-ring"
           >
             {{ tag }}
           </RouterLink>
@@ -82,7 +82,7 @@
           href="https://cv.battistella.ovh/"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
+          class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors focus-ring"
         >
           <i class="pi pi-user text-base"></i>
           <span>{{ i18n.t('sidebar.viewCV') }}</span>
@@ -101,7 +101,7 @@
             href="https://github.com/Wifsimster"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
+            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors focus-ring"
           >
             <i class="pi pi-github text-base"></i>
             <span>{{ i18n.t('sidebar.github') }}</span>
@@ -110,7 +110,7 @@
             href="https://www.linkedin.com/in/damien-battistella-💻-67964115"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
+            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors focus-ring"
           >
             <i class="pi pi-linkedin text-base"></i>
             <span>{{ i18n.t('sidebar.linkedin') }}</span>
@@ -119,7 +119,7 @@
             href="https://x.com/Wifsimster"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
+            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors focus-ring"
           >
             <i class="pi pi-twitter text-base"></i>
             <span>{{ i18n.t('sidebar.x') }}</span>
@@ -129,7 +129,7 @@
             target="_blank"
             rel="noopener noreferrer"
             type="application/rss+xml"
-            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors"
+            class="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors focus-ring"
           >
             <i class="pi pi-rss text-base"></i>
             <span>{{ i18n.t('sidebar.rssFeed') }}</span>

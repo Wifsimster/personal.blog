@@ -8,7 +8,7 @@
         <div class="flex items-center gap-3">
           <button
             @click="i18n.switchLanguage(i18n.language.value === 'fr' ? 'en' : 'fr')"
-            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center text-gray-700 dark:text-zinc-300"
+            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center focus-ring text-gray-700 dark:text-zinc-300"
             :aria-label="i18n.language.value === 'fr' ? 'Passer en anglais' : 'Switch to French'"
             :title="i18n.language.value === 'fr' ? 'Passer en anglais' : 'Switch to French'"
           >
@@ -16,14 +16,14 @@
           </button>
           <button
             @click="darkMode.toggleDark()"
-            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center"
+            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center focus-ring"
             :aria-label="darkMode.isDark.value ? 'Switch to light mode' : 'Switch to dark mode'"
           >
             <i :class="darkMode.isDark.value ? 'pi pi-moon' : 'pi pi-sun'" class="text-sm text-gray-700 dark:text-zinc-300"></i>
           </button>
           <button
             @click="menuOpen = !menuOpen"
-            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center"
+            class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center focus-ring"
             aria-label="Toggle menu"
           >
             <i :class="menuOpen ? 'pi pi-times' : 'pi pi-bars'" class="text-sm text-gray-700 dark:text-zinc-300"></i>
@@ -46,7 +46,7 @@
             v-for="item in navItems"
             :key="item.path"
             :to="item.path"
-            class="block px-3 py-2 text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-md transition-colors"
+            class="block px-3 py-2 text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-md transition-colors focus-ring"
             active-class="bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400"
             @click="menuOpen = false"
           >
@@ -61,7 +61,7 @@
               type="text"
               :placeholder="i18n.t('home.searchPlaceholder')"
               @keyup.enter="handleSearch"
-              class="w-full px-4 py-2 pl-10 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 text-sm"
+              class="w-full px-4 py-2 pl-10 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-900 text-sm"
             />
             <i class="pi pi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-500 text-sm"></i>
           </div>

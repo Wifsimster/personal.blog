@@ -1,6 +1,6 @@
 <template>
   <article class="bg-white/70 dark:bg-zinc-800/60 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 border border-gray-200/80 dark:border-zinc-700/80">
-    <RouterLink :to="postLink" class="block">
+    <RouterLink :to="postLink" class="block rounded-lg focus-ring">
       <h2 class="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
         {{ post.title }}
       </h2>
@@ -16,7 +16,7 @@
         <span
           v-for="tag in post.tags"
           :key="tag"
-          class="text-xs px-2 py-1 bg-gray-100 dark:bg-zinc-700 text-gray-600 dark:text-zinc-400 rounded"
+          class="text-xs px-2 py-1 bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-400 rounded-full"
         >
           {{ tag }}
         </span>
