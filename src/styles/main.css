@@ -107,6 +107,14 @@
 }
 
 @layer components {
+  /* Single source of truth for keyboard focus on interactive controls
+     (buttons, icon buttons, pills, block/list links). Mirrors the ring
+     BackToTop.vue already used. Text inputs keep their own `focus:` ring
+     but reuse the same offset colors inline. */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900;
+  }
+
   .prose {
     @apply max-w-none font-serif;
   }

@@ -21,7 +21,7 @@
             type="text"
             :placeholder="i18n.t('home.searchPlaceholder')"
             :class="[
-              'w-full px-4 py-2 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400',
+              'w-full px-4 py-2 text-sm border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-900',
               searchQuery ? 'pr-10' : 'pr-24'
             ]"
           />
@@ -34,7 +34,7 @@
           <button
             v-if="searchQuery"
             @click="clearSearch"
-            class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-500 hover:text-gray-600 dark:hover:text-zinc-300 transition-colors"
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 rounded text-gray-500 dark:text-zinc-500 hover:text-gray-700 dark:hover:text-zinc-300 transition-colors focus-ring"
             aria-label="Clear search"
           >
             <i class="pi pi-times text-sm"></i>
@@ -50,7 +50,7 @@
             :key="availableTag"
             :to="`${langPrefix}/tags/${encodeURIComponent(availableTag)}`"
             :class="[
-              'px-3 py-1 text-sm rounded-full transition-colors',
+              'px-3 py-1 text-sm rounded-full transition-colors focus-ring',
               availableTag === tag
                 ? 'bg-primary-600 dark:bg-primary-500 text-white'
                 : 'bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-zinc-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300'
@@ -65,7 +65,7 @@
       <div v-if="hasActiveFilters" class="mb-6">
         <button
           @click="clearFilters"
-          class="px-4 py-2 text-sm text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+          class="px-4 py-2 text-sm rounded text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors focus-ring"
         >
           {{ i18n.t('home.clearFilters') }}
         </button>
@@ -73,7 +73,7 @@
 
       <div v-if="filteredPosts.length > 0" class="space-y-8">
         <div v-for="yearGroup in postsByYear" :key="yearGroup.year" class="space-y-4">
-          <h2 class="flex justify-between items-center text-2xl font-bold text-gray-900 dark:text-zinc-100 border-b border-gray-300 dark:border-zinc-700 pb-2">
+          <h2 class="flex justify-between items-center text-2xl font-bold text-gray-900 dark:text-zinc-100 border-b border-gray-200 dark:border-zinc-800 pb-2">
             <span>{{ yearGroup.year }}</span>
             <span class="text-sm text-gray-500 dark:text-zinc-400 font-normal">({{ yearGroup.posts.length }})</span>
           </h2>
@@ -84,7 +84,7 @@
           >
             <RouterLink
               :to="`${langPrefix}/posts/${post.slug}`"
-              class="flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 p-3 rounded-lg transition-colors"
+              class="flex items-start gap-4 hover:bg-gray-50 dark:hover:bg-zinc-800/50 p-3 rounded-lg transition-colors focus-ring"
             >
               <time :datetime="post.date" class="text-sm text-gray-500 dark:text-zinc-400 whitespace-nowrap min-w-[100px]">
                 {{ formatDate(post.date, lang) }}

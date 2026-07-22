@@ -13,7 +13,7 @@
           :key="heading.id"
           :href="`#${heading.id}`"
           :class="[
-            'block text-sm transition-colors rounded px-2 py-1',
+            'block text-sm transition-colors rounded px-2 py-1 focus-ring',
             heading.level === 2
               ? 'text-gray-700 dark:text-zinc-300 font-medium'
               : 'text-gray-600 dark:text-zinc-400 pl-6',

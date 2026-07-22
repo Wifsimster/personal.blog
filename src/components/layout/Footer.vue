@@ -7,7 +7,7 @@
           <span aria-hidden="true">·</span>
           <RouterLink
             :to="`${i18n.langPrefix.value}/privacy`"
-            class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            class="rounded hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus-ring"
           >
             {{ i18n.t('footer.privacy') }}
           </RouterLink>
@@ -17,7 +17,7 @@
             href="https://github.com/Wifsimster"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-600 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            class="rounded text-gray-600 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus-ring"
             aria-label="GitHub"
           >
             <i class="pi pi-github text-xl"></i>
@@ -26,7 +26,7 @@
             href="https://twitter.com/wifsimster"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-600 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            class="rounded text-gray-600 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus-ring"
             aria-label="Twitter"
           >
             <i class="pi pi-twitter text-xl"></i>
@@ -36,7 +36,7 @@
             target="_blank"
             rel="noopener noreferrer"
             type="application/rss+xml"
-            class="text-gray-600 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            class="rounded text-gray-600 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors focus-ring"
             :aria-label="i18n.t('sidebar.rssFeed')"
           >
             <i class="pi pi-rss text-xl"></i>
