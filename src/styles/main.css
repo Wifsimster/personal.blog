@@ -333,4 +333,19 @@
   .prose .post-tldr strong:first-child {
     @apply block mb-1.5 uppercase tracking-widest text-xs font-bold text-primary-600 dark:text-primary-400;
   }
+
+  /* The title attribute never fires on touch, so abbr is silent on mobile —
+     the site's own primary device. PostContent.vue adds a tap/click handler
+     that shows this as a positioned popover; these two rules are just the
+     affordance (a visibly tappable underline) and the popover's look. */
+  .prose abbr[title] {
+    @apply cursor-help border-b border-dotted border-gray-400 dark:border-zinc-500;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .abbr-tooltip {
+    @apply fixed z-50 max-w-[260px] rounded-lg bg-gray-900 px-3 py-2 text-sm leading-snug text-white shadow-lg dark:bg-zinc-100 dark:text-zinc-900;
+    pointer-events: none;
+  }
 }
