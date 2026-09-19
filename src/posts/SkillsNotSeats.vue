@@ -108,14 +108,25 @@ const englishContent: PostContent = {
 <p>And past the team size where one person can hold the full context, product management as a function stops being optional. It becomes genuinely full-time again. I wouldn't try this shape at ten times my team's size. I'd be wrong to recommend it there.</p>
 <p>The honest list, stated plainly: independent verification on anything safety- or security-critical. A named, accountable signer for every decision chain. An on-ramp for whoever inherits the skill next. None of those three survive being merged away. Everything else on the org chart is a candidate.</p>
 
-<h2>What to do Monday morning</h2>
-<ol>
-<li><strong>Audit your titles, not your headcount.</strong> For each specialist seat, write two columns: the skill it protects, and the coordination it performs. If the second column is longer, you found a seat, not a skill.</li>
-<li><strong>Pick one merge you already half-trust.</strong> Not the boldest one — the one where the person already owns half of the second skill informally.</li>
-<li><strong>Name who still needs a wall, in writing.</strong> Independent security or safety review, immune to any merge, with a name attached, not a policy.</li>
-<li><strong>Give the freed hours a destination before you announce the merge.</strong> Discovery, domain depth, teaching — not a shorter line on the org chart.</li>
-<li><strong>Measure the thing you are claiming, not the vibe.</strong> Audit one real week: decision latency and meeting-hours, before the merge and after. Illustrative bars in a blog post are not evidence about your team.</li>
-</ol>
+<h2>Two ways to get the timing wrong</h2>
+<p>Merge too early and quality drops on both sides — the same failure mode a shallow generalist hits. Never merge, and the hand-offs a shrinking team no longer needs keep running anyway, on habit. The window between the two is narrow: it opens once the second skill is already half-built, not before.</p>
+<svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration showing that merging a seat and a skill too early drops quality on both sides, while never merging lets the hand-offs run forever; the real window sits in between, narrow, right when the skill is already half-built." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">WHEN TO MERGE · ILLUSTRATIVE</text>
+<text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Between the two, a narrow window.</text>
+<text x="32" y="98" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">Too early</text>
+<text x="320" y="98" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75" text-anchor="middle">The window</text>
+<text x="608" y="98" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75" text-anchor="end">Never</text>
+<rect x="32" y="104" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
+<rect x="224" y="104" width="192" height="28" rx="6" fill="currentColor" fill-opacity="0.38"></rect>
+<line x1="224" y1="104" x2="224" y2="132" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"></line>
+<line x1="416" y1="104" x2="416" y2="132" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"></line>
+<path d="M 224 132 L 224 150 L 416 150 L 416 132" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M 320 150 L 320 162" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"></path>
+<text x="320" y="184" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="middle">the skill is already half there</text>
+<text x="32" y="160" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">quality drops on both sides</text>
+<text x="608" y="160" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6" text-anchor="end">the hand-offs never come back down</text>
+<text x="32" y="216" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">illustrative — the shape of the risk, not a measurement</text>
+</svg>
 <p><strong>Read the rest of the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">The SDLC Is Dead</a> — why the process was always waste. <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">Coding Was Never the Job</a> — what the engineer becomes when syntax disappears. <a target="_blank" rel="noopener noreferrer" href="/posts/po-is-dead-judgment-is-not">The Backlog Was Never the Job</a> — the post this one sharpens: judgment diffuses across roles, until the team is small enough that it doesn't. <a target="_blank" rel="noopener noreferrer" href="/posts/doctrine-as-code">Doctrine Compounds. Models Don't.</a> — where the rules that outlive a merged role live. <a target="_blank" rel="noopener noreferrer" href="/posts/quality-is-executed">The Tests Passed. Nothing Happened.</a> — the other skill that stopped needing its own seat. <a target="_blank" rel="noopener noreferrer" href="/posts/dora-ai-roi-report">DORA Just Confirmed What My Team Already Lived</a> — the reinvestment logic this post reuses.</p>
 <hr>
 <h2>Sources</h2>
@@ -230,14 +241,25 @@ const frenchContent: PostContent = {
 <p>Et passé la taille d'équipe où une seule personne peut porter tout le contexte, le management produit en tant que fonction cesse d'être optionnel. Il redevient réellement un temps plein. Je n'essaierais pas cette forme à dix fois la taille de mon équipe. J'aurais tort de la recommander à cette échelle.</p>
 <p>La liste honnête, dite sans détour : la vérification indépendante sur tout ce qui touche à la sécurité des patients ou à la sûreté, un signataire responsable nommé pour chaque chaîne de décision, et une voie d'apprentissage pour qui doit hériter de la compétence ensuite. Aucun de ces trois ne survit à une fusion. Tout le reste de l'organigramme est candidat.</p>
 
-<h2>Quoi faire lundi matin</h2>
-<ol>
-<li><strong>Auditez vos postes, pas vos effectifs.</strong> Pour chaque poste spécialisé, écrivez deux colonnes : la compétence qu'il protège, et la coordination qu'il effectue. Si la seconde colonne est plus longue, vous avez trouvé un poste, pas une compétence.</li>
-<li><strong>Choisissez une fusion à laquelle vous croyez déjà à moitié.</strong> Pas la plus audacieuse — celle où la personne possède déjà informellement la moitié de la seconde compétence.</li>
-<li><strong>Nommez par écrit qui a encore besoin d'un mur.</strong> Revue de sécurité ou de sûreté indépendante, immunisée contre toute fusion, avec un nom attaché, pas une politique.</li>
-<li><strong>Donnez une destination aux heures libérées avant d'annoncer la fusion.</strong> Terrain, profondeur métier, enseignement — pas une ligne plus courte sur l'organigramme.</li>
-<li><strong>Mesurez ce que vous affirmez, pas le ressenti.</strong> Auditez une vraie semaine : latence de décision et heures de réunion, avant la fusion et après. Des barres illustratives dans un billet de blog ne sont pas une preuve sur votre équipe.</li>
-</ol>
+<h2>Deux façons de se tromper de moment</h2>
+<p>Fusionnez trop tôt, et la qualité baisse des deux côtés — le même échec qu'un généraliste trop dilué. Ne fusionnez jamais, et les relais dont une équipe qui rétrécit n'a plus besoin continuent de tourner, par habitude. La fenêtre entre les deux est étroite : elle s'ouvre une fois la seconde compétence déjà à moitié construite, pas avant.</p>
+<svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration montrant que fusionner un poste et une compétence trop tôt fait baisser la qualité des deux côtés, alors que ne jamais fusionner laisse les relais perdurer indéfiniment ; la vraie fenêtre se situe entre les deux, étroite, au moment où la compétence est déjà à moitié acquise." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">QUAND FUSIONNER · ILLUSTRATIF</text>
+<text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Entre les deux, une fenêtre étroite.</text>
+<text x="32" y="98" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">Trop tôt</text>
+<text x="320" y="98" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75" text-anchor="middle">La fenêtre</text>
+<text x="608" y="98" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75" text-anchor="end">Jamais</text>
+<rect x="32" y="104" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
+<rect x="224" y="104" width="192" height="28" rx="6" fill="currentColor" fill-opacity="0.38"></rect>
+<line x1="224" y1="104" x2="224" y2="132" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"></line>
+<line x1="416" y1="104" x2="416" y2="132" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"></line>
+<path d="M 224 132 L 224 150 L 416 150 L 416 132" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M 320 150 L 320 162" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"></path>
+<text x="320" y="184" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="middle">la compétence est déjà à moitié là</text>
+<text x="32" y="160" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">la qualité baisse des deux côtés</text>
+<text x="608" y="160" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6" text-anchor="end">les relais ne redescendent jamais</text>
+<text x="32" y="216" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">illustratif — la forme du risque, pas une mesure</text>
+</svg>
 <p><strong>Lire la suite de la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">Le SDLC est mort</a> — pourquoi le processus a toujours été du gaspillage. <a target="_blank" rel="noopener noreferrer" href="/posts/coder-is-dead-engineer-is-born">Coder n'a jamais été le métier</a> — ce que devient l'ingénieur quand la syntaxe disparaît. <a target="_blank" rel="noopener noreferrer" href="/posts/po-is-dead-judgment-is-not">Le backlog n'a jamais été le métier</a> — le billet que celui-ci précise : le jugement se diffuse à travers les rôles, jusqu'à ce que l'équipe soit trop petite pour ça. <a target="_blank" rel="noopener noreferrer" href="/posts/doctrine-as-code">La doctrine capitalise. Pas les modèles.</a> — où vivent les règles qui survivent à un rôle fusionné. <a target="_blank" rel="noopener noreferrer" href="/posts/quality-is-executed">Les tests passent. Il ne se passe rien.</a> — l'autre compétence qui a cessé d'avoir besoin de son propre poste. <a target="_blank" rel="noopener noreferrer" href="/posts/dora-ai-roi-report">DORA vient de confirmer ce que mon équipe a déjà vécu</a> — la logique de réinvestissement que ce billet réutilise.</p>
 <hr>
 <h2>Sources</h2>
