@@ -260,6 +260,33 @@
     margin: 0;
   }
 
+  /* On a phone the diagram is wider than the screen and has to scroll —
+     that's correct per the rule above, but with no signal it just reads as
+     cut off (verified on a real device: the headline and bars end abruptly
+     at the screen edge). PostContent.vue toggles these two classes from
+     the scroll position; the mask fades whichever edge still hides
+     content, so it reveals the real page background instead of an
+     approximated overlay color. No fade at all once nothing is hidden. */
+  .prose .diagram-scroll {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .prose .diagram-scroll.can-scroll-right {
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
+  }
+
+  .prose .diagram-scroll.can-scroll-left {
+    -webkit-mask-image: linear-gradient(to left, black calc(100% - 28px), transparent 100%);
+    mask-image: linear-gradient(to left, black calc(100% - 28px), transparent 100%);
+  }
+
+  .prose .diagram-scroll.can-scroll-left.can-scroll-right {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%);
+  }
+
   /* Dark-mode legibility floor for diagrams. Every diagram draws with
      currentColor + per-element opacity; the tonality ladder that reads fine
      on white (text at 0.45-0.65) drops below comfortable contrast on

@@ -184,20 +184,54 @@ const setupAbbrTooltips = async () => {
   })
 }
 
+// A diagram wider than the viewport scrolls (see the note in main.css) but
+// gave no sign of it — verified on a real phone, the content just looked
+// cut off. These two classes drive the edge-fade mask: set from the actual
+// scroll position, so the fade only ever covers an edge that still hides
+// content, and disappears once nothing is left to reveal.
+const updateDiagramScrollFade = (el: HTMLElement) => {
+  const canScrollLeft = el.scrollLeft > 4
+  const canScrollRight = el.scrollLeft + el.clientWidth < el.scrollWidth - 4
+  el.classList.toggle('can-scroll-left', canScrollLeft)
+  el.classList.toggle('can-scroll-right', canScrollRight)
+}
+
+const getDiagramScrollers = (): HTMLElement[] => {
+  if (!contentRef.value) return []
+  return Array.from(contentRef.value.querySelectorAll('.diagram-scroll'))
+}
+
+const onDiagramScrollersResize = () => {
+  getDiagramScrollers().forEach(updateDiagramScrollFade)
+}
+
+const setupDiagramScrollFades = async () => {
+  await nextTick()
+  getDiagramScrollers().forEach((el) => {
+    if ((el as any).__scrollFadeAttached) return
+    updateDiagramScrollFade(el)
+    el.addEventListener('scroll', () => updateDiagramScrollFade(el), { passive: true })
+    ;(el as any).__scrollFadeAttached = true
+  })
+}
+
 // Watch for HTML changes and set up handlers
 watch(() => props.html, () => {
   setupImageClickHandlers()
   setupAbbrTooltips()
   hideAbbrTooltip()
+  setupDiagramScrollFades()
 }, { immediate: false })
 
 onMounted(() => {
   setupImageClickHandlers()
   setupAbbrTooltips()
+  setupDiagramScrollFades()
   document.addEventListener('pointerdown', onDocumentPointerDown)
   document.addEventListener('keydown', onDocumentKeydown)
   window.addEventListener('scroll', onViewportChange, true)
   window.addEventListener('resize', onViewportChange)
+  window.addEventListener('resize', onDiagramScrollersResize)
 })
 
 onUnmounted(() => {
@@ -205,6 +239,7 @@ onUnmounted(() => {
   document.removeEventListener('keydown', onDocumentKeydown)
   window.removeEventListener('scroll', onViewportChange, true)
   window.removeEventListener('resize', onViewportChange)
+  window.removeEventListener('resize', onDiagramScrollersResize)
   abbrTooltipEl?.remove()
   abbrTooltipEl = null
 })
