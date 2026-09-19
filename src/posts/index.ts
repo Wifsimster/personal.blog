@@ -38,6 +38,7 @@ import PoIsDeadJudgmentIsNot, { metadata as poIsDeadMetadata, getContent as getP
 import DoctrineAsCode, { metadata as doctrineAsCodeMetadata, getContent as getDoctrineAsCodeContent } from './DoctrineAsCode.vue'
 import QualityIsExecuted, { metadata as qualityIsExecutedMetadata, getContent as getQualityIsExecutedContent } from './QualityIsExecuted.vue'
 import SkillsNotSeats, { metadata as skillsNotSeatsMetadata, getContent as getSkillsNotSeatsContent } from './SkillsNotSeats.vue'
+import HomeAssistantConstellation, { metadata as costOfTryingMetadata, getContent as getCostOfTryingContent } from './HomeAssistantConstellation.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -240,6 +241,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: skillsNotSeatsMetadata,
     getContent: getSkillsNotSeatsContent,
     component: SkillsNotSeats
+  },
+  'cost-of-trying': {
+    metadata: costOfTryingMetadata,
+    getContent: getCostOfTryingContent,
+    component: HomeAssistantConstellation
   }
 }
 
