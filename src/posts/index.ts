@@ -37,6 +37,7 @@ import AgenticAddiction, { metadata as agenticAddictionMetadata, getContent as g
 import PoIsDeadJudgmentIsNot, { metadata as poIsDeadMetadata, getContent as getPoIsDeadContent } from './PoIsDeadJudgmentIsNot.vue'
 import DoctrineAsCode, { metadata as doctrineAsCodeMetadata, getContent as getDoctrineAsCodeContent } from './DoctrineAsCode.vue'
 import QualityIsExecuted, { metadata as qualityIsExecutedMetadata, getContent as getQualityIsExecutedContent } from './QualityIsExecuted.vue'
+import SkillsNotSeats, { metadata as skillsNotSeatsMetadata, getContent as getSkillsNotSeatsContent } from './SkillsNotSeats.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -234,6 +235,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: qualityIsExecutedMetadata,
     getContent: getQualityIsExecutedContent,
     component: QualityIsExecuted
+  },
+  'skills-not-seats': {
+    metadata: skillsNotSeatsMetadata,
+    getContent: getSkillsNotSeatsContent,
+    component: SkillsNotSeats
   }
 }
 
