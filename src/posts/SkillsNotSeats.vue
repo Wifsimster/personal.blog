@@ -25,7 +25,7 @@ const englishContent: PostContent = {
 <p><abbr title="Matthew Skelton and Manuel Pais, authors of the 2019 book on organizing teams around cognitive load">Team Topologies</abbr> gets closest to a citable version of the mechanism, and it argues something narrower than my claim: cognitive load is finite, so a team should shed every hand-off it does not need. <abbr title="DevOps Research and Assessment, Google Cloud's research program on software delivery">DORA</abbr>'s own research backs the same instinct from the systems side — elite performers are measurably more likely to run a loosely coupled architecture, precisely because it removes cross-team dependency on the critical path. Neither one argues for merging PO and security and domain expertise into a single person. What they argue is that every hand-off has a cost, and an organization that keeps adding seats without asking what hand-off each one adds is paying that cost blind.</p>
 <p>The clearest real-world precedent for actually collapsing a seat, rather than just reducing its hand-offs, is the disappearance of a dedicated "operations" title. <abbr title="Amazon's chief technology officer">Werner Vogels</abbr> described it in 2006: giving Amazon's developers the operational responsibility for what they built raised quality on both sides of the old wall, because the two halves of the judgment — build it well, run it well — had never actually needed two different people. Netflix wrote the same move up a decade later as "full-cycle developers," folding the separate SRE and test-engineering seats back into the person writing the change. Testing and security are living through the same move right now, under the name "shift left": instead of a QA seat catching what a developer missed downstream, or a security seat gatekeeping a release at the end, the skill returns to whoever is already closest to the change when it is made.</p>
 
-<svg viewBox="0 0 640 342" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative bar chart comparing four roles invented over the last decade — product ownership, testing, security, platform engineering — each split into a skill share that stays with the person and a seat share of coordination and reporting that does not; the seat share is the larger part in every row." class="diagram-svg">
+<svg viewBox="0 0 640 356" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative bar chart comparing four roles invented over the last decade — product ownership, testing, security, platform engineering — each split into a skill share that stays with the person and a seat share of coordination and reporting that does not; the seat share is the larger part in every row." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">TEN YEARS OF NEW TITLES · ILLUSTRATIVE</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">The skill was real. The seat wasn't.</text>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
@@ -47,10 +47,10 @@ const englishContent: PostContent = {
 <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">
 <rect x="32" y="266" width="14" height="14" rx="4" fill="currentColor" fill-opacity="0.42"></rect>
 <text x="54" y="277" fill="currentColor" opacity="0.75">the skill — moves with the person</text>
-<rect x="330" y="266" width="14" height="14" rx="4" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-opacity="0.22"></rect>
-<text x="352" y="277" fill="currentColor" opacity="0.75">the seat — the title, the meetings, the reporting line</text>
+<rect x="32" y="296" width="14" height="14" rx="4" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-opacity="0.22"></rect>
+<text x="54" y="307" fill="currentColor" opacity="0.75">the seat — the title, the meetings, the reporting line</text>
 </g>
-<text x="32" y="312" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">illustrative shares — a model of where the weight sits, not a measurement</text>
+<text x="32" y="336" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">illustrative shares — a model of where the weight sits, not a measurement</text>
 </svg>
 
 <h2>One field report, not a template</h2>
@@ -118,32 +118,33 @@ const frenchContent: PostContent = {
 <p><abbr title="Matthew Skelton et Manuel Pais, auteurs du livre de 2019 sur l'organisation des équipes autour de la charge cognitive">Team Topologies</abbr> s'approche le plus d'une version citable du mécanisme, et défend une thèse plus étroite que la mienne : la charge cognitive est finie, donc une équipe devrait se débarrasser de tout relais dont elle n'a pas besoin. Les propres recherches de <abbr title="DevOps Research and Assessment, le programme de recherche de Google Cloud sur le delivery logiciel">DORA</abbr> confortent le même instinct côté systèmes : les organisations les plus performantes sont mesurablement plus susceptibles d'adopter une architecture faiblement couplée, précisément parce que cela retire la dépendance inter-équipes du chemin critique. Ni l'un ni l'autre ne plaide pour fusionner le PO, la sécurité et l'expertise métier en une seule personne. Ce qu'ils défendent, c'est que chaque relais a un coût, et qu'une organisation qui continue d'ajouter des postes sans se demander quel relais chacun ajoute paie ce coût à l'aveugle.</p>
 <p>Le précédent le plus net pour la disparition réelle d'un poste, plutôt que la simple réduction de ses relais, c'est la disparition d'un intitulé « opérations » dédié. <abbr title="Directeur technique d'Amazon">Werner Vogels</abbr> l'a décrit en 2006 : donner aux développeurs d'Amazon la responsabilité opérationnelle de ce qu'ils construisaient a fait monter la qualité des deux côtés de l'ancien mur, parce que les deux moitiés du jugement — bien construire, bien exploiter — n'avaient en réalité jamais eu besoin de deux personnes différentes. Netflix a écrit le même mouvement une décennie plus tard sous le nom de « full-cycle developers », en repliant les postes séparés de SRE et de test dans la personne qui écrit le changement. Le test et la sécurité vivent le même mouvement en ce moment, sous le nom de « shift left » : au lieu d'un poste QA qui attrape en aval ce qu'un développeur a manqué, ou d'un poste sécurité qui verrouille une livraison à la fin, la compétence revient à qui est déjà le plus proche du changement au moment où il est fait.</p>
 
-<svg viewBox="0 0 640 342" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme illustratif comparant quatre rôles inventés ces dix dernières années — product ownership, test, sécurité, ingénierie de plateforme — chacun décomposé entre une part compétence qui reste avec la personne et une part poste, coordination et reporting, qui ne la suit pas ; la part poste est la plus grande dans chaque ligne." class="diagram-svg">
+<svg viewBox="0 0 640 388" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme illustratif comparant quatre rôles inventés ces dix dernières années — product ownership, test, sécurité, ingénierie de plateforme — chacun décomposé entre une part compétence qui reste avec la personne et une part poste, coordination et reporting, qui ne la suit pas ; la part poste est la plus grande dans chaque ligne." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">DIX ANS DE NOUVEAUX POSTES · ILLUSTRATIF</text>
-<text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">La compétence était réelle. Le poste, non.</text>
+<text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">La compétence était réelle.</text>
+<text x="32" y="104" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Le poste, non.</text>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="100">Product ownership</text>
-<text x="32" y="140">Test</text>
-<text x="32" y="180">Sécurité</text>
-<text x="32" y="220">Plateforme / DevOps</text>
+<text x="32" y="132">Product ownership</text>
+<text x="32" y="172">Test</text>
+<text x="32" y="212">Sécurité</text>
+<text x="32" y="252">Plateforme / DevOps</text>
 </g>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="32" y="106" width="190" height="24" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
-<rect x="226" y="106" width="382" height="24" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="32" y="146" width="160" height="24" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
-<rect x="196" y="146" width="412" height="24" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="32" y="186" width="230" height="24" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
-<rect x="266" y="186" width="342" height="24" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="32" y="226" width="210" height="24" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
-<rect x="246" y="226" width="362" height="24" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="32" y="138" width="190" height="24" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
+<rect x="226" y="138" width="382" height="24" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="32" y="178" width="160" height="24" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
+<rect x="196" y="178" width="412" height="24" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="32" y="218" width="230" height="24" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
+<rect x="266" y="218" width="342" height="24" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
+<rect x="32" y="258" width="210" height="24" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
+<rect x="246" y="258" width="362" height="24" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
 </g>
 <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">
-<rect x="32" y="266" width="14" height="14" rx="4" fill="currentColor" fill-opacity="0.42"></rect>
-<text x="54" y="277" fill="currentColor" opacity="0.75">la compétence — suit la personne</text>
-<rect x="330" y="266" width="14" height="14" rx="4" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-opacity="0.22"></rect>
-<text x="352" y="277" fill="currentColor" opacity="0.75">le poste — le titre, les réunions, la ligne hiérarchique</text>
+<rect x="32" y="298" width="14" height="14" rx="4" fill="currentColor" fill-opacity="0.42"></rect>
+<text x="54" y="309" fill="currentColor" opacity="0.75">la compétence — suit la personne</text>
+<rect x="32" y="328" width="14" height="14" rx="4" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-opacity="0.22"></rect>
+<text x="54" y="339" fill="currentColor" opacity="0.75">le poste — le titre, les réunions, la ligne hiérarchique</text>
 </g>
-<text x="32" y="312" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">parts illustratives — un modèle de la répartition du poids, pas une mesure</text>
+<text x="32" y="368" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">parts illustratives — un modèle de la répartition du poids, pas une mesure</text>
 </svg>
 
 <h2>Un retour d'expérience, pas un modèle</h2>
