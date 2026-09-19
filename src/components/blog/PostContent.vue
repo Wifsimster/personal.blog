@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import DOMPurify from 'dompurify'
 import { processPostImages } from '@/utils/imageProcessing'
 import type { GalleryImage } from '@/components/blog/ImageGallery.vue'
@@ -86,13 +86,127 @@ const setupImageClickHandlers = async () => {
   })
 }
 
+// abbr's title attribute never fires on touch — mobile, the site's primary
+// device, can't read it at all. Tap/click toggles a positioned popover
+// instead; one shared tooltip node, reused for every abbr on the page.
+let abbrTooltipEl: HTMLDivElement | null = null
+let activeAbbr: HTMLElement | null = null
+
+const ensureAbbrTooltip = (): HTMLDivElement => {
+  if (!abbrTooltipEl) {
+    abbrTooltipEl = document.createElement('div')
+    abbrTooltipEl.className = 'abbr-tooltip'
+    abbrTooltipEl.setAttribute('role', 'tooltip')
+    abbrTooltipEl.style.visibility = 'hidden'
+    document.body.appendChild(abbrTooltipEl)
+  }
+  return abbrTooltipEl
+}
+
+const hideAbbrTooltip = () => {
+  if (abbrTooltipEl) abbrTooltipEl.style.visibility = 'hidden'
+  activeAbbr = null
+}
+
+const showAbbrTooltip = (abbr: HTMLElement) => {
+  const text = abbr.getAttribute('title')
+  if (!text) return
+
+  const tooltip = ensureAbbrTooltip()
+  tooltip.textContent = text
+  tooltip.style.left = '0px'
+  tooltip.style.top = '0px'
+  tooltip.style.visibility = 'hidden'
+
+  const abbrRect = abbr.getBoundingClientRect()
+  const tooltipRect = tooltip.getBoundingClientRect()
+  const margin = 8
+
+  let left = abbrRect.left + abbrRect.width / 2 - tooltipRect.width / 2
+  left = Math.max(margin, Math.min(left, window.innerWidth - tooltipRect.width - margin))
+
+  let top = abbrRect.bottom + 8
+  if (top + tooltipRect.height > window.innerHeight - margin) {
+    top = abbrRect.top - tooltipRect.height - 8
+  }
+
+  tooltip.style.left = `${left}px`
+  tooltip.style.top = `${top}px`
+  tooltip.style.visibility = 'visible'
+  activeAbbr = abbr
+}
+
+const onDocumentPointerDown = (event: PointerEvent) => {
+  if (!activeAbbr) return
+  const target = event.target as Node
+  if (abbrTooltipEl?.contains(target) || activeAbbr.contains(target)) return
+  hideAbbrTooltip()
+}
+
+const onDocumentKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') hideAbbrTooltip()
+}
+
+const onViewportChange = () => {
+  if (activeAbbr) hideAbbrTooltip()
+}
+
+const setupAbbrTooltips = async () => {
+  await nextTick()
+  if (!contentRef.value) return
+
+  const abbrs = Array.from(contentRef.value.querySelectorAll('abbr[title]'))
+  abbrs.forEach((node) => {
+    const abbr = node as HTMLElement
+    if ((abbr as any).__abbrHandlerAttached) return
+
+    abbr.setAttribute('tabindex', '0')
+
+    const toggle = (event: Event) => {
+      event.stopPropagation()
+      if (activeAbbr === abbr) {
+        hideAbbrTooltip()
+      } else {
+        showAbbrTooltip(abbr)
+      }
+    }
+
+    abbr.addEventListener('click', toggle)
+    abbr.addEventListener('keydown', (event) => {
+      const key = (event as KeyboardEvent).key
+      if (key === 'Enter' || key === ' ') {
+        event.preventDefault()
+        toggle(event)
+      }
+    })
+
+    ;(abbr as any).__abbrHandlerAttached = true
+  })
+}
+
 // Watch for HTML changes and set up handlers
 watch(() => props.html, () => {
   setupImageClickHandlers()
+  setupAbbrTooltips()
+  hideAbbrTooltip()
 }, { immediate: false })
 
 onMounted(() => {
   setupImageClickHandlers()
+  setupAbbrTooltips()
+  document.addEventListener('pointerdown', onDocumentPointerDown)
+  document.addEventListener('keydown', onDocumentKeydown)
+  window.addEventListener('scroll', onViewportChange, true)
+  window.addEventListener('resize', onViewportChange)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('pointerdown', onDocumentPointerDown)
+  document.removeEventListener('keydown', onDocumentKeydown)
+  window.removeEventListener('scroll', onViewportChange, true)
+  window.removeEventListener('resize', onViewportChange)
+  abbrTooltipEl?.remove()
+  abbrTooltipEl = null
 })
 </script>
 
