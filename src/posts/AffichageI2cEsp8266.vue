@@ -21,7 +21,7 @@ const frenchContent: PostContent = {
 <li>2 résistances <a href="http://www.ebay.com/itm/100PCS-4-7K-4K7-Ohms-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071125870?hash=item3ab09c236e:g:k9EAAOSwjVVV3n3n">4.7kΩ</a>.</li>
 </ul>
 <p><strong>Attention !</strong><br>
-Le code est en LUA et nécessite donc d'avoir l'ESP8266 avec le firmware nodemcu.</p>
+Le code est en <abbr title="Langage de script léger, utilisé par le firmware NodeMCU">LUA</abbr> et nécessite donc d'avoir l'<abbr title="Microcontrôleur Wi-Fi bon marché, très répandu chez les bricoleurs">ESP8266</abbr> avec le firmware nodemcu.</p>
 <h2>Câblage</h2>
 <p><img src="/images/affichage-i2c-esp8266-schema.png" alt="Schéma I2C"></p>
 <h2>Code</h2>
@@ -29,7 +29,7 @@ Le code est en LUA et nécessite donc d'avoir l'ESP8266 avec le firmware nodemcu
 <h2>Principe</h2>
 <p>Le principe est le suivant :</p>
 <ol>
-<li>L'ESP créé un client MQTT avec un id unique;</li>
+<li>L'ESP créé un client <abbr title="Message Queuing Telemetry Transport — bus de messages léger">MQTT</abbr> avec un id unique;</li>
 <li>Il se connecte au broker MQTT;</li>
 <li>Le client souscrit à un topic particulier où les données que l'on désire sont publiées;</li>
 <li>L'ESP affiche une première fois les données à l'écran;</li>
@@ -52,7 +52,7 @@ const englishContent: PostContent = {
 <li>2 <a href="http://www.ebay.com/itm/100PCS-4-7K-4K7-Ohms-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071125870?hash=item3ab09c236e:g:k9EAAOSwjVVV3n3n">4.7kΩ</a> resistors.</li>
 </ul>
 <p><strong>Warning!</strong><br>
-The code is in LUA and therefore requires the ESP8266 to have the nodemcu firmware.</p>
+The code is in <abbr title="Lightweight scripting language, used by the NodeMCU firmware">LUA</abbr> and therefore requires the <abbr title="A cheap Wi-Fi microcontroller, widely used by hobbyists">ESP8266</abbr> to have the nodemcu firmware.</p>
 <h2>Wiring</h2>
 <p><img src="/images/affichage-i2c-esp8266-schema.png" alt="I2C Diagram"></p>
 <h2>Code</h2>
@@ -60,7 +60,7 @@ The code is in LUA and therefore requires the ESP8266 to have the nodemcu firmwa
 <h2>Principle</h2>
 <p>The principle is as follows:</p>
 <ol>
-<li>The ESP creates an MQTT client with a unique id;</li>
+<li>The ESP creates an <abbr title="Message Queuing Telemetry Transport — lightweight message bus">MQTT</abbr> client with a unique id;</li>
 <li>It connects to the MQTT broker;</li>
 <li>The client subscribes to a specific topic where the desired data is published;</li>
 <li>The ESP displays the data on the screen for the first time;</li>

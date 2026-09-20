@@ -25,11 +25,11 @@ const frenchContent: PostContent = {
 <p><img src="/images/ambilight-ws2801-prototype-3.jpg" alt="Prototype 3"></p>
 <p><img src="/images/ambilight-ws2801-prototype-4.jpg" alt="Prototype 4"></p>
 <p><img src="/images/ambilight-ws2801-prototype-5.jpg" alt="Prototype 5"></p>
-<h2>Connexion avec le Raspberry Pi</h2>
+<h2>Connexion avec le <abbr title="Nano-ordinateur à bas coût, très utilisé en domotique et en électronique de loisir">Raspberry Pi</abbr></h2>
 <p>La connexion avec le Raspberry Pi est relativement simple, comme vous pouvez le voir sur le schéma ci-dessous.</p>
-<p>Les LED étant sensibles au voltage, il est préférable de les alimenter avec une alimentation extérieure connectée en parallèle au 5v du port GPIO.</p>
+<p>Les LED étant sensibles au voltage, il est préférable de les alimenter avec une alimentation extérieure connectée en parallèle au 5v du port <abbr title="Broche d'entrée-sortie d'un microcontrôleur, configurable par logiciel">GPIO</abbr>.</p>
 <p><img src="/images/ambilight-ws2801-schema-connexion.png" alt="Schéma connexion"></p>
-<h2>Installation d'Hyperion</h2>
+<h2>Installation d'<abbr title="Logiciel open source qui pilote un rétroéclairage à partir de l'image affichée">Hyperion</abbr></h2>
 <p>Le plus simple pour utiliser Hyperion est d'utiliser une <a href="http://www.raspberrypi.org/downloads/">Raspbian</a> sur votre Raspberry Pi, si jamais vous voulez absoluement tourner sur un aure OS je vous repporte sur le wiki d'Hyperion qui explique la procédure supplémentaire à suivre <a href="https://github.com/tvdzwan/hyperion/wiki/installation">ici</a>.</p>
 <p>En premier lieu, une installation de quelques librairies est nécessaire pour faire tourner Hyperion sur votre Raspberi Pi.</p>
 <pre><code class="language-bash">sudo apt-get update 
@@ -60,7 +60,7 @@ rm /etc/init/hyperion.conf
 <p><img src="/images/ambilight-ws2801-cadre-acier-3.jpg" alt="Cadre acier 3"></p>
 <p><img src="/images/ambilight-ws2801-cadre-acier-4.jpg" alt="Cadre acier 4"></p>
 <p><img src="/images/ambilight-ws2801-cadre-acier-5.jpg" alt="Cadre acier 5"></p>
-<h2>Configuration avec XBMC</h2>
+<h2>Configuration avec <abbr title="Ancien nom du lecteur multimédia libre Kodi">XBMC</abbr></h2>
 <p>J'ai bataillé un moment avant de faire communiquer mon XBMC sous mon media center (Windows) avec le serveur Hyperion sur le Raspberry Pi.</p>
 <p>La seule solution (à l'heure actuelle) que j'ai trouvé, c'est de passer par l'addon XBMC Boblight qui rend possible la communication entre XBMC et Hyperion sur le réseau.</p>
 <p>J'ai testé l'addon Hyperion pour XBMC mais impossible d'établir une connexion…</p>
@@ -86,11 +86,11 @@ const englishContent: PostContent = {
 <p><img src="/images/ambilight-ws2801-prototype-3.jpg" alt="Prototype 3"></p>
 <p><img src="/images/ambilight-ws2801-prototype-4.jpg" alt="Prototype 4"></p>
 <p><img src="/images/ambilight-ws2801-prototype-5.jpg" alt="Prototype 5"></p>
-<h2>Connection with Raspberry Pi</h2>
+<h2>Connection with <abbr title="Low-cost single-board computer, widely used in home automation and hobby electronics">Raspberry Pi</abbr></h2>
 <p>The connection with the Raspberry Pi is relatively simple, as you can see in the diagram below.</p>
-<p>Since LEDs are sensitive to voltage, it's preferable to power them with an external power supply connected in parallel to the 5v GPIO port.</p>
+<p>Since LEDs are sensitive to voltage, it's preferable to power them with an external power supply connected in parallel to the 5v <abbr title="A microcontroller's general-purpose input/output pin">GPIO</abbr> port.</p>
 <p><img src="/images/ambilight-ws2801-schema-connexion.png" alt="Connection diagram"></p>
-<h2>Hyperion Installation</h2>
+<h2><abbr title="Open-source software that drives a backlight from the displayed picture">Hyperion</abbr> Installation</h2>
 <p>The easiest way to use Hyperion is to use <a href="http://www.raspberrypi.org/downloads/">Raspbian</a> on your Raspberry Pi. If you absolutely want to run on another OS, I refer you to the Hyperion wiki which explains the additional procedure to follow <a href="https://github.com/tvdzwan/hyperion/wiki/installation">here</a>.</p>
 <p>First, installation of a few libraries is necessary to run Hyperion on your Raspberry Pi.</p>
 <pre><code class="language-bash">sudo apt-get update 
@@ -121,7 +121,7 @@ rm /etc/init/hyperion.conf
 <p><img src="/images/ambilight-ws2801-cadre-acier-3.jpg" alt="Steel frame 3"></p>
 <p><img src="/images/ambilight-ws2801-cadre-acier-4.jpg" alt="Steel frame 4"></p>
 <p><img src="/images/ambilight-ws2801-cadre-acier-5.jpg" alt="Steel frame 5"></p>
-<h2>Configuration with XBMC</h2>
+<h2>Configuration with <abbr title="The former name of the open-source media centre Kodi">XBMC</abbr></h2>
 <p>I struggled for a while before getting my XBMC on my media center (Windows) to communicate with the Hyperion server on the Raspberry Pi.</p>
 <p>The only solution (at the moment) I found is to use the XBMC Boblight addon which makes communication between XBMC and Hyperion over the network possible.</p>
 <p>I tested the Hyperion addon for XBMC but couldn't establish a connection…</p>

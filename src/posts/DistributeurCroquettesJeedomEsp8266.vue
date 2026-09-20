@@ -24,7 +24,7 @@ const frenchContent: PostContent = {
 <p>Le plateau est verrouillé en rotation par deux fine tiges à la base du distributeur.</p>
 <p>En conséquence, selon le sens de rotation du moteur, la plateau descend ou monte.</p>
 <p>Un tuyau de plus gros diamètre englobe le tout afin de récupérer les croquettes et les verse à la base par un bec.</p>
-<p>Le distributeur est connecté à Jeedom par un ESP8266 et actionne le double relais sur requête HTTP.</p>
+<p>Le distributeur est connecté à <abbr title="Logiciel de domotique français, concurrent historique de Home Assistant">Jeedom</abbr> par un <abbr title="Microcontrôleur Wi-Fi bon marché, très répandu chez les bricoleurs">ESP8266</abbr> et actionne le double relais sur requête HTTP.</p>
 <p><img src="/images/distributeur-croquettes-1.jpg" alt="Distributeur 1"></p>
 <p><img src="/images/distributeur-croquettes-2.jpg" alt="Distributeur 2"></p>
 <p><img src="/images/distributeur-croquettes-3.jpg" alt="Distributeur 3"></p>
@@ -60,7 +60,7 @@ const englishContent: PostContent = {
 <p>The tray is locked in rotation by two thin rods at the base of the dispenser.</p>
 <p>Consequently, depending on the rotation direction of the motor, the tray goes down or up.</p>
 <p>A larger diameter tube surrounds everything to collect the food and pours it at the base through a spout.</p>
-<p>The dispenser is connected to Jeedom via an ESP8266 and actuates the double relay on HTTP request.</p>
+<p>The dispenser is connected to <abbr title="French home automation software, a long-standing Home Assistant rival">Jeedom</abbr> via an <abbr title="A cheap Wi-Fi microcontroller, widely used by hobbyists">ESP8266</abbr> and actuates the double relay on HTTP request.</p>
 <p><img src="/images/distributeur-croquettes-1.jpg" alt="Dispenser 1"></p>
 <p><img src="/images/distributeur-croquettes-2.jpg" alt="Dispenser 2"></p>
 <p><img src="/images/distributeur-croquettes-3.jpg" alt="Dispenser 3"></p>

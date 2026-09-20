@@ -20,7 +20,7 @@ const frenchContent: PostContent = {
 </ul>
 <h2>Câblage</h2>
 <p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-cablage.png" alt="BMP180"></p>
-<h2>Jeedom</h2>
+<h2><abbr title="Logiciel de domotique français, concurrent historique de Home Assistant">Jeedom</abbr></h2>
 <p>Créer un device virtuel.</p>
 <p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-jeedom.png" alt="BMP180 Jeedom"></p>
 <p>Veuillez à bien noter les ID de deux informations (température et pression), ici 535 et 536. Ces deux ID sont à insérer dans la requête HTTP à envoyer à Jeedom.</p>
@@ -43,7 +43,7 @@ const englishContent: PostContent = {
 </ul>
 <h2>Wiring</h2>
 <p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-cablage.png" alt="BMP180"></p>
-<h2>Jeedom</h2>
+<h2><abbr title="French home automation software, a long-standing Home Assistant rival">Jeedom</abbr></h2>
 <p>Create a virtual device.</p>
 <p><img src="/images/temperature-pression-bmp180-jeedom-esp8266-jeedom.png" alt="BMP180 Jeedom"></p>
 <p>Make sure to note the IDs of the two information (temperature and pressure), here 535 and 536. These two IDs are to be inserted in the HTTP request to send to Jeedom.</p>

@@ -20,20 +20,20 @@ const frenchContent: PostContent = {
 <li>1 résistance <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472">1kΩ</a> (pull-up).</li>
 </ul>
 <p><strong>Attention !</strong><br>
-Le code est en LUA et nécessite donc d'avoir l'ESP8266 avec le firmware nodemcu.</p>
+Le code est en <abbr title="Langage de script léger, utilisé par le firmware NodeMCU">LUA</abbr> et nécessite donc d'avoir l'<abbr title="Microcontrôleur Wi-Fi bon marché, très répandu chez les bricoleurs">ESP8266</abbr> avec le firmware nodemcu.</p>
 <h2>Câblage</h2>
-<p>[En attente du capteur TSL2561 sous Fritzing]</p>
+<p>[En attente du capteur <abbr title="Capteur de luminosité communiquant en I2C">TSL2561</abbr> sous Fritzing]</p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/tsl2561-mqtt">Github</a></p>
 <h2>Principe</h2>
 <p>Le principe est le suivant :</p>
 <ol>
-<li>L'ESP créé un client MQTT avec un id unique;</li>
+<li>L'ESP créé un client <abbr title="Message Queuing Telemetry Transport — bus de messages léger">MQTT</abbr> avec un id unique;</li>
 <li>Il se connecte au broker MQTT;</li>
 <li>A chaque changement de valeur du capteur TSL2561, le client MQTT publie les données sur un topic particulier;</li>
 <li>Le broker MQTT reçoit les données et les publie pour chaque client ayant souscrit à ce topic.</li>
 </ol>
-<h2>Jeedom</h2>
+<h2><abbr title="Logiciel de domotique français, concurrent historique de Home Assistant">Jeedom</abbr></h2>
 <p>Il vous faut tout d'abord installer le plugin gratuit MQTT dans Jeedom.</p>
 <p>Dès lors que votre ESP8266 publiera sur le broker MQTT, le plugin Jeedom ajoutera automatiquement le device TSL2561 :</p>
 <p><img src="/images/luminosite-jeedom-esp8266-mqtt.png" alt="TSL2561 MQTT"></p>
@@ -54,20 +54,20 @@ const englishContent: PostContent = {
 <li>1 <a href="http://www.ebay.fr/itm/resistance-1-4w-0-25w-1-10-100-1K-10K-100K-ohms-/171088290472">1kΩ</a> resistor (pull-up).</li>
 </ul>
 <p><strong>Warning!</strong><br>
-The code is in LUA and therefore requires the ESP8266 to have the nodemcu firmware.</p>
+The code is in <abbr title="Lightweight scripting language, used by the NodeMCU firmware">LUA</abbr> and therefore requires the <abbr title="A cheap Wi-Fi microcontroller, widely used by hobbyists">ESP8266</abbr> to have the nodemcu firmware.</p>
 <h2>Wiring</h2>
-<p>[Waiting for TSL2561 sensor under Fritzing]</p>
+<p>[Waiting for <abbr title="Light sensor speaking I2C">TSL2561</abbr> sensor under Fritzing]</p>
 <h2>Code</h2>
 <p><a href="https://github.com/Wifsimster/tsl2561-mqtt">Github</a></p>
 <h2>Principle</h2>
 <p>The principle is as follows:</p>
 <ol>
-<li>The ESP creates an MQTT client with a unique id;</li>
+<li>The ESP creates an <abbr title="Message Queuing Telemetry Transport — lightweight message bus">MQTT</abbr> client with a unique id;</li>
 <li>It connects to the MQTT broker;</li>
 <li>On each value change of the TSL2561 sensor, the MQTT client publishes the data on a specific topic;</li>
 <li>The MQTT broker receives the data and publishes it for each client that has subscribed to this topic.</li>
 </ol>
-<h2>Jeedom</h2>
+<h2><abbr title="French home automation software, a long-standing Home Assistant rival">Jeedom</abbr></h2>
 <p>You must first install the free MQTT plugin in Jeedom.</p>
 <p>Once your ESP8266 publishes on the MQTT broker, the Jeedom plugin will automatically add the TSL2561 device:</p>
 <p><img src="/images/luminosite-jeedom-esp8266-mqtt.png" alt="TSL2561 MQTT"></p>
