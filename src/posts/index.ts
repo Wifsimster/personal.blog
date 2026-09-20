@@ -39,6 +39,7 @@ import DoctrineAsCode, { metadata as doctrineAsCodeMetadata, getContent as getDo
 import QualityIsExecuted, { metadata as qualityIsExecutedMetadata, getContent as getQualityIsExecutedContent } from './QualityIsExecuted.vue'
 import SkillsNotSeats, { metadata as skillsNotSeatsMetadata, getContent as getSkillsNotSeatsContent } from './SkillsNotSeats.vue'
 import HomeAssistantConstellation, { metadata as costOfTryingMetadata, getContent as getCostOfTryingContent } from './HomeAssistantConstellation.vue'
+import DixAnsDeDomotique, { metadata as tenYearsMetadata, getContent as getTenYearsContent } from './DixAnsDeDomotique.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -246,6 +247,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: costOfTryingMetadata,
     getContent: getCostOfTryingContent,
     component: HomeAssistantConstellation
+  },
+  'ten-years-of-home-automation': {
+    metadata: tenYearsMetadata,
+    getContent: getTenYearsContent,
+    component: DixAnsDeDomotique
   }
 }
 
