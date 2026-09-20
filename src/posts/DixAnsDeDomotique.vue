@@ -26,49 +26,48 @@ const frenchContent: PostContent = {
 
 <h2>Ce qu'il y a dans la maison aujourd'hui</h2>
 <p>Le relevé brut du registre d'appareils, ce matin.</p>
-<svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme en barres du registre d'appareils de la maison : 87 appareils répartis sur neuf écosystèmes différents, dont 35 en Zigbee, 9 en Matter et 8 en Wi-Fi propriétaire Yeelight ; aucun standard ne couvre plus de 40 % du parc." class="diagram-svg">
+<svg viewBox="0 0 640 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme en anneau du registre d'appareils de la maison : 87 appareils répartis en onze catégories, Zigbee dominant avec 35 appareils, mais Matter, censé être le standard fédérateur, n'en pilote que 9, mis en évidence en couleur d'accent." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">87 APPAREILS · RELEVÉ DU 20/09/2026</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Neuf écosystèmes, un seul toit.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="115">Zigbee (ZHA)</text>
-<text x="32" y="147">Matter</text>
-<text x="32" y="179">Wi-Fi Yeelight</text>
-<text x="32" y="211">Shelly (HTTP local)</text>
-<text x="32" y="243">Téléphones (Companion)</text>
-<text x="32" y="275">eWeLink (cloud Sonoff)</text>
-<text x="32" y="307">Caméras (Protect, ONVIF)</text>
-<text x="32" y="339">Sonos (SSDP)</text>
-<text x="32" y="371">HomeKit (HAP)</text>
-<text x="32" y="403">Broadlink (IR / 433 MHz)</text>
-<text x="32" y="435">Ponts et services</text>
+<g>
+<path d="M 320.0 102.0 A 118 118 0 0 1 388.0 316.5" fill="none" stroke="currentColor" stroke-opacity="0.55" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 388.0 316.5 A 118 118 0 0 1 282.3 331.8" fill="none" stroke="currentColor" stroke-opacity="0.46" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 282.3 331.8 A 118 118 0 0 1 222.3 286.2" fill="none" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 222.3 286.2 A 118 118 0 0 1 202.0 222.1" fill="none" stroke="currentColor" stroke-opacity="0.40" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 202.0 222.1 A 118 118 0 0 1 212.0 172.4" fill="none" stroke="currentColor" stroke-opacity="0.35" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 212.0 172.4 A 118 118 0 0 1 235.8 137.3" fill="none" stroke="currentColor" stroke-opacity="0.31" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 235.8 137.3 A 118 118 0 0 1 255.6 121.2" fill="none" stroke="currentColor" stroke-opacity="0.27" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 255.6 121.2 A 118 118 0 0 1 278.3 109.6" fill="none" stroke="currentColor" stroke-opacity="0.27" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 278.3 109.6 A 118 118 0 0 1 294.6 104.8" fill="none" stroke="currentColor" stroke-opacity="0.23" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 294.6 104.8 A 118 118 0 0 1 311.5 102.3" fill="none" stroke="currentColor" stroke-opacity="0.23" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 311.5 102.3 A 118 118 0 0 1 320.0 102.0" fill="none" stroke="currentColor" stroke-opacity="0.19" stroke-width="38" stroke-linecap="butt"></path>
 </g>
-<g fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="232" y="100" width="340" height="20" rx="6"></rect>
-<rect x="232" y="132" width="87" height="20" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
-<rect x="232" y="164" width="78" height="20" rx="6"></rect>
-<rect x="232" y="196" width="58" height="20" rx="6"></rect>
-<rect x="232" y="228" width="49" height="20" rx="6"></rect>
-<rect x="232" y="260" width="29" height="20" rx="6"></rect>
-<rect x="232" y="292" width="29" height="20" rx="6"></rect>
-<rect x="232" y="324" width="19" height="20" rx="6"></rect>
-<rect x="232" y="356" width="19" height="20" rx="6"></rect>
-<rect x="232" y="388" width="10" height="20" rx="6"></rect>
-<rect x="232" y="420" width="126" height="20" rx="6"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">
-<text x="582" y="115">35</text>
-<text x="329" y="147" fill="var(--diagram-accent)" opacity="1">9</text>
-<text x="320" y="179">8</text>
-<text x="300" y="211">6</text>
-<text x="291" y="243">5</text>
-<text x="271" y="275">3</text>
-<text x="271" y="307">3</text>
-<text x="261" y="339">2</text>
-<text x="261" y="371">2</text>
-<text x="252" y="403">1</text>
-<text x="368" y="435">13</text>
-</g>
-<text x="32" y="464" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Relevé réel du registre, pas une cible d'architecture.</text>
+<line x1="450.6" y1="178.6" x2="467.8" y2="173.2" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="473.8" y="177.2" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.85">Zigbee · 35</text>
+<line x1="339.7" y1="355.6" x2="342.3" y2="373.4" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="342.3" y="377.4" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.85">Ponts/services · 13</text>
+<line x1="237.1" y1="329.1" x2="226.2" y2="343.4" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="220.2" y="347.4" text-anchor="end" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="1">Matter · 9</text>
+<line x1="189.4" y1="261.4" x2="172.2" y2="266.8" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="166.2" y="270.8" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.85">Yeelight · 8</text>
+<text x="320" y="218" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="40" font-weight="700">87</text>
+<text x="320" y="242" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">appareils</text>
+<rect x="32" y="441" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.35"></rect>
+<text x="54" y="448" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Shelly (HTTP local) · 6</text>
+<rect x="32" y="467" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.31"></rect>
+<text x="54" y="474" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Téléphones (Companion) · 5</text>
+<rect x="32" y="493" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.27"></rect>
+<text x="54" y="500" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">eWeLink (cloud Sonoff) · 3</text>
+<rect x="32" y="519" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.27"></rect>
+<text x="54" y="526" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Caméras (Protect, ONVIF) · 3</text>
+<rect x="340" y="441" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.23"></rect>
+<text x="362" y="448" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Sonos (SSDP) · 2</text>
+<rect x="340" y="467" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.23"></rect>
+<text x="362" y="474" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">HomeKit (HAP) · 2</text>
+<rect x="340" y="493" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.19"></rect>
+<text x="362" y="500" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Broadlink (IR / 433 MHz) · 1</text>
+<text x="32" y="554" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Relevé réel du registre, pas une cible d'architecture.</text>
+<text x="32" y="574" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Matter, en couleur, ne pilote que 9 appareils sur 87.</text>
 </svg>
 <p>Derrière ces 87 appareils : 929 entités, 75 automatisations, 43 intégrations, 14 pièces déclarées. Le cœur du parc est en <abbr title="Réseau maillé radio basse consommation, 2,4 GHz">Zigbee</abbr>. Le reste est une longue traîne qui ne disparaîtra pas : un pont Somfy qui ne parle que <abbr title="Protocole d'accessoires domotique d'Apple">HomeKit</abbr>, huit ampoules Wi-Fi d'un constructeur chinois, une télécommande infrarouge pour la porte de l'atelier, des caméras en <abbr title="Standard ouvert d'interface pour caméras IP">ONVIF</abbr>, un compteur triphasé <abbr title="Modules de mesure et de commande électrique en Wi-Fi, pilotables en HTTP local">Shelly</abbr>, un moteur de synthèse vocale en conteneur.</p>
 <p>Il faut dire aussi ce qui ne marche pas, sinon l'inventaire est de la publicité. 250 entités sur 929 sont actuellement indisponibles ou inconnues. La majorité est normale. Les ampoules Wi-Fi sont coupées à l'interrupteur mural, et certains appareils sont saisonniers. Le reste est de la dette — des doublons d'anciens appairages, des capteurs à pile vides, un volet que le pont Somfy a perdu en août.</p>
@@ -76,19 +75,55 @@ const frenchContent: PostContent = {
 
 <h2>Ce qui a changé, et de combien</h2>
 <p>Home Assistant horodate les automatisations créées depuis son interface. Leur identifiant est un temps Unix. 42 des 75 en portent un. Les 33 autres viennent de fichiers <abbr title="Format de fichier de configuration lisible, utilisé par Home Assistant">YAML</abbr> et ne sont pas datables de cette façon.</p>
-<svg viewBox="0 0 640 296" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparaison du rythme de création d'automatisations : environ une par mois entre février 2024 et août 2025, contre vingt-deux pour le seul mois de septembre 2026." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">AUTOMATISATIONS CRÉÉES PAR MOIS</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Dix-huit mois, puis un mois.</text>
-<text x="32" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">Février 2024 → août 2025</text>
-<rect x="32" y="120" width="22" height="28" rx="8" fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
-<text x="66" y="139" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.8">1,1 par mois · 20 automatisations en 18 mois</text>
-<text x="32" y="176" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">Septembre 2026</text>
-<rect x="32" y="184" width="440" height="28" rx="8" fill="var(--diagram-accent)" fill-opacity="1" stroke="var(--diagram-accent)" stroke-opacity="0.55" stroke-width="1"></rect>
-<text x="482" y="203" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">22 en un mois</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
-<text x="32" y="248">42 des 75 automatisations portent un identifiant horodaté. Les autres</text>
-<text x="32" y="270">viennent de fichiers YAML et ne sont pas datables de cette façon.</text>
-</g>
+<svg viewBox="0 0 640 376" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vingt points espacés régulièrement sur toute la largeur représentent les vingt automatisations créées entre février 2024 et août 2025, dix-huit mois ; vingt-deux points serrés en un petit bloc, en couleur d'accent, représentent les vingt-deux automatisations créées en septembre 2026, un seul mois." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">AUTOMATISATIONS · IDENTIFIANTS HORODATÉS</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Le même compte, en plus dense.</text>
+<text x="32" y="146" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.7">Février 2024 → août 2025 · 18 mois · 20 automatisations</text>
+<circle cx="32.0" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="62.3" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="92.6" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="122.9" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="153.3" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="183.6" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="213.9" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="244.2" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="274.5" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="304.8" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="335.2" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="365.5" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="395.8" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="426.1" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="456.4" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="486.7" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="517.1" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="547.4" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="577.7" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="608.0" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<text x="32" y="236" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650">Septembre 2026 · 1 mois · 22 automatisations</text>
+<circle cx="32.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="47.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="62.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="77.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="92.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="107.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="122.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="137.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="152.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="167.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="182.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="32.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="47.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="62.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="77.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="92.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="107.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="122.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="137.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="152.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="167.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="182.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<text x="32" y="330" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">42 des 75 automatisations portent un identifiant horodaté ;</text>
+<text x="32" y="350" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">les autres viennent de fichiers YAML.</text>
 </svg>
 <p>Le rapport est de vingt contre un. Il faut le lire pour ce qu'il est : une mesure du rythme de création, pas de la valeur créée. Vingt-deux automatisations en un mois, ce n'est pas vingt fois mieux qu'une par mois. C'est surtout la preuve qu'un lot de sujets attendait depuis longtemps et qu'ils sont passés d'un coup.</p>
 <p>Ce qui suit est plus parlant que la courbe.</p>
@@ -151,49 +186,48 @@ const englishContent: PostContent = {
 
 <h2>What is in the house today</h2>
 <p>The raw device registry, this morning.</p>
-<svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of the house device registry: 87 devices spread across nine different ecosystems, with 35 on Zigbee, 9 on Matter and 8 on proprietary Yeelight Wi-Fi; no single standard covers more than 40 percent of the fleet." class="diagram-svg">
+<svg viewBox="0 0 640 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ring diagram of the house device registry: 87 devices spread across eleven categories, Zigbee dominant with 35 devices, but Matter, meant to be the unifying standard, drives only 9, highlighted in accent colour." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">87 DEVICES · SNAPSHOT, 20 SEP 2026</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Nine ecosystems. One roof.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="115">Zigbee (ZHA)</text>
-<text x="32" y="147">Matter</text>
-<text x="32" y="179">Yeelight Wi-Fi</text>
-<text x="32" y="211">Shelly (local HTTP)</text>
-<text x="32" y="243">Phones (Companion)</text>
-<text x="32" y="275">eWeLink (Sonoff cloud)</text>
-<text x="32" y="307">Cameras (Protect, ONVIF)</text>
-<text x="32" y="339">Sonos (SSDP)</text>
-<text x="32" y="371">HomeKit (HAP)</text>
-<text x="32" y="403">Broadlink (IR / 433 MHz)</text>
-<text x="32" y="435">Bridges and services</text>
+<g>
+<path d="M 320.0 102.0 A 118 118 0 0 1 388.0 316.5" fill="none" stroke="currentColor" stroke-opacity="0.55" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 388.0 316.5 A 118 118 0 0 1 282.3 331.8" fill="none" stroke="currentColor" stroke-opacity="0.46" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 282.3 331.8 A 118 118 0 0 1 222.3 286.2" fill="none" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 222.3 286.2 A 118 118 0 0 1 202.0 222.1" fill="none" stroke="currentColor" stroke-opacity="0.40" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 202.0 222.1 A 118 118 0 0 1 212.0 172.4" fill="none" stroke="currentColor" stroke-opacity="0.35" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 212.0 172.4 A 118 118 0 0 1 235.8 137.3" fill="none" stroke="currentColor" stroke-opacity="0.31" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 235.8 137.3 A 118 118 0 0 1 255.6 121.2" fill="none" stroke="currentColor" stroke-opacity="0.27" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 255.6 121.2 A 118 118 0 0 1 278.3 109.6" fill="none" stroke="currentColor" stroke-opacity="0.27" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 278.3 109.6 A 118 118 0 0 1 294.6 104.8" fill="none" stroke="currentColor" stroke-opacity="0.23" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 294.6 104.8 A 118 118 0 0 1 311.5 102.3" fill="none" stroke="currentColor" stroke-opacity="0.23" stroke-width="38" stroke-linecap="butt"></path>
+<path d="M 311.5 102.3 A 118 118 0 0 1 320.0 102.0" fill="none" stroke="currentColor" stroke-opacity="0.19" stroke-width="38" stroke-linecap="butt"></path>
 </g>
-<g fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="232" y="100" width="340" height="20" rx="6"></rect>
-<rect x="232" y="132" width="87" height="20" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
-<rect x="232" y="164" width="78" height="20" rx="6"></rect>
-<rect x="232" y="196" width="58" height="20" rx="6"></rect>
-<rect x="232" y="228" width="49" height="20" rx="6"></rect>
-<rect x="232" y="260" width="29" height="20" rx="6"></rect>
-<rect x="232" y="292" width="29" height="20" rx="6"></rect>
-<rect x="232" y="324" width="19" height="20" rx="6"></rect>
-<rect x="232" y="356" width="19" height="20" rx="6"></rect>
-<rect x="232" y="388" width="10" height="20" rx="6"></rect>
-<rect x="232" y="420" width="126" height="20" rx="6"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">
-<text x="582" y="115">35</text>
-<text x="329" y="147" fill="var(--diagram-accent)" opacity="1">9</text>
-<text x="320" y="179">8</text>
-<text x="300" y="211">6</text>
-<text x="291" y="243">5</text>
-<text x="271" y="275">3</text>
-<text x="271" y="307">3</text>
-<text x="261" y="339">2</text>
-<text x="261" y="371">2</text>
-<text x="252" y="403">1</text>
-<text x="368" y="435">13</text>
-</g>
-<text x="32" y="464" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">A real registry reading, not a target architecture.</text>
+<line x1="450.6" y1="178.6" x2="467.8" y2="173.2" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="473.8" y="177.2" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.85">Zigbee · 35</text>
+<line x1="339.7" y1="355.6" x2="342.3" y2="373.4" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="342.3" y="377.4" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.85">Bridges/services · 13</text>
+<line x1="237.1" y1="329.1" x2="226.2" y2="343.4" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="220.2" y="347.4" text-anchor="end" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="1">Matter · 9</text>
+<line x1="189.4" y1="261.4" x2="172.2" y2="266.8" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="166.2" y="270.8" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.85">Yeelight · 8</text>
+<text x="320" y="218" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="40" font-weight="700">87</text>
+<text x="320" y="242" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">devices</text>
+<rect x="32" y="441" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.35"></rect>
+<text x="54" y="448" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Shelly (local HTTP) · 6</text>
+<rect x="32" y="467" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.31"></rect>
+<text x="54" y="474" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Phones (Companion) · 5</text>
+<rect x="32" y="493" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.27"></rect>
+<text x="54" y="500" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">eWeLink (Sonoff cloud) · 3</text>
+<rect x="32" y="519" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.27"></rect>
+<text x="54" y="526" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Cameras (Protect, ONVIF) · 3</text>
+<rect x="340" y="441" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.23"></rect>
+<text x="362" y="448" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Sonos (SSDP) · 2</text>
+<rect x="340" y="467" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.23"></rect>
+<text x="362" y="474" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">HomeKit (HAP) · 2</text>
+<rect x="340" y="493" width="14" height="8" rx="4" fill="currentColor" fill-opacity="0.19"></rect>
+<text x="362" y="500" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Broadlink (IR / 433 MHz) · 1</text>
+<text x="32" y="554" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">A real registry reading, not a target architecture.</text>
+<text x="32" y="574" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Matter, in colour, drives only 9 of 87 devices.</text>
 </svg>
 <p>Behind those 87 devices: 929 entities, 75 automations, 43 integrations, 14 declared rooms. The core of the fleet is <abbr title="Low-power 2.4 GHz mesh radio protocol">Zigbee</abbr>. The rest is a long tail that is not going away: a Somfy bridge that only speaks <abbr title="Apple's local smart-home accessory protocol">HomeKit</abbr>, eight Wi-Fi bulbs from a Chinese vendor, an infrared remote for the workshop door, cameras on <abbr title="Open interface standard for IP cameras">ONVIF</abbr>, a three-phase <abbr title="Wi-Fi electrical metering and switching modules, driven over local HTTP">Shelly</abbr> meter, a text-to-speech engine in a container.</p>
 <p>The broken parts belong in the inventory too, otherwise this is advertising. 250 entities out of 929 are currently unavailable or unknown. Most of that is expected. The Wi-Fi bulbs are switched off at the wall, and some devices are seasonal. The rest is debt — duplicates left by old pairings, flat battery sensors, a shutter the Somfy bridge lost in August.</p>
@@ -201,19 +235,55 @@ const englishContent: PostContent = {
 
 <h2>What changed, and by how much</h2>
 <p>Home Assistant timestamps automations created through its interface. The identifier is a Unix time. 42 of the 75 carry one. The other 33 come from <abbr title="A readable configuration file format, used by Home Assistant">YAML</abbr> files and cannot be dated this way.</p>
-<svg viewBox="0 0 640 296" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of the rate at which automations were created: about one a month between February 2024 and August 2025, against twenty-two in the single month of September 2026." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">AUTOMATIONS CREATED PER MONTH</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Eighteen months, then one month.</text>
-<text x="32" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">February 2024 → August 2025</text>
-<rect x="32" y="120" width="22" height="28" rx="8" fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
-<text x="66" y="139" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.8">1.1 a month · 20 automations in 18 months</text>
-<text x="32" y="176" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">September 2026</text>
-<rect x="32" y="184" width="440" height="28" rx="8" fill="var(--diagram-accent)" fill-opacity="1" stroke="var(--diagram-accent)" stroke-opacity="0.55" stroke-width="1"></rect>
-<text x="482" y="203" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">22 in one month</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
-<text x="32" y="248">42 of the 75 automations carry a timestamped identifier. The rest</text>
-<text x="32" y="270">come from YAML files and cannot be dated this way.</text>
-</g>
+<svg viewBox="0 0 640 376" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Twenty dots spread evenly across the full width represent the twenty automations created between February 2024 and August 2025, eighteen months; twenty-two dots packed into a small block, in accent colour, represent the twenty-two automations created in September 2026, a single month." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">AUTOMATIONS · TIMESTAMPED IDS</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Same dot count, packed far tighter.</text>
+<text x="32" y="146" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.7">February 2024 → August 2025 · 18 months · 20 automations</text>
+<circle cx="32.0" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="62.3" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="92.6" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="122.9" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="153.3" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="183.6" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="213.9" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="244.2" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="274.5" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="304.8" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="335.2" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="365.5" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="395.8" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="426.1" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="456.4" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="486.7" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="517.1" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="547.4" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="577.7" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<circle cx="608.0" cy="170" r="5" fill="currentColor" fill-opacity="0.4"></circle>
+<text x="32" y="236" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650">September 2026 · 1 month · 22 automations</text>
+<circle cx="32.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="47.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="62.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="77.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="92.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="107.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="122.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="137.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="152.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="167.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="182.0" cy="260.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="32.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="47.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="62.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="77.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="92.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="107.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="122.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="137.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="152.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="167.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<circle cx="182.0" cy="275.0" r="5.5" fill="var(--diagram-accent)"></circle>
+<text x="32" y="330" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">42 of the 75 automations carry a timestamped identifier;</text>
+<text x="32" y="350" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">the rest come from YAML files.</text>
 </svg>
 <p>The ratio is twenty to one. It should be read for what it is: a measure of how fast things get created, not of value created. Twenty-two automations in a month is not twenty times better than one a month. Mostly it shows that a batch of subjects had been waiting a long time, and that they all went through at once.</p>
 <p>What follows says more than the curve does.</p>
