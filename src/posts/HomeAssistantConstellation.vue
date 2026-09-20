@@ -19,53 +19,8 @@ const frenchContent: PostContent = {
 <p>La version propre était évidente. Le calendrier scolaire officiel est un jeu de données ouvert. Il suffit d'un capteur <abbr title="Interface web qui expose des données sur HTTP">REST</abbr>, d'un filtre sur l'académie, d'un capteur binaire qui teste si la date du jour tombe dans une période, et d'une synchronisation. Une demi-journée de travail, peut-être. Je ne l'ai jamais faite.</p>
 <p>Elle a été faite en une session, testée de bout en bout, le 18 septembre. C'est cette bascule que je veux décrire, pas le gadget.</p>
 
-<h2>Neuf écosystèmes, un seul serveur</h2>
-<p>Le relevé brut du registre d'appareils, ce matin.</p>
-<svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme en barres du registre d'appareils de la maison : 87 appareils répartis sur neuf écosystèmes différents, dont 35 en Zigbee, 9 en Matter et 8 en Wi-Fi propriétaire Yeelight ; aucun standard ne couvre plus de 40 % du parc." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">87 APPAREILS · RELEVÉ DU 19/09/2026</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Neuf écosystèmes, un seul toit.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="115">Zigbee (ZHA)</text>
-<text x="32" y="147">Matter</text>
-<text x="32" y="179">Wi-Fi Yeelight</text>
-<text x="32" y="211">Shelly (HTTP local)</text>
-<text x="32" y="243">Téléphones (Companion)</text>
-<text x="32" y="275">eWeLink (cloud Sonoff)</text>
-<text x="32" y="307">Caméras (Protect, ONVIF)</text>
-<text x="32" y="339">Sonos (SSDP)</text>
-<text x="32" y="371">HomeKit (HAP)</text>
-<text x="32" y="403">Broadlink (IR / 433 MHz)</text>
-<text x="32" y="435">Ponts et services</text>
-</g>
-<g fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="232" y="100" width="340" height="20" rx="6"></rect>
-<rect x="232" y="132" width="87" height="20" rx="6"></rect>
-<rect x="232" y="164" width="78" height="20" rx="6"></rect>
-<rect x="232" y="196" width="58" height="20" rx="6"></rect>
-<rect x="232" y="228" width="49" height="20" rx="6"></rect>
-<rect x="232" y="260" width="29" height="20" rx="6"></rect>
-<rect x="232" y="292" width="29" height="20" rx="6"></rect>
-<rect x="232" y="324" width="19" height="20" rx="6"></rect>
-<rect x="232" y="356" width="19" height="20" rx="6"></rect>
-<rect x="232" y="388" width="10" height="20" rx="6"></rect>
-<rect x="232" y="420" width="126" height="20" rx="6"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">
-<text x="582" y="115">35</text>
-<text x="329" y="147">9</text>
-<text x="320" y="179">8</text>
-<text x="300" y="211">6</text>
-<text x="291" y="243">5</text>
-<text x="271" y="275">3</text>
-<text x="271" y="307">3</text>
-<text x="261" y="339">2</text>
-<text x="261" y="371">2</text>
-<text x="252" y="403">1</text>
-<text x="368" y="435">13</text>
-</g>
-<text x="32" y="464" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Relevé réel du registre, pas une cible d'architecture.</text>
-</svg>
-<p>Matter devait être le standard qui range tout ça. Chez moi il pilote neuf appareils sur quatre-vingt-sept. Le reste est une longue traîne d'exceptions qui ne disparaîtra jamais : un pont Somfy qui ne parle que HomeKit, une télécommande infrarouge pour la porte de l'atelier, huit ampoules Wi-Fi d'un constructeur chinois, des caméras en ONVIF.</p>
+<h2>Pourquoi l'hétérogénéité change le calcul</h2>
+<p>L'inventaire complet est dans <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">l'épisode précédent</a> : 87 appareils, 929 entités, 43 intégrations. Un seul chiffre compte ici. Matter devait être le standard qui range tout ça, et chez moi il pilote neuf appareils sur quatre-vingt-sept. Le reste est une longue traîne d'exceptions qui ne disparaîtra jamais : un pont Somfy qui ne parle que HomeKit, une télécommande infrarouge pour la porte de l'atelier, huit ampoules Wi-Fi d'un constructeur chinois, des caméras en ONVIF.</p>
 <p>C'est le point de départ. Sur une installation à un seul protocole, un agent n'a pas grand-chose à apporter. Ici, la moindre idée traverse trois systèmes et deux formats de configuration.</p>
 <blockquote><p>Home Assistant n'est pas un produit domotique. C'est une couche de fédération — et le coût d'une fédération, c'est le contexte qu'il faut tenir en tête avant chaque modification.</p></blockquote>
 
@@ -169,7 +124,8 @@ const frenchContent: PostContent = {
 <li><strong>Écrire les alertes qui manquent.</strong> Un volet est resté hors ligne trois jours sans que rien ne me prévienne. Le groupe qui l'appelle chaque matin n'échouait pas : il ignorait le membre absent.</li>
 <li><strong>La moitié de ce chantier a été de la rédaction.</strong> Une automatisation qui ne change le comportement de personne n'existe pas.</li>
 </ul>
-<p>Le parc ne convergera pas. Dans cinq ans il y aura toujours un pont propriétaire, une télécommande infrarouge et une ampoule qui refuse son réseau. Mais le capteur de vacances scolaires tourne depuis deux jours, et cet interrupteur-là, je ne le rebasculerai plus jamais à la main.</p>`
+<p>Le parc ne convergera pas. Dans cinq ans il y aura toujours un pont propriétaire, une télécommande infrarouge et une ampoule qui refuse son réseau. Mais le capteur de vacances scolaires tourne depuis deux jours, et cet interrupteur-là, je ne le rebasculerai plus jamais à la main.</p>
+<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation, dix ans d'empilement, et la mesure de ce qui a changé.</p>`
 }
 
 const englishContent: PostContent = {
@@ -182,53 +138,8 @@ const englishContent: PostContent = {
 <p>The clean version was obvious. The official school calendar is an open dataset. All it takes is a <abbr title="A web interface exposing data over HTTP">REST</abbr> sensor, a filter on the right region, a binary sensor testing whether today falls inside a holiday period, and a sync job. Half a day of work, maybe. I never did it.</p>
 <p>It was built in one sitting, tested end to end, on 18 September. That shift is what I want to describe, not the gadget.</p>
 
-<h2>Nine ecosystems, one server</h2>
-<p>The raw device registry, this morning.</p>
-<svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of the house device registry: 87 devices spread across nine different ecosystems, with 35 on Zigbee, 9 on Matter and 8 on proprietary Yeelight Wi-Fi; no single standard covers more than 40 percent of the fleet." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">87 DEVICES · SNAPSHOT, 19 SEP 2026</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Nine ecosystems. One roof.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="115">Zigbee (ZHA)</text>
-<text x="32" y="147">Matter</text>
-<text x="32" y="179">Yeelight Wi-Fi</text>
-<text x="32" y="211">Shelly (local HTTP)</text>
-<text x="32" y="243">Phones (Companion)</text>
-<text x="32" y="275">eWeLink (Sonoff cloud)</text>
-<text x="32" y="307">Cameras (Protect, ONVIF)</text>
-<text x="32" y="339">Sonos (SSDP)</text>
-<text x="32" y="371">HomeKit (HAP)</text>
-<text x="32" y="403">Broadlink (IR / 433 MHz)</text>
-<text x="32" y="435">Bridges and services</text>
-</g>
-<g fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="232" y="100" width="340" height="20" rx="6"></rect>
-<rect x="232" y="132" width="87" height="20" rx="6"></rect>
-<rect x="232" y="164" width="78" height="20" rx="6"></rect>
-<rect x="232" y="196" width="58" height="20" rx="6"></rect>
-<rect x="232" y="228" width="49" height="20" rx="6"></rect>
-<rect x="232" y="260" width="29" height="20" rx="6"></rect>
-<rect x="232" y="292" width="29" height="20" rx="6"></rect>
-<rect x="232" y="324" width="19" height="20" rx="6"></rect>
-<rect x="232" y="356" width="19" height="20" rx="6"></rect>
-<rect x="232" y="388" width="10" height="20" rx="6"></rect>
-<rect x="232" y="420" width="126" height="20" rx="6"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">
-<text x="582" y="115">35</text>
-<text x="329" y="147">9</text>
-<text x="320" y="179">8</text>
-<text x="300" y="211">6</text>
-<text x="291" y="243">5</text>
-<text x="271" y="275">3</text>
-<text x="271" y="307">3</text>
-<text x="261" y="339">2</text>
-<text x="261" y="371">2</text>
-<text x="252" y="403">1</text>
-<text x="368" y="435">13</text>
-</g>
-<text x="32" y="464" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">A real registry reading, not a target architecture.</text>
-</svg>
-<p>Matter was supposed to be the standard that tidied this up. In my house it drives nine devices out of eighty-seven. The rest is a long tail of exceptions that will never go away: a Somfy bridge that only speaks HomeKit, an infrared remote for the workshop door, eight Wi-Fi bulbs from a Chinese vendor, cameras on ONVIF.</p>
+<h2>Why heterogeneity changes the maths</h2>
+<p>The full inventory is in <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">the previous episode</a>: 87 devices, 929 entities, 43 integrations. One number matters here. Matter was supposed to be the standard that tidied this up, and in my house it drives nine devices out of eighty-seven. The rest is a long tail of exceptions that will never go away: a Somfy bridge that only speaks HomeKit, an infrared remote for the workshop door, eight Wi-Fi bulbs from a Chinese vendor, cameras on ONVIF.</p>
 <p>That is the starting point. On a single-protocol setup, an agent has little to add. Here, the smallest idea crosses three systems and two configuration formats.</p>
 <blockquote><p>Home Assistant is not a smart-home product. It is a federation layer — and the price of a federation is the context you must hold in your head before every change.</p></blockquote>
 
@@ -332,7 +243,8 @@ const englishContent: PostContent = {
 <li><strong>Write the alerts that are missing.</strong> A shutter sat offline for three days and nothing told me. The group calling it every morning was not failing: it was skipping the absent member.</li>
 <li><strong>Half of this build was writing.</strong> An automation that changes nobody's behaviour does not exist.</li>
 </ul>
-<p>The fleet will not converge. In five years there will still be a proprietary bridge, an infrared remote and a bulb refusing its own network. But the school-holiday sensor has been running for two days, and that switch is one I will never flip by hand again.</p>`
+<p>The fleet will not converge. In five years there will still be a proprietary bridge, an infrared remote and a bulb refusing its own network. But the school-holiday sensor has been running for two days, and that switch is one I will never flip by hand again.</p>
+<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory, ten years of sediment, and a measurement of what changed.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
