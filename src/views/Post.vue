@@ -55,6 +55,7 @@
           <PostContent
             v-if="post"
             :html="post.html"
+            :locale="lang"
             :on-image-click="handleImageClick"
           />
         </main>

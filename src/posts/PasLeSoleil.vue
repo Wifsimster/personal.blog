@@ -133,6 +133,13 @@ const frenchContent: PostContent = {
 <li><strong>Construire un modèle est devenu moins cher que de s'en passer.</strong> Quelques heures d'analyse qui ne servent qu'une fois, personne ne les investit sur une maison. C'est précisément ce qui a changé.</li>
 </ul>
 <p>C'est le dernier épisode de cette série. Elle aura tenu en une phrase : ma maison n'est pas devenue intelligente, elle est devenue modifiable.</p>
+<h2>À télécharger</h2>
+<p>Les deux briques réutilisables de cet épisode.</p>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/not-the-sun/soleil-facade.yaml" download>soleil-facade.yaml</a> — un capteur par façade, qui dit si le soleil est réellement dessus. Trois nombres à régler, tous commentés.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/not-the-sun/blueprint-vitesse-selon-temperature.yaml" download>blueprint-vitesse-selon-temperature.yaml</a> — le barème qui traduit une température en vitesse de 0 à 6. Il écrit un nombre et ne commande rien lui-même, pour que le matériel puisse changer sans toucher au barème.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/not-the-sun/LISEZMOI.md" download>LISEZMOI.md</a> — l'installation, la méthode de réglage du masque d'horizon par observation, et le calcul d'écart d'azimut décrit sans Home Assistant.</li>
+</ul>
 <p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">J'ai changé le calendrier du soir trois fois en une semaine</a> — la maison qui porte le rythme de la journée. <a target="_blank" rel="noopener noreferrer" href="/posts/no-choices">J'ai enlevé les choix</a> — treize annonces vocales, et pourquoi le problème n'était pas le son.</p>`
 }
 
@@ -261,6 +268,13 @@ const englishContent: PostContent = {
 <li><strong>Building a model became cheaper than going without one.</strong> A few hours of analysis that pay off once is not something anyone invests in a house. That is precisely what changed.</li>
 </ul>
 <p>This is the last episode of the series. It holds in one sentence: my house did not become smart, it became modifiable.</p>
+<h2>Downloads</h2>
+<p>The two reusable building blocks from this episode.</p>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/not-the-sun/soleil-facade.yaml" download>soleil-facade.yaml</a> — one sensor per facade, telling you whether the sun is actually on it. Three numbers to set, all commented.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/not-the-sun/blueprint-vitesse-selon-temperature.yaml" download>blueprint-vitesse-selon-temperature.yaml</a> — the scale turning a temperature into a speed from 0 to 6. It writes a number and commands nothing itself, so the hardware can change without touching the scale.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/not-the-sun/LISEZMOI.md" download>LISEZMOI.md</a> — installation, how to tune the horizon mask by observation, and the azimuth maths described without Home Assistant. Written in French.</li>
+</ul>
 <p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">I Changed the Evening Schedule Three Times in One Week</a> — the house that holds the shape of the day. <a target="_blank" rel="noopener noreferrer" href="/posts/no-choices">I Took the Choices Out</a> — thirteen spoken announcements, and why the audio was never the problem.</p>`
 }
 
