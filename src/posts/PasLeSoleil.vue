@@ -52,6 +52,7 @@ const frenchContent: PostContent = {
 
 <h2>Le cadastre dit ce que la courbe de température ne dit pas</h2>
 <p>Ma première tentative d'orientation venait uniquement des données. J'avais corrélé trente jours de température de chaque pièce avec l'azimut du soleil, et j'en avais déduit une façade « est » entre 60 et 150 degrés.</p>
+<p>Corréler trente jours de température de six pièces avec la course du soleil est exactement le genre de calcul que je n'aurais jamais lancé à la main. Là, il a tourné pendant que je cherchais le plan cadastral.</p>
 <p>Deux erreurs dans ce seul résultat. La normale réelle de cette façade est à 114 degrés, donc mon intervalle était décentré. Et surtout il ne contenait aucune façade ouest, alors que la maison en a une.</p>
 <p>La corrélation sait confirmer qu'une pièce appartient bien à une façade. Elle ne sait pas inventer une façade dont aucune pièce instrumentée ne dépend. Le plan cadastral, lui, donne le faîtage et les quatre orientations en dix minutes.</p>
 <blockquote><p>Les données disent comment se comporte ce que vous mesurez. Elles ne disent rien de ce que vous n'avez pas pensé à mesurer.</p></blockquote>
@@ -113,7 +114,7 @@ const frenchContent: PostContent = {
 </svg>
 <p>En courant sur trente jours, la phase A plafonne à 13,5 ampères et ne dépasse jamais quatorze. La phase B monte à 26,7 et la phase C à 24,8, avec vingt-huit et dix-huit heures passées au-dessus du seuil.</p>
 <p>Les pointes de B et C sont plus brèves, donc elles passaient sous le radar d'un maximum horaire exprimé en watts. La phase que je croyais saturée est en réalité la plus libre de l'installation. C'est exactement là qu'il faut ajouter une charge.</p>
-<p>Un détail m'a amusé dans cette analyse. Mon lave-vaisselle n'est mesuré par rien, et il a pourtant été identifié sans ambiguïté par sa seule signature électrique : deux plateaux résistifs de 2 400 à 2 900 W espacés d'exactement deux heures, presque tous les jours, environ 780 Wh par cycle. C'est le seul gros poste non compté de sa phase.</p>
+<p>Un détail m'a amusé dans cette analyse. Mon lave-vaisselle n'est mesuré par rien, et il a pourtant été identifié sans ambiguïté par sa seule signature électrique : deux plateaux résistifs de 2 400 à 2 900 W espacés d'exactement deux heures, presque tous les jours, environ 780 Wh par cycle. C'est le seul gros poste non compté de sa phase. Personne ne l'a cherché : il est sorti de l'analyse des courbes, par la régularité de sa signature.</p>
 
 <h2>Ce que la maison ne décide toujours pas</h2>
 <p>Il faut finir par l'aveu. Le pilotage automatique des volets est encore sur arrêt.</p>
@@ -179,6 +180,7 @@ const englishContent: PostContent = {
 
 <h2>The land registry says what the temperature curve cannot</h2>
 <p>My first attempt at orientation came from the data alone. I had correlated thirty days of each room's temperature against the sun's azimuth, and concluded there was an "east" facade somewhere between 60 and 150 degrees.</p>
+<p>Correlating thirty days of temperature across six rooms against the sun's track is exactly the kind of computation I would never have started by hand. Here it ran while I was digging out the cadastral plan.</p>
 <p>Two errors in that single result. The real normal of that facade is 114 degrees, so my interval was off centre. And more importantly it contained no west facade at all, while the house has one.</p>
 <p>Correlation can confirm that a room belongs to a facade. It cannot invent a facade that no instrumented room depends on. The cadastral plan gives you the ridge line and all four orientations in ten minutes.</p>
 <blockquote><p>Data tells you how the things you measure behave. It says nothing about what you never thought to measure.</p></blockquote>
@@ -240,7 +242,7 @@ const englishContent: PostContent = {
 </svg>
 <p>Measured in current over thirty days, phase A tops out at 13.5 amps and never crosses fourteen. Phase B climbs to 26.7 and phase C to 24.8, with twenty-eight and eighteen hours spent above that line.</p>
 <p>The peaks on B and C are briefer, so they slipped under the radar of an hourly maximum expressed in watts. The phase I believed saturated is in fact the one with the most headroom. That is exactly where a new load belongs.</p>
-<p>One detail amused me in that analysis. My dishwasher is metered by nothing, and it was still identified beyond doubt from its electrical signature alone: two resistive plateaus of 2,400 to 2,900 W spaced exactly two hours apart, nearly every day, about 780 Wh per cycle. It is the only large unmetered load on its phase.</p>
+<p>One detail amused me in that analysis. My dishwasher is metered by nothing, and it was still identified beyond doubt from its electrical signature alone: two resistive plateaus of 2,400 to 2,900 W spaced exactly two hours apart, nearly every day, about 780 Wh per cycle. It is the only large unmetered load on its phase. Nobody went looking for it. It fell out of the curve analysis, on the regularity of its signature alone.</p>
 
 <h2>What the house still does not decide</h2>
 <p>Time for the admission. Automatic shutter control is still switched off.</p>
