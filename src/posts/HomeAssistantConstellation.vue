@@ -66,8 +66,7 @@ const frenchContent: PostContent = {
 <h2>L'interaction que je n'avais pas imaginée</h2>
 <p>Rien de ce qui suit ne relève d'un protocole.</p>
 <p>La maison parle. Treize annonces par jour, du lever au coucher, sur des enceintes de salon et de chambre. Les premières versions sortaient au bon moment, au bon volume, et personne ne bougeait.</p>
-<p>Elles ont été réécrites d'un coup selon une grille de huit règles — le prénom en tête, une seule action, aucun choix proposé. Cette grille est le sujet de <a target="_blank" rel="noopener noreferrer" href="/posts/no-choices">l'épisode 4</a> ; ce qui compte ici est le coût de l'opération. Treize messages corrigés en une passe, par un script qui applique le même correctif à chaque appel.</p>
-<p>Le réveil a suivi le même chemin. Version initiale : la voix, puis la musique. Mon fils n'aime pas être réveillé par une voix. La séquence a été inversée le jour même — musique d'abord, montée progressive du volume sur quatre-vingts secondes, la consigne par-dessus à la fin. Trois itérations dans la même journée, jusqu'au bon plafond de volume.</p>
+<p>Le réveil est l'exemple le plus net. La première version annonçait, puis lançait la musique. Mon fils n'aime pas être réveillé par une voix. La séquence a été inversée le jour même — musique d'abord, montée progressive du volume sur quatre-vingts secondes, la consigne par-dessus à la fin. Trois itérations dans la même journée, jusqu'au bon plafond de volume.</p>
 <p>Quand le coût d'une modification tombe à presque rien, on se met à régler des choses qu'on n'aurait jamais ouvertes. Une maison cesse d'être une installation et devient un objet qu'on ajuste au ressenti, le jour même, par petites touches.</p>
 <blockquote><p>Ce n'est plus de l'automatisation. C'est de l'itération de conception sur un lieu de vie.</p></blockquote>
 
@@ -149,8 +148,7 @@ const englishContent: PostContent = {
 <h2>The interaction I had not imagined</h2>
 <p>Nothing in this last part is a protocol problem.</p>
 <p>The house speaks. Thirteen announcements a day, from wake-up to bedtime, on living-room and bedroom speakers. The early versions went out at the right time, at the right volume, and nobody moved.</p>
-<p>They were rewritten in one pass against a grid of eight rules — name first, one action, no choices offered. That grid is the subject of <a target="_blank" rel="noopener noreferrer" href="/posts/no-choices">episode 4</a>; what matters here is what the operation cost. Thirteen messages fixed in a single pass, by a script applying the same patch at every call site.</p>
-<p>The wake-up went the same way. First version: voice, then music. My son does not like being woken by a voice. The sequence was flipped the same day — music first, volume ramping up over eighty seconds, the instruction laid over the top at the end. Three iterations in one day, until the ceiling volume felt right.</p>
+<p>The wake-up is the clearest example. The first version announced, then started the music. My son does not like being woken by a voice. The sequence was flipped the same day — music first, volume ramping up over eighty seconds, the instruction laid over the top at the end. Three iterations in one day, until the ceiling volume felt right.</p>
 <p>When the cost of a change falls to almost nothing, you start tuning things you would never have opened. A house stops being an installation and becomes something you adjust by feel, same-day, in small strokes.</p>
 <blockquote><p>This is not automation anymore. It is design iteration on a place where people live.</p></blockquote>
 
