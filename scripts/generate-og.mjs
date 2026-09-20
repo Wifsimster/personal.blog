@@ -19,6 +19,9 @@ import satori from 'satori'
 import { Resvg } from '@resvg/resvg-js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
+
+/** Posts dated after today are scheduled: written, merged, not yet published. */
+const TODAY_ISO = new Date().toISOString().slice(0, 10)
 const ROOT = join(__dirname, '..')
 const DIST = join(ROOT, 'dist')
 const POSTS_SRC = join(ROOT, 'src', 'posts')
@@ -119,7 +122,7 @@ function extractPostData(filePath) {
   const fr = extractContentBlock(content, 'frenchContent')
   const en = extractContentBlock(content, 'englishContent')
 
-  return { slug, date, tags, fr, en, draft: isDraft(content) }
+  return { slug, date, tags, fr, en, draft: isDraft(content), scheduled: date > TODAY_ISO }
 }
 
 // ─── Font loading ───────────────────────────────────────────────────
@@ -564,10 +567,11 @@ async function main() {
   const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.vue'))
   const parsed = postFiles.map(f => extractPostData(join(POSTS_SRC, f))).filter(Boolean)
   const draftCount = parsed.filter(p => p.draft).length
+  const scheduledCount = parsed.filter(p => !p.draft && p.scheduled).length
   // Drafts get neither an OG image nor a pre-rendered page: their URL falls
   // back to the SPA shell, which renders them client-side with a noindex tag.
-  const posts = parsed.filter(p => !p.draft)
-  console.log(`  Found ${posts.length} posts (${draftCount} draft(s) skipped)`)
+  const posts = parsed.filter(p => !p.draft && !p.scheduled)
+  console.log(`  Found ${posts.length} posts (${draftCount} draft(s), ${scheduledCount} scheduled skipped)`)
 
   // 2. Load fonts
   let fonts

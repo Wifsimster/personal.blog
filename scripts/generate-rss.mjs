@@ -16,6 +16,9 @@ import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
+
+/** Posts dated after today are scheduled: written, merged, not yet published. */
+const TODAY_ISO = new Date().toISOString().slice(0, 10)
 const ROOT = join(__dirname, '..')
 const DIST = join(ROOT, 'dist')
 const POSTS_SRC = join(ROOT, 'src', 'posts')
@@ -149,7 +152,7 @@ function extractPostData(filePath) {
   const fr = extractContentBlock(content, 'frenchContent')
   const en = extractContentBlock(content, 'englishContent')
 
-  return { slug, date, tags, fr, en, draft: isDraft(content) }
+  return { slug, date, tags, fr, en, draft: isDraft(content), scheduled: date > TODAY_ISO }
 }
 
 // ─── RSS generation ────────────────────────────────────────────────
@@ -265,11 +268,12 @@ function main() {
     .map(f => extractPostData(join(POSTS_SRC, f)))
     .filter(Boolean)
   const drafts = parsed.filter(p => p.draft)
+  const scheduled = parsed.filter(p => !p.draft && p.scheduled)
   const posts = parsed
-    .filter(p => !p.draft)
+    .filter(p => !p.draft && !p.scheduled)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
-  console.log(`  Found ${posts.length} posts (${drafts.length} draft(s) skipped)`)
+  console.log(`  Found ${posts.length} posts (${drafts.length} draft(s), ${scheduled.length} scheduled skipped)`)
 
   // French feed → dist/rss.xml
   const frFeed = buildRssFeed(posts, 'fr')

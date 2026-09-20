@@ -276,6 +276,21 @@ export function isDraft(info: PostComponentInfo): boolean {
   return info.metadata.draft === true
 }
 
+/**
+ * True when the post's date is still in the future. A scheduled post is
+ * written and merged, but stays out of every listing, feed and sitemap until
+ * its own date — so a series can be queued in one go and come out on its own.
+ * Like a draft, it remains readable at its URL.
+ */
+export function isScheduled(info: PostComponentInfo): boolean {
+  return info.metadata.date > new Date().toISOString().slice(0, 10)
+}
+
+/** Anything the public listings must not show yet. */
+function isHidden(info: PostComponentInfo): boolean {
+  return isDraft(info) || isScheduled(info)
+}
+
 function toPost(info: PostComponentInfo, locale: 'fr' | 'en'): Post {
   const content = info.getContent(locale)
   return {
@@ -296,14 +311,14 @@ function toPost(info: PostComponentInfo, locale: 'fr' | 'en'): Post {
  */
 export function getAllPosts(locale: 'fr' | 'en' = 'fr', options: PostQueryOptions = {}): Post[] {
   return Object.values(postRegistry)
-    .filter(info => options.includeDrafts || !isDraft(info))
+    .filter(info => options.includeDrafts || !isHidden(info))
     .map(info => toPost(info, locale))
 }
 
-/** Drafts only, for the private /drafts review page. */
+/** Drafts and scheduled posts, for the private /drafts review page. */
 export function getDraftPosts(locale: 'fr' | 'en' = 'fr'): Post[] {
   return Object.values(postRegistry)
-    .filter(isDraft)
+    .filter(isHidden)
     .map(info => toPost(info, locale))
 }
 
@@ -322,7 +337,7 @@ export function getPostsByTag(tag: string, locale: 'fr' | 'en' = 'fr'): Post[] {
 export function getAllTags(): Record<string, number> {
   const tags: Record<string, number> = {}
   Object.values(postRegistry).forEach(info => {
-    if (isDraft(info)) return
+    if (isHidden(info)) return
     info.metadata.tags?.forEach(tag => {
       tags[tag] = (tags[tag] || 0) + 1
     })

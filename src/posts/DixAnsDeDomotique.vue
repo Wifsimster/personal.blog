@@ -5,8 +5,7 @@ import type { PostMetadata, PostContent } from '@/utils/posts'
 export const metadata: PostMetadata = {
   slug: 'ten-years-of-home-automation',
   date: '2026-09-20',
-  tags: ['Homelab', 'Home-Assistant', 'DIY', 'AI'],
-  draft: true
+  tags: ['Homelab', 'Home-Assistant', 'DIY', 'AI']
 }
 
 const frenchContent: PostContent = {

@@ -15,6 +15,9 @@ import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
+
+/** Posts dated after today are scheduled: written, merged, not yet published. */
+const TODAY_ISO = new Date().toISOString().slice(0, 10)
 const ROOT = join(__dirname, '..')
 const DIST = join(ROOT, 'dist')
 const POSTS_SRC = join(ROOT, 'src', 'posts')
@@ -86,7 +89,7 @@ function extractPostData(filePath) {
   const hasFr = hasContentBlock(content, 'frenchContent') && !!extractTitleFor(content, 'frenchContent')
   const hasEn = hasContentBlock(content, 'englishContent') && !!extractTitleFor(content, 'englishContent')
 
-  return { slug, date, hasFr, hasEn, draft: isDraft(content) }
+  return { slug, date, hasFr, hasEn, draft: isDraft(content), scheduled: date > TODAY_ISO }
 }
 
 // ─── Tag collection ────────────────────────────────────────────────
@@ -159,8 +162,9 @@ function main() {
   const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.vue'))
   const parsed = postFiles.map(f => extractPostData(join(POSTS_SRC, f))).filter(Boolean)
   const draftCount = parsed.filter(p => p.draft).length
-  const posts = parsed.filter(p => !p.draft)
-  console.log(`  Found ${posts.length} posts (${draftCount} draft(s) skipped)`)
+  const scheduledCount = parsed.filter(p => !p.draft && p.scheduled).length
+  const posts = parsed.filter(p => !p.draft && !p.scheduled)
+  console.log(`  Found ${posts.length} posts (${draftCount} draft(s), ${scheduledCount} scheduled skipped)`)
 
   const today = new Date().toISOString()
   const entries = []
