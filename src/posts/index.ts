@@ -40,6 +40,7 @@ import QualityIsExecuted, { metadata as qualityIsExecutedMetadata, getContent as
 import SkillsNotSeats, { metadata as skillsNotSeatsMetadata, getContent as getSkillsNotSeatsContent } from './SkillsNotSeats.vue'
 import HomeAssistantConstellation, { metadata as costOfTryingMetadata, getContent as getCostOfTryingContent } from './HomeAssistantConstellation.vue'
 import DixAnsDeDomotique, { metadata as tenYearsMetadata, getContent as getTenYearsContent } from './DixAnsDeDomotique.vue'
+import RienNaEchoue, { metadata as nothingFailedMetadata, getContent as getNothingFailedContent } from './RienNaEchoue.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -252,6 +253,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: tenYearsMetadata,
     getContent: getTenYearsContent,
     component: DixAnsDeDomotique
+  },
+  'nothing-failed': {
+    metadata: nothingFailedMetadata,
+    getContent: getNothingFailedContent,
+    component: RienNaEchoue
   }
 }
 
