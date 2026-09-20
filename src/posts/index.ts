@@ -41,6 +41,7 @@ import SkillsNotSeats, { metadata as skillsNotSeatsMetadata, getContent as getSk
 import HomeAssistantConstellation, { metadata as costOfTryingMetadata, getContent as getCostOfTryingContent } from './HomeAssistantConstellation.vue'
 import DixAnsDeDomotique, { metadata as tenYearsMetadata, getContent as getTenYearsContent } from './DixAnsDeDomotique.vue'
 import RienNaEchoue, { metadata as nothingFailedMetadata, getContent as getNothingFailedContent } from './RienNaEchoue.vue'
+import AnnoncesSansChoix, { metadata as noChoicesMetadata, getContent as getNoChoicesContent } from './AnnoncesSansChoix.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -258,6 +259,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: nothingFailedMetadata,
     getContent: getNothingFailedContent,
     component: RienNaEchoue
+  },
+  'no-choices': {
+    metadata: noChoicesMetadata,
+    getContent: getNoChoicesContent,
+    component: AnnoncesSansChoix
   }
 }
 

@@ -130,7 +130,7 @@ const frenchContent: PostContent = {
 <li><strong>Une panne silencieuse dure aussi longtemps que votre attention.</strong> Trois jours pour un volet, douze pour un groupe de notifications vide. Dans les deux cas, l'alerte manquante a été écrite après.</li>
 </ul>
 <p>Le prochain épisode change complètement de terrain. Après trois billets passés à ne pas croire des machines, il parlera de la seule partie de cette maison où le problème n'est ni radio ni réseau : treize annonces vocales, et la manière de les écrire pour qu'un enfant de sept ans les exécute.</p>
-<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas.</p>`
+<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas. <a target="_blank" rel="noopener noreferrer" href="/posts/no-choices">J'ai enlevé les choix</a> — treize annonces vocales, et pourquoi le problème n'était pas le son.</p>`
 }
 
 const englishContent: PostContent = {
@@ -254,7 +254,7 @@ const englishContent: PostContent = {
 <li><strong>A silent failure lasts as long as your attention does.</strong> Three days for a shutter, twelve for an empty notification group. In both cases the missing alert was written afterwards.</li>
 </ul>
 <p>The next episode changes ground entirely. After three posts spent not believing machines, it covers the one part of this house where the problem is neither radio nor network: thirteen spoken announcements, and how to write them so a seven-year-old acts on them.</p>
-<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started.</p>`
+<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started. <a target="_blank" rel="noopener noreferrer" href="/posts/no-choices">I Took the Choices Out</a> — thirteen spoken announcements, and why the audio was never the problem.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
