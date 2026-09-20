@@ -12,12 +12,12 @@ const frenchContent: PostContent = {
   title: 'Ambi-like avec 240 LED WS2812B et une Teensy 2.0',
   description: "Réalisation d'un système Ambi-like avec un ruban de 4m composé de 240 LED WS2812B et une Teensy 2.0 pour restituer le flux vidéo de l'ordinateur sur les LED.",
   html: `<h2>Pourquoi ce choix de matériel ?</h2>
-<p>Un système Ambi-like se fait généralement avec des LED WS2801 car elles sont adressables contrairement aux LED WS2811/WS2812. J'avoue avoir acheté ce ruban sur un coup de tête (le nombre de LED au mètre m'a attiré) sans avoir vérifié la compatibilité avec les systèmes Ambi-like du moment… Mais j'aime les défis et surtout les nouvelles choses :)</p>
+<p>Un système Ambi-like se fait généralement avec des LED <abbr title="Circuit de bandeau LED adressable, piloté en SPI, chaque LED réglable indépendamment">WS2801</abbr> car elles sont adressables contrairement aux LED WS2811/WS2812. J'avoue avoir acheté ce ruban sur un coup de tête (le nombre de LED au mètre m'a attiré) sans avoir vérifié la compatibilité avec les systèmes Ambi-like du moment… Mais j'aime les défis et surtout les nouvelles choses :)</p>
 <p><img src="/images/ambilight-ws2812b-ruban.jpg" alt="Ruban WS2812"></p>
 <p>Pour le choix du contrôleur, j'avais déjà joué avec un Raspeberry Pi précédemment, je voulais donc tenter l'aventure sur un autre périphérique. Un Arduino correspond très bien au besoin, c'est petit, possède une faible consommation énergétique et il existe plusieurs systèmes d'Ambi-like dédiés. J'ai donc commandé une Tensy 2.0 qui est encore plus petite qu'un Arduino Uno et possède une plus grande puissance de calcul (ça se révélera important étant donné que mes LED ne sont pas adressables).</p>
 <p><img src="/images/ambilight-ws2812b-teensy.jpg" alt="Teensy 2.0"></p>
 <h2>Programmation</h2>
-<p>J'ai donc découvert la programmation sous Arduino grâce à cette Teensy 2.0. A vrai dire avec quelques connaissance en C, c'est relativement simple !</p>
+<p>J'ai donc découvert la programmation sous Arduino grâce à cette <abbr title="Carte microcontrôleur compacte, appréciée pour piloter des bandeaux de LED">Teensy</abbr> 2.0. A vrai dire avec quelques connaissance en C, c'est relativement simple !</p>
 <p>Il existe un logiciel de développement dédié pour les Arduino, à <a href="http://arduino.cc/en/Main/Software">télécharger ici</a>, par défaut Arduino ne prend pas en charge les Teensy, il faut donc télécharger et installer sur votre installation d'Arduino le 'patch' <a href="https://www.pjrc.com/teensy/td_download.html">Teensyduino</a>.</p>
 <p>Il embarque nativement des libraires de développement, à utiliser selon la fonction que vous voulez donner à votre système.</p>
 <p>Ici, nous voulons commander notre ruban à LED via notre ordinateur en passant par la Teensy. Pour cela nous utiliserons deux logiciels concurrent nommés <a href="http://www.ambibox.ru/en/index.php/Main_Page">Ambibox</a> et <a href="http://lightpack.tv/downloads">Prismatik</a>.</p>
@@ -33,7 +33,7 @@ const frenchContent: PostContent = {
 <p>Comme vous pouvez le voir ci-dessous, j'ai connecté les trois fils du ruban sur les ports VCC, GRD B1 de la Teensy 2.0. Le port B1 est paramétrable dans ma version de l'Adalight.</p>
 <p><img src="/images/ambilight-ws2812b-montage-2.jpg" alt="Montage 2"></p>
 <h2>Communication avec Adalight</h2>
-<p>Adalight est très répandu et est de plus en plus reconnu par les logiciels Ambilight. J'ai donc testé les deux plus connus du moment, Prismatik et Ambibox !</p>
+<p>Adalight est très répandu et est de plus en plus reconnu par les logiciels <abbr title="Éclairage d'ambiance projeté derrière l'écran et synchronisé avec l'image, popularisé par Philips">Ambilight</abbr>. J'ai donc testé les deux plus connus du moment, Prismatik et Ambibox !</p>
 <p><img src="/images/ambilight-ws2812b-communication.jpg" alt="Communication"></p>
 <h2>Update - 22/11/2015</h2>
 <p>Suite à mon déménagement, j'ai dû me remettre dans la programmation de la Teensy et je viens donc d'en profiter pour mettre à jour ma version d'Adalight.</p>
@@ -46,9 +46,9 @@ const englishContent: PostContent = {
   title: 'Ambi-like with 240 WS2812B LEDs and a Teensy 2.0',
   description: 'Building an Ambi-like system with a 4m strip composed of 240 WS2812B LEDs and a Teensy 2.0 to reproduce the computer\'s video stream on the LEDs.',
   html: `<h2>Why this hardware choice?</h2>
-<p>An Ambi-like system is usually done with WS2801 LEDs because they are addressable unlike WS2811/WS2812 LEDs. I admit I bought this strip on impulse (the number of LEDs per meter attracted me) without checking compatibility with current Ambi-like systems… But I like challenges and especially new things :)</p>
+<p>An Ambi-like system is usually done with <abbr title="Addressable LED strip chip driven over SPI, every LED individually controllable">WS2801</abbr> LEDs because they are addressable unlike WS2811/WS2812 LEDs. I admit I bought this strip on impulse (the number of LEDs per meter attracted me) without checking compatibility with current Ambi-like systems… But I like challenges and especially new things :)</p>
 <p><img src="/images/ambilight-ws2812b-ruban.jpg" alt="WS2812 Strip"></p>
-<p>For the controller choice, I had already played with a Raspberry Pi previously, so I wanted to try the adventure on another device. An Arduino fits the need very well, it's small, has low power consumption and there are several dedicated Ambi-like systems. So I ordered a Teensy 2.0 which is even smaller than an Arduino Uno and has greater computing power (this will prove important given that my LEDs are not addressable).</p>
+<p>For the controller choice, I had already played with a <abbr title="Low-cost single-board computer, widely used in home automation and hobby electronics">Raspberry Pi</abbr> previously, so I wanted to try the adventure on another device. An Arduino fits the need very well, it's small, has low power consumption and there are several dedicated Ambi-like systems. So I ordered a <abbr title="Compact microcontroller board, favoured for driving LED strips">Teensy</abbr> 2.0 which is even smaller than an Arduino Uno and has greater computing power (this will prove important given that my LEDs are not addressable).</p>
 <p><img src="/images/ambilight-ws2812b-teensy.jpg" alt="Teensy 2.0"></p>
 <h2>Programming</h2>
 <p>So I discovered Arduino programming thanks to this Teensy 2.0. To be honest with some C knowledge, it's relatively simple!</p>
@@ -67,7 +67,7 @@ const englishContent: PostContent = {
 <p>As you can see below, I connected the three wires of the strip to the VCC, GRD B1 ports of the Teensy 2.0. The B1 port is configurable in my version of Adalight.</p>
 <p><img src="/images/ambilight-ws2812b-montage-2.jpg" alt="Assembly 2"></p>
 <h2>Communication with Adalight</h2>
-<p>Adalight is very widespread and increasingly recognized by Ambilight software. So I tested the two most known at the moment, Prismatik and Ambibox!</p>
+<p>Adalight is very widespread and increasingly recognized by <abbr title="Ambient lighting projected behind a screen and synchronised with the picture, popularised by Philips">Ambilight</abbr> software. So I tested the two most known at the moment, Prismatik and Ambibox!</p>
 <p><img src="/images/ambilight-ws2812b-communication.jpg" alt="Communication"></p>
 <h2>Update - 22/11/2015</h2>
 <p>Following my move, I had to get back into Teensy programming and I just took the opportunity to update my Adalight version.</p>

@@ -19,8 +19,8 @@ const frenchContent: PostContent = {
 <li><a href="http://blog.idleman.fr/raspberry-pi-12-allumer-des-prises-distance/">Raspberry Pi 12 – Allumer des prises à distance</a>.</li>
 </ul>
 <h2>Principe & fonctionnement</h2>
-<p>Les prises Chacon DIO First fonctionne via radio fréquence en 433MHz.<br>
-Le principe est tout simple, reproduire les donnés émises par la télécommande via l'émétteur 433MHz couplé au Raspberry Pi.</p>
+<p>Les prises <abbr title="Marque française de prises et interrupteurs radio 433 MHz, courants en grande surface de bricolage">Chacon</abbr> DIO First fonctionne via radio fréquence en 433MHz.<br>
+Le principe est tout simple, reproduire les donnés émises par la télécommande via l'émétteur 433MHz couplé au <abbr title="Nano-ordinateur à bas coût, très utilisé en domotique et en électronique de loisir">Raspberry Pi</abbr>.</p>
 <p>La télécommande communique avec les prises via le protocole Easy Home, ce protocole compose le signal sous 32 bits ainsi :</p>
 <ul>
 <li>26 premiers bits correspondant à l'identifiant de la télécommande;</li>
@@ -30,7 +30,7 @@ Le principe est tout simple, reproduire les donnés émises par la télécommand
 </ul>
 <p>Pour de meilleure explication, je vous réfère au tutoriel d'<a href="http://blog.idleman.fr/raspberry-pi-10-commander-le-raspberry-pi-par-radio/">Idleman 10</a> sur le Raspberry Pi.</p>
 <h2>Montage</h2>
-<p>Si vous n'avez jamais jouer avec les ports GPIO du Raspberry Pi voici le montage à adopté pour faire fonctionner l'émetteur 433MHz.</p>
+<p>Si vous n'avez jamais jouer avec les ports <abbr title="Broche d'entrée-sortie d'un microcontrôleur, configurable par logiciel">GPIO</abbr> du Raspberry Pi voici le montage à adopté pour faire fonctionner l'émetteur 433MHz.</p>
 <p><img src="/images/controle-prise-chacon-schema-raspberry-pi.jpg" alt="Schéma Raspberry Pi"></p>
 <p>Vous pouvez voir sur le montage l'émetteur mais également le récepteur, ce n'est pas utile pour ce que l'on veut faire ici.</p>
 <p>Pour l'astuce, un câble de ventilateur PC à trois pins convient parfaitement pour l'émetteur 433MHz ;)</p>
@@ -75,8 +75,8 @@ const englishContent: PostContent = {
 <li><a href="http://blog.idleman.fr/raspberry-pi-12-allumer-des-prises-distance/">Raspberry Pi 12 – Allumer des prises à distance</a>.</li>
 </ul>
 <h2>Principle & Operation</h2>
-<p>Chacon DIO First outlets work via 433MHz radio frequency.<br>
-The principle is very simple, reproduce the data emitted by the remote control via the 433MHz transmitter coupled to the Raspberry Pi.</p>
+<p><abbr title="French brand of 433 MHz radio sockets and switches, common in DIY stores">Chacon</abbr> DIO First outlets work via 433MHz radio frequency.<br>
+The principle is very simple, reproduce the data emitted by the remote control via the 433MHz transmitter coupled to the <abbr title="Low-cost single-board computer, widely used in home automation and hobby electronics">Raspberry Pi</abbr>.</p>
 <p>The remote control communicates with the outlets via the Easy Home protocol, this protocol composes the signal in 32 bits as follows:</p>
 <ul>
 <li>First 26 bits corresponding to the remote control identifier;</li>
@@ -86,7 +86,7 @@ The principle is very simple, reproduce the data emitted by the remote control v
 </ul>
 <p>For better explanation, I refer you to <a href="http://blog.idleman.fr/raspberry-pi-10-commander-le-raspberry-pi-par-radio/">Idleman 10</a>'s tutorial on the Raspberry Pi.</p>
 <h2>Assembly</h2>
-<p>If you've never played with the Raspberry Pi GPIO ports, here's the setup to adopt to make the 433MHz transmitter work.</p>
+<p>If you've never played with the Raspberry Pi <abbr title="A microcontroller's general-purpose input/output pin">GPIO</abbr> ports, here's the setup to adopt to make the 433MHz transmitter work.</p>
 <p><img src="/images/controle-prise-chacon-schema-raspberry-pi.jpg" alt="Raspberry Pi Diagram"></p>
 <p>You can see in the setup the transmitter but also the receiver, it's not useful for what we want to do here.</p>
 <p>For the tip, a three-pin PC fan cable works perfectly for the 433MHz transmitter ;)</p>

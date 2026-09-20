@@ -42,6 +42,7 @@ import HomeAssistantConstellation, { metadata as costOfTryingMetadata, getConten
 import DixAnsDeDomotique, { metadata as tenYearsMetadata, getContent as getTenYearsContent } from './DixAnsDeDomotique.vue'
 import RythmeDeLaJournee, { metadata as dailyRhythmMetadata, getContent as getDailyRhythmContent } from './RythmeDeLaJournee.vue'
 import AnnoncesSansChoix, { metadata as noChoicesMetadata, getContent as getNoChoicesContent } from './AnnoncesSansChoix.vue'
+import PasLeSoleil, { metadata as notTheSunMetadata, getContent as getNotTheSunContent } from './PasLeSoleil.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -264,6 +265,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: noChoicesMetadata,
     getContent: getNoChoicesContent,
     component: AnnoncesSansChoix
+  },
+  'not-the-sun': {
+    metadata: notTheSunMetadata,
+    getContent: getNotTheSunContent,
+    component: PasLeSoleil
   }
 }
 

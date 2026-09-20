@@ -113,7 +113,7 @@ J'ai donc décidé (pour le moment) de la placer au niveaux de mes genoux contre
 <h2>Siège</h2>
 <p>J'ai également eu le plaisir d'avoir un nouveau siège de bureau pour mon anniversaire ;)</p>
 <p><img src="/images/bureau-sur-mesure-siege.jpg" alt="Siège"></p>
-<h2>Ambilight</h2>
+<h2><abbr title="Éclairage d'ambiance projeté derrière l'écran et synchronisé avec l'image, popularisé par Philips">Ambilight</abbr></h2>
 <p>Je viens de rajouter cette semaine un ruban autocollant de led WS2812B de 4m à l'arrière des écrans pour reproduire un système ambilight de la même manière que sur ma TV (Cf. <a href="/posts/ambilight-ws2801-raspberry-pi-hyperion">Ambi-like avec un ruban WS2801, un Raspberry Pi et Hyperion</a>).</p>
 <p>Un article dédié arrive sous peu… mais voici le premier résultat :</p>
 <p><img src="/images/bureau-sur-mesure-ambilight.jpg" alt="Ambilight"></p>
@@ -235,7 +235,7 @@ I decided (for the moment) to place it at knee level against the left compartmen
 <h2>Chair</h2>
 <p>I also had the pleasure of having a new desk chair for my birthday ;)</p>
 <p><img src="/images/bureau-sur-mesure-siege.jpg" alt="Chair"></p>
-<h2>Ambilight</h2>
+<h2><abbr title="Ambient lighting projected behind a screen and synchronised with the picture, popularised by Philips">Ambilight</abbr></h2>
 <p>I just added this week a 4m WS2812B LED adhesive strip behind the screens to reproduce an ambilight system in the same way as on my TV (Cf. <a href="/posts/ambilight-ws2801-raspberry-pi-hyperion">Ambi-like with WS2801 strip, Raspberry Pi and Hyperion</a>).</p>
 <p>A dedicated article coming soon… but here's the first result:</p>
 <p><img src="/images/bureau-sur-mesure-ambilight.jpg" alt="Ambilight"></p>

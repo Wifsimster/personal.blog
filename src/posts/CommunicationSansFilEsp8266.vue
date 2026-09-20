@@ -14,7 +14,7 @@ const frenchContent: PostContent = {
   html: `<h2>Prérequis</h2>
 <p>Je pars du principe que :</p>
 <ul>
-<li>la détection de présence sur la cellule IR provoque un état haut sur une entrée GPIO;</li>
+<li>la détection de présence sur la cellule IR provoque un état haut sur une entrée <abbr title="Broche d'entrée-sortie d'un microcontrôleur, configurable par logiciel">GPIO</abbr>;</li>
 <li>l'alarme sera mise en fonction via un état haut d'une sortie GPIO.</li>
 </ul>
 <p>Il vous faudra :</p>
@@ -24,7 +24,7 @@ const frenchContent: PostContent = {
 <li>2 résistances <a href="http://www.ebay.com/itm/1000PCS-1K-1K-Ohm-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071106631?hash=item3ab09bd847:g:ymUAAOSwjVVV3nVm">1KΩ</a>.</li>
 </ul>
 <p><strong>Attention !</strong><br>
-Le code est en LUA et nécessite donc d'avoir les ESP8266 avec le firmware nodemcu.</p>
+Le code est en <abbr title="Langage de script léger, utilisé par le firmware NodeMCU">LUA</abbr> et nécessite donc d'avoir les <abbr title="Microcontrôleur Wi-Fi bon marché, très répandu chez les bricoleurs">ESP8266</abbr> avec le firmware nodemcu.</p>
 <h2>Principe</h2>
 <p>Un esp va servir de serveur, c'est à dire qu'il va :</p>
 <ol>
@@ -55,7 +55,7 @@ const englishContent: PostContent = {
   html: `<h2>Prerequisites</h2>
 <p>I assume that:</p>
 <ul>
-<li>presence detection on the IR cell triggers a high state on a GPIO input;</li>
+<li>presence detection on the IR cell triggers a high state on a <abbr title="A microcontroller's general-purpose input/output pin">GPIO</abbr> input;</li>
 <li>the alarm will be activated via a high state on a GPIO output.</li>
 </ul>
 <p>You will need:</p>
@@ -65,7 +65,7 @@ const englishContent: PostContent = {
 <li>2 <a href="http://www.ebay.com/itm/1000PCS-1K-1K-Ohm-1-4W-0-25W-5-Carbon-Film-Resistors-Resistance-/252071106631?hash=item3ab09bd847:g:ymUAAOSwjVVV3nVm">1KΩ</a> resistors.</li>
 </ul>
 <p><strong>Warning!</strong><br>
-The code is in LUA and therefore requires the ESP8266 to have the nodemcu firmware.</p>
+The code is in <abbr title="Lightweight scripting language, used by the NodeMCU firmware">LUA</abbr> and therefore requires the <abbr title="A cheap Wi-Fi microcontroller, widely used by hobbyists">ESP8266</abbr> to have the nodemcu firmware.</p>
 <h2>Principle</h2>
 <p>One ESP will serve as a server, meaning it will:</p>
 <ol>

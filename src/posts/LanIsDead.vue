@@ -18,7 +18,7 @@ const englishContent: PostContent = {
 
 <h2>The vibe check that saved me</h2>
 <p>I opened qBittorrent's WebUI for an unrelated reason. The status bar at the bottom was red. <strong>External IP: N/A. DHT: 0 nodes.</strong> Every torrent showed 0 peers, 0 B/s. My first thought, like anyone running a VPN-routed torrent client, was that the WireGuard tunnel had dropped.</p>
-<p>The tunnel was fine. <code>wg show</code> reported a handshake 36 seconds ago. The container had pushed 283 GiB through it. <code>curl ifconfig.io</code> from inside the container returned the VPN exit IP. The network was healthy. <strong>The app was lying.</strong></p>
+<p>The tunnel was fine. <code>wg show</code> reported a handshake 36 seconds ago. The container had pushed 283 GiB through it. <code>curl ifconfig.io</code> from inside the container returned the <abbr title="Encrypted tunnel connecting a remote device to a local network">VPN</abbr> exit IP. The network was healthy. <strong>The app was lying.</strong></p>
 <p>So I read the config. And there it was, sitting calmly at the top of <code>qBittorrent.conf</code>:</p>
 <pre><code>[AutoRun]
 OnTorrentAdded\\Enabled=true
@@ -99,7 +99,7 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <h3>Stop the bleeding</h3>
 <p>The C2 callback is a known-bad fileless dropper. I blocked it at three layers, because each layer catches what the previous one misses:</p>
 <ol>
-<li><strong>At the DNS layer (Pi-hole).</strong> Block the C2 domain so anything resolving it by name goes nowhere. Cheap, instant — useless if the malware skips DNS and connects to a raw IP.</li>
+<li><strong>At the <abbr title="The directory translating domain names into IP addresses">DNS</abbr> layer (Pi-hole).</strong> Block the C2 domain so anything resolving it by name goes nowhere. Cheap, instant — useless if the malware skips DNS and connects to a raw IP.</li>
 <li><strong>At the host firewall (iptables).</strong> Drop outbound packets to the C2's IP, both from the host and from any container it routes. Catches the raw-IP case the DNS layer misses. Made permanent so it survives a reboot.</li>
 <li><strong>At the edge router.</strong> The same drop rule on the gateway, pointed at the same C2 IP. Catches anything on the network that doesn't route through the homelab host — IoT devices, phones, the printer, your kid's laptop.</li>
 </ol>
@@ -254,7 +254,7 @@ const frenchContent: PostContent = {
 <p>C'est l'article que je dois à mon moi futur. C'est aussi celui que je dois à toute personne qui fait tourner un stack self-hosted derrière un reverse proxy et qui présume que "le LAN est de confiance" est encore une chose qui existe. <strong>Ça ne l'est plus.</strong> Le LAN est mort à la minute où vous avez mis Traefik — ou Caddy, ou nginx, ou Cloudflare Tunnel, ou Tailscale Funnel — devant vos applis. La plupart des tutos homelab finissent par "et maintenant c'est derrière HTTPS." Cette phrase fait beaucoup de travail qu'elle n'a jamais mérité.</p>
 
 <h2>L'intuition qui m'a sauvé</h2>
-<p>J'ai ouvert l'interface qBittorrent pour une raison sans rapport. La barre de statut en bas était rouge. <strong>External IP : N/A. DHT : 0 nodes.</strong> Chaque torrent affichait 0 peers, 0 B/s. Mon premier réflexe, comme n'importe qui qui fait passer son client torrent par un VPN, ça a été : le tunnel WireGuard est tombé.</p>
+<p>J'ai ouvert l'interface qBittorrent pour une raison sans rapport. La barre de statut en bas était rouge. <strong>External IP : N/A. DHT : 0 nodes.</strong> Chaque torrent affichait 0 peers, 0 B/s. Mon premier réflexe, comme n'importe qui qui fait passer son client torrent par un <abbr title="Tunnel chiffré qui relie un appareil distant au réseau local">VPN</abbr>, ça a été : le tunnel WireGuard est tombé.</p>
 <p>Le tunnel allait bien. <code>wg show</code> rapportait un handshake il y a 36 secondes. Le conteneur avait poussé 283 GiB à travers. <code>curl ifconfig.io</code> depuis l'intérieur du conteneur retournait l'IP de sortie du VPN. Le réseau allait bien. <strong>L'appli mentait.</strong></p>
 <p>Alors j'ai lu la config. Et c'était là, posé tranquillement en haut de <code>qBittorrent.conf</code> :</p>
 <pre><code>[AutoRun]
@@ -336,7 +336,7 @@ WebUI\\AuthSubnetWhitelistEnabled=true</code></pre>
 <h3>Arrêter l'hémorragie</h3>
 <p>Le callback C2 est un dropper fileless connu. Je l'ai bloqué sur trois couches, parce que chaque couche rattrape ce que la précédente rate :</p>
 <ol>
-<li><strong>Au niveau DNS (Pi-hole).</strong> Bloquer le domaine du C2 : tout ce qui le résout par nom n'arrive nulle part. Pas cher, instantané — inutile si le malware saute le DNS et se connecte directement à une IP brute.</li>
+<li><strong>Au niveau <abbr title="Annuaire qui traduit les noms de domaine en adresses IP">DNS</abbr> (Pi-hole).</strong> Bloquer le domaine du C2 : tout ce qui le résout par nom n'arrive nulle part. Pas cher, instantané — inutile si le malware saute le DNS et se connecte directement à une IP brute.</li>
 <li><strong>Au niveau du firewall de l'hôte (iptables).</strong> Drop des paquets sortants vers l'IP du C2, depuis l'hôte lui-même comme depuis les conteneurs qu'il route. Rattrape le cas IP brute que le DNS rate. Rendu permanent pour survivre à un reboot.</li>
 <li><strong>Au niveau du routeur edge.</strong> La même règle de drop sur la passerelle, pointée sur la même IP. Rattrape tout ce qui sur le réseau ne passe pas par l'hôte du homelab — objets connectés, téléphones, imprimante, le portable de votre gosse.</li>
 </ol>
