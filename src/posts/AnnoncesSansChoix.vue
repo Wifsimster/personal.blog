@@ -33,7 +33,8 @@ const frenchContent: PostContent = {
 <li><strong>Aucun choix proposé.</strong> Chaque option énumérée est une décision à prendre avant d'agir.</li>
 <li><strong>Zéro logistique d'adulte dans un message adressé à un enfant.</strong> L'annonce de 7 h 50 récitait les horaires de sa sœur et de la nounou, ce qui noyait la seule consigne qui le concernait.</li>
 </ol>
-<p>La septième est celle qui m'a le plus surpris, et c'est celle du temps calme.</p>
+<p>En pratique, la grille a été appliquée par un script qui parcourt chaque appel du script d'annonce et corrige le texte sur place. Treize automatisations réécrites et rechargées, aucune erreur de configuration, le temps d'un café. C'est cette absence de coût qui a permis d'aller jusqu'à la version qui marche, au lieu de s'arrêter à la première qui semblait raisonnable.</p>
+<p>La septième règle est celle qui m'a le plus surpris, et c'est celle du temps calme.</p>
 <svg viewBox="0 0 640 344" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trois versions successives de la même annonce de temps calme, écrites dans la même journée : la première propose trois activités au choix, la deuxième en propose deux, la troisième n'en propose aucune et se réduit à quatre mots ; la longueur du message et le nombre de décisions demandées diminuent ensemble." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">TEMPS CALME · 19 H 31 · TROIS VERSIONS</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Moins de mots, moins de décisions.</text>
@@ -111,7 +112,7 @@ const frenchContent: PostContent = {
 <h2>Ce qui reste aux humains</h2>
 <p>Savoir que son enfant déteste être réveillé par une voix. Ça ne se déduit d'aucune donnée de cette installation. Ça se découvre à sept heures quinze, et ça se corrige le jour même parce que corriger ne coûte plus rien.</p>
 <p>Observer si l'annonce produit une action. Le serveur sait me dire qu'un clip a été joué. Il ne saura jamais me dire que personne n'a bougé, et c'est la seule mesure qui compte ici.</p>
-<p>Décider ce que la maison impose. Le temps calme de 19 h 31, la coupure de télévision de 19 h 30, le coucher à 20 h 30 : ce sont des décisions de parent, pas des optimisations. Aucun capteur ne les produit, et j'ai déjà proposé deux fois de les rationaliser en me trompant les deux fois.</p>
+<p>Décider ce que la maison impose. Le temps calme de 19 h 31, la coupure de télévision de 19 h 30, le coucher à 20 h 30 : ce sont des décisions de parent, pas des optimisations. Aucun capteur ne les produit.</p>
 
 <h2>Ce que j'en retiens</h2>
 <ul>
@@ -156,7 +157,8 @@ const englishContent: PostContent = {
 <li><strong>Offer no choices.</strong> Every option listed is a decision to make before acting.</li>
 <li><strong>No adult logistics in a message addressed to a child.</strong> The 7:50 announcement recited his sister's and the childminder's schedules, which drowned the one instruction meant for him.</li>
 </ol>
-<p>The seventh surprised me most, and it belongs to the quiet-time message.</p>
+<p>In practice the grid was applied by a script walking every call site of the announcement script and fixing the text in place. Thirteen automations rewritten and reloaded, no configuration errors, in the time it takes to make coffee. That absence of cost is what made it possible to reach the version that works, instead of stopping at the first one that looked reasonable.</p>
+<p>The seventh rule surprised me most, and it belongs to the quiet-time message.</p>
 <svg viewBox="0 0 640 344" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three successive versions of the same quiet-time announcement, written on the same day: the first offers three activities to choose from, the second offers two, the third offers none and comes down to three words; message length and the number of decisions requested shrink together." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">QUIET TIME · 19:31 · THREE VERSIONS</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Fewer words, fewer decisions.</text>
@@ -234,7 +236,7 @@ const englishContent: PostContent = {
 <h2>What still belongs to humans</h2>
 <p>Knowing that your child hates being woken by a voice. No data in this installation implies it. You find it out at 7:15, and you fix it the same day because fixing costs nothing now.</p>
 <p>Watching whether the announcement produces an action. The server can tell me a clip played. It will never tell me nobody moved, and that is the only measurement that counts here.</p>
-<p>Deciding what the house imposes. Quiet time at 7:31 p.m., the television cut at 7:30, bed at 8:30 — those are parenting decisions, not optimisations. No sensor produces them, and I have twice proposed rationalising them and been wrong twice.</p>
+<p>Deciding what the house imposes. Quiet time at 7:31 p.m., the television cut at 7:30, bed at 8:30 — those are parenting decisions, not optimisations. No sensor produces them.</p>
 
 <h2>What I am taking away</h2>
 <ul>
