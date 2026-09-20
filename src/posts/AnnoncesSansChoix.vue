@@ -124,7 +124,7 @@ const frenchContent: PostContent = {
 <li><strong>Le bon test ne fait pas de bruit dans la maison.</strong> Une automatisation jetable qui affiche ce qu'elle reçoit vaut mieux qu'un essai grandeur nature à sept heures du matin.</li>
 </ul>
 <p>Le prochain épisode revient à la physique du bâtiment : six volets qui décident seuls de leur position à partir de la température de leur pièce et de la course du soleil sur leur façade, un cadastre, et un bureau à 29 °C en pleine nuit sans le moindre rayon de soleil.</p>
-<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">J'ai changé le calendrier du soir trois fois en une semaine</a> — portail, télévision, volets et calendrier scolaire.</p>`
+<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">J'ai changé le calendrier du soir trois fois en une semaine</a> — portail, télévision, volets et calendrier scolaire.</p>`
 }
 
 const englishContent: PostContent = {
@@ -242,7 +242,7 @@ const englishContent: PostContent = {
 <li><strong>A good test makes no noise in the house.</strong> A throwaway automation printing what it received beats a full-scale trial at seven in the morning.</li>
 </ul>
 <p>The next episode goes back to building physics: six shutters deciding their own position from their room temperature and the sun's track across their facade, a land registry, and an office sitting at 29 °C in the middle of the night without a single ray of sun.</p>
-<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">I Changed the Evening Schedule Three Times in One Week</a> — gate, television, shutters and the school calendar.</p>`
+<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">I Changed the Evening Schedule Three Times in One Week</a> — gate, television, shutters and the school calendar.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {

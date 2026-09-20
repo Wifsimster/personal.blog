@@ -88,7 +88,7 @@ const frenchContent: PostContent = {
 <li><strong>La moitié de ce chantier a été de la rédaction.</strong> Une automatisation qui ne change le comportement de personne n'existe pas.</li>
 </ul>
 <p>Le parc ne convergera pas. Dans cinq ans il y aura toujours un pont propriétaire, une télécommande infrarouge et une ampoule qui refuse son réseau. Mais le capteur de vacances scolaires tourne depuis deux jours, et cet interrupteur-là, je ne le rebasculerai plus jamais à la main.</p>
-<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation, dix ans d'empilement, et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">J'ai changé le calendrier du soir trois fois en une semaine</a> — la maison qui porte le rythme de la journée.</p>`
+<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> — l'inventaire de l'installation, dix ans d'empilement, et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">J'ai changé le calendrier du soir trois fois en une semaine</a> — la maison qui porte le rythme de la journée.</p>`
 }
 
 const englishContent: PostContent = {
@@ -170,7 +170,7 @@ const englishContent: PostContent = {
 <li><strong>Half of this build was writing.</strong> An automation that changes nobody's behaviour does not exist.</li>
 </ul>
 <p>The fleet will not converge. In five years there will still be a proprietary bridge, an infrared remote and a bulb refusing its own network. But the school-holiday sensor has been running for two days, and that switch is one I will never flip by hand again.</p>
-<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory, ten years of sediment, and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">I Changed the Evening Schedule Three Times in One Week</a> — the house that holds the shape of the day.</p>`
+<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent</a> — the inventory, ten years of sediment, and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">I Changed the Evening Schedule Three Times in One Week</a> — the house that holds the shape of the day.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {

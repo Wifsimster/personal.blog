@@ -146,7 +146,7 @@ const frenchContent: PostContent = {
 <li><strong>Le gain n'est pas le temps, c'est la constance.</strong> La maison applique la règle même les soirs où je n'en aurais pas eu le courage.</li>
 </ul>
 <p>Le prochain épisode reste sur les usages, mais passe à celui que je n'avais pas vu venir : la maison qui parle. Treize annonces vocales par jour, et la découverte que le problème n'était jamais le son.</p>
-<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas.</p>`
+<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas.</p>`
 }
 
 const englishContent: PostContent = {
@@ -286,7 +286,7 @@ const englishContent: PostContent = {
 <li><strong>The win is not time, it is consistency.</strong> The house applies the rule even on the evenings I would not have had the will to.</li>
 </ul>
 <p>The next episode stays on use cases, and moves to the one I did not see coming: the house that speaks. Thirteen spoken announcements a day, and the discovery that the problem was never the audio.</p>
-<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started.</p>`
+<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {

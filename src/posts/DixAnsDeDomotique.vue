@@ -10,7 +10,7 @@ export const metadata: PostMetadata = {
 }
 
 const frenchContent: PostContent = {
-  title: "Ma dernière sonde ESP8266 date de 2016. Voici la maison aujourd'hui.",
+  title: "Dix ans de domotique tout seul, un an avec un agent",
   description: "État des lieux d'une installation domotique de dix ans : de Jeedom et des ESP8266 flashés à la main jusqu'à 87 appareils sur neuf écosystèmes. Ce que j'ai construit seul, ce qui est arrivé depuis que je travaille avec un agent, et les deux exemples qui résument la différence.",
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> Mon dernier billet de domotique date d'avril 2016 : une sonde BMP180 sur un <abbr title="Microcontrôleur Wi-Fi bon marché, très répandu chez les bricoleurs">ESP8266</abbr>, remontée dans Jeedom. Dix ans plus tard la maison compte 87 appareils sur neuf écosystèmes, 929 entités et 75 automatisations. Ce billet ouvre une série sur ce que l'IA change en domotique, vu depuis une installation réelle. Il pose l'inventaire, raconte comment on en arrive là un week-end à la fois, et mesure ce qui a bougé depuis que je travaille avec un agent. Deux exemples portent la différence. Deux enceintes Sonos livrées un mercredi, intégrées et câblées à treize annonces de routine le lendemain. Et un visiophone dont l'appel ne sortait par aucune intégration, récupéré via un pont maison de 225 lignes.</p></div>
 <hr>
@@ -133,7 +133,7 @@ const frenchContent: PostContent = {
 }
 
 const englishContent: PostContent = {
-  title: 'My Last ESP8266 Probe Was 2016. Here Is the House Now.',
+  title: 'Ten Years of Home Automation Alone. One Year With an Agent.',
   description: 'A survey of a ten-year home automation build: from Jeedom and hand-flashed ESP8266 boards to 87 devices across nine ecosystems. What I built alone, what arrived once I started working with an agent, and the two examples that carry the difference.',
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> My last home automation post here is dated April 2016: a BMP180 probe on an <abbr title="A cheap Wi-Fi microcontroller, widely used by hobbyists">ESP8266</abbr>, reporting into Jeedom. Ten years on, the house holds 87 devices across nine ecosystems, 929 entities and 75 automations. This post opens a series on what AI changes in home automation, seen from one real installation. It sets out the inventory, tells how you get there one weekend at a time, and measures what moved once I started working with an agent. Two examples carry the difference. Two Sonos speakers delivered on a Wednesday, integrated and wired into thirteen routine announcements the next day. And a door entry panel whose call event reached no integration at all, recovered through a 225-line bridge written from scratch.</p></div>
 <hr>
