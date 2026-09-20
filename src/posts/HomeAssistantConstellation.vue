@@ -27,17 +27,26 @@ const frenchContent: PostContent = {
 <p>Je croyais que le coûteux, en domotique, c'était d'écrire le <abbr title="Format de fichier de configuration lisible, utilisé par Home Assistant">YAML</abbr>. Je n'en écris presque plus, et le temps est passé ailleurs : à retrouver le contexte. Quelles automatisations touchent cette entité. Laquelle de mes trois listes de jours doit rester synchronisée avec les deux autres. Quel garde-fou, écrit il y a huit mois, va réécraser la commande que je viens d'envoyer.</p>
 <p>Exemple vécu. Ma routine de coupure de la télévision « ne marchait qu'une seconde ». Ce n'était ni la routine ni la prise. Une automatisation de garde-fou sans aucune condition, écrite des mois plus tôt, rallumait la prise dix secondes après chaque coupure.</p>
 <p>La réponse tenait dans le journal de l'entité, une ligne sous la coupure, et il fallait la croiser avec les soixante-quinze automatisations pour nommer la coupable. Je n'avais jamais ouvert ce journal. L'agent l'a lu, a trouvé le conflit et a posé la condition manquante dans la même séance, à partir d'une seule phrase de ma part : « la coupure ne tient qu'une seconde ».</p>
-<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparaison illustrative du coût d'une même idée de domotique : menée à la main elle occupe toute la longueur de la barre, entre recherche de contexte, écriture et vérification ; menée avec un agent il n'en reste qu'un cinquième, et le reste est la part qui disparaît." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">UNE MÊME IDÉE, DEUX PRIX · ILLUSTRATIF</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">L'idée est la même. Le prix, non.</text>
-<text x="32" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">À la main</text>
-<rect x="32" y="120" width="540" height="28" rx="8" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
-<text x="32" y="176" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">Avec un agent</text>
-<rect x="32" y="184" width="112" height="28" rx="8" fill="var(--diagram-accent)" fill-opacity="1" stroke="var(--diagram-accent)" stroke-opacity="0.55" stroke-width="1"></rect>
-<path d="M 572 148 L 572 232 L 144 232 L 144 214" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M 358 232 L 358 244" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"></path>
-<text x="358" y="266" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="middle">retrouver le contexte</text>
-<text x="32" y="292" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Proportions illustratives — la forme de ce qui disparaît, pas un chronométrage.</text>
+<svg viewBox="0 0 640 316" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Deux trajets entre une même idée et sa mise en service : à la main, le trajet traverse toute la largeur du schéma ; avec un agent, il s'arrête bien avant, et l'écart entre les deux correspond exactement au temps passé à retrouver le contexte." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">UNE MÊME IDÉE, DEUX TRAJETS</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Le trajet a raccourci, pas l'idée.</text>
+<text x="32" y="130" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.7">À la main</text>
+<line x1="32" y1="150" x2="608" y2="150" stroke="currentColor" stroke-opacity="0.28" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="32" cy="150" r="7" fill="currentColor" fill-opacity="0.55"></circle>
+<circle cx="608" cy="150" r="7" fill="currentColor" fill-opacity="0.55"></circle>
+<text x="32" y="174" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.6">L'idée</text>
+<text x="608" y="174" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.6">Livré</text>
+<line x1="172" y1="198" x2="172" y2="206" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="608" y1="198" x2="608" y2="190" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="172" y1="198" x2="608" y2="198" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="2 5" stroke-linecap="round"></line>
+<text x="390" y="184" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">retrouver le contexte</text>
+<text x="32" y="226" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650">Avec un agent</text>
+<line x1="32" y1="246" x2="172" y2="246" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="4" stroke-linecap="round"></line>
+<circle cx="32" cy="246" r="7" fill="var(--diagram-accent)"></circle>
+<circle cx="172" cy="246" r="7" fill="var(--diagram-accent)"></circle>
+<text x="32" y="270" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.6">L'idée</text>
+<text x="172" y="270" text-anchor="start" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">Livré</text>
+<text x="32" y="292" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">L'idée n'a pas changé. Ce qui sépare les deux, c'est le temps passé à retrouver le contexte.</text>
 </svg>
 <p>Le reste suit. Les treize annonces vocales de la maison ont été réécrites en une passe, par un script qui applique le même correctif à chaque appel. À la main, c'est treize formulaires. Les volumes du matin ont été baissés sur cinq automatisations d'un coup. Le mercredi a été ajouté à trois listes de jours qui doivent rester cohérentes, sans quoi la télévision se coupe sans jamais se rallumer.</p>
 <p>Aucune de ces tâches n'est difficile. Elles attendaient depuis des mois parce qu'elles sont pénibles, et rien d'autre.</p>
@@ -109,17 +118,26 @@ const englishContent: PostContent = {
 <p>I used to think the expensive part of home automation was writing the <abbr title="A readable configuration file format, used by Home Assistant">YAML</abbr>. I barely write any now, and the time went somewhere else: recovering context. Which automations touch this entity. Which of my three day-lists has to stay in sync with the other two. Which guard, written eight months ago, is about to overwrite the command I just sent.</p>
 <p>A real example. My television cut-off routine "only worked for one second". It was neither the routine nor the plug. A guard automation with no conditions at all, written months earlier, switched the plug back on ten seconds after every cut.</p>
 <p>The answer sat in the entity's logbook, one line under the cut, and finding the culprit meant cross-referencing it against seventy-five automations. I had never opened that logbook. The agent read it, found the conflict and added the missing condition in the same sitting, off a single sentence from me: "the cut only holds for a second".</p>
-<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative comparison of the cost of the same home-automation idea: done by hand it fills the whole bar, between recovering context, writing and verifying; done with an agent only a fifth remains, and the rest is the part that disappears." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">ONE IDEA, TWO PRICES · ILLUSTRATIVE</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Same idea. Not the same price.</text>
-<text x="32" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">By hand</text>
-<rect x="32" y="120" width="540" height="28" rx="8" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
-<text x="32" y="176" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">With an agent</text>
-<rect x="32" y="184" width="112" height="28" rx="8" fill="var(--diagram-accent)" fill-opacity="1" stroke="var(--diagram-accent)" stroke-opacity="0.55" stroke-width="1"></rect>
-<path d="M 572 148 L 572 232 L 144 232 L 144 214" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M 358 232 L 358 244" fill="none" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"></path>
-<text x="358" y="266" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="middle">recovering the context</text>
-<text x="32" y="292" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Illustrative proportions — the shape of what disappears, not a stopwatch reading.</text>
+<svg viewBox="0 0 640 316" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two routes from the same idea to shipped: by hand the route crosses the full width of the diagram; with an agent it stops well before, and the gap between the two matches exactly the time spent recovering context." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">ONE IDEA, TWO ROUTES</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">The route got shorter, not the idea.</text>
+<text x="32" y="130" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.7">By hand</text>
+<line x1="32" y1="150" x2="608" y2="150" stroke="currentColor" stroke-opacity="0.28" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="32" cy="150" r="7" fill="currentColor" fill-opacity="0.55"></circle>
+<circle cx="608" cy="150" r="7" fill="currentColor" fill-opacity="0.55"></circle>
+<text x="32" y="174" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.6">The idea</text>
+<text x="608" y="174" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.6">Shipped</text>
+<line x1="172" y1="198" x2="172" y2="206" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="608" y1="198" x2="608" y2="190" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="172" y1="198" x2="608" y2="198" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="2 5" stroke-linecap="round"></line>
+<text x="390" y="184" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">recovering context</text>
+<text x="32" y="226" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650">With an agent</text>
+<line x1="32" y1="246" x2="172" y2="246" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="4" stroke-linecap="round"></line>
+<circle cx="32" cy="246" r="7" fill="var(--diagram-accent)"></circle>
+<circle cx="172" cy="246" r="7" fill="var(--diagram-accent)"></circle>
+<text x="32" y="270" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.6">The idea</text>
+<text x="172" y="270" text-anchor="start" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">Shipped</text>
+<text x="32" y="292" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">The idea didn't change. What separates the two is the time spent recovering context.</text>
 </svg>
 <p>The rest follows. The thirteen spoken announcements were rewritten in a single pass, by a script applying the same patch to every call site. By hand that is thirteen forms. Morning volumes were lowered across five automations at once. Wednesday was added to three day-lists that have to stay consistent, or the television cuts off and never comes back on.</p>
 <p>None of these tasks is hard. They had been waiting for months because they are tedious, and for no other reason.</p>

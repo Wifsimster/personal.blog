@@ -35,25 +35,18 @@ const frenchContent: PostContent = {
 </ol>
 <p>En pratique, la grille a été appliquée par un script qui parcourt chaque appel du script d'annonce et corrige le texte sur place. Treize automatisations réécrites et rechargées, aucune erreur de configuration, le temps d'un café. C'est cette absence de coût qui a permis d'aller jusqu'à la version qui marche, au lieu de s'arrêter à la première qui semblait raisonnable.</p>
 <p>La septième règle est celle qui m'a le plus surpris, et c'est celle du temps calme.</p>
-<svg viewBox="0 0 640 344" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trois versions successives de la même annonce de temps calme, écrites dans la même journée : la première propose trois activités au choix, la deuxième en propose deux, la troisième n'en propose aucune et se réduit à quatre mots ; la longueur du message et le nombre de décisions demandées diminuent ensemble." class="diagram-svg">
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trois réécritures successives de la même annonce de temps calme, écrites le même jour : à chaque version, le texte accessoire s'efface un peu plus, jusqu'à ne laisser que « PRÉNOM, temps calme. », en couleur d'accent dans les trois versions, la seule partie qui survit." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">TEMPS CALME · 19 H 31 · TROIS VERSIONS</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Moins de mots, moins de décisions.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.5" letter-spacing="0.1em">
-<text x="32" y="108">VERSION 1 · TROIS DÉCISIONS AVANT D'AGIR</text>
-<text x="32" y="180">VERSION 2 · UNE DÉCISION</text>
-<text x="32" y="252">VERSION 3 · AUCUNE</text>
-</g>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="32" y="118" width="320" height="12" rx="6" fill="currentColor" fill-opacity="0.16"></rect>
-<rect x="32" y="190" width="190" height="12" rx="6" fill="currentColor" fill-opacity="0.28"></rect>
-<rect x="32" y="262" width="82" height="12" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.8">
-<text x="32" y="156">« PRÉNOM, c'est le temps calme. Tu peux lire, dessiner ou jouer. »</text>
-<text x="32" y="228">« PRÉNOM, temps calme. Tu peux lire ou dessiner. »</text>
-<text x="32" y="300">« PRÉNOM, temps calme. »</text>
-</g>
-<text x="32" y="332" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">La barre mesure la longueur du message. Le prénom réel est dit en clair.</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Ce qui reste, en couleur.</text>
+<text x="32" y="116" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.5" letter-spacing="0.08em">VERSION 1 · TROIS DÉCISIONS AVANT D'AGIR</text>
+<text x="32" y="140" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17"><tspan fill="var(--diagram-accent)" font-weight="650">« PRÉNOM, </tspan><tspan fill="currentColor" fill-opacity="0.32">c'est le </tspan><tspan fill="var(--diagram-accent)" font-weight="650">temps calme.</tspan><tspan fill="currentColor" fill-opacity="0.32"> Tu peux lire, dessiner ou jouer. »</tspan></text>
+<line x1="32" y1="158" x2="608" y2="158" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"></line>
+<text x="32" y="178" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.5" letter-spacing="0.08em">VERSION 2 · UNE DÉCISION</text>
+<text x="32" y="202" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17"><tspan fill="var(--diagram-accent)" font-weight="650">« PRÉNOM, temps calme.</tspan><tspan fill="currentColor" fill-opacity="0.32"> Tu peux lire ou dessiner. »</tspan></text>
+<line x1="32" y1="220" x2="608" y2="220" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"></line>
+<text x="32" y="240" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.5" letter-spacing="0.08em">VERSION 3 · AUCUNE</text>
+<text x="32" y="264" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17"><tspan fill="var(--diagram-accent)" font-weight="650">« PRÉNOM, temps calme. »</tspan></text>
+<text x="32" y="298" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">La partie en couleur ne change jamais. Tout le reste finit par disparaître.</text>
 </svg>
 <p>La première version proposait trois activités. Je l'avais écrite en croyant bien faire, parce qu'offrir un choix passe pour une marque de respect. Ramenée à deux options, elle marchait un peu mieux. Ramenée à zéro, elle a commencé à marcher. L'annonce nomme l'état attendu, elle ne présente pas un menu.</p>
 <p>Un autre effet de cette grille m'a d'abord gêné. Les branches « mercredi » et « jour d'école » de deux annonces disaient la même chose avec des mots différents. Je les ai fusionnées, et la variation a disparu. La répétition à l'identique n'est pas une paresse de rédaction. C'est ce qui rend un message reconnaissable dès les premiers mots.</p>
@@ -64,33 +57,27 @@ const frenchContent: PostContent = {
 <h2>Le réveil, trois versions dans la même journée</h2>
 <p>La première version du réveil annonçait, puis lançait la musique. Elle a tenu une matinée. Mon fils n'aime pas être réveillé par une voix, ce qu'aucun capteur de cette maison n'était en mesure de me dire.</p>
 <p>La séquence a été inversée le jour même. La musique devient le réveil, et la consigne passe par-dessus quatre-vingt-dix secondes plus tard.</p>
-<svg viewBox="0 0 640 354" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Séquence du réveil : le volume de l'enceinte démarre à dix pour cent et monte de cinq points toutes les vingt secondes jusqu'à trente pour cent à quatre-vingts secondes, puis l'annonce vocale se superpose à la musique à quatre-vingt-dix secondes." class="diagram-svg">
+<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Courbe montrant le volume de l'enceinte grimper de dix à trente pour cent par paliers de cinq points toutes les vingt secondes, avec un repère vertical à quatre-vingt-dix secondes marquant le moment où la consigne vocale passe par-dessus la musique, quel que soit le réglage de la rampe." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">RÉVEIL · VERSION DU 18 SEPTEMBRE</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">La musique d'abord, la voix ensuite.</text>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="32" y="221" width="115" height="29" rx="4" fill="currentColor" fill-opacity="0.2"></rect>
-<rect x="147" y="207" width="115" height="43" rx="4" fill="currentColor" fill-opacity="0.26"></rect>
-<rect x="262" y="193" width="116" height="57" rx="4" fill="currentColor" fill-opacity="0.32"></rect>
-<rect x="378" y="178" width="115" height="72" rx="4" fill="currentColor" fill-opacity="0.38"></rect>
-<rect x="493" y="164" width="115" height="86" rx="4" fill="currentColor" fill-opacity="0.44"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" text-anchor="middle" opacity="0.85">
-<text x="89" y="213">10 %</text>
-<text x="204" y="199">15 %</text>
-<text x="320" y="185">20 %</text>
-<text x="435" y="170">25 %</text>
-<text x="550" y="156">30 %</text>
-</g>
-<line x1="32" y1="250" x2="608" y2="250" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="550" y1="168" x2="550" y2="266" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="2" stroke-linecap="round"></line>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">
-<text x="32" y="270">0 s · la musique démarre</text>
-</g>
-<text x="608" y="292" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="end">T+90 s · l'annonce passe par-dessus</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
-<text x="32" y="322">Trois itérations le même jour, jusqu'au bon plafond de volume.</text>
-<text x="32" y="342">Le volume de l'enceinte n'est pas restauré ensuite.</text>
-</g>
+<line x1="32" y1="230" x2="608" y2="230" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<path d="M 32.0 199.5 L 147.2 184.2 L 262.4 169.0 L 377.6 153.8 L 492.8 138.5 L 608.0 138.5 L 608.0 230 L 32.0 230 Z" fill="var(--diagram-accent)" fill-opacity="0.14" stroke="none"></path>
+<path d="M 32.0 199.5 L 147.2 184.2 L 262.4 169.0 L 377.6 153.8 L 492.8 138.5 L 608.0 138.5" fill="none" stroke="var(--diagram-accent)" stroke-opacity="0.9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="32.0" cy="199.5" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="32.0" y="182.5" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">10 %</text>
+<circle cx="147.2" cy="184.2" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="147.2" y="167.2" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">15 %</text>
+<circle cx="262.4" cy="169.0" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="262.4" y="152.0" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">20 %</text>
+<circle cx="377.6" cy="153.8" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="377.6" y="136.8" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">25 %</text>
+<circle cx="492.8" cy="138.5" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="492.8" y="121.5" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">30 %</text>
+<line x1="550.4" y1="132.5" x2="550.4" y2="240" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
+<text x="550.4" y="260" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" opacity="0.9">T+90 s</text>
+<text x="32" y="260" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">0 s · la musique démarre</text>
+<text x="32" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Trois itérations le même jour, jusqu'au bon plafond de volume.</text>
+<text x="32" y="310" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Le volume de l'enceinte n'est pas restauré ensuite.</text>
 </svg>
 <p>Le détail qui compte est la rampe. L'enceinte démarre à dix pour cent et monte de cinq points toutes les vingt secondes. La consigne tombe toujours à quatre-vingt-dix secondes, quel que soit le réglage de la montée. Trois versions se sont succédé dans la journée : un palier unique à vingt pour cent, puis une rampe jusqu'à vingt, puis jusqu'à trente.</p>
 <p>Une consigne de départ a été abandonnée le même jour. J'avais demandé que la musique reprenne « au volume courant de l'enceinte ». Dès lors que la musique <em>est</em> le réveil, hériter du volume laissé la veille au soir rend le réveil imprévisible : trop fort un matin, inaudible le lendemain.</p>
@@ -159,25 +146,18 @@ const englishContent: PostContent = {
 </ol>
 <p>In practice the grid was applied by a script walking every call site of the announcement script and fixing the text in place. Thirteen automations rewritten and reloaded, no configuration errors, in the time it takes to make coffee. That absence of cost is what made it possible to reach the version that works, instead of stopping at the first one that looked reasonable.</p>
 <p>The seventh rule surprised me most, and it belongs to the quiet-time message.</p>
-<svg viewBox="0 0 640 344" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three successive versions of the same quiet-time announcement, written on the same day: the first offers three activities to choose from, the second offers two, the third offers none and comes down to three words; message length and the number of decisions requested shrink together." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">QUIET TIME · 19:31 · THREE VERSIONS</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Fewer words, fewer decisions.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.5" letter-spacing="0.1em">
-<text x="32" y="108">VERSION 1 · THREE DECISIONS BEFORE ACTING</text>
-<text x="32" y="180">VERSION 2 · ONE DECISION</text>
-<text x="32" y="252">VERSION 3 · NONE</text>
-</g>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="32" y="118" width="320" height="12" rx="6" fill="currentColor" fill-opacity="0.16"></rect>
-<rect x="32" y="190" width="190" height="12" rx="6" fill="currentColor" fill-opacity="0.28"></rect>
-<rect x="32" y="262" width="82" height="12" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.8">
-<text x="32" y="156">"NAME, it's quiet time. You can read, draw, or play."</text>
-<text x="32" y="228">"NAME, quiet time. You can read or draw."</text>
-<text x="32" y="300">"NAME, quiet time."</text>
-</g>
-<text x="32" y="332" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">The bar measures message length. The real first name is spoken in full.</text>
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three successive rewrites of the same quiet-time announcement, written the same day: with each version the extra text fades a little more, until only ‘NAME, quiet time.’, in accent colour across all three versions, is what survives." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">QUIET TIME · 7:31 PM · THREE VERSIONS</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">What survives, in colour.</text>
+<text x="32" y="116" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.5" letter-spacing="0.08em">VERSION 1 · THREE DECISIONS BEFORE ACTING</text>
+<text x="32" y="140" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17"><tspan fill="var(--diagram-accent)" font-weight="650">“NAME, </tspan><tspan fill="currentColor" fill-opacity="0.32">it's </tspan><tspan fill="var(--diagram-accent)" font-weight="650">quiet time.</tspan><tspan fill="currentColor" fill-opacity="0.32"> You can read, draw, or play. ”</tspan></text>
+<line x1="32" y1="158" x2="608" y2="158" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"></line>
+<text x="32" y="178" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.5" letter-spacing="0.08em">VERSION 2 · ONE DECISION</text>
+<text x="32" y="202" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17"><tspan fill="var(--diagram-accent)" font-weight="650">“NAME, quiet time.</tspan><tspan fill="currentColor" fill-opacity="0.32"> You can read or draw. ”</tspan></text>
+<line x1="32" y1="220" x2="608" y2="220" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"></line>
+<text x="32" y="240" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" opacity="0.5" letter-spacing="0.08em">VERSION 3 · NONE</text>
+<text x="32" y="264" font-family="ui-sans-serif, system-ui, sans-serif" font-size="17"><tspan fill="var(--diagram-accent)" font-weight="650">“NAME, quiet time. ”</tspan></text>
+<text x="32" y="298" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">The coloured part never changes. Everything else eventually disappears.</text>
 </svg>
 <p>The first version offered three activities. I had written it meaning well, because offering a choice reads as a mark of respect. Cut to two options, it worked slightly better. Cut to none, it started working. The announcement names the expected state, it does not present a menu.</p>
 <p>Another effect of the grid bothered me at first. The "Wednesday" and "school day" branches of two announcements said the same thing in different words. I merged them, and the variation disappeared. Repeating the exact same wording is not lazy writing. It is what makes a message recognisable from its first words.</p>
@@ -188,33 +168,27 @@ const englishContent: PostContent = {
 <h2>The wake-up, three versions in one day</h2>
 <p>The first version announced, then started the music. It lasted one morning. My son does not like being woken by a voice, which no sensor in this house was ever going to tell me.</p>
 <p>The sequence was flipped the same day. Music becomes the alarm, and the instruction is layered over it ninety seconds later.</p>
-<svg viewBox="0 0 640 354" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The wake-up sequence: speaker volume starts at ten percent and rises five points every twenty seconds up to thirty percent at eighty seconds, then the spoken instruction is layered over the music at ninety seconds." class="diagram-svg">
+<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Curve showing the speaker's volume climbing from ten to thirty percent in five-point steps every twenty seconds, with a vertical marker at ninety seconds marking the point where the spoken instruction is layered over the music, whatever the ramp is set to." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">WAKE-UP · 18 SEPTEMBER VERSION</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Music first, voice second.</text>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="32" y="221" width="115" height="29" rx="4" fill="currentColor" fill-opacity="0.2"></rect>
-<rect x="147" y="207" width="115" height="43" rx="4" fill="currentColor" fill-opacity="0.26"></rect>
-<rect x="262" y="193" width="116" height="57" rx="4" fill="currentColor" fill-opacity="0.32"></rect>
-<rect x="378" y="178" width="115" height="72" rx="4" fill="currentColor" fill-opacity="0.38"></rect>
-<rect x="493" y="164" width="115" height="86" rx="4" fill="currentColor" fill-opacity="0.44"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" text-anchor="middle" opacity="0.85">
-<text x="89" y="213">10%</text>
-<text x="204" y="199">15%</text>
-<text x="320" y="185">20%</text>
-<text x="435" y="170">25%</text>
-<text x="550" y="156">30%</text>
-</g>
-<line x1="32" y1="250" x2="608" y2="250" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="550" y1="168" x2="550" y2="266" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="2" stroke-linecap="round"></line>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">
-<text x="32" y="270">0 s · the music starts</text>
-</g>
-<text x="608" y="292" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="end">T+90 s · the instruction goes over it</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
-<text x="32" y="322">Three iterations the same day, until the ceiling felt right.</text>
-<text x="32" y="342">The speaker volume is not restored afterwards.</text>
-</g>
+<line x1="32" y1="230" x2="608" y2="230" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<path d="M 32.0 199.5 L 147.2 184.2 L 262.4 169.0 L 377.6 153.8 L 492.8 138.5 L 608.0 138.5 L 608.0 230 L 32.0 230 Z" fill="var(--diagram-accent)" fill-opacity="0.14" stroke="none"></path>
+<path d="M 32.0 199.5 L 147.2 184.2 L 262.4 169.0 L 377.6 153.8 L 492.8 138.5 L 608.0 138.5" fill="none" stroke="var(--diagram-accent)" stroke-opacity="0.9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="32.0" cy="199.5" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="32.0" y="182.5" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">10%</text>
+<circle cx="147.2" cy="184.2" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="147.2" y="167.2" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">15%</text>
+<circle cx="262.4" cy="169.0" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="262.4" y="152.0" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">20%</text>
+<circle cx="377.6" cy="153.8" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="377.6" y="136.8" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">25%</text>
+<circle cx="492.8" cy="138.5" r="4.5" fill="var(--diagram-accent)"></circle>
+<text x="492.8" y="121.5" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650" opacity="0.85">30%</text>
+<line x1="550.4" y1="132.5" x2="550.4" y2="240" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
+<text x="550.4" y="260" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" opacity="0.9">T+90 s</text>
+<text x="32" y="260" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">0 s · the music starts</text>
+<text x="32" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Three iterations the same day, until the ceiling felt right.</text>
+<text x="32" y="310" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">The speaker volume is not restored afterwards.</text>
 </svg>
 <p>The ramp is the part that matters. The speaker starts at ten percent and climbs five points every twenty seconds. The instruction always lands at ninety seconds, whatever the ramp is set to. Three versions followed each other that day: a single step at twenty percent, then a ramp to twenty, then to thirty.</p>
 <p>One of my own starting instructions was abandoned the same day. I had asked for the music to resume "at the speaker's current volume". Once music <em>is</em> the alarm, inheriting last night's setting makes the wake-up unpredictable: too loud one morning, inaudible the next.</p>
