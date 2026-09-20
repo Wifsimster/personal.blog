@@ -25,9 +25,9 @@ const frenchContent: PostContent = {
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">CINQ FAÇADES · UNE JOURNÉE D'AOÛT</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Chaque façade a son créneau.</text>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="132">Bureau, Anna — ENE</text>
+<text x="32" y="132">Bureau, chambre — ENE</text>
 <text x="32" y="168">Parentale — SSE</text>
-<text x="32" y="204">Chambre Léo — ESE</text>
+<text x="32" y="204">Chambre d'enfant — ESE</text>
 <text x="32" y="240">Pignon — SSO</text>
 <text x="32" y="276">Cellier — ONO</text>
 </g>
@@ -152,9 +152,9 @@ const englishContent: PostContent = {
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">FIVE FACADES · ONE AUGUST DAY</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Every facade has its window.</text>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="132">Office, Anna — ENE</text>
+<text x="32" y="132">Office, bedroom — ENE</text>
 <text x="32" y="168">Parents' room — SSE</text>
-<text x="32" y="204">Son's room — ESE</text>
+<text x="32" y="204">Child's room — ESE</text>
 <text x="32" y="240">Gable — SSW</text>
 <text x="32" y="276">Utility room — WNW</text>
 </g>
