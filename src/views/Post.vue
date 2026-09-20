@@ -36,7 +36,7 @@
       </div>
       <article>
         <header class="mb-8">
-          <h1 class="text-4xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
+          <h1 class="post-title text-gray-900 dark:text-zinc-100 mb-4">
             {{ post.title }}
           </h1>
           <p v-if="post.description" class="text-xl text-gray-600 dark:text-zinc-400 mb-4 subtitle">

@@ -4,7 +4,7 @@
     <div class="flex-1 flex flex-col min-w-0">
       <!-- Mobile Header (visible only below lg) -->
       <Header class="lg:hidden" />
-      <main class="flex-1 p-8 md:p-12 max-w-4xl mx-auto w-full min-w-0">
+      <main class="flex-1 p-6 md:p-8 2xl:p-12 max-w-4xl mx-auto w-full min-w-0">
         <slot />
       </main>
     </div>
