@@ -9,11 +9,56 @@ import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import DOMPurify from 'dompurify'
 import { processPostImages } from '@/utils/imageProcessing'
 import type { GalleryImage } from '@/components/blog/ImageGallery.vue'
+import { getPostBySlug, isDraft, isScheduled } from '@/posts'
 
 const props = defineProps<{
   html: string
+  locale?: 'fr' | 'en'
   onImageClick?: (images: GalleryImage[], index: number) => void
 }>()
+
+const NOT_YET_LABEL: Record<'fr' | 'en', string> = {
+  fr: ' (à venir)',
+  en: ' (coming soon)'
+}
+
+/**
+ * A published post can cross-link a post that is still a draft or carries a
+ * future date (see isScheduled in @/posts). Both stay reachable at their own
+ * URL for review, but a live article must not hand every visitor a working
+ * link into unpublished content — that defeats the point of scheduling it.
+ *
+ * Strip href/target/rel from any <a> pointing at /posts/<slug> or
+ * /en/posts/<slug> when that slug resolves to a hidden post, turning it into
+ * inert text with a small suffix instead of silently deleting the mention.
+ * Anchors to anything else (external links, published posts, images) are
+ * untouched.
+ */
+function neutralizeHiddenPostLinks(html: string, locale: 'fr' | 'en'): string {
+  // Built by index-based splicing rather than html.replace(re, callback):
+  // the callback form intermittently produced zero replacements against
+  // Chromium's compiled output of this exact pattern in testing, for reasons
+  // that did not reproduce in isolation (String.prototype.matchAll on the
+  // identical string, right before the call, reliably found every match).
+  // Splicing sidesteps the global-regex/lastIndex machinery entirely.
+  const re = /<a[^>]*href="\/(?:en\/)?posts\/([a-z0-9-]+)"[^>]*>([\s\S]*?)<\/a>/g
+  const matches = [...html.matchAll(re)]
+  let out = ''
+  let cursor = 0
+  for (const m of matches) {
+    const slug = m[1]
+    const inner = m[2]
+    const info = getPostBySlug(slug)
+    const hidden = !!info && (isDraft(info) || isScheduled(info))
+    out += html.slice(cursor, m.index)
+    out += hidden
+      ? `<span class="text-gray-500 dark:text-zinc-500">${inner}${NOT_YET_LABEL[locale]}</span>`
+      : m[0]
+    cursor = (m.index ?? 0) + m[0].length
+  }
+  out += html.slice(cursor)
+  return out
+}
 
 const contentRef = ref<HTMLDivElement>()
 
@@ -34,10 +79,18 @@ const sanitizedHtml = computed(() => {
   )
   
   // Sanitize HTML to prevent XSS attacks
-  return DOMPurify.sanitize(processedHtml, {
+  const sanitized = DOMPurify.sanitize(processedHtml, {
     ALLOWED_TAGS: ['p', 'br', 'hr', 'strong', 'em', 'u', 'abbr', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'blockquote', 'code', 'pre', 'a', 'img', 'picture', 'source', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'div', 'svg', 'g', 'rect', 'line', 'polygon', 'polyline', 'path', 'circle', 'ellipse', 'text', 'tspan'],
     ALLOWED_ATTR: ['href', 'download', 'src', 'srcset', 'sizes', 'type', 'media', 'loading', 'decoding', 'alt', 'title', 'class', 'id', 'target', 'rel', 'data-gallery-image', 'viewBox', 'xmlns', 'role', 'aria-label', 'aria-labelledby', 'fill', 'fill-opacity', 'stroke', 'stroke-width', 'stroke-opacity', 'stroke-linecap', 'stroke-linejoin', 'stroke-dasharray', 'opacity', 'x', 'y', 'x1', 'x2', 'y1', 'y2', 'cx', 'cy', 'r', 'rx', 'ry', 'width', 'height', 'points', 'd', 'transform', 'font-family', 'font-size', 'font-weight', 'font-style', 'letter-spacing', 'text-anchor', 'dominant-baseline']
   })
+
+  // Runs after sanitization: the regex only ever narrows an <a> tag DOMPurify
+  // already approved down to a <span>, so it cannot reintroduce anything
+  // DOMPurify would have stripped.
+  const testRe = /<a[^>]*href="\/(?:en\/)?posts\/([a-z0-9-]+)"[^>]*>([\s\S]*?)<\/a>/g
+  console.log('[DEBUG match count]', [...sanitized.matchAll(testRe)].map(m => m[1]))
+  console.log('[DEBUG props.locale]', props.locale, 'fn is', typeof neutralizeHiddenPostLinks)
+  return neutralizeHiddenPostLinks(sanitized, props.locale ?? 'fr')
 })
 
 // Set up click handlers for images after content is rendered

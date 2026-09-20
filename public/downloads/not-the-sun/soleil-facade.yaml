@@ -1,0 +1,106 @@
+# =============================================================================
+# Le soleil frappe-t-il cette façade ?
+#
+# Publie un `binary_sensor` par façade : `on` quand le soleil est réellement
+# dessus, `off` sinon. À utiliser comme condition pour piloter un volet, un
+# store ou une alerte de surchauffe.
+#
+# La logique tient en deux tests :
+#   1. l'écart entre l'azimut du soleil et la normale de la façade est
+#      inférieur à 65° — avec un écart SIGNÉ, sinon le passage par le nord
+#      (0/360) casse le calcul ;
+#   2. le soleil est assez haut pour passer au-dessus de ce qui est devant.
+#
+# INSTALLATION
+#   1. Copier dans `config/packages/soleil_facade.yaml`
+#   2. Vérifier que `configuration.yaml` contient :
+#        homeassistant:
+#          packages: !include_dir_named packages
+#   3. Adapter les blocs ci-dessous à vos façades, puis redémarrer.
+#
+# Testé sur Home Assistant 2026.7. L'intégration `sun` suffit, aucune
+# dépendance externe.
+# =============================================================================
+
+template:
+  - binary_sensor:
+      # ---------------------------------------------------------------------
+      # À PERSONNALISER — un bloc par façade.
+      #
+      #   normale   = direction vers laquelle la façade regarde, en degrés
+      #               depuis le nord. 90 = est, 180 = sud, 270 = ouest.
+      #               Prenez-la sur le plan cadastral, pas à la boussole :
+      #               une erreur de 20° décale la fenêtre d'ensoleillement
+      #               d'une bonne heure.
+      #
+      #   el_min    = hauteur minimale du soleil pour qu'il entre vraiment.
+      #               5 convient à une façade dégagée. Montez à 12-15 s'il y
+      #               a un bâtiment ou des arbres devant : chez moi le soleil
+      #               n'entre par la fenêtre est qu'à 14°, soit cinquante
+      #               minutes après le lever théorique.
+      #
+      #   ouverture = demi-angle accepté. 65 est un bon défaut : au-delà, le
+      #               rayonnement devient rasant et chauffe peu.
+      # ---------------------------------------------------------------------
+
+      - name: "Soleil façade est"
+        unique_id: soleil_facade_est
+        icon: "{{ 'mdi:weather-sunny' if this.state == 'on' else 'mdi:weather-sunny-off' }}"
+        state: >-
+          {% set normale = 114 %}
+          {% set el_min = 5 %}
+          {% set ouverture = 65 %}
+          {% set az = state_attr('sun.sun', 'azimuth') | float(-1) %}
+          {% set el = state_attr('sun.sun', 'elevation') | float(-90) %}
+          {% if az < 0 %}
+            false
+          {% else %}
+            {# écart signé ramené dans [-180, 180] : gère le passage par le nord #}
+            {% set ecart = ((az - normale + 540) % 360) - 180 %}
+            {{ el > el_min and (ecart | abs) < ouverture }}
+          {% endif %}
+        attributes:
+          # Exposés pour pouvoir recalibrer par simple observation : notez
+          # l'azimut et l'élévation à l'instant où le soleil entre vraiment.
+          azimut: "{{ state_attr('sun.sun', 'azimuth') }}"
+          elevation: "{{ state_attr('sun.sun', 'elevation') }}"
+
+      - name: "Soleil façade ouest"
+        unique_id: soleil_facade_ouest
+        icon: "{{ 'mdi:weather-sunny' if this.state == 'on' else 'mdi:weather-sunny-off' }}"
+        state: >-
+          {% set normale = 295 %}
+          {% set el_min = 5 %}
+          {% set ouverture = 65 %}
+          {% set az = state_attr('sun.sun', 'azimuth') | float(-1) %}
+          {% set el = state_attr('sun.sun', 'elevation') | float(-90) %}
+          {% if az < 0 %}
+            false
+          {% else %}
+            {% set ecart = ((az - normale + 540) % 360) - 180 %}
+            {{ el > el_min and (ecart | abs) < ouverture }}
+          {% endif %}
+        attributes:
+          azimut: "{{ state_attr('sun.sun', 'azimuth') }}"
+          elevation: "{{ state_attr('sun.sun', 'elevation') }}"
+
+# -----------------------------------------------------------------------------
+# UTILISATION
+#
+#   conditions:
+#     - condition: state
+#       entity_id: binary_sensor.soleil_facade_est
+#       state: "on"
+#
+# COMMENT RÉGLER `el_min` SANS CALCUL
+# Laissez tourner une journée, puis comparez l'heure de bascule du capteur à
+# l'heure où le soleil entre réellement dans la pièce. S'il bascule trop tôt,
+# relevez `el_min` d'un ou deux degrés et recommencez. Les attributs `azimut`
+# et `elevation` donnent les valeurs exactes au moment que vous observez.
+#
+# CE QUE CE CAPTEUR NE DIT PAS
+# Il dit que le soleil est sur la façade, pas que la pièce chauffe. Une pièce
+# peut monter en température sans aucun soleil : chez moi, un bureau tient
+# 29 °C en pleine nuit à cause d'une baie informatique. Croisez toujours avec
+# une vraie mesure de température avant d'agir.
+# -----------------------------------------------------------------------------

@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - master
+  # Daily catch-up for posts carrying a future date. The date filter is
+  # evaluated at build time, so a scheduled post needs a rebuild once its date
+  # arrives — nothing publishes it on its own. The `gate` job below decides
+  # whether this run has anything to do.
+  schedule:
+    - cron: "25 5 * * *"
   workflow_dispatch:
     inputs:
       version_type:
@@ -25,13 +31,52 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  gate:
+    name: Anything to release?
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.decide.outputs.proceed }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Check for due scheduled posts
+        id: check
+        if: github.event_name == 'schedule'
+        run: node scripts/check-scheduled.mjs
+
+      # On a push or a manual run, someone changed something: always proceed.
+      # On the daily cron, only proceed when the live sitemap is missing a post
+      # whose publication date has passed.
+      - name: Decide
+        id: decide
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "Triggered by ${{ github.event_name }} — proceeding."
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          elif [ -n "${{ steps.check.outputs.due }}" ]; then
+            echo "Due and not live yet: ${{ steps.check.outputs.due }}"
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Nothing due today. Stopping here."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          fi
+
   release:
     name: Create Release & Publish Docker Image
     runs-on: ubuntu-latest
+    needs: gate
     # Skip the bot's own version-bump push. (Pushes made with GITHUB_TOKEN
     # already don't re-trigger workflows, so this is just defense-in-depth —
     # unlike a head-commit-message check, it never skips a human content push.)
-    if: github.actor != 'github-actions[bot]'
+    if: needs.gate.outputs.proceed == 'true' && github.actor != 'github-actions[bot]'
 
     steps:
       - name: Checkout code

@@ -1,0 +1,128 @@
+blueprint:
+  name: Vitesse selon la température
+  description: >-
+    Traduit la température d'une pièce en une valeur de 0 à 6, et l'écrit dans
+    un helper `input_number`.
+
+
+    Pensé pour un ventilateur de plafond, mais la sortie n'est qu'un nombre :
+    une seconde automatisation, à vous, lit ce nombre et envoie ce qu'il faut —
+    une trame infrarouge, une commande Zigbee, un appel `fan.set_percentage`.
+    Séparer les deux permet de garder la consigne pilotable à la main quand
+    l'automatique est coupé.
+
+
+    Le barème est à seuils croissants. Sous le premier seuil, la valeur est 0.
+    Entre le premier et le deuxième, 1. Et ainsi de suite jusqu'à 6 au-delà du
+    dernier.
+
+
+    L'automatisation n'écrit que lorsque la valeur change, pour ne pas
+    réémettre une commande identique à chaque variation de dixième de degré.
+
+
+    Testé sur Home Assistant 2026.7. Nécessite 2024.10 ou plus récent.
+  domain: automation
+  source_url: https://blog.battistella.ovh/posts/not-the-sun
+  input:
+    capteur:
+      name: Capteur de température
+      description: La température qui décide.
+      selector:
+        entity:
+          filter:
+            - domain: sensor
+              device_class: temperature
+    consigne:
+      name: Helper de consigne
+      description: >-
+        Un `input_number` de 0 à 6, pas de 1. C'est lui que votre automatisation
+        d'application doit surveiller.
+      selector:
+        entity:
+          filter:
+            - domain: input_number
+    interrupteur:
+      name: Interrupteur du mode automatique
+      description: >-
+        Un `input_boolean`. Sur arrêt, rien n'est écrit et la consigne reste où
+        vous l'avez laissée.
+      selector:
+        entity:
+          filter:
+            - domain: input_boolean
+    seuils:
+      name: Seuils, du plus bas au plus haut
+      description: >-
+        Six températures croissantes. Valeurs par défaut réglées sur une pièce
+        de bureau : rien sous 25 °C, puis un cran tous les degrés et demi.
+      default: [25, 26.5, 28, 29.5, 31, 32.5]
+      selector:
+        object: {}
+    mois:
+      name: Mois d'activité
+      description: Hors de ces mois, l'automatisation ne fait rien.
+      default: [5, 6, 7, 8, 9]
+      selector:
+        select:
+          multiple: true
+          options:
+            - { label: Janvier, value: "1" }
+            - { label: Février, value: "2" }
+            - { label: Mars, value: "3" }
+            - { label: Avril, value: "4" }
+            - { label: Mai, value: "5" }
+            - { label: Juin, value: "6" }
+            - { label: Juillet, value: "7" }
+            - { label: Août, value: "8" }
+            - { label: Septembre, value: "9" }
+            - { label: Octobre, value: "10" }
+            - { label: Novembre, value: "11" }
+            - { label: Décembre, value: "12" }
+
+mode: single
+
+triggers:
+  - trigger: state
+    entity_id: !input capteur
+  - trigger: state
+    entity_id: !input interrupteur
+    to: "on"
+  - trigger: homeassistant
+    event: start
+
+variables:
+  seuils: !input seuils
+  mois: !input mois
+  temperature: !input capteur
+  # Déclaré ici parce qu'il est lu dans un template plus bas : `!input` ne se
+  # substitue pas à l'intérieur d'une expression Jinja.
+  consigne: !input consigne
+  cible: >-
+    {% set t = states(temperature) | float(-273) %}
+    {% set ns = namespace(v=0) %}
+    {% for s in seuils %}
+      {% if t >= (s | float) %}{% set ns.v = loop.index %}{% endif %}
+    {% endfor %}
+    {{ ns.v }}
+
+conditions:
+  - condition: state
+    entity_id: !input interrupteur
+    state: "on"
+  - condition: template
+    value_template: "{{ now().month | string in mois }}"
+  # Un capteur muet ne doit pas être lu comme 0 °C et couper le ventilateur.
+  - condition: template
+    value_template: "{{ states(temperature) not in ['unknown', 'unavailable', 'none'] }}"
+
+actions:
+  - if:
+      - condition: template
+        value_template: "{{ cible | int != states(consigne) | int }}"
+    then:
+      - action: input_number.set_value
+        target:
+          entity_id: !input consigne
+        data:
+          value: "{{ cible | int }}"
