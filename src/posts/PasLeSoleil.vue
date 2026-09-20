@@ -83,7 +83,7 @@ const frenchContent: PostContent = {
 </svg>
 <p>Vingt-neuf degrés en pleine nuit, moyenne sur quatorze jours entre une heure et six heures. Trois degrés au-dessus du salon, deux et demi au-dessus de la cuisine, sans le moindre rayon de soleil depuis des heures.</p>
 <p>La pièce est très isolée et contient une baie informatique qui dissipe 331 W en permanence. Elle ne refroidit jamais. Le volet ne peut agir que sur l'apport solaire du matin, par la plus petite ouverture de la maison, pendant un créneau de trois heures quarante-cinq — c'est-à-dire sur la plus petite part du problème.</p>
-<p>Le levier est l'évacuation, pas l'occultation. J'aurais passé l'été à régler un barème solaire sur un problème qui n'était pas solaire. Un capteur dédié dit maintenant quand il fait au moins deux degrés de moins dehors que dans le bureau, et une notification propose simplement d'ouvrir.</p>
+<p>Le levier est l'évacuation, pas l'occultation. J'aurais passé l'été à régler un barème solaire sur un problème qui n'était pas solaire. Un capteur dédié dit maintenant quand il fait au moins deux degrés de moins dehors que dans le bureau, et une notification propose simplement d'ouvrir. Un ventilateur de plafond a suivi, dont la vitesse se cale sur la température de la pièce de mai à septembre.</p>
 <p>Une hypothèse a été écartée au passage, et elle vaut d'être dite parce qu'elle était séduisante. Je soupçonnais la pièce voisine, un cellier sans volet, de conduire sa chaleur vers le bureau. Les mesures disent l'inverse : le bureau est à 29 °C, le cellier à 25 ou 26. Le gradient va donc du bureau vers le cellier, qui lui sert de puits et non de source.</p>
 
 <h2>Le même piège sur le tableau électrique</h2>
@@ -211,7 +211,7 @@ const englishContent: PostContent = {
 </svg>
 <p>Twenty-nine degrees in the middle of the night, averaged over fourteen days between one and six in the morning. Three degrees above the living room, two and a half above the kitchen, without a ray of sun for hours.</p>
 <p>The room is very well insulated and holds a server rack dissipating 331 W permanently. It never cools down. The shutter can only act on the morning solar gain, through the smallest opening in the house, across a window of three hours and forty-five minutes. That is the smallest part of the problem.</p>
-<p>The lever is evacuation, not shading. I would have spent the summer tuning a solar curve against a problem that was not solar. A dedicated sensor now says when it is at least two degrees cooler outside than in the office, and a notification simply suggests opening a window.</p>
+<p>The lever is evacuation, not shading. I would have spent the summer tuning a solar curve against a problem that was not solar. A dedicated sensor now says when it is at least two degrees cooler outside than in the office, and a notification simply suggests opening a window. A ceiling fan followed, its speed tracking the room temperature from May to September.</p>
 <p>One hypothesis got ruled out along the way, and it is worth stating because it was seductive. I suspected the neighbouring utility room, which has no shutter, of conducting its heat into the office. The measurements say the opposite: the office is at 29 °C, the utility room at 25 or 26. The gradient runs from the office into the utility room, which acts as a sink rather than a source.</p>
 
 <h2>The same trap on the electrical panel</h2>
