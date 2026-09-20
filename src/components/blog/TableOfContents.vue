@@ -1,7 +1,7 @@
 <template>
   <aside
     v-if="headings.length > 0"
-    class="hidden lg:flex lg:flex-col w-64 border-l border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-900/50"
+    class="hidden lg:flex lg:flex-col w-56 2xl:w-64 border-l border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-900/50"
   >
     <div class="sticky top-0 max-h-screen overflow-y-auto p-6">
       <h2 class="text-sm font-semibold text-gray-900 dark:text-zinc-100 mb-4">

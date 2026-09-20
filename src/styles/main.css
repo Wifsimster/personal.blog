@@ -24,7 +24,7 @@
      CSS/SVG-free (pure CSS gradients), theme-safe, self-hosted.
      Tuned per theme via variables so it inverts cleanly. */
   :root {
-    --tech-dot: rgba(15, 23, 42, 0.06);
+    --tech-dot: rgba(15, 23, 42, 0.035);
     --tech-dot-hot: rgba(14, 165, 233, 0.55);
     --tech-glow-1: rgba(14, 165, 233, 0.10);
     --tech-glow-2: rgba(99, 102, 241, 0.05);
@@ -41,7 +41,7 @@
   }
 
   .dark {
-    --tech-dot: rgba(244, 244, 245, 0.05);
+    --tech-dot: rgba(244, 244, 245, 0.03);
     --tech-dot-hot: rgba(56, 189, 248, 0.55);
     --tech-glow-1: rgba(14, 165, 233, 0.16);
     --tech-glow-2: rgba(56, 189, 248, 0.06);
@@ -354,9 +354,41 @@
     }
   }
 
+  /* The article title belongs to the article, not to the interface. It was
+     sans-serif while every heading inside the piece was Charter, so the page
+     switched type family halfway down its own hierarchy. Title, section
+     headings and body are now one voice; the sans family stays for chrome
+     (nav, sidebar, cards, meta). Leading was 1.11, which made a three-line
+     title on a phone nearly touch. */
+  .post-title {
+    font-family: var(--font-serif);
+    @apply font-bold;
+    font-size: 2.25rem;
+    line-height: 1.16;
+    letter-spacing: -0.015em;
+  }
+
+  @media (min-width: 1024px) {
+    .post-title {
+      font-size: 2.75rem;
+    }
+  }
+
+  /* The standfirst was 20px sans at near-title weight and competed with the
+     title it was meant to introduce. */
+  .subtitle {
+    font-family: var(--font-serif);
+    line-height: 1.5;
+  }
+
+  /* Was a saturated fill plus a coloured border plus a coloured label: the
+     loudest element on the page, louder than the title. A summary should be
+     calmer than what it summarises. Now a single left rule carries it. */
   .prose .post-tldr {
-    @apply my-6 p-5 rounded-xl border border-primary-500/30 bg-primary-500/10 text-gray-700 dark:text-zinc-200;
-    border-left-width: 4px;
+    @apply my-6 py-1 pl-5 pr-0 text-gray-700 dark:text-zinc-300;
+    border-left: 3px solid var(--diagram-accent);
+    border-radius: 0;
+    background: none;
   }
 
   .prose .post-tldr p {
@@ -365,7 +397,10 @@
   }
 
   .prose .post-tldr strong:first-child {
-    @apply block mb-1.5 uppercase tracking-widest text-xs font-bold text-primary-600 dark:text-primary-400;
+    @apply block mb-1.5 uppercase tracking-widest text-xs font-bold;
+    font-family: var(--font-sans);
+    color: currentColor;
+    opacity: 0.5;
   }
 
   /* The title attribute never fires on touch, so abbr is silent on mobile —
