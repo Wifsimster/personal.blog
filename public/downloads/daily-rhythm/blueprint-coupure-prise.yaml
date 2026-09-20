@@ -1,0 +1,115 @@
+blueprint:
+  name: Coupure et rallumage d'une prise à heure fixe
+  description: >-
+    Coupe une prise à une heure donnée et la rallume à une autre, sur les jours
+    que vous choisissez.
+
+
+    Pensé pour un rituel de fin de journée : couper la télévision à 19 h 30 et
+    la rendre aux adultes à 20 h 30. Fonctionne pour n'importe quel
+    interrupteur.
+
+
+    Les deux horaires vivent dans UNE SEULE automatisation, donc une seule liste
+    de jours. C'est volontaire : avec deux automatisations séparées, ajouter un
+    jour à l'une et pas à l'autre donne une prise qui se coupe sans jamais se
+    rallumer.
+
+
+    Les « conditions supplémentaires » acceptent n'importe quelle condition Home
+    Assistant : capteur de jours fériés, interrupteur de vacances scolaires,
+    présence, etc. Laissez vide si vous n'en voulez pas.
+
+
+    Testé sur Home Assistant 2026.7. Nécessite 2024.10 ou plus récent.
+  domain: automation
+  source_url: https://blog.battistella.ovh/posts/daily-rhythm
+  input:
+    prise:
+      name: Prise à piloter
+      description: L'interrupteur qui sera coupé puis rallumé.
+      selector:
+        entity:
+          filter:
+            - domain: switch
+    heure_coupure:
+      name: Heure de coupure
+      default: "19:30:00"
+      selector:
+        time: {}
+    heure_rallumage:
+      name: Heure de rallumage
+      default: "20:30:00"
+      selector:
+        time: {}
+    jours:
+      name: Jours concernés
+      description: >-
+        Les jours où la coupure ET le rallumage s'appliquent. Par défaut tous
+        les soirs sauf le samedi.
+      default:
+        - sun
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      selector:
+        select:
+          multiple: true
+          options:
+            - label: Lundi
+              value: mon
+            - label: Mardi
+              value: tue
+            - label: Mercredi
+              value: wed
+            - label: Jeudi
+              value: thu
+            - label: Vendredi
+              value: fri
+            - label: Samedi
+              value: sat
+            - label: Dimanche
+              value: sun
+    conditions_supplementaires:
+      name: Conditions supplémentaires
+      description: >-
+        Facultatif. Par exemple : binary_sensor.vacances_scolaires à « off », ou
+        un capteur de jours fériés à « on ». Toutes doivent être vraies.
+      default: []
+      selector:
+        condition: {}
+
+mode: single
+
+triggers:
+  - trigger: time
+    at: !input heure_coupure
+    id: couper
+  - trigger: time
+    at: !input heure_rallumage
+    id: rallumer
+
+conditions:
+  - condition: time
+    weekday: !input jours
+  - condition: and
+    conditions: !input conditions_supplementaires
+
+actions:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: couper
+        sequence:
+          - action: switch.turn_off
+            target:
+              entity_id: !input prise
+      - conditions:
+          - condition: trigger
+            id: rallumer
+        sequence:
+          - action: switch.turn_on
+            target:
+              entity_id: !input prise

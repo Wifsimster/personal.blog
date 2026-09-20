@@ -1,0 +1,126 @@
+# =============================================================================
+# Annonce vocale — script Home Assistant
+#
+# Point de passage unique pour toutes les annonces parlées de la maison.
+# Vos automatisations n'adressent jamais une enceinte : elles appellent ce
+# script avec un message, une pièce et un volume. Le jour où les enceintes
+# changent de nom, il y a un seul fichier à corriger.
+#
+# INSTALLATION
+#   1. Coller ce bloc dans `scripts.yaml`, ou dans un package.
+#   2. Adapter la table `cibles` ci-dessous à vos enceintes.
+#   3. Recharger les scripts (Outils de développement → YAML → Scripts).
+#
+# APPEL
+#   action: script.annonce
+#   data:
+#     message: "Léo, brosse tes dents."
+#     piece: leo          # leo | salon | toutes
+#     volume: 35          # volume du CLIP, pas de l'enceinte
+#     nuit: false         # true pour passer outre les heures calmes
+#
+# Testé sur Home Assistant 2026.7 avec des enceintes Sonos et une synthèse
+# vocale Piper locale (intégration Wyoming).
+# =============================================================================
+
+annonce:
+  alias: Annonce vocale
+  icon: mdi:bullhorn
+  mode: queued
+  max: 5
+  description: >-
+    Diffuse un message parlé sur une ou plusieurs enceintes. Sur Sonos, l'annonce
+    se superpose à la musique en cours via l'API AudioClip : le volume d'écoute
+    de l'enceinte n'est PAS modifié, le champ `volume` ne règle que le clip.
+
+  fields:
+    message:
+      name: Message
+      description: Texte à prononcer.
+      required: true
+      example: "Léo, brosse tes dents."
+      selector:
+        text:
+    piece:
+      name: Pièce
+      description: Où diffuser.
+      default: toutes
+      selector:
+        select:
+          options: [leo, salon, toutes]
+    volume:
+      name: Volume du clip
+      description: En pourcentage. N'affecte pas le volume d'écoute de l'enceinte.
+      default: 45
+      selector:
+        number:
+          min: 5
+          max: 100
+          step: 5
+          unit_of_measurement: "%"
+    nuit:
+      name: Forcer la nuit
+      description: Diffuser même pendant les heures calmes.
+      default: false
+      selector:
+        boolean:
+
+  sequence:
+    # -------------------------------------------------------------------------
+    # 1. Heures calmes. Rien ne sort entre 21 h 45 et 7 h 00, sauf `nuit: true`.
+    #    Ajustez les deux horaires à votre maison.
+    # -------------------------------------------------------------------------
+    - alias: "Heures calmes : on ne réveille personne sauf urgence"
+      condition: template
+      value_template: >-
+        {{ (nuit | default(false)) or (today_at('07:00') <= now() <= today_at('21:45')) }}
+
+    # -------------------------------------------------------------------------
+    # 2. À PERSONNALISER — la table des cibles.
+    #    Une clé par pièce, la valeur étant la liste des media_player.
+    #    Le filtre `has_value` écarte les enceintes absentes ou injoignables,
+    #    ce qui évite une erreur quand l'une d'elles est débranchée.
+    # -------------------------------------------------------------------------
+    - variables:
+        cibles: >-
+          {% set p = piece | default('toutes') %}
+          {% set table = {
+               'leo':   ['media_player.sonos_chambre_leo'],
+               'salon': ['media_player.sonos_salon']
+             } %}
+          {% set toutes = ['media_player.sonos_chambre_leo', 'media_player.sonos_salon'] %}
+          {{ table.get(p, toutes) | select('has_value') | list }}
+
+    # -------------------------------------------------------------------------
+    # 3. Aucune enceinte joignable : on sort proprement, sans lever d'erreur.
+    # -------------------------------------------------------------------------
+    - alias: "Aucune enceinte joignable : sortie silencieuse"
+      condition: template
+      value_template: "{{ cibles | count > 0 }}"
+
+    # -------------------------------------------------------------------------
+    # 4. Diffusion.
+    #    `announce: true` + `extra.volume` = API AudioClip sur Sonos.
+    #    NE PAS appeler media_player.volume_set avant : ça changerait
+    #    durablement le volume d'écoute pour rien.
+    #    Remplacez `tts.piper` par votre moteur (tts.google_translate_say,
+    #    tts.cloud_say, etc.).
+    # -------------------------------------------------------------------------
+    - action: media_player.play_media
+      target:
+        entity_id: "{{ cibles }}"
+      data:
+        media_content_type: music
+        media_content_id: >-
+          media-source://tts/tts.piper?message={{ message | urlencode }}&language=fr_FR
+        announce: true
+        extra:
+          volume: "{{ volume | default(45) }}"
+
+# =============================================================================
+# NOTE DE DIAGNOSTIC
+# Pendant une annonce AudioClip, l'état du media_player ne bouge pas : ni
+# `state`, ni `media_title`, ni la position. Sonder cet état pour vérifier
+# qu'une annonce est passée donne un faux négatif. Le témoin fiable est la
+# ligne `Playing ... using websocket audioclip` dans le journal du serveur.
+# =============================================================================
