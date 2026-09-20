@@ -1,0 +1,123 @@
+# =============================================================================
+# Vacances scolaires françaises — capteur Home Assistant
+#
+# Publie `binary_sensor.vacances_scolaires` : `on` pendant les vacances de
+# votre académie, `off` en période scolaire. À utiliser comme condition dans
+# vos routines du matin, du soir et du coucher.
+#
+# Source : open data de l'Éducation nationale, dataset `fr-en-calendrier-scolaire`
+#          https://data.education.gouv.fr
+# Le calendrier officiel est publié plusieurs années à l'avance.
+#
+# INSTALLATION
+#   1. Copier ce fichier dans `config/packages/vacances_scolaires.yaml`
+#   2. Vérifier que `configuration.yaml` contient bien :
+#        homeassistant:
+#          packages: !include_dir_named packages
+#   3. Redémarrer Home Assistant
+#
+# Testé sur Home Assistant 2026.7. Nécessite 2024.10 ou plus récent
+# (syntaxe `triggers/conditions/actions`).
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# À PERSONNALISER — une seule ligne à changer
+# -----------------------------------------------------------------------------
+# Remplacez "Bordeaux" par votre académie. Valeurs acceptées par le jeu de
+# données (champ `location`) :
+#
+#   Aix-Marseille, Amiens, Besançon, Bordeaux, Clermont-Ferrand, Corse,
+#   Créteil, Dijon, Grenoble, Guadeloupe, Guyane, Lille, Limoges, Lyon,
+#   Martinique, Mayotte, Montpellier, Nancy-Metz, Nantes, Nice, Normandie,
+#   Orléans-Tours, Paris, Poitiers, Reims, Rennes, La Réunion, Strasbourg,
+#   Toulouse, Versailles
+#
+# Le filtre `population != "Enseignants"` garde les vacances des ÉLÈVES.
+# Les entrées marquées « - » valent pour tout le monde et sont conservées.
+# -----------------------------------------------------------------------------
+
+rest:
+  - scan_interval: 21600 # 6 h — le calendrier officiel ne bouge quasiment jamais
+    timeout: 30
+    resource_template: >-
+      {{ 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-calendrier-scolaire/records?' ~ {
+           'limit': 12,
+           'order_by': 'start_date',
+           'select': 'description,start_date,end_date',
+           'where': 'location="Bordeaux" and population!="Enseignants" and end_date>=date\'' ~ utcnow().strftime('%Y-%m-%dT%H:%M:%SZ') ~ '\''
+         } | urlencode }}
+    sensor:
+      - name: "Calendrier vacances scolaires"
+        unique_id: calendrier_vacances_scolaires_api
+        icon: mdi:calendar-check
+        value_template: "{{ value_json.results | count }}"
+        unit_of_measurement: "périodes"
+        json_attributes:
+          - results
+
+template:
+  - binary_sensor:
+      - name: "Vacances scolaires"
+        unique_id: vacances_scolaires_calendrier
+        icon: >-
+          {{ 'mdi:beach' if this.state == 'on' else 'mdi:school' }}
+        # Si l'API n'a jamais répondu depuis le démarrage, le capteur est
+        # indisponible plutôt que faux. Une condition qui s'appuie dessus
+        # ne se déclenchera pas, au lieu de se déclencher à tort.
+        availability: >-
+          {{ state_attr('sensor.calendrier_vacances_scolaires', 'results') is iterable
+             and state_attr('sensor.calendrier_vacances_scolaires', 'results') is not string }}
+        state: >-
+          {% set ns = namespace(v=false) %}
+          {% for p in state_attr('sensor.calendrier_vacances_scolaires', 'results') %}
+            {% if as_datetime(p.start_date) <= now() <= as_datetime(p.end_date) %}
+              {% set ns.v = true %}
+            {% endif %}
+          {% endfor %}
+          {{ ns.v }}
+        attributes:
+          # Nom de la période en cours, ex. « Vacances de la Toussaint »
+          periode: >-
+            {% set ns = namespace(n='Période scolaire') %}
+            {% for p in state_attr('sensor.calendrier_vacances_scolaires', 'results') %}
+              {% if as_datetime(p.start_date) <= now() <= as_datetime(p.end_date) %}
+                {% set ns.n = p.description %}
+              {% endif %}
+            {% endfor %}
+            {{ ns.n }}
+          # Date de fin de la période en cours, format JJ/MM/AAAA
+          fin: >-
+            {% set ns = namespace(d=none) %}
+            {% for p in state_attr('sensor.calendrier_vacances_scolaires', 'results') %}
+              {% if as_datetime(p.start_date) <= now() <= as_datetime(p.end_date) %}
+                {% set ns.d = as_datetime(p.end_date) %}
+              {% endif %}
+            {% endfor %}
+            {{ ns.d.astimezone().strftime('%d/%m/%Y') if ns.d else '' }}
+          # Prochaine période de vacances, nom et date de début
+          prochaines_vacances: >-
+            {% set ns = namespace(n='inconnu', d=none) %}
+            {% for p in state_attr('sensor.calendrier_vacances_scolaires', 'results') %}
+              {% if ns.d is none and as_datetime(p.start_date) > now() %}
+                {% set ns.n = p.description %}
+                {% set ns.d = as_datetime(p.start_date) %}
+              {% endif %}
+            {% endfor %}
+            {{ ns.n }}{{ ' — ' ~ ns.d.astimezone().strftime('%d/%m/%Y') if ns.d else '' }}
+
+# -----------------------------------------------------------------------------
+# UTILISATION
+#
+# Dans n'importe quelle automatisation, comme condition :
+#
+#   conditions:
+#     - condition: state
+#       entity_id: binary_sensor.vacances_scolaires
+#       state: "off"
+#
+# LIMITE CONNUE
+# Le jeu de données officiel comporte parfois des périodes de longueur nulle
+# (`start_date == end_date`), par exemple le pont de l'Ascension certaines
+# années. Le capteur reste alors `off` sur ces jours-là. Un capteur de jours
+# fériés (intégration `workday`) couvre ce cas.
+# -----------------------------------------------------------------------------

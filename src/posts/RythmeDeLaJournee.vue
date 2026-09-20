@@ -19,7 +19,7 @@ const frenchContent: PostContent = {
 <p>Ce n'est pas la partie impressionnante de mon installation. C'est celle qui a le plus changé la maison, et celle dont la mise en place a été la plus rapide.</p>
 
 <h2>Le soir, brique par brique</h2>
-<p>Le premier morceau posé a été la coupure de télévision. Une prise Zigbee, une automatisation à 19 h 30, une autre à 20 h 30 pour la rendre. Quinze minutes.</p>
+<p>Le premier morceau posé a été la coupure de télévision. Une prise <abbr title="Réseau maillé radio basse consommation, 2,4 GHz">Zigbee</abbr>, une automatisation à 19 h 30, une autre à 20 h 30 pour la rendre. Quinze minutes.</p>
 <p>Puis l'annonce de 19 h 25, qui prévient cinq minutes avant. Puis la fermeture des volets, calée sur la même heure. Puis le temps calme à 19 h 31, juste après la coupure, pour que l'extinction soit suivie d'une consigne plutôt que d'un vide.</p>
 <p>Chaque brique a pris une soirée au plus, et aucune n'a été pensée à l'avance. C'est une propriété qui compte davantage que le résultat final : la routine du soir n'a pas été conçue, elle a été accumulée, en corrigeant après chaque essai.</p>
 <blockquote><p>Une maison ne se conçoit pas comme un produit. Elle se règle comme un instrument, par petites touches, en écoutant ce que ça donne.</p></blockquote>
@@ -45,7 +45,7 @@ const frenchContent: PostContent = {
 <rect x="32" y="248" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.08"></rect>
 <rect x="32" y="284" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.08"></rect>
 <rect x="32" y="320" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.08"></rect>
-<rect x="32" y="356" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.4"></rect>
+<rect x="32" y="356" width="576" height="28" rx="8" fill="var(--diagram-accent-soft)" stroke="var(--diagram-accent)" stroke-opacity="0.6" stroke-width="1"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">
 <text x="44" y="159">Arrivée et douche</text>
@@ -90,7 +90,7 @@ const frenchContent: PostContent = {
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Un jeu de données, trois routines.</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="32" y="146" width="170" height="50" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="232" y="146" width="130" height="50" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
+<rect x="232" y="146" width="130" height="50" rx="8" fill="var(--diagram-accent-soft)" stroke="var(--diagram-accent)" stroke-opacity="0.6" stroke-width="1"></rect>
 <rect x="402" y="104" width="206" height="38" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
 <rect x="402" y="152" width="206" height="38" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
 <rect x="402" y="200" width="206" height="38" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
@@ -146,6 +146,14 @@ const frenchContent: PostContent = {
 <li><strong>Le gain n'est pas le temps, c'est la constance.</strong> La maison applique la règle même les soirs où je n'en aurais pas eu le courage.</li>
 </ul>
 <p>Le prochain épisode reste sur les usages, mais passe à celui que je n'avais pas vu venir : la maison qui parle. Treize annonces vocales par jour, et la découverte que le problème n'était jamais le son.</p>
+<h2>À télécharger</h2>
+<p>Les deux briques de cet épisode sont réutilisables telles quelles.</p>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/daily-rhythm/vacances-scolaires-fr.yaml" download>vacances-scolaires-fr.yaml</a> — le capteur des vacances scolaires françaises. Une seule ligne à changer, votre académie.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/daily-rhythm/blueprint-coupure-prise.yaml" download>blueprint-coupure-prise.yaml</a> — un <abbr title="Modèle d'automatisation Home Assistant, paramétrable depuis l'interface">blueprint</abbr> pour couper une prise à une heure et la rallumer à une autre. Prise, horaires, jours et conditions se règlent depuis l'interface, sans toucher au fichier.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/daily-rhythm/LISEZMOI.md" download>LISEZMOI.md</a> — l'installation, et la même logique décrite sans Home Assistant pour qui veut la porter sur <abbr title="Logiciel de domotique français, concurrent historique de Home Assistant">Jeedom</abbr>, <abbr title="Plateforme domotique open source, alternative à Home Assistant">openHAB</abbr> ou <abbr title="Outil de programmation visuelle par flux, très utilisé en domotique">Node-RED</abbr>.</li>
+</ul>
+<p>Le blueprint corrige au passage le défaut raconté plus haut. Les deux horaires y vivent dans une seule automatisation, donc une seule liste de jours à tenir à jour.</p>
 <p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas.</p>`
 }
 
@@ -159,7 +167,7 @@ const englishContent: PostContent = {
 <p>It is not the impressive part of my installation. It is the part that changed the house the most, and the part that took the least time to build.</p>
 
 <h2>The evening, one piece at a time</h2>
-<p>The first piece was the television cut. A Zigbee socket, one automation at 7:30 p.m., another at 8:30 to hand it back. Fifteen minutes.</p>
+<p>The first piece was the television cut. A <abbr title="Low-power 2.4 GHz mesh radio protocol">Zigbee</abbr> socket, one automation at 7:30 p.m., another at 8:30 to hand it back. Fifteen minutes.</p>
 <p>Then the 7:25 announcement, which gives five minutes' notice. Then the shutters closing, set to the same time. Then quiet time at 7:31, right after the cut, so that switching off is followed by an instruction rather than a void.</p>
 <p>Each piece took an evening at most, and none of them was planned in advance. That property matters more than the end result: the evening routine was not designed, it accumulated, correcting after each attempt.</p>
 <blockquote><p>A house is not designed like a product. It is tuned like an instrument, in small strokes, listening to what comes out.</p></blockquote>
@@ -185,7 +193,7 @@ const englishContent: PostContent = {
 <rect x="32" y="248" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.08"></rect>
 <rect x="32" y="284" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.08"></rect>
 <rect x="32" y="320" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.08"></rect>
-<rect x="32" y="356" width="576" height="28" rx="8" fill="currentColor" fill-opacity="0.4"></rect>
+<rect x="32" y="356" width="576" height="28" rx="8" fill="var(--diagram-accent-soft)" stroke="var(--diagram-accent)" stroke-opacity="0.6" stroke-width="1"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">
 <text x="44" y="159">Home and shower</text>
@@ -230,7 +238,7 @@ const englishContent: PostContent = {
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">One dataset, three routines.</text>
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="32" y="146" width="170" height="50" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="232" y="146" width="130" height="50" rx="8" fill="currentColor" fill-opacity="0.42"></rect>
+<rect x="232" y="146" width="130" height="50" rx="8" fill="var(--diagram-accent-soft)" stroke="var(--diagram-accent)" stroke-opacity="0.6" stroke-width="1"></rect>
 <rect x="402" y="104" width="206" height="38" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
 <rect x="402" y="152" width="206" height="38" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
 <rect x="402" y="200" width="206" height="38" rx="8" fill="currentColor" fill-opacity="0.16"></rect>
@@ -286,6 +294,14 @@ const englishContent: PostContent = {
 <li><strong>The win is not time, it is consistency.</strong> The house applies the rule even on the evenings I would not have had the will to.</li>
 </ul>
 <p>The next episode stays on use cases, and moves to the one I did not see coming: the house that speaks. Thirteen spoken announcements a day, and the discovery that the problem was never the audio.</p>
+<h2>Downloads</h2>
+<p>Both building blocks from this episode are reusable as they are.</p>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/daily-rhythm/vacances-scolaires-fr.yaml" download>vacances-scolaires-fr.yaml</a> — the French school-holiday sensor. One line to change, your académie.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/daily-rhythm/blueprint-coupure-prise.yaml" download>blueprint-coupure-prise.yaml</a> — a <abbr title="A Home Assistant automation template, configured from the interface">blueprint</abbr> to cut a socket at one time and restore it at another. Socket, times, days and extra conditions are all set from the interface, without editing the file.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/daily-rhythm/LISEZMOI.md" download>LISEZMOI.md</a> — installation notes, plus the same logic described without Home Assistant for anyone porting it to <abbr title="French home automation software, a long-standing Home Assistant rival">Jeedom</abbr>, <abbr title="Open-source home automation platform, an alternative to Home Assistant">openHAB</abbr> or <abbr title="Flow-based visual programming tool, widely used in home automation">Node-RED</abbr>. Written in French.</li>
+</ul>
+<p>The blueprint also fixes the flaw described above. Both times live in a single automation there, so there is only one day list to keep up to date.</p>
 <p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started.</p>`
 }
 

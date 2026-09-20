@@ -46,7 +46,7 @@ const frenchContent: PostContent = {
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="32" y="118" width="320" height="12" rx="6" fill="currentColor" fill-opacity="0.16"></rect>
 <rect x="32" y="190" width="190" height="12" rx="6" fill="currentColor" fill-opacity="0.28"></rect>
-<rect x="32" y="262" width="82" height="12" rx="6" fill="currentColor" fill-opacity="0.42"></rect>
+<rect x="32" y="262" width="82" height="12" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.8">
 <text x="32" y="156">« PRÉNOM, c'est le temps calme. Tu peux lire, dessiner ou jouer. »</text>
@@ -82,11 +82,11 @@ const frenchContent: PostContent = {
 <text x="550" y="156">30 %</text>
 </g>
 <line x1="32" y1="250" x2="608" y2="250" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="550" y1="168" x2="550" y2="266" stroke="currentColor" stroke-opacity="0.65" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="550" y1="168" x2="550" y2="266" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="2" stroke-linecap="round"></line>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">
 <text x="32" y="270">0 s · la musique démarre</text>
 </g>
-<text x="608" y="292" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="end">T+90 s · l'annonce passe par-dessus</text>
+<text x="608" y="292" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="end">T+90 s · l'annonce passe par-dessus</text>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
 <text x="32" y="322">Trois itérations le même jour, jusqu'au bon plafond de volume.</text>
 <text x="32" y="342">Le volume de l'enceinte n'est pas restauré ensuite.</text>
@@ -124,6 +124,11 @@ const frenchContent: PostContent = {
 <li><strong>Le bon test ne fait pas de bruit dans la maison.</strong> Une automatisation jetable qui affiche ce qu'elle reçoit vaut mieux qu'un essai grandeur nature à sept heures du matin.</li>
 </ul>
 <p>Le prochain épisode revient à la physique du bâtiment : six volets qui décident seuls de leur position à partir de la température de leur pièce et de la course du soleil sur leur façade, un cadastre, et un bureau à 29 °C en pleine nuit sans le moindre rayon de soleil.</p>
+<h2>À télécharger</h2>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/annonce-vocale.yaml" download>annonce-vocale.yaml</a> — le script par lequel passent les treize annonces. Une seule chose à adapter, la table des enceintes.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/LISEZMOI.md" download>LISEZMOI.md</a> — l'installation, la mécanique décrite sans Home Assistant, et la grille de rédaction en huit lignes.</li>
+</ul>
 <p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">J'ai changé le calendrier du soir trois fois en une semaine</a> — portail, télévision, volets et calendrier scolaire.</p>`
 }
 
@@ -164,7 +169,7 @@ const englishContent: PostContent = {
 <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="32" y="118" width="320" height="12" rx="6" fill="currentColor" fill-opacity="0.16"></rect>
 <rect x="32" y="190" width="190" height="12" rx="6" fill="currentColor" fill-opacity="0.28"></rect>
-<rect x="32" y="262" width="82" height="12" rx="6" fill="currentColor" fill-opacity="0.42"></rect>
+<rect x="32" y="262" width="82" height="12" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.8">
 <text x="32" y="156">"NAME, it's quiet time. You can read, draw, or play."</text>
@@ -200,11 +205,11 @@ const englishContent: PostContent = {
 <text x="550" y="156">30%</text>
 </g>
 <line x1="32" y1="250" x2="608" y2="250" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="550" y1="168" x2="550" y2="266" stroke="currentColor" stroke-opacity="0.65" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="550" y1="168" x2="550" y2="266" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="2" stroke-linecap="round"></line>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">
 <text x="32" y="270">0 s · the music starts</text>
 </g>
-<text x="608" y="292" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="end">T+90 s · the instruction goes over it</text>
+<text x="608" y="292" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="end">T+90 s · the instruction goes over it</text>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
 <text x="32" y="322">Three iterations the same day, until the ceiling felt right.</text>
 <text x="32" y="342">The speaker volume is not restored afterwards.</text>
@@ -242,6 +247,11 @@ const englishContent: PostContent = {
 <li><strong>A good test makes no noise in the house.</strong> A throwaway automation printing what it received beats a full-scale trial at seven in the morning.</li>
 </ul>
 <p>The next episode goes back to building physics: six shutters deciding their own position from their room temperature and the sun's track across their facade, a land registry, and an office sitting at 29 °C in the middle of the night without a single ray of sun.</p>
+<h2>Downloads</h2>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/annonce-vocale.yaml" download>annonce-vocale.yaml</a> — the script all thirteen announcements go through. One thing to adapt, the speaker table.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/LISEZMOI.md" download>LISEZMOI.md</a> — installation, the mechanics described without Home Assistant, and the eight-line writing grid. Written in French.</li>
+</ul>
 <p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">I Changed the Evening Schedule Three Times in One Week</a> — gate, television, shutters and the school calendar.</p>`
 }
 

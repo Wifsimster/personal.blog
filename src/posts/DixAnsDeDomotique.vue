@@ -12,7 +12,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: "Dix ans de domotique tout seul, un an avec un agent",
   description: "État des lieux d'une installation domotique de dix ans : de Jeedom et des ESP8266 flashés à la main jusqu'à 87 appareils sur neuf écosystèmes. Ce que j'ai construit seul, ce qui est arrivé depuis que je travaille avec un agent, et les deux exemples qui résument la différence.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Mon dernier billet de domotique date d'avril 2016 : une sonde BMP180 sur un <abbr title="Microcontrôleur Wi-Fi bon marché, très répandu chez les bricoleurs">ESP8266</abbr>, remontée dans Jeedom. Dix ans plus tard la maison compte 87 appareils sur neuf écosystèmes, 929 entités et 75 automatisations. Ce billet ouvre une série sur ce que l'IA change en domotique, vu depuis une installation réelle. Il pose l'inventaire, raconte comment on en arrive là un week-end à la fois, et mesure ce qui a bougé depuis que je travaille avec un agent. Deux exemples portent la différence. Deux enceintes Sonos livrées un mercredi, intégrées et câblées à treize annonces de routine le lendemain. Et un visiophone dont l'appel ne sortait par aucune intégration, récupéré via un pont maison de 225 lignes.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Mon dernier billet de domotique date d'avril 2016 : une sonde BMP180 sur un <abbr title="Microcontrôleur Wi-Fi bon marché, très répandu chez les bricoleurs">ESP8266</abbr>, remontée dans <abbr title="Logiciel de domotique français, concurrent historique de Home Assistant">Jeedom</abbr>. Dix ans plus tard la maison compte 87 appareils sur neuf écosystèmes, 929 entités et 75 automatisations. Ce billet ouvre une série sur ce que l'IA change en domotique, vu depuis une installation réelle. Il pose l'inventaire, raconte comment on en arrive là un week-end à la fois, et mesure ce qui a bougé depuis que je travaille avec un agent. Deux exemples portent la différence. Deux enceintes <abbr title="Fabricant d'enceintes connectées, pilotables sur le réseau local">Sonos</abbr> livrées un mercredi, intégrées et câblées à treize annonces de routine le lendemain. Et un visiophone dont l'appel ne sortait par aucune intégration, récupéré via un pont maison de 225 lignes.</p></div>
 <hr>
 <p>Dix ans plus tard, on va reparler de domotique ici.</p>
 <p>Le dernier billet sur le sujet date d'avril 2016. Un capteur de luminosité sur ESP8266, remonté dans Jeedom. Entre-temps il y a eu une maison de 1970 achetée en 2019, une pièce rénovée par an jusqu'en 2025, et une installation qui a grossi sans que j'en écrive une ligne.</p>
@@ -45,7 +45,7 @@ const frenchContent: PostContent = {
 </g>
 <g fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="232" y="100" width="340" height="20" rx="6"></rect>
-<rect x="232" y="132" width="87" height="20" rx="6"></rect>
+<rect x="232" y="132" width="87" height="20" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
 <rect x="232" y="164" width="78" height="20" rx="6"></rect>
 <rect x="232" y="196" width="58" height="20" rx="6"></rect>
 <rect x="232" y="228" width="49" height="20" rx="6"></rect>
@@ -58,7 +58,7 @@ const frenchContent: PostContent = {
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">
 <text x="582" y="115">35</text>
-<text x="329" y="147">9</text>
+<text x="329" y="147" fill="var(--diagram-accent)" opacity="1">9</text>
 <text x="320" y="179">8</text>
 <text x="300" y="211">6</text>
 <text x="291" y="243">5</text>
@@ -71,7 +71,7 @@ const frenchContent: PostContent = {
 </g>
 <text x="32" y="464" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Relevé réel du registre, pas une cible d'architecture.</text>
 </svg>
-<p>Derrière ces 87 appareils : 929 entités, 75 automatisations, 43 intégrations, 14 pièces déclarées. Le cœur du parc est en <abbr title="Réseau maillé radio basse consommation, 2,4 GHz">Zigbee</abbr>. Le reste est une longue traîne qui ne disparaîtra pas : un pont Somfy qui ne parle que <abbr title="Protocole d'accessoires domotique d'Apple">HomeKit</abbr>, huit ampoules Wi-Fi d'un constructeur chinois, une télécommande infrarouge pour la porte de l'atelier, des caméras en <abbr title="Standard ouvert d'interface pour caméras IP">ONVIF</abbr>, un compteur triphasé Shelly, un moteur de synthèse vocale en conteneur.</p>
+<p>Derrière ces 87 appareils : 929 entités, 75 automatisations, 43 intégrations, 14 pièces déclarées. Le cœur du parc est en <abbr title="Réseau maillé radio basse consommation, 2,4 GHz">Zigbee</abbr>. Le reste est une longue traîne qui ne disparaîtra pas : un pont Somfy qui ne parle que <abbr title="Protocole d'accessoires domotique d'Apple">HomeKit</abbr>, huit ampoules Wi-Fi d'un constructeur chinois, une télécommande infrarouge pour la porte de l'atelier, des caméras en <abbr title="Standard ouvert d'interface pour caméras IP">ONVIF</abbr>, un compteur triphasé <abbr title="Modules de mesure et de commande électrique en Wi-Fi, pilotables en HTTP local">Shelly</abbr>, un moteur de synthèse vocale en conteneur.</p>
 <p>Il faut dire aussi ce qui ne marche pas, sinon l'inventaire est de la publicité. 250 entités sur 929 sont actuellement indisponibles ou inconnues. La majorité est normale : les ampoules Wi-Fi sont coupées à l'interrupteur mural, et certains appareils sont saisonniers. Le reste est de la dette — des doublons d'anciens appairages, des capteurs à pile vides, un volet que le pont Somfy a perdu en août.</p>
 <blockquote><p>Une installation domotique de dix ans n'est pas un système. C'est une sédimentation.</p></blockquote>
 
@@ -84,7 +84,7 @@ const frenchContent: PostContent = {
 <rect x="32" y="120" width="22" height="28" rx="8" fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
 <text x="66" y="139" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.8">1,1 par mois · 20 automatisations en 18 mois</text>
 <text x="32" y="176" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">Septembre 2026</text>
-<rect x="32" y="184" width="440" height="28" rx="8" fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
+<rect x="32" y="184" width="440" height="28" rx="8" fill="var(--diagram-accent)" fill-opacity="1" stroke="var(--diagram-accent)" stroke-opacity="0.55" stroke-width="1"></rect>
 <text x="482" y="203" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">22 en un mois</text>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
 <text x="32" y="248">42 des 75 automatisations portent un identifiant horodaté. Les autres</text>
@@ -101,7 +101,7 @@ const frenchContent: PostContent = {
 <p>Aucun de ces points n'est difficile. Chacun coûte une soirée quand on le découvre seul, et il y en avait quatre dans le même chantier.</p>
 
 <h2>Un visiophone qui ne parlait à personne</h2>
-<p>La platine de rue du portail est une Dahua VTO2202F. Elle a une caméra, un micro, un bouton d'appel, et une intégration <abbr title="Standard ouvert d'interface pour caméras IP">ONVIF</abbr> qui remonte l'image. L'appui sur le bouton, lui, ne sort par aucune intégration. L'ONVIF ne le voit pas.</p>
+<p>La platine de rue du portail est une Dahua VTO2202F. Elle a une caméra, un micro, un bouton d'appel, et une intégration ONVIF qui remonte l'image. L'appui sur le bouton, lui, ne sort par aucune intégration. L'ONVIF ne le voit pas.</p>
 <p>L'événement existe pourtant. Il circule dans un flux propriétaire de la platine, <code>eventManager.cgi?action=attach</code>, qu'il faut maintenir ouvert et décoder soi-même. Le résultat est un pont de 225 lignes de Python, dans son propre conteneur, qui s'authentifie sur la platine, écoute ce flux, republie sur <abbr title="Message Queuing Telemetry Transport — bus de messages léger">MQTT</abbr> et s'annonce en découverte automatique auprès de Home Assistant.</p>
 <p>Ce que ça donne côté maison : quand quelqu'un sonne, les deux téléphones reçoivent une notification prioritaire avec la vue de la platine, un bouton « Ouvrir » et un bouton « Voir ». Appuyer sur « Ouvrir » déclenche l'ouverture. En parallèle, les Sonos annoncent l'appel dans le salon.</p>
 <p>Ce pont contient un garde-fou dont je suis content : si la platine oublie d'envoyer la fin d'appel, un délai de deux minutes remet le capteur à zéro. Sans lui, un appel manqué laisserait la maison en « quelqu'un sonne » indéfiniment.</p>
@@ -135,7 +135,7 @@ const frenchContent: PostContent = {
 const englishContent: PostContent = {
   title: 'Ten Years of Home Automation Alone. One Year With an Agent.',
   description: 'A survey of a ten-year home automation build: from Jeedom and hand-flashed ESP8266 boards to 87 devices across nine ecosystems. What I built alone, what arrived once I started working with an agent, and the two examples that carry the difference.',
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> My last home automation post here is dated April 2016: a BMP180 probe on an <abbr title="A cheap Wi-Fi microcontroller, widely used by hobbyists">ESP8266</abbr>, reporting into Jeedom. Ten years on, the house holds 87 devices across nine ecosystems, 929 entities and 75 automations. This post opens a series on what AI changes in home automation, seen from one real installation. It sets out the inventory, tells how you get there one weekend at a time, and measures what moved once I started working with an agent. Two examples carry the difference. Two Sonos speakers delivered on a Wednesday, integrated and wired into thirteen routine announcements the next day. And a door entry panel whose call event reached no integration at all, recovered through a 225-line bridge written from scratch.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> My last home automation post here is dated April 2016: a BMP180 probe on an <abbr title="A cheap Wi-Fi microcontroller, widely used by hobbyists">ESP8266</abbr>, reporting into <abbr title="French home automation software, a long-standing Home Assistant rival">Jeedom</abbr>. Ten years on, the house holds 87 devices across nine ecosystems, 929 entities and 75 automations. This post opens a series on what AI changes in home automation, seen from one real installation. It sets out the inventory, tells how you get there one weekend at a time, and measures what moved once I started working with an agent. Two examples carry the difference. Two <abbr title="Maker of networked speakers, controllable over the local network">Sonos</abbr> speakers delivered on a Wednesday, integrated and wired into thirteen routine announcements the next day. And a door entry panel whose call event reached no integration at all, recovered through a 225-line bridge written from scratch.</p></div>
 <hr>
 <p>Ten years on, we are going to talk about home automation here again.</p>
 <p>The last post on the subject is dated April 2016. A light sensor on an ESP8266, reporting into Jeedom. In between there was a 1970s house bought in 2019, one room renovated a year until 2025, and an installation that grew without a single line written about it here.</p>
@@ -168,7 +168,7 @@ const englishContent: PostContent = {
 </g>
 <g fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="232" y="100" width="340" height="20" rx="6"></rect>
-<rect x="232" y="132" width="87" height="20" rx="6"></rect>
+<rect x="232" y="132" width="87" height="20" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
 <rect x="232" y="164" width="78" height="20" rx="6"></rect>
 <rect x="232" y="196" width="58" height="20" rx="6"></rect>
 <rect x="232" y="228" width="49" height="20" rx="6"></rect>
@@ -181,7 +181,7 @@ const englishContent: PostContent = {
 </g>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">
 <text x="582" y="115">35</text>
-<text x="329" y="147">9</text>
+<text x="329" y="147" fill="var(--diagram-accent)" opacity="1">9</text>
 <text x="320" y="179">8</text>
 <text x="300" y="211">6</text>
 <text x="291" y="243">5</text>
@@ -194,7 +194,7 @@ const englishContent: PostContent = {
 </g>
 <text x="32" y="464" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">A real registry reading, not a target architecture.</text>
 </svg>
-<p>Behind those 87 devices: 929 entities, 75 automations, 43 integrations, 14 declared rooms. The core of the fleet is <abbr title="Low-power 2.4 GHz mesh radio protocol">Zigbee</abbr>. The rest is a long tail that is not going away: a Somfy bridge that only speaks <abbr title="Apple's local smart-home accessory protocol">HomeKit</abbr>, eight Wi-Fi bulbs from a Chinese vendor, an infrared remote for the workshop door, cameras on <abbr title="Open interface standard for IP cameras">ONVIF</abbr>, a three-phase Shelly meter, a text-to-speech engine in a container.</p>
+<p>Behind those 87 devices: 929 entities, 75 automations, 43 integrations, 14 declared rooms. The core of the fleet is <abbr title="Low-power 2.4 GHz mesh radio protocol">Zigbee</abbr>. The rest is a long tail that is not going away: a Somfy bridge that only speaks <abbr title="Apple's local smart-home accessory protocol">HomeKit</abbr>, eight Wi-Fi bulbs from a Chinese vendor, an infrared remote for the workshop door, cameras on <abbr title="Open interface standard for IP cameras">ONVIF</abbr>, a three-phase <abbr title="Wi-Fi electrical metering and switching modules, driven over local HTTP">Shelly</abbr> meter, a text-to-speech engine in a container.</p>
 <p>The broken parts belong in the inventory too, otherwise this is advertising. 250 entities out of 929 are currently unavailable or unknown. Most of that is expected: the Wi-Fi bulbs are switched off at the wall, and some devices are seasonal. The rest is debt — duplicates left by old pairings, flat battery sensors, a shutter the Somfy bridge lost in August.</p>
 <blockquote><p>A ten-year home automation build is not a system. It is a sediment.</p></blockquote>
 
@@ -207,7 +207,7 @@ const englishContent: PostContent = {
 <rect x="32" y="120" width="22" height="28" rx="8" fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
 <text x="66" y="139" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.8">1.1 a month · 20 automations in 18 months</text>
 <text x="32" y="176" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">September 2026</text>
-<rect x="32" y="184" width="440" height="28" rx="8" fill="currentColor" fill-opacity="0.42" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
+<rect x="32" y="184" width="440" height="28" rx="8" fill="var(--diagram-accent)" fill-opacity="1" stroke="var(--diagram-accent)" stroke-opacity="0.55" stroke-width="1"></rect>
 <text x="482" y="203" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">22 in one month</text>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
 <text x="32" y="248">42 of the 75 automations carry a timestamped identifier. The rest</text>
@@ -224,7 +224,7 @@ const englishContent: PostContent = {
 <p>None of these is hard. Each one costs an evening when you meet it alone, and there were four of them in the same build.</p>
 
 <h2>A door entry panel that talked to nobody</h2>
-<p>The street panel at the gate is a Dahua VTO2202F. It has a camera, a microphone, a call button, and an <abbr title="Open interface standard for IP cameras">ONVIF</abbr> integration that carries the video. The button press reaches no integration at all. ONVIF does not see it.</p>
+<p>The street panel at the gate is a Dahua VTO2202F. It has a camera, a microphone, a call button, and an ONVIF integration that carries the video. The button press reaches no integration at all. ONVIF does not see it.</p>
 <p>The event does exist. It travels in a proprietary stream on the panel, <code>eventManager.cgi?action=attach</code>, which you have to hold open and decode yourself. The result is a 225-line Python bridge in its own container that authenticates against the panel, listens to that stream, republishes over <abbr title="Message Queuing Telemetry Transport — lightweight message bus">MQTT</abbr>, and announces itself to Home Assistant through auto-discovery.</p>
 <p>What that gives the house: when someone rings, both phones get a high-priority notification carrying the panel's view, an "Open" button and a "View" button. Pressing "Open" triggers the door. At the same time, the Sonos announce the call in the living room.</p>
 <p>The bridge carries one guard I am happy with. If the panel forgets to send the end-of-call event, a two-minute timeout resets the sensor. Without it, one missed hang-up would leave the house stuck on "someone is ringing" forever.</p>
