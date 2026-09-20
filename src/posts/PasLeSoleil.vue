@@ -21,32 +21,46 @@ const frenchContent: PostContent = {
 <p>Elle avait le défaut de sa simplicité. Une maison n'a pas une température, elle en a autant que de pièces, et chaque pièce reçoit le soleil à une heure différente. La moyenne de la maison masquait tout.</p>
 <p>Le remplacement tient en une phrase. Chaque volet a sa propre cible de position, calculée à partir de deux choses : la température de sa pièce, et un capteur qui dit si le soleil frappe sa façade en ce moment.</p>
 <p>Ce second capteur est la partie intéressante. Il compare l'azimut du soleil à la normale de la façade, avec un écart signé pour gérer le passage par le nord, et il est vrai tant que l'écart reste sous soixante-cinq degrés.</p>
-<svg viewBox="0 0 640 362" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fenêtres d'ensoleillement des cinq façades de la maison sur une journée d'août : la façade est-nord-est du bureau ne reçoit le soleil que de huit heures quinze à midi, la sud-sud-est de la chambre parentale de sept heures trente à quatorze heures quarante-cinq, l'est-sud-est du lever à treize heures trente, le pignon sud-sud-ouest de dix à dix-sept heures, et l'ouest-nord-ouest du cellier de quatorze heures au coucher." class="diagram-svg">
+<svg viewBox="0 0 640 486" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme en arc représentant, sur une journée d'août, la fenêtre d'ensoleillement réelle de cinq façades de la maison, chacune sur son propre anneau concentrique : celle du bureau, en couleur d'accent, est la plus courte de toutes, de 8 h 15 à midi seulement." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">CINQ FAÇADES · UNE JOURNÉE D'AOÛT</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Chaque façade a son créneau.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="132">Bureau, chambre — ENE</text>
-<text x="32" y="168">Parentale — SSE</text>
-<text x="32" y="204">Chambre d'enfant — ESE</text>
-<text x="32" y="240">Pignon — SSO</text>
-<text x="32" y="276">Cellier — ONO</text>
+<g fill="none" stroke-linecap="round">
+<path d="M 163.2 236.1 A 176 176 0 0 1 265.6 148.6" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="15"></path>
+<path d="M 173.3 284.8 A 150 150 0 0 1 320.0 166.0" stroke="currentColor" stroke-opacity="0.55" stroke-width="15"></path>
+<path d="M 202.1 277.7 A 124 124 0 0 1 352.1 196.2" stroke="currentColor" stroke-opacity="0.42" stroke-width="15"></path>
+<path d="M 254.4 243.2 A 98 98 0 0 1 385.6 243.2" stroke="currentColor" stroke-opacity="0.32" stroke-width="15"></path>
+<path d="M 327.5 244.4 A 72 72 0 0 1 391.6 308.5" stroke="currentColor" stroke-opacity="0.24" stroke-width="15"></path>
 </g>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="249" y="116" width="98" height="22" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
-<rect x="229" y="152" width="189" height="22" rx="6" fill="currentColor" fill-opacity="0.3"></rect>
-<rect x="216" y="188" width="170" height="22" rx="6" fill="currentColor" fill-opacity="0.3"></rect>
-<rect x="294" y="224" width="183" height="22" rx="6" fill="currentColor" fill-opacity="0.3"></rect>
-<rect x="399" y="260" width="169" height="22" rx="6" fill="currentColor" fill-opacity="0.3"></rect>
-</g>
-<line x1="190" y1="300" x2="608" y2="300" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6" text-anchor="middle">
-<text x="190" y="320">6 h</text>
-<text x="294" y="320">10 h</text>
-<text x="399" y="320">14 h</text>
-<text x="503" y="320">18 h</text>
-<text x="608" y="320">22 h</text>
-</g>
-<text x="32" y="352" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Le créneau du bureau est le plus court de la maison. C'est aussi la pièce la plus chaude.</text>
+<line x1="132" y1="316" x2="508" y2="316" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="124.0" y1="316.0" x2="114.0" y2="316.0" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="98.0" y="316.0" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">6 h</text>
+<line x1="161.4" y1="200.8" x2="153.3" y2="194.9" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="140.4" y="185.5" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">9 h</text>
+<line x1="259.4" y1="129.6" x2="256.3" y2="120.1" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="251.4" y="104.9" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">12 h</text>
+<line x1="380.6" y1="129.6" x2="383.7" y2="120.1" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="388.6" y="104.9" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">15 h</text>
+<line x1="478.6" y1="200.8" x2="486.7" y2="194.9" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="499.6" y="185.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">18 h</text>
+<line x1="516.0" y1="316.0" x2="526.0" y2="316.0" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="542.0" y="316.0" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">21 h</text>
+<rect x="32" y="347" width="16" height="8" rx="4" fill="var(--diagram-accent)" fill-opacity="1"></rect>
+<text x="56" y="354" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="1">Bureau, chambre — ENE</text>
+<text x="56" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">8 h 15 – 12 h 00</text>
+<rect x="32" y="379" width="16" height="8" rx="4" fill="currentColor" fill-opacity="0.55"></rect>
+<text x="56" y="386" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.85">Chambre d'enfant — ESE</text>
+<text x="56" y="402" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">7 h 00 – 13 h 30</text>
+<rect x="32" y="411" width="16" height="8" rx="4" fill="currentColor" fill-opacity="0.42"></rect>
+<text x="56" y="418" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.85">Parentale — SSE</text>
+<text x="56" y="434" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">7 h 30 – 14 h 45</text>
+<rect x="330" y="347" width="16" height="8" rx="4" fill="currentColor" fill-opacity="0.32"></rect>
+<text x="354" y="354" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.85">Pignon — SSO</text>
+<text x="354" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">10 h 00 – 17 h 00</text>
+<rect x="330" y="379" width="16" height="8" rx="4" fill="currentColor" fill-opacity="0.24"></rect>
+<text x="354" y="386" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.85">Cellier — ONO</text>
+<text x="354" y="402" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">14 h 00 – 20 h 30</text>
+<text x="32" y="452" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Rayon = façade, du bureau (extérieur) au cellier (intérieur).</text>
+<text x="32" y="470" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Longueur d'arc = fenêtre réelle, azimut et hauteur croisés.</text>
 </svg>
 <p>Cinq façades, cinq créneaux, et donc cinq histoires différentes dans la même maison. Le pignon sud-sud-ouest est le mieux exposé à l'année, mais c'est le plus petit. Le cellier ne prend le soleil qu'en fin de journée, par sa seule ouverture.</p>
 
@@ -64,22 +78,27 @@ const frenchContent: PostContent = {
 <h2>Ce que le modèle m'a dit de ne pas faire</h2>
 <p>Le bureau était la pièce qui motivait tout ce chantier. Il est invivable en août, et je voulais que son volet le protège.</p>
 <p>Le modèle a répondu autre chose.</p>
-<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparaison de la température nocturne moyenne sur quatorze jours entre une heure et six heures du matin : le salon est à vingt-six degrés et le bureau à vingt-neuf, soit trois degrés de plus sans aucun apport solaire, écart attribué aux trois cent trente et un watts dissipés en continu par la baie informatique." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">1 H - 6 H · MOYENNE SUR 14 JOURS</text>
+<svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparaison de la température nocturne moyenne sur quatorze jours entre une heure et six heures du matin, représentée en deux colonnes façon thermomètre : le salon à vingt-six degrés, le bureau à vingt-neuf, soit trois degrés de plus sans aucun apport solaire." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">1 H – 6 H · MOYENNE SUR 14 JOURS</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Trois degrés de plus, sans soleil.</text>
-<text x="32" y="116" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">Bureau</text>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="32" y="126" width="448" height="30" rx="8" fill="currentColor" fill-opacity="0.2"></rect>
-<rect x="480" y="126" width="52" height="30" rx="8" fill="var(--diagram-accent)" fill-opacity="1"></rect>
+<g fill="none" stroke-linecap="round">
+<line x1="216" y1="118" x2="216" y2="306" stroke="currentColor" stroke-opacity="0.14" stroke-width="34"></line>
+<line x1="424" y1="118" x2="424" y2="306" stroke="currentColor" stroke-opacity="0.14" stroke-width="34"></line>
+<line x1="216" y1="306" x2="216" y2="207.0" stroke="currentColor" stroke-opacity="0.45" stroke-width="34"></line>
+<line x1="424" y1="306" x2="424" y2="162.5" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="34"></line>
 </g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">
-<text x="44" y="146">26,0 °C — ce que fait le salon à la même heure</text>
+<circle cx="216" cy="306" r="22" fill="currentColor" fill-opacity="0.45"></circle>
+<circle cx="424" cy="306" r="22" fill="var(--diagram-accent)" fill-opacity="1"></circle>
+<g font-family="ui-sans-serif, system-ui, sans-serif" text-anchor="middle">
+<text x="216" y="191.0" fill="currentColor" font-size="20" font-weight="650" opacity="0.85">26,0 °C</text>
+<text x="216" y="348" fill="currentColor" font-size="13" opacity="0.7">Salon</text>
+<text x="424" y="146.5" fill="var(--diagram-accent)" font-size="20" font-weight="650">29,0 °C</text>
+<text x="424" y="348" fill="currentColor" font-size="13" opacity="0.85" font-weight="600">Bureau</text>
 </g>
-<path d="M 480 160 L 480 182 L 532 182 L 532 160" fill="none" stroke="var(--diagram-accent)" stroke-opacity="0.9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M 506 182 L 506 194" fill="none" stroke="var(--diagram-accent)" stroke-opacity="0.9" stroke-width="1.5" stroke-linecap="round"></path>
-<text x="506" y="214" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="middle">+3,0 °C</text>
-<text x="32" y="248" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">La cause n'est pas dehors. C'est une baie informatique qui dissipe 331 W en continu.</text>
-<text x="32" y="284" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Moyenne réelle sur 14 jours, entre 1 h et 6 h. Aucun apport solaire sur la période.</text>
+<path d="M 241.0 207.0 L 320.0 207.0 L 320.0 162.5 L 399.0 162.5" fill="none" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<text x="330.0" y="189.8" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" opacity="0.9">+3,0 °C</text>
+<text x="32" y="376" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">La cause n'est pas dehors. C'est une baie informatique qui dissipe 331 W en continu.</text>
+<text x="32" y="400" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Moyenne réelle sur 14 jours, entre 1 h et 6 h. Aucun apport solaire sur la période.</text>
 </svg>
 <p>Vingt-neuf degrés en pleine nuit, moyenne sur quatorze jours entre une heure et six heures. Trois degrés au-dessus du salon, deux et demi au-dessus de la cuisine, sans le moindre rayon de soleil depuis des heures.</p>
 <p>La pièce est très isolée et contient une baie informatique qui dissipe 331 W en permanence. Elle ne refroidit jamais. Le volet ne peut agir que sur l'apport solaire du matin, par la plus petite ouverture de la maison, pendant un créneau de trois heures quarante-cinq — c'est-à-dire sur la plus petite part du problème.</p>
@@ -90,27 +109,38 @@ const frenchContent: PostContent = {
 <p>La maison est en triphasé 9 <abbr title="Kilovoltampère — la puissance que le compteur autorise, qui n'est pas exactement des kilowatts">kVA</abbr>, avec un compteur par phase. La question que je me posais était simple : sur quelle phase puis-je encore brancher quelque chose.</p>
 <p>Ma première analyse regardait la puissance maximale par heure. Elle désignait la phase A comme saturée, à 2 882 W, soit 96 % de sa capacité. Conclusion : ne plus rien y mettre.</p>
 <p>C'était faux, et l'erreur tient à l'unité.</p>
-<svg viewBox="0 0 640 288" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pointe de courant par phase sur trente jours d'une installation triphasée : la phase A plafonne à treize ampères et demi, la phase B atteint vingt-six ampères et sept, la phase C vingt-quatre ampères et huit ; contrairement à une lecture en watts, c'est la phase A qui dispose de la plus grande marge." class="diagram-svg">
+<svg viewBox="0 0 640 336" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trois jauges radiales comparant la pointe de courant de chaque phase d'une installation triphasée sur trente jours, avec un repère à quatorze ampères : la phase A, en couleur d'accent, reste seule sous le seuil, à treize ampères et demi, alors qu'une lecture en puissance la désignait comme la plus chargée." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">TRIPHASÉ · POINTE DE COURANT SUR 30 JOURS</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">En ampères, tout s'inverse.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="134">Phase A — la baie serveur</text>
-<text x="32" y="178">Phase B — chauffe-eau</text>
-<text x="32" y="222">Phase C — lave-linge</text>
+<g>
+<path d="M 62.0 210.0 A 78 78 0 0 1 218.0 210.0" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="14" stroke-linecap="round"></path>
+<path d="M 62.0 210.0 A 78 78 0 0 1 127.8 133.0" fill="none" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="14" stroke-linecap="round"></path>
+<line x1="132.9" y1="142.4" x2="130.8" y2="122.5" stroke="currentColor" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"></line>
+<text x="140" y="226" text-anchor="middle" fill="var(--diagram-accent)" fill-opacity="1" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650">13,5 A</text>
+<text x="140" y="250" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75" font-weight="600">Phase A</text>
+<text x="140" y="268" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">Baie, lave-vaisselle</text>
+<text x="140" y="288" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.5">heures > 14 A : 0 h</text>
 </g>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="250" y="116" width="152" height="26" rx="7" fill="currentColor" fill-opacity="0.3"></rect>
-<rect x="250" y="160" width="300" height="26" rx="7" fill="var(--diagram-accent)" fill-opacity="1"></rect>
-<rect x="250" y="204" width="279" height="26" rx="7" fill="currentColor" fill-opacity="0.3"></rect>
+<g>
+<path d="M 242.0 210.0 A 78 78 0 0 1 398.0 210.0" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="14" stroke-linecap="round"></path>
+<path d="M 242.0 210.0 A 78 78 0 0 1 393.4 183.6" fill="none" stroke="currentColor" stroke-opacity="0.4" stroke-width="14" stroke-linecap="round"></path>
+<line x1="312.9" y1="142.4" x2="310.8" y2="122.5" stroke="currentColor" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"></line>
+<text x="320" y="226" text-anchor="middle" fill="currentColor" fill-opacity="0.85" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="600">26,7 A</text>
+<text x="320" y="250" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75" font-weight="500">Phase B</text>
+<text x="320" y="268" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">Chauffe-eau</text>
+<text x="320" y="288" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.5">heures > 14 A : 28 h</text>
 </g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">
-<text x="412" y="134">13,5 A</text>
-<text x="560" y="178">26,7 A</text>
-<text x="539" y="222">24,8 A</text>
+<g>
+<path d="M 422.0 210.0 A 78 78 0 0 1 578.0 210.0" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="14" stroke-linecap="round"></path>
+<path d="M 422.0 210.0 A 78 78 0 0 1 566.7 169.6" fill="none" stroke="currentColor" stroke-opacity="0.4" stroke-width="14" stroke-linecap="round"></path>
+<line x1="492.9" y1="142.4" x2="490.8" y2="122.5" stroke="currentColor" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"></line>
+<text x="500" y="226" text-anchor="middle" fill="currentColor" fill-opacity="0.85" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="600">24,8 A</text>
+<text x="500" y="250" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75" font-weight="500">Phase C</text>
+<text x="500" y="268" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">Lave-linge</text>
+<text x="500" y="288" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.5">heures > 14 A : 18 h</text>
 </g>
-<line x1="407" y1="110" x2="407" y2="236" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"></line>
-<text x="407" y="102" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6" text-anchor="middle">14 A</text>
-<text x="32" y="270" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Heures passées au-dessus de 14 A en 30 jours : A = 0, B = 28, C = 18.</text>
+<text x="310.8" y="114.5" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" opacity="0.55">seuil 14 A</text>
+<text x="32" y="316" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">La phase A — celle que les watts désignaient comme saturée — est la seule sous le seuil.</text>
 </svg>
 <p>En courant sur trente jours, la phase A plafonne à 13,5 ampères et ne dépasse jamais quatorze. La phase B monte à 26,7 et la phase C à 24,8, avec vingt-huit et dix-huit heures passées au-dessus du seuil.</p>
 <p>Les pointes de B et C sont plus brèves, donc elles passaient sous le radar d'un maximum horaire exprimé en watts. La phase que je croyais saturée est en réalité la plus libre de l'installation. C'est exactement là qu'il faut ajouter une charge.</p>
@@ -156,32 +186,46 @@ const englishContent: PostContent = {
 <p>It carried the flaw of its own simplicity. A house does not have one temperature, it has as many as it has rooms, and every room gets the sun at a different hour. The house average hid all of it.</p>
 <p>The replacement fits in a sentence. Every shutter has its own target position, computed from two things: its room's temperature, and a sensor that says whether the sun is currently hitting its facade.</p>
 <p>That second sensor is the interesting part. It compares the sun's azimuth to the facade's normal, using a signed difference so the wrap past north behaves, and stays true while that difference is under sixty-five degrees.</p>
-<svg viewBox="0 0 640 362" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sunlight windows for the five facades of the house across an August day: the office's east-north-east facade only gets sun from quarter past eight to midday, the parents' south-south-east one from half past seven to a quarter to three, the east-south-east one from sunrise to half past one, the south-south-west gable from ten to five, and the utility room's west-north-west facade from two in the afternoon to sunset." class="diagram-svg">
+<svg viewBox="0 0 640 486" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arc diagram showing, across one August day, the real sunlight window of five house facades, each on its own concentric ring: the office's, in accent colour, is the shortest of all, from 8:15 to noon only." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">FIVE FACADES · ONE AUGUST DAY</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Every facade has its window.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="132">Office, bedroom — ENE</text>
-<text x="32" y="168">Parents' room — SSE</text>
-<text x="32" y="204">Child's room — ESE</text>
-<text x="32" y="240">Gable — SSW</text>
-<text x="32" y="276">Utility room — WNW</text>
+<g fill="none" stroke-linecap="round">
+<path d="M 163.2 236.1 A 176 176 0 0 1 265.6 148.6" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="15"></path>
+<path d="M 173.3 284.8 A 150 150 0 0 1 320.0 166.0" stroke="currentColor" stroke-opacity="0.55" stroke-width="15"></path>
+<path d="M 202.1 277.7 A 124 124 0 0 1 352.1 196.2" stroke="currentColor" stroke-opacity="0.42" stroke-width="15"></path>
+<path d="M 254.4 243.2 A 98 98 0 0 1 385.6 243.2" stroke="currentColor" stroke-opacity="0.32" stroke-width="15"></path>
+<path d="M 327.5 244.4 A 72 72 0 0 1 391.6 308.5" stroke="currentColor" stroke-opacity="0.24" stroke-width="15"></path>
 </g>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="249" y="116" width="98" height="22" rx="6" fill="var(--diagram-accent)" fill-opacity="1"></rect>
-<rect x="229" y="152" width="189" height="22" rx="6" fill="currentColor" fill-opacity="0.3"></rect>
-<rect x="216" y="188" width="170" height="22" rx="6" fill="currentColor" fill-opacity="0.3"></rect>
-<rect x="294" y="224" width="183" height="22" rx="6" fill="currentColor" fill-opacity="0.3"></rect>
-<rect x="399" y="260" width="169" height="22" rx="6" fill="currentColor" fill-opacity="0.3"></rect>
-</g>
-<line x1="190" y1="300" x2="608" y2="300" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6" text-anchor="middle">
-<text x="190" y="320">6 am</text>
-<text x="294" y="320">10 am</text>
-<text x="399" y="320">2 pm</text>
-<text x="503" y="320">6 pm</text>
-<text x="608" y="320">10 pm</text>
-</g>
-<text x="32" y="352" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">The office has the shortest window in the house. It is also the hottest room.</text>
+<line x1="132" y1="316" x2="508" y2="316" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="124.0" y1="316.0" x2="114.0" y2="316.0" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="98.0" y="316.0" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">6:00</text>
+<line x1="161.4" y1="200.8" x2="153.3" y2="194.9" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="140.4" y="185.5" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">9:00</text>
+<line x1="259.4" y1="129.6" x2="256.3" y2="120.1" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="251.4" y="104.9" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">12:00</text>
+<line x1="380.6" y1="129.6" x2="383.7" y2="120.1" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="388.6" y="104.9" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">15:00</text>
+<line x1="478.6" y1="200.8" x2="486.7" y2="194.9" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="499.6" y="185.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">18:00</text>
+<line x1="516.0" y1="316.0" x2="526.0" y2="316.0" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="542.0" y="316.0" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">21:00</text>
+<rect x="32" y="347" width="16" height="8" rx="4" fill="var(--diagram-accent)" fill-opacity="1"></rect>
+<text x="56" y="354" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="1">Office, bedroom — ENE</text>
+<text x="56" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">8:15 – 12:00</text>
+<rect x="32" y="379" width="16" height="8" rx="4" fill="currentColor" fill-opacity="0.55"></rect>
+<text x="56" y="386" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.85">Child's room — ESE</text>
+<text x="56" y="402" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">7:00 – 13:30</text>
+<rect x="32" y="411" width="16" height="8" rx="4" fill="currentColor" fill-opacity="0.42"></rect>
+<text x="56" y="418" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.85">Parents' room — SSE</text>
+<text x="56" y="434" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">7:30 – 14:45</text>
+<rect x="330" y="347" width="16" height="8" rx="4" fill="currentColor" fill-opacity="0.32"></rect>
+<text x="354" y="354" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.85">Gable — SSW</text>
+<text x="354" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">10:00 – 17:00</text>
+<rect x="330" y="379" width="16" height="8" rx="4" fill="currentColor" fill-opacity="0.24"></rect>
+<text x="354" y="386" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="500" opacity="0.85">Utility room — WNW</text>
+<text x="354" y="402" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">14:00 – 20:30</text>
+<text x="32" y="452" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Radius = facade, from the office (outer) to the utility room (inner).</text>
+<text x="32" y="470" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Arc length = real window, azimuth and elevation combined.</text>
 </svg>
 <p>Five facades, five windows, and therefore five different stories inside one house. The south-south-west gable is the best exposed across the year, and the smallest. The utility room only catches the sun late in the day, through its single opening.</p>
 
@@ -199,22 +243,27 @@ const englishContent: PostContent = {
 <h2>What the model told me not to do</h2>
 <p>The office was the room that motivated the whole build. It is unlivable in August, and I wanted its shutter to protect it.</p>
 <p>The model answered something else.</p>
-<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fourteen-day average night temperature between one and six in the morning: the living room sits at twenty-six degrees and the office at twenty-nine, three degrees higher with no solar gain at all, a gap attributed to the three hundred and thirty-one watts dissipated continuously by a server rack." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">1 AM - 6 AM · 14-DAY AVERAGE</text>
+<svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fourteen-day average night temperature between one and six in the morning, shown as two thermometer-style columns: living room at twenty-six degrees, office at twenty-nine, three degrees higher with no solar gain at all." class="diagram-svg">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">1 AM – 6 AM · 14-DAY AVERAGE</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Three degrees more, no sun.</text>
-<text x="32" y="116" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">Office</text>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="32" y="126" width="448" height="30" rx="8" fill="currentColor" fill-opacity="0.2"></rect>
-<rect x="480" y="126" width="52" height="30" rx="8" fill="var(--diagram-accent)" fill-opacity="1"></rect>
+<g fill="none" stroke-linecap="round">
+<line x1="216" y1="118" x2="216" y2="306" stroke="currentColor" stroke-opacity="0.14" stroke-width="34"></line>
+<line x1="424" y1="118" x2="424" y2="306" stroke="currentColor" stroke-opacity="0.14" stroke-width="34"></line>
+<line x1="216" y1="306" x2="216" y2="207.0" stroke="currentColor" stroke-opacity="0.45" stroke-width="34"></line>
+<line x1="424" y1="306" x2="424" y2="162.5" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="34"></line>
 </g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">
-<text x="44" y="146">26.0 °C — what the living room does at the same hour</text>
+<circle cx="216" cy="306" r="22" fill="currentColor" fill-opacity="0.45"></circle>
+<circle cx="424" cy="306" r="22" fill="var(--diagram-accent)" fill-opacity="1"></circle>
+<g font-family="ui-sans-serif, system-ui, sans-serif" text-anchor="middle">
+<text x="216" y="191.0" fill="currentColor" font-size="20" font-weight="650" opacity="0.85">26.0 °C</text>
+<text x="216" y="348" fill="currentColor" font-size="13" opacity="0.7">Living room</text>
+<text x="424" y="146.5" fill="var(--diagram-accent)" font-size="20" font-weight="650">29.0 °C</text>
+<text x="424" y="348" fill="currentColor" font-size="13" opacity="0.85" font-weight="600">Office</text>
 </g>
-<path d="M 480 160 L 480 182 L 532 182 L 532 160" fill="none" stroke="var(--diagram-accent)" stroke-opacity="0.9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M 506 182 L 506 194" fill="none" stroke="var(--diagram-accent)" stroke-opacity="0.9" stroke-width="1.5" stroke-linecap="round"></path>
-<text x="506" y="214" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="middle">+3.0 °C</text>
-<text x="32" y="248" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">The cause is not outside. It is a server rack dissipating 331 W continuously.</text>
-<text x="32" y="284" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Real 14-day average, 1 am to 6 am. No solar gain over that window.</text>
+<path d="M 241.0 207.0 L 320.0 207.0 L 320.0 162.5 L 399.0 162.5" fill="none" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<text x="330.0" y="189.8" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="650" opacity="0.9">+3.0 °C</text>
+<text x="32" y="376" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">The cause is not outside. It is a server rack dissipating 331 W continuously.</text>
+<text x="32" y="400" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Real 14-day average, 1 am to 6 am. No solar gain over that window.</text>
 </svg>
 <p>Twenty-nine degrees in the middle of the night, averaged over fourteen days between one and six in the morning. Three degrees above the living room, two and a half above the kitchen, without a ray of sun for hours.</p>
 <p>The room is very well insulated and holds a server rack dissipating 331 W permanently. It never cools down. The shutter can only act on the morning solar gain, through the smallest opening in the house, across a window of three hours and forty-five minutes. That is the smallest part of the problem.</p>
@@ -225,27 +274,38 @@ const englishContent: PostContent = {
 <p>The house runs on a 9 <abbr title="Kilovolt-ampere — the power the meter allows, which is not quite kilowatts">kVA</abbr> three-phase supply, with a meter per phase. My question was simple: which phase can still take something.</p>
 <p>My first pass looked at maximum hourly power. It flagged phase A as saturated, at 2,882 W, or 96% of its capacity. Conclusion: put nothing else on it.</p>
 <p>That was wrong, and the error is in the unit.</p>
-<svg viewBox="0 0 640 288" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Peak current per phase over thirty days on a three-phase supply: phase A tops out at thirteen and a half amps, phase B reaches twenty-six point seven, phase C twenty-four point eight; contrary to a reading in watts, phase A is the one with the most headroom." class="diagram-svg">
+<svg viewBox="0 0 640 336" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three radial gauges comparing each phase's peak current on a three-phase supply over thirty days, with a fourteen-amp marker: phase A, in accent colour, is the only one under the threshold, at thirteen and a half amps, even though a wattage reading had flagged it as the most loaded." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">THREE-PHASE · PEAK CURRENT OVER 30 DAYS</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">In amps, it all flips.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="134">Phase A — the server rack</text>
-<text x="32" y="178">Phase B — water heater</text>
-<text x="32" y="222">Phase C — washing machine</text>
+<g>
+<path d="M 62.0 210.0 A 78 78 0 0 1 218.0 210.0" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="14" stroke-linecap="round"></path>
+<path d="M 62.0 210.0 A 78 78 0 0 1 127.8 133.0" fill="none" stroke="var(--diagram-accent)" stroke-opacity="1" stroke-width="14" stroke-linecap="round"></path>
+<line x1="132.9" y1="142.4" x2="130.8" y2="122.5" stroke="currentColor" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"></line>
+<text x="140" y="226" text-anchor="middle" fill="var(--diagram-accent)" fill-opacity="1" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650">13.5 A</text>
+<text x="140" y="250" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75" font-weight="600">Phase A</text>
+<text x="140" y="268" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">Rack, dishwasher</text>
+<text x="140" y="288" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.5">hours > 14 A: 0 h</text>
 </g>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="250" y="116" width="152" height="26" rx="7" fill="currentColor" fill-opacity="0.3"></rect>
-<rect x="250" y="160" width="300" height="26" rx="7" fill="var(--diagram-accent)" fill-opacity="1"></rect>
-<rect x="250" y="204" width="279" height="26" rx="7" fill="currentColor" fill-opacity="0.3"></rect>
+<g>
+<path d="M 242.0 210.0 A 78 78 0 0 1 398.0 210.0" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="14" stroke-linecap="round"></path>
+<path d="M 242.0 210.0 A 78 78 0 0 1 393.4 183.6" fill="none" stroke="currentColor" stroke-opacity="0.4" stroke-width="14" stroke-linecap="round"></path>
+<line x1="312.9" y1="142.4" x2="310.8" y2="122.5" stroke="currentColor" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"></line>
+<text x="320" y="226" text-anchor="middle" fill="currentColor" fill-opacity="0.85" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="600">26.7 A</text>
+<text x="320" y="250" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75" font-weight="500">Phase B</text>
+<text x="320" y="268" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">Water heater</text>
+<text x="320" y="288" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.5">hours > 14 A: 28 h</text>
 </g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.9">
-<text x="412" y="134">13.5 A</text>
-<text x="560" y="178">26.7 A</text>
-<text x="539" y="222">24.8 A</text>
+<g>
+<path d="M 422.0 210.0 A 78 78 0 0 1 578.0 210.0" fill="none" stroke="currentColor" stroke-opacity="0.12" stroke-width="14" stroke-linecap="round"></path>
+<path d="M 422.0 210.0 A 78 78 0 0 1 566.7 169.6" fill="none" stroke="currentColor" stroke-opacity="0.4" stroke-width="14" stroke-linecap="round"></path>
+<line x1="492.9" y1="142.4" x2="490.8" y2="122.5" stroke="currentColor" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"></line>
+<text x="500" y="226" text-anchor="middle" fill="currentColor" fill-opacity="0.85" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="600">24.8 A</text>
+<text x="500" y="250" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75" font-weight="500">Phase C</text>
+<text x="500" y="268" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">Washing machine</text>
+<text x="500" y="288" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.5">hours > 14 A: 18 h</text>
 </g>
-<line x1="407" y1="110" x2="407" y2="236" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"></line>
-<text x="407" y="102" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6" text-anchor="middle">14 A</text>
-<text x="32" y="270" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Hours spent above 14 A in 30 days: A = 0, B = 28, C = 18.</text>
+<text x="310.8" y="114.5" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" opacity="0.55">14 A threshold</text>
+<text x="32" y="316" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Phase A — the one watts flagged as saturated — is the only one under the threshold.</text>
 </svg>
 <p>Measured in current over thirty days, phase A tops out at 13.5 amps and never crosses fourteen. Phase B climbs to 26.7 and phase C to 24.8, with twenty-eight and eighteen hours spent above that line.</p>
 <p>The peaks on B and C are briefer, so they slipped under the radar of an hourly maximum expressed in watts. The phase I believed saturated is in fact the one with the most headroom. That is exactly where a new load belongs.</p>
