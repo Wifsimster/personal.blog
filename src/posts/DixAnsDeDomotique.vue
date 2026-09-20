@@ -116,7 +116,7 @@ const frenchContent: PostContent = {
 <ol>
 <li><strong>Cet épisode</strong> — l'inventaire, dix ans d'empilement, et la mesure de ce qui a changé.</li>
 <li><strong><a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">Le prix d'essayer</a></strong> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas, pas sur ceux qu'on faisait déjà.</li>
-<li><strong><a target="_blank" rel="noopener noreferrer" href="/posts/nothing-failed">Le voyant vert ne prouve rien</a></strong> — neuf protocoles, neuf définitions de « en ligne », et les pannes qui restent invisibles trois jours.</li>
+<li><strong><a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">Le rythme de la journée</a></strong> — portail, télévision, volets et calendrier scolaire officiel : la maison porte le cadre, et le calendrier a changé trois fois en une semaine.</li>
 <li><strong><a target="_blank" rel="noopener noreferrer" href="/posts/no-choices">La maison qui parle</a></strong> — concevoir treize annonces vocales pour un enfant de sept ans, ce qui est un problème de rédaction avant d'être un problème technique.</li>
 <li><strong>Le thermique d'une maison de 1970</strong> — six volets qui décident seuls, le cadastre, et le bureau à 29 °C en pleine nuit.</li>
 </ol>
@@ -238,7 +238,7 @@ const englishContent: PostContent = {
 <ol>
 <li><strong>This episode</strong> — the inventory, ten years of sediment, and a measurement of what changed.</li>
 <li><strong><a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">The cost of trying</a></strong> — why the win shows up on the projects you never started, not on the ones you already did.</li>
-<li><strong><a target="_blank" rel="noopener noreferrer" href="/posts/nothing-failed">Green lights prove nothing</a></strong> — nine protocols, nine definitions of "online", and the outages that stay invisible for three days.</li>
+<li><strong><a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">The shape of the day</a></strong> — gate, television, shutters and the official school calendar: the house holds the frame, and the schedule changed three times in one week.</li>
 <li><strong><a target="_blank" rel="noopener noreferrer" href="/posts/no-choices">The house that speaks</a></strong> — designing thirteen spoken announcements for a seven-year-old, which is a writing problem before it is a technical one.</li>
 <li><strong>Thermal behaviour of a 1970s house</strong> — six shutters deciding on their own, the land registry, and the office at 29 °C in the middle of the night.</li>
 </ol>

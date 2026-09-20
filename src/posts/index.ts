@@ -40,7 +40,7 @@ import QualityIsExecuted, { metadata as qualityIsExecutedMetadata, getContent as
 import SkillsNotSeats, { metadata as skillsNotSeatsMetadata, getContent as getSkillsNotSeatsContent } from './SkillsNotSeats.vue'
 import HomeAssistantConstellation, { metadata as costOfTryingMetadata, getContent as getCostOfTryingContent } from './HomeAssistantConstellation.vue'
 import DixAnsDeDomotique, { metadata as tenYearsMetadata, getContent as getTenYearsContent } from './DixAnsDeDomotique.vue'
-import RienNaEchoue, { metadata as nothingFailedMetadata, getContent as getNothingFailedContent } from './RienNaEchoue.vue'
+import RythmeDeLaJournee, { metadata as dailyRhythmMetadata, getContent as getDailyRhythmContent } from './RythmeDeLaJournee.vue'
 import AnnoncesSansChoix, { metadata as noChoicesMetadata, getContent as getNoChoicesContent } from './AnnoncesSansChoix.vue'
 
 export interface PostComponentInfo {
@@ -255,10 +255,10 @@ const postRegistry: Record<string, PostComponentInfo> = {
     getContent: getTenYearsContent,
     component: DixAnsDeDomotique
   },
-  'nothing-failed': {
-    metadata: nothingFailedMetadata,
-    getContent: getNothingFailedContent,
-    component: RienNaEchoue
+  'daily-rhythm': {
+    metadata: dailyRhythmMetadata,
+    getContent: getDailyRhythmContent,
+    component: RythmeDeLaJournee
   },
   'no-choices': {
     metadata: noChoicesMetadata,

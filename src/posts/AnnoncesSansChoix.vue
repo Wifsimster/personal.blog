@@ -19,10 +19,8 @@ const frenchContent: PostContent = {
 <p>J'ai passé les trois épisodes précédents à me méfier de ce que les machines racontent. Celui-ci est différent. Tout le montage technique fonctionnait dès le premier jour, et il n'a jamais été le problème.</p>
 
 <h2>La chaîne audio n'était pas en cause</h2>
-<p>Elle mérite quand même trois phrases, parce qu'elle a coûté une soirée à mettre au point.</p>
-<p>La synthèse vocale tourne dans un conteneur, en français, sans aucun service externe. La langue doit être déclarée <code>fr_FR</code> et pas <code>fr</code>, faute de quoi le serveur renvoie une erreur 500. Les treize automatisations n'adressent jamais une enceinte directement. Elles appellent un script unique qui choisit la cible, le volume et le canal, ce qui fait un seul fichier à corriger le jour où les enceintes changent de nom.</p>
-<p>Un piège mérite d'être connu, parce qu'il m'a fait conclure trois fois à une panne inexistante. Sur les enceintes récentes, une annonce ne passe pas par le lecteur. Elle se superpose à la musique par une interface séparée. L'état du lecteur, son titre en cours, sa position, rien ne bouge pendant qu'elle parle. J'ai sondé cet état toutes les demi-secondes pendant douze secondes avant de comprendre que les trois annonces étaient bel et bien passées. Le seul témoin fiable est une ligne dans le journal du serveur.</p>
-<p>Corollaire pratique : il ne faut jamais régler le volume de l'enceinte avant une annonce. Ça change durablement le volume d'écoute pour rien. Le volume du clip se passe dans l'appel lui-même, et l'enceinte reste où elle était.</p>
+<p>Elle mérite deux phrases, parce qu'elle a été montée en une soirée et n'a plus jamais bougé. La synthèse vocale tourne dans un conteneur, en français, sans aucun service externe. Les treize automatisations n'adressent jamais une enceinte directement : elles appellent un script unique qui choisit la pièce, le volume et le canal, ce qui laisse un seul endroit à corriger le jour où les enceintes changent de nom.</p>
+<p>C'est tout. À partir de là, tout le travail a été de la rédaction.</p>
 
 <h2>Huit règles, écrites après coup</h2>
 <p>Le vrai chantier était ailleurs. Les treize messages ont été réécrits en une passe, selon une grille que j'ai fini par formuler explicitement parce que je la ré-appliquerai à chaque annonce future.</p>
@@ -101,11 +99,9 @@ const frenchContent: PostContent = {
 <p>La musique s'arrête d'elle-même, sans automatisation dédiée. L'annonce de huit heures met en pause les enceintes en cours de lecture. Pour cibler celles-ci sans déclencher d'erreur sur une enceinte inactive, la liste est construite par filtrage plutôt qu'écrite en dur. Une liste vide ne déclenche aucune action.</p>
 
 <h2>Le jour où l'enceinte ne répond pas</h2>
-<p>Une annonce de routine peut se permettre d'échouer. Un réveil, non.</p>
-<p>L'automatisation du lever ne diffuse donc plus à l'aveugle. Elle teste d'abord que l'enceinte de la chambre existe et répond. Si c'est le cas, elle appelle le script d'annonce. Sinon, elle bascule sur une notification prioritaire vers les téléphones <em>et</em> une notification persistante dans l'interface, toutes deux portant l'état réel de l'enceinte et l'heure.</p>
-<p>La notification persistante est le filet sous le filet. L'<a target="_blank" rel="noopener noreferrer" href="/posts/nothing-failed">épisode précédent</a> raconte comment mon groupe de notifications a visé pendant douze jours trois téléphones qui n'étaient plus dans la maison. Depuis, je ne fais plus reposer une alerte importante sur un seul canal.</p>
-<p>Reste à tester cette branche, et c'est plus difficile qu'il n'y paraît. Débrancher une enceinte pour vérifier un repli est une mauvaise méthode. La bonne consiste à pointer temporairement le test sur une entité qui n'existe pas, déclencher, vérifier, puis restaurer.</p>
-<p>Le problème est plus général. On ne teste pas une maison à sept heures du matin. Déclencher une automatisation à la main ne suffit pas quand ses actions dépendent de <em>quel</em> déclencheur l'a lancée, parce que sans déclencheur réel cette condition est toujours fausse et tout reste bloqué. La méthode qui marche est de fabriquer une automatisation jetable, avec la même structure, un déclencheur horaire à soixante-dix secondes et une simple notification qui affiche l'identifiant reçu. Rien ne sort dans la maison, et la logique est validée.</p>
+<p>Une annonce de routine peut se permettre de rater. Un réveil, non.</p>
+<p>L'automatisation du lever teste donc d'abord que l'enceinte de la chambre répond. Si oui, elle appelle le script d'annonce. Sinon, elle bascule sur une notification prioritaire vers les téléphones <em>et</em> une notification persistante dans l'interface, toutes deux portant l'état réel de l'enceinte et l'heure. La notification persistante est le filet sous le filet : elle s'affiche même si le canal des téléphones est cassé.</p>
+<p>Cette branche de repli a pris dix minutes à écrire. C'est le genre de robustesse qu'on ne s'offre que quand elle est bon marché.</p>
 
 <h2>Ce que la maison n'a pas le droit de dire</h2>
 <p>Quelques interdits se sont accumulés, et ils valent autant que les règles de rédaction.</p>
@@ -128,7 +124,7 @@ const frenchContent: PostContent = {
 <li><strong>Le bon test ne fait pas de bruit dans la maison.</strong> Une automatisation jetable qui affiche ce qu'elle reçoit vaut mieux qu'un essai grandeur nature à sept heures du matin.</li>
 </ul>
 <p>Le prochain épisode revient à la physique du bâtiment : six volets qui décident seuls de leur position à partir de la température de leur pièce et de la course du soleil sur leur façade, un cadastre, et un bureau à 29 °C en pleine nuit sans le moindre rayon de soleil.</p>
-<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas. <a target="_blank" rel="noopener noreferrer" href="/posts/nothing-failed">Rien n'a échoué</a> — neuf protocoles, neuf définitions du mot « en ligne ».</p>`
+<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">J'ai changé le calendrier du soir trois fois en une semaine</a> — portail, télévision, volets et calendrier scolaire.</p>`
 }
 
 const englishContent: PostContent = {
@@ -141,10 +137,8 @@ const englishContent: PostContent = {
 <p>I spent the last three episodes distrusting what machines report. This one is different. The whole technical setup worked from day one, and it was never the problem.</p>
 
 <h2>The audio chain was not at fault</h2>
-<p>It still deserves three sentences, because tuning it cost an evening.</p>
-<p>Speech synthesis runs in a container, in French, with no external service. The language has to be declared <code>fr_FR</code> rather than <code>fr</code>, or the server returns a 500. The thirteen automations never address a speaker directly. They call one script that picks the target, the volume and the channel, which leaves a single file to fix the day the speakers change names.</p>
-<p>One trap is worth knowing, because it made me diagnose a non-existent failure three times. On recent speakers, an announcement does not go through the player. It is layered over the music by a separate interface. The player's state, its current title, its position — none of it moves while the speaker is talking. I polled that state every half-second for twelve seconds before realising all three announcements had gone out. The only reliable witness is a line in the server log.</p>
-<p>The practical corollary: never set the speaker's volume before an announcement. It changes the listening volume for good and achieves nothing. The clip volume belongs in the call itself, and the speaker stays where it was.</p>
+<p>It deserves two sentences, because it went up in one evening and never moved again. Speech synthesis runs in a container, in French, with no external service. The thirteen automations never address a speaker directly: they call one script that picks the room, the volume and the channel, which leaves one place to fix the day the speakers change names.</p>
+<p>That is all of it. From there, every bit of the work was writing.</p>
 
 <h2>Eight rules, written afterwards</h2>
 <p>The actual work was elsewhere. All thirteen messages were rewritten in one pass, against a grid I ended up stating explicitly because I will apply it to every future announcement.</p>
@@ -223,11 +217,9 @@ const englishContent: PostContent = {
 <p>The music stops on its own, with no dedicated automation. The eight o'clock announcement pauses whichever speakers are playing. To target those without erroring on an idle one, the list is built by filtering rather than hard-coded. An empty list triggers nothing.</p>
 
 <h2>The morning the speaker does not answer</h2>
-<p>A routine announcement can afford to fail. A wake-up cannot.</p>
-<p>So the wake-up automation no longer broadcasts blind. It first tests that the bedroom speaker exists and answers. If it does, it calls the announcement script. If not, it falls back to a high-priority push to the phones <em>and</em> a persistent notification in the interface, both carrying the speaker's real state and the time.</p>
-<p>The persistent notification is the net under the net. <a target="_blank" rel="noopener noreferrer" href="/posts/nothing-failed">The previous episode</a> covers how my notification group spent twelve days targeting three phones that had left the house. Since then I do not rest anything important on a single channel.</p>
-<p>That branch still has to be tested, and it is harder than it looks. Unplugging a speaker to check a fallback is a poor method. The good one is to point the test at an entity that does not exist, trigger, verify, then restore.</p>
-<p>The wider problem is that you do not test a house at seven in the morning. Triggering an automation by hand is not enough when its actions depend on <em>which</em> trigger fired it, because without a real trigger that condition is always false and everything stays blocked. What works is building a throwaway automation with the same structure, a time trigger seventy seconds out, and a plain notification printing the identifier it received. Nothing goes out into the house, and the logic gets verified.</p>
+<p>A routine announcement can afford to miss. A wake-up cannot.</p>
+<p>So the wake-up automation first tests that the bedroom speaker answers. If it does, it calls the announcement script. If not, it falls back to a high-priority push to the phones <em>and</em> a persistent notification in the interface, both carrying the speaker's real state and the time. The persistent notification is the net under the net: it shows up even if the phone channel is broken.</p>
+<p>That fallback took ten minutes to write. It is the kind of robustness you only grant yourself when it is cheap.</p>
 
 <h2>What the house is not allowed to say</h2>
 <p>A few prohibitions piled up, and they matter as much as the writing rules.</p>
@@ -250,7 +242,7 @@ const englishContent: PostContent = {
 <li><strong>A good test makes no noise in the house.</strong> A throwaway automation printing what it received beats a full-scale trial at seven in the morning.</li>
 </ul>
 <p>The next episode goes back to building physics: six shutters deciding their own position from their room temperature and the sun's track across their facade, a land registry, and an office sitting at 29 °C in the middle of the night without a single ray of sun.</p>
-<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started. <a target="_blank" rel="noopener noreferrer" href="/posts/nothing-failed">Nothing Failed</a> — nine protocols, nine definitions of "online".</p>`
+<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">I Changed the Evening Schedule Three Times in One Week</a> — gate, television, shutters and the school calendar.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {

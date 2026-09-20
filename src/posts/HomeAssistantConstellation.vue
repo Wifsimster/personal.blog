@@ -52,44 +52,16 @@ const frenchContent: PostContent = {
 <p>Ces quatre chantiers sont des heures d'analyse qui ne servent qu'une fois. Personne ne passe un week-end à corréler trente jours de température avec l'azimut solaire pour régler six volets. Ils n'étaient pas difficiles à finir, ils étaient trop chers à commencer.</p>
 <blockquote><p>La question n'est plus « est-ce que je sais le faire ». C'est « est-ce que ça vaut la peine d'être vrai ».</p></blockquote>
 
-<h2>Les diagnostics qui traversent cinq systèmes</h2>
-<p>Le 10 septembre, mon éclairage extérieur passe indisponible. C'est une prise Matter en Wi-Fi.</p>
-<p>Le ping répond à 100 %. Le contrôleur Wi-Fi affiche <span style="white-space:nowrap">−47 dBm</span>, satisfaction 100, aucune anomalie. L'association date d'avant la panne. Tout est vert. Et la prise ne répond plus du tout.</p>
-<svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagnostic d'un nœud Matter tombé : la radio Wi-Fi, l'association et la couche IP rapportent toutes un état parfaitement sain, alors que l'annonce mDNS du service Matter est absente ; seule cette dernière ligne signale réellement la panne." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">UNE PRISE MATTER · 10 SEPTEMBRE 2026</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Trois voyants verts, une panne.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="123">Radio Wi-Fi</text>
-<text x="32" y="163">Association</text>
-<text x="32" y="203">Couche IP</text>
-<text x="32" y="243">Matter (mDNS)</text>
-<text x="32" y="283">Home Assistant</text>
-</g>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="196" y="104" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="196" y="144" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="196" y="184" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="196" y="224" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.4"></rect>
-<rect x="196" y="264" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-</g>
-<rect x="196" y="224" width="4" height="28" rx="2" fill="currentColor" fill-opacity="0.75"></rect>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.8">
-<text x="212" y="123">−47 dBm, satisfaction 100</text>
-<text x="212" y="163">associée, aucune anomalie, aucun événement</text>
-<text x="212" y="203">ping : 100 % de réponses, zéro perte</text>
-<text x="212" y="243" font-weight="650" opacity="1">aucune annonce _matter._tcp</text>
-<text x="212" y="283">les 7 entités du nœud indisponibles</text>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
-<text x="32" y="330">Les trois premières lignes sont restées vertes pendant toute la panne.</text>
-<text x="32" y="352">Seul remède : couper et rebrancher physiquement la prise.</text>
-</g>
-</svg>
-<p>Sur ces prises, la pile réseau et la pile applicative tombent indépendamment. Ni le ping ni le signal ne le disent. La seule preuve est l'annonce <abbr title="Multicast DNS — annonce de services sur le réseau local, sans serveur central">mDNS</abbr> du service, listée depuis l'intérieur du conteneur. Quatre outils différents dans une seule séance, pour aboutir à une conclusion d'une ligne.</p>
-<p>Mes huit ampoules Wi-Fi posaient la même question, en pire. L'explication confortable — « elles sont coupées à l'interrupteur mural » — était vraie pour la moitié d'entre elles. Pour les autres, il a fallu interroger la base du contrôleur Wi-Fi : un identifiant de réseau pointant vers un SSID supprimé des mois plus tôt, 86 échecs d'authentification en 24 heures sur une seule ampoule, et trois points d'accès d'appairage diffusés par des lampes que je croyais éteintes.</p>
-<p>La télécommande infrarouge de l'atelier, je la vivais comme « aléatoire ». Mesurée sur trois jours, elle s'est figée 318 fois, une fois toutes les neuf minutes en médiane. La porte était donc injoignable un quart du temps. Elle est aujourd'hui sondée toutes les trente secondes et réveillée automatiquement, sans coupure de courant.</p>
-<blockquote><p>Un appareil qui répond au ping n'est pas un appareil qui fonctionne. C'est un appareil qui répond au ping.</p></blockquote>
-<p>Ces trois diagnostics ne demandent aucune intelligence particulière. Ils demandent de la patience, un accès à cinq systèmes, et la disponibilité d'aller vérifier une hypothèse à trois heures du matin. Je n'avais pas ça.</p>
+<h2>Ce que la maison sait faire en plus</h2>
+<p>La liste des usages ajoutés dans la même période dit mieux la chose qu'un raisonnement.</p>
+<ul>
+<li>Un <strong>plan de la maison</strong> dans le tableau de bord, avec douze températures posées à leur place dans les pièces.</li>
+<li>Un <strong>mode absence</strong> qui se déclenche quand les deux téléphones sont partis depuis dix minutes : chauffe-eau coupé, surveillance de la caméra étendue, notification au retour.</li>
+<li>Une <strong>alerte de volet muet</strong> qui prévient si l'un des six ne répond plus depuis trente minutes, et prévient à nouveau quand il revient.</li>
+<li>Une <strong>alerte d'aération</strong> pour le bureau, qui se déclenche quand il fait au moins deux degrés de moins dehors que dedans.</li>
+<li>Un <strong>suivi de consommation par phase</strong> sur le compteur triphasé, avec les gros postes identifiés un par un.</li>
+</ul>
+<p>Aucun de ces cinq usages n'est remarquable. Aucun n'aurait justifié, seul, d'y passer un samedi. C'est précisément l'intérêt : ils existent parce qu'aucun n'a coûté un samedi.</p>
 
 <h2>L'interaction que je n'avais pas imaginée</h2>
 <p>Rien de ce qui suit ne relève d'un protocole.</p>
@@ -116,7 +88,7 @@ const frenchContent: PostContent = {
 <li><strong>La moitié de ce chantier a été de la rédaction.</strong> Une automatisation qui ne change le comportement de personne n'existe pas.</li>
 </ul>
 <p>Le parc ne convergera pas. Dans cinq ans il y aura toujours un pont propriétaire, une télécommande infrarouge et une ampoule qui refuse son réseau. Mais le capteur de vacances scolaires tourne depuis deux jours, et cet interrupteur-là, je ne le rebasculerai plus jamais à la main.</p>
-<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation, dix ans d'empilement, et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/nothing-failed">Rien n'a échoué</a> — neuf protocoles, neuf définitions du mot « en ligne », et les pannes qui ne remontent nulle part.</p>`
+<p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ma dernière sonde ESP8266 date de 2016</a> — l'inventaire de l'installation, dix ans d'empilement, et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">J'ai changé le calendrier du soir trois fois en une semaine</a> — la maison qui porte le rythme de la journée.</p>`
 }
 
 const englishContent: PostContent = {
@@ -162,44 +134,16 @@ const englishContent: PostContent = {
 <p>These four are hours of analysis that pay off once. Nobody spends a weekend correlating thirty days of temperature against solar azimuth to tune six shutters. They were not hard to finish. They were too expensive to start.</p>
 <blockquote><p>The question is no longer "can I build this". It is "is this worth being true".</p></blockquote>
 
-<h2>Diagnostics that cross five systems</h2>
-<p>On 10 September my outdoor lighting goes unavailable. It runs on a Wi-Fi Matter plug.</p>
-<p>Ping answers 100% of the time. The Wi-Fi controller reports <span style="white-space:nowrap">−47 dBm</span>, satisfaction 100, zero anomalies. The association predates the outage. Everything is green. And the plug answers nothing at all.</p>
-<svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagnosing a dead Matter node: the Wi-Fi radio, the association and the IP layer all report a perfectly healthy state, while the mDNS announcement for the Matter service is missing; only that last row actually reveals the outage." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">ONE MATTER PLUG · 10 SEP 2026</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Three green lights. One dead node.</text>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75">
-<text x="32" y="123">Wi-Fi radio</text>
-<text x="32" y="163">Association</text>
-<text x="32" y="203">IP layer</text>
-<text x="32" y="243">Matter (mDNS)</text>
-<text x="32" y="283">Home Assistant</text>
-</g>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="196" y="104" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="196" y="144" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="196" y="184" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-<rect x="196" y="224" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.4"></rect>
-<rect x="196" y="264" width="412" height="28" rx="8" fill="currentColor" fill-opacity="0.12"></rect>
-</g>
-<rect x="196" y="224" width="4" height="28" rx="2" fill="currentColor" fill-opacity="0.75"></rect>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.8">
-<text x="212" y="123">−47 dBm, satisfaction 100</text>
-<text x="212" y="163">associated, no anomaly, no event logged</text>
-<text x="212" y="203">ping: 100% replies, zero loss</text>
-<text x="212" y="243" font-weight="650" opacity="1">no _matter._tcp announcement</text>
-<text x="212" y="283">all 7 entities of the node unavailable</text>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">
-<text x="32" y="330">The first three rows stayed green for the entire outage.</text>
-<text x="32" y="352">The only fix was pulling the plug out of the wall by hand.</text>
-</g>
-</svg>
-<p>On these plugs the network stack and the application stack die independently. Neither ping nor signal strength shows it. The only evidence is the <abbr title="Multicast DNS — service announcement on the local network, with no central server">mDNS</abbr> service announcement, listed from inside the container. Four different tools in one sitting, to reach a one-line conclusion.</p>
-<p>My eight Wi-Fi bulbs posed the same question, worse. The comfortable explanation — "they are switched off at the wall" — was true for half of them. For the rest it took querying the Wi-Fi controller's own database: a network id pointing at an SSID deleted months earlier, 86 authentication failures in 24 hours on a single bulb, and three pairing access points broadcast by lamps I believed were off.</p>
-<p>The workshop door's infrared remote, I experienced as random. Measured over three days, it froze 318 times, a median of once every nine minutes. So the door was unreachable a quarter of the time. It is now probed every thirty seconds and revived automatically, with no power cycle.</p>
-<blockquote><p>A device that answers ping is not a working device. It is a device that answers ping.</p></blockquote>
-<p>None of these three diagnoses needs special intelligence. They need patience, access to five systems, and the willingness to go test a hypothesis at three in the morning. I did not have that.</p>
+<h2>What the house picked up along the way</h2>
+<p>The list of use cases added over the same period says it better than an argument does.</p>
+<ul>
+<li>A <strong>floor plan</strong> in the dashboard, with twelve temperatures placed where the rooms actually are.</li>
+<li>An <strong>away mode</strong> that arms itself once both phones have been gone for ten minutes: water heater off, camera surveillance widened, a notification on return.</li>
+<li>A <strong>silent-shutter alert</strong> that warns if any of the six stops answering for thirty minutes, and warns again when it comes back.</li>
+<li>A <strong>ventilation alert</strong> for the office, firing when it is at least two degrees cooler outside than in.</li>
+<li>A <strong>per-phase consumption view</strong> on the three-phase meter, with the big loads identified one by one.</li>
+</ul>
+<p>None of these five is remarkable. None of them would have justified a Saturday on its own. That is exactly the point: they exist because none of them cost a Saturday.</p>
 
 <h2>The interaction I had not imagined</h2>
 <p>Nothing in this last part is a protocol problem.</p>
@@ -226,7 +170,7 @@ const englishContent: PostContent = {
 <li><strong>Half of this build was writing.</strong> An automation that changes nobody's behaviour does not exist.</li>
 </ul>
 <p>The fleet will not converge. In five years there will still be a proprietary bridge, an infrared remote and a bulb refusing its own network. But the school-holiday sensor has been running for two days, and that switch is one I will never flip by hand again.</p>
-<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory, ten years of sediment, and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/nothing-failed">Nothing Failed</a> — nine protocols, nine definitions of "online", and the outages that surface nowhere.</p>`
+<p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">My Last ESP8266 Probe Was 2016</a> — the inventory, ten years of sediment, and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">I Changed the Evening Schedule Three Times in One Week</a> — the house that holds the shape of the day.</p>`
 }
 
 export function getContent(locale: 'fr' | 'en'): PostContent {
