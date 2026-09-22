@@ -7,6 +7,10 @@ survives between sessions.
 
 ---
 
+## Communication Style
+
+Think in big pictures, answer in few words. Skip filler, context restatement, and over-explanation.
+
 ## 1. Who you're working for
 
 - **Handle:** Wifsimster · **Real name signed off as:** Battistella
