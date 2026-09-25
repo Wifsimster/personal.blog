@@ -253,6 +253,24 @@
     }
   }
 
+  /* Post videos (Remotion loops): one file per theme, same swap as the
+     diagrams' --diagram-accent. The frame matches the page background. */
+  .prose .post-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+  }
+  @media (max-width: 640px) {
+    /* the <source media> swap serves the tall (6:7) render here */
+    .prose .post-video { aspect-ratio: 6 / 7; }
+  }
+  .prose .post-video.video-dark { display: none; }
+  .dark .prose .post-video.video-light { display: none; }
+  .dark .prose .post-video.video-dark { display: block; }
+
   .prose .diagram-svg {
     @apply block text-gray-700 dark:text-zinc-100;
     width: 100%;
