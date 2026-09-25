@@ -13,13 +13,12 @@ const frenchContent: PostContent = {
   description: "Épisode 5 : six volets qui décident seuls, à partir de la température de leur pièce et de la course du soleil sur leur façade. Le modèle a été construit avec le cadastre et trente jours de corrélation. Son résultat le plus utile a été de me dire où ne pas agir.",
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> Ma maison est passée d'un mode « canicule » global à six volets qui décident chacun pour soi, à partir de la température de leur pièce et de la position du soleil sur leur façade. Le modèle vient du cadastre croisé avec trente jours de corrélation entre température et <abbr title="Direction du soleil sur l'horizon, en degrés depuis le nord">azimut</abbr> solaire. Il m'a donné des orientations que la seule courbe de température ne pouvait pas donner, et un masque d'horizon que j'ignorais. Mais son résultat le plus utile n'est pas un réglage de volet. C'est d'avoir montré que mon bureau est à 29 °C à trois heures du matin, trois degrés au-dessus du salon, et que le soleil n'y est pour rien : c'est une baie informatique qui dissipe 331 W en continu. Le même piège m'attendait sur le tableau électrique.</p></div>
 <hr>
-<p>Trois heures du matin, mi-août. Le bureau est à 29 °C. Il n'y a pas eu de soleil depuis neuf heures.</p>
-<p>J'ai passé une partie de l'été à construire un modèle solaire de ma maison pour piloter six volets. Ce modèle m'a surtout appris que sur la pièce qui me gênait le plus, les volets ne servaient à rien.</p>
+<p>Trois heures du matin, mi-août. Le bureau est à 29 °C. Il n'y a pas eu de soleil depuis neuf heures. J'ai passé une partie de l'été à construire un modèle solaire de ma maison pour piloter six volets. Ce modèle m'a surtout appris que sur la pièce qui me gênait le plus, les volets ne servaient à rien.</p>
 
 <h2>D'un mode global à six décisions séparées</h2>
 <p>La première version était un interrupteur « canicule ». Quand je le basculais, une règle unique s'appliquait à toute la maison : fermer si dehors est plus chaud que dedans.</p>
 <p>Elle avait le défaut de sa simplicité. Une maison n'a pas une température, elle en a autant que de pièces, et chaque pièce reçoit le soleil à une heure différente. La moyenne de la maison masquait tout.</p>
-<p>Le remplacement tient en une phrase. Chaque volet a sa propre cible de position, calculée à partir de deux choses : la température de sa pièce, et un capteur qui dit si le soleil frappe sa façade en ce moment.</p>
+<p>Dans la nouvelle version, chaque volet a sa propre cible de position, calculée à partir de deux choses : la température de sa pièce, et un capteur qui dit si le soleil frappe sa façade en ce moment.</p>
 <p>Ce second capteur est la partie intéressante. Il compare l'azimut du soleil à la normale de la façade, avec un écart signé pour gérer le passage par le nord, et il est vrai tant que l'écart reste sous soixante-cinq degrés.</p>
 <svg viewBox="0 0 640 486" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagramme en arc représentant, sur une journée d'août, la fenêtre d'ensoleillement réelle de cinq façades de la maison, chacune sur son propre anneau concentrique : celle du bureau, en couleur d'accent, est la plus courte de toutes, de 8 h 15 à midi seulement." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">CINQ FAÇADES · UNE JOURNÉE D'AOÛT</text>
@@ -62,22 +61,20 @@ const frenchContent: PostContent = {
 <text x="32" y="452" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Rayon = façade, du bureau (extérieur) au cellier (intérieur).</text>
 <text x="32" y="470" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Longueur d'arc = fenêtre réelle, azimut et hauteur croisés.</text>
 </svg>
-<p>Cinq façades, cinq créneaux, et donc cinq histoires différentes dans la même maison. Le pignon sud-sud-ouest est le mieux exposé à l'année, mais c'est le plus petit. Le cellier ne prend le soleil qu'en fin de journée, par sa seule ouverture.</p>
+<p>Le pignon sud-sud-ouest est le mieux exposé à l'année, mais c'est le plus petit. Le cellier ne prend le soleil qu'en fin de journée, par sa seule ouverture.</p>
 
 <h2>Le cadastre dit ce que la courbe de température ne dit pas</h2>
 <p>Ma première tentative d'orientation venait uniquement des données. J'avais corrélé trente jours de température de chaque pièce avec l'azimut du soleil, et j'en avais déduit une façade « est » entre 60 et 150 degrés.</p>
-<p>Corréler trente jours de température de six pièces avec la course du soleil est exactement le genre de calcul que je n'aurais jamais lancé à la main. Là, il a tourné pendant que je cherchais le plan cadastral.</p>
+<p>Ce calcul, je ne l'aurais jamais lancé à la main. Il a tourné pendant que je cherchais le plan cadastral.</p>
 <p>Deux erreurs dans ce seul résultat. La normale réelle de cette façade est à 114 degrés, donc mon intervalle était décentré. Et surtout il ne contenait aucune façade ouest, alors que la maison en a une.</p>
 <p>La corrélation sait confirmer qu'une pièce appartient bien à une façade. Elle ne sait pas inventer une façade dont aucune pièce instrumentée ne dépend. Le plan cadastral, lui, donne le faîtage et les quatre orientations en dix minutes.</p>
 <blockquote><p>Les données disent comment se comporte ce que vous mesurez. Elles ne disent rien de ce que vous n'avez pas pensé à mesurer.</p></blockquote>
-<p>Deux corrections sont venues ensuite, et aucune n'était dans le cadastre non plus.</p>
-<p>La première : mon bureau n'a qu'une seule ouverture, orientée est-nord-est à 67 degrés, et pas sur la grande façade à 114. L'écart paraît mince. Il ne l'est pas : le soleil quitte une ouverture est-nord-est vers midi contre une heure et demie plus tard pour l'autre. Rattacher le bureau à la mauvaise façade gardait son volet baissé une heure trente pour rien, tous les jours.</p>
-<p>La seconde : le soleil n'entre réellement par cette fenêtre qu'à partir de quatorze degrés d'élévation, soit environ huit heures quinze début août. Mon seuil initial faisait basculer le capteur à sept heures vingt-six, cinquante minutes trop tôt. L'azimut n'est jamais limitant le matin ; seule la hauteur compte, ce qui trahit un obstacle bâti ou végétal à l'est. Le capteur expose désormais l'azimut et l'élévation en attributs, pour se recalibrer par simple observation.</p>
-<p>Et une troisième correction est venue de la maison elle-même. J'avais annoncé la chambre parentale orientée sud-sud-est. Le calcul qui en découlait ne laissait entrer le soleil qu'à partir de neuf heures trente, donc le volet restait ouvert toute la matinée — alors que la pièce est en plein soleil bien avant. Normale ramenée à 135 degrés, fenêtre recalculée de sept heures trente à quatorze heures quarante-cinq, cible immédiatement descendue à 55 %.</p>
+<p>Trois corrections sont venues ensuite, et aucune n'était dans le cadastre. La première : mon bureau n'a qu'une seule ouverture, orientée est-nord-est à 67 degrés, et pas sur la grande façade à 114. Le soleil quitte une ouverture est-nord-est vers midi contre une heure et demie plus tard pour l'autre. Rattacher le bureau à la mauvaise façade gardait son volet baissé une heure trente pour rien, tous les jours.</p>
+<p>La deuxième : le soleil n'entre par cette fenêtre qu'à partir de quatorze degrés d'élévation, soit environ 8 h 15 début août. Mon seuil initial faisait basculer le capteur à 7 h 26, cinquante minutes trop tôt. L'azimut n'est jamais limitant le matin ; seule la hauteur compte, ce qui trahit un obstacle bâti ou végétal à l'est. Le capteur expose désormais l'azimut et l'élévation en attributs, pour se recalibrer par simple observation.</p>
+<p>La troisième est venue de la maison elle-même. J'avais annoncé la chambre parentale orientée sud-sud-est. Le calcul qui en découlait ne laissait entrer le soleil qu'à partir de neuf heures trente, donc le volet restait ouvert toute la matinée — alors que la pièce est en plein soleil bien avant. Normale ramenée à 135 degrés, fenêtre recalculée de sept heures trente à quatorze heures quarante-cinq, cible immédiatement descendue à 55 %.</p>
 
 <h2>Ce que le modèle m'a dit de ne pas faire</h2>
-<p>Le bureau était la pièce qui motivait tout ce chantier. Il est invivable en août, et je voulais que son volet le protège.</p>
-<p>Le modèle a répondu autre chose.</p>
+<p>Le bureau est invivable en août, et je voulais que son volet le protège. Le modèle a répondu autre chose.</p>
 <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparaison de la température nocturne moyenne sur quatorze jours entre une heure et six heures du matin, représentée en deux colonnes façon thermomètre : le salon à vingt-six degrés, le bureau à vingt-neuf, soit trois degrés de plus sans aucun apport solaire." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">1 H – 6 H · MOYENNE SUR 14 JOURS</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Trois degrés de plus, sans soleil.</text>
@@ -100,10 +97,10 @@ const frenchContent: PostContent = {
 <text x="32" y="376" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">La cause n'est pas dehors. C'est une baie informatique qui dissipe 331 W en continu.</text>
 <text x="32" y="400" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Moyenne réelle sur 14 jours, entre 1 h et 6 h. Aucun apport solaire sur la période.</text>
 </svg>
-<p>Vingt-neuf degrés en pleine nuit, moyenne sur quatorze jours entre une heure et six heures. Trois degrés au-dessus du salon, deux et demi au-dessus de la cuisine, sans le moindre rayon de soleil depuis des heures.</p>
-<p>La pièce est très isolée et contient une baie informatique qui dissipe 331 W en permanence. Elle ne refroidit jamais. Le volet ne peut agir que sur l'apport solaire du matin, par la plus petite ouverture de la maison, pendant un créneau de trois heures quarante-cinq — c'est-à-dire sur la plus petite part du problème.</p>
+<p>La scène de l'introduction est une moyenne. Sur quatorze nuits, entre une heure et six heures, le bureau reste trois degrés au-dessus du salon et deux et demi au-dessus de la cuisine.</p>
+<p>La pièce est très isolée. Elle abrite la baie informatique et ses 331 W, jour et nuit, et ne refroidit jamais. Le volet ne peut agir que sur l'apport solaire du matin, par la plus petite ouverture de la maison, pendant un créneau de trois heures quarante-cinq — c'est-à-dire sur la plus petite part du problème.</p>
 <p>Le levier est l'évacuation, pas l'occultation. J'aurais passé l'été à régler un barème solaire sur un problème qui n'était pas solaire. Un capteur dédié dit maintenant quand il fait au moins deux degrés de moins dehors que dans le bureau, et une notification propose simplement d'ouvrir. Un ventilateur de plafond a suivi, dont la vitesse se cale sur la température de la pièce de mai à septembre.</p>
-<p>Une hypothèse a été écartée au passage, et elle vaut d'être dite parce qu'elle était séduisante. Je soupçonnais la pièce voisine, un cellier sans volet, de conduire sa chaleur vers le bureau. Les mesures disent l'inverse : le bureau est à 29 °C, le cellier à 25 ou 26. Le gradient va donc du bureau vers le cellier, qui lui sert de puits et non de source.</p>
+<p>J'ai aussi écarté une hypothèse séduisante. Je soupçonnais la pièce voisine, un cellier sans volet, de conduire sa chaleur vers le bureau. Les mesures disent l'inverse : le cellier reste à 25 ou 26 °C. Le gradient va donc du bureau vers le cellier, qui lui sert de puits et non de source.</p>
 
 <h2>Le même piège sur le tableau électrique</h2>
 <p>La maison est en triphasé 9 <abbr title="Kilovoltampère — la puissance que le compteur autorise, qui n'est pas exactement des kilowatts">kVA</abbr>, avec un compteur par phase. La question que je me posais était simple : sur quelle phase puis-je encore brancher quelque chose.</p>
@@ -143,8 +140,8 @@ const frenchContent: PostContent = {
 <text x="32" y="316" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">La phase A — celle que les watts désignaient comme saturée — est la seule sous le seuil.</text>
 </svg>
 <p>En courant sur trente jours, la phase A plafonne à 13,5 ampères et ne dépasse jamais quatorze. La phase B monte à 26,7 et la phase C à 24,8, avec vingt-huit et dix-huit heures passées au-dessus du seuil.</p>
-<p>Les pointes de B et C sont plus brèves, donc elles passaient sous le radar d'un maximum horaire exprimé en watts. La phase que je croyais saturée est en réalité la plus libre de l'installation. C'est exactement là qu'il faut ajouter une charge.</p>
-<p>Un détail m'a amusé dans cette analyse. Mon lave-vaisselle n'est mesuré par rien, et il a pourtant été identifié sans ambiguïté par sa seule signature électrique : deux plateaux résistifs de 2 400 à 2 900 W espacés d'exactement deux heures, presque tous les jours, environ 780 Wh par cycle. C'est le seul gros poste non compté de sa phase. Personne ne l'a cherché : il est sorti de l'analyse des courbes, par la régularité de sa signature.</p>
+<p>Les pointes de B et C sont plus brèves, donc elles passaient sous le radar d'un maximum horaire exprimé en watts. La phase que je croyais saturée est la plus libre de l'installation. C'est exactement là qu'il faut ajouter une charge.</p>
+<p>Un détail m'a amusé dans cette analyse. Mon lave-vaisselle n'est mesuré par rien, et il a pourtant été identifié sans ambiguïté par sa seule signature électrique : deux plateaux résistifs de 2 400 à 2 900 W espacés d'exactement deux heures, presque tous les jours, environ 780 Wh par cycle. C'est le seul gros poste non compté de sa phase. Personne ne l'a cherché.</p>
 
 <h2>Ce que la maison ne décide toujours pas</h2>
 <p>Il faut finir par l'aveu. Le pilotage automatique des volets est encore sur arrêt.</p>
@@ -155,12 +152,9 @@ const frenchContent: PostContent = {
 
 <h2>Ce que j'en retiens</h2>
 <ul>
-<li><strong>Le résultat le plus utile d'un modèle peut être un renoncement.</strong> Celui-ci m'a évité une saison de réglages sur un volet qui n'aurait rien changé.</li>
-<li><strong>Croiser deux sources, toujours.</strong> La corrélation confirme une appartenance, le plan donne les orientations, l'observation corrige les deux.</li>
-<li><strong>La moyenne d'une maison n'existe pas.</strong> Trois degrés d'écart entre deux pièces à trois heures du matin disparaissent entièrement dans une moyenne.</li>
-<li><strong>Vérifier l'unité avant de conclure.</strong> La même installation, lue en watts puis en ampères, désigne deux phases opposées comme la plus chargée.</li>
-<li><strong>Un appareil non mesuré reste identifiable.</strong> Deux plateaux de 2 400 W espacés de deux heures ne peuvent être qu'un lave-vaisselle.</li>
-<li><strong>Construire un modèle est devenu moins cher que de s'en passer.</strong> Quelques heures d'analyse qui ne servent qu'une fois, personne ne les investit sur une maison. C'est précisément ce qui a changé.</li>
+<li><strong>Chercher la cause avant de régler l'actionneur.</strong> Un volet ne traite que l'apport solaire. Une mesure de nuit suffit à savoir s'il est en cause.</li>
+<li><strong>Le plan d'abord, les données ensuite.</strong> J'ai fait l'inverse, et la corrélation a cherché des façades que le cadastre donnait déjà. Le reste se règle sur place, à l'œil.</li>
+<li><strong>Lire une mesure dans l'unité de son seuil, au pas le plus fin.</strong> Chaque agrégation ajoutée en chemin peut effacer la pointe qu'on cherche.</li>
 </ul>
 <p>C'est le dernier épisode de cette série. Elle aura tenu en une phrase : ma maison n'est pas devenue intelligente, elle est devenue modifiable.</p>
 <h2>À télécharger</h2>
@@ -178,13 +172,12 @@ const englishContent: PostContent = {
   description: 'Episode 5: six shutters deciding on their own, from their room temperature and the sun\'s track across their facade. The model was built from the land registry and thirty days of correlation. Its most useful output was telling me where not to act.',
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> My house moved from a global heatwave switch to six shutters that each decide for themselves, from their room temperature and the sun's position on their facade. The model comes from the land registry, cross-checked against thirty days of correlation between temperature and solar <abbr title="The sun's compass direction, in degrees from north">azimuth</abbr>. It gave me orientations the temperature curve alone could not, and a horizon mask I did not know about. But its most useful output is not a shutter setting. It is that my office sits at 29 °C at three in the morning, three degrees above the living room, and the sun has nothing to do with it: a server rack dissipates 331 W continuously. The same trap was waiting for me on the electrical panel.</p></div>
 <hr>
-<p>Three in the morning, mid-August. The office is at 29 °C. There has been no sun for nine hours.</p>
-<p>I spent part of the summer building a solar model of my house to drive six shutters. What that model mostly taught me is that on the room bothering me the most, the shutters were beside the point.</p>
+<p>Three in the morning, mid-August. The office is at 29 °C. There has been no sun for nine hours. I spent part of the summer building a solar model of my house to drive six shutters. What that model mostly taught me is that on the room bothering me the most, the shutters were beside the point.</p>
 
 <h2>From one global mode to six separate decisions</h2>
 <p>The first version was a heatwave switch. When I flipped it, a single rule applied to the whole house: close if it is hotter outside than in.</p>
 <p>It carried the flaw of its own simplicity. A house does not have one temperature, it has as many as it has rooms, and every room gets the sun at a different hour. The house average hid all of it.</p>
-<p>The replacement fits in a sentence. Every shutter has its own target position, computed from two things: its room's temperature, and a sensor that says whether the sun is currently hitting its facade.</p>
+<p>In the new version, every shutter has its own target position, computed from two things: its room's temperature, and a sensor that says whether the sun is currently hitting its facade.</p>
 <p>That second sensor is the interesting part. It compares the sun's azimuth to the facade's normal, using a signed difference so the wrap past north behaves, and stays true while that difference is under sixty-five degrees.</p>
 <svg viewBox="0 0 640 486" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arc diagram showing, across one August day, the real sunlight window of five house facades, each on its own concentric ring: the office's, in accent colour, is the shortest of all, from 8:15 to noon only." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">FIVE FACADES · ONE AUGUST DAY</text>
@@ -227,22 +220,20 @@ const englishContent: PostContent = {
 <text x="32" y="452" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Radius = facade, from the office (outer) to the utility room (inner).</text>
 <text x="32" y="470" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Arc length = real window, azimuth and elevation combined.</text>
 </svg>
-<p>Five facades, five windows, and therefore five different stories inside one house. The south-south-west gable is the best exposed across the year, and the smallest. The utility room only catches the sun late in the day, through its single opening.</p>
+<p>The south-south-west gable is the best exposed across the year, and the smallest. The utility room only catches the sun late in the day, through its single opening.</p>
 
 <h2>The land registry says what the temperature curve cannot</h2>
 <p>My first attempt at orientation came from the data alone. I had correlated thirty days of each room's temperature against the sun's azimuth, and concluded there was an "east" facade somewhere between 60 and 150 degrees.</p>
-<p>Correlating thirty days of temperature across six rooms against the sun's track is exactly the kind of computation I would never have started by hand. Here it ran while I was digging out the cadastral plan.</p>
+<p>I would never have started that computation by hand. It ran while I was digging out the cadastral plan.</p>
 <p>Two errors in that single result. The real normal of that facade is 114 degrees, so my interval was off centre. And more importantly it contained no west facade at all, while the house has one.</p>
 <p>Correlation can confirm that a room belongs to a facade. It cannot invent a facade that no instrumented room depends on. The cadastral plan gives you the ridge line and all four orientations in ten minutes.</p>
 <blockquote><p>Data tells you how the things you measure behave. It says nothing about what you never thought to measure.</p></blockquote>
-<p>Two corrections followed, and neither was in the land registry either.</p>
-<p>The first: my office has a single opening, facing east-north-east at 67 degrees, not on the big 114-degree facade. The gap looks small. It is not. The sun leaves an east-north-east opening around midday, against an hour and a half later for the other one. Attaching the office to the wrong facade kept its shutter down for ninety minutes of nothing, every day.</p>
-<p>The second: the sun only actually enters that window from fourteen degrees of elevation, around quarter past eight in early August. My initial threshold flipped the sensor at 7:26, fifty minutes too early. Azimuth is never the limiting factor in the morning; only height matters, which points at a building or a tree to the east. The sensor now exposes azimuth and elevation as attributes, so it can be recalibrated by plain observation.</p>
-<p>A third correction came from the house itself. I had described the parents' bedroom as facing south-south-east. The maths that followed only let the sun in from half past nine, so the shutter stayed open all morning — while the room is in full sun well before that. Normal brought back to 135 degrees, window recomputed from 7:30 to 2:45 p.m., target immediately down to 55%.</p>
+<p>Three corrections followed, and none of them was in the land registry. The first: my office has a single opening, facing east-north-east at 67 degrees, not on the big 114-degree facade. The sun leaves an east-north-east opening around midday, against an hour and a half later for the other one. Attaching the office to the wrong facade kept its shutter down for ninety minutes of nothing, every day.</p>
+<p>The second: the sun only enters that window from fourteen degrees of elevation, around quarter past eight in early August. My initial threshold flipped the sensor at 7:26, fifty minutes too early. Azimuth is never the limiting factor in the morning; only height matters, which points at a building or a tree to the east. The sensor now exposes azimuth and elevation as attributes, so it can be recalibrated by plain observation.</p>
+<p>The third came from the house itself. I had described the parents' bedroom as facing south-south-east. The maths that followed only let the sun in from half past nine, so the shutter stayed open all morning — while the room is in full sun well before that. Normal brought back to 135 degrees, window recomputed from 7:30 to 2:45 p.m., target immediately down to 55%.</p>
 
 <h2>What the model told me not to do</h2>
-<p>The office was the room that motivated the whole build. It is unlivable in August, and I wanted its shutter to protect it.</p>
-<p>The model answered something else.</p>
+<p>The office is unlivable in August, and I wanted its shutter to protect it. The model answered something else.</p>
 <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fourteen-day average night temperature between one and six in the morning, shown as two thermometer-style columns: living room at twenty-six degrees, office at twenty-nine, three degrees higher with no solar gain at all." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">1 AM – 6 AM · 14-DAY AVERAGE</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Three degrees more, no sun.</text>
@@ -265,10 +256,10 @@ const englishContent: PostContent = {
 <text x="32" y="376" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">The cause is not outside. It is a server rack dissipating 331 W continuously.</text>
 <text x="32" y="400" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Real 14-day average, 1 am to 6 am. No solar gain over that window.</text>
 </svg>
-<p>Twenty-nine degrees in the middle of the night, averaged over fourteen days between one and six in the morning. Three degrees above the living room, two and a half above the kitchen, without a ray of sun for hours.</p>
-<p>The room is very well insulated and holds a server rack dissipating 331 W permanently. It never cools down. The shutter can only act on the morning solar gain, through the smallest opening in the house, across a window of three hours and forty-five minutes. That is the smallest part of the problem.</p>
+<p>The opening scene is an average. Over fourteen nights, between one and six, the office stays three degrees warmer than the living room and two and a half warmer than the kitchen.</p>
+<p>The room is very well insulated. It houses the server rack and its 331 W, day and night, and it never cools down. The shutter can only act on the morning solar gain, through the smallest opening in the house, across a window of three hours and forty-five minutes. That is the smallest part of the problem.</p>
 <p>The lever is evacuation, not shading. I would have spent the summer tuning a solar curve against a problem that was not solar. A dedicated sensor now says when it is at least two degrees cooler outside than in the office, and a notification simply suggests opening a window. A ceiling fan followed, its speed tracking the room temperature from May to September.</p>
-<p>One hypothesis got ruled out along the way, and it is worth stating because it was seductive. I suspected the neighbouring utility room, which has no shutter, of conducting its heat into the office. The measurements say the opposite: the office is at 29 °C, the utility room at 25 or 26. The gradient runs from the office into the utility room, which acts as a sink rather than a source.</p>
+<p>I also ruled out a tempting hypothesis. I suspected the neighbouring utility room, which has no shutter, of conducting its heat into the office. The measurements say the opposite: the utility room stays at 25 or 26 °C. The gradient runs from the office into the utility room, which acts as a sink rather than a source.</p>
 
 <h2>The same trap on the electrical panel</h2>
 <p>The house runs on a 9 <abbr title="Kilovolt-ampere — the power the meter allows, which is not quite kilowatts">kVA</abbr> three-phase supply, with a meter per phase. My question was simple: which phase can still take something.</p>
@@ -308,8 +299,8 @@ const englishContent: PostContent = {
 <text x="32" y="316" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Phase A — the one watts flagged as saturated — is the only one under the threshold.</text>
 </svg>
 <p>Measured in current over thirty days, phase A tops out at 13.5 amps and never crosses fourteen. Phase B climbs to 26.7 and phase C to 24.8, with twenty-eight and eighteen hours spent above that line.</p>
-<p>The peaks on B and C are briefer, so they slipped under the radar of an hourly maximum expressed in watts. The phase I believed saturated is in fact the one with the most headroom. That is exactly where a new load belongs.</p>
-<p>One detail amused me in that analysis. My dishwasher is metered by nothing, and it was still identified beyond doubt from its electrical signature alone: two resistive plateaus of 2,400 to 2,900 W spaced exactly two hours apart, nearly every day, about 780 Wh per cycle. It is the only large unmetered load on its phase. Nobody went looking for it. It fell out of the curve analysis, on the regularity of its signature alone.</p>
+<p>The peaks on B and C are briefer, so they slipped under the radar of an hourly maximum expressed in watts. The phase I believed saturated is the one with the most headroom. That is exactly where a new load belongs.</p>
+<p>One detail amused me in that analysis. My dishwasher is metered by nothing, and it was still identified beyond doubt from its electrical signature alone: two resistive plateaus of 2,400 to 2,900 W spaced exactly two hours apart, nearly every day, about 780 Wh per cycle. It is the only large unmetered load on its phase. Nobody went looking for it.</p>
 
 <h2>What the house still does not decide</h2>
 <p>Time for the admission. Automatic shutter control is still switched off.</p>
@@ -320,12 +311,9 @@ const englishContent: PostContent = {
 
 <h2>What I am taking away</h2>
 <ul>
-<li><strong>A model's most useful output can be a decision not to act.</strong> This one saved me a season of tuning a shutter that would have changed nothing.</li>
-<li><strong>Cross two sources, always.</strong> Correlation confirms a membership, the plan gives the orientations, observation corrects both.</li>
-<li><strong>A house average does not exist.</strong> Three degrees between two rooms at three in the morning vanish completely inside one.</li>
-<li><strong>Check the unit before concluding.</strong> The same installation, read in watts and then in amps, names two opposite phases as the most loaded.</li>
-<li><strong>An unmetered appliance is still identifiable.</strong> Two 2,400 W plateaus spaced two hours apart can only be a dishwasher.</li>
-<li><strong>Building a model became cheaper than going without one.</strong> A few hours of analysis that pay off once is not something anyone invests in a house. That is precisely what changed.</li>
+<li><strong>Find the cause before tuning the actuator.</strong> A shutter only treats solar gain. One night-time measurement tells you whether solar gain is to blame.</li>
+<li><strong>Plan first, data second.</strong> I did it the other way round, and the correlation went hunting for facades the land registry already listed. Whatever is left gets settled on site, by eye.</li>
+<li><strong>Read a measurement in the unit of its limit, at the finest step.</strong> Every aggregation added along the way can erase the very peak you are looking for.</li>
 </ul>
 <p>This is the last episode of the series. It holds in one sentence: my house did not become smart, it became modifiable.</p>
 <h2>Downloads</h2>
