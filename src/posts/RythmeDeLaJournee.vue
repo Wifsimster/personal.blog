@@ -27,7 +27,7 @@ const frenchContent: PostContent = {
 <p>La fermeture, elle, repose sur deux filets. Une fermeture systématique à 20 h 30, et une fermeture de nuit une heure après le coucher du soleil. Le second suffisait en théorie, mais en été il laissait le portail ouvert jusqu'à 23 h.</p>
 
 <h2>Mercredi, tout glisse de cinquante-cinq minutes</h2>
-<p>La maison suit un emploi du temps réel, pas un emploi du temps moyen. Mon fils a école le lundi, le mardi, le jeudi et le vendredi. Le mercredi, c'est centre aéré le matin et judo de 18 h à 19 h.</p>
+<p>La maison suit un emploi du temps réel, pas un emploi du temps moyen. Il y a école le lundi, le mardi, le jeudi et le vendredi. Le mercredi, c'est centre aéré le matin et judo de 18 h à 19 h.</p>
 <p>La première version du soir excluait purement et simplement le mercredi. C'était une erreur : le mercredi soir est la veille du jeudi, jour d'école. La bonne réponse n'était pas d'exclure, mais de décaler.</p>
 <svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nuage de points relié comparant, pour sept étapes de la routine du soir, l'heure un jour d'école et l'heure le mercredi sur un même axe horaire : chaque étape glisse d'environ cinquante-cinq minutes, sauf le coucher, où les deux points se superposent exactement à vingt heures trente." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SOIR · MÊME ROUTINE, HORAIRES DÉCALÉS</text>
@@ -188,7 +188,7 @@ const englishContent: PostContent = {
 <p>Closing rests on two nets. A systematic close at 8:30 p.m., and a night close one hour after sunset. The second was enough in theory, but in summer it left the gate open until 11 p.m.</p>
 
 <h2>Wednesday, everything slides by fifty-five minutes</h2>
-<p>The house follows a real timetable, not an average one. My son has school on Monday, Tuesday, Thursday and Friday. Wednesday is a holiday club in the morning and judo from 6 to 7 p.m.</p>
+<p>The house follows a real timetable, not an average one. School runs on Monday, Tuesday, Thursday and Friday. Wednesday is a holiday club in the morning and judo from 6 to 7 p.m.</p>
 <p>The first version of the evening simply excluded Wednesday. That was wrong: Wednesday evening is the night before Thursday, a school day. The right answer was not to exclude it but to shift it.</p>
 <svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Connected dot plot comparing, for seven evening-routine steps, the school-day time and the Wednesday time on the same hour axis: every step slides by about fifty-five minutes, except bedtime, where the two points sit exactly on top of each other at half past eight." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">EVENING · SAME ROUTINE, SHIFTED</text>

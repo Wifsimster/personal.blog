@@ -14,7 +14,7 @@ const frenchContent: PostContent = {
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> Ma maison diffuse treize annonces vocales par jour, du lever au coucher, sur deux enceintes. Les premières versions étaient jouées parfaitement et ne produisaient aucune action. Le problème n'était nulle part dans la chaîne audio. Il était dans le texte. Les treize messages ont été réécrits d'un coup selon une grille de huit règles, dont la plus contre-intuitive est d'avoir retiré tous les choix proposés. Le réveil, lui, a été réécrit trois fois dans la même journée, jusqu'à ce que la musique remplace la voix. Cet épisode est le seul de la série où le protocole ne joue aucun rôle.</p></div>
 <hr>
 <p>19 h 31. L'enceinte du salon annonce : « C'est le temps calme. Tu peux lire, dessiner, ou jouer tranquillement. »</p>
-<p>Le message part au bon moment, au bon volume, dans la bonne pièce. Mon fils de sept ans ne bouge pas.</p>
+<p>Le message part au bon moment, au bon volume, dans la bonne pièce. Personne ne bouge.</p>
 <p>J'ai passé les trois épisodes précédents à me méfier de ce que les machines racontent. Celui-ci est différent. Tout le montage technique fonctionnait dès le premier jour, et il n'a jamais été le problème.</p>
 
 <h2>La chaîne audio n'était pas en cause</h2>
@@ -55,7 +55,7 @@ const frenchContent: PostContent = {
 <p>Les messages adressés aux adultes suivent des règles opposées et gardent leur contenu logistique. Celui de 8 h 00 a seulement été reformulé en alerte, « vous devriez déjà être partis », parce que ceux qui l'entendent encore sont précisément ceux qui ne sont pas partis.</p>
 
 <h2>Le réveil, trois versions dans la même journée</h2>
-<p>La première version du réveil annonçait, puis lançait la musique. Elle a tenu une matinée. Mon fils n'aime pas être réveillé par une voix, ce qu'aucun capteur de cette maison n'était en mesure de me dire.</p>
+<p>La première version du réveil annonçait, puis lançait la musique. Elle a tenu une matinée. Se faire réveiller par une voix ne passait pas, ce qu'aucun capteur de cette maison n'était en mesure de me dire.</p>
 <p>La séquence a été inversée le jour même. La musique devient le réveil, et la consigne passe par-dessus quatre-vingt-dix secondes plus tard.</p>
 <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Courbe montrant le volume de l'enceinte grimper de dix à trente pour cent par paliers de cinq points toutes les vingt secondes, avec un repère vertical à quatre-vingt-dix secondes marquant le moment où la consigne vocale passe par-dessus la musique, quel que soit le réglage de la rampe." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">RÉVEIL · VERSION DU 18 SEPTEMBRE</text>
@@ -94,7 +94,7 @@ const frenchContent: PostContent = {
 <p>Quelques interdits se sont accumulés, et ils valent autant que les règles de rédaction.</p>
 <p>La maison est de plain-pied. « Monte », « descends », « en haut », « en bas » sont bannis de toutes les annonces et de toutes les notifications. C'est le genre de tournure qu'on écrit sans y penser.</p>
 <p>Rien n'est diffusé entre 21 h 45 et 7 h 00, sauf si l'appel le demande explicitement. Une alerte de portail à deux heures du matin réveillerait toute la maison pour une bourrasque.</p>
-<p>Et une branche du script est aujourd'hui inerte, volontairement. Il sait adresser la chambre de ma fille, qui n'a pas encore d'enceinte. Le jour où elle en aura une, il suffira de la nommer correctement dans l'application du fabricant pour que l'identifiant attendu par le script se crée tout seul.</p>
+<p>Et une branche du script est aujourd'hui inerte, volontairement. Il sait adresser une deuxième chambre d'enfant, qui n'a pas encore d'enceinte. Le jour où elle en aura une, il suffira de la nommer correctement dans l'application du fabricant pour que l'identifiant attendu par le script se crée tout seul.</p>
 
 <h2>Ce qui reste aux humains</h2>
 <p>Savoir que son enfant déteste être réveillé par une voix. Ça ne se déduit d'aucune donnée de cette installation. Ça se découvre à sept heures quinze, et ça se corrige le jour même parce que corriger ne coûte plus rien.</p>
@@ -125,7 +125,7 @@ const englishContent: PostContent = {
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> My house plays thirteen spoken announcements a day, from wake-up to bedtime, on two speakers. The first versions played perfectly and produced no action whatsoever. Nothing in the audio chain was at fault. The problem was the text. All thirteen messages were rewritten in one pass against a grid of eight rules, the most counter-intuitive of which was removing every choice on offer. The wake-up itself was rewritten three times in a single day, until music replaced the voice. This is the one episode in the series where no protocol plays any part.</p></div>
 <hr>
 <p>7:31 p.m. The living-room speaker announces: "It's quiet time. You can read, draw, or play quietly."</p>
-<p>The message goes out at the right moment, at the right volume, in the right room. My seven-year-old does not move.</p>
+<p>The message goes out at the right moment, at the right volume, in the right room. Nobody moves.</p>
 <p>I spent the last three episodes distrusting what machines report. This one is different. The whole technical setup worked from day one, and it was never the problem.</p>
 
 <h2>The audio chain was not at fault</h2>
@@ -166,7 +166,7 @@ const englishContent: PostContent = {
 <p>Messages addressed to adults follow the opposite rules and keep their logistics. The 8 a.m. one was only reframed as an alert, "you should have left by now", because whoever still hears it is precisely whoever has not left.</p>
 
 <h2>The wake-up, three versions in one day</h2>
-<p>The first version announced, then started the music. It lasted one morning. My son does not like being woken by a voice, which no sensor in this house was ever going to tell me.</p>
+<p>The first version announced, then started the music. It lasted one morning. Being woken by a voice did not go down well, which no sensor in this house was ever going to tell me.</p>
 <p>The sequence was flipped the same day. Music becomes the alarm, and the instruction is layered over it ninety seconds later.</p>
 <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Curve showing the speaker's volume climbing from ten to thirty percent in five-point steps every twenty seconds, with a vertical marker at ninety seconds marking the point where the spoken instruction is layered over the music, whatever the ramp is set to." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">WAKE-UP · 18 SEPTEMBER VERSION</text>
@@ -205,7 +205,7 @@ const englishContent: PostContent = {
 <p>A few prohibitions piled up, and they matter as much as the writing rules.</p>
 <p>The house is single-storey. "Go up", "come down", "upstairs", "downstairs" are banned from every announcement and every notification. That is exactly the kind of phrasing you write without thinking.</p>
 <p>Nothing is broadcast between 9:45 p.m. and 7 a.m. unless the call explicitly asks for it. A gate alert at two in the morning would wake the whole house for a gust of wind.</p>
-<p>And one branch of the script is deliberately inert today. It knows how to address my daughter's bedroom, which has no speaker yet. The day it gets one, naming it correctly in the manufacturer's app is enough for the identifier the script already expects to create itself.</p>
+<p>And one branch of the script is deliberately inert today. It knows how to address a second child's bedroom, which has no speaker yet. The day it gets one, naming it correctly in the manufacturer's app is enough for the identifier the script already expects to create itself.</p>
 
 <h2>What still belongs to humans</h2>
 <p>Knowing that your child hates being woken by a voice. No data in this installation implies it. You find it out at 7:15, and you fix it the same day because fixing costs nothing now.</p>
