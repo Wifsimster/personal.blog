@@ -14,7 +14,7 @@ const frenchContent: PostContent = {
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> Ma maison fédère neuf écosystèmes qui ne se parlent pas : <abbr title="Réseau maillé radio basse consommation, 2,4 GHz">Zigbee</abbr>, <abbr title="Standard d'interopérabilité domotique porté par la Connectivity Standards Alliance">Matter</abbr>, <abbr title="Protocole d'accessoires domotique d'Apple">HomeKit</abbr>, du Wi-Fi propriétaire, un cloud constructeur, du <abbr title="Simple Service Discovery Protocol — découverte d'appareils UPnP sur le réseau local">SSDP</abbr>, de l'infrarouge, du <abbr title="Message Queuing Telemetry Transport — bus de messages léger">MQTT</abbr> et une API ouverte de l'Éducation nationale. 87 appareils, 929 entités, 75 automatisations. Depuis plus d'un an, tout passe par un agent qui pilote l'API du serveur, lit les journaux et applique les correctifs. Les idées qui coûtaient trop cher à démarrer, je les lance enfin. Et un diagnostic traverse maintenant cinq systèmes en une soirée. Restent deux choses à faire soi-même : couper un disjoncteur, et décider ce que la maison doit imposer.</p></div>
 <hr>
 <p>Pendant deux ans, une corvée est restée sur ma liste sans jamais en sortir.</p>
-<p>Mes routines du matin réveillent mon fils, ouvrent les volets et le portail. Elles ne doivent pas tourner pendant les vacances scolaires. Le garde-fou existait déjà. C'était un interrupteur que je basculais à la main, seize semaines par an. Je l'oubliais une fois sur deux.</p>
+<p>Mes routines du matin réveillent mes enfants, ouvrent les volets et le portail. Elles ne doivent pas tourner pendant les vacances scolaires. Le garde-fou existait déjà. C'était un interrupteur que je basculais à la main, seize semaines par an. Je l'oubliais une fois sur deux.</p>
 <p>La version propre était évidente. Le calendrier scolaire officiel est un jeu de données ouvert. Il suffit d'un capteur <abbr title="Interface web qui expose des données sur HTTP">REST</abbr>, d'un filtre sur l'académie, d'un capteur binaire qui teste si la date du jour tombe dans une période, et d'une synchronisation. Une demi-journée de travail, peut-être. Je ne l'ai jamais faite.</p>
 <p>Elle a été faite en une session, testée de bout en bout, le 18 septembre.</p>
 
@@ -71,7 +71,7 @@ const frenchContent: PostContent = {
 
 <h2>L'interaction que je n'avais pas imaginée</h2>
 <p>La maison parle. Treize annonces par jour, du lever au coucher, sur des enceintes de salon et de chambre. Les premières versions sortaient au bon moment, au bon volume, et personne ne bougeait.</p>
-<p>Le réveil est l'exemple le plus net. La première version annonçait, puis lançait la musique. Mon fils n'aime pas être réveillé par une voix. La séquence a été inversée le jour même — musique d'abord, montée progressive du volume sur quatre-vingts secondes, la consigne par-dessus à la fin. Trois itérations dans la même journée, jusqu'au bon plafond de volume.</p>
+<p>Le réveil est l'exemple le plus net. La première version annonçait, puis lançait la musique. Se faire réveiller par une voix ne passait pas. La séquence a été inversée le jour même — musique d'abord, montée progressive du volume sur quatre-vingts secondes, la consigne par-dessus à la fin. Trois itérations dans la même journée, jusqu'au bon plafond de volume.</p>
 <p>Quand le coût d'une modification tombe à presque rien, on se met à régler des choses qu'on n'aurait jamais ouvertes.</p>
 <blockquote><p>Une maison devient un objet qu'on ajuste au ressenti, le jour même, par petites touches.</p></blockquote>
 
@@ -101,7 +101,7 @@ const englishContent: PostContent = {
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> My house federates nine ecosystems that do not talk to each other: <abbr title="Low-power 2.4 GHz mesh radio protocol">Zigbee</abbr>, <abbr title="Smart-home interoperability standard from the Connectivity Standards Alliance">Matter</abbr>, <abbr title="Apple's local smart-home accessory protocol">HomeKit</abbr>, proprietary Wi-Fi, a vendor cloud, <abbr title="Simple Service Discovery Protocol — UPnP device discovery on the local network">SSDP</abbr>, infrared, <abbr title="Message Queuing Telemetry Transport — lightweight message bus">MQTT</abbr>, and an open API from the French education ministry. 87 devices, 929 entities, 75 automations. For over a year everything has gone through an agent that drives the server API, reads the logs and applies the fixes. Ideas that used to cost too much to start, I now start. And a diagnosis can now cross five systems in one evening. Two things still need a human: throwing a breaker, and deciding what the house should impose.</p></div>
 <hr>
 <p>For two years, one chore sat on my list and never left it.</p>
-<p>My morning routines wake my son, open the shutters and open the gate. They must not run during school holidays. There was already a guard, a switch I flipped by hand, sixteen weeks a year. I forgot half the time.</p>
+<p>My morning routines wake my kids, open the shutters and open the gate. They must not run during school holidays. There was already a guard, a switch I flipped by hand, sixteen weeks a year. I forgot half the time.</p>
 <p>The clean version was obvious. The official school calendar is an open dataset. All it takes is a <abbr title="A web interface exposing data over HTTP">REST</abbr> sensor, a filter on the right region, a binary sensor testing whether today falls inside a holiday period, and a sync job. Half a day of work, maybe. I never did it.</p>
 <p>It was built in one sitting, tested end to end, on 18 September.</p>
 
@@ -158,7 +158,7 @@ const englishContent: PostContent = {
 
 <h2>The interaction I had not imagined</h2>
 <p>The house speaks. Thirteen announcements a day, from wake-up to bedtime, on living-room and bedroom speakers. The early versions went out at the right time, at the right volume, and nobody moved.</p>
-<p>The wake-up is the clearest example. The first version announced, then started the music. My son does not like being woken by a voice. The sequence was flipped the same day — music first, volume ramping up over eighty seconds, the instruction laid over the top at the end. Three iterations in one day, until the ceiling volume felt right.</p>
+<p>The wake-up is the clearest example. The first version announced, then started the music. Being woken by a voice did not go down well. The sequence was flipped the same day — music first, volume ramping up over eighty seconds, the instruction laid over the top at the end. Three iterations in one day, until the ceiling volume felt right.</p>
 <p>When the cost of a change falls to almost nothing, you start tuning things you would never have opened.</p>
 <blockquote><p>A house becomes something you adjust by feel, same-day, in small strokes.</p></blockquote>
 

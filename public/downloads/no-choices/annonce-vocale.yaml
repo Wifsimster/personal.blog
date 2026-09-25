@@ -14,8 +14,8 @@
 # APPEL
 #   action: script.annonce
 #   data:
-#     message: "Léo, brosse tes dents."
-#     piece: leo          # leo | salon | toutes
+#     message: "Sam, brosse tes dents."
+#     piece: chambre      # chambre | salon | toutes
 #     volume: 35          # volume du CLIP, pas de l'enceinte
 #     nuit: false         # true pour passer outre les heures calmes
 #
@@ -38,7 +38,7 @@ annonce:
       name: Message
       description: Texte à prononcer.
       required: true
-      example: "Léo, brosse tes dents."
+      example: "Sam, brosse tes dents."
       selector:
         text:
     piece:
@@ -47,7 +47,7 @@ annonce:
       default: toutes
       selector:
         select:
-          options: [leo, salon, toutes]
+          options: [chambre, salon, toutes]
     volume:
       name: Volume du clip
       description: En pourcentage. N'affecte pas le volume d'écoute de l'enceinte.
@@ -85,10 +85,10 @@ annonce:
         cibles: >-
           {% set p = piece | default('toutes') %}
           {% set table = {
-               'leo':   ['media_player.sonos_chambre_leo'],
+               'chambre': ['media_player.sonos_chambre_enfant'],
                'salon': ['media_player.sonos_salon']
              } %}
-          {% set toutes = ['media_player.sonos_chambre_leo', 'media_player.sonos_salon'] %}
+          {% set toutes = ['media_player.sonos_chambre_enfant', 'media_player.sonos_salon'] %}
           {{ table.get(p, toutes) | select('has_value') | list }}
 
     # -------------------------------------------------------------------------
