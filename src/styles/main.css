@@ -253,23 +253,23 @@
     }
   }
 
-  /* Post videos (Remotion loops): one file per theme, same swap as the
-     diagrams' --diagram-accent. The frame matches the page background. */
-  .prose .post-video {
+  /* Section loops: small silent animated WebP (Remotion, visuals/remotion)
+     under a heading. Decorative (alt=""); one file per theme, and a still
+     PNG under prefers-reduced-motion via <source media>. */
+  .prose .section-loop { display: block; margin: -0.25rem 0 1.25rem; }
+  .prose .section-loop img {
     display: block;
-    width: 100%;
+    width: 240px;
+    max-width: 70%;
     height: auto;
-    aspect-ratio: 2 / 1;
-    margin: 1.5rem 0;
-    border-radius: 0.5rem;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    cursor: default;
   }
-  @media (max-width: 640px) {
-    /* the <source media> swap serves the tall (6:7) render here */
-    .prose .post-video { aspect-ratio: 6 / 7; }
-  }
-  .prose .post-video.video-dark { display: none; }
-  .dark .prose .post-video.video-light { display: none; }
-  .dark .prose .post-video.video-dark { display: block; }
+  .prose .section-loop.loop-dark { display: none; }
+  .dark .prose .section-loop.loop-light { display: none; }
+  .dark .prose .section-loop.loop-dark { display: block; }
 
   .prose .diagram-svg {
     @apply block text-gray-700 dark:text-zinc-100;

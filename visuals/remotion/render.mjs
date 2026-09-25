@@ -1,8 +1,11 @@
-// Rend chaque composition en WebM + MP4 + une affiche JPEG (dernière image = conclusion)
-// dans public/visuals/<slug>/ du blog.
+// Rend chaque boucle en WebP animé transparent (façon GIF, assemblé par Pillow) + un PNG fixe
+// servi sous prefers-reduced-motion, dans public/visuals/<slug>/.
+//   node render.mjs [filtre]      REMOTION_BROWSER=<chrome> pour un navigateur local
 import {bundle} from '@remotion/bundler';
-import {renderMedia, renderStill, selectComposition, getCompositions} from '@remotion/renderer';
-import {mkdirSync} from 'node:fs';
+import {renderFrames, getCompositions, selectComposition} from '@remotion/renderer';
+import {execFileSync} from 'node:child_process';
+import {mkdirSync, mkdtempSync, readdirSync, copyFileSync, rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
 import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -13,21 +16,19 @@ const browserExecutable = process.env.REMOTION_BROWSER || undefined;
 const only = process.argv[2];
 
 const serveUrl = await bundle({entryPoint: join(here, 'src', 'index.ts')});
-const comps = await getCompositions(serveUrl, {browserExecutable});
-for (const {id} of comps) {
+for (const {id} of await getCompositions(serveUrl, {browserExecutable})) {
   if (only && !id.includes(only)) continue;
   const composition = await selectComposition({serveUrl, id, browserExecutable});
-  // WebM (VP9) d'abord : Chromium et Firefox sans codecs système ne lisent pas le H.264.
-  // Le MP4 reste en secours pour les anciens Safari.
-  for (const [codec, ext, crf] of [['vp9', 'webm', 38], ['h264', 'mp4', 26]]) {
-    await renderMedia({
-      composition, serveUrl, codec, crf, pixelFormat: 'yuv420p',
-      outputLocation: join(out, `${id}.${ext}`), browserExecutable, muted: true,
-    });
-  }
-  await renderStill({
-    composition, serveUrl, frame: composition.durationInFrames - 1, imageFormat: 'jpeg', jpegQuality: 85,
-    output: join(out, `${id}.jpg`), browserExecutable,
+  const dir = mkdtempSync(join(tmpdir(), `loop-${id}-`));
+  await renderFrames({
+    composition, serveUrl, outputDir: dir, imageFormat: 'png', browserExecutable,
+    onStart: () => {}, onFrameUpdate: () => {},
   });
+  const frames = readdirSync(dir).filter((f) => f.endsWith('.png')).sort();
+  frames.forEach((f, i) => copyFileSync(join(dir, f), join(dir, `f${String(i).padStart(4, '0')}.png`)));
+  execFileSync('python3', [join(here, 'assemble.py'), dir, String(composition.fps), join(out, `${id}.webp`)]);
+  copyFileSync(join(dir, 'f0000.png'), join(out, `${id}.png`));
+  if (!process.env.KEEP_FRAMES) rmSync(dir, {recursive: true, force: true});
+  else console.log('frames', dir);
   console.log('ok', id);
 }

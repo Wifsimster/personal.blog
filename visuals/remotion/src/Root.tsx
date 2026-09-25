@@ -1,26 +1,29 @@
 import React from 'react';
 import {Composition} from 'remotion';
-import {CoupureTv, DURATION, type Props} from './CoupureTv';
+import {Breaker, Federation, LOOP, Threshold} from './Loops';
 
-const VARIANTS: Props[] = (['fr', 'en'] as const).flatMap((lang) =>
-  (['light', 'dark'] as const).flatMap((theme) =>
-    (['wide', 'tall'] as const).map((format) => ({lang, theme, format})),
-  ),
-);
+// Une composition par boucle et par thème : `<nom>-<thème>`.
+const LOOPS = {
+  federation: {component: Federation, fps: 20},
+  threshold: {component: Threshold, fps: 12},
+  breaker: {component: Breaker, fps: 20},
+};
 
 export const Root: React.FC = () => (
   <>
-    {VARIANTS.map((p) => (
-      <Composition
-        key={`${p.lang}-${p.theme}-${p.format}`}
-        id={`coupure-tv-${p.lang}-${p.theme}${p.format === 'tall' ? '-tall' : ''}`}
-        component={CoupureTv}
-        durationInFrames={DURATION}
-        fps={30}
-        width={p.format === 'wide' ? 1280 : 720}
-        height={p.format === 'wide' ? 640 : 840}
-        defaultProps={p}
-      />
-    ))}
+    {Object.entries(LOOPS).flatMap(([name, {component, fps}]) =>
+      (['light', 'dark'] as const).map((theme) => (
+        <Composition
+          key={`${name}-${theme}`}
+          id={`${name}-${theme}`}
+          component={component}
+          durationInFrames={LOOP.seconds * fps}
+          fps={fps}
+          width={LOOP.width}
+          height={LOOP.height}
+          defaultProps={{theme}}
+        />
+      )),
+    )}
   </>
 );

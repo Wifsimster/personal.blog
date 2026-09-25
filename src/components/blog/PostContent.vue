@@ -80,8 +80,8 @@ const sanitizedHtml = computed(() => {
   
   // Sanitize HTML to prevent XSS attacks
   const sanitized = DOMPurify.sanitize(processedHtml, {
-    ALLOWED_TAGS: ['p', 'br', 'hr', 'strong', 'em', 'u', 'abbr', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'blockquote', 'code', 'pre', 'a', 'img', 'picture', 'source', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'div', 'svg', 'g', 'rect', 'line', 'polygon', 'polyline', 'path', 'circle', 'ellipse', 'text', 'tspan', 'video'],
-    ALLOWED_ATTR: ['autoplay', 'muted', 'loop', 'playsinline', 'poster', 'preload', 'href', 'download', 'src', 'srcset', 'sizes', 'type', 'media', 'loading', 'decoding', 'alt', 'title', 'class', 'id', 'target', 'rel', 'data-gallery-image', 'viewBox', 'xmlns', 'role', 'aria-label', 'aria-labelledby', 'fill', 'fill-opacity', 'stroke', 'stroke-width', 'stroke-opacity', 'stroke-linecap', 'stroke-linejoin', 'stroke-dasharray', 'opacity', 'x', 'y', 'x1', 'x2', 'y1', 'y2', 'cx', 'cy', 'r', 'rx', 'ry', 'width', 'height', 'points', 'd', 'transform', 'font-family', 'font-size', 'font-weight', 'font-style', 'letter-spacing', 'text-anchor', 'dominant-baseline']
+    ALLOWED_TAGS: ['p', 'br', 'hr', 'strong', 'em', 'u', 'abbr', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li', 'blockquote', 'code', 'pre', 'a', 'img', 'picture', 'source', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'div', 'svg', 'g', 'rect', 'line', 'polygon', 'polyline', 'path', 'circle', 'ellipse', 'text', 'tspan'],
+    ALLOWED_ATTR: ['href', 'download', 'src', 'srcset', 'sizes', 'type', 'media', 'loading', 'decoding', 'alt', 'title', 'class', 'id', 'target', 'rel', 'data-gallery-image', 'viewBox', 'xmlns', 'role', 'aria-label', 'aria-labelledby', 'fill', 'fill-opacity', 'stroke', 'stroke-width', 'stroke-opacity', 'stroke-linecap', 'stroke-linejoin', 'stroke-dasharray', 'opacity', 'x', 'y', 'x1', 'x2', 'y1', 'y2', 'cx', 'cy', 'r', 'rx', 'ry', 'width', 'height', 'points', 'd', 'transform', 'font-family', 'font-size', 'font-weight', 'font-style', 'letter-spacing', 'text-anchor', 'dominant-baseline']
   })
 
   // Runs after sanitization: the regex only ever narrows an <a> tag DOMPurify
@@ -269,31 +269,9 @@ const setupDiagramScrollFades = async () => {
 }
 
 // Watch for HTML changes and set up handlers
-// Post videos are short silent loops (rendered with Remotion, see
-// visuals/remotion). Under prefers-reduced-motion they stay on their poster,
-// which is the loop's last frame, i.e. its conclusion.
-const setupPostVideos = async () => {
-  await nextTick()
-  if (!contentRef.value) return
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  contentRef.value.querySelectorAll('video').forEach((video) => {
-    video.muted = true
-    if (reduce) {
-      video.removeAttribute('autoplay')
-      video.pause()
-      // the poster attribute names the wide render; follow the <source media> pick
-      const poster = video.getAttribute('poster')
-      if (poster && window.matchMedia('(max-width: 640px)').matches) {
-        video.poster = poster.replace(/\.jpg$/, '-tall.jpg')
-      }
-    }
-  })
-}
-
 watch(() => props.html, () => {
   setupImageClickHandlers()
   setupAbbrTooltips()
-  setupPostVideos()
   hideAbbrTooltip()
   setupDiagramScrollFades()
 }, { immediate: false })
@@ -301,7 +279,6 @@ watch(() => props.html, () => {
 onMounted(() => {
   setupImageClickHandlers()
   setupAbbrTooltips()
-  setupPostVideos()
   setupDiagramScrollFades()
   document.addEventListener('pointerdown', onDocumentPointerDown)
   document.addEventListener('keydown', onDocumentKeydown)
