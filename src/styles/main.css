@@ -262,7 +262,7 @@
     width: 240px;
     max-width: 70%;
     height: auto;
-    margin: 0;
+    margin: 0 auto;
     border-radius: 0;
     box-shadow: none;
     cursor: default;
