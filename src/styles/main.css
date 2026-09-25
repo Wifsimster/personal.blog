@@ -253,6 +253,24 @@
     }
   }
 
+  /* Section loops: small silent animated WebP (Remotion, visuals/remotion)
+     under a heading. Decorative (alt=""); one file per theme, and a still
+     PNG under prefers-reduced-motion via <source media>. */
+  .prose .section-loop { display: block; margin: -0.25rem 0 1.25rem; }
+  .prose .section-loop img {
+    display: block;
+    width: 240px;
+    max-width: 70%;
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    cursor: default;
+  }
+  .prose .section-loop.loop-dark { display: none; }
+  .dark .prose .section-loop.loop-light { display: none; }
+  .dark .prose .section-loop.loop-dark { display: block; }
+
   .prose .diagram-svg {
     @apply block text-gray-700 dark:text-zinc-100;
     width: 100%;

@@ -18,3 +18,5 @@ coverage
 *.swp
 *.swo
 *~
+**/node_modules
+visuals

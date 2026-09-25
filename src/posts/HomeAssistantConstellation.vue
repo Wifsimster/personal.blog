@@ -19,6 +19,8 @@ const frenchContent: PostContent = {
 <p>Elle a été faite en une session, testée de bout en bout, le 18 septembre.</p>
 
 <h2>Pourquoi l'hétérogénéité change le calcul</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/federation-light.png"><img src="/visuals/cost-of-trying/federation-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/federation-dark.png"><img src="/visuals/cost-of-trying/federation-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>L'inventaire complet est dans <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">l'épisode précédent</a> : 87 appareils, 929 entités, 43 intégrations. Un seul chiffre compte ici. Matter devait être le standard qui range tout ça, et chez moi il pilote neuf appareils sur quatre-vingt-sept. Le reste est une longue traîne d'exceptions qui ne disparaîtra jamais : le kit Somfy qu'on n'atteint que par HomeKit, la porte de l'atelier commandée en infrarouge, huit ampoules Wi-Fi d'un constructeur chinois, des caméras en <abbr title="Standard ouvert d'interface pour caméras IP">ONVIF</abbr>.</p>
 <p>Sur une installation à un seul protocole, un agent n'a pas grand-chose à apporter. Ici, la moindre idée traverse trois systèmes et deux formats de configuration.</p>
 <blockquote><p>Home Assistant est une couche de fédération. Et une fédération se paie en contexte, celui qu'il faut tenir en tête avant chaque modification.</p></blockquote>
@@ -52,6 +54,8 @@ const frenchContent: PostContent = {
 <p>Aucune de ces tâches n'est difficile. Elles attendaient depuis des mois parce qu'elles sont pénibles, et rien d'autre.</p>
 
 <h2>Les idées qui passent enfin sous le seuil</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/threshold-light.png"><img src="/visuals/cost-of-trying/threshold-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/threshold-dark.png"><img src="/visuals/cost-of-trying/threshold-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>La liste de ce que j'accepte d'essayer s'est élargie. Ce changement-là n'apparaît sur aucun relevé d'activité.</p>
 <p><strong>Le calendrier scolaire.</strong> Celui de l'introduction, synchronisé toutes les six heures. Il gouverne d'un coup les routines du matin, du soir et du coucher. Seize semaines de corvée annuelle supprimées par une intégration qui ne pilote aucun appareil.</p>
 <p><strong>Un modèle solaire par façade.</strong> Chaque volet décide seul, à partir de la température de sa pièce et du soleil qui frappe, ou non, sa façade. Les orientations viennent du cadastre, recoupé avec un mois de relevés de température mis en face de la course du soleil. Le même travail a trouvé d'où venait la chaleur du bureau, et un ventilateur de plafond calé sur la température en est sorti. Il a ensuite désigné la phase du tableau électrique qui pouvait encore prendre une charge. Les deux réponses contredisaient mon premier calcul. Le détail est dans <a target="_blank" rel="noopener noreferrer" href="/posts/not-the-sun">le dernier épisode de la série</a>.</p>
@@ -76,6 +80,8 @@ const frenchContent: PostContent = {
 <blockquote><p>Une maison devient un objet qu'on ajuste au ressenti, le jour même, par petites touches.</p></blockquote>
 
 <h2>Ce qui reste aux humains</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/breaker-light.png"><img src="/visuals/cost-of-trying/breaker-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/breaker-dark.png"><img src="/visuals/cost-of-trying/breaker-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>La liste est courte et elle est stable.</p>
 <p><strong>Couper le courant.</strong> Le seul remède à une pile applicative figée est un cycle secteur. J'ai appris que « j'ai fait un reset » et « le module a perdu son alimentation » sont deux affirmations différentes. Il a fallu trois tentatives avant de tomber sur le bon disjoncteur.</p>
 <p><strong>Arbitrer l'agent.</strong> Sur ce même volet, il a annoncé « l'étage radio est mort, matériel à remplacer » quatre minutes avant que le module ne revienne tout seul. Le raisonnement tenait debout. Il lui manquait d'attendre dix minutes de plus. Un agent avance vite, y compris vers une mauvaise réponse, et rien dans son ton ne le signale.</p>
@@ -106,6 +112,8 @@ const englishContent: PostContent = {
 <p>It was built in one sitting, tested end to end, on 18 September.</p>
 
 <h2>Why heterogeneity changes the maths</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/federation-light.png"><img src="/visuals/cost-of-trying/federation-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/federation-dark.png"><img src="/visuals/cost-of-trying/federation-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The full inventory is in <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">the previous episode</a>: 87 devices, 929 entities, 43 integrations. One number matters here. Matter was supposed to be the standard that tidied this up, and in my house it drives nine devices out of eighty-seven. The rest is a long tail of exceptions that will never go away: a Somfy kit reachable only through HomeKit, a workshop door driven over infrared, eight Wi-Fi bulbs from a Chinese vendor, cameras on <abbr title="Open interface standard for IP cameras">ONVIF</abbr>.</p>
 <p>On a single-protocol setup, an agent has little to add. Here, the smallest idea crosses three systems and two configuration formats.</p>
 <blockquote><p>Home Assistant is a federation layer. And you pay for a federation in context, the context you must hold in your head before each change.</p></blockquote>
@@ -139,6 +147,8 @@ const englishContent: PostContent = {
 <p>None of these tasks is hard. They had been waiting for months because they are tedious, and for no other reason.</p>
 
 <h2>The ideas that finally clear the bar</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/threshold-light.png"><img src="/visuals/cost-of-trying/threshold-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/threshold-dark.png"><img src="/visuals/cost-of-trying/threshold-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The list of things I am willing to attempt got wider. That change shows up on no activity log.</p>
 <p><strong>The school calendar.</strong> The one from the opening, synced every six hours. It now governs the morning, evening and bedtime routines in one move. Sixteen weeks of annual chore removed by an integration that drives no device at all.</p>
 <p><strong>A per-facade solar model.</strong> Each shutter decides on its own, from its room temperature and the sun's position on its facade. The orientations come from the land registry, cross-checked against a month of temperature readings set beside the sun's path. The same work traced where the office heat came from, and a ceiling fan tuned to the room temperature came out of it. It then picked out the phase of the electrical panel that could still take a load. Both answers contradicted my first calculation. The details are in <a target="_blank" rel="noopener noreferrer" href="/posts/not-the-sun">the last episode of the series</a>.</p>
@@ -163,6 +173,8 @@ const englishContent: PostContent = {
 <blockquote><p>A house becomes something you adjust by feel, same-day, in small strokes.</p></blockquote>
 
 <h2>What still belongs to humans</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/breaker-light.png"><img src="/visuals/cost-of-trying/breaker-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/cost-of-trying/breaker-dark.png"><img src="/visuals/cost-of-trying/breaker-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The list is short and it is stable.</p>
 <p><strong>Cutting the power.</strong> The only cure for a wedged application stack is a power cycle. I learned that "I reset it" and "the module lost power" are two different claims. It took three attempts to find the right breaker.</p>
 <p><strong>Refereeing the agent.</strong> On that same shutter, it announced "the radio stage is dead, replace the hardware" four minutes before the module came back on its own. The reasoning held up. What it lacked was waiting another ten minutes. An agent moves fast, including toward a wrong answer, and nothing in its tone flags the difference.</p>
