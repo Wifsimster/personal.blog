@@ -18,9 +18,13 @@ const frenchContent: PostContent = {
 <p>J'ai passé les trois épisodes précédents à me méfier de ce que les machines racontent. Celui-ci est différent. Le montage technique fonctionnait dès le premier jour.</p>
 
 <h2>La chaîne audio n'était pas en cause</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-light.png"><img src="/visuals/no-choices/speaker-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-dark.png"><img src="/visuals/no-choices/speaker-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>Elle mérite deux phrases, parce qu'elle a été montée en une soirée et n'a plus jamais bougé. La synthèse vocale tourne dans un conteneur, en français, sans aucun service externe. Les treize automatisations n'adressent jamais une enceinte directement : elles appellent un script unique qui choisit la pièce, le volume et le canal, ce qui laisse un seul endroit à corriger le jour où les enceintes changent de nom.</p>
 
 <h2>Huit règles, écrites après coup</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-light.png"><img src="/visuals/no-choices/rules-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-dark.png"><img src="/visuals/no-choices/rules-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>Le vrai chantier était ailleurs. Les treize messages ont été réécrits en une passe, selon une grille que j'ai fini par formuler explicitement.</p>
 <ol>
 <li><strong>Le prénom en tête.</strong> Une consigne impersonnelle ne désigne personne, donc personne ne bouge. « On range ses affaires » s'adresse à la pièce.</li>
@@ -54,6 +58,8 @@ const frenchContent: PostContent = {
 <p>Les messages adressés aux adultes suivent des règles opposées et gardent leur contenu logistique. Celui de 8 h 00 a seulement été reformulé en alerte, « vous devriez déjà être partis », parce que ceux qui l'entendent encore sont précisément ceux qui ne sont pas partis.</p>
 
 <h2>Le réveil, trois versions dans la même journée</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/wakeup-light.png"><img src="/visuals/no-choices/wakeup-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/wakeup-dark.png"><img src="/visuals/no-choices/wakeup-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>La première version du réveil annonçait, puis lançait la musique. Elle a tenu une matinée. Se faire réveiller par une voix ne passait pas.</p>
 <p>La séquence a été inversée le jour même. La musique devient le réveil, et la consigne passe par-dessus quatre-vingt-dix secondes plus tard.</p>
 <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Courbe montrant le volume de l'enceinte grimper de dix à trente pour cent par paliers de cinq points toutes les vingt secondes, avec un repère vertical à quatre-vingt-dix secondes marquant le moment où la consigne vocale passe par-dessus la musique, quel que soit le réglage de la rampe." class="diagram-svg">
@@ -124,9 +130,13 @@ const englishContent: PostContent = {
 <p>I spent the last three episodes distrusting what machines report. This one is different. The technical setup worked from day one.</p>
 
 <h2>The audio chain was not at fault</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-light.png"><img src="/visuals/no-choices/speaker-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-dark.png"><img src="/visuals/no-choices/speaker-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>It deserves two sentences, because it went up in one evening and never moved again. Speech synthesis runs in a container, in French, with no external service. The thirteen automations never address a speaker directly: they call one script that picks the room, the volume and the channel, which leaves one place to fix the day the speakers change names.</p>
 
 <h2>Eight rules, written afterwards</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-light.png"><img src="/visuals/no-choices/rules-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-dark.png"><img src="/visuals/no-choices/rules-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The actual work was elsewhere. I rewrote every message in a single sweep, against a grid I ended up stating explicitly.</p>
 <ol>
 <li><strong>Name first.</strong> An impersonal instruction addresses nobody, so nobody moves. "We tidy our things" is addressed to the room.</li>
@@ -160,6 +170,8 @@ const englishContent: PostContent = {
 <p>Messages addressed to adults follow the opposite rules and keep their logistics. The 8 a.m. one was only reframed as an alert, "you should have left by now", because whoever still hears it is precisely whoever has not left.</p>
 
 <h2>The wake-up, three versions in one day</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/wakeup-light.png"><img src="/visuals/no-choices/wakeup-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/wakeup-dark.png"><img src="/visuals/no-choices/wakeup-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The original wake-up announced, then started the music. It lasted one morning. Being woken by a voice did not go down well.</p>
 <p>The sequence was flipped the same day. Music becomes the alarm, and the instruction is layered over it ninety seconds later.</p>
 <svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Curve showing the speaker's volume climbing from ten to thirty percent in five-point steps every twenty seconds, with a vertical marker at ninety seconds marking the point where the spoken instruction is layered over the music, whatever the ramp is set to." class="diagram-svg">

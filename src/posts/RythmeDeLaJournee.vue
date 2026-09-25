@@ -18,6 +18,8 @@ const frenchContent: PostContent = {
 <p>Ce n'est pas la partie impressionnante de mon installation. C'est celle qui a le plus changé la maison, et celle dont la mise en place a été la plus rapide.</p>
 
 <h2>Le soir, brique par brique</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/bricks-light.png"><img src="/visuals/daily-rhythm/bricks-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/bricks-dark.png"><img src="/visuals/daily-rhythm/bricks-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>Le premier morceau posé a été la coupure de télévision. Une prise <abbr title="Réseau maillé radio basse consommation, 2,4 GHz">Zigbee</abbr>, une automatisation à 19 h 30, une autre à 20 h 30 pour la rendre. Quinze minutes.</p>
 <p>Puis l'annonce de 19 h 25, qui prévient cinq minutes avant. Puis la fermeture des volets, calée sur la même heure. Puis le temps calme à 19 h 31, pour que l'extinction soit suivie d'une consigne plutôt que d'un vide.</p>
 <p>Chaque brique a pris une soirée au plus, et aucune n'a été pensée à l'avance. J'ai corrigé après chaque essai.</p>
@@ -27,6 +29,8 @@ const frenchContent: PostContent = {
 <p>La fermeture, elle, repose sur deux filets. Une fermeture systématique à 20 h 30, et une fermeture de nuit une heure après le coucher du soleil. Le second suffisait en théorie, mais en été il laissait le portail ouvert jusqu'à 23 h.</p>
 
 <h2>Mercredi, tout glisse de cinquante-cinq minutes</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-light.png"><img src="/visuals/daily-rhythm/slide-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-dark.png"><img src="/visuals/daily-rhythm/slide-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>La maison suit un emploi du temps réel, pas un emploi du temps moyen. Il y a école le lundi, le mardi, le jeudi et le vendredi. Le mercredi, il n'y a pas école. Le mercredi soir reste pourtant la veille d'un jour d'école, donc la même routine s'y joue, décalée.</p>
 <svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nuage de points relié comparant, pour sept étapes de la routine du soir, l'heure un jour d'école et l'heure le mercredi sur un même axe horaire : chaque étape glisse d'environ cinquante-cinq minutes, sauf le coucher, où les deux points se superposent exactement à vingt heures trente." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SOIR · MÊME ROUTINE, HORAIRES DÉCALÉS</text>
@@ -92,6 +96,8 @@ const frenchContent: PostContent = {
 <p>Chaque étape porte donc deux horaires, et l'automatisation choisit selon celui qui l'a déclenchée. Les durées entre étapes sont conservées à l'identique. Ce sont les trente minutes de télévision et le temps calme qui encaissent le retard, pas le sommeil. Le matin fonctionne pareil : lever à 7 h 15 les jours d'école, 8 h 00 le mercredi, avec le même espacement de quarante minutes jusqu'au départ.</p>
 
 <h2>Un jeu de données pour seize semaines par an</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/calendar-light.png"><img src="/visuals/daily-rhythm/calendar-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/calendar-dark.png"><img src="/visuals/daily-rhythm/calendar-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>Cette mécanique doit s'arrêter pendant les vacances scolaires. Sinon le réveil et le portail tournent pour rien.</p>
 <p><a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'épisode 2</a> raconte comment l'interrupteur que je basculais à la main est devenu un capteur branché sur le calendrier scolaire officiel.</p>
 <svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma en trois étages : le jeu de données officiel du calendrier scolaire alimente un capteur qui pilote un seul booléen, lequel gouverne d'un coup la routine du matin, la routine du soir et les trois automatisations de télévision." class="diagram-svg">
@@ -171,6 +177,8 @@ const englishContent: PostContent = {
 <p>It is not the impressive part of my installation. It is the part that changed the house the most, and the part that took the least time to build.</p>
 
 <h2>The evening, one piece at a time</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/bricks-light.png"><img src="/visuals/daily-rhythm/bricks-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/bricks-dark.png"><img src="/visuals/daily-rhythm/bricks-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The first piece was the television cut. A <abbr title="Low-power 2.4 GHz mesh radio protocol">Zigbee</abbr> socket and two automations, one at 7:30 p.m. and one at 8:30. A quarter of an hour's work.</p>
 <p>Then the 7:25 announcement, which gives five minutes' notice. Then the shutters closing, set to the same time. Then quiet time at 7:31, so that switching off is followed by an instruction rather than a void.</p>
 <p>Each piece took an evening at most, and none of them was planned in advance. I corrected after each attempt.</p>
@@ -180,6 +188,8 @@ const englishContent: PostContent = {
 <p>Closing rests on two nets. A systematic close at 8:30 p.m., and a night close one hour after sunset. The second was enough in theory, but in summer it left the gate open until 11 p.m.</p>
 
 <h2>Wednesday, everything slides by fifty-five minutes</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-light.png"><img src="/visuals/daily-rhythm/slide-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-dark.png"><img src="/visuals/daily-rhythm/slide-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The house follows a real timetable, not an average one. School runs on Monday, Tuesday, Thursday and Friday. Wednesday has no school. Wednesday evening is still the night before a school day, so the same routine runs, shifted.</p>
 <svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Connected dot plot comparing, for seven evening-routine steps, the school-day time and the Wednesday time on the same hour axis: every step slides by about fifty-five minutes, except bedtime, where the two points sit exactly on top of each other at half past eight." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">EVENING · SAME ROUTINE, SHIFTED</text>
@@ -245,6 +255,8 @@ const englishContent: PostContent = {
 <p>Every step therefore carries two times, and the automation picks according to which one fired it. The gaps between steps are preserved exactly. The thirty minutes of television and the quiet time take the hit, not the sleep. Mornings shift too: up at 7:15 on school days, 8:00 on Wednesday, with the same forty-minute spacing through to leaving.</p>
 
 <h2>One dataset for sixteen weeks a year</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/calendar-light.png"><img src="/visuals/daily-rhythm/calendar-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/calendar-dark.png"><img src="/visuals/daily-rhythm/calendar-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>This machinery has to stop during school holidays. Otherwise the wake-up and the gate run for nothing.</p>
 <p><a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">Episode 2</a> tells how the switch I flipped by hand became a sensor wired to the official school calendar.</p>
 <svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three-stage diagram: the official school calendar dataset feeds a sensor that drives a single boolean, which in turn governs the morning routine, the evening routine and the three television automations at once." class="diagram-svg">
