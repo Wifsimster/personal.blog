@@ -1,5 +1,5 @@
 // Rend chaque boucle en WebP animé transparent (façon GIF, assemblé par Pillow) + un PNG fixe
-// servi sous prefers-reduced-motion, dans public/visuals/<slug>/.
+// servi sous prefers-reduced-motion, dans public/visuals/<slug>/ (le slug vient des props de la composition).
 //   node render.mjs [filtre]      REMOTION_BROWSER=<chrome> pour un navigateur local
 import {bundle} from '@remotion/bundler';
 import {renderFrames, getCompositions, selectComposition} from '@remotion/renderer';
@@ -10,8 +10,7 @@ import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
-const out = join(here, '..', '..', 'public', 'visuals', 'cost-of-trying');
-mkdirSync(out, {recursive: true});
+const visuals = join(here, '..', '..', 'public', 'visuals');
 const browserExecutable = process.env.REMOTION_BROWSER || undefined;
 const only = process.argv[2];
 
@@ -19,6 +18,8 @@ const serveUrl = await bundle({entryPoint: join(here, 'src', 'index.ts')});
 for (const {id} of await getCompositions(serveUrl, {browserExecutable})) {
   if (only && !id.includes(only)) continue;
   const composition = await selectComposition({serveUrl, id, browserExecutable});
+  const out = join(visuals, composition.props.slug);
+  mkdirSync(out, {recursive: true});
   const dir = mkdtempSync(join(tmpdir(), `loop-${id}-`));
   await renderFrames({
     composition, serveUrl, outputDir: dir, imageFormat: 'png', browserExecutable,

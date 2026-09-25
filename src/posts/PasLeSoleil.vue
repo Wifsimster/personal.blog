@@ -16,6 +16,8 @@ const frenchContent: PostContent = {
 <p>Trois heures du matin, mi-août. Le bureau est à 29 °C. Il n'y a pas eu de soleil depuis neuf heures. J'ai passé une partie de l'été à construire un modèle solaire de ma maison pour piloter six volets. Ce modèle m'a surtout appris que sur la pièce qui me gênait le plus, les volets ne servaient à rien.</p>
 
 <h2>D'un mode global à six décisions séparées</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/shutters-light.png"><img src="/visuals/not-the-sun/shutters-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/shutters-dark.png"><img src="/visuals/not-the-sun/shutters-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>La première version était un interrupteur « canicule ». Quand je le basculais, une règle unique s'appliquait à toute la maison : fermer si dehors est plus chaud que dedans.</p>
 <p>Elle avait le défaut de sa simplicité. Une maison n'a pas une température, elle en a autant que de pièces, et chaque pièce reçoit le soleil à une heure différente. La moyenne de la maison masquait tout.</p>
 <p>Dans la nouvelle version, chaque volet a sa propre cible de position, calculée à partir de deux choses : la température de sa pièce, et un capteur qui dit si le soleil frappe sa façade en ce moment.</p>
@@ -64,6 +66,8 @@ const frenchContent: PostContent = {
 <p>Le pignon sud-sud-ouest est le mieux exposé à l'année, mais c'est le plus petit. Le cellier ne prend le soleil qu'en fin de journée, par sa seule ouverture.</p>
 
 <h2>Le cadastre dit ce que la courbe de température ne dit pas</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/facades-light.png"><img src="/visuals/not-the-sun/facades-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/facades-dark.png"><img src="/visuals/not-the-sun/facades-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>Ma première tentative d'orientation venait uniquement des données. J'avais corrélé trente jours de température de chaque pièce avec l'azimut du soleil, et j'en avais déduit une façade « est » entre 60 et 150 degrés.</p>
 <p>Ce calcul, je ne l'aurais jamais lancé à la main. Il a tourné pendant que je cherchais le plan cadastral.</p>
 <p>Deux erreurs dans ce seul résultat. La normale réelle de cette façade est à 114 degrés, donc mon intervalle était décentré. Et surtout il ne contenait aucune façade ouest, alors que la maison en a une.</p>
@@ -103,6 +107,8 @@ const frenchContent: PostContent = {
 <p>J'ai aussi écarté une hypothèse séduisante. Je soupçonnais la pièce voisine, un cellier sans volet, de conduire sa chaleur vers le bureau. Les mesures disent l'inverse : le cellier reste à 25 ou 26 °C. Le gradient va donc du bureau vers le cellier, qui lui sert de puits et non de source.</p>
 
 <h2>Le même piège sur le tableau électrique</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/phases-light.png"><img src="/visuals/not-the-sun/phases-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/phases-dark.png"><img src="/visuals/not-the-sun/phases-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>La maison est en triphasé 9 <abbr title="Kilovoltampère — la puissance que le compteur autorise, qui n'est pas exactement des kilowatts">kVA</abbr>, avec un compteur par phase. La question que je me posais était simple : sur quelle phase puis-je encore brancher quelque chose.</p>
 <p>Ma première analyse regardait la puissance maximale par heure. Elle désignait la phase A comme saturée, à 2 882 W, soit 96 % de sa capacité. Conclusion : ne plus rien y mettre.</p>
 <p>C'était faux, et l'erreur tient à l'unité.</p>
@@ -175,6 +181,8 @@ const englishContent: PostContent = {
 <p>Three in the morning, mid-August. The office is at 29 °C. There has been no sun for nine hours. I spent part of the summer building a solar model of my house to drive six shutters. What that model mostly taught me is that on the room bothering me the most, the shutters were beside the point.</p>
 
 <h2>From one global mode to six separate decisions</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/shutters-light.png"><img src="/visuals/not-the-sun/shutters-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/shutters-dark.png"><img src="/visuals/not-the-sun/shutters-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The first version was a heatwave switch. When I flipped it, a single rule applied to the whole house: close if it is hotter outside than in.</p>
 <p>It carried the flaw of its own simplicity. A house does not have one temperature, it has as many as it has rooms, and every room gets the sun at a different hour. The house average hid all of it.</p>
 <p>In the new version, every shutter has its own target position, computed from two things: its room's temperature, and a sensor that says whether the sun is currently hitting its facade.</p>
@@ -223,6 +231,8 @@ const englishContent: PostContent = {
 <p>The south-south-west gable is the best exposed across the year, and the smallest. The utility room only catches the sun late in the day, through its single opening.</p>
 
 <h2>The land registry says what the temperature curve cannot</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/facades-light.png"><img src="/visuals/not-the-sun/facades-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/facades-dark.png"><img src="/visuals/not-the-sun/facades-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>My first attempt at orientation came from the data alone. I had correlated thirty days of each room's temperature against the sun's azimuth, and concluded there was an "east" facade somewhere between 60 and 150 degrees.</p>
 <p>I would never have started that computation by hand. It ran while I was digging out the cadastral plan.</p>
 <p>Two errors in that single result. The real normal of that facade is 114 degrees, so my interval was off centre. And more importantly it contained no west facade at all, while the house has one.</p>
@@ -262,6 +272,8 @@ const englishContent: PostContent = {
 <p>I also ruled out a tempting hypothesis. I suspected the neighbouring utility room, which has no shutter, of conducting its heat into the office. The measurements say the opposite: the utility room stays at 25 or 26 °C. The gradient runs from the office into the utility room, which acts as a sink rather than a source.</p>
 
 <h2>The same trap on the electrical panel</h2>
+<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/phases-light.png"><img src="/visuals/not-the-sun/phases-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
+<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/not-the-sun/phases-dark.png"><img src="/visuals/not-the-sun/phases-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The house runs on a 9 <abbr title="Kilovolt-ampere — the power the meter allows, which is not quite kilowatts">kVA</abbr> three-phase supply, with a meter per phase. My question was simple: which phase can still take something.</p>
 <p>My first pass looked at maximum hourly power. It flagged phase A as saturated, at 2,882 W, or 96% of its capacity. Conclusion: put nothing else on it.</p>
 <p>That was wrong, and the error is in the unit.</p>
