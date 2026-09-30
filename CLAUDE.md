@@ -114,7 +114,7 @@ Don't use it for one-shot tasks — a typo fix doesn't need four personas.
   - **Deploy:** `fix(deploy): ...`.
   - **SEO / build features:** `feat(seo): ...`.
   - **Version bumps:** `chore: bump version to X.Y.Z` — **automated by the release workflow, don't author by hand.**
-- **Commit footer:** the harness auto-appends `https://claude.ai/code/session_...` — leave it. Don't add a `Co-Authored-By: Claude` line yourself unless the harness already did; the existing history is inconsistent and the author is fine with either shape.
+- **Commit footer:** none. Agent attribution is turned off globally (`attribution` in `~/.claude/settings.json`, 2026-09-30), so the harness no longer appends a session link or a `Co-Authored-By: Claude` line; don't add either by hand. Older history is inconsistent; leave it as is.
 - **Versioning:** `chore: bump version` is automated by `release.yml`. Don't touch `package.json`'s `version` field manually.
 - **The blog is small and personal.** Don't over-engineer. The release-pipeline meeting explicitly chose proportionality: no E2E test suite, no smoke-test job, no enterprise observability stack. A `curl /` after deploy is the right amount.
 - **Privacy first.** Never add a third-party script (GA, Plausible cloud, Sentry public DSN, etc.). Anything new must be self-hostable on the existing Docker Compose stack.
