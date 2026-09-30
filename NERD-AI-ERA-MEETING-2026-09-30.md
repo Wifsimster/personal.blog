@@ -90,7 +90,7 @@ funnel over one quarter). No data, no diagram; never estimate.
 1. **Independent post, not a sequel.** It must stand alone; at most one short link to `agentic-ai-addiction`, no retelling of it.
 2. **"No life": follow the recommendation** — dissect the word, separate passion from compulsion, do not reclaim it as a badge.
 3. **Data: pull it from the author's repositories, previous articles and home-automation work** (no invented numbers; diagrams only on real data).
-4. Healthcare POC: not answered. Default: short section, explicitly opinion-flagged, no invented case.
+4. Healthcare/work section: **removed** (author, 2026-09-30 20:34 UTC: no health section, personal only).
 5. Title/"liberates": not answered. Default: follow the reframe (cost of trying removed, cost of finishing unchanged), field-report framing.
 
 ## Follow-ups for the human

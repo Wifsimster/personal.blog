@@ -200,11 +200,6 @@ const frenchContent: PostContent = {
 <p>L'échantillon est petit, et il ne couvre que du code existant. METR qualifie elle-même de signal peu fiable les chiffres de son suivi de 2026. J'en retiens une seule chose : l'impression d'aller vite ne mesure rien.</p>
 <p>Il y a aussi la face sombre, la boucle qui empêche de s'arrêter. Je l'ai <a target="_blank" rel="noopener noreferrer" href="/posts/agentic-ai-addiction">décrite de près ailleurs</a>. La frontière entre passion et compulsion tient en une question : est-ce que je choisis encore d'arrêter ?</p>
 
-<h2>Au travail, un POC n'est pas une fonctionnalité validée</h2>
-<p>Ce qui suit est une opinion, pas une mesure. Je dirige une équipe qui développe un logiciel de santé réglementé. Là aussi, le coût d'essayer a baissé. Pour explorer une idée, c'est une excellente nouvelle.</p>
-<p>Mais un <abbr title="Proof of Concept, preuve de concept : un prototype qui montre qu'une idée est faisable">POC</abbr> monté en une soirée n'a rien de ce que la réglementation exige. Pas d'exigences tracées. Pas de validation. Pas d'analyse de risque. Il marche sur la démo, pas pour le patient.</p>
-<p>Le danger n'est pas le prototype raté. C'est le prototype réussi à 90 %, qui glisse vers un usage clinique parce qu'il avait l'air fini. Pour moi, un POC sert à décider. Il ne sert jamais à livrer.</p>
-
 <h2>Ce qui reste aux humains</h2>
 <p><strong>Le goût.</strong> <abbr title="Anil R. Doshi et Oliver P. Hauser, auteurs de l'étude publiée dans Science Advances en 2024">Doshi et Hauser</abbr> ont donné des idées générées par IA à des auteurs de courtes histoires, 293 au total. Les textes ont été jugés plus originaux (+8,1 %) et plus utiles (+9,0 %). Le gain était plus fort chez les moins créatifs. Mais les histoires se ressemblaient davantage entre elles.</p>
 <p>Ce n'était pas du logiciel. J'en garde le risque : si tout le monde essaie avec le même outil, tout le monde converge.</p>
@@ -213,7 +208,7 @@ const frenchContent: PostContent = {
 
 <h2>Lundi matin</h2>
 <ol>
-<li><strong>Donnez 48 heures à un POC.</strong> Au bout de deux jours, il a un usage réel, même pour une seule personne, ou il part aux archives. Notez la date et la décision dans le <abbr title="Fichier de présentation à la racine d'un dépôt">README</abbr>.</li>
+<li><strong>Donnez 48 heures à un <abbr title="Proof of Concept, preuve de concept : un prototype qui montre qu'une idée est faisable">POC</abbr>.</strong> Au bout de deux jours, il a un usage réel, même pour une seule personne, ou il part aux archives. Notez la date et la décision dans le <abbr title="Fichier de présentation à la racine d'un dépôt">README</abbr>.</li>
 <li><strong>Tenez un cimetière assumé.</strong> Une fois par mois, listez les dépôts sans commit depuis trente jours. Pour chacun, deux issues : archiver avec une ligne qui dit pourquoi, ou écrire la prochaine étape. Un dépôt sans l'un ni l'autre n'a pas le droit de rester vivant.</li>
 <li><strong>Finissez une chose par mois.</strong> Fini veut dire : une version publiée, un README qui dit ce que ça fait, et une décision écrite, maintenu ou archivé. À la fin du mois, comptez. Zéro, c'est aussi une réponse.</li>
 </ol>
@@ -426,11 +421,6 @@ const englishContent: PostContent = {
 <p>The sample is small and it covers <abbr title="Existing codebases with history and users, as opposed to greenfield projects started from scratch">brownfield</abbr> code only. METR's own 2026 follow-up calls its newer numbers an unreliable signal. I take one thing from it: feeling fast measures nothing.</p>
 <p>There is also a darker side, the loop that won't let you stop. I have <a target="_blank" rel="noopener noreferrer" href="/posts/agentic-ai-addiction">looked at it up close elsewhere</a>. The line between passion and compulsion comes down to one question: am I still the one choosing to stop?</p>
 
-<h2>At work, a POC is not a validated feature</h2>
-<p>What follows is opinion, not measurement. I lead a team building regulated healthcare software. The cost of trying dropped there too. For exploring an idea, that is great news.</p>
-<p>But a <abbr title="Proof of concept: a prototype showing that an idea can work">POC</abbr> built in one evening has none of what regulation requires. No traced requirements. No validation. No risk analysis. It works in the demo, not for the patient.</p>
-<p>The danger isn't the prototype that fails. It's the one that is 90% there and drifts into a clinical workflow because it looked finished. My rule: a POC exists to make a decision. It never exists to ship.</p>
-
 <h2>What still belongs to humans</h2>
 <p><strong>Taste.</strong> <abbr title="Anil R. Doshi and Oliver P. Hauser, authors of the 2024 Science Advances study">Doshi and Hauser</abbr> gave AI-generated ideas to 293 people writing short stories. The stories were rated more novel (+8.1%) and more useful (+9.0%). The least creative writers gained the most. But the stories ended up more alike.</p>
 <p>That was fiction, not software. What I keep is the risk: if everyone tries things with the same tool, everyone drifts toward the same place.</p>
@@ -439,7 +429,7 @@ const englishContent: PostContent = {
 
 <h2>Monday morning</h2>
 <ol>
-<li><strong>Give a POC 48 hours.</strong> After two days it has a real use, even for one person, or it goes to the archive. Write the date and the call in the <abbr title="The introduction file at the root of a repository">README</abbr>.</li>
+<li><strong>Give a <abbr title="Proof of concept: a prototype showing that an idea can work">POC</abbr> 48 hours.</strong> After two days it has a real use, even for one person, or it goes to the archive. Write the date and the call in the <abbr title="The introduction file at the root of a repository">README</abbr>.</li>
 <li><strong>Keep a graveyard on purpose.</strong> Once a month, list the repos with no commit in thirty days. Each one gets one of two outcomes: archived with a line saying why, or a written next step. A repo with neither doesn't get to stay alive.</li>
 <li><strong>Finish one thing a month.</strong> Finished means a published release, a README saying what it does, and a written call: maintained or archived. At the end of the month, count. Zero is an answer too.</li>
 </ol>
