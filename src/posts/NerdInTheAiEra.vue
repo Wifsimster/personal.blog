@@ -206,11 +206,12 @@ const frenchContent: PostContent = {
 <p><strong>Le tri.</strong> Aucun agent ne sait lequel de mes 17 dépôts mérite une soirée de plus.</p>
 <p><strong>L'arrêt.</strong> Fermer un dépôt reste un geste humain. C'est aussi celui qui sépare la passion du no-life.</p>
 
-<h2>Lundi matin</h2>
+<h2>Trois règles que je veux tenir</h2>
+<p>Je n'ai pas de méthode à vendre. Seulement trois garde-fous, pour que l'envie d'essayer ne tourne pas à l'encombrement.</p>
 <ol>
-<li><strong>Donnez 48 heures à un <abbr title="Proof of Concept, preuve de concept : un prototype qui montre qu'une idée est faisable">POC</abbr>.</strong> Au bout de deux jours, il a un usage réel, même pour une seule personne, ou il part aux archives. Notez la date et la décision dans le <abbr title="Fichier de présentation à la racine d'un dépôt">README</abbr>.</li>
-<li><strong>Tenez un cimetière assumé.</strong> Une fois par mois, listez les dépôts sans commit depuis trente jours. Pour chacun, deux issues : archiver avec une ligne qui dit pourquoi, ou écrire la prochaine étape. Un dépôt sans l'un ni l'autre n'a pas le droit de rester vivant.</li>
-<li><strong>Finissez une chose par mois.</strong> Fini veut dire : une version publiée, un README qui dit ce que ça fait, et une décision écrite, maintenu ou archivé. À la fin du mois, comptez. Zéro, c'est aussi une réponse.</li>
+<li><strong>Deux soirées pour prouver son utilité.</strong> Un essai qui n'a servi à personne au bout de deux soirées, moi compris, part aux archives. J'ajoute une ligne pour me rappeler pourquoi.</li>
+<li><strong>Un tour du cimetière chaque mois.</strong> Je liste les dépôts muets depuis trente jours. Chacun est archivé ou reçoit une prochaine étape écrite. Pas d'entre-deux.</li>
+<li><strong>Une chose terminée par mois.</strong> Terminée veut dire que quelqu'un d'autre pourrait s'en servir sans moi. Zéro, c'est aussi une réponse honnête.</li>
 </ol>
 
 <p><strong>Lire aussi :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">Le SDLC est mort</a> — la boucle du maker appliquée au logiciel professionnel. <a target="_blank" rel="noopener noreferrer" href="/posts/ai-team-reflex">L'IA est devenue un réflexe d'équipe</a> — essayer, à l'échelle d'une équipe. <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> — dix ans de montages du week-end, et l'inventaire d'aujourd'hui.</p>
@@ -427,11 +428,12 @@ const englishContent: PostContent = {
 <p><strong>Sorting.</strong> No agent knows which of my 17 repos deserves another evening.</p>
 <p><strong>Stopping.</strong> Closing a repo is still a human move. It is also the one that separates passion from no-life.</p>
 
-<h2>Monday morning</h2>
+<h2>Three rules I want to keep</h2>
+<p>I have no method to sell. Just three guardrails, so the urge to try things doesn't turn into clutter.</p>
 <ol>
-<li><strong>Give a <abbr title="Proof of concept: a prototype showing that an idea can work">POC</abbr> 48 hours.</strong> After two days it has a real use, even for one person, or it goes to the archive. Write the date and the call in the <abbr title="The introduction file at the root of a repository">README</abbr>.</li>
-<li><strong>Keep a graveyard on purpose.</strong> Once a month, list the repos with no commit in thirty days. Each one gets one of two outcomes: archived with a line saying why, or a written next step. A repo with neither doesn't get to stay alive.</li>
-<li><strong>Finish one thing a month.</strong> Finished means a published release, a README saying what it does, and a written call: maintained or archived. At the end of the month, count. Zero is an answer too.</li>
+<li><strong>Two evenings to prove it's useful.</strong> A try that has served nobody after two evenings, me included, goes to the archive. I add one line to remind myself why.</li>
+<li><strong>A monthly walk through the graveyard.</strong> I list the repos that have been silent for thirty days. Each one is archived or gets a written next step. No limbo.</li>
+<li><strong>One finished thing a month.</strong> Finished means someone else could use it without me. Zero is an honest answer too.</li>
 </ol>
 
 <p><strong>Read next:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">The SDLC Is Dead</a> — the maker's loop brought into professional software. <a target="_blank" rel="noopener noreferrer" href="/posts/ai-team-reflex">AI Became a Team Reflex</a> — trying things, at team scale. <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent.</a> — a decade of weekend builds, and the inventory today.</p>
