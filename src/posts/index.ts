@@ -43,6 +43,7 @@ import DixAnsDeDomotique, { metadata as tenYearsMetadata, getContent as getTenYe
 import RythmeDeLaJournee, { metadata as dailyRhythmMetadata, getContent as getDailyRhythmContent } from './RythmeDeLaJournee.vue'
 import AnnoncesSansChoix, { metadata as noChoicesMetadata, getContent as getNoChoicesContent } from './AnnoncesSansChoix.vue'
 import PasLeSoleil, { metadata as notTheSunMetadata, getContent as getNotTheSunContent } from './PasLeSoleil.vue'
+import NerdInTheAiEra, { metadata as nerdInTheAiEraMetadata, getContent as getNerdInTheAiEraContent } from './NerdInTheAiEra.vue'
 
 export interface PostComponentInfo {
   metadata: PostMetadata
@@ -245,6 +246,11 @@ const postRegistry: Record<string, PostComponentInfo> = {
     metadata: skillsNotSeatsMetadata,
     getContent: getSkillsNotSeatsContent,
     component: SkillsNotSeats
+  },
+  'nerd-in-the-ai-era': {
+    metadata: nerdInTheAiEraMetadata,
+    getContent: getNerdInTheAiEraContent,
+    component: NerdInTheAiEra
   },
   'cost-of-trying': {
     metadata: costOfTryingMetadata,
