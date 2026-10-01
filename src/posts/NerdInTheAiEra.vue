@@ -11,96 +11,13 @@ export const metadata: PostMetadata = {
 
 const frenchContent: PostContent = {
   title: "Être un nerd à l'ère de l'IA",
-  description: "Nerd, geek, hacker, maker, no-life : d'où viennent ces mots, et ce que mes dépôts GitHub de 2016 et de 2026 disent de l'envie d'essayer. L'IA a fait tomber la barrière du premier pas. Décider quoi garder, le mener au bout et le faire vivre reste à ma charge.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Nerd, geek, hacker, maker, no-life : cinq mots pour la même manie, qui ne disent pas la même chose. Deux sont nés comme des insultes. Deux décrivent un geste. Le dernier décrit un manque. Mes dépôts GitHub racontent la suite. En 2016, j'en ai ouvert 21, et la moitié s'est arrêtée à neuf commits ou moins. En 2026, au 30 septembre, j'en ai ouvert 17, et la moitié a atteint 136 commits. L'envie est la même. Avec l'IA, le ticket d'entrée a presque disparu. Trier, terminer et entretenir se paient au même tarif qu'avant.</p></div>
+  description: "Ce que mes dépôts GitHub de 2016 et de 2026 disent de l'envie d'essayer, pour les hackers et les makers. L'IA a fait tomber la barrière du premier pas. Décider quoi garder, le mener au bout et le faire vivre reste à ma charge.",
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Avec l'IA, le ticket d'entrée d'un essai a presque disparu, et mes dépôts GitHub le montrent. En 2016, j'en ai ouvert 21, et la moitié s'est arrêtée à neuf commits ou moins. En 2026, au 30 septembre, j'en ai ouvert 17, et la moitié a atteint 136 commits. L'envie est la même. Trier, terminer et entretenir se paient au même tarif qu'avant.</p></div>
 <hr>
-<p>Le mot « nerd » n'apparaît dans aucun billet de ce blog. « Geek » non plus, ni « no-life ». J'y parle pourtant de soudure, de capteurs et de code du soir depuis des années.</p>
-<p>Ce titre est la première fois que je me range sous ce mot. Un mot qu'on porte, autant savoir d'où il vient.</p>
-
-<h2>Définir : nerd, geek, hacker, maker, no-life</h2>
-<p><strong>Geek</strong> est le plus ancien. Selon <abbr title="Online Etymology Dictionary, dictionnaire étymologique de l'anglais tenu par Douglas Harper">etymonline</abbr>, il vient de « geck », un fou, attesté dans les années 1510. En 1911, un geek est un phénomène de foire. Dans les années 1980, c'est encore une insulte. Vers 1989, l'argot des campus américains l'a rendu neutre.</p>
-<p><strong>Nerd</strong> apparaît en 1950 chez <abbr title="Theodor Seuss Geisel, auteur américain de livres pour enfants">Dr. Seuss</abbr>, dans <em>If I Ran the Zoo</em>. C'est le nom d'une créature. Le mot entre dans l'argot dès 1951. On raconte qu'il viendrait de « knurd », <em>drunk</em> à l'envers. C'est une tradition orale : etymonline le fait plutôt venir, « probablement », de « nert », lui-même tiré de « nut », le cinglé.</p>
-<p>Le Wiktionnaire français, lui, en est resté là : « Socialement handicapé et passionné par des sujets liés à la science et aux techniques ». La définition a vieilli plus vite que le mot.</p>
-<p><strong>Hacker</strong> a pris un autre chemin. Le <abbr title="Lexique collectif de l'argot des hackers, publié en ligne par Eric S. Raymond">Jargon File</abbr>, le lexique des hackers eux-mêmes, en donne plusieurs définitions. L'une d'elles est le plaisir du défi intellectuel : surmonter ou contourner une limite, avec créativité. Le malveillant a son propre mot, <em>cracker</em>. <strong>Maker</strong> prolonge la culture du <abbr title="Do It Yourself, fais-le toi-même">DIY</abbr>. Ces deux mots-là désignent un geste, pas une personne vue de l'extérieur.</p>
-<p><strong>No-life</strong> n'a aucune définition de dictionnaire que j'aie pu vérifier. Je le définis donc par un comportement : une activité qui a mangé le reste. Le sommeil, les repas, les proches. L'article Geek de Wikipédia en français trace la frontière utile. Le geek garde une communauté. Le no-life la perd.</p>
-<p>C'est là que je sépare ce que le mot mélange. La passion est une activité qu'on choisit et qu'on sait arrêter. La compulsion décide à votre place. Je ne revendique pas « no-life ». Le mot décrit une perte, pas un talent.</p>
-<svg viewBox="0 0 640 504" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frise de cinq mots : geek et nerd ont vécu comme des insultes avant de devenir neutres, et le Wiktionnaire français décrit encore le nerd comme socialement handicapé ; hacker et maker désignent ce qu'on fait ; no-life, sans définition sourcée, désigne ce qu'on perd." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">CINQ MOTS, D'OÙ ILS VIENNENT</text>
-<text x="32" y="74" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Deux insultes, deux gestes, un vide.</text>
-<line x1="120" y1="128" x2="120" y2="278" stroke="currentColor" stroke-opacity="0.22" stroke-width="2" stroke-linecap="round"></line>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75" text-anchor="end">
-<text x="104" y="133">1510s</text>
-<text x="104" y="163">1911</text>
-<text x="104" y="193">1950-51</text>
-<text x="104" y="223">années 80</text>
-<text x="104" y="253">vers 1989</text>
-<text x="104" y="283">2026</text>
-</g>
-<g stroke-width="2">
-<circle cx="120" cy="128" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7"></circle>
-<circle cx="120" cy="158" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7"></circle>
-<circle cx="120" cy="188" r="6" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-opacity="0.35"></circle>
-<circle cx="120" cy="218" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7"></circle>
-<circle cx="120" cy="248" r="6" fill="var(--diagram-accent)" stroke="var(--diagram-accent)"></circle>
-<circle cx="120" cy="278" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7"></circle>
-</g>
-<g fill="currentColor" fill-opacity="0.10" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="136" y="117" width="60" height="22" rx="6"></rect>
-<rect x="136" y="147" width="60" height="22" rx="6"></rect>
-<rect x="136" y="177" width="60" height="22" rx="6"></rect>
-<rect x="136" y="207" width="60" height="22" rx="6"></rect>
-<rect x="136" y="237" width="60" height="22" rx="6"></rect>
-<rect x="136" y="267" width="60" height="22" rx="6"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" letter-spacing="0.06em" text-anchor="middle">
-<text x="166" y="133">GEEK</text>
-<text x="166" y="163">GEEK</text>
-<text x="166" y="193">NERD</text>
-<text x="166" y="223">GEEK</text>
-<text x="166" y="253">GEEK</text>
-<text x="166" y="283">NERD</text>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">
-<text x="212" y="133">« geck » : un fou</text>
-<text x="212" y="163">un phénomène de foire</text>
-<text x="212" y="193">une créature de Dr. Seuss, puis de l'argot</text>
-<text x="212" y="223">toujours une insulte</text>
-<text x="212" y="253">argot des campus, devenu neutre</text>
-<text x="212" y="283">Wiktionnaire : « socialement handicapé »</text>
-</g>
-<g font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">
-<circle cx="40" cy="316" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7" stroke-width="2"></circle>
-<text x="54" y="321" fill="currentColor" opacity="0.6">insulte</text>
-<circle cx="140" cy="316" r="6" fill="var(--diagram-accent)"></circle>
-<text x="154" y="321" fill="currentColor" opacity="0.6">neutre</text>
-<circle cx="236" cy="316" r="6" fill="currentColor" fill-opacity="0.35"></circle>
-<text x="250" y="321" fill="currentColor" opacity="0.6">ton non établi par les sources</text>
-</g>
-<text x="32" y="360" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">CE QU'ON FAIT, CE QU'ON PERD</text>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="32" y="376" width="184" height="92" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
-<rect x="228" y="376" width="184" height="92" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
-<rect x="424" y="376" width="184" height="92" rx="8" fill="none" stroke-dasharray="4 5" stroke-opacity="0.45"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="650" letter-spacing="0.06em">
-<text x="48" y="404">HACKER</text>
-<text x="244" y="404">MAKER</text>
-<text x="440" y="404">NO-LIFE</text>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">
-<text x="48" y="428">aime vaincre une limite</text>
-<text x="48" y="450">le malveillant : cracker</text>
-<text x="244" y="428">fabrique et bricole</text>
-<text x="244" y="450">héritier du DIY</text>
-<text x="440" y="428">sans définition sourcée</text>
-<text x="440" y="450">nomme ce qu'on perd</text>
-</g>
-<text x="32" y="492" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Sources : etymonline, Jargon File, Wikipédia, Wiktionnaire.</text>
-</svg>
-<blockquote><p>Geek et nerd sont des mots que les autres ont posés sur nous. Hacker et maker disent ce qu'on fait. No-life dit ce qu'on a laissé tomber.</p></blockquote>
+<p>Ce billet s'adresse aux hackers et aux makers : à tous ceux qui ont toujours une idée à tester et un soir pour s'y mettre.</p>
 
 <h2>Ce que je suis, sans étiquette</h2>
-<p>Je n'ai jamais eu besoin de ces mots pour me présenter. Le seul que j'aie écrit, c'est « maker ». C'était en mars, en anglais : « I'm a maker. Evenings and weekends, I experiment with AI ». Des soirs et des week-ends à essayer des choses.</p>
+<p>Je n'ai jamais eu besoin d'étiquette pour me présenter. Le seul mot que j'aie écrit, c'est « maker ». C'était en mars, en anglais : « I'm a maker. Evenings and weekends, I experiment with AI ». Des soirs et des week-ends à essayer des choses.</p>
 <p>En 2014 déjà, à propos d'un ruban de <abbr title="Diode électroluminescente">LED</abbr> acheté sur un coup de tête, j'écrivais : « j'aime les défis et surtout les nouvelles choses ». Douze ans plus tard, la phrase tient toujours.</p>
 <p>Sur ma façon de penser, je m'en tiens à ce que j'ai déjà écrit : « J'ai simplement une grande capacité à inventer, des idées plein la tête en permanence — rien de plus. » Je n'y ajoute rien.</p>
 <p>Dans ce billet, « nerd » veut donc dire une chose simple. Quelqu'un qui essaie pour voir si ça marche, et qui paie ce prix avec son temps libre.</p>
@@ -204,7 +121,7 @@ const frenchContent: PostContent = {
 <p><strong>Le goût.</strong> <abbr title="Anil R. Doshi et Oliver P. Hauser, auteurs de l'étude publiée dans Science Advances en 2024">Doshi et Hauser</abbr> ont donné des idées générées par IA à des auteurs de courtes histoires, 293 au total. Les textes ont été jugés plus originaux (+8,1 %) et plus utiles (+9,0 %). Le gain était plus fort chez les moins créatifs. Mais les histoires se ressemblaient davantage entre elles.</p>
 <p>Ce n'était pas du logiciel. J'en garde le risque : si tout le monde essaie avec le même outil, tout le monde converge.</p>
 <p><strong>Le tri.</strong> Aucun agent ne sait lequel de mes 17 dépôts mérite une soirée de plus.</p>
-<p><strong>L'arrêt.</strong> Fermer un dépôt reste un geste humain. C'est aussi celui qui sépare la passion du no-life.</p>
+<p><strong>L'arrêt.</strong> Fermer un dépôt reste un geste humain. C'est aussi celui qui empêche l'envie de devenir une obligation.</p>
 
 <h2>Trois règles que je veux tenir</h2>
 <p>Je n'ai pas de méthode à vendre. Seulement trois garde-fous, pour que l'envie d'essayer ne tourne pas à l'encombrement.</p>
@@ -218,12 +135,6 @@ const frenchContent: PostContent = {
 <hr>
 <h2>Sources</h2>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" href="https://www.etymonline.com/word/nerd">etymonline — nerd</a> : première trace chez Dr. Seuss en 1950, sens argotique en 1951. Origine « probablement » de « nert », « nut ». L'histoire du « knurd » n'y est pas retenue.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://www.etymonline.com/word/geek">etymonline — geek</a> : « geck » vers les années 1510, phénomène de foire en 1911, insulte jusqu'aux années 1980, argot neutre vers 1989.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="http://www.catb.org/jargon/html/H/hacker.html">Jargon File — hacker</a> et <a target="_blank" rel="noopener noreferrer" href="http://www.catb.org/jargon/html/C/cracker.html">cracker</a> : la définition par le défi intellectuel, et le mot réservé au sens malveillant.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Maker_culture">Wikipedia — Maker culture</a> : le mouvement maker comme prolongement de la culture DIY. Cité pour la filiation, rien de plus.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://fr.wiktionary.org/wiki/nerd">Wiktionnaire — nerd</a> : cité pour montrer l'âge de la définition française, pas pour l'endosser.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Geek">Wikipédia — Geek</a> : la connotation méliorative et communautaire du mot, et la distinction avec le no-life.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11244532/">Doshi et Hauser, Science Advances, 2024</a> : 293 auteurs de fiction courte, textes jugés plus originaux et plus utiles avec des idées d'IA, mais plus semblables entre eux. Pas de logiciel dans l'étude.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2507.09089">METR, arXiv 2507.09089</a> : 16 développeurs expérimentés, 246 tâches sur leurs propres dépôts, 19 % plus lents avec l'IA alors qu'ils se pensaient 20 % plus rapides. Code existant uniquement, petit échantillon.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://metr.org/blog/2026-02-24-uplift-update">METR, mise à jour de février 2026</a> : le suivi de l'étude, dont METR juge elle-même les nouveaux chiffres peu fiables. Cité pour la prudence, pas pour un chiffre.</li>
@@ -233,96 +144,13 @@ const frenchContent: PostContent = {
 
 const englishContent: PostContent = {
   title: 'Being a Nerd in the AI Era',
-  description: "Nerd, geek, hacker, maker, no-life: where the words come from, and what my GitHub repos from 2016 and 2026 say about the urge to try things. AI knocked down the wall in front of the first step. Deciding what to keep, seeing it through and keeping it running are still on me.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Nerd, geek, hacker, maker, no-life. Five words for one habit, and they don't mean the same thing. Two started life as insults. Two name an action. The last one names a loss. My GitHub repos tell the rest. In 2016 I started 21, and half of them stopped at nine commits or fewer. In 2026, as of 30 September, I started 17, and half of them reached 136. The urge hasn't moved. With AI, the entry fee is nearly gone. Sorting, finishing and upkeep cost exactly what they used to.</p></div>
+  description: "What my GitHub repos from 2016 and 2026 say about the urge to try things, for hackers and makers. AI knocked down the wall in front of the first step. Deciding what to keep, seeing it through and keeping it running are still on me.",
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> With AI, the entry fee for a try has nearly vanished, and my GitHub repos show it. In 2016 I started 21, and half of them stopped at nine commits or fewer. In 2026, as of 30 September, I started 17, and half of them reached 136. The urge hasn't moved. Sorting, finishing and upkeep cost exactly what they used to.</p></div>
 <hr>
-<p>The word "nerd" appears in no post on this blog. Neither does "geek", or "no-life". And yet I have been writing about soldering irons, sensors and after-hours code here for years.</p>
-<p>This title is the first time I file myself under that word. If I'm going to wear it, I want to know where it has been.</p>
-
-<h2>Definitions: nerd, geek, hacker, maker, no-life</h2>
-<p><strong>Geek</strong> is the oldest of the five. <abbr title="The Online Etymology Dictionary, an English etymology reference maintained by Douglas Harper">Etymonline</abbr> traces it to "geck", a fool, in the 1510s. By 1911 a geek is a sideshow freak. Through the 1980s it is still an insult. Around 1989, American college slang turns it neutral.</p>
-<p><strong>Nerd</strong> first shows up in 1950, in <abbr title="Theodor Seuss Geisel, American children's author">Dr. Seuss</abbr>'s <em>If I Ran the Zoo</em>, as the name of a creature. It becomes slang in 1951. You may have heard it comes from "knurd", drunk spelled backwards. That story is oral tradition. Etymonline says the word "probably" comes from "nert", itself from "nut".</p>
-<p>French Wiktionary never moved on. Its entry still reads « Socialement handicapé et passionné par des sujets liés à la science et aux techniques »: socially handicapped, and passionate about science and technology. The definition has aged worse than the word.</p>
-<p><strong>Hacker</strong> took a different path. The <abbr title="A collective glossary of hacker slang, published online by Eric S. Raymond">Jargon File</abbr>, the hackers' own dictionary, lists several definitions. One of them is "one who enjoys the intellectual challenge of creatively overcoming or circumventing limitations." The malicious version gets its own word: cracker. <strong>Maker</strong> grew out of <abbr title="Do It Yourself">DIY</abbr> culture. Both words describe what you do. Neither is a label pinned on you from outside.</p>
-<p><strong>No-life</strong> has no dictionary definition I could verify. So I define it by behaviour: one activity that has eaten everything else. Sleep, meals, the people around you. The French Wikipedia article on geeks draws the useful line. A geek keeps a community. A no-life loses it.</p>
-<p>That is where I split what the word lumps together. Passion is something you choose and know how to stop. Compulsion does the choosing for you. I'm not claiming "no-life" as a badge. It names a loss, not a talent.</p>
-<svg viewBox="0 0 640 504" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline of five words: geek and nerd lived as insults before turning neutral, and French Wiktionary still calls a nerd socially handicapped; hacker and maker name what you do; no-life, with no sourced definition, names what you lose." class="diagram-svg">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">FIVE WORDS, WHERE THEY CAME FROM</text>
-<text x="32" y="74" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Two insults, two verbs, a void.</text>
-<line x1="120" y1="128" x2="120" y2="278" stroke="currentColor" stroke-opacity="0.22" stroke-width="2" stroke-linecap="round"></line>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.75" text-anchor="end">
-<text x="104" y="133">1510s</text>
-<text x="104" y="163">1911</text>
-<text x="104" y="193">1950-51</text>
-<text x="104" y="223">1980s</text>
-<text x="104" y="253">c. 1989</text>
-<text x="104" y="283">2026</text>
-</g>
-<g stroke-width="2">
-<circle cx="120" cy="128" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7"></circle>
-<circle cx="120" cy="158" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7"></circle>
-<circle cx="120" cy="188" r="6" fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-opacity="0.35"></circle>
-<circle cx="120" cy="218" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7"></circle>
-<circle cx="120" cy="248" r="6" fill="var(--diagram-accent)" stroke="var(--diagram-accent)"></circle>
-<circle cx="120" cy="278" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7"></circle>
-</g>
-<g fill="currentColor" fill-opacity="0.10" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="136" y="117" width="60" height="22" rx="6"></rect>
-<rect x="136" y="147" width="60" height="22" rx="6"></rect>
-<rect x="136" y="177" width="60" height="22" rx="6"></rect>
-<rect x="136" y="207" width="60" height="22" rx="6"></rect>
-<rect x="136" y="237" width="60" height="22" rx="6"></rect>
-<rect x="136" y="267" width="60" height="22" rx="6"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" letter-spacing="0.06em" text-anchor="middle">
-<text x="166" y="133">GEEK</text>
-<text x="166" y="163">GEEK</text>
-<text x="166" y="193">NERD</text>
-<text x="166" y="223">GEEK</text>
-<text x="166" y="253">GEEK</text>
-<text x="166" y="283">NERD</text>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">
-<text x="212" y="133">"geck": a fool</text>
-<text x="212" y="163">a sideshow freak</text>
-<text x="212" y="193">a Dr. Seuss creature, then slang</text>
-<text x="212" y="223">still an insult</text>
-<text x="212" y="253">college slang, now neutral</text>
-<text x="212" y="283">French Wiktionary: "socially handicapped"</text>
-</g>
-<g font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">
-<circle cx="40" cy="316" r="6" fill="currentColor" fill-opacity="0.04" stroke="currentColor" stroke-opacity="0.7" stroke-width="2"></circle>
-<text x="54" y="321" fill="currentColor" opacity="0.6">insult</text>
-<circle cx="130" cy="316" r="6" fill="var(--diagram-accent)"></circle>
-<text x="144" y="321" fill="currentColor" opacity="0.6">neutral</text>
-<circle cx="226" cy="316" r="6" fill="currentColor" fill-opacity="0.35"></circle>
-<text x="240" y="321" fill="currentColor" opacity="0.6">tone not established by the sources</text>
-</g>
-<text x="32" y="360" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">WHAT YOU DO, WHAT YOU LOSE</text>
-<g stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
-<rect x="32" y="376" width="184" height="92" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
-<rect x="228" y="376" width="184" height="92" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
-<rect x="424" y="376" width="184" height="92" rx="8" fill="none" stroke-dasharray="4 5" stroke-opacity="0.45"></rect>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="650" letter-spacing="0.06em">
-<text x="48" y="404">HACKER</text>
-<text x="244" y="404">MAKER</text>
-<text x="440" y="404">NO-LIFE</text>
-</g>
-<g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">
-<text x="48" y="428">enjoys beating a limit</text>
-<text x="48" y="450">its dark twin: cracker</text>
-<text x="244" y="428">builds and tinkers</text>
-<text x="244" y="450">heir to DIY culture</text>
-<text x="440" y="428">no sourced definition</text>
-<text x="440" y="450">names what you lose</text>
-</g>
-<text x="32" y="492" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Sources: etymonline, Jargon File, Wikipedia, Wiktionary.</text>
-</svg>
-<blockquote><p>Other people pinned geek and nerd on us. Hacker and maker are things we do. No-life is what we let slip.</p></blockquote>
+<p>This post is for hackers and makers: anyone who always has an idea to test and an evening to spend on it.</p>
 
 <h2>What I am, minus the label</h2>
-<p>I never needed any of these words to introduce myself. The only one I have used is "maker". That was in March: "I'm a maker. Evenings and weekends, I experiment with AI." Evenings and weekends, trying things.</p>
+<p>I never needed a label to introduce myself. The only word I have used is "maker". That was in March: "I'm a maker. Evenings and weekends, I experiment with AI." Evenings and weekends, trying things.</p>
 <p>Back in 2014, writing about an <abbr title="Light-emitting diode">LED</abbr> strip bought on a whim, I put it in French: « j'aime les défis et surtout les nouvelles choses ». I like challenges, and new things most of all. Twelve years on, that still holds.</p>
 <p>On how my head works, I stick to what I have already written: "I simply have an outsized capacity to invent, a head permanently full of ideas — nothing more." I'm not adding to that.</p>
 <p>So in this post, "nerd" means something plain. Someone who tries things to see whether they work, and pays for it with their free time.</p>
@@ -426,7 +254,7 @@ const englishContent: PostContent = {
 <p><strong>Taste.</strong> <abbr title="Anil R. Doshi and Oliver P. Hauser, authors of the 2024 Science Advances study">Doshi and Hauser</abbr> gave AI-generated ideas to 293 people writing short stories. The stories were rated more novel (+8.1%) and more useful (+9.0%). The least creative writers gained the most. But the stories ended up more alike.</p>
 <p>That was fiction, not software. What I keep is the risk: if everyone tries things with the same tool, everyone drifts toward the same place.</p>
 <p><strong>Sorting.</strong> No agent knows which of my 17 repos deserves another evening.</p>
-<p><strong>Stopping.</strong> Closing a repo is still a human move. It is also the one that separates passion from no-life.</p>
+<p><strong>Stopping.</strong> Closing a repo is still a human move. It is also the one that keeps the urge from turning into an obligation.</p>
 
 <h2>Three rules I want to keep</h2>
 <p>I have no method to sell. Just three guardrails, so the urge to try things doesn't turn into clutter.</p>
@@ -440,12 +268,6 @@ const englishContent: PostContent = {
 <hr>
 <h2>Sources</h2>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" href="https://www.etymonline.com/word/nerd">Etymonline — nerd</a>: first recorded in Dr. Seuss in 1950, slang sense in 1951, "probably" from "nert" and "nut". It does not back the "knurd" story.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://www.etymonline.com/word/geek">Etymonline — geek</a>: "geck" in the 1510s, sideshow freak by 1911, an insult through the 1980s, neutral college slang around 1989.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="http://www.catb.org/jargon/html/H/hacker.html">Jargon File — hacker</a> and <a target="_blank" rel="noopener noreferrer" href="http://www.catb.org/jargon/html/C/cracker.html">cracker</a>: the intellectual-challenge definition, and the separate word for the malicious sense.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Maker_culture">Wikipedia — Maker culture</a>: the maker movement as an extension of DIY culture. Cited for the lineage only.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://fr.wiktionary.org/wiki/nerd">Wiktionnaire — nerd</a> (French Wiktionary): quoted to show how dated the French definition is, not to endorse it.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://fr.wikipedia.org/wiki/Geek">Wikipédia — Geek</a> (French Wikipedia): the word's positive, community-minded connotation, and its line against no-life.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11244532/">Doshi and Hauser, Science Advances, 2024</a>: 293 short-fiction writers. AI ideas made stories more novel and more useful, and more similar to each other. No software in the study.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2507.09089">METR, arXiv 2507.09089</a>: 16 experienced developers, 246 tasks in their own repos, 19% slower with AI while believing they were 20% faster. Brownfield only, small sample.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://metr.org/blog/2026-02-24-uplift-update">METR, February 2026 update</a>: the follow-up, whose newer numbers METR itself calls an unreliable signal. Cited for the caution, not for a figure.</li>
