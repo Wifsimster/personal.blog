@@ -18,6 +18,7 @@ const frenchContent: PostContent = {
 
 <h2>Ce que je suis</h2>
 <p>Je suis un maker, et je l'ai écrit tel quel en mars, en anglais : « I'm a maker. Evenings and weekends, I experiment with AI ». Des soirs et des week-ends à essayer des choses.</p>
+<p>J'aime fabriquer, et rendre fonctionnel ce qui me passe par la tête. Comme Géo Trouvetou.</p>
 <p>En 2014 déjà, à propos d'un ruban de <abbr title="Diode électroluminescente">LED</abbr> acheté sur un coup de tête, j'écrivais : « j'aime les défis et surtout les nouvelles choses ». Douze ans plus tard, la phrase tient toujours.</p>
 <p>Sur ma façon de penser, je m'en tiens à ce que j'ai déjà écrit : « J'ai simplement une grande capacité à inventer, des idées plein la tête en permanence — rien de plus. » Je n'y ajoute rien.</p>
 <p>Dans ce billet, « nerd » est le mot du titre pour la même chose, simple : quelqu'un qui essaie pour voir si ça marche, et qui paie ce prix avec son temps libre.</p>
@@ -151,6 +152,7 @@ const englishContent: PostContent = {
 
 <h2>What I am</h2>
 <p>I'm a maker, and I wrote it just like that in March: "I'm a maker. Evenings and weekends, I experiment with AI." Evenings and weekends, trying things.</p>
+<p>I like building, and making whatever crosses my mind actually work. Think Gyro Gearloose.</p>
 <p>Back in 2014, writing about an <abbr title="Light-emitting diode">LED</abbr> strip bought on a whim, I put it in French: « j'aime les défis et surtout les nouvelles choses ». I like challenges, and new things most of all. Twelve years on, that still holds.</p>
 <p>On how my head works, I stick to what I have already written: "I simply have an outsized capacity to invent, a head permanently full of ideas — nothing more." I'm not adding to that.</p>
 <p>In this post, "nerd" is the title's word for the same plain thing: someone who tries things to see whether they work, and pays for it with their free time.</p>
