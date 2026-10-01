@@ -16,11 +16,11 @@ const frenchContent: PostContent = {
 <hr>
 <p>Ce billet s'adresse aux hackers et aux makers : à tous ceux qui ont toujours une idée à tester et un soir pour s'y mettre.</p>
 
-<h2>Ce que je suis, sans étiquette</h2>
-<p>Je n'ai jamais eu besoin d'étiquette pour me présenter. Le seul mot que j'aie écrit, c'est « maker ». C'était en mars, en anglais : « I'm a maker. Evenings and weekends, I experiment with AI ». Des soirs et des week-ends à essayer des choses.</p>
+<h2>Ce que je suis</h2>
+<p>Je suis un maker, et je l'ai écrit tel quel en mars, en anglais : « I'm a maker. Evenings and weekends, I experiment with AI ». Des soirs et des week-ends à essayer des choses.</p>
 <p>En 2014 déjà, à propos d'un ruban de <abbr title="Diode électroluminescente">LED</abbr> acheté sur un coup de tête, j'écrivais : « j'aime les défis et surtout les nouvelles choses ». Douze ans plus tard, la phrase tient toujours.</p>
 <p>Sur ma façon de penser, je m'en tiens à ce que j'ai déjà écrit : « J'ai simplement une grande capacité à inventer, des idées plein la tête en permanence — rien de plus. » Je n'y ajoute rien.</p>
-<p>Dans ce billet, « nerd » veut donc dire une chose simple. Quelqu'un qui essaie pour voir si ça marche, et qui paie ce prix avec son temps libre.</p>
+<p>Dans ce billet, « nerd » est le mot du titre pour la même chose, simple : quelqu'un qui essaie pour voir si ça marche, et qui paie ce prix avec son temps libre.</p>
 
 <h2>Avant : ce qui limitait le nerd</h2>
 <p>2016 est mon année la plus prolifique avant l'IA. J'ai créé 21 nouveaux dépôts sur <abbr title="Plateforme d'hébergement de code source basée sur git">GitHub</abbr> en douze mois, pour 470 <abbr title="Enregistrement d'une modification dans l'historique d'un dépôt git">commits</abbr> au total. La <abbr title="La valeur du milieu : la moitié des dépôts en a moins, l'autre moitié en a plus">médiane</abbr> est de 9 commits par dépôt.</p>
@@ -149,11 +149,11 @@ const englishContent: PostContent = {
 <hr>
 <p>This post is for hackers and makers: anyone who always has an idea to test and an evening to spend on it.</p>
 
-<h2>What I am, minus the label</h2>
-<p>I never needed a label to introduce myself. The only word I have used is "maker". That was in March: "I'm a maker. Evenings and weekends, I experiment with AI." Evenings and weekends, trying things.</p>
+<h2>What I am</h2>
+<p>I'm a maker, and I wrote it just like that in March: "I'm a maker. Evenings and weekends, I experiment with AI." Evenings and weekends, trying things.</p>
 <p>Back in 2014, writing about an <abbr title="Light-emitting diode">LED</abbr> strip bought on a whim, I put it in French: « j'aime les défis et surtout les nouvelles choses ». I like challenges, and new things most of all. Twelve years on, that still holds.</p>
 <p>On how my head works, I stick to what I have already written: "I simply have an outsized capacity to invent, a head permanently full of ideas — nothing more." I'm not adding to that.</p>
-<p>So in this post, "nerd" means something plain. Someone who tries things to see whether they work, and pays for it with their free time.</p>
+<p>In this post, "nerd" is the title's word for the same plain thing: someone who tries things to see whether they work, and pays for it with their free time.</p>
 
 <h2>Before: what held the nerd back</h2>
 <p>2016 was my busiest year before AI. I created 21 new repos on <abbr title="A source-code hosting platform built on git">GitHub</abbr> that year, 470 <abbr title="A recorded change in a git repository's history">commits</abbr> in total. The <abbr title="The middle value: half the repos have fewer, half have more">median</abbr> repo got 9 commits.</p>
