@@ -11,29 +11,39 @@ export const metadata: PostMetadata = {
 
 const frenchContent: PostContent = {
   title: "Être un nerd à l'ère de l'IA",
-  description: "Ce que mes dépôts GitHub de 2016 et de 2026 disent de l'envie d'essayer, pour les hackers et les makers. L'IA a fait tomber la barrière du premier pas. Décider quoi garder, le mener au bout et le faire vivre reste à ma charge.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Avec l'IA, le ticket d'entrée d'un essai a presque disparu, et mes dépôts GitHub le montrent. En 2016, j'en ai ouvert 21, et la moitié s'est arrêtée à neuf commits ou moins. En 2026, au 30 septembre, j'en ai ouvert 17, et la moitié a atteint 136 commits. L'envie est la même. Trier, terminer et entretenir se paient au même tarif qu'avant.</p></div>
+  description: "Pour les hackers et les makers : se casser les dents apprend toujours, mais à pleine vitesse. Ce que mes dépôts GitHub de 2016 et de 2026 disent du plaisir de fabriquer avec l'IA, et de ce qui se paie encore une fois l'essai lancé.",
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Je suis un maker, et l'<abbr title="Intelligence artificielle">IA</abbr> ne m'a pas pris le chemin qui fait apprendre. Elle l'a rendu plus rapide. Mes dépôts <abbr title="Plateforme d'hébergement de code source basée sur git">GitHub</abbr> en gardent la trace. En 2016, j'en ai ouvert 21, et la moitié s'est arrêtée à neuf <abbr title="Enregistrement d'une modification dans l'historique d'un dépôt git">commits</abbr> ou moins. En 2026, au 30 septembre, j'en ai ouvert 17, et la moitié a atteint au moins 136. Concevoir ne m'a jamais autant amusé. Trier, terminer et faire vivre restent à ma charge, au tarif d'avant.</p></div>
 <hr>
 <p>Ce billet s'adresse aux hackers et aux makers : à tous ceux qui ont toujours une idée à tester et un soir pour s'y mettre.</p>
 
 <h2>Ce que je suis</h2>
-<p>Je suis un maker, et je l'ai écrit tel quel en mars, en anglais : « I'm a maker. Evenings and weekends, I experiment with AI ». Des soirs et des week-ends à essayer des choses.</p>
-<p>J'aime fabriquer, et rendre fonctionnel ce qui me passe par la tête. Comme Géo Trouvetou.</p>
-<p>En 2014 déjà, à propos d'un ruban de <abbr title="Diode électroluminescente">LED</abbr> acheté sur un coup de tête, j'écrivais : « j'aime les défis et surtout les nouvelles choses ». Douze ans plus tard, la phrase tient toujours.</p>
-<p>Sur ma façon de penser, je m'en tiens à ce que j'ai déjà écrit : « J'ai simplement une grande capacité à inventer, des idées plein la tête en permanence — rien de plus. » Je n'y ajoute rien.</p>
-<p>Dans ce billet, « nerd » est le mot du titre pour la même chose, simple : quelqu'un qui essaie pour voir si ça marche, et qui paie ce prix avec son temps libre.</p>
+<p>J'aime fabriquer, et rendre fonctionnel ce qui me passe par la tête. Comme <abbr title="Gyro Gearloose en version originale, l'inventeur de l'univers Disney de Donaldville">Géo Trouvetou</abbr>.</p>
+<p>Je l'ai écrit tel quel en mars, en anglais : « I'm a maker. Evenings and weekends, I experiment with AI ». Des soirs et des week-ends à essayer des choses.</p>
+<p>Ça ne date pas de l'IA. En 2014, à propos d'un ruban de <abbr title="Diode électroluminescente">LED</abbr> acheté sur un coup de tête, j'écrivais : « j'aime les défis et surtout les nouvelles choses ». Douze ans plus tard, la phrase tient toujours.</p>
+<p>Sur ma façon de penser, je m'en tiens à ce que j'ai déjà écrit : « J'ai simplement une grande capacité à inventer, des idées plein la tête en permanence — rien de plus. »</p>
+<p>Des idées, donc, et l'envie de les voir marcher. Pendant longtemps, entre les deux, il y avait un mur.</p>
 
-<h2>Avant : ce qui limitait le nerd</h2>
-<p>2016 est mon année la plus prolifique avant l'IA. J'ai créé 21 nouveaux dépôts sur <abbr title="Plateforme d'hébergement de code source basée sur git">GitHub</abbr> en douze mois, pour 470 <abbr title="Enregistrement d'une modification dans l'historique d'un dépôt git">commits</abbr> au total. La <abbr title="La valeur du milieu : la moitié des dépôts en a moins, l'autre moitié en a plus">médiane</abbr> est de 9 commits par dépôt.</p>
+<h2>Avant : le prix d'un essai</h2>
+<p>2016 est mon année la plus prolifique avant l'IA. J'ai créé 21 dépôts en douze mois, pour 470 commits au total. La <abbr title="La valeur du milieu : la moitié des dépôts en a moins, l'autre moitié en a plus">médiane</abbr> est de 9 commits par dépôt.</p>
 <p>19 de ces 21 dépôts ont reçu leur dernier commit avant fin septembre 2017. Abandonner ne coûtait rien. Un dépôt mort ne réclame rien. On passait à l'idée suivante.</p>
 <p>Puis vient le silence. Entre le 29 janvier 2022 et le 16 mai 2025, je n'ai créé aucun dépôt. Trente-neuf mois. En 2023, tous dépôts confondus, robots compris, l'historique compte 6 commits. En 2024, il en compte 2.</p>
-<p>Git ne dit pas pourquoi. Il dit seulement ce que coûtait un essai. Dans mon bilan de dix ans de domotique, je résumais ainsi cette époque : « Un montage occupait un week-end entier, et je documentais le week-end suivant. »</p>
-<p>Le prix d'un essai se payait d'avance. Lire la documentation d'un outil inconnu. Monter l'environnement. Écrire la plomberie avant la première ligne utile. Tout ça avant de savoir si l'idée valait quelque chose.</p>
+<p>Git ne dit pas pourquoi. Il montre seulement ce que coûtait un essai. Dans mon bilan de dix ans de domotique, je résumais ainsi cette époque : « Un montage occupait un week-end entier, et je documentais le week-end suivant. »</p>
+<p>Le prix se payait d'avance. Lire la documentation d'un outil inconnu. Monter l'environnement. Écrire la plomberie avant la première ligne utile. Tout ça avant de savoir si l'idée valait quelque chose.</p>
 <p>Ma lecture, qu'aucun historique ne prouve : ce prix faisait un tri. Il ne gardait pas les bonnes idées. Il gardait celles qui tenaient dans une soirée.</p>
 
-<h2>Après : ce que l'IA a enlevé</h2>
-<p>Depuis janvier 2026, je travaille avec des agents d'<abbr title="Intelligence artificielle">IA</abbr>, au bureau comme le soir. Au 30 septembre, j'ai créé 17 dépôts cette année. C'est à peu près le rythme de 2016 : 21 en douze mois, 17 en neuf.</p>
-<p>La différence est dans la profondeur. Ces 17 dépôts totalisent 4 491 commits. Leur médiane est de 136. La moitié d'entre eux a donc atteint ce seuil.</p>
+<h2>Et les cicatrices ?</h2>
+<p>Certains diront que ce mur avait du bon. Que se casser les dents, c'est apprendre. Que les échecs et les cicatrices sont ce qu'on retient, et que c'est le voyage qui compte.</p>
+<p>L'objection est sérieuse, et je connais ce voyage. Le ruban de 2014 m'a coûté « quelques heures de recherches » avant de trouver une version d'<abbr title="Projet libre d'Adafruit qui pilote un ruban de LED d'après l'image de l'écran">Adalight</abbr> compatible avec mes LED. Un an plus tard, après un déménagement, je devais me remettre à programmer la carte.</p>
+<p>Avec l'IA, je ne trouve pas que ça change vraiment. Le voyage est toujours là, en accéléré. C'est une autoroute avec de l'adrénaline plein pot.</p>
+<blockquote><p>On ne m'a pas retiré le voyage. On a levé la limitation de vitesse.</p></blockquote>
+<p>Les dents, je me les casse encore. En dépannant ma domotique avec un agent, j'ai appris que « j'ai fait un reset » et « le module a perdu son alimentation » sont deux affirmations différentes. Il a fallu trois tentatives avant de tomber sur le bon disjoncteur. L'agent ne m'a pas épargné la leçon.</p>
+<p>On apprend toujours, si on le veut. Il faut chercher, poser des questions, rester curieux. Demander pourquoi ça marche, et pas seulement obtenir que ça marche. Ça fait partie de notre <abbr title="Acide désoxyribonucléique, le support de l'hérédité">ADN</abbr> de maker.</p>
+<p>L'inverse est vrai aussi. L'agent peut tout faire sans que je comprenne rien. Si je ne pose aucune question, je ne retiens rien, et c'est mon choix.</p>
+<p>Une précaution, enfin. Je ne mesure pas ce que je retiens. Aucun historique git ne garde ce qu'on a appris. C'est mon expérience, pas une preuve. Je ne prétends pas que l'IA fait apprendre plus, ni moins.</p>
+
+<h2>Après : fabriquer à pleine vitesse</h2>
+<p>Depuis janvier 2026, je travaille avec des agents d'IA, au bureau comme le soir. Au 30 septembre, j'ai créé 17 dépôts cette année. C'est à peu près le rythme de 2016 : 21 en douze mois, 17 en neuf.</p>
+<p>La différence est dans la profondeur. Ces 17 dépôts totalisent 4 491 commits. Leur médiane est de 136.</p>
 <svg viewBox="0 0 640 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Histogramme des nouveaux dépôts GitHub par an, de 2012 à 2026 : 21 en 2016 avec une médiane de 9 commits, zéro en 2018, 2023 et 2024, puis 17 en 2026 au 30 septembre avec une médiane de 136 commits. Le nombre d'essais revient au niveau de 2016 ; leur profondeur n'a rien à voir." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">NOUVEAUX DÉPÔTS PAR AN, 2012-2026</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Même élan, autre profondeur.</text>
@@ -101,16 +111,16 @@ const frenchContent: PostContent = {
 <text x="32" y="374" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Dépôts personnels hors forks, 3 privés inclus. 2026 arrêté au 30 septembre.</text>
 </svg>
 <p>Deux précautions. Ces chiffres couvrent mes dépôts personnels hors <abbr title="Copie d'un dépôt appartenant à quelqu'un d'autre">forks</abbr>, dont 3 privés. Et un dépôt de 2026 a neuf mois au plus : trop tôt pour parler de survie.</p>
+<p>Le rythme a changé autant que la profondeur. En mars 2026, mes dépôts ont reçu 675 commits en un mois. Robots de mise à jour exclus, agents compris. C'est plus de cent fois l'année 2023 entière. Git ne sait pas faire la part exacte entre ma main et celle de l'agent.</p>
 <p>Ce qui a disparu, c'est le mur du début. La documentation qu'on n'a pas envie de lire. Le squelette du projet. La première version qui tourne assez pour juger l'idée. L'agent prend tout ça en charge, et l'essai commence là où il s'arrêtait avant.</p>
 <p>Ma lecture, là encore : en 2016, beaucoup de mes dépôts ne mouraient pas d'une mauvaise idée. Ils mouraient au deuxième obstacle, avant la deuxième soirée. Git ne garde pas ce genre de raison. La médiane de 9 commits, si.</p>
-<p>Certains diront que se casser les dents, c'est apprendre. Que les échecs et les cicatrices sont ce qu'on retient, et que c'est le voyage qui compte. Avec l'IA, je ne trouve pas que ça change vraiment : le voyage est toujours là, mais accéléré. C'est une autoroute avec de l'adrénaline à fond, et pour moi le plaisir de fabriquer, de concevoir, est plus présent que jamais.</p>
-<p>On apprend toujours, si on le veut. Il faut chercher, poser des questions, rester curieux. Mais ça fait partie de l'ADN du maker.</p>
-<p>Côté maison, les preuves concrètes sont dans <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">ce récit de domotique pilotée par un agent</a>. Ici, je m'en tiens au code et à ce que ça change pour la personne.</p>
-<p>Car c'est d'abord une affaire d'identité. Pendant des années, être nerd voulait dire accepter de payer l'entrée. Lire, souder, configurer, avant le moindre résultat. Ce droit d'entrée a presque disparu. Il reste l'envie, et la question de savoir quoi en faire.</p>
+<p>L'agent me laisse la partie que j'ai toujours préférée. Imaginer la chose. Décider comment elle doit se comporter. La voir tourner, puis la reprendre parce qu'elle peut faire mieux. Le plaisir de fabriquer et de concevoir n'a jamais été aussi présent.</p>
+<p>À la maison, c'est pareil. Une corvée de domotique est restée deux ans sur ma liste, parce que la version propre demandait « une demi-journée de travail, peut-être ». Elle a été faite en une session, le 18 septembre. Le détail est dans <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">ce récit de domotique pilotée par un agent</a>.</p>
+<p>C'est d'abord une affaire d'identité. Pendant des années, être nerd voulait dire accepter de payer l'entrée. Lire, souder, configurer, avant le moindre résultat. Ce droit d'entrée a presque disparu. Il reste l'envie, et la question de savoir quoi en faire.</p>
 <blockquote><p>Le nerd n'a pas changé. C'est le prix du premier pas qui a changé.</p></blockquote>
 
 <h2>Ce qui n'a pas bougé : choisir, finir, garder en vie</h2>
-<p>Tout ce qui vient après le premier essai coûte le même prix qu'avant.</p>
+<p>L'autoroute a un péage, et il tombe après le premier essai. Tout ce qui vient ensuite coûte le même prix qu'avant.</p>
 <p>Au 30 septembre, 13 de mes 17 dépôts de 2026 ont reçu un push dans les trente derniers jours. Un seul est archivé. En 2016, abandonner était gratuit et silencieux. En 2026, tout reste vivant en même temps, et chaque dépôt vivant réclame de l'attention.</p>
 <p>Les trois derniers n'ont rien reçu depuis plus d'un mois, sans être archivés. Ni vivants ni morts. C'est là que l'entretien coûte le plus : une décision qu'on repousse.</p>
 <p>Vivant ne veut pas dire fini. Git n'a pas de case « terminé ». Et un push peut venir d'un robot qui met à jour une dépendance.</p>
@@ -118,7 +128,7 @@ const frenchContent: PostContent = {
 <p><strong>Choisir.</strong> Quand tout peut démarrer, il faut décider ce qu'on ne démarre pas. <strong>Finir.</strong> Les derniers pour cent d'un projet sont faits de cas limites, de documentation et de décisions. <strong>Entretenir.</strong> Chaque dépôt vivant occupe une place dans ma tête, même quand je n'y touche pas.</p>
 <p>Sur ce terrain-là, les preuves de gain sont minces. L'étude de <abbr title="Model Evaluation and Threat Research, organisme indépendant d'évaluation des modèles d'IA">METR</abbr> a suivi 16 développeurs expérimentés sur 246 tâches, dans leurs propres dépôts. Avec l'IA, ils ont été 19 % plus lents. Ils pensaient avoir gagné 20 %.</p>
 <p>L'échantillon est petit, et il ne couvre que du code existant. METR qualifie elle-même de signal peu fiable les chiffres de son suivi de 2026. J'en retiens une seule chose : l'impression d'aller vite ne mesure rien.</p>
-<p>Il y a aussi la face sombre, la boucle qui empêche de s'arrêter. Je l'ai <a target="_blank" rel="noopener noreferrer" href="/posts/agentic-ai-addiction">décrite de près ailleurs</a>. La frontière entre passion et compulsion tient en une question : est-ce que je choisis encore d'arrêter ?</p>
+<p>La pleine vitesse a aussi sa face sombre : la boucle qui empêche de s'arrêter. Je l'ai <a target="_blank" rel="noopener noreferrer" href="/posts/agentic-ai-addiction">décrite de près ailleurs</a>. La frontière entre passion et compulsion tient en une question : est-ce que je choisis encore d'arrêter ?</p>
 
 <h2>Ce qui reste aux humains</h2>
 <p><strong>Le goût.</strong> <abbr title="Anil R. Doshi et Oliver P. Hauser, auteurs de l'étude publiée dans Science Advances en 2024">Doshi et Hauser</abbr> ont donné des idées générées par IA à des auteurs de courtes histoires, 293 au total. Les textes ont été jugés plus originaux (+8,1 %) et plus utiles (+9,0 %). Le gain était plus fort chez les moins créatifs. Mais les histoires se ressemblaient davantage entre elles.</p>
@@ -127,7 +137,7 @@ const frenchContent: PostContent = {
 <p><strong>L'arrêt.</strong> Fermer un dépôt reste un geste humain. C'est aussi celui qui empêche l'envie de devenir une obligation.</p>
 
 <h2>Trois règles que je veux tenir</h2>
-<p>Je n'ai pas de méthode à vendre. Seulement trois garde-fous, pour que l'envie d'essayer ne tourne pas à l'encombrement.</p>
+<p>Je n'ai pas de méthode à vendre. Seulement trois garde-fous, pour garder le plaisir de la vitesse sans que mes dépôts tournent à l'encombrement.</p>
 <ol>
 <li><strong>Deux soirées pour prouver son utilité.</strong> Un essai qui n'a servi à personne au bout de deux soirées, moi compris, part aux archives. J'ajoute une ligne pour me rappeler pourquoi.</li>
 <li><strong>Un tour du cimetière chaque mois.</strong> Je liste les dépôts muets depuis trente jours. Chacun est archivé ou reçoit une prochaine étape écrite. Pas d'entre-deux.</li>
@@ -147,29 +157,39 @@ const frenchContent: PostContent = {
 
 const englishContent: PostContent = {
   title: 'Being a Nerd in the AI Era',
-  description: "What my GitHub repos from 2016 and 2026 say about the urge to try things, for hackers and makers. AI knocked down the wall in front of the first step. Deciding what to keep, seeing it through and keeping it running are still on me.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> With AI, the entry fee for a try has nearly vanished, and my GitHub repos show it. In 2016 I started 21, and half of them stopped at nine commits or fewer. In 2026, as of 30 September, I started 17, and half of them reached 136. The urge hasn't moved. Sorting, finishing and upkeep cost exactly what they used to.</p></div>
+  description: "For hackers and makers: breaking your teeth still teaches, only now at full speed. What my GitHub repos from 2016 and 2026 say about the joy of building with AI, and about the bill that still arrives once the try is running.",
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> I'm a maker, and <abbr title="Artificial intelligence">AI</abbr> didn't take away the part where you learn the hard way. It put it on fast-forward. My <abbr title="A source-code hosting platform built on git">GitHub</abbr> repos keep the receipts. In 2016 I started 21, and half of them stalled at nine <abbr title="A recorded change in a git repository's history">commits</abbr> or fewer. In 2026, as of 30 September, I started 17, and half of them reached 136 or more. Designing things has never been this much fun. Sorting, finishing and upkeep are still mine to pay, at the old price.</p></div>
 <hr>
 <p>This post is for hackers and makers: anyone who always has an idea to test and an evening to spend on it.</p>
 
 <h2>What I am</h2>
-<p>I'm a maker, and I wrote it just like that in March: "I'm a maker. Evenings and weekends, I experiment with AI." Evenings and weekends, trying things.</p>
-<p>I like building, and making whatever crosses my mind actually work. Think Gyro Gearloose.</p>
-<p>Back in 2014, writing about an <abbr title="Light-emitting diode">LED</abbr> strip bought on a whim, I put it in French: « j'aime les défis et surtout les nouvelles choses ». I like challenges, and new things most of all. Twelve years on, that still holds.</p>
-<p>On how my head works, I stick to what I have already written: "I simply have an outsized capacity to invent, a head permanently full of ideas — nothing more." I'm not adding to that.</p>
-<p>In this post, "nerd" is the title's word for the same plain thing: someone who tries things to see whether they work, and pays for it with their free time.</p>
+<p>I like building things, and making whatever crosses my mind actually work. Think <abbr title="Disney's inventor from Duckburg">Gyro Gearloose</abbr>.</p>
+<p>I said it plainly in March: "I'm a maker. Evenings and weekends, I experiment with AI." Evenings and weekends, trying things.</p>
+<p>It didn't start with AI. Back in 2014, writing about an <abbr title="Light-emitting diode">LED</abbr> strip I bought on a whim, I put it in French: « j'aime les défis et surtout les nouvelles choses ». I like challenges, and new things most of all. Twelve years on, that still holds.</p>
+<p>As for how my head works, I stick to what I have already written: "I simply have an outsized capacity to invent, a head permanently full of ideas — nothing more."</p>
+<p>So: ideas, and the itch to see them run. For a long time, there was a wall between the two.</p>
 
-<h2>Before: what held the nerd back</h2>
-<p>2016 was my busiest year before AI. I created 21 new repos on <abbr title="A source-code hosting platform built on git">GitHub</abbr> that year, 470 <abbr title="A recorded change in a git repository's history">commits</abbr> in total. The <abbr title="The middle value: half the repos have fewer, half have more">median</abbr> repo got 9 commits.</p>
-<p>19 of those 21 had their last commit before the end of September 2017. Dropping a project was free. A dead repo asks for nothing. You just moved on to the next idea.</p>
+<h2>Before: what a try used to cost</h2>
+<p>2016 was my busiest year before AI. I created 21 repos in twelve months, 470 commits in total. The <abbr title="The middle value: half the repos have fewer, half have more">median</abbr> repo got 9 commits.</p>
+<p>19 of those 21 saw their last commit before the end of September 2017. Dropping a project was free. A dead repo asks for nothing. You just moved on to the next idea.</p>
 <p>Then came the quiet. Between 29 January 2022 and 16 May 2025, I created no repo at all. Thirty-nine months. In 2023, across every repo and counting bots, the history holds 6 commits. In 2024, it holds 2.</p>
-<p>Git doesn't say why. It only shows what a try used to cost. In my ten-year home automation retrospective, I summed up that era this way: "One build took a whole weekend, and I documented it the weekend after."</p>
-<p>You paid for a try up front. Read the docs for a tool you had never used. Set up the environment. Write the plumbing before the first useful line. All of it before you knew whether the idea was any good.</p>
+<p>Git doesn't say why. It only shows what a try used to cost. In my ten-year home automation retrospective, I summed up that era like this: "One build took a whole weekend, and I documented it the weekend after."</p>
+<p>You paid up front. Read the docs for a tool you had never used. Set up the environment. Write the plumbing before the first useful line. All of it before you knew whether the idea was any good.</p>
 <p>My reading, which no commit log can prove: that price did the sorting. It didn't keep the good ideas. It kept the ones that fit in one evening.</p>
 
-<h2>After: what AI took away</h2>
-<p>Since January 2026 I have worked with <abbr title="Artificial intelligence">AI</abbr> agents, at the office and after hours. As of 30 September, I have created 17 repos this year. That is roughly the 2016 pace: 21 in twelve months, 17 in nine.</p>
-<p>The difference is depth. Those 17 repos hold 4,491 commits between them. Their median is 136. Half of them reached at least that.</p>
+<h2>What about the scars?</h2>
+<p>Some will say that wall was a good thing. That breaking your teeth is how you learn. That failures and scars are what stick, and that the journey is what matters.</p>
+<p>It's a fair point, and I know that journey well. The 2014 strip cost me a few hours of research before I found a version of <abbr title="Adafruit's open-source project that drives an LED strip from what's on the screen">Adalight</abbr> that worked with my LEDs. A year later, after moving house, I was back to reprogramming the board.</p>
+<p>With AI, I don't think that really changes. The journey is still there, on fast-forward. It's a highway with the adrenaline at full throttle.</p>
+<blockquote><p>Nobody took the journey away. They lifted the speed limit.</p></blockquote>
+<p>I still break my teeth. Troubleshooting my home automation with an agent, I learned that "I reset it" and "the module lost power" are two different claims. It took three attempts to find the right breaker. The agent didn't spare me that lesson.</p>
+<p>You still learn, if you want to. You have to dig, ask questions, stay curious. Ask why it works, not just get it working. That's part of our <abbr title="Deoxyribonucleic acid, the carrier of heredity">DNA</abbr> as makers.</p>
+<p>The reverse holds too. An agent can do everything while I understand nothing. If I ask no questions, nothing sticks, and that's my call.</p>
+<p>One last caveat. I don't measure what I retain. No git history records what you learned. This is my experience, not proof. I'm not claiming AI makes people learn more, or less.</p>
+
+<h2>After: building at full speed</h2>
+<p>Since January 2026 I have worked with AI agents, at the office and after hours. As of 30 September, I have created 17 repos this year. That is roughly the 2016 pace: 21 in twelve months, 17 in nine.</p>
+<p>The difference is depth. Those 17 repos hold 4,491 commits between them, with a median of 136.</p>
 <svg viewBox="0 0 640 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of new GitHub repos per year from 2012 to 2026: 21 in 2016 with a median of 9 commits, zero in 2018, 2023 and 2024, then 17 in 2026 as of 30 September with a median of 136 commits. The number of tries is back at the 2016 level; how far each one goes is not comparable." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">NEW REPOS PER YEAR, 2012-2026</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Same urge. Not the same depth.</text>
@@ -237,16 +257,16 @@ const englishContent: PostContent = {
 <text x="32" y="374" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Personal repos, forks excluded, 3 private included. 2026 counted to 30 Sept.</text>
 </svg>
 <p>Two caveats. These counts cover my personal repos minus <abbr title="A copy of someone else's repository">forks</abbr>, and 3 of them are private. And a 2026 repo is nine months old at most. Too early to talk about survival.</p>
+<p>The pace moved as much as the depth. In March 2026, my repos took 675 commits in a single month. Update bots excluded, agents included. That's more than a hundred times the whole of 2023. Git can't say exactly which hand was mine and which was the agent's.</p>
 <p>What disappeared is the wall at the start. The docs you don't feel like reading. The project skeleton. The first version that runs well enough to judge the idea. The agent carries all of that, so a try now starts where it used to stall.</p>
 <p>My reading again: in 2016, plenty of my repos didn't die of a bad idea. They died at the second obstacle, before the second evening. Git keeps no record of reasons like that. The median of 9 commits is the trace it does keep.</p>
-<p>Some will say that breaking your teeth is how you learn. That failures and scars are what stick, and that the journey is what matters. With AI, I don't think that really changes: the journey is still there, only faster. It's a highway with the adrenaline turned all the way up, and for me the pleasure of making and designing is more present than ever.</p>
-<p>You still learn, if you want to. You have to dig, ask questions, stay curious. But that is part of a maker's DNA.</p>
-<p>For the house, the hands-on evidence lives in <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">this account of home automation run through an agent</a>. Here I stay with the code, and with what it changes for the person writing it.</p>
-<p>Because this is about identity first. For years, being a nerd meant agreeing to pay the entry fee. Read, solder, configure, all before seeing any result. That fee has nearly vanished. What remains is the urge, and the question of what to do with it.</p>
+<p>The agent leaves me the part I always liked best. Picturing the thing. Deciding how it should behave. Watching it run, then going back in because it could be better. For me, the joy of making and designing has never been this present.</p>
+<p>Same story at home. One home automation chore sat on my list for two years, because the clean version looked like half a day's work. It got done in one sitting on 18 September. The full story is in <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">this account of home automation run through an agent</a>.</p>
+<p>This is about identity first. For years, being a nerd meant agreeing to pay the entry fee. Read, solder, configure, all before seeing any result. That fee has nearly vanished. What remains is the urge, and the question of what to do with it.</p>
 <blockquote><p>Nerds didn't change. The price of getting started did.</p></blockquote>
 
 <h2>What didn't move: choosing, finishing, keeping alive</h2>
-<p>Everything after the first try still costs what it always did.</p>
+<p>The highway has a toll booth, and it sits after the first try. Everything past that point still costs what it always did.</p>
 <p>As of 30 September, 13 of my 17 repos from 2026 got a push in the last thirty days. One is archived. In 2016, dropping a project was free and silent. In 2026, everything stays alive at once, and every live repo wants attention.</p>
 <p>The last three have had nothing for over a month, and none is archived. Not alive, not dead. That is where upkeep costs the most: a decision you keep putting off.</p>
 <p>Alive is not the same as finished. Git has no "done" flag. And a push can come from a bot bumping a dependency.</p>
@@ -254,7 +274,7 @@ const englishContent: PostContent = {
 <p><strong>Choosing.</strong> When anything can start, you have to decide what won't. <strong>Finishing.</strong> The last few percent of a project are edge cases, docs and decisions. <strong>Upkeep.</strong> Every live repo holds a slot in my head, even on the days I don't touch it.</p>
 <p>On that ground, the evidence for gains is thin. A <abbr title="Model Evaluation and Threat Research, an independent AI evaluation nonprofit">METR</abbr> study followed 16 experienced developers through 246 tasks in their own repos. With AI, they were 19% slower. They believed they had been 20% faster.</p>
 <p>The sample is small and it covers <abbr title="Existing codebases with history and users, as opposed to greenfield projects started from scratch">brownfield</abbr> code only. METR's own 2026 follow-up calls its newer numbers an unreliable signal. I take one thing from it: feeling fast measures nothing.</p>
-<p>There is also a darker side, the loop that won't let you stop. I have <a target="_blank" rel="noopener noreferrer" href="/posts/agentic-ai-addiction">looked at it up close elsewhere</a>. The line between passion and compulsion comes down to one question: am I still the one choosing to stop?</p>
+<p>Full speed has a darker side too: the loop that won't let you stop. I have <a target="_blank" rel="noopener noreferrer" href="/posts/agentic-ai-addiction">looked at it up close elsewhere</a>. The line between passion and compulsion comes down to one question: am I still the one choosing to stop?</p>
 
 <h2>What still belongs to humans</h2>
 <p><strong>Taste.</strong> <abbr title="Anil R. Doshi and Oliver P. Hauser, authors of the 2024 Science Advances study">Doshi and Hauser</abbr> gave AI-generated ideas to 293 people writing short stories. The stories were rated more novel (+8.1%) and more useful (+9.0%). The least creative writers gained the most. But the stories ended up more alike.</p>
@@ -263,7 +283,7 @@ const englishContent: PostContent = {
 <p><strong>Stopping.</strong> Closing a repo is still a human move. It is also the one that keeps the urge from turning into an obligation.</p>
 
 <h2>Three rules I want to keep</h2>
-<p>I have no method to sell. Just three guardrails, so the urge to try things doesn't turn into clutter.</p>
+<p>I have no method to sell. Just three guardrails, so I keep the thrill of speed without my repos turning into clutter.</p>
 <ol>
 <li><strong>Two evenings to prove it's useful.</strong> A try that has served nobody after two evenings, me included, goes to the archive. I add one line to remind myself why.</li>
 <li><strong>A monthly walk through the graveyard.</strong> I list the repos that have been silent for thirty days. Each one is archived or gets a written next step. No limbo.</li>
