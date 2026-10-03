@@ -143,7 +143,7 @@ const frenchContent: PostContent = {
 <p>La première version coupait la télévision les dimanche, lundi, mardi et jeudi. C'était un calendrier de veilles d'école, construit en raisonnant sur l'emploi du temps.</p>
 <p>Trois jours plus tard, le mercredi a été ajouté. La coupure de 19 h 30 tombe pile au retour de l'activité du soir, ce qui empêche de se mettre devant la télévision avant de dîner.</p>
 <p>Le lendemain, le vendredi a été ajouté, et la raison invalide tout le raisonnement précédent. Ce n'est plus un calendrier de veilles d'école. C'est un rituel de fin de journée, valable tous les soirs sauf le samedi. L'heure de rallumage est passée de 20 h 00 à 20 h 30 dans la foulée.</p>
-<p>J'ai signalé deux fois que la règle de départ était incohérente. Les deux fois, la réponse a été de changer la règle plutôt que le raisonnement. C'est le bon ordre.</p>
+<p>J'ai signalé deux fois que la règle de départ était incohérente. Les deux fois, l'agent a changé la règle au lieu de défendre son raisonnement. C'est le bon ordre.</p>
 <blockquote><p>Trois versions en une semaine, ce n'est pas de l'indécision. C'est ce qui arrive quand changer d'avis coûte moins cher que d'avoir raison du premier coup.</p></blockquote>
 <p>Un détail pratique en est sorti. Ces trois horaires vivent dans trois automatisations qui partagent la même liste de jours. Si on ajoute un jour à deux d'entre elles et pas à la troisième, la télévision se coupe et ne se rallume jamais. Elles se modifient donc ensemble, toujours.</p>
 <p>Le blueprint plus bas règle ce défaut : une seule automatisation, une seule liste de jours.</p>
@@ -306,7 +306,7 @@ const englishContent: PostContent = {
 <p>The first version cut the television on Sunday, Monday, Tuesday and Thursday. It was a school-night calendar, built by reasoning about the timetable.</p>
 <p>Three days later Wednesday was added. The 7:30 cut lands right as everyone gets back from the evening activity, which stops the television happening before dinner.</p>
 <p>The next day, Friday was added, and the reason invalidates all the previous reasoning. It is no longer a school-night calendar. It is an end-of-day ritual, valid every evening but Saturday. The hand-back time moved from 8 to 8:30 p.m. in the same edit.</p>
-<p>I twice pointed out that the original rule was inconsistent. Both times the answer was to change the rule rather than the reasoning. That is the right order.</p>
+<p>I twice pointed out that the original rule was inconsistent. Both times the agent changed the rule instead of defending its reasoning. That is the right order.</p>
 <blockquote><p>Three versions in one week is not indecision. It is what happens when changing your mind costs less than being right first time.</p></blockquote>
 <p>One practical detail came out of it. Those three times live in three automations that share one list of days. Add a day to two of them and not the third, and the television cuts and never comes back. They get edited together, always.</p>
 <p>The blueprint below fixes this: one automation, one list of days.</p>
