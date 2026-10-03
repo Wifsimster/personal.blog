@@ -11,11 +11,11 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: "J'ai changé le calendrier du soir trois fois en une semaine",
   description: "Épisode 3 : la maison porte désormais le rythme de la journée. Portail ouvert à 7 h 55, télévision coupée à 19 h 30, volets fermés au même moment, et un jeu de données officiel qui suspend tout pendant les vacances scolaires. Chaque brique a été posée en une soirée, et c'est ce qui a permis de changer d'avis trois fois.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Ma maison tient maintenant le cadre de la journée. Volets ouverts à 7 h 20, portail à 7 h 55, télévision coupée à 19 h 30 et rendue aux parents à 20 h 30, volets fermés au même moment, coucher à 20 h 30. Un capteur <abbr title="Interface web qui expose des données sur HTTP">REST</abbr> branché sur le calendrier scolaire officiel suspend l'ensemble pendant les vacances, et un capteur de jours fériés ne sert plus qu'au matin et au retour d'école : le soir, seules les vacances arrêtent la routine. Le point de l'épisode n'est pas la liste : c'est que ce calendrier a changé trois fois en une semaine, parce qu'une erreur de règle ne coûtait plus qu'une retouche.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Ma maison tient maintenant le cadre de la journée. Volets ouverts à 7 h 20, portail à 7 h 55, télévision coupée à 19 h 30 et rendue aux parents à 20 h 30. Les volets se ferment à 19 h 30, le coucher est à 20 h 30. Un capteur <abbr title="Interface web qui expose des données sur HTTP">REST</abbr> branché sur le calendrier scolaire officiel suspend tout pendant les vacances. Le capteur de jours fériés ne sert plus qu'au matin et au retour d'école : le soir, seules les vacances arrêtent la routine. Ce calendrier a changé trois fois en une semaine, parce qu'une erreur de règle ne coûtait plus qu'une retouche.</p></div>
 <hr>
 <p>19 h 30. La prise de la télévision se coupe. Les six volets se ferment. Une minute plus tard, l'enceinte du salon annonce le temps calme. À 20 h 30 la télévision se rallume pour les parents, et le coucher est annoncé dans la chambre.</p>
 <p>Rien de tout cela n'existait il y a un mois.</p>
-<p>Ce n'est pas la partie impressionnante de mon installation. C'est celle qui a le plus changé la maison, et celle dont la mise en place a été la plus rapide.</p>
+<p>Ce n'est pas la partie la plus impressionnante de mon installation. C'est celle qui a le plus changé le quotidien, et la plus rapide à poser.</p>
 
 <h2>Le soir, brique par brique</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/bricks-light.png"><img src="/visuals/daily-rhythm/bricks-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
@@ -23,12 +23,13 @@ const frenchContent: PostContent = {
 <p>Le premier morceau posé a été la coupure de télévision. Une prise <abbr title="Réseau maillé radio basse consommation, 2,4 GHz">Zigbee</abbr>, une automatisation à 19 h 30, une autre à 20 h 30 pour la rendre. Quinze minutes.</p>
 <p>Puis l'annonce de 19 h 25, qui prévient cinq minutes avant. Puis la fermeture des volets, calée sur la même heure. Puis le temps calme à 19 h 31, pour que l'extinction soit suivie d'une consigne plutôt que d'un vide.</p>
 <p>Chaque brique a pris une soirée au plus, et aucune n'a été pensée à l'avance. J'ai corrigé après chaque essai.</p>
-<blockquote><p>Une maison ne se conçoit pas comme un produit. Elle se règle comme un instrument, par petites touches, en écoutant ce que ça donne.</p></blockquote>
+<blockquote><p>Une maison, ça se règle, ça ne se conçoit pas. Un essai, un constat, une retouche.</p></blockquote>
 <p>Le matin a suivi le même chemin. Du lundi au vendredi, la chaîne démarre à 6 h 40 : la lumière de la chambre parentale monte pendant vingt minutes, comme un lever de soleil.</p>
 <p>À 7 h 15, l'enceinte d'une chambre lance une playlist à 10 % du volume. Elle monte à 30 % en cinq paliers de vingt secondes, et la consigne parlée ne vient qu'ensuite. Si l'enceinte est injoignable, personne n'est réveillé et les parents sont prévenus.</p>
 <p>À 7 h 20, le petit-déjeuner est annoncé et les volets s'ouvrent. À 7 h 50, l'avertissement de départ. À 7 h 55, le portail s'ouvre. À 8 h 00, un dernier rappel, puis la musique s'arrête.</p>
-<p>Ce portail mérite deux phrases, parce qu'il illustre bien ce que veut dire « poser un usage ». Il est piloté par deux relais séparés, un pour l'ouverture et un pour la fermeture, avec un verrouillage qui coupe l'un quand l'autre s'active. Ouvrir un portail déjà ouvert ne produit donc aucun effet et aucune erreur. L'automatisation relève l'état <em>avant</em> d'agir, uniquement pour adapter la phrase annoncée : « le portail est ouvert » plutôt que « j'ouvre le portail ». Un détail de deux lignes, du genre qu'on n'écrit que si l'écrire est gratuit.</p>
-<p>La fermeture, elle, repose sur deux filets. Une fermeture systématique à 20 h 30, et une fermeture de nuit une heure après le coucher du soleil. Le second suffisait en théorie, mais en été il laissait le portail ouvert jusqu'à 23 h.</p>
+<p>Le portail est piloté par deux relais, un pour ouvrir et un pour fermer. Un verrouillage coupe l'un quand l'autre s'active. Ouvrir un portail déjà ouvert ne fait donc rien et ne produit aucune erreur.</p>
+<p>L'automatisation relève l'état <em>avant</em> d'agir, juste pour choisir la phrase annoncée : « le portail est ouvert » plutôt que « j'ouvre le portail ». Deux lignes que je n'aurais pas écrites si elles avaient coûté quelque chose.</p>
+<p>La fermeture a deux filets de sécurité : une fermeture systématique à 20 h 30, et une fermeture de nuit une heure après le coucher du soleil. Le second suffisait en théorie. En été, il laissait le portail ouvert jusqu'à 23 h.</p>
 
 <h2>Mercredi, tout glisse de cinquante-cinq minutes</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-light.png"><img src="/visuals/daily-rhythm/slide-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
@@ -136,20 +137,21 @@ const frenchContent: PostContent = {
 </svg>
 <p>Le capteur interroge le jeu de données de l'Éducation nationale toutes les six heures, filtré sur mon académie. Une automatisation aligne le booléen sur sa réponse et me prévient quand il bascule. Le plus long a été de choisir l'académie.</p>
 <p>Ce booléen pilote à la fois le matin, le soir et le coucher. En contrepartie, un forçage manuel est repris dans l'heure.</p>
-<p>À côté, un capteur de jours fériés sert le matin et le retour d'école. Il pose une seule question : « y avait-il école aujourd'hui ». Le soir, la télévision, le temps calme et le coucher ne le consultent plus. Depuis le 23 septembre, ils tournent aussi la veille d'un férié, et seules les vacances scolaires les arrêtent. Un service permet d'interroger le capteur à une date arbitraire, ce qui évite d'attendre le 31 octobre pour vérifier qu'on a raison.</p>
+<p>À côté, un capteur de jours fériés sert le matin et le retour d'école. Il pose une seule question : « y avait-il école aujourd'hui ». Le soir, la télévision, le temps calme et le coucher ne le consultent plus. Depuis le 23 septembre, ils tournent aussi la veille d'un férié. Seules les vacances scolaires les arrêtent. Un service permet d'interroger le capteur à une date arbitraire. Ça évite d'attendre le 31 octobre pour vérifier qu'on a raison.</p>
 
 <h2>Le calendrier a changé trois fois en une semaine</h2>
 <p>La première version coupait la télévision les dimanche, lundi, mardi et jeudi. C'était un calendrier de veilles d'école, construit en raisonnant sur l'emploi du temps.</p>
 <p>Trois jours plus tard, le mercredi a été ajouté. La coupure de 19 h 30 tombe pile au retour de l'activité du soir, ce qui empêche de se mettre devant la télévision avant de dîner.</p>
-<p>Le lendemain encore, le vendredi a été ajouté, et pour une raison qui invalide tout le raisonnement précédent. Ce n'est plus un calendrier de veilles d'obligation. C'est un rituel de fin de journée qui vaut tous les soirs, sauf le samedi. L'heure de rallumage est passée de 20 h 00 à 20 h 30 dans la foulée.</p>
+<p>Le lendemain, le vendredi a été ajouté, et la raison invalide tout le raisonnement précédent. Ce n'est plus un calendrier de veilles d'école. C'est un rituel de fin de journée, valable tous les soirs sauf le samedi. L'heure de rallumage est passée de 20 h 00 à 20 h 30 dans la foulée.</p>
 <p>J'ai signalé deux fois que la règle de départ était incohérente. Les deux fois, la réponse a été de changer la règle plutôt que le raisonnement. C'est le bon ordre.</p>
 <blockquote><p>Trois versions en une semaine, ce n'est pas de l'indécision. C'est ce qui arrive quand changer d'avis coûte moins cher que d'avoir raison du premier coup.</p></blockquote>
-<p>Un détail pratique est né de là. Ces trois horaires vivent dans trois automatisations distinctes qui partagent la même liste de jours. Ajouter un jour à deux d'entre elles et pas à la troisième donne une télévision qui se coupe sans jamais se rallumer. Elles se modifient ensemble, toujours. Le blueprint proposé plus bas règle ce défaut, avec une seule automatisation et donc une seule liste de jours.</p>
-<p>La même souplesse a servi ailleurs. L'ouverture des volets du matin a fini en deux horaires, pour couvrir chaque jour de l'année exactement une fois : 7 h 20 du lundi au vendredi, et 9 h 00 les week-ends, les fériés et les vacances. Le mercredi a eu le sien, 8 h 05, jusqu'à ce qu'il rejoigne les autres le 23 septembre. Sans l'horaire de 9 h 00, les volets restaient clos tout le samedi.</p>
+<p>Un détail pratique en est sorti. Ces trois horaires vivent dans trois automatisations qui partagent la même liste de jours. Si on ajoute un jour à deux d'entre elles et pas à la troisième, la télévision se coupe et ne se rallume jamais. Elles se modifient donc ensemble, toujours.</p>
+<p>Le blueprint plus bas règle ce défaut : une seule automatisation, une seule liste de jours.</p>
+<p>La même souplesse a servi ailleurs. Les volets du matin ont fini avec deux horaires, qui couvrent chaque jour de l'année exactement une fois : 7 h 20 du lundi au vendredi, 9 h 00 les week-ends, les fériés et les vacances. Le mercredi a eu le sien, 8 h 05, jusqu'au 23 septembre. Sans l'horaire de 9 h 00, les volets restaient clos tout le samedi.</p>
 
 <h2>Ce que la maison ne décide pas</h2>
-<p>La fermeture des volets de 19 h 30 n'a volontairement aucune condition de jour, et elle n'est pas reliée au coucher du soleil. J'ai proposé de la caler sur le crépuscule, ce qui semblait plus intelligent. La réponse a été non : le but n'est pas de gérer la lumière naturelle, c'est d'imposer un repère visible aux enfants, qu'il fasse encore jour ou non. La description de l'automatisation le dit maintenant explicitement.</p>
-<p>Les vacances scolaires restent la seule exception assumée. Pendant les vacances, aucune coupure de télévision, aucun soir. Le rituel vaut en période scolaire, et c'est une décision de parent.</p>
+<p>La fermeture des volets de 19 h 30 n'a volontairement aucune condition de jour. Elle n'est pas non plus reliée au coucher du soleil. J'ai proposé de la caler sur le crépuscule, ce qui semblait plus intelligent. La réponse a été non. Le but n'est pas de gérer la lumière naturelle. C'est d'imposer un repère visible aux enfants, qu'il fasse encore jour ou non. La description de l'automatisation le dit maintenant explicitement.</p>
+<p>Les vacances scolaires restent la seule exception assumée. Pendant les vacances, aucune coupure de télévision, aucune routine du soir. Le rituel vaut en période scolaire, et c'est une décision de parent.</p>
 <p>Enfin, rien de tout cela ne me fait gagner du temps. Ouvrir un portail prend trois secondes et couper une télévision aussi. Ce que la maison apporte, c'est la régularité : l'heure ne dépend plus de qui est disponible, ni de l'énergie qu'on a ce soir-là pour la faire respecter.</p>
 
 <h2>Ce que j'en retiens</h2>
@@ -172,11 +174,11 @@ const frenchContent: PostContent = {
 const englishContent: PostContent = {
   title: 'I Changed the Evening Schedule Three Times in One Week',
   description: 'Episode 3: the house now carries the shape of the day. Gate open at 7:55, television cut at 7:30 p.m., shutters closed at the same moment, and an official open dataset that suspends the whole thing during school holidays. Every piece took an evening, and that is what made changing my mind three times possible.',
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> My house now holds the shape of the day. Shutters open at 7:20, gate at 7:55, television cut at 7:30 p.m. and handed back to the parents at 8:30, shutters closed at the same moment, bed at 8:30. A <abbr title="A web interface exposing data over HTTP">REST</abbr> sensor wired to the official school calendar suspends all of it during the holidays, and a public-holiday sensor now only serves the morning and the after-school block: in the evening, only school holidays stop the routine. The point of this episode is not the list. It is that this schedule changed three times in one week, because a wrong rule only cost a quick edit.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> My house now holds the shape of the day. Shutters open at 7:20, gate at 7:55, television cut at 7:30 p.m. and handed back to the parents at 8:30. Shutters close at 7:30 p.m. too, and bed is at 8:30. A <abbr title="A web interface exposing data over HTTP">REST</abbr> sensor wired to the official school calendar suspends everything during the holidays. The public-holiday sensor now only serves the morning and the after-school block: in the evening, only school holidays stop the routine. This schedule changed three times in one week, because a wrong rule only cost a quick edit.</p></div>
 <hr>
 <p>7:30 p.m. The television socket cuts. The six shutters close. A minute later the living-room speaker announces quiet time. At 8:30 the television comes back for the parents, and bedtime is announced in the bedroom.</p>
 <p>None of that existed a month ago.</p>
-<p>It is not the impressive part of my installation. It is the part that changed the house the most, and the part that took the least time to build.</p>
+<p>It is not the most impressive part of my installation. It is the part that changed daily life the most, and the quickest to build.</p>
 
 <h2>The evening, one piece at a time</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/bricks-light.png"><img src="/visuals/daily-rhythm/bricks-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
@@ -184,12 +186,13 @@ const englishContent: PostContent = {
 <p>The first piece was the television cut. A <abbr title="Low-power 2.4 GHz mesh radio protocol">Zigbee</abbr> socket and two automations, one at 7:30 p.m. and one at 8:30. A quarter of an hour's work.</p>
 <p>Then the 7:25 announcement, which gives five minutes' notice. Then the shutters closing, set to the same time. Then quiet time at 7:31, so that switching off is followed by an instruction rather than a void.</p>
 <p>Each piece took an evening at most, and none of them was planned in advance. I corrected after each attempt.</p>
-<blockquote><p>A house is not designed like a product. It is tuned like an instrument, in small strokes, listening to what comes out.</p></blockquote>
+<blockquote><p>A house gets tuned, not designed. One try, one observation, one edit.</p></blockquote>
 <p>The morning was built like that too. From Monday to Friday, the chain starts at 6:40: the parents' bedroom light rises for twenty minutes, like a sunrise.</p>
 <p>At 7:15, a bedroom speaker starts a playlist at 10% volume. It climbs to 30% in five steps of twenty seconds, and the spoken instruction only comes after. If the speaker is unreachable, nobody is woken and the parents get a notification.</p>
 <p>At 7:20, breakfast is announced and the shutters open. At 7:50, the leaving warning. At 7:55, the gate opens. At 8:00, a last reminder, then the music stops.</p>
-<p>The gate deserves two sentences, because it shows well what "adding a use case" means. It runs on two separate relays, one to open and one to close, with an interlock that cuts one when the other engages. Opening an already-open gate therefore produces no effect and no error. The automation reads the state <em>before</em> acting, purely to adapt the spoken line: "the gate is open" rather than "opening the gate". A two-line detail, the kind you only write when writing it is free.</p>
-<p>Closing rests on two nets. A systematic close at 8:30 p.m., and a night close one hour after sunset. The second was enough in theory, but in summer it left the gate open until 11 p.m.</p>
+<p>The gate runs on two relays, one to open and one to close. An interlock cuts one when the other engages. Opening an already-open gate therefore does nothing and raises no error.</p>
+<p>The automation reads the state <em>before</em> acting, just to pick the spoken line: "the gate is open" rather than "opening the gate". Two lines I would not have written if they had cost anything.</p>
+<p>Closing has two safety nets: a systematic close at 8:30 p.m., and a night close one hour after sunset. The second was enough in theory. In summer, it left the gate open until 11 p.m.</p>
 
 <h2>Wednesday, everything slides by fifty-five minutes</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-light.png"><img src="/visuals/daily-rhythm/slide-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
@@ -297,20 +300,21 @@ const englishContent: PostContent = {
 </svg>
 <p>The sensor queries the education ministry's dataset every six hours, filtered to my region. An automation aligns the boolean with its answer and notifies me when it flips. The longest part was picking the right académie.</p>
 <p>Morning, evening and bedtime all hang off that boolean. The side effect is that a manual override gets reverted within the hour.</p>
-<p>Alongside it, a public-holiday sensor serves the morning and the after-school block. It asks a single question: "was there school today". In the evening, the television, the quiet time and bedtime no longer consult it. Since 23 September they run on the eve of a holiday too, and only school holidays stop them. A service lets me query the sensor for an arbitrary date, which saves waiting until 31 October to check I got it right.</p>
+<p>Alongside it, a public-holiday sensor serves the morning and the after-school block. It asks a single question: "was there school today". In the evening, the television, the quiet time and bedtime no longer consult it. Since 23 September they run on the eve of a holiday too. Only school holidays stop them. A service lets me query the sensor for an arbitrary date. That saves waiting until 31 October to check I got it right.</p>
 
 <h2>The schedule changed three times in one week</h2>
 <p>The first version cut the television on Sunday, Monday, Tuesday and Thursday. It was a school-night calendar, built by reasoning about the timetable.</p>
 <p>Three days later Wednesday was added. The 7:30 cut lands right as everyone gets back from the evening activity, which stops the television happening before dinner.</p>
-<p>The day after that, Friday was added, for a reason that invalidates all the previous reasoning. It is not a school-night calendar. It is an end-of-day ritual that holds every evening but Saturday. The hand-back time moved from 8 to 8:30 p.m. in the same edit.</p>
+<p>The next day, Friday was added, and the reason invalidates all the previous reasoning. It is no longer a school-night calendar. It is an end-of-day ritual, valid every evening but Saturday. The hand-back time moved from 8 to 8:30 p.m. in the same edit.</p>
 <p>I twice pointed out that the original rule was inconsistent. Both times the answer was to change the rule rather than the reasoning. That is the right order.</p>
 <blockquote><p>Three versions in one week is not indecision. It is what happens when changing your mind costs less than being right first time.</p></blockquote>
-<p>One practical detail came out of it. Those three times live in three separate automations that share one list of days. Adding a day to two of them and not the third gives you a television that cuts and never comes back. They get edited together, always. The blueprint in the downloads below fixes this: one automation, so only one day list.</p>
-<p>The same flexibility paid off elsewhere. Opening the shutters in the morning ended up as two times, to cover every day of the year exactly once: 7:20 from Monday to Friday, and 9:00 on weekends, holidays and school breaks. Wednesday had its own, 8:05, until it joined the others on 23 September. Without the 9:00 time, the shutters stayed shut all Saturday.</p>
+<p>One practical detail came out of it. Those three times live in three automations that share one list of days. Add a day to two of them and not the third, and the television cuts and never comes back. They get edited together, always.</p>
+<p>The blueprint below fixes this: one automation, one list of days.</p>
+<p>The same flexibility paid off elsewhere. The morning shutters ended up with two times, which cover every day of the year exactly once: 7:20 from Monday to Friday, 9:00 on weekends, holidays and school breaks. Wednesday had its own, 8:05, until 23 September. Without the 9:00 time, the shutters stayed shut all Saturday.</p>
 
 <h2>What the house does not decide</h2>
-<p>The 7:30 p.m. shutter close deliberately carries no day condition, and it is not tied to sunset. I proposed anchoring it to dusk, which looked smarter. The answer was no: the goal is not managing daylight, it is imposing a visible landmark on the children, whether it is still light outside or not. The automation's description now says so explicitly.</p>
-<p>School holidays remain the one deliberate exception. During the holidays there is no television cut, no evening. The ritual is for term time, and that is a parenting decision.</p>
+<p>The 7:30 p.m. shutter close deliberately carries no day condition. It is not tied to sunset either. I proposed anchoring it to dusk, which looked smarter. The answer was no. The goal is not managing daylight. It is imposing a visible landmark on the children, whether it is still light outside or not. The automation's description now says so explicitly.</p>
+<p>School holidays remain the one deliberate exception. During the holidays there is no television cut and no evening routine. The ritual is for term time, and that is a parenting decision.</p>
 <p>Finally, none of this saves me time. Opening a gate takes three seconds and so does switching off a television. What the house brings is regularity: the time no longer depends on who is free, nor on how much energy anyone has that evening to enforce it.</p>
 
 <h2>What I am taking away</h2>
