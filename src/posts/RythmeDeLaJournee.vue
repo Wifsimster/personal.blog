@@ -35,7 +35,7 @@ const frenchContent: PostContent = {
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-light.png"><img src="/visuals/daily-rhythm/slide-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-dark.png"><img src="/visuals/daily-rhythm/slide-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>La maison suit un emploi du temps réel, pas un emploi du temps moyen. Il y a école le lundi, le mardi, le jeudi et le vendredi. Le mercredi, il n'y a pas école. Le dimanche soir et le mercredi soir restent pourtant des veilles d'école, donc la même routine s'y joue, décalée le mercredi.</p>
-<svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nuage de points relié comparant, pour sept étapes de la routine du soir, l'heure un jour d'école et l'heure le mercredi sur un même axe horaire : chaque étape glisse d'environ cinquante-cinq minutes, sauf le coucher, où les deux points se superposent exactement à vingt heures trente." class="diagram-svg">
+<svg viewBox="0 0 640 506" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nuage de points relié comparant, pour sept étapes de la routine du soir, l'heure un jour d'école et l'heure le mercredi sur un même axe horaire : chaque étape glisse d'environ cinquante-cinq minutes, sauf le coucher, où les deux points se superposent exactement à vingt heures trente. Une huitième ligne montre la télé coupée de dix-neuf heures trente à vingt heures trente, identique les deux jours." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SOIR · MÊME ROUTINE, HORAIRES DÉCALÉS</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Tout glisse, sauf le coucher.</text>
 <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">
@@ -44,15 +44,15 @@ const frenchContent: PostContent = {
 <circle cx="132" cy="97" r="5.5" fill="var(--diagram-accent)"></circle>
 <text x="144" y="101" fill="var(--diagram-accent)">Mercredi</text>
 </g>
-<line x1="208.0" y1="360" x2="608.0" y2="360" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="208.0" y1="354" x2="208.0" y2="366" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="208.0" y="384" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">18 h</text>
-<line x1="341.3" y1="354" x2="341.3" y2="366" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="341.3" y="384" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">19 h</text>
-<line x1="474.7" y1="354" x2="474.7" y2="366" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="474.7" y="384" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">20 h</text>
-<line x1="608.0" y1="354" x2="608.0" y2="366" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="608.0" y="384" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">21 h</text>
+<line x1="208.0" y1="394" x2="608.0" y2="394" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="208.0" y1="388" x2="208.0" y2="400" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="208.0" y="418" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">18 h</text>
+<line x1="341.3" y1="388" x2="341.3" y2="400" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="341.3" y="418" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">19 h</text>
+<line x1="474.7" y1="388" x2="474.7" y2="400" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="474.7" y="418" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">20 h</text>
+<line x1="608.0" y1="388" x2="608.0" y2="400" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="608.0" y="418" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">21 h</text>
 <text x="32" y="138" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Arrivée et douche</text>
 <line x1="252.4" y1="134" x2="374.7" y2="134" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round"></line>
 <circle cx="252.4" cy="134" r="5.5" fill="currentColor" fill-opacity="0.55"></circle>
@@ -93,8 +93,12 @@ const frenchContent: PostContent = {
 <circle cx="541.3" cy="338" r="9" fill="none" stroke="var(--diagram-accent)" stroke-opacity="0.4" stroke-width="6"></circle>
 <circle cx="541.3" cy="338" r="5.5" fill="var(--diagram-accent)"></circle>
 <text x="541.3" y="324" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650">20 h 30</text>
-<text x="32" y="418" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Chaque trait relie la même étape à ses deux horaires.</text>
-<text x="32" y="438" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Plus il est long, plus le décalage est grand — sauf au coucher, qui ne bouge jamais.</text>
+<text x="32" y="380" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Télé coupée</text>
+<line x1="408.0" y1="376" x2="541.3" y2="376" stroke="currentColor" stroke-opacity="0.4" stroke-width="9" stroke-linecap="round"></line>
+<text x="408.0" y="365" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">19 h 30</text>
+<text x="541.3" y="365" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">20 h 30</text>
+<text x="32" y="452" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Chaque trait relie la même étape à ses deux horaires.</text>
+<text x="32" y="472" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Plus il est long, plus le décalage est grand. Le coucher et la télé ne bougent jamais.</text>
 </svg>
 <p>Chaque étape porte donc deux horaires, et l'automatisation choisit selon celui qui l'a déclenchée. Les durées entre étapes sont conservées à l'identique. Ce sont les trente minutes de télévision et le temps calme qui encaissent le retard, pas le sommeil. Le matin, lui, ne glisse pas : lever à 7 h 15 du lundi au vendredi, mercredi compris, avec quarante minutes jusqu'au départ.</p>
 
@@ -198,7 +202,7 @@ const englishContent: PostContent = {
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-light.png"><img src="/visuals/daily-rhythm/slide-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/daily-rhythm/slide-dark.png"><img src="/visuals/daily-rhythm/slide-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <p>The house follows a real timetable, not an average one. School runs on Monday, Tuesday, Thursday and Friday. Wednesday has no school. Sunday evening and Wednesday evening are still the night before a school day, so the same routine runs, shifted on Wednesday.</p>
-<svg viewBox="0 0 640 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Connected dot plot comparing, for seven evening-routine steps, the school-day time and the Wednesday time on the same hour axis: every step slides by about fifty-five minutes, except bedtime, where the two points sit exactly on top of each other at half past eight." class="diagram-svg">
+<svg viewBox="0 0 640 506" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Connected dot plot comparing, for seven evening-routine steps, the school-day time and the Wednesday time on the same hour axis: every step slides by about fifty-five minutes, except bedtime, where the two points sit exactly on top of each other at half past eight. An eighth row shows the TV cut from half past seven to half past eight, identical on both days." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">EVENING · SAME ROUTINE, SHIFTED</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Everything slides, except bedtime.</text>
 <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">
@@ -207,15 +211,15 @@ const englishContent: PostContent = {
 <circle cx="132" cy="97" r="5.5" fill="var(--diagram-accent)"></circle>
 <text x="144" y="101" fill="var(--diagram-accent)">Wednesday</text>
 </g>
-<line x1="208.0" y1="360" x2="608.0" y2="360" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="208.0" y1="354" x2="208.0" y2="366" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="208.0" y="384" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">18:00</text>
-<line x1="341.3" y1="354" x2="341.3" y2="366" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="341.3" y="384" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">19:00</text>
-<line x1="474.7" y1="354" x2="474.7" y2="366" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="474.7" y="384" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">20:00</text>
-<line x1="608.0" y1="354" x2="608.0" y2="366" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="608.0" y="384" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">21:00</text>
+<line x1="208.0" y1="394" x2="608.0" y2="394" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="208.0" y1="388" x2="208.0" y2="400" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="208.0" y="418" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">18:00</text>
+<line x1="341.3" y1="388" x2="341.3" y2="400" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="341.3" y="418" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">19:00</text>
+<line x1="474.7" y1="388" x2="474.7" y2="400" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="474.7" y="418" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">20:00</text>
+<line x1="608.0" y1="388" x2="608.0" y2="400" stroke="currentColor" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="608.0" y="418" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" opacity="0.55">21:00</text>
 <text x="32" y="138" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">Home and shower</text>
 <line x1="252.4" y1="134" x2="374.7" y2="134" stroke="currentColor" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round"></line>
 <circle cx="252.4" cy="134" r="5.5" fill="currentColor" fill-opacity="0.55"></circle>
@@ -256,8 +260,12 @@ const englishContent: PostContent = {
 <circle cx="541.3" cy="338" r="9" fill="none" stroke="var(--diagram-accent)" stroke-opacity="0.4" stroke-width="6"></circle>
 <circle cx="541.3" cy="338" r="5.5" fill="var(--diagram-accent)"></circle>
 <text x="541.3" y="324" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="650">20:30</text>
-<text x="32" y="418" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Each line connects one step to its two times.</text>
-<text x="32" y="438" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">The longer it is, the bigger the shift — except bedtime, which never moves.</text>
+<text x="32" y="380" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.85">TV off</text>
+<line x1="408.0" y1="376" x2="541.3" y2="376" stroke="currentColor" stroke-opacity="0.4" stroke-width="9" stroke-linecap="round"></line>
+<text x="408.0" y="365" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">19:30</text>
+<text x="541.3" y="365" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">20:30</text>
+<text x="32" y="452" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Each line connects one step to its two times.</text>
+<text x="32" y="472" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">The longer it is, the bigger the shift. Bedtime and the TV cut never move.</text>
 </svg>
 <p>Every step therefore carries two times, and the automation picks according to which one fired it. The gaps between steps are preserved exactly. The thirty minutes of television and the quiet time take the hit, not the sleep. The morning does not shift: up at 7:15 from Monday to Friday, Wednesday included, with forty minutes through to leaving.</p>
 
