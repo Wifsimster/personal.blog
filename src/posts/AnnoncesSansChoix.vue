@@ -10,22 +10,22 @@ export const metadata: PostMetadata = {
 
 const frenchContent: PostContent = {
   title: "J'ai enlevé les choix, et l'annonce a commencé à marcher",
-  description: "Épisode 4 : treize annonces vocales par jour, du lever au coucher. La chaîne audio marchait dès le premier jour et ne produisait aucune action. Huit règles de rédaction, un réveil réécrit trois fois dans la même journée, et la branche de repli pour le jour où l'enceinte ne répond pas.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Ma maison diffuse treize annonces vocales par jour, du lever au coucher, sur deux enceintes. Les premières versions étaient jouées parfaitement et ne produisaient aucune action. Le problème n'était nulle part dans la chaîne audio. Il était dans le texte. Les treize messages ont été réécrits d'un coup selon une grille de huit règles, dont la plus contre-intuitive est d'avoir retiré tous les choix proposés. Le réveil, lui, a été réécrit trois fois dans la même journée, jusqu'à ce que la musique remplace la voix. Cet épisode est le seul de la série où le protocole ne joue aucun rôle.</p></div>
+  description: "Épisode 4 : quinze annonces vocales un jour d'école, du lever au coucher. La chaîne audio marchait dès le premier jour et ne produisait aucune action. Huit règles de rédaction, un réveil réécrit trois fois dans la même journée, et la branche de repli pour le jour où l'enceinte ne répond pas.",
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> Ma maison diffuse quinze annonces vocales un jour d'école, du lever au coucher, sur deux enceintes. Les premières versions étaient jouées parfaitement et ne produisaient aucune action. Le problème n'était nulle part dans la chaîne audio. Il était dans le texte. Les treize messages d'alors ont été réécrits d'un coup selon une grille de huit règles, dont la plus contre-intuitive est d'avoir retiré tous les choix proposés. Le réveil, lui, a été réécrit trois fois dans la même journée, jusqu'à ce que la musique passe en premier et que la voix suive. Cet épisode est le seul de la série où le protocole ne joue aucun rôle.</p></div>
 <hr>
-<p>19 h 31. L'enceinte du salon annonce : « C'est le temps calme. Tu peux lire, dessiner, ou jouer tranquillement. »</p>
+<p>19 h 31. L'enceinte du salon annonce : « C'est le temps calme. Tu peux lire, dessiner ou jouer. »</p>
 <p>Le message part au bon moment, au bon volume, dans la bonne pièce. Personne ne bouge.</p>
 <p>J'ai passé les trois épisodes précédents à me méfier de ce que les machines racontent. Celui-ci est différent. Le montage technique fonctionnait dès le premier jour.</p>
 
 <h2>La chaîne audio n'était pas en cause</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-light.png"><img src="/visuals/no-choices/speaker-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-dark.png"><img src="/visuals/no-choices/speaker-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<p>Elle mérite deux phrases, parce qu'elle a été montée en une soirée et n'a plus jamais bougé. La synthèse vocale tourne dans un conteneur, en français, sans aucun service externe. Les treize automatisations n'adressent jamais une enceinte directement : elles appellent un script unique qui choisit la pièce, le volume et le canal, ce qui laisse un seul endroit à corriger le jour où les enceintes changent de nom.</p>
+<p>Elle mérite deux phrases, parce qu'elle a été montée en une soirée et n'a plus jamais bougé. La synthèse vocale tourne dans un conteneur, en français, sans aucun service externe. Les annonces n'adressent jamais une enceinte directement : elles appellent un script unique qui choisit la pièce et le volume, et qui applique les heures calmes, ce qui laisse un seul endroit à corriger le jour où les enceintes changent de nom.</p>
 
 <h2>Huit règles, écrites après coup</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-light.png"><img src="/visuals/no-choices/rules-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-dark.png"><img src="/visuals/no-choices/rules-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<p>Le vrai chantier était ailleurs. Les treize messages ont été réécrits en une passe, selon une grille que j'ai fini par formuler explicitement.</p>
+<p>Le vrai chantier était ailleurs. J'ai réécrit les treize messages d'alors en une passe, selon une grille que j'ai fini par formuler explicitement.</p>
 <ol>
 <li><strong>Le prénom en tête.</strong> Une consigne impersonnelle ne désigne personne, donc personne ne bouge. « On range ses affaires » s'adresse à la pièce.</li>
 <li><strong>Une seule action par annonce.</strong> Jamais deux consignes empilées. Une annonce vaut une étape.</li>
@@ -36,7 +36,7 @@ const frenchContent: PostContent = {
 <li><strong>Aucun choix proposé.</strong> Chaque option énumérée est une décision à prendre avant d'agir.</li>
 <li><strong>Zéro logistique d'adulte dans un message adressé à un enfant.</strong> L'annonce de 7 h 50 récitait l'emploi du temps des autres, ce qui noyait la seule consigne utile.</li>
 </ol>
-<p>En pratique, la grille a été appliquée par un script qui parcourt chaque appel du script d'annonce et corrige le texte sur place. Treize automatisations réécrites et rechargées, aucune erreur de configuration, le temps d'un café. C'est cette absence de coût qui a permis d'aller jusqu'à la version qui marche, au lieu de s'arrêter à la première qui semblait raisonnable.</p>
+<p>En pratique, la grille a été appliquée par un script qui parcourt chaque appel du script d'annonce et corrige le texte sur place. Treize automatisations réécrites et rechargées (il y en a deux de plus aujourd'hui), aucune erreur de configuration, le temps d'un café. C'est cette absence de coût qui a permis d'aller jusqu'à la version qui marche, au lieu de s'arrêter à la première qui semblait raisonnable.</p>
 <p>La septième règle est celle qui m'a le plus surpris, et c'est celle du temps calme.</p>
 <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trois réécritures successives de la même annonce de temps calme, écrites le même jour : à chaque version, le texte accessoire s'efface un peu plus, jusqu'à ne laisser que « PRÉNOM, temps calme. », en couleur d'accent dans les trois versions, la seule partie qui survit." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">TEMPS CALME · 19 H 31 · TROIS VERSIONS</text>
@@ -53,9 +53,10 @@ const frenchContent: PostContent = {
 </svg>
 <p>La première version proposait trois activités. Je l'avais écrite en croyant bien faire, parce qu'offrir un choix passe pour une marque de respect. Ramenée à deux options, elle marchait un peu mieux. Ramenée à zéro, elle a commencé à marcher. L'annonce nomme l'état attendu, elle ne présente pas un menu.</p>
 <p>Un autre effet de cette grille m'a d'abord gêné. Les branches « mercredi » et « jour d'école » de deux annonces disaient la même chose avec des mots différents. Je les ai fusionnées, et la variation a disparu. Cette répétition à l'identique rend un message reconnaissable dès les premiers mots.</p>
-<p>Enfin, une règle a coûté quelque chose. L'annonce du petit-déjeuner rappelait « tu dois être habillé ». Elle ne le rappelle plus, au nom de la deuxième règle. Le contrôle de l'étape précédente a disparu, et je l'assume sans être certain que ce soit le bon arbitrage.</p>
+<p>Enfin, une règle a coûté quelque chose. L'annonce du petit-déjeuner rappelait « tu dois être habillé ». Elle ne le rappelle plus, au nom de la deuxième règle. Seul le réveil le dit encore, quatre-vingt-dix secondes après la musique. Le contrôle à cette étape a disparu, et je l'assume sans être certain que ce soit le bon arbitrage.</p>
+<p>Une exception est apparue depuis. Une annonce de temps de télévision a été ajoutée après la réécriture : « PRÉNOM, dents finies ? Tu peux aller regarder la télé jusqu'à sept heures et demie. » Elle pose une question et ouvre une option, donc elle enfreint déjà les règles 3, 4 et 7. Je ne l'ai pas encore corrigée.</p>
 <blockquote><p>Une annonce qui ne change le comportement de personne n'est pas une annonce. C'est du bruit à l'heure dite.</p></blockquote>
-<p>Les messages adressés aux adultes suivent des règles opposées et gardent leur contenu logistique. Celui de 8 h 00 a seulement été reformulé en alerte, « vous devriez déjà être partis », parce que ceux qui l'entendent encore sont précisément ceux qui ne sont pas partis.</p>
+<p>Les messages adressés aux adultes suivent des règles opposées et gardent leur contenu logistique. Celui de 8 h 00 a seulement été reformulé en alerte, « vous êtes en retard », parce que ceux qui l'entendent encore sont précisément ceux qui ne sont pas partis.</p>
 
 <h2>Le réveil, trois versions dans la même journée</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/wakeup-light.png"><img src="/visuals/no-choices/wakeup-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
@@ -98,7 +99,7 @@ const frenchContent: PostContent = {
 <h2>Ce que la maison n'a pas le droit de dire</h2>
 <p>Quelques interdits se sont accumulés, et ils valent autant que les règles de rédaction.</p>
 <p>La maison est de plain-pied. « Monte », « descends », « en haut », « en bas » sont bannis de toutes les annonces et de toutes les notifications. C'est le genre de tournure qu'on écrit sans y penser.</p>
-<p>Rien n'est diffusé entre 21 h 45 et 7 h 00, sauf si l'appel le demande explicitement. Une alerte de portail à deux heures du matin réveillerait toute la maison pour une bourrasque.</p>
+<p>Rien n'est diffusé entre 21 h 45 et 7 h 00, sauf si l'appel le demande explicitement. Une annonce de routine à deux heures du matin, une machine à laver terminée par exemple, réveillerait toute la maison. Les alertes qui doivent passer la nuit le demandent explicitement.</p>
 <p>Et une branche du script est aujourd'hui inerte, volontairement. Il sait adresser une deuxième chambre d'enfant, qui n'a pas encore d'enceinte. Le jour où elle en aura une, il suffira de la nommer correctement dans l'application du fabricant pour que l'identifiant attendu par le script se crée tout seul.</p>
 
 <h2>Ce qui reste aux humains</h2>
@@ -114,7 +115,7 @@ const frenchContent: PostContent = {
 <p>Le prochain épisode revient à la physique du bâtiment : six volets qui décident seuls de leur position à partir de la température de leur pièce et de la course du soleil sur leur façade, un cadastre, et un bureau à 29 °C en pleine nuit sans le moindre rayon de soleil.</p>
 <h2>À télécharger</h2>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/annonce-vocale.yaml" download>annonce-vocale.yaml</a> — le script par lequel passent les treize annonces. Une seule chose à adapter, la table des enceintes.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/annonce-vocale.yaml" download>annonce-vocale.yaml</a> — le script par lequel passent toutes les annonces. Une seule chose à adapter, la table des enceintes.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/LISEZMOI.md" download>LISEZMOI.md</a> — l'installation, la mécanique décrite sans Home Assistant, et la grille de rédaction en huit lignes.</li>
 </ul>
 <p><strong>Lire la série :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> — l'inventaire de l'installation et la mesure de ce qui a changé. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">L'IA n'a pas automatisé ma maison</a> — pourquoi le gain se mesure sur les chantiers qu'on ne commençait pas. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">J'ai changé le calendrier du soir trois fois en une semaine</a> — portail, télévision, volets et calendrier scolaire. <a target="_blank" rel="noopener noreferrer" href="/posts/not-the-sun">Mon bureau est à 29 °C la nuit</a> — six volets qui décident seuls, et ce que le modèle m'a dit de ne pas faire.</p>`
@@ -122,22 +123,22 @@ const frenchContent: PostContent = {
 
 const englishContent: PostContent = {
   title: 'I Took the Choices Out, and the Announcement Started Working',
-  description: 'Episode 4: thirteen spoken announcements a day, from wake-up to bedtime. The audio chain worked from day one and produced no action at all. Eight writing rules, a wake-up rewritten three times in one day, and the fallback for the morning the speaker does not answer.',
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> My house plays thirteen spoken announcements a day, from wake-up to bedtime, on two speakers. The first versions played perfectly and produced no action whatsoever. Nothing in the audio chain was at fault. The problem was the text. All thirteen messages were rewritten in one pass against a grid of eight rules, the most counter-intuitive of which was removing every choice on offer. The wake-up itself was rewritten three times in a single day, until music replaced the voice. This is the one episode in the series where no protocol plays any part.</p></div>
+  description: 'Episode 4: fifteen spoken announcements on a school day, from wake-up to bedtime. The audio chain worked from day one and produced no action at all. Eight writing rules, a wake-up rewritten three times in one day, and the fallback for the morning the speaker does not answer.',
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> My house plays fifteen spoken announcements on a school day, from wake-up to bedtime, on two speakers. The first versions played perfectly and produced no action whatsoever. Nothing in the audio chain was at fault. The problem was the text. All thirteen messages at the time were rewritten in one pass against a grid of eight rules, the most counter-intuitive of which was removing every choice on offer. The wake-up itself was rewritten three times in a single day, until music came first and the voice followed. This is the one episode in the series where no protocol plays any part.</p></div>
 <hr>
-<p>7:31 p.m. The living-room speaker announces: "It's quiet time. You can read, draw, or play quietly."</p>
+<p>7:31 p.m. The living-room speaker announces: "It's quiet time. You can read, draw, or play."</p>
 <p>The message goes out at the right moment, at the right volume, in the right room. Nobody moves.</p>
 <p>I spent the last three episodes distrusting what machines report. This one is different. The technical setup worked from day one.</p>
 
 <h2>The audio chain was not at fault</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-light.png"><img src="/visuals/no-choices/speaker-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-dark.png"><img src="/visuals/no-choices/speaker-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<p>It deserves two sentences, because it went up in one evening and never moved again. Speech synthesis runs in a container, in French, with no external service. The thirteen automations never address a speaker directly: they call one script that picks the room, the volume and the channel, which leaves one place to fix the day the speakers change names.</p>
+<p>It deserves two sentences, because it went up in one evening and never moved again. Speech synthesis runs in a container, in French, with no external service. The announcements never address a speaker directly: they call one script that picks the room and the volume, and applies the quiet hours, which leaves one place to fix the day the speakers change names.</p>
 
 <h2>Eight rules, written afterwards</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-light.png"><img src="/visuals/no-choices/rules-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-dark.png"><img src="/visuals/no-choices/rules-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<p>The actual work was elsewhere. I rewrote every message in a single sweep, against a grid I ended up stating explicitly.</p>
+<p>The actual work was elsewhere. I rewrote all thirteen messages of the time in a single sweep, against a grid I ended up stating explicitly.</p>
 <ol>
 <li><strong>Name first.</strong> An impersonal instruction addresses nobody, so nobody moves. "We tidy our things" is addressed to the room.</li>
 <li><strong>One action per announcement.</strong> Never two instructions stacked. One announcement is one step.</li>
@@ -148,7 +149,7 @@ const englishContent: PostContent = {
 <li><strong>Offer no choices.</strong> Every option listed is a decision to make before acting.</li>
 <li><strong>No adult logistics in a message addressed to a child.</strong> The 7:50 announcement recited everyone else's schedule, which drowned the one instruction that mattered.</li>
 </ol>
-<p>In practice the grid was applied by a script walking every call site of the announcement script and fixing the text in place. Thirteen automations rewritten and reloaded, no configuration errors, in the time it takes to make coffee. That absence of cost is what made it possible to reach the version that works, instead of stopping at the first one that looked reasonable.</p>
+<p>In practice the grid was applied by a script walking every call site of the announcement script and fixing the text in place. Thirteen automations rewritten and reloaded (there are two more today), no configuration errors, in the time it takes to make coffee. That absence of cost is what made it possible to reach the version that works, instead of stopping at the first one that looked reasonable.</p>
 <p>The seventh rule surprised me most, and it belongs to the quiet-time message.</p>
 <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three successive rewrites of the same quiet-time announcement, written the same day: with each version the extra text fades a little more, until only ‘NAME, quiet time.’, in accent colour across all three versions, is what survives." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">QUIET TIME · 7:31 PM · THREE VERSIONS</text>
@@ -165,9 +166,10 @@ const englishContent: PostContent = {
 </svg>
 <p>The first version offered three activities. I had written it meaning well, because offering a choice reads as a mark of respect. Cut to two options, it worked slightly better. Cut to none, it started working. The announcement names the expected state, it does not present a menu.</p>
 <p>Another effect of the grid bothered me at first. The "Wednesday" and "school day" branches of two announcements said the same thing in different words. I merged them, and the variation disappeared. That exact repetition makes a message recognisable from its first words.</p>
-<p>One rule did cost something. The breakfast announcement used to add "you need to be dressed". It no longer does, in the name of rule two. The check on the previous step is gone, and I own that without being sure it was the right call.</p>
+<p>One rule did cost something. The breakfast announcement used to add "you need to be dressed". It no longer does, in the name of rule two. Only the wake-up still says it, ninety seconds after the music. The check at this step is gone, and I own that without being sure it was the right call.</p>
+<p>One exception has appeared since. A TV-time announcement was added after the rewrite: "NAME, teeth done? You can go watch TV until seven thirty." It asks a question and opens an option, so it already breaks rules 3, 4 and 7. I have not fixed it yet.</p>
 <blockquote><p>An announcement that changes nobody's behaviour is not an announcement. It is noise on a schedule.</p></blockquote>
-<p>Messages addressed to adults follow the opposite rules and keep their logistics. The 8 a.m. one was only reframed as an alert, "you should have left by now", because whoever still hears it is precisely whoever has not left.</p>
+<p>Messages addressed to adults follow the opposite rules and keep their logistics. The 8 a.m. one was only reframed as an alert, "you are late", because whoever still hears it is precisely whoever has not left.</p>
 
 <h2>The wake-up, three versions in one day</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/wakeup-light.png"><img src="/visuals/no-choices/wakeup-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
@@ -210,7 +212,7 @@ const englishContent: PostContent = {
 <h2>What the house is not allowed to say</h2>
 <p>A few prohibitions piled up, and they matter as much as the writing rules.</p>
 <p>The house is single-storey. "Go up", "come down", "upstairs", "downstairs" are banned from every announcement and every notification. That is exactly the kind of phrasing you write without thinking.</p>
-<p>Nothing is broadcast between 9:45 p.m. and 7 a.m. unless the call explicitly asks for it. A gate alert at two in the morning would wake the whole house for a gust of wind.</p>
+<p>Nothing is broadcast between 9:45 p.m. and 7 a.m. unless the call explicitly asks for it. A routine announcement at two in the morning, a finished washing machine for instance, would wake the whole house. Alerts that must get through at night ask for it explicitly.</p>
 <p>And one branch of the script is deliberately inert today. It knows how to address a second child's bedroom, which has no speaker yet. The day it gets one, naming it correctly in the manufacturer's app is enough for the identifier the script already expects to create itself.</p>
 
 <h2>What still belongs to humans</h2>
@@ -226,7 +228,7 @@ const englishContent: PostContent = {
 <p>The next episode goes back to building physics: six shutters deciding their own position from their room temperature and the sun's track across their facade, a land registry, and an office sitting at 29 °C in the middle of the night without a single ray of sun.</p>
 <h2>Downloads</h2>
 <ul>
-<li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/annonce-vocale.yaml" download>annonce-vocale.yaml</a> — the script all thirteen announcements go through. One thing to adapt, the speaker table.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/annonce-vocale.yaml" download>annonce-vocale.yaml</a> — the script every announcement goes through. One thing to adapt, the speaker table.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="/downloads/no-choices/LISEZMOI.md" download>LISEZMOI.md</a> — installation, the mechanics described without Home Assistant, and the eight-line writing grid. Written in French.</li>
 </ul>
 <p><strong>Read the series:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent</a> — the inventory and a measurement of what changed. <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">AI Didn't Automate My House</a> — why the win shows up on the projects you never started. <a target="_blank" rel="noopener noreferrer" href="/posts/daily-rhythm">I Changed the Evening Schedule Three Times in One Week</a> — gate, television, shutters and the school calendar. <a target="_blank" rel="noopener noreferrer" href="/posts/not-the-sun">My Office Sits at 29 °C at Night</a> — six shutters deciding on their own, and what the model told me not to do.</p>`
