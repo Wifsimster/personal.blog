@@ -10,7 +10,7 @@ export const metadata: PostMetadata = {
 }
 
 const frenchContent: PostContent = {
-  title: "Un nerd dans la branche où l'essai ne coûte presque rien",
+  title: "Un nerd dans la branche faite pour nous",
   description: "Les films de notre enfance imaginaient des maisons qui parlent. La mienne parle, après zéro dépôt créé en 2023 et 2024, puis 17 en neuf mois. Ce que cette époque me facture encore, et ce qu'elle a de sombre.",
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> Les films et les séries qu'on regardait enfants imaginaient des maisons qui parlent. La mienne prononce quinze annonces vocales un jour d'école, écrites le soir avec un <abbr title="Programme d'intelligence artificielle qui écrit, lance et corrige du code à partir d'une consigne">agent</abbr> d'<abbr title="Intelligence artificielle">IA</abbr>. Au 30 septembre 2026, j'ai ouvert 17 <abbr title="Projet de code dont git conserve tout l'historique">dépôts</abbr> cette année, après plus de trois ans sans aucun, presque autant qu'en 2016, et bien plus poussés. Démarrer est devenu facile et, à mon avis, le plafond a monté. Trier, finir et entretenir coûtent toujours le même prix. L'emploi, la dépendance à quelques fournisseurs et la boucle compulsive restent des risques réels.</p></div>
 <hr>
@@ -30,7 +30,7 @@ const frenchContent: PostContent = {
 <p><strong>La voix de <em>Her</em>.</strong> Dans le film de Spike Jonze (2013), un homme dont le métier est d'écrire des lettres pour les autres s'attache à Samantha, un système d'exploitation doté de la voix de Scarlett Johansson. Elle apprend, elle change, puis elle part. Le film laisse de côté une voix qui ne converse pas. La mienne donne une consigne et se tait.</p>
 <p>Une voix qui réveille un enfant, un programme qui écrit du code le soir : c'est cette SF-là, à l'échelle d'une maison. Je n'ai ni robot ni voiture qui vole.</p>
 <p>Dans ces récits, l'invention se faisait ailleurs : chez Doc Brown et sa DeLorean, ou au siège d'U.S. Robotics. Dans ma branche, l'inventeur est à la maison, un soir de semaine. Une partie des outils reste ailleurs : le modèle derrière l'agent tourne chez un fournisseur, pas chez moi.</p>
-<p>Dans ma branche, celle d'un développeur qui a du temps, un métier stable et dix ans d'expérience, ce monde me va. Je ne dis pas qu'il convient à tous.</p>
+<p>Cette branche est faite pour nous. Pour ceux qui construisent le soir, qui ont déjà le goût d'essayer, et à qui les films ont donné l'envie de voir ça arriver. Elle ne l'est pas pour tout le monde, et la suite dit ce qu'elle facture.</p>
 
 <h2>Avant, un mur</h2>
 <p>2016 est mon année la plus prolifique avant l'IA. J'ai créé 21 dépôts en douze mois. La moitié s'est arrêtée à 9 <abbr title="Enregistrement d'une modification dans l'historique d'un dépôt git">commits</abbr> ou moins. 19 des 21 ont reçu leur dernier commit avant fin septembre 2017.</p>
@@ -172,7 +172,7 @@ const frenchContent: PostContent = {
 }
 
 const englishContent: PostContent = {
-  title: 'A Nerd in the Branch Where Trying Costs Almost Nothing',
+  title: 'A Nerd in the Branch Made for Us',
   description: 'The films we grew up with imagined houses that talk. Mine does, after zero repos created in 2023 and 2024, then 17 in nine months. What this era still bills me for, and its darker side.',
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> The films and TV series we watched as kids imagined houses that talk. Mine speaks fifteen times on a school day, in announcements I wrote in the evenings with an <abbr title="Artificial intelligence">AI</abbr> <abbr title="A program that writes, runs and fixes code from an instruction">agent</abbr> doing the typing. By 30 September 2026 I had started 17 <abbr title="A code project whose full history git keeps">repos</abbr> this year, after more than three years without one, close to my 2016 count, and they went much further. Getting started got easy, and in my view the ceiling has gone up. Sorting, finishing and upkeep still cost what they used to. Jobs, dependence on a handful of providers and the compulsive loop remain real risks.</p></div>
 <hr>
@@ -192,7 +192,7 @@ const englishContent: PostContent = {
 <p><strong>The voice in <em>Her</em>.</strong> In Spike Jonze's 2013 film, a man who writes letters for other people for a living falls for Samantha, an operating system voiced by Scarlett Johansson. She learns, she changes, then she leaves. The film never shows a voice that does not make conversation. Mine gives one instruction and goes quiet.</p>
 <p>A voice that wakes a child, a program that writes code in the evening: that is the sci-fi of those screens, at the scale of one house. I have no robot and no flying car.</p>
 <p>In those stories, inventing happened somewhere else: with Doc Brown and his DeLorean, or at U.S. Robotics headquarters. In my branch, the inventor is at home, on a weeknight. Part of the tooling still lives elsewhere: the model behind the agent runs at a provider's, not in my house.</p>
-<p>In my branch, that of a developer with time, a stable job and ten years of experience, this world suits me. I am not saying it suits everyone.</p>
+<p>This branch was made for us. For those who build in the evening, who already like to try things, and who grew up wanting to see this happen. It is not made for everyone, and what follows says what it bills.</p>
 
 <h2>Before: a wall</h2>
 <p>2016 was my most prolific year before AI. I created 21 repos in twelve months. Half of them stopped at 9 <abbr title="A recorded change in a git repository's history">commits</abbr> or fewer. 19 of the 21 got their last commit before the end of September 2017.</p>
