@@ -20,7 +20,7 @@ const frenchContent: PostContent = {
 <p>J'aime fabriquer, et rendre fonctionnel ce qui me passe par la tête. Comme <abbr title="Gyro Gearloose en version originale, l'inventeur de l'univers Disney de Donaldville">Géo Trouvetou</abbr>.</p>
 <p>Je l'ai écrit tel quel en mars, en anglais : « I'm a maker. Evenings and weekends, I experiment with AI ». Des soirs et des week-ends à essayer des choses.</p>
 <p>Ça ne date pas de l'IA. En 2014, à propos d'un ruban de <abbr title="Diode électroluminescente">LED</abbr> acheté sur un coup de tête, j'écrivais : « j'aime les défis et surtout les nouvelles choses ». Douze ans plus tard, la phrase tient toujours.</p>
-<p>Sur ma façon de penser, je m'en tiens à ce que j'ai déjà écrit : « J'ai simplement une grande capacité à inventer, des idées plein la tête en permanence — rien de plus. »</p>
+<p>Sur ma façon de penser, je m'en tiens à ce que j'ai déjà écrit : « J'ai simplement une grande capacité à inventer, des idées plein la tête en permanence. Rien de plus. »</p>
 <p>Des idées, donc, et l'envie de les voir marcher. Pendant longtemps, entre les deux, il y avait un mur.</p>
 
 <h2>Avant : le prix d'un essai</h2>
@@ -111,7 +111,7 @@ const frenchContent: PostContent = {
 <text x="32" y="374" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Dépôts personnels hors forks, 3 privés inclus. 2026 arrêté au 30 septembre.</text>
 </svg>
 <p>Deux précautions. Ces chiffres couvrent mes dépôts personnels hors <abbr title="Copie d'un dépôt appartenant à quelqu'un d'autre">forks</abbr>, dont 3 privés. Et un dépôt de 2026 a neuf mois au plus : trop tôt pour parler de survie.</p>
-<p>Le rythme a changé autant que la profondeur. En mars 2026, mes dépôts ont reçu 675 commits en un mois. Robots de mise à jour exclus, agents compris. C'est plus de cent fois l'année 2023 entière. Git ne sait pas faire la part exacte entre ma main et celle de l'agent.</p>
+<p>Le rythme a changé autant que la profondeur. En mars 2026, mes dépôts ont reçu 675 commits en un mois. Robots de mise à jour exclus, agents compris. C'est plus que les 470 commits de mes 21 dépôts de 2016, sur toute leur vie. Git ne sait pas faire la part exacte entre ma main et celle de l'agent.</p>
 <p>Ce qui a disparu, c'est le mur du début. La documentation qu'on n'a pas envie de lire. Le squelette du projet. La première version qui tourne assez pour juger l'idée. L'agent prend tout ça en charge, et l'essai commence là où il s'arrêtait avant.</p>
 <p>Ma lecture, là encore : en 2016, beaucoup de mes dépôts ne mouraient pas d'une mauvaise idée. Ils mouraient au deuxième obstacle, avant la deuxième soirée. Git ne garde pas ce genre de raison. La médiane de 9 commits, si.</p>
 <p>L'agent me laisse la partie que j'ai toujours préférée. Imaginer la chose. Décider comment elle doit se comporter. La voir tourner, puis la reprendre parce qu'elle peut faire mieux. Le plaisir de fabriquer et de concevoir n'a jamais été aussi présent.</p>
@@ -126,8 +126,8 @@ const frenchContent: PostContent = {
 <p>Vivant ne veut pas dire fini. Git n'a pas de case « terminé ». Et un push peut venir d'un robot qui met à jour une dépendance.</p>
 <blockquote><p>Essayer ne coûte presque plus rien. Choisir, finir et entretenir coûtent toujours autant.</p></blockquote>
 <p><strong>Choisir.</strong> Quand tout peut démarrer, il faut décider ce qu'on ne démarre pas. <strong>Finir.</strong> Les derniers pour cent d'un projet sont faits de cas limites, de documentation et de décisions. <strong>Entretenir.</strong> Chaque dépôt vivant occupe une place dans ma tête, même quand je n'y touche pas.</p>
-<p>Sur ce terrain-là, les preuves de gain sont minces. L'étude de <abbr title="Model Evaluation and Threat Research, organisme indépendant d'évaluation des modèles d'IA">METR</abbr> a suivi 16 développeurs expérimentés sur 246 tâches, dans leurs propres dépôts. Avec l'IA, ils ont été 19 % plus lents. Ils pensaient avoir gagné 20 %.</p>
-<p>L'échantillon est petit, et il ne couvre que du code existant. METR qualifie elle-même de signal peu fiable les chiffres de son suivi de 2026. J'en retiens une seule chose : l'impression d'aller vite ne mesure rien.</p>
+<p>Sur ce terrain-là, les preuves de gain sont minces. L'étude de <abbr title="Model Evaluation and Threat Research, organisme indépendant d'évaluation des modèles d'IA">METR</abbr> a suivi en 2025 16 développeurs expérimentés sur 246 tâches, dans leurs propres dépôts. Avec l'IA, ils ont été 19 % plus lents. Ils pensaient avoir gagné 20 %.</p>
+<p>L'échantillon est petit, et il ne couvre que du code existant. METR a relancé l'étude en 2026. Elle juge ses nouveaux chiffres trop biaisés pour conclure, et pense que le gain est probablement plus grand aujourd'hui. J'en retiens une seule chose : l'impression d'aller vite ne mesure rien.</p>
 <p>La pleine vitesse a aussi sa face sombre : la boucle qui empêche de s'arrêter. Je l'ai <a target="_blank" rel="noopener noreferrer" href="/posts/agentic-ai-addiction">décrite de près ailleurs</a>. La frontière entre passion et compulsion tient en une question : est-ce que je choisis encore d'arrêter ?</p>
 
 <h2>Ce qui reste aux humains</h2>
@@ -144,7 +144,7 @@ const frenchContent: PostContent = {
 <li><strong>Une chose terminée par mois.</strong> Terminée veut dire que quelqu'un d'autre pourrait s'en servir sans moi. Zéro, c'est aussi une réponse honnête.</li>
 </ol>
 
-<p><strong>Lire aussi :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">Le SDLC est mort</a> — la boucle du maker appliquée au logiciel professionnel. <a target="_blank" rel="noopener noreferrer" href="/posts/ai-team-reflex">L'IA est devenue un réflexe d'équipe</a> — essayer, à l'échelle d'une équipe. <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> — dix ans de montages du week-end, et l'inventaire d'aujourd'hui.</p>
+<p><strong>Lire aussi :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">Le SDLC est mort</a> : la boucle du maker appliquée au logiciel professionnel. <a target="_blank" rel="noopener noreferrer" href="/posts/ai-team-reflex">L'IA est devenue un réflexe d'équipe</a> : essayer, à l'échelle d'une équipe. <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> : dix ans de montages du week-end, et l'inventaire d'aujourd'hui.</p>
 <hr>
 <h2>Sources</h2>
 <ul>
@@ -166,7 +166,7 @@ const englishContent: PostContent = {
 <p>I like building things, and making whatever crosses my mind actually work. Think <abbr title="Disney's inventor from Duckburg">Gyro Gearloose</abbr>.</p>
 <p>I said it plainly in March: "I'm a maker. Evenings and weekends, I experiment with AI." Evenings and weekends, trying things.</p>
 <p>It didn't start with AI. Back in 2014, writing about an <abbr title="Light-emitting diode">LED</abbr> strip I bought on a whim, I put it in French: « j'aime les défis et surtout les nouvelles choses ». I like challenges, and new things most of all. Twelve years on, that still holds.</p>
-<p>As for how my head works, I stick to what I have already written: "I simply have an outsized capacity to invent, a head permanently full of ideas — nothing more."</p>
+<p>As for how my head works, I stick to what I have already written: "I simply have an great capacity to invent, a head permanently full of ideas. Nothing more."</p>
 <p>So: ideas, and the itch to see them run. For a long time, there was a wall between the two.</p>
 
 <h2>Before: what a try used to cost</h2>
@@ -257,7 +257,7 @@ const englishContent: PostContent = {
 <text x="32" y="374" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Personal repos, forks excluded, 3 private included. 2026 counted to 30 Sept.</text>
 </svg>
 <p>Two caveats. These counts cover my personal repos minus <abbr title="A copy of someone else's repository">forks</abbr>, and 3 of them are private. And a 2026 repo is nine months old at most. Too early to talk about survival.</p>
-<p>The pace moved as much as the depth. In March 2026, my repos took 675 commits in a single month. Update bots excluded, agents included. That's more than a hundred times the whole of 2023. Git can't say exactly which hand was mine and which was the agent's.</p>
+<p>The pace moved as much as the depth. In March 2026, my repos took 675 commits in a single month. Update bots excluded, agents included. That's more than the 470 commits of my 21 repos from 2016, over their entire lifetime. Git can't say exactly which hand was mine and which was the agent's.</p>
 <p>What disappeared is the wall at the start. The docs you don't feel like reading. The project skeleton. The first version that runs well enough to judge the idea. The agent carries all of that, so a try now starts where it used to stall.</p>
 <p>My reading again: in 2016, plenty of my repos didn't die of a bad idea. They died at the second obstacle, before the second evening. Git keeps no record of reasons like that. The median of 9 commits is the trace it does keep.</p>
 <p>The agent leaves me the part I always liked best. Picturing the thing. Deciding how it should behave. Watching it run, then going back in because it could be better. For me, the joy of making and designing has never been this present.</p>
@@ -272,8 +272,8 @@ const englishContent: PostContent = {
 <p>Alive is not the same as finished. Git has no "done" flag. And a push can come from a bot bumping a dependency.</p>
 <blockquote><p>Trying is almost free now. Choosing, finishing and upkeep are billed at the old rate.</p></blockquote>
 <p><strong>Choosing.</strong> When anything can start, you have to decide what won't. <strong>Finishing.</strong> The last few percent of a project are edge cases, docs and decisions. <strong>Upkeep.</strong> Every live repo holds a slot in my head, even on the days I don't touch it.</p>
-<p>On that ground, the evidence for gains is thin. A <abbr title="Model Evaluation and Threat Research, an independent AI evaluation nonprofit">METR</abbr> study followed 16 experienced developers through 246 tasks in their own repos. With AI, they were 19% slower. They believed they had been 20% faster.</p>
-<p>The sample is small and it covers <abbr title="Existing codebases with history and users, as opposed to greenfield projects started from scratch">brownfield</abbr> code only. METR's own 2026 follow-up calls its newer numbers an unreliable signal. I take one thing from it: feeling fast measures nothing.</p>
+<p>On that ground, the evidence for gains is thin. A <abbr title="Model Evaluation and Threat Research, an independent AI evaluation nonprofit">METR</abbr> study followed, in 2025, 16 experienced developers through 246 tasks in their own repos. With AI, they were 19% slower. They believed they had been 20% faster.</p>
+<p>The sample is small and it covers <abbr title="Existing codebases with history and users, as opposed to greenfield projects started from scratch">brownfield</abbr> code only. METR reran the study in 2026. It calls its new numbers too biased to conclude, and thinks the gain is probably larger today. I take one thing from it: feeling fast measures nothing.</p>
 <p>Full speed has a darker side too: the loop that won't let you stop. I have <a target="_blank" rel="noopener noreferrer" href="/posts/agentic-ai-addiction">looked at it up close elsewhere</a>. The line between passion and compulsion comes down to one question: am I still the one choosing to stop?</p>
 
 <h2>What still belongs to humans</h2>
@@ -290,7 +290,7 @@ const englishContent: PostContent = {
 <li><strong>One finished thing a month.</strong> Finished means someone else could use it without me. Zero is an honest answer too.</li>
 </ol>
 
-<p><strong>Read next:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">The SDLC Is Dead</a> — the maker's loop brought into professional software. <a target="_blank" rel="noopener noreferrer" href="/posts/ai-team-reflex">AI Became a Team Reflex</a> — trying things, at team scale. <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent.</a> — a decade of weekend builds, and the inventory today.</p>
+<p><strong>Read next:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">The SDLC Is Dead</a> : the maker's loop brought into professional software. <a target="_blank" rel="noopener noreferrer" href="/posts/ai-team-reflex">AI Became a Team Reflex</a> : trying things, at team scale. <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent.</a> : a decade of weekend builds, and the inventory today.</p>
 <hr>
 <h2>Sources</h2>
 <ul>
