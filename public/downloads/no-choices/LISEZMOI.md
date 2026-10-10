@@ -22,7 +22,7 @@ Si vous n'utilisez pas Piper, remplacez `tts.piper` par votre moteur de synthès
 
 La mécanique se porte sans difficulté. Trois règles, dans cet ordre.
 
-1. **Heures calmes.** Si l'heure courante est hors de la plage autorisée et que l'appel ne force pas, ne rien faire. C'est la protection la plus utile du lot : sans elle, une alerte de portail à deux heures du matin réveille toute la maison.
+1. **Heures calmes.** Si l'heure courante est hors de la plage autorisée et que l'appel ne force pas, ne rien faire. C'est la protection la plus utile du lot : sans elle, une annonce de routine (une machine à laver terminée, par exemple) réveille toute la maison à deux heures du matin. Les alertes qui doivent passer la nuit le demandent explicitement avec `nuit: true`.
 2. **Résolution des cibles.** Traduire le nom de pièce en une liste d'enceintes, puis **filtrer celles qui ne répondent pas**. Une liste vide doit faire sortir la routine proprement, pas lever une erreur.
 3. **Diffusion.** Envoyer le message aux cibles restantes, avec le volume du clip passé dans l'appel.
 
