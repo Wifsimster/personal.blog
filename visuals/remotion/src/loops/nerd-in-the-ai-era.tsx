@@ -84,31 +84,3 @@ export const House: React.FC<LoopProps> = ({theme}) => {
     </Frame>
   );
 };
-
-// 3. Le prix du premier essai : la barre du premier essai s'effondre
-// (son ancien coût reste en pointillé), puis les essais suivants s'enchaînent.
-export const Tries: React.FC<LoopProps> = ({theme}) => {
-  const c = THEMES[theme];
-  const s = shifted(useSteps(), 48);
-  const BASE = 102;
-  const fade = 1 - ramp(s, 52, 59);
-  const drop = interpolate(s, [4, 14], [0, 1], {...clamp, easing: Easing.out(Easing.back(1.6))}) * fade;
-  const h0 = 80 - 64 * drop;
-  const tries = [0, 1, 2, 3, 4, 5];
-  return (
-    <Frame>
-      <line x1={28} y1={BASE + 0.5} x2={212} y2={BASE + 0.5} stroke={c.ink} strokeOpacity={0.18} />
-      <rect x={36} y={BASE - 80} width={20} height={80} rx={5} fill="none" stroke={c.ink} strokeOpacity={0.3} strokeWidth={1.3} strokeDasharray="3 4" />
-      <rect x={36} y={BASE - h0} width={20} height={h0} rx={5} fill={c.ink} fillOpacity={0.2 + 0.1 * (1 - drop)} />
-      {tries.map((i) => {
-        const k = interpolate(s, [16 + i * 5, 20 + i * 5], [0, 1], {...clamp, easing: Easing.out(Easing.back(2.2))}) * fade;
-        const h = 16 * k;
-        const x = 72 + i * 23;
-        return (
-          <rect key={i} x={x} y={BASE - h} width={16} height={h} rx={4} fill={c.accentSoft} stroke={c.accent}
-            strokeOpacity={k > 0.01 ? 1 : 0} strokeWidth={1.4} />
-        );
-      })}
-    </Frame>
-  );
-};
