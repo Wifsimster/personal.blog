@@ -12,7 +12,7 @@ export const metadata: PostMetadata = {
 const frenchContent: PostContent = {
   title: "Un nerd dans la timeline faite pour nous",
   description: "Les films de notre enfance imaginaient des maisons qui parlent. Elles parlent désormais. Voici ce que cette époque ouvre à ceux qui aiment construire, et ce qu'elle coûte encore.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> La <abbr title="Science-fiction">SF</abbr> de notre enfance promettait des maisons qui parlent, des robots serviables et des voix à qui l'on confie sa journée. Une partie est arrivée, plus modeste et plus bricolée que dans les films. Des <abbr title="Intelligence artificielle">IA</abbr> capables laissent parfois une personne seule transformer une idée en objet en une soirée. On adore vivre dans cette timeline, et on n'en voit pas encore la limite. Le premier essai coûte beaucoup moins qu'avant. Choisir, finir et entretenir coûtent toujours autant. L'emploi, la dépendance à quelques fournisseurs et la boucle compulsive restent des risques réels.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> La <abbr title="Science-fiction">SF</abbr> de notre enfance promettait des maisons qui parlent, des robots serviables et des voix à qui l'on confie sa journée. Une partie est arrivée, plus modeste et plus bricolée que dans les films. Des <abbr title="Intelligence artificielle">IA</abbr> capables laissent parfois une personne seule transformer une idée en objet en une soirée. On adore vivre dans cette timeline, et on n'en voit pas encore la limite. Choisir, finir et entretenir coûtent toujours autant. L'emploi, la dépendance à quelques fournisseurs et la boucle compulsive restent des risques réels.</p></div>
 <hr>
 <figure class="post-cover"><img src="/visuals/nerd-in-the-ai-era/covers/martian-chronicles.webp" alt="Couverture de la première édition des Chroniques martiennes : le nom de Ray Bradbury et le titre sur un ciel bleu et orange traversé d'orbites." width="300" height="437" loading="lazy" decoding="async"><figcaption><em>Chroniques martiennes</em>, 1950, Ray Bradbury. Couverture de la première édition américaine (Doubleday), domaine public selon Wikimedia Commons.</figcaption></figure>
 <p>En 1950, <abbr title="Écrivain américain (1920-2012), auteur des Chroniques martiennes et de Fahrenheit 451">Ray Bradbury</abbr> publiait une nouvelle sur une maison qui parle. Dans la version reprise la même année en chapitre des <em>Chroniques martiennes</em>, la maison annonce la date du jour : le 4 août 2026.</p>
@@ -103,19 +103,10 @@ const frenchContent: PostContent = {
 </ul>
 <p>Aucun de ces objets n'est un robot. C'est la SF de nos écrans, ramenée à l'échelle d'une maison. Elle tient dans quelques fichiers de configuration.</p>
 <p>Le travail difficile n'est presque jamais technique. Un agent peut écrire dix versions d'une annonce, d'un menu ou d'un réglage en une soirée. Savoir laquelle est la bonne, c'est encore à nous de le sentir.</p>
-<blockquote><p>L'agent ne trouve pas la bonne idée à notre place. Il rend le troisième essai aussi bon marché que le premier.</p></blockquote>
-
-<h2>Le prix du premier essai</h2>
-<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/nerd-in-the-ai-era/tries-light.png"><img src="/visuals/nerd-in-the-ai-era/tries-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/nerd-in-the-ai-era/tries-dark.png"><img src="/visuals/nerd-in-the-ai-era/tries-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<p>Avant, un essai se payait souvent d'avance. Trouver la bibliothèque compatible, lire la documentation, câbler, déboguer. Des heures, avant de savoir si l'idée valait quelque chose.</p>
-<p>Ce prix d'entrée faisait le tri. Il ne gardait pas les meilleures idées. Il gardait celles qui tenaient dans une soirée. C'est une lecture, pas une mesure.</p>
-<p>Ce tri a perdu sa force. Une corvée remise à plus tard parce que la version propre demandait une demi-journée peut tenir dans une session. Une idée notée dans un carnet peut être essayée le soir même.</p>
-<p>Pour un esprit créatif, c'est sans doute le vrai cadeau de cette timeline : le droit de se tromper souvent, pour presque rien.</p>
+<blockquote><p>L'agent ne trouve pas la bonne idée à notre place.</p></blockquote>
 
 <h2>Ce que cette timeline facture</h2>
 <p>Elle n'est pas faite pour tout le monde. Elle suppose du temps libre, un métier qui laisse de l'énergie le soir, et assez de bases pour juger ce que l'agent produit. Beaucoup n'ont pas ces trois choses à la fois.</p>
-<p>Même pour ceux qui les ont, seul le premier essai est devenu bon marché. Tout ce qui suit est facturé au tarif d'avant.</p>
 <p><strong>Choisir.</strong> Quand tout peut démarrer, il faut décider ce qu'on ne démarre pas. <strong>Finir.</strong> Les derniers pour cent sont faits de cas limites, de documentation et de décisions. <strong>Entretenir.</strong> Chaque projet vivant occupe une place dans la tête, même les jours où l'on n'y touche pas.</p>
 <p>Avant, abandonner était gratuit et silencieux. Un essai mort restait mort. Aujourd'hui, tout peut rester vivant en même temps. Vivant ne veut pas dire fini.</p>
 <p>La vitesse ressentie trompe aussi. En 2025, <abbr title="Model Evaluation and Threat Research, organisme indépendant d'évaluation des modèles d'IA">METR</abbr> a suivi 16 développeurs expérimentés sur leurs propres projets : avec l'IA, ils ont été 19 % plus lents, tout en se croyant 20 % plus rapides. METR a lancé une nouvelle expérience en août 2025 et publié une mise à jour en février 2026. Elle y juge ses nouvelles données peu fiables, et probablement biaisées vers le bas dans l'estimation du gain de vitesse. METR écrit aussi que les développeurs sont probablement plus accélérés début 2026.</p>
@@ -163,7 +154,7 @@ const frenchContent: PostContent = {
 const englishContent: PostContent = {
   title: 'A Nerd in the Timeline Made for Us',
   description: 'The films we grew up with imagined houses that talk. They do now. Here is what this era opens up for people who love to build, and what it still costs.',
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> The sci-fi we grew up on promised talking houses, helpful robots and voices we could hand our day to. Some of it has arrived, smaller and more home-made than on screen. Capable <abbr title="Artificial intelligence">AI</abbr> sometimes lets one person turn an idea into a working thing in a single evening. We love living in this timeline, and we cannot see its edge yet. A first try costs far less than it used to. Choosing, finishing and upkeep cost what they always did. Jobs, dependence on a handful of providers and the compulsive loop are still real risks.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> The sci-fi we grew up on promised talking houses, helpful robots and voices we could hand our day to. Some of it has arrived, smaller and more home-made than on screen. Capable <abbr title="Artificial intelligence">AI</abbr> sometimes lets one person turn an idea into a working thing in a single evening. We love living in this timeline, and we cannot see its edge yet. Choosing, finishing and upkeep cost what they always did. Jobs, dependence on a handful of providers and the compulsive loop are still real risks.</p></div>
 <hr>
 <figure class="post-cover"><img src="/visuals/nerd-in-the-ai-era/covers/martian-chronicles.webp" alt="First edition cover of The Martian Chronicles: Ray Bradbury's name and the title over a blue and orange sky crossed by orbits." width="300" height="437" loading="lazy" decoding="async"><figcaption><em>The Martian Chronicles</em>, 1950, Ray Bradbury. First US edition cover (Doubleday), public domain according to Wikimedia Commons.</figcaption></figure>
 <p>In 1950, <abbr title="American writer (1920-2012), author of The Martian Chronicles and Fahrenheit 451">Ray Bradbury</abbr> published a story about a house that talks. In the version that became a chapter of <em>The Martian Chronicles</em> that same year, the house reads out the date: 4 August 2026.</p>
@@ -254,19 +245,10 @@ const englishContent: PostContent = {
 </ul>
 <p>None of these things is a robot. It is the sci-fi of our screens, brought down to the size of a house. It fits in a few configuration files.</p>
 <p>The hard part is rarely technical. An agent can write ten versions of an announcement, a menu or a setting in one evening. Knowing which one is right is still ours to feel.</p>
-<blockquote><p>The agent does not find the right idea for us. It makes the third attempt cost as little as the first.</p></blockquote>
-
-<h2>The price of a first try</h2>
-<picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/nerd-in-the-ai-era/tries-light.png"><img src="/visuals/nerd-in-the-ai-era/tries-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/nerd-in-the-ai-era/tries-dark.png"><img src="/visuals/nerd-in-the-ai-era/tries-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<p>A try used to be paid for up front, more often than not. Find the compatible library, read the docs, wire it up, debug. Hours went in before anyone knew whether the idea was worth anything.</p>
-<p>That entry fee did the sorting. It did not keep the best ideas. It kept the ones that fit in one evening. That is a reading, not a measurement.</p>
-<p>The filter has lost its grip. A chore put off because the clean version looked like half a day's work can fit in one session. An idea jotted in a notebook can be tried the same night.</p>
-<p>For a creative mind, that is probably the real gift of this timeline: the freedom to be wrong often, for next to nothing.</p>
+<blockquote><p>The agent does not find the right idea for us.</p></blockquote>
 
 <h2>What this timeline bills</h2>
 <p>It was not made for everyone. It assumes spare time, a job that leaves some energy for the evening, and enough grounding to judge what the agent hands back. Plenty of people do not have all three at once.</p>
-<p>Even for those who do, only the first try got cheap. Everything after it is billed at the old rate.</p>
 <p><strong>Choosing.</strong> When anything can start, someone has to decide what will not. <strong>Finishing.</strong> The last few percent are edge cases, docs and decisions. <strong>Upkeep.</strong> Every live project takes up room in our heads, even on the days it is left alone.</p>
 <p>Dropping a project used to be free and silent. A dead try stayed dead. Now everything can stay alive at once. Alive is not the same as finished.</p>
 <p>The feeling of speed misleads, too. In 2025, <abbr title="Model Evaluation and Threat Research, an independent AI evaluation nonprofit">METR</abbr> followed 16 experienced developers working on their own projects: with AI they were 19% slower, while believing they were 20% faster. METR started a new experiment in August 2025 and published an update in February 2026. It calls the new data an unreliable signal, likely biased downward in its estimate of the speedup. METR also writes that developers are probably more sped up in early 2026.</p>
