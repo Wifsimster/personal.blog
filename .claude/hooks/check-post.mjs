@@ -118,7 +118,13 @@ function checkFile(file, { tags, attrs }, registry) {
       // 9.9px, and near 5.7px on a phone).
       const vb = open.match(/viewBox="0 0 (\d+)/)
       const w = vb ? Number(vb[1]) : 0
-      if (w && w !== 640)
+      // The opt-in phone drawing (class diagram-narrow, see main.css) is drawn
+      // on 320 units, the column of a 360px phone, for the same reason.
+      if (/\bdiagram-narrow\b/.test(open)) {
+        if (w && w !== 320)
+          add(at(0), 'canvas-width',
+            `viewBox is ${w} units — a diagram-narrow phone drawing is drawn on 320 so nominal sizes survive on a 360px phone`)
+      } else if (w && w !== 640)
         add(at(0), 'canvas-width',
           `viewBox is ${w} units — diagrams are drawn on 640 so nominal sizes survive; never widen the canvas to make room`)
 
