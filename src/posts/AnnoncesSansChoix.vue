@@ -20,7 +20,7 @@ const frenchContent: PostContent = {
 <h2>La chaîne audio n'était pas en cause</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-light.png"><img src="/visuals/no-choices/speaker-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-dark.png"><img src="/visuals/no-choices/speaker-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<p>Elle mérite deux phrases, parce qu'elle a été montée en une soirée et n'a plus jamais bougé. La synthèse vocale tourne dans un conteneur, en français, sans aucun service externe. Les automatisations n'adressent jamais une enceinte directement : elles appellent un script unique qui choisit la pièce et le volume, et qui applique les heures calmes, ce qui laisse un seul endroit à corriger le jour où les enceintes changent de nom.</p>
+<p>Elle mérite deux phrases, parce qu'elle a été montée en une soirée et n'a plus jamais bougé. La synthèse vocale tourne dans un conteneur, en français, sans aucun service externe. Les annonces n'adressent jamais une enceinte directement : elles appellent un script unique qui choisit la pièce et le volume, et qui applique les heures calmes, ce qui laisse un seul endroit à corriger le jour où les enceintes changent de nom.</p>
 
 <h2>Huit règles, écrites après coup</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-light.png"><img src="/visuals/no-choices/rules-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
@@ -99,7 +99,7 @@ const frenchContent: PostContent = {
 <h2>Ce que la maison n'a pas le droit de dire</h2>
 <p>Quelques interdits se sont accumulés, et ils valent autant que les règles de rédaction.</p>
 <p>La maison est de plain-pied. « Monte », « descends », « en haut », « en bas » sont bannis de toutes les annonces et de toutes les notifications. C'est le genre de tournure qu'on écrit sans y penser.</p>
-<p>Rien n'est diffusé entre 21 h 45 et 7 h 00, sauf si l'appel le demande explicitement. Une alerte de portail à deux heures du matin réveillerait toute la maison pour une bourrasque.</p>
+<p>Rien n'est diffusé entre 21 h 45 et 7 h 00, sauf si l'appel le demande explicitement. Une annonce de routine à deux heures du matin, une machine à laver terminée par exemple, réveillerait toute la maison. Les alertes qui doivent passer la nuit le demandent explicitement.</p>
 <p>Et une branche du script est aujourd'hui inerte, volontairement. Il sait adresser une deuxième chambre d'enfant, qui n'a pas encore d'enceinte. Le jour où elle en aura une, il suffira de la nommer correctement dans l'application du fabricant pour que l'identifiant attendu par le script se crée tout seul.</p>
 
 <h2>Ce qui reste aux humains</h2>
@@ -133,7 +133,7 @@ const englishContent: PostContent = {
 <h2>The audio chain was not at fault</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-light.png"><img src="/visuals/no-choices/speaker-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
 <picture class="section-loop loop-dark"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/speaker-dark.png"><img src="/visuals/no-choices/speaker-dark.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
-<p>It deserves two sentences, because it went up in one evening and never moved again. Speech synthesis runs in a container, in French, with no external service. The automations never address a speaker directly: they call one script that picks the room and the volume, and applies the quiet hours, which leaves one place to fix the day the speakers change names.</p>
+<p>It deserves two sentences, because it went up in one evening and never moved again. Speech synthesis runs in a container, in French, with no external service. The announcements never address a speaker directly: they call one script that picks the room and the volume, and applies the quiet hours, which leaves one place to fix the day the speakers change names.</p>
 
 <h2>Eight rules, written afterwards</h2>
 <picture class="section-loop loop-light"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/no-choices/rules-light.png"><img src="/visuals/no-choices/rules-light.webp" alt="" width="240" height="120" loading="lazy" decoding="async"></picture>
@@ -212,7 +212,7 @@ const englishContent: PostContent = {
 <h2>What the house is not allowed to say</h2>
 <p>A few prohibitions piled up, and they matter as much as the writing rules.</p>
 <p>The house is single-storey. "Go up", "come down", "upstairs", "downstairs" are banned from every announcement and every notification. That is exactly the kind of phrasing you write without thinking.</p>
-<p>Nothing is broadcast between 9:45 p.m. and 7 a.m. unless the call explicitly asks for it. A gate alert at two in the morning would wake the whole house for a gust of wind.</p>
+<p>Nothing is broadcast between 9:45 p.m. and 7 a.m. unless the call explicitly asks for it. A routine announcement at two in the morning, a finished washing machine for instance, would wake the whole house. Alerts that must get through at night ask for it explicitly.</p>
 <p>And one branch of the script is deliberately inert today. It knows how to address a second child's bedroom, which has no speaker yet. The day it gets one, naming it correctly in the manufacturer's app is enough for the identifier the script already expects to create itself.</p>
 
 <h2>What still belongs to humans</h2>
