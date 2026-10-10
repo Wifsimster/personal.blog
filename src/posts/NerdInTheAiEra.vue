@@ -11,11 +11,9 @@ export const metadata: PostMetadata = {
 
 const frenchContent: PostContent = {
   title: "Être un nerd à l'ère de l'IA",
-  description: "Pour les hackers et les makers : se casser les dents apprend toujours, mais à pleine vitesse. Ce que mes dépôts GitHub de 2016 et de 2026 disent du plaisir de fabriquer avec l'IA, et de ce qui se paie encore une fois l'essai lancé.",
+  description: "Se casser les dents apprend toujours, mais à pleine vitesse. Ce que mes dépôts GitHub de 2016 et de 2026 disent du plaisir de fabriquer avec l'IA, et de ce qui se paie encore une fois l'essai lancé.",
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> Je suis un maker, et l'<abbr title="Intelligence artificielle">IA</abbr> ne m'a pas pris le chemin qui fait apprendre. Elle l'a rendu plus rapide. Mes dépôts <abbr title="Plateforme d'hébergement de code source basée sur git">GitHub</abbr> en gardent la trace. En 2016, j'en ai ouvert 21, et la moitié s'est arrêtée à neuf <abbr title="Enregistrement d'une modification dans l'historique d'un dépôt git">commits</abbr> ou moins. En 2026, au 30 septembre, j'en ai ouvert 17, et la moitié a atteint au moins 136. Concevoir ne m'a jamais autant amusé. Trier, terminer et faire vivre restent à ma charge, au tarif d'avant.</p></div>
 <hr>
-<p>Ce billet s'adresse aux hackers et aux makers : à tous ceux qui ont toujours une idée à tester et un soir pour s'y mettre.</p>
-
 <h2>Ce que je suis</h2>
 <p>J'aime fabriquer, et rendre fonctionnel ce qui me passe par la tête. Comme <abbr title="Gyro Gearloose en version originale, l'inventeur de l'univers Disney de Donaldville">Géo Trouvetou</abbr>.</p>
 <p>Je l'ai écrit tel quel en mars, en anglais : « I'm a maker. Evenings and weekends, I experiment with AI ». Des soirs et des week-ends à essayer des choses.</p>
@@ -160,11 +158,9 @@ const frenchContent: PostContent = {
 
 const englishContent: PostContent = {
   title: 'Being a Nerd in the AI Era',
-  description: "For hackers and makers: breaking your teeth still teaches, only now at full speed. What my GitHub repos from 2016 and 2026 say about the joy of building with AI, and about the bill that still arrives once the try is running.",
+  description: "Breaking your teeth still teaches, only now at full speed. What my GitHub repos from 2016 and 2026 say about the joy of building with AI, and about the bill that still arrives once the try is running.",
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> I'm a maker, and <abbr title="Artificial intelligence">AI</abbr> didn't take away the part where you learn the hard way. It put it on fast-forward. My <abbr title="A source-code hosting platform built on git">GitHub</abbr> repos keep the receipts. In 2016 I started 21, and half of them stalled at nine <abbr title="A recorded change in a git repository's history">commits</abbr> or fewer. In 2026, as of 30 September, I started 17, and half of them reached 136 or more. Designing things has never been this much fun. Sorting, finishing and upkeep are still mine to pay, at the old price.</p></div>
 <hr>
-<p>This post is for hackers and makers: anyone who always has an idea to test and an evening to spend on it.</p>
-
 <h2>What I am</h2>
 <p>I like building things, and making whatever crosses my mind actually work. Think <abbr title="Disney's inventor from Duckburg">Gyro Gearloose</abbr>.</p>
 <p>I said it plainly in March: "I'm a maker. Evenings and weekends, I experiment with AI." Evenings and weekends, trying things.</p>
