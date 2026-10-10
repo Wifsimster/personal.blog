@@ -10,7 +10,7 @@ export const metadata: PostMetadata = {
 }
 
 const frenchContent: PostContent = {
-  title: "Un nerd dans la timeline faite pour nous",
+  title: "Et si on comparait notre timeline aux films de notre enfance ?",
   description: "Maisons qui parlent, voiture intelligente, taxis volants, robots humanoïdes : les films de notre enfance ont rendez-vous avec le présent. Un tour des œuvres devenues réalité, et de ce que cette timeline coûte encore.",
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> La <abbr title="Science-fiction">SF</abbr> de notre enfance promettait des maisons qui parlent, des robots serviables et des voix à qui l'on confie sa journée. Beaucoup de ces films sont devenus réalité : appels vidéo, voitures qui parlent, taxis volants certifiés, <abbr title="Robots dont le corps imite celui d'un humain : tronc, deux bras, deux jambes.">robots humanoïdes</abbr> livrés en série, voix d'<abbr title="Intelligence artificielle">IA</abbr> qui répondent au rythme d'une conversation. On adore vivre dans cette timeline, et on n'en voit pas encore la limite. Choisir, finir et entretenir coûtent toujours autant. L'emploi, la dépendance à quelques fournisseurs et la boucle compulsive restent des risques réels.</p></div>
 <hr>
@@ -38,9 +38,9 @@ const frenchContent: PostContent = {
 <p>La Chine est en tête du marché : selon <abbr title="Cabinet d'études spécialisé dans les technologies.">Omdia</abbr>, des entreprises chinoises ont assuré environ 90 % des livraisons d'humanoïdes en 2025. <abbr title="Entreprise chinoise qui fabrique des robots à pattes, humanoïdes compris.">Unitree</abbr> vend son <abbr title="Robot humanoïde d'Unitree présenté en mai 2024.">G1</abbr> dès 16 000 dollars et le met en scène : un combat de boxe retransmis en mai 2025 (pilotage à distance par des ingénieurs, selon Popular Science), puis le <abbr title="Émission de télévision diffusée chaque année en Chine pour le Nouvel An lunaire, depuis 1983.">gala de la Fête du Printemps</abbr> 2026, avec <abbr title="Style d'arts martiaux chinois (zuiquan) qui imite les mouvements d'une personne ivre.">kung-fu de l'ivrogne</abbr>, <abbr title="Arme d'arts martiaux faite de deux bâtons reliés par une chaîne ou une corde.">nunchakus</abbr> et <abbr title="Discipline qui consiste à franchir des obstacles en courant, en sautant et en grimpant.">parkour</abbr> par-dessus des tables. Vidéos officielles : <a target="_blank" rel="noopener noreferrer" href="https://www.unitree.com/boxing">page d'Unitree</a>.</p>
 <figure class="post-cover post-cover-left"><img src="/visuals/nerd-in-the-ai-era/covers/her.webp" alt="Affiche de Her : gros plan d'un homme à moustache, en chemise rouge, sur fond rose." width="220" height="314" loading="lazy" decoding="async"><figcaption><em>Her</em>, 2013, Spike Jonze. Affiche : ©&nbsp;ayants droit, reproduite à titre d'illustration.</figcaption></figure>
 <p><strong>La voix de <em>Her</em>.</strong> Dans le film de <abbr title="Réalisateur et scénariste américain de Her.">Spike Jonze</abbr> (2013), un homme dont le métier est d'écrire des lettres pour les autres s'attache à Samantha, un système d'exploitation doté de la voix de Scarlett Johansson. Le 13 mai 2024, <abbr title="Entreprise américaine d'intelligence artificielle, créatrice de ChatGPT.">OpenAI</abbr> présente la voix de <abbr title="Modèle d'IA d'OpenAI présenté le 13 mai 2024, qui traite le texte, la voix et l'image.">GPT-4o</abbr> et <abbr title="Cofondateur d'OpenAI.">Sam Altman</abbr> publie un seul mot : « her ». Le modèle répond à la voix en 320 millisecondes en moyenne, au rythme d'une conversation humaine.</p>
-<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frise de 1945 à 2040. Les Chroniques martiennes, parues en 1950, datent leur maison qui parle du 4 août 2026. Retour vers le futur II, sorti en 1989, envoie Marty au 21 octobre 2015. I, Robot, sorti en 2004, se passe en 2035. Au 10 octobre 2026, les deux premières dates sont passées et seule 2035 reste à venir." class="diagram-svg">
+<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frise de 1950 à 2035, vue du 10 octobre 2026. Les Chroniques martiennes, parues en 1950, datent leur maison qui parle du 4 août 2026. Retour vers le futur II, sorti en 1989, envoie Marty au 21 octobre 2015. I, Robot, sorti en 2004, se passe en 2035. Les deux premières dates sont déjà arrivées, et 2035 est encore à venir." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">DATES DE LA SF, VUES DU 10 OCTOBRE 2026</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Deux de ces futurs sont déjà passés.</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Deux futurs sont déjà là.</text>
 <rect x="527.8" y="100" width="80.2" height="238" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
 <text x="567.9" y="114" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.6">à venir</text>
 <line x1="32" y1="340" x2="608" y2="340" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
@@ -74,6 +74,46 @@ const frenchContent: PostContent = {
 <text x="389.7" y="314" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2004</text>
 <text x="577.7" y="314" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">2035</text>
 <text x="32" y="390" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Point plein : parution ou sortie. Cercle : date où se passe le récit.</text>
+</svg>
+<svg viewBox="0 0 320 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frise de 1950 à 2035, vue du 10 octobre 2026. Les Chroniques martiennes, parues en 1950, datent leur maison qui parle du 4 août 2026. Retour vers le futur II, sorti en 1989, envoie Marty au 21 octobre 2015. I, Robot, sorti en 2004, se passe en 2035. Les deux premières dates sont déjà arrivées, et 2035 est encore à venir." class="diagram-svg diagram-narrow">
+<text x="16" y="30" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">DATES DE LA SF</text>
+<text x="16" y="50" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">VUES DU 10 OCTOBRE 2026</text>
+<text x="16" y="92" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Deux futurs</text>
+<text x="16" y="126" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">sont déjà là.</text>
+<rect x="261.2" y="174" width="42.8" height="254" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
+<line x1="16" y1="430" x2="304" y2="430" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="35.7" y1="426" x2="35.7" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="35.7" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1950</text>
+<line x1="109.1" y1="426" x2="109.1" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="109.1" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1975</text>
+<line x1="182.6" y1="426" x2="182.6" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="182.6" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2000</text>
+<line x1="256" y1="426" x2="256" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="256" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2025</text>
+<line x1="261.2" y1="174" x2="261.2" y2="430" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
+<text x="255" y="190" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Aujourd'hui</text>
+<text x="16" y="222" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Chroniques martiennes</text>
+<line x1="35.7" y1="238" x2="253.6" y2="238" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="260.6" cy="238" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="35.7" cy="238" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="35.7" y="262" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1950</text>
+<text x="255" y="262" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">4 août 2026</text>
+<text x="16" y="296" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Retour vers le futur II</text>
+<line x1="150.3" y1="312" x2="221.9" y2="312" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="228.9" cy="312" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="150.3" cy="312" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="140" y="316.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1989</text>
+<text x="235" y="336" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">21 oct. 2015</text>
+<text x="16" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
+<line x1="194.3" y1="386" x2="261.2" y2="386" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="261.2" y1="386" x2="278.3" y2="386" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="285.3" cy="386" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="194.3" cy="386" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="184" y="390.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2004</text>
+<text x="285.3" y="410" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">2035</text>
+<text x="16" y="486" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Point plein : parution ou sortie.</text>
+<text x="16" y="506" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Cercle : date où se passe le récit.</text>
+<text x="16" y="526" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Bande colorée : encore à venir.</text>
 </svg>
 
 <h2>Pourquoi on adore être ici</h2>
@@ -167,7 +207,7 @@ const frenchContent: PostContent = {
 }
 
 const englishContent: PostContent = {
-  title: 'A Nerd in the Timeline Made for Us',
+  title: 'What if we compared our timeline to the films of our childhood?',
   description: 'Talking houses, a smart car, air taxis, humanoid robots: the films of our childhood are meeting the present. A tour of the works that came true, and of what this timeline still costs.',
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> The sci-fi we grew up on promised talking houses, helpful robots and voices we could hand our day to. Much of it has become real: video calls, talking cars, air taxis with certificates, <abbr title="Robots built to resemble the human body: torso, two arms and two legs.">humanoid robots</abbr> shipping in volume, <abbr title="Artificial intelligence">AI</abbr> voices that answer at conversation speed. We love living in this timeline, and we cannot see its edge yet. Choosing, finishing and upkeep cost what they always did. Jobs, dependence on a handful of providers and the compulsive loop are still real risks.</p></div>
 <hr>
@@ -195,9 +235,9 @@ const englishContent: PostContent = {
 <p>China leads the market: according to <abbr title="Technology research firm.">Omdia</abbr>, Chinese companies made about 90% of humanoid shipments in 2025. <abbr title="Chinese company that builds legged robots, humanoids included.">Unitree</abbr> sells its <abbr title="Humanoid robot from Unitree, unveiled in May 2024.">G1</abbr> from $16,000 and puts it on stage: a boxing match streamed in May 2025 (remotely piloted by engineers, according to Popular Science), then the 2026 <abbr title="Television show broadcast every year in China for the Lunar New Year, since 1983.">Spring Festival Gala</abbr>, with <abbr title="Style of Chinese martial arts (zuiquan) that imitates the movements of a drunk person.">drunken-fist kung-fu</abbr>, <abbr title="Martial-arts weapon made of two sticks joined by a chain or cord.">nunchucks</abbr> and <abbr title="Discipline of getting past obstacles by running, jumping and climbing.">parkour</abbr> over tables. Official videos: <a target="_blank" rel="noopener noreferrer" href="https://www.unitree.com/boxing">Unitree's page</a>.</p>
 <figure class="post-cover post-cover-left"><img src="/visuals/nerd-in-the-ai-era/covers/her.webp" alt="Her poster: close-up of a man with a moustache, in a red shirt, on a pink background." width="220" height="314" loading="lazy" decoding="async"><figcaption><em>Her</em>, 2013, Spike Jonze. Poster: ©&nbsp;rights holders, reproduced for illustration.</figcaption></figure>
 <p><strong>The voice in <em>Her</em>.</strong> In <abbr title="American film director and screenwriter of Her.">Spike Jonze</abbr>'s 2013 film, a man who writes letters for other people for a living grows attached to Samantha, an operating system voiced by Scarlett Johansson. On 13 May 2024, <abbr title="US artificial intelligence company, maker of ChatGPT.">OpenAI</abbr> showed <abbr title="OpenAI model unveiled on 13 May 2024 that handles text, voice and images.">GPT-4o</abbr>'s voice and <abbr title="Co-founder of OpenAI.">Sam Altman</abbr> posted a single word: "her". The model answers speech in 320 milliseconds on average, about the pace of a human conversation.</p>
-<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline from 1945 to 2040. The Martian Chronicles, published in 1950, dates its talking house 4 August 2026. Back to the Future Part II, released in 1989, sends Marty to 21 October 2015. I, Robot, released in 2004, is set in 2035. As of 10 October 2026, the first two dates are past and only 2035 is still ahead." class="diagram-svg">
+<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline from 1950 to 2035, seen from 10 October 2026. The Martian Chronicles, published in 1950, dates its talking house 4 August 2026. Back to the Future Part II, released in 1989, sends Marty to 21 October 2015. I, Robot, released in 2004, is set in 2035. The first two dates have already arrived, and 2035 is still ahead." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SCI-FI DATES, SEEN FROM 10 OCTOBER 2026</text>
-<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Two of these futures have passed.</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Two futures are already here.</text>
 <rect x="527.8" y="100" width="80.2" height="238" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
 <text x="567.9" y="114" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.6">ahead</text>
 <line x1="32" y1="340" x2="608" y2="340" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
@@ -231,6 +271,46 @@ const englishContent: PostContent = {
 <text x="389.7" y="314" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2004</text>
 <text x="577.7" y="314" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">2035</text>
 <text x="32" y="390" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Solid dot: published or released. Ring: the date the story is set on.</text>
+</svg>
+<svg viewBox="0 0 320 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline from 1950 to 2035, seen from 10 October 2026. The Martian Chronicles, published in 1950, dates its talking house 4 August 2026. Back to the Future Part II, released in 1989, sends Marty to 21 October 2015. I, Robot, released in 2004, is set in 2035. The first two dates have already arrived, and 2035 is still ahead." class="diagram-svg diagram-narrow">
+<text x="16" y="30" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SCI-FI DATES</text>
+<text x="16" y="50" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SEEN FROM 10 OCT. 2026</text>
+<text x="16" y="92" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Two futures</text>
+<text x="16" y="126" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">are already here.</text>
+<rect x="261.2" y="174" width="42.8" height="254" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
+<line x1="16" y1="430" x2="304" y2="430" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="35.7" y1="426" x2="35.7" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="35.7" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1950</text>
+<line x1="109.1" y1="426" x2="109.1" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="109.1" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1975</text>
+<line x1="182.6" y1="426" x2="182.6" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="182.6" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2000</text>
+<line x1="256" y1="426" x2="256" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="256" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2025</text>
+<line x1="261.2" y1="174" x2="261.2" y2="430" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
+<text x="255" y="190" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Today</text>
+<text x="16" y="222" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">The Martian Chronicles</text>
+<line x1="35.7" y1="238" x2="253.6" y2="238" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="260.6" cy="238" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="35.7" cy="238" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="35.7" y="262" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1950</text>
+<text x="255" y="262" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">4 Aug. 2026</text>
+<text x="16" y="296" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Back to the Future Part II</text>
+<line x1="150.3" y1="312" x2="221.9" y2="312" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="228.9" cy="312" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="150.3" cy="312" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="140" y="316.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1989</text>
+<text x="235" y="336" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">21 Oct. 2015</text>
+<text x="16" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
+<line x1="194.3" y1="386" x2="261.2" y2="386" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="261.2" y1="386" x2="278.3" y2="386" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="285.3" cy="386" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="194.3" cy="386" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="184" y="390.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2004</text>
+<text x="285.3" y="410" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">2035</text>
+<text x="16" y="486" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Solid dot: published or released.</text>
+<text x="16" y="506" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Ring: the date the story is set on.</text>
+<text x="16" y="526" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Shaded band: still ahead.</text>
 </svg>
 
 <h2>Why we love it here</h2>

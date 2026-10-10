@@ -329,6 +329,34 @@
     margin: 0;
   }
 
+  /* Phone layout, opt-in. A diagram that must read whole on a phone ships
+     two drawings in a row: `diagram-wide` on the usual 640 units and
+     `diagram-narrow` on 320 units (the column of a 360px phone, so its
+     nominal sizes hold there too). Each wrapper is a size container and
+     only the drawing that fits its column shows; the other one is
+     display:none, out of layout and out of the accessibility tree. The
+     margins move from the wrapper to the SVG so the hidden one takes no
+     space. Diagrams without these classes keep the scroll above. */
+  .prose .diagram-scroll:has(> .diagram-wide, > .diagram-narrow) {
+    container-type: inline-size;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .prose .diagram-scroll > .diagram-svg.diagram-wide,
+  .prose .diagram-scroll > .diagram-svg.diagram-narrow {
+    margin: 2.5rem auto;
+  }
+  .prose .diagram-scroll > .diagram-svg.diagram-narrow {
+    min-width: 0;
+    max-width: 24rem;
+  }
+  @container (min-width: 40rem) {
+    .prose .diagram-svg.diagram-narrow { display: none; }
+  }
+  @container (max-width: 39.99rem) {
+    .prose .diagram-svg.diagram-wide { display: none; }
+  }
+
   /* On a phone the diagram is wider than the screen and has to scroll —
      that's correct per the rule above, but with no signal it just reads as
      cut off (verified on a real device: the headline and bars end abruptly
