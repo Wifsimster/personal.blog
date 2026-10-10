@@ -25,7 +25,7 @@ const frenchContent: PostContent = {
 
 <h2>Avant : le prix d'un essai</h2>
 <p>2016 est mon année la plus prolifique avant l'IA. J'ai créé 21 dépôts en douze mois, pour 470 commits au total. La <abbr title="La valeur du milieu : la moitié des dépôts en a moins, l'autre moitié en a plus">médiane</abbr> est de 9 commits par dépôt.</p>
-<p>19 de ces 21 dépôts ont reçu leur dernier commit avant fin septembre 2017. Abandonner ne coûtait rien. Un dépôt mort ne réclame rien. On passait à l'idée suivante.</p>
+<p>19 de ces 21 dépôts ont reçu leur dernier commit avant fin septembre 2017. Abandonner ne me coûtait presque rien. Un dépôt mort ne réclame rien. On passait à l'idée suivante.</p>
 <p>Puis vient le silence. Entre le 29 janvier 2022 et le 16 mai 2025, je n'ai créé aucun dépôt. Trente-neuf mois. En 2023, tous dépôts confondus, robots compris, l'historique compte 6 commits. En 2024, il en compte 2.</p>
 <p>Git ne dit pas pourquoi. Il montre seulement ce que coûtait un essai. Dans mon bilan de dix ans de domotique, je résumais ainsi cette époque : « Un montage occupait un week-end entier, et je documentais le week-end suivant. »</p>
 <p>Le prix se payait d'avance. Lire la documentation d'un outil inconnu. Monter l'environnement. Écrire la plomberie avant la première ligne utile. Tout ça avant de savoir si l'idée valait quelque chose.</p>
@@ -37,20 +37,20 @@ const frenchContent: PostContent = {
 <p>Avec l'IA, je ne trouve pas que ça change vraiment. Le voyage est toujours là, en accéléré. C'est une autoroute avec de l'adrénaline plein pot.</p>
 <blockquote><p>On ne m'a pas retiré le voyage. On a levé la limitation de vitesse.</p></blockquote>
 <p>Les dents, je me les casse encore. En dépannant ma domotique avec un agent, j'ai appris que « j'ai fait un reset » et « le module a perdu son alimentation » sont deux affirmations différentes. Il a fallu trois tentatives avant de tomber sur le bon disjoncteur. L'agent ne m'a pas épargné la leçon.</p>
-<p>On apprend toujours, si on le veut. Il faut chercher, poser des questions, rester curieux. Demander pourquoi ça marche, et pas seulement obtenir que ça marche. Ça fait partie de notre <abbr title="Acide désoxyribonucléique, le support de l'hérédité">ADN</abbr> de maker.</p>
+<p>On apprend toujours, si on le veut. J'essaie de demander pourquoi ça marche, et pas seulement d'obtenir que ça marche.</p>
 <p>L'inverse est vrai aussi. L'agent peut tout faire sans que je comprenne rien. Si je ne pose aucune question, je ne retiens rien, et c'est mon choix.</p>
 <p>Une précaution, enfin. Je ne mesure pas ce que je retiens. Aucun historique git ne garde ce qu'on a appris. C'est mon expérience, pas une preuve. Je ne prétends pas que l'IA fait apprendre plus, ni moins.</p>
 
 <h2>Après : fabriquer à pleine vitesse</h2>
-<p>Depuis janvier 2026, je travaille avec des agents d'IA, au bureau comme le soir. Au 30 septembre, j'ai créé 17 dépôts cette année. C'est à peu près le rythme de 2016 : 21 en douze mois, 17 en neuf.</p>
-<p>La différence est dans la profondeur. Ces 17 dépôts totalisent 4 491 commits. Leur médiane est de 136.</p>
+<p>Pour le code, je travaille avec des agents d'IA depuis janvier 2026. Le premier commit signé de l'agent date du 11 janvier. Au 30 septembre, j'ai créé 17 dépôts cette année. C'est à peu près le rythme de 2016 : 21 en douze mois, 17 en neuf.</p>
+<p>La différence est dans la profondeur. Ces 17 dépôts totalisent 4 491 commits. Leur médiane est de 136. Un commit d'agent peut être plus petit qu'un commit à la main : ce chiffre mesure l'activité, pas la taille.</p>
 <svg viewBox="0 0 640 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Histogramme des nouveaux dépôts GitHub par an, de 2012 à 2026 : 21 en 2016 avec une médiane de 9 commits, zéro en 2018, 2023 et 2024, puis 17 en 2026 au 30 septembre avec une médiane de 136 commits. Le nombre d'essais revient au niveau de 2016 ; leur profondeur n'a rien à voir." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">NOUVEAUX DÉPÔTS PAR AN, 2012-2026</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Même élan, autre profondeur.</text>
 <rect x="452" y="236" width="82" height="84" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.6" text-anchor="middle">
-<text x="493" y="260">39 mois</text>
-<text x="493" y="278">sans dépôt</text>
+<text x="493" y="260">2023-2024</text>
+<text x="493" y="278">aucun dépôt</text>
 </g>
 <g fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
 <rect x="38.2" y="312" width="26" height="8" rx="4"></rect>
@@ -116,13 +116,13 @@ const frenchContent: PostContent = {
 <p>Ma lecture, là encore : en 2016, beaucoup de mes dépôts ne mouraient pas d'une mauvaise idée. Ils mouraient au deuxième obstacle, avant la deuxième soirée. Git ne garde pas ce genre de raison. La médiane de 9 commits, si.</p>
 <p>L'agent me laisse la partie que j'ai toujours préférée. Imaginer la chose. Décider comment elle doit se comporter. La voir tourner, puis la reprendre parce qu'elle peut faire mieux. Le plaisir de fabriquer et de concevoir n'a jamais été aussi présent.</p>
 <p>À la maison, c'est pareil. Une corvée de domotique est restée deux ans sur ma liste, parce que la version propre demandait « une demi-journée de travail, peut-être ». Elle a été faite en une session, le 18 septembre. Le détail est dans <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">ce récit de domotique pilotée par un agent</a>.</p>
-<p>C'est d'abord une affaire d'identité. Pendant des années, être nerd voulait dire accepter de payer l'entrée. Lire, souder, configurer, avant le moindre résultat. Ce droit d'entrée a presque disparu. Il reste l'envie, et la question de savoir quoi en faire.</p>
+<p>C'est d'abord une affaire d'identité. Pendant des années, être nerd voulait dire accepter de payer l'entrée. Lire, souder, configurer, avant le moindre résultat. Ce droit d'entrée a beaucoup baissé. Il reste l'envie, et la question de savoir quoi en faire.</p>
 <blockquote><p>Le nerd n'a pas changé. C'est le prix du premier pas qui a changé.</p></blockquote>
 
 <h2>Ce qui n'a pas bougé : choisir, finir, garder en vie</h2>
 <p>L'autoroute a un péage, et il tombe après le premier essai. Tout ce qui vient ensuite coûte le même prix qu'avant.</p>
 <p>Au 30 septembre, 13 de mes 17 dépôts de 2026 ont reçu un push dans les trente derniers jours. Un seul est archivé. En 2016, abandonner était gratuit et silencieux. En 2026, tout reste vivant en même temps, et chaque dépôt vivant réclame de l'attention.</p>
-<p>Les trois derniers n'ont rien reçu depuis plus d'un mois, sans être archivés. Ni vivants ni morts. C'est là que l'entretien coûte le plus : une décision qu'on repousse.</p>
+<p>Les trois derniers n'ont rien reçu depuis plus d'un mois, sans être archivés. Ni vivants ni morts. C'est là, pour moi, que l'entretien pèse le plus : une décision qu'on repousse.</p>
 <p>Vivant ne veut pas dire fini. Git n'a pas de case « terminé ». Et un push peut venir d'un robot qui met à jour une dépendance.</p>
 <blockquote><p>Essayer ne coûte presque plus rien. Choisir, finir et entretenir coûtent toujours autant.</p></blockquote>
 <p><strong>Choisir.</strong> Quand tout peut démarrer, il faut décider ce qu'on ne démarre pas. <strong>Finir.</strong> Les derniers pour cent d'un projet sont faits de cas limites, de documentation et de décisions. <strong>Entretenir.</strong> Chaque dépôt vivant occupe une place dans ma tête, même quand je n'y touche pas.</p>
@@ -146,6 +146,9 @@ const frenchContent: PostContent = {
 
 <p><strong>Lire aussi :</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">Le SDLC est mort</a> : la boucle du maker appliquée au logiciel professionnel. <a target="_blank" rel="noopener noreferrer" href="/posts/ai-team-reflex">L'IA est devenue un réflexe d'équipe</a> : essayer, à l'échelle d'une équipe. <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Dix ans de domotique tout seul, un an avec un agent</a> : dix ans de montages du week-end, et l'inventaire d'aujourd'hui.</p>
 <hr>
+<h2>Ce que ces chiffres ne disent pas</h2>
+<p>Les comptes viennent d'un scan de mes 78 dépôts non dupliqués, dont 3 privés, avec <code>git log --all --no-merges</code>. Un auteur dont le nom contient « bot » est exclu. L'auteur « Ralph Agent » est compté comme humain. Un dépôt est rangé par sa date de création GitHub, pas par son premier commit : <code>resume</code> a un premier commit de décembre 2025. Les commits ne mesurent ni la taille ni la valeur du travail, et rien ne mesure ce que j'ai appris. C'est un seul développeur, un seul historique.</p>
+
 <h2>Sources</h2>
 <ul>
 <li><a target="_blank" rel="noopener noreferrer" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11244532/">Doshi et Hauser, Science Advances, 2024</a> : 293 auteurs de fiction courte, textes jugés plus originaux et plus utiles avec des idées d'IA, mais plus semblables entre eux. Pas de logiciel dans l'étude.</li>
@@ -171,7 +174,7 @@ const englishContent: PostContent = {
 
 <h2>Before: what a try used to cost</h2>
 <p>2016 was my busiest year before AI. I created 21 repos in twelve months, 470 commits in total. The <abbr title="The middle value: half the repos have fewer, half have more">median</abbr> repo got 9 commits.</p>
-<p>19 of those 21 saw their last commit before the end of September 2017. Dropping a project was free. A dead repo asks for nothing. You just moved on to the next idea.</p>
+<p>19 of those 21 saw their last commit before the end of September 2017. Dropping a project cost me almost nothing. A dead repo asks for nothing. You just moved on to the next idea.</p>
 <p>Then came the quiet. Between 29 January 2022 and 16 May 2025, I created no repo at all. Thirty-nine months. In 2023, across every repo and counting bots, the history holds 6 commits. In 2024, it holds 2.</p>
 <p>Git doesn't say why. It only shows what a try used to cost. In my ten-year home automation retrospective, I summed up that era like this: "One build took a whole weekend, and I documented it the weekend after."</p>
 <p>You paid up front. Read the docs for a tool you had never used. Set up the environment. Write the plumbing before the first useful line. All of it before you knew whether the idea was any good.</p>
@@ -183,19 +186,19 @@ const englishContent: PostContent = {
 <p>With AI, I don't think that really changes. The journey is still there, on fast-forward. It's a highway with the adrenaline at full throttle.</p>
 <blockquote><p>Nobody took the journey away. They lifted the speed limit.</p></blockquote>
 <p>I still break my teeth. Troubleshooting my home automation with an agent, I learned that "I reset it" and "the module lost power" are two different claims. It took three attempts to find the right breaker. The agent didn't spare me that lesson.</p>
-<p>You still learn, if you want to. You have to dig, ask questions, stay curious. Ask why it works, not just get it working. That's part of our <abbr title="Deoxyribonucleic acid, the carrier of heredity">DNA</abbr> as makers.</p>
+<p>You still learn, if you want to. I try to ask why it works, not just to get it working.</p>
 <p>The reverse holds too. An agent can do everything while I understand nothing. If I ask no questions, nothing sticks, and that's my call.</p>
 <p>One last caveat. I don't measure what I retain. No git history records what you learned. This is my experience, not proof. I'm not claiming AI makes people learn more, or less.</p>
 
 <h2>After: building at full speed</h2>
-<p>Since January 2026 I have worked with AI agents, at the office and after hours. As of 30 September, I have created 17 repos this year. That is roughly the 2016 pace: 21 in twelve months, 17 in nine.</p>
-<p>The difference is depth. Those 17 repos hold 4,491 commits between them, with a median of 136.</p>
+<p>For code, I have worked with AI agents since January 2026. The agent's first signed commit is dated 11 January. As of 30 September, I have created 17 repos this year. That is roughly the 2016 pace: 21 in twelve months, 17 in nine.</p>
+<p>The difference is depth. Those 17 repos hold 4,491 commits between them, with a median of 136. An agent commit can be smaller than a hand-made one: that figure measures activity, not size.</p>
 <svg viewBox="0 0 640 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of new GitHub repos per year from 2012 to 2026: 21 in 2016 with a median of 9 commits, zero in 2018, 2023 and 2024, then 17 in 2026 as of 30 September with a median of 136 commits. The number of tries is back at the 2016 level; how far each one goes is not comparable." class="diagram-svg">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">NEW REPOS PER YEAR, 2012-2026</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Same urge. Not the same depth.</text>
 <rect x="452" y="236" width="82" height="84" rx="8" fill="currentColor" fill-opacity="0.07"></rect>
 <g fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.6" text-anchor="middle">
-<text x="493" y="260">39 months</text>
+<text x="493" y="260">2023-2024</text>
 <text x="493" y="278">no new repo</text>
 </g>
 <g fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-opacity="0.22" stroke-width="1">
@@ -262,13 +265,13 @@ const englishContent: PostContent = {
 <p>My reading again: in 2016, plenty of my repos didn't die of a bad idea. They died at the second obstacle, before the second evening. Git keeps no record of reasons like that. The median of 9 commits is the trace it does keep.</p>
 <p>The agent leaves me the part I always liked best. Picturing the thing. Deciding how it should behave. Watching it run, then going back in because it could be better. For me, the joy of making and designing has never been this present.</p>
 <p>Same story at home. One home automation chore sat on my list for two years, because the clean version looked like half a day's work. It got done in one sitting on 18 September. The full story is in <a target="_blank" rel="noopener noreferrer" href="/posts/cost-of-trying">this account of home automation run through an agent</a>.</p>
-<p>This is about identity first. For years, being a nerd meant agreeing to pay the entry fee. Read, solder, configure, all before seeing any result. That fee has nearly vanished. What remains is the urge, and the question of what to do with it.</p>
+<p>This is about identity first. For years, being a nerd meant agreeing to pay the entry fee. Read, solder, configure, all before seeing any result. That fee has dropped a lot. What remains is the urge, and the question of what to do with it.</p>
 <blockquote><p>Nerds didn't change. The price of getting started did.</p></blockquote>
 
 <h2>What didn't move: choosing, finishing, keeping alive</h2>
 <p>The highway has a toll booth, and it sits after the first try. Everything past that point still costs what it always did.</p>
 <p>As of 30 September, 13 of my 17 repos from 2026 got a push in the last thirty days. One is archived. In 2016, dropping a project was free and silent. In 2026, everything stays alive at once, and every live repo wants attention.</p>
-<p>The last three have had nothing for over a month, and none is archived. Not alive, not dead. That is where upkeep costs the most: a decision you keep putting off.</p>
+<p>The last three have had nothing for over a month, and none is archived. Not alive, not dead. That is where, for me, upkeep weighs the most: a decision you keep putting off.</p>
 <p>Alive is not the same as finished. Git has no "done" flag. And a push can come from a bot bumping a dependency.</p>
 <blockquote><p>Trying is almost free now. Choosing, finishing and upkeep are billed at the old rate.</p></blockquote>
 <p><strong>Choosing.</strong> When anything can start, you have to decide what won't. <strong>Finishing.</strong> The last few percent of a project are edge cases, docs and decisions. <strong>Upkeep.</strong> Every live repo holds a slot in my head, even on the days I don't touch it.</p>
@@ -292,6 +295,9 @@ const englishContent: PostContent = {
 
 <p><strong>Read next:</strong> <a target="_blank" rel="noopener noreferrer" href="/posts/sdlc-is-dead">The SDLC Is Dead</a> : the maker's loop brought into professional software. <a target="_blank" rel="noopener noreferrer" href="/posts/ai-team-reflex">AI Became a Team Reflex</a> : trying things, at team scale. <a target="_blank" rel="noopener noreferrer" href="/posts/ten-years-of-home-automation">Ten Years of Home Automation Alone. One Year With an Agent.</a> : a decade of weekend builds, and the inventory today.</p>
 <hr>
+<h2>What these numbers do not say</h2>
+<p>The counts come from a scan of my 78 non-fork repos, 3 of them private, using <code>git log --all --no-merges</code>. Any author whose name contains "bot" is excluded. The author "Ralph Agent" is counted as human. A repo is filed by its GitHub creation date, not its first commit: <code>resume</code> has a first commit from December 2025. Commits measure neither the size nor the value of the work, and nothing measures what I learned. It is one developer and one history.</p>
+
 <h2>Sources</h2>
 <ul>
 <li><a target="_blank" rel="noopener noreferrer" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11244532/">Doshi and Hauser, Science Advances, 2024</a>: 293 short-fiction writers. AI ideas made stories more novel and more useful, and more similar to each other. No software in the study.</li>
