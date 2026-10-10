@@ -40,82 +40,120 @@ const frenchContent: PostContent = {
 <p><strong>La voix de <em>Her</em>.</strong> Dans le film de <abbr title="Réalisateur et scénariste américain de Her.">Spike Jonze</abbr> (2013), un homme dont le métier est d'écrire des lettres pour les autres s'attache à Samantha, un système d'exploitation doté de la voix de Scarlett Johansson. Le 13 mai 2024, <abbr title="Entreprise américaine d'intelligence artificielle, créatrice de ChatGPT.">OpenAI</abbr> présente la voix de <abbr title="Modèle d'IA d'OpenAI présenté le 13 mai 2024, qui traite le texte, la voix et l'image.">GPT-4o</abbr> et <abbr title="Cofondateur d'OpenAI.">Sam Altman</abbr> publie un seul mot : « her ». Le modèle répond à la voix en 320 millisecondes en moyenne, au rythme d'une conversation humaine.</p>
 <figure class="post-cover"><img src="/visuals/nerd-in-the-ai-era/covers/upgrade.webp" alt="Affiche d'Upgrade : visage d'un homme barbu sur fond rouge, le titre UPGRADE en grandes lettres blanches." width="220" height="326" loading="lazy" decoding="async"><figcaption><em>Upgrade</em>, 2018, Leigh Whannell. Affiche : ©&nbsp;ayants droit, reproduite à titre d'illustration.</figcaption></figure>
 <p><strong>Le corps connecté d'<em>Upgrade</em>.</strong> Dans le film de <abbr title="Réalisateur et scénariste d'Upgrade.">Leigh Whannell</abbr>, sorti en 2018, un futur proche voit les voitures rouler seules, et un homme devenu tétraplégique reçoit <abbr title="Implant du film qui permet au héros de contrôler son corps.">STEM</abbr>, un implant qui lui rend l'usage de son corps. Des <abbr title="Dispositifs qui relient l'activité du cerveau à un ordinateur.">interfaces cerveau-ordinateur</abbr> sont testées aujourd'hui chez des personnes atteintes, entre autres, d'une <abbr title="Atteinte de la moelle épinière, qui peut priver une personne de l'usage de ses membres.">lésion de la moelle épinière</abbr> : en janvier 2026, <abbr title="Entreprise qui développe des interfaces cerveau-ordinateur implantables.">Neuralink</abbr> annonce 21 participants à ses essais dans le monde. <abbr title="Entreprise qui développe des interfaces cerveau-ordinateur.">Synchron</abbr> teste ses dispositifs en Amérique du Nord et en Australie, et <abbr title="Entreprise cofondée par un ancien cocréateur de Neuralink.">Precision Neuroscience</abbr> pose le sien à la surface du cerveau. En Chine, le <abbr title="Implant de la taille d'une pièce, mis au point avec l'université Tsinghua.">NEO</abbr> de <abbr title="Entreprise de Shanghai qui développe des interfaces cerveau-ordinateur.">Neuracle</abbr> est devenu en mars 2026 le premier implant cérébral invasif au monde approuvé pour un usage hors essais cliniques. Ces interfaces restent expérimentales.</p>
-<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frise de 1950 à 2035, vue du 10 octobre 2026. Les Chroniques martiennes, parues en 1950, datent leur maison qui parle du 4 août 2026. Retour vers le futur II, sorti en 1989, envoie Marty au 21 octobre 2015. I, Robot, sorti en 2004, se passe en 2035. Les deux premières dates sont déjà arrivées, et 2035 est encore à venir." class="diagram-svg diagram-wide">
+<svg viewBox="0 0 640 626" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frise de 1950 à 2050, vue du 10 octobre 2026, avec les sept récits de la section. Les Chroniques martiennes, parues en 1950, datent leur maison qui parle du 4 août 2026. K 2000, diffusée à partir de 1982, se passe au présent. Neuromancien, paru en 1984, laisse l'année ouverte. Retour vers le futur II, sorti en 1989, envoie Marty au 21 octobre 2015. I, Robot, sorti en 2004, se passe en 2035. Her, sorti en 2013, laisse l'année ouverte. Upgrade, sorti en 2018, se passe en 2046. Deux de ces dates sont déjà arrivées, et 2035 et 2046 sont encore à venir." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">DATES DE LA SF, VUES DU 10 OCTOBRE 2026</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Deux futurs sont déjà là.</text>
-<rect x="527.8" y="100" width="80.2" height="238" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
-<text x="567.9" y="114" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.6">à venir</text>
-<line x1="32" y1="340" x2="608" y2="340" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="62.3" y1="336" x2="62.3" y2="344" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="62.3" y="362" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">1950</text>
-<line x1="213.9" y1="336" x2="213.9" y2="344" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="213.9" y="362" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">1975</text>
-<line x1="365.5" y1="336" x2="365.5" y2="344" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="365.5" y="362" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2000</text>
-<line x1="517.1" y1="336" x2="517.1" y2="344" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="517.1" y="362" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2025</text>
-<line x1="527.8" y1="100" x2="527.8" y2="340" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
-<text x="519.8" y="114" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Aujourd'hui, 10 oct. 2026</text>
-<text x="57.3" y="134" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Chroniques martiennes</text>
-<line x1="62.3" y1="150" x2="519.7" y2="150" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="526.7" cy="150" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
-<circle cx="62.3" cy="150" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="62.3" y="174" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1950</text>
-<text x="515.8" y="174" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">4 août 2026</text>
-<text x="293.8" y="204" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Retour vers le futur II</text>
-<line x1="298.8" y1="220" x2="454.3" y2="220" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="461.3" cy="220" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
-<circle cx="298.8" cy="220" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="298.8" y="244" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1989</text>
-<text x="461.3" y="244" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">21 oct. 2015</text>
-<text x="384.7" y="274" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
-<line x1="389.7" y1="290" x2="527.8" y2="290" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<line x1="527.8" y1="290" x2="570.7" y2="290" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="577.7" cy="290" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
-<circle cx="389.7" cy="290" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="389.7" y="314" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2004</text>
-<text x="577.7" y="314" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">2035</text>
-<text x="32" y="390" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Point plein : parution ou sortie. Cercle : date où se passe le récit.</text>
+<rect x="472.1" y="100" width="135.9" height="440" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
+<text x="540.1" y="114" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.6">à venir</text>
+<line x1="32" y1="542" x2="608" y2="542" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="76" y1="538" x2="76" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="76" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">1950</text>
+<line x1="205" y1="538" x2="205" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="205" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">1975</text>
+<line x1="334" y1="538" x2="334" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="334" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2000</text>
+<line x1="463" y1="538" x2="463" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="463" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2025</text>
+<line x1="592" y1="538" x2="592" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="592" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2050</text>
+<line x1="472.1" y1="100" x2="472.1" y2="542" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
+<text x="464.1" y="114" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Aujourd'hui, 10 oct. 2026</text>
+<text x="36" y="144" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Chroniques martiennes</text>
+<line x1="76" y1="160" x2="464.2" y2="160" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="471.2" cy="160" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="76" cy="160" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="66" y="164.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1950</text>
+<text x="460.2" y="184" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">4 août 2026</text>
+<text x="201.1" y="206" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">K 2000</text>
+<circle cx="241.1" cy="222" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="231.1" y="226.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1982</text>
+<text x="211.4" y="256" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Neuromancien</text>
+<circle cx="251.4" cy="272" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="241.4" y="276.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1984</text>
+<text x="237.2" y="306" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Retour vers le futur II</text>
+<line x1="277.2" y1="322" x2="408.5" y2="322" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="415.5" cy="322" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="277.2" cy="322" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="267.2" y="326.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1989</text>
+<text x="415.5" y="346" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">21 oct. 2015</text>
+<text x="314.6" y="368" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
+<line x1="354.6" y1="384" x2="472.1" y2="384" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="472.1" y1="384" x2="507.6" y2="384" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="514.6" cy="384" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="354.6" cy="384" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="344.6" y="388.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2004</text>
+<text x="514.6" y="408" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">2035</text>
+<text x="361.1" y="430" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Her</text>
+<circle cx="401.1" cy="446" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="391.1" y="450.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2013</text>
+<text x="386.9" y="480" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Upgrade</text>
+<line x1="426.9" y1="496" x2="472.1" y2="496" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="472.1" y1="496" x2="564.4" y2="496" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="571.4" cy="496" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="426.9" cy="496" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="416.9" y="500.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2018</text>
+<text x="571.4" y="520" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">2046</text>
+<text x="32" y="592" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Point plein : parution ou sortie. Cercle : date où se passe le récit.</text>
+<text x="32" y="612" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Sans cercle : récit au présent (K 2000) ou non daté (Neuromancien, Her).</text>
 </svg>
-<svg viewBox="0 0 320 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frise de 1950 à 2035, vue du 10 octobre 2026. Les Chroniques martiennes, parues en 1950, datent leur maison qui parle du 4 août 2026. Retour vers le futur II, sorti en 1989, envoie Marty au 21 octobre 2015. I, Robot, sorti en 2004, se passe en 2035. Les deux premières dates sont déjà arrivées, et 2035 est encore à venir." class="diagram-svg diagram-narrow">
+<svg viewBox="0 0 320 768" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Frise de 1950 à 2050, vue du 10 octobre 2026, avec les sept récits de la section. Les Chroniques martiennes, parues en 1950, datent leur maison qui parle du 4 août 2026. K 2000, diffusée à partir de 1982, se passe au présent. Neuromancien, paru en 1984, laisse l'année ouverte. Retour vers le futur II, sorti en 1989, envoie Marty au 21 octobre 2015. I, Robot, sorti en 2004, se passe en 2035. Her, sorti en 2013, laisse l'année ouverte. Upgrade, sorti en 2018, se passe en 2046. Deux de ces dates sont déjà arrivées, et 2035 et 2046 sont encore à venir." class="diagram-svg diagram-narrow">
 <text x="16" y="30" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">DATES DE LA SF</text>
 <text x="16" y="50" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">VUES DU 10 OCTOBRE 2026</text>
 <text x="16" y="92" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Deux futurs</text>
 <text x="16" y="126" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">sont déjà là.</text>
-<rect x="261.2" y="174" width="42.8" height="254" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
-<line x1="16" y1="430" x2="304" y2="430" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="35.7" y1="426" x2="35.7" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="35.7" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1950</text>
-<line x1="109.1" y1="426" x2="109.1" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="109.1" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1975</text>
-<line x1="182.6" y1="426" x2="182.6" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="182.6" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2000</text>
-<line x1="256" y1="426" x2="256" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="256" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2025</text>
-<line x1="261.2" y1="174" x2="261.2" y2="430" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
-<text x="255" y="190" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Aujourd'hui</text>
+<rect x="233.5" y="174" width="70.5" height="462" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
+<line x1="16" y1="638" x2="304" y2="638" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="60" y1="634" x2="60" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="60" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1950</text>
+<line x1="116.5" y1="634" x2="116.5" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="116.5" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1975</text>
+<line x1="173" y1="634" x2="173" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="173" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2000</text>
+<line x1="229.5" y1="634" x2="229.5" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="229.5" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2025</text>
+<line x1="286" y1="634" x2="286" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="286" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2050</text>
+<line x1="233.5" y1="174" x2="233.5" y2="638" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
+<text x="227.5" y="190" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Aujourd'hui</text>
 <text x="16" y="222" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Chroniques martiennes</text>
-<line x1="35.7" y1="238" x2="253.6" y2="238" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="260.6" cy="238" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
-<circle cx="35.7" cy="238" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="35.7" y="262" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1950</text>
-<text x="255" y="262" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">4 août 2026</text>
-<text x="16" y="296" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Retour vers le futur II</text>
-<line x1="150.3" y1="312" x2="221.9" y2="312" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="228.9" cy="312" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
-<circle cx="150.3" cy="312" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="140" y="316.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1989</text>
-<text x="235" y="336" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">21 oct. 2015</text>
-<text x="16" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
-<line x1="194.3" y1="386" x2="261.2" y2="386" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<line x1="261.2" y1="386" x2="278.3" y2="386" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="285.3" cy="386" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
-<circle cx="194.3" cy="386" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="184" y="390.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2004</text>
-<text x="285.3" y="410" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">2035</text>
-<text x="16" y="486" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Point plein : parution ou sortie.</text>
-<text x="16" y="506" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Cercle : date où se passe le récit.</text>
-<text x="16" y="526" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Bande colorée : encore à venir.</text>
+<line x1="60" y1="238" x2="226.1" y2="238" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="233.1" cy="238" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="60" cy="238" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="50" y="242.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1950</text>
+<text x="222.1" y="262" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">4 août 2026</text>
+<text x="16" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">K 2000</text>
+<circle cx="132.3" cy="304" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="122.3" y="308.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1982</text>
+<text x="16" y="340" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Neuromancien</text>
+<circle cx="136.8" cy="356" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="126.8" y="360.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1984</text>
+<text x="16" y="392" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Retour vers le futur II</text>
+<line x1="148.1" y1="408" x2="201.7" y2="408" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="208.7" cy="408" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="148.1" cy="408" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="138.1" y="412.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1989</text>
+<text x="214.7" y="432" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">21 oct. 2015</text>
+<text x="16" y="458" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
+<line x1="182" y1="474" x2="233.5" y2="474" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="233.5" y1="474" x2="245.1" y2="474" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="252.1" cy="474" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="182" cy="474" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="172" y="478.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2004</text>
+<text x="254.5" y="498" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">2035</text>
+<text x="16" y="524" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Her</text>
+<circle cx="202.4" cy="540" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="192.4" y="544.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2013</text>
+<text x="16" y="576" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Upgrade</text>
+<line x1="213.7" y1="592" x2="233.5" y2="592" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="233.5" y1="592" x2="270" y2="592" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="277" cy="592" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="213.7" cy="592" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="203.7" y="596.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2018</text>
+<text x="277" y="616" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">2046</text>
+<text x="16" y="694" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Point plein : parution ou sortie.</text>
+<text x="16" y="714" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Cercle : date où se passe le récit.</text>
+<text x="16" y="734" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Sans cercle : récit au présent ou non daté.</text>
+<text x="16" y="754" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Bande colorée : encore à venir.</text>
 </svg>
 
 <h2>Pourquoi on adore être ici</h2>
@@ -225,82 +263,120 @@ const englishContent: PostContent = {
 <p><strong>The voice in <em>Her</em>.</strong> In <abbr title="American film director and screenwriter of Her.">Spike Jonze</abbr>'s 2013 film, a man who writes letters for other people for a living grows attached to Samantha, an operating system voiced by Scarlett Johansson. On 13 May 2024, <abbr title="US artificial intelligence company, maker of ChatGPT.">OpenAI</abbr> showed <abbr title="OpenAI model unveiled on 13 May 2024 that handles text, voice and images.">GPT-4o</abbr>'s voice and <abbr title="Co-founder of OpenAI.">Sam Altman</abbr> posted a single word: "her". The model answers speech in 320 milliseconds on average, about the pace of a human conversation.</p>
 <figure class="post-cover"><img src="/visuals/nerd-in-the-ai-era/covers/upgrade.webp" alt="Upgrade poster: the face of a bearded man on a red background, the title UPGRADE in large white letters." width="220" height="326" loading="lazy" decoding="async"><figcaption><em>Upgrade</em>, 2018, Leigh Whannell. Poster: ©&nbsp;rights holders, reproduced for illustration.</figcaption></figure>
 <p><strong>The connected body in <em>Upgrade</em>.</strong> In <abbr title="Director and screenwriter of Upgrade.">Leigh Whannell</abbr>'s 2018 film, cars drive themselves in the near future, and a man who has become quadriplegic receives <abbr title="The film's implant, which lets its hero control his body.">STEM</abbr>, an implant that gives him back the use of his body. <abbr title="Devices that link brain activity to a computer.">Brain-computer interfaces</abbr> are being tested today in people with, among other conditions, a <abbr title="Damage to the spinal cord, which can take away the use of a person's limbs.">spinal cord injury</abbr>: in January 2026, <abbr title="A company that develops implantable brain-computer interfaces.">Neuralink</abbr> announced 21 participants in its trials worldwide. <abbr title="A company that develops brain-computer interfaces.">Synchron</abbr> tests its devices in North America and Australia, and <abbr title="A company co-founded by a former co-creator of Neuralink.">Precision Neuroscience</abbr> places its own on the surface of the brain. In China, <abbr title="A Shanghai company that develops brain-computer interfaces.">Neuracle</abbr>'s <abbr title="A coin-sized implant developed with Tsinghua University.">NEO</abbr> became, in March 2026, the world's first invasive brain implant approved for use outside clinical trials. These interfaces remain experimental.</p>
-<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline from 1950 to 2035, seen from 10 October 2026. The Martian Chronicles, published in 1950, dates its talking house 4 August 2026. Back to the Future Part II, released in 1989, sends Marty to 21 October 2015. I, Robot, released in 2004, is set in 2035. The first two dates have already arrived, and 2035 is still ahead." class="diagram-svg diagram-wide">
+<svg viewBox="0 0 640 626" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline from 1950 to 2050, seen from 10 October 2026, with the section's seven stories. The Martian Chronicles, published in 1950, dates its talking house 4 August 2026. Knight Rider, first aired in 1982, is set in its own present. Neuromancer, published in 1984, leaves the year open. Back to the Future Part II, released in 1989, sends Marty to 21 October 2015. I, Robot, released in 2004, is set in 2035. Her, released in 2013, leaves the year open. Upgrade, released in 2018, is set in 2046. Two of these dates have already arrived, and 2035 and 2046 are still ahead." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SCI-FI DATES, SEEN FROM 10 OCTOBER 2026</text>
 <text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Two futures are already here.</text>
-<rect x="527.8" y="100" width="80.2" height="238" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
-<text x="567.9" y="114" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.6">ahead</text>
-<line x1="32" y1="340" x2="608" y2="340" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="62.3" y1="336" x2="62.3" y2="344" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="62.3" y="362" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">1950</text>
-<line x1="213.9" y1="336" x2="213.9" y2="344" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="213.9" y="362" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">1975</text>
-<line x1="365.5" y1="336" x2="365.5" y2="344" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="365.5" y="362" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2000</text>
-<line x1="517.1" y1="336" x2="517.1" y2="344" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="517.1" y="362" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2025</text>
-<line x1="527.8" y1="100" x2="527.8" y2="340" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
-<text x="519.8" y="114" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Today, 10 Oct. 2026</text>
-<text x="57.3" y="134" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">The Martian Chronicles</text>
-<line x1="62.3" y1="150" x2="519.7" y2="150" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="526.7" cy="150" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
-<circle cx="62.3" cy="150" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="62.3" y="174" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1950</text>
-<text x="515.8" y="174" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">4 Aug. 2026</text>
-<text x="293.8" y="204" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Back to the Future Part II</text>
-<line x1="298.8" y1="220" x2="454.3" y2="220" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="461.3" cy="220" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
-<circle cx="298.8" cy="220" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="298.8" y="244" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1989</text>
-<text x="461.3" y="244" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">21 Oct. 2015</text>
-<text x="384.7" y="274" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
-<line x1="389.7" y1="290" x2="527.8" y2="290" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<line x1="527.8" y1="290" x2="570.7" y2="290" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="577.7" cy="290" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
-<circle cx="389.7" cy="290" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="389.7" y="314" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2004</text>
-<text x="577.7" y="314" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">2035</text>
-<text x="32" y="390" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Solid dot: published or released. Ring: the date the story is set on.</text>
+<rect x="472.1" y="100" width="135.9" height="440" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
+<text x="540.1" y="114" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600" opacity="0.6">ahead</text>
+<line x1="32" y1="542" x2="608" y2="542" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="76" y1="538" x2="76" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="76" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">1950</text>
+<line x1="205" y1="538" x2="205" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="205" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">1975</text>
+<line x1="334" y1="538" x2="334" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="334" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2000</text>
+<line x1="463" y1="538" x2="463" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="463" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2025</text>
+<line x1="592" y1="538" x2="592" y2="546" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="592" y="564" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">2050</text>
+<line x1="472.1" y1="100" x2="472.1" y2="542" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
+<text x="464.1" y="114" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Today, 10 Oct. 2026</text>
+<text x="36" y="144" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">The Martian Chronicles</text>
+<line x1="76" y1="160" x2="464.2" y2="160" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="471.2" cy="160" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="76" cy="160" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="66" y="164.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1950</text>
+<text x="460.2" y="184" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">4 Aug. 2026</text>
+<text x="201.1" y="206" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Knight Rider</text>
+<circle cx="241.1" cy="222" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="231.1" y="226.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1982</text>
+<text x="211.4" y="256" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Neuromancer</text>
+<circle cx="251.4" cy="272" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="241.4" y="276.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1984</text>
+<text x="237.2" y="306" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Back to the Future Part II</text>
+<line x1="277.2" y1="322" x2="408.5" y2="322" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="415.5" cy="322" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="277.2" cy="322" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="267.2" y="326.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">1989</text>
+<text x="415.5" y="346" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">21 Oct. 2015</text>
+<text x="314.6" y="368" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
+<line x1="354.6" y1="384" x2="472.1" y2="384" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="472.1" y1="384" x2="507.6" y2="384" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="514.6" cy="384" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="354.6" cy="384" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="344.6" y="388.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2004</text>
+<text x="514.6" y="408" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">2035</text>
+<text x="361.1" y="430" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Her</text>
+<circle cx="401.1" cy="446" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="391.1" y="450.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2013</text>
+<text x="386.9" y="480" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Upgrade</text>
+<line x1="426.9" y1="496" x2="472.1" y2="496" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="472.1" y1="496" x2="564.4" y2="496" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="571.4" cy="496" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="426.9" cy="496" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="416.9" y="500.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">2018</text>
+<text x="571.4" y="520" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" opacity="0.85">2046</text>
+<text x="32" y="592" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Solid dot: published or released. Ring: the date the story is set on.</text>
+<text x="32" y="612" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">No ring: set in its present (Knight Rider) or undated (Neuromancer, Her).</text>
 </svg>
-<svg viewBox="0 0 320 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline from 1950 to 2035, seen from 10 October 2026. The Martian Chronicles, published in 1950, dates its talking house 4 August 2026. Back to the Future Part II, released in 1989, sends Marty to 21 October 2015. I, Robot, released in 2004, is set in 2035. The first two dates have already arrived, and 2035 is still ahead." class="diagram-svg diagram-narrow">
+<svg viewBox="0 0 320 768" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline from 1950 to 2050, seen from 10 October 2026, with the section's seven stories. The Martian Chronicles, published in 1950, dates its talking house 4 August 2026. Knight Rider, first aired in 1982, is set in its own present. Neuromancer, published in 1984, leaves the year open. Back to the Future Part II, released in 1989, sends Marty to 21 October 2015. I, Robot, released in 2004, is set in 2035. Her, released in 2013, leaves the year open. Upgrade, released in 2018, is set in 2046. Two of these dates have already arrived, and 2035 and 2046 are still ahead." class="diagram-svg diagram-narrow">
 <text x="16" y="30" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SCI-FI DATES</text>
 <text x="16" y="50" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SEEN FROM 10 OCT. 2026</text>
 <text x="16" y="92" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Two futures</text>
 <text x="16" y="126" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">are already here.</text>
-<rect x="261.2" y="174" width="42.8" height="254" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
-<line x1="16" y1="430" x2="304" y2="430" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
-<line x1="35.7" y1="426" x2="35.7" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="35.7" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1950</text>
-<line x1="109.1" y1="426" x2="109.1" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="109.1" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1975</text>
-<line x1="182.6" y1="426" x2="182.6" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="182.6" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2000</text>
-<line x1="256" y1="426" x2="256" y2="434" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
-<text x="256" y="452" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2025</text>
-<line x1="261.2" y1="174" x2="261.2" y2="430" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
-<text x="255" y="190" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Today</text>
+<rect x="233.5" y="174" width="70.5" height="462" rx="8" fill="var(--diagram-accent)" fill-opacity="0.08" stroke="none"></rect>
+<line x1="16" y1="638" x2="304" y2="638" stroke="currentColor" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="60" y1="634" x2="60" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="60" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1950</text>
+<line x1="116.5" y1="634" x2="116.5" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="116.5" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">1975</text>
+<line x1="173" y1="634" x2="173" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="173" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2000</text>
+<line x1="229.5" y1="634" x2="229.5" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="229.5" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2025</text>
+<line x1="286" y1="634" x2="286" y2="642" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="286" y="660" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.5">2050</text>
+<line x1="233.5" y1="174" x2="233.5" y2="638" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4" stroke-linecap="round"></line>
+<text x="227.5" y="190" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.9">Today</text>
 <text x="16" y="222" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">The Martian Chronicles</text>
-<line x1="35.7" y1="238" x2="253.6" y2="238" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="260.6" cy="238" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
-<circle cx="35.7" cy="238" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="35.7" y="262" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1950</text>
-<text x="255" y="262" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">4 Aug. 2026</text>
-<text x="16" y="296" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Back to the Future Part II</text>
-<line x1="150.3" y1="312" x2="221.9" y2="312" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="228.9" cy="312" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
-<circle cx="150.3" cy="312" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="140" y="316.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1989</text>
-<text x="235" y="336" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">21 Oct. 2015</text>
-<text x="16" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
-<line x1="194.3" y1="386" x2="261.2" y2="386" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
-<line x1="261.2" y1="386" x2="278.3" y2="386" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
-<circle cx="285.3" cy="386" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
-<circle cx="194.3" cy="386" r="5" fill="currentColor" fill-opacity="0.75"></circle>
-<text x="184" y="390.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2004</text>
-<text x="285.3" y="410" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">2035</text>
-<text x="16" y="486" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Solid dot: published or released.</text>
-<text x="16" y="506" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Ring: the date the story is set on.</text>
-<text x="16" y="526" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Shaded band: still ahead.</text>
+<line x1="60" y1="238" x2="226.1" y2="238" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="233.1" cy="238" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="60" cy="238" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="50" y="242.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1950</text>
+<text x="222.1" y="262" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">4 Aug. 2026</text>
+<text x="16" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Knight Rider</text>
+<circle cx="132.3" cy="304" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="122.3" y="308.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1982</text>
+<text x="16" y="340" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Neuromancer</text>
+<circle cx="136.8" cy="356" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="126.8" y="360.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1984</text>
+<text x="16" y="392" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Back to the Future Part II</text>
+<line x1="148.1" y1="408" x2="201.7" y2="408" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="208.7" cy="408" r="6" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-opacity="0.75" stroke-width="2.5"></circle>
+<circle cx="148.1" cy="408" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="138.1" y="412.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">1989</text>
+<text x="214.7" y="432" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">21 Oct. 2015</text>
+<text x="16" y="458" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">I, Robot</text>
+<line x1="182" y1="474" x2="233.5" y2="474" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="233.5" y1="474" x2="245.1" y2="474" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="252.1" cy="474" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="182" cy="474" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="172" y="478.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2004</text>
+<text x="254.5" y="498" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">2035</text>
+<text x="16" y="524" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Her</text>
+<circle cx="202.4" cy="540" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="192.4" y="544.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2013</text>
+<text x="16" y="576" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="650" font-style="italic" opacity="0.85">Upgrade</text>
+<line x1="213.7" y1="592" x2="233.5" y2="592" stroke="currentColor" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"></line>
+<line x1="233.5" y1="592" x2="270" y2="592" stroke="var(--diagram-accent)" stroke-width="3" stroke-linecap="round"></line>
+<circle cx="277" cy="592" r="6" fill="var(--diagram-accent)" fill-opacity="0.18" stroke="var(--diagram-accent)" stroke-width="2.5"></circle>
+<circle cx="213.7" cy="592" r="5" fill="currentColor" fill-opacity="0.75"></circle>
+<text x="203.7" y="596.5" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" opacity="0.6">2018</text>
+<text x="277" y="616" text-anchor="middle" fill="var(--diagram-accent)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="650" opacity="0.85">2046</text>
+<text x="16" y="694" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Solid dot: published or released.</text>
+<text x="16" y="714" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Ring: the date the story is set on.</text>
+<text x="16" y="734" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">No ring: set in its present or undated.</text>
+<text x="16" y="754" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-style="italic" opacity="0.6">Shaded band: still ahead.</text>
 </svg>
 
 <h2>Why we love it here</h2>
