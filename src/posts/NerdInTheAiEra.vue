@@ -116,7 +116,6 @@ const frenchContent: PostContent = {
 <p>J'ai réécrit les treize messages de l'époque en une seule passe. Il y en a quinze aujourd'hui. La grille de huit règles qui les guide a été écrite après coup, en regardant ce qui faisait bouger quelqu'un. Un prénom en tête, une seule action, jamais de question, aucun choix proposé.</p>
 <p>Le réveil a été réécrit trois fois dans la même journée. La première version parlait d'abord, puis lançait la musique. Elle a tenu une matinée : être réveillé par une voix ne passait pas. Le jour même, l'ordre s'est inversé. La musique réveille, la voix suit.</p>
 <p>Aucun de ces réglages n'est venu de l'agent. La musique avant la voix, c'est la réaction d'un enfant, un matin, qui l'a imposée.</p>
-<p>Le plan de secours est en place lui aussi : si l'enceinte ne répond pas, le réveil bascule sur une notification prioritaire vers les téléphones. Il a pris dix minutes.</p>
 <blockquote><p>L'agent n'a pas trouvé la bonne annonce. Il a rendu le troisième essai aussi bon marché que le premier.</p></blockquote>
 <p>La maison de Bradbury ne sait pas que la famille est partie. La mienne ne sait pas si quelqu'un a bougé. Ce que la machine ne voit pas, c'est encore moi qui le regarde.</p>
 
@@ -132,7 +131,7 @@ const frenchContent: PostContent = {
 
 <h2>Ce que cette branche facture encore</h2>
 <p>Le premier essai est devenu bon marché. Tout ce qui suit est facturé au tarif d'avant.</p>
-<p>Au 30 septembre, 13 de mes 17 dépôts de 2026 ont reçu un <abbr title="Envoi de nouveaux commits vers le dépôt hébergé">push</abbr> dans les trente derniers jours. Un seul est archivé. Les trois autres sont au repos depuis plus d'un mois. C'est là que l'entretien pèse le plus pour moi : une décision que je repousse.</p>
+<p>Au 30 septembre, 13 de mes 17 dépôts de 2026 ont reçu un <abbr title="Envoi de nouveaux commits vers le dépôt hébergé">push</abbr> dans les trente derniers jours. Un seul est archivé. Garder ces dépôts en vie, c'est là que l'entretien pèse le plus pour moi : une décision que je repousse.</p>
 <p>En 2016, abandonner était gratuit et silencieux. En 2026, tout reste vivant en même temps. Vivant ne veut pas dire fini, et un push peut venir d'un robot qui met à jour une dépendance.</p>
 <p><strong>Choisir.</strong> Quand tout peut démarrer, il faut décider ce qu'on ne démarre pas. <strong>Finir.</strong> Les derniers pour cent sont faits de cas limites, de documentation et de décisions. <strong>Entretenir.</strong> Chaque dépôt vivant occupe une place dans ma tête, même quand je n'y touche pas.</p>
 <p>En 2025, <abbr title="Model Evaluation and Threat Research, organisme indépendant d'évaluation des modèles d'IA">METR</abbr> a suivi 16 développeurs expérimentés dans leurs propres dépôts : avec l'IA, ils ont été 19 % plus lents, tout en se croyant 20 % plus rapides. METR a lancé une nouvelle expérience en août 2025 et publié une mise à jour en février 2026. Elle y juge ses nouvelles données peu fiables, et probablement biaisées vers le bas dans l'estimation du gain de vitesse.</p>
@@ -279,7 +278,6 @@ const englishContent: PostContent = {
 <p>I rewrote the thirteen messages of the time in a single pass. There are fifteen today. The eight-rule grid behind them was written afterwards, by watching what actually got someone moving. A name first, one action, never a question, no choices on offer.</p>
 <p>The wake-up was rewritten three times in one day. The first version spoke first, then started the music. It lasted one morning: being woken by a voice did not go down well. The same day, the order flipped. Music wakes, the voice follows.</p>
 <p>None of those calls came from the agent. Music before voice was settled by a child's reaction one morning.</p>
-<p>The fallback is in place too: if the speaker does not answer, the wake-up switches to a high-priority push to the phones. It took ten minutes.</p>
 <blockquote><p>The agent did not find the right announcement. It made the third attempt cost as little as the first.</p></blockquote>
 <p>Bradbury's house does not know the family is gone. Mine does not know whether anyone moved. What the machine cannot see, I am still the one watching.</p>
 
@@ -295,7 +293,7 @@ const englishContent: PostContent = {
 
 <h2>What this branch still bills</h2>
 <p>The first try got cheap. Everything after it is billed at the old rate.</p>
-<p>As of 30 September, 13 of my 17 repos from 2026 had a <abbr title="Sending new commits to the hosted repository">push</abbr> in the last thirty days. One is archived. The other three have been resting for over a month. For me, that is where upkeep weighs most: a decision I keep putting off.</p>
+<p>As of 30 September, 13 of my 17 repos from 2026 had a <abbr title="Sending new commits to the hosted repository">push</abbr> in the last thirty days. One is archived. Keeping those repos alive is where upkeep weighs most for me: a decision I keep putting off.</p>
 <p>In 2016, dropping a project was free and silent. In 2026, everything stays alive at once. Alive is not the same as finished, and a push can come from a bot bumping a dependency.</p>
 <p><strong>Choosing.</strong> When anything can start, I have to decide what will not. <strong>Finishing.</strong> The last few percent are edge cases, docs and decisions. <strong>Upkeep.</strong> Every live repo takes up room in my head, even on days I leave it alone.</p>
 <p>In 2025, <abbr title="Model Evaluation and Threat Research, an independent AI evaluation nonprofit">METR</abbr> followed 16 experienced developers working in their own repos: with AI they were 19% slower, while believing they were 20% faster. METR started a new experiment in August 2025 and published an update in February 2026. It calls the new data an unreliable signal, likely biased downward in its estimate of the speedup.</p>
