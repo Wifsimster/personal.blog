@@ -27,7 +27,6 @@ const LOOPS = [
   {slug: 'not-the-sun', name: 'facades', component: notTheSun.Facades, fps: 15},
   {slug: 'not-the-sun', name: 'phases', component: notTheSun.Phases, fps: 15},
   {slug: 'nerd-in-the-ai-era', name: 'timeline', component: nerdInTheAiEra.Timeline, fps: 20},
-  {slug: 'nerd-in-the-ai-era', name: 'house', component: nerdInTheAiEra.House, fps: 20},
 ];
 
 export const Root: React.FC = () => (
