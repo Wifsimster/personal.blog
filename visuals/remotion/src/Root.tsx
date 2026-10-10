@@ -3,6 +3,7 @@ import {Composition} from 'remotion';
 import {LOOP} from './loops/common';
 import * as costOfTrying from './loops/cost-of-trying';
 import * as dailyRhythm from './loops/daily-rhythm';
+import * as nerdInTheAiEra from './loops/nerd-in-the-ai-era';
 import * as noChoices from './loops/no-choices';
 import * as notTheSun from './loops/not-the-sun';
 import * as tenYears from './loops/ten-years-of-home-automation';
@@ -25,6 +26,9 @@ const LOOPS = [
   {slug: 'not-the-sun', name: 'shutters', component: notTheSun.Shutters, fps: 12},
   {slug: 'not-the-sun', name: 'facades', component: notTheSun.Facades, fps: 15},
   {slug: 'not-the-sun', name: 'phases', component: notTheSun.Phases, fps: 15},
+  {slug: 'nerd-in-the-ai-era', name: 'timeline', component: nerdInTheAiEra.Timeline, fps: 20},
+  {slug: 'nerd-in-the-ai-era', name: 'house', component: nerdInTheAiEra.House, fps: 20},
+  {slug: 'nerd-in-the-ai-era', name: 'tries', component: nerdInTheAiEra.Tries, fps: 20},
 ];
 
 export const Root: React.FC = () => (
