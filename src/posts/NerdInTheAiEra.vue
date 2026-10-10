@@ -11,7 +11,7 @@ export const metadata: PostMetadata = {
 
 const frenchContent: PostContent = {
   title: "Un nerd dans la timeline faite pour nous",
-  description: "Les films de notre enfance imaginaient des maisons qui parlent. La mienne parle, après zéro dépôt créé en 2023 et 2024, puis 17 en neuf mois. Ce que cette époque me facture encore, et ce qu'elle a de sombre.",
+  description: "Les films de notre enfance imaginaient des maisons qui parlent. La mienne parle. J'ai créé 17 dépôts de code cette année, après plus de trois ans sans aucun. Voici ce que ça ouvre, et ce que ça coûte encore.",
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> Les films et les séries qu'on regardait enfants imaginaient des maisons qui parlent. La mienne prononce quinze annonces vocales un jour d'école, écrites le soir avec un <abbr title="Programme d'intelligence artificielle qui écrit, lance et corrige du code à partir d'une consigne">agent</abbr> d'<abbr title="Intelligence artificielle">IA</abbr>. Au 30 septembre 2026, j'ai ouvert 17 <abbr title="Projet de code dont git conserve tout l'historique">dépôts</abbr> cette année, après plus de trois ans sans aucun, presque autant qu'en 2016, et bien plus poussés. Démarrer est devenu facile et, à mon avis, le plafond a monté. Trier, finir et entretenir coûtent toujours le même prix. L'emploi, la dépendance à quelques fournisseurs et la boucle compulsive restent des risques réels.</p></div>
 <hr>
 <p>Un matin d'école, l'enceinte d'une chambre d'enfant démarre seule. D'abord de la musique, à dix pour cent du volume. Elle monte de cinq points toutes les vingt secondes. À quatre-vingt-dix secondes, une voix passe par-dessus et donne la première consigne de la journée.</p>
@@ -173,7 +173,7 @@ const frenchContent: PostContent = {
 
 const englishContent: PostContent = {
   title: 'A Nerd in the Timeline Made for Us',
-  description: 'The films we grew up with imagined houses that talk. Mine does, after zero repos created in 2023 and 2024, then 17 in nine months. What this era still bills me for, and its darker side.',
+  description: 'The films we grew up with imagined houses that talk. Mine does. I created 17 code repositories this year, after more than three years with none. Here is what that opens up, and what it still costs.',
   html: `<div class="post-tldr"><p><strong>TL;DR</strong> The films and TV series we watched as kids imagined houses that talk. Mine speaks fifteen times on a school day, in announcements I wrote in the evenings with an <abbr title="Artificial intelligence">AI</abbr> <abbr title="A program that writes, runs and fixes code from an instruction">agent</abbr> doing the typing. By 30 September 2026 I had started 17 <abbr title="A code project whose full history git keeps">repos</abbr> this year, after more than three years without one, close to my 2016 count, and they went much further. Getting started got easy, and in my view the ceiling has gone up. Sorting, finishing and upkeep still cost what they used to. Jobs, dependence on a handful of providers and the compulsive loop remain real risks.</p></div>
 <hr>
 <p>A school morning. The speaker in a child's bedroom switches itself on. Music comes first, at ten percent volume, and climbs five points every twenty seconds. At ninety seconds, a voice comes in over it with the first instruction of the day.</p>
