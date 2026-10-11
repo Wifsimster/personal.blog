@@ -170,7 +170,131 @@ const frenchContent: PostContent = {
 <p>Il existe une lecture dystopique de cette timeline, et elle se défend. Des métiers changent, et l'inquiétude pour l'emploi est légitime. Voici ce que montrent les publications du 11 juillet au 11 octobre 2026.</p>
 <p>Les débutants sont les premiers concernés. Selon la <abbr title="Banque centrale française, qui publie aussi des études économiques">Banque de France</abbr> (8 octobre), les embauches en <abbr title="Contrat à durée indéterminée">CDI</abbr> des 21-29 ans étaient en mars 2026 environ 28 % sous leur niveau de novembre 2022 dans le cinquième de métiers le plus exposé à l'<abbr title="Intelligence artificielle capable de produire du texte, du code ou des images à partir d'une consigne">IA générative</abbr>, contre 8 % dans le moins exposé. Selon le <abbr title="Laboratoire de l'université Stanford qui étudie l'économie numérique">Stanford Digital Economy Lab</abbr> (12 août), l'emploi américain des 22-25 ans dans les métiers exposés est 19 % sous celui de leurs pairs moins exposés, d'après les données de paie d'<abbr title="Automatic Data Processing, entreprise américaine de paie">ADP</abbr>. Dans les deux cas, l'écart passe par les embauches.</p>
 <p>Pour les développeurs, la <abbr title="École d'économie de Paris, institut de recherche">Paris School of Economics</abbr> (7 septembre) relève dans les offres de <abbr title="Service public de l'emploi français, ex-Pôle emploi">France Travail</abbr> des métiers informatiques spécialisés environ 30 % plus bas début 2025 qu'à fin 2022, face à des métiers sans compétences informatiques. Dans ces offres, la part qui exige de programmer baisse. Celle qui exige de s'exprimer à l'oral monte.</p>
+<svg viewBox="0 0 640 594" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trois écarts observés par trois études différentes, chacune avec son propre indicateur et sa propre référence. Banque de France, 8 octobre 2026 : en mars 2026, les embauches en CDI des 21-29 ans en France sont environ 28 % sous leur niveau de novembre 2022 dans le cinquième de métiers le plus exposé à l'IA générative, contre 8 % dans le cinquième le moins exposé. Stanford Digital Economy Lab, 12 août 2026 : aux États-Unis, l'emploi des 22-25 ans dans les métiers exposés est 19 % sous celui de leurs pairs moins exposés, d'après les données de paie ADP jusqu'en juin 2026. Paris School of Economics, 7 septembre 2026 : en France, les offres d'emploi des métiers informatiques spécialisés sont environ 30 % plus basses début 2025 qu'à fin 2022, face à un groupe témoin. Ce sont des écarts observés, et la part due à l'IA reste à établir." class="diagram-svg diagram-wide">
+<line x1="608" y1="142" x2="608" y2="490" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">TROIS ÉTUDES, TROIS INDICATEURS</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">Ce que les données mesurent.</text>
+<text text-anchor="end" x="608" y="114" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">0 = référence de chaque étude</text>
+<text x="188" y="134" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−30 %</text>
+<text x="328" y="134" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−20 %</text>
+<text x="468" y="134" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−10 %</text>
+<text x="608" y="134" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">0</text>
+<line x1="188" y1="142" x2="188" y2="148" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="328" y1="142" x2="328" y2="148" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="468" y1="142" x2="468" y2="148" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="32" y="172" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Embauches en CDI des 21-29 ans, cinquième de métiers le plus exposé</text>
+<path d="M608 182H220Q216 182 216 186V200Q216 204 220 204H608Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="208" y="198" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −28 %</text>
+<text x="32" y="230" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Mêmes embauches, cinquième le moins exposé</text>
+<path d="M608 240H500Q496 240 496 244V258Q496 262 500 262H608Z" fill="currentColor" fill-opacity="0.32"></path>
+<text x="488" y="256" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −8 %</text>
+<text x="32" y="284" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Banque de France, 8 oct. 2026 · France</text>
+<text x="32" y="302" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Référence : novembre 2022. Mesure : mars 2026.</text>
+<text x="32" y="342" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Emploi des 22-25 ans, métiers exposés</text>
+<path d="M608 352H346Q342 352 342 356V370Q342 374 346 374H608Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="334" y="368" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">−19 %</text>
+<text x="32" y="396" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Stanford Digital Economy Lab, 12 août 2026 · États-Unis</text>
+<text x="32" y="414" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Référence : pairs moins exposés. Données ADP à juin 2026.</text>
+<text x="32" y="454" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Offres d'emploi en informatique spécialisée</text>
+<path d="M608 464H192Q188 464 188 468V482Q188 486 192 486H608Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="180" y="480" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −30 %</text>
+<text x="32" y="508" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Paris School of Economics, 7 sept. 2026 · France</text>
+<text x="32" y="526" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Référence : fin 2022, face à un groupe témoin. Mesure : début 2025.</text>
+<text x="32" y="558" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Chaque barre mesure autre chose, avec sa propre référence.</text>
+<text x="32" y="578" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Des écarts observés : la part due à l'IA reste à établir.</text>
+</svg>
+<svg viewBox="0 0 320 828" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trois écarts observés par trois études différentes, chacune avec son propre indicateur et sa propre référence. Banque de France, 8 octobre 2026 : en mars 2026, les embauches en CDI des 21-29 ans en France sont environ 28 % sous leur niveau de novembre 2022 dans le cinquième de métiers le plus exposé à l'IA générative, contre 8 % dans le cinquième le moins exposé. Stanford Digital Economy Lab, 12 août 2026 : aux États-Unis, l'emploi des 22-25 ans dans les métiers exposés est 19 % sous celui de leurs pairs moins exposés, d'après les données de paie ADP jusqu'en juin 2026. Paris School of Economics, 7 septembre 2026 : en France, les offres d'emploi des métiers informatiques spécialisés sont environ 30 % plus basses début 2025 qu'à fin 2022, face à un groupe témoin. Ce sont des écarts observés, et la part due à l'IA reste à établir." class="diagram-svg diagram-narrow">
+<line x1="304" y1="192" x2="304" y2="648" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="16" y="30" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">TROIS ÉTUDES,</text>
+<text x="16" y="50" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">TROIS INDICATEURS</text>
+<text x="16" y="92" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">Ce que mesurent</text>
+<text x="16" y="126" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">les données.</text>
+<text text-anchor="end" x="304" y="164" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">0 = référence de chaque étude</text>
+<text x="100" y="184" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−30 %</text>
+<text x="168" y="184" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−20 %</text>
+<text x="236" y="184" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−10 %</text>
+<text x="304" y="184" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">0</text>
+<line x1="100" y1="192" x2="100" y2="198" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="168" y1="192" x2="168" y2="198" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="236" y1="192" x2="236" y2="198" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="16" y="222" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Embauches en CDI des 21-29 ans,</text>
+<text x="16" y="240" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">cinquième le plus exposé</text>
+<path d="M304 250H117.6Q113.6 250 113.6 254V268Q113.6 272 117.6 272H304Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="105.6" y="266" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −28 %</text>
+<text x="16" y="298" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Cinquième le moins exposé</text>
+<path d="M304 308H253.6Q249.6 308 249.6 312V326Q249.6 330 253.6 330H304Z" fill="currentColor" fill-opacity="0.32"></path>
+<text x="241.6" y="324" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −8 %</text>
+<text x="16" y="352" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Banque de France, 8 oct. 2026</text>
+<text x="16" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">France. Référence : novembre 2022.</text>
+<text x="16" y="388" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Mesure : mars 2026.</text>
+<text x="16" y="428" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Emploi des 22-25 ans,</text>
+<text x="16" y="446" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">métiers exposés</text>
+<path d="M304 456H178.8Q174.8 456 174.8 460V474Q174.8 478 178.8 478H304Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="166.8" y="472" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">−19 %</text>
+<text x="16" y="500" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Stanford Digital Economy Lab,</text>
+<text x="16" y="518" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">12 août 2026. États-Unis.</text>
+<text x="16" y="536" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Référence : pairs moins exposés.</text>
+<text x="16" y="554" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Données ADP à juin 2026.</text>
+<text x="16" y="594" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Offres d'emploi en informatique</text>
+<text x="16" y="612" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">spécialisée</text>
+<path d="M304 622H104Q100 622 100 626V640Q100 644 104 644H304Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="92" y="638" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −30 %</text>
+<text x="16" y="666" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Paris School of Economics,</text>
+<text x="16" y="684" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">7 sept. 2026. France.</text>
+<text x="16" y="702" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Référence : fin 2022, face à un</text>
+<text x="16" y="720" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">groupe témoin. Mesure : début 2025.</text>
+<text x="16" y="752" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Chaque barre mesure autre chose,</text>
+<text x="16" y="772" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">avec sa propre référence.</text>
+<text x="16" y="792" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Des écarts observés : la part</text>
+<text x="16" y="812" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">due à l'IA reste à établir.</text>
+</svg>
 <p>Selon l'enquête de la Banque de France publiée le 3 septembre, 21 % des entreprises qui utilisent ou comptent utiliser l'IA prévoient une baisse de leurs effectifs d'ici trois ans. Ce sont des anticipations.</p>
+<svg viewBox="0 0 640 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enquête de la Banque de France menée du 25 février au 3 avril 2026 auprès des entreprises de 20 salariés ou plus qui utilisent ou comptent utiliser l'IA, publiée le 3 septembre 2026 (Bulletin 266/1). 21 % prévoient une baisse de leurs effectifs d'ici trois ans. En solde net, baisses moins hausses prévues, la part est de 14 %. Ce sont des anticipations d'entreprises, pas des mesures." class="diagram-svg diagram-wide">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">ENQUÊTE BANQUE DE FRANCE, 25 FÉV.-3 AVR. 2026</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">Ce que les entreprises anticipent.</text>
+<text x="32" y="104" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Entreprises qui utilisent ou comptent utiliser l'IA, d'ici trois ans</text>
+<text x="32" y="144" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Prévoient une baisse de leurs effectifs</text>
+<rect x="32" y="154" width="576" height="22" rx="4" fill="currentColor" fill-opacity="0.07"></rect>
+<path d="M32 154H149Q153 154 153 158V172Q153 176 149 176H32Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="161" y="170" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">21 %</text>
+<text x="32" y="202" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">En solde net (baisses moins hausses prévues)</text>
+<rect x="32" y="212" width="576" height="22" rx="4" fill="currentColor" fill-opacity="0.07"></rect>
+<path d="M32 212H108.6Q112.6 212 112.6 216V230Q112.6 234 108.6 234H32Z" fill="currentColor" fill-opacity="0.32"></path>
+<text x="120.6" y="228" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">14 %</text>
+<text x="32" y="254" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">0 %</text>
+<text x="320" y="254" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">50 %</text>
+<text x="608" y="254" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">100 %</text>
+<text x="32" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Des anticipations d'entreprises, pas des mesures.</text>
+<text x="32" y="308" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Champ : entreprises de 20 salariés ou plus.</text>
+<text x="32" y="334" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Banque de France, Bulletin 266/1, 3 sept. 2026</text>
+</svg>
+<svg viewBox="0 0 320 528" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enquête de la Banque de France menée du 25 février au 3 avril 2026 auprès des entreprises de 20 salariés ou plus qui utilisent ou comptent utiliser l'IA, publiée le 3 septembre 2026 (Bulletin 266/1). 21 % prévoient une baisse de leurs effectifs d'ici trois ans. En solde net, baisses moins hausses prévues, la part est de 14 %. Ce sont des anticipations d'entreprises, pas des mesures." class="diagram-svg diagram-narrow">
+<text x="16" y="30" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">ENQUÊTE</text>
+<text x="16" y="50" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">BANQUE DE FRANCE</text>
+<text x="16" y="70" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">25 FÉV.-3 AVR. 2026</text>
+<text x="16" y="112" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">Ce que les</text>
+<text x="16" y="146" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">entreprises</text>
+<text x="16" y="180" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">anticipent.</text>
+<text x="16" y="208" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Entreprises qui utilisent ou comptent</text>
+<text x="16" y="226" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">utiliser l'IA, d'ici trois ans</text>
+<text x="16" y="266" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Prévoient une baisse d'effectifs</text>
+<rect x="16" y="276" width="288" height="22" rx="4" fill="currentColor" fill-opacity="0.07"></rect>
+<path d="M16 276H72.5Q76.5 276 76.5 280V294Q76.5 298 72.5 298H16Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="84.5" y="292" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">21 %</text>
+<text x="16" y="324" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">En solde net</text>
+<text x="16" y="342" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">(baisses moins hausses prévues)</text>
+<rect x="16" y="352" width="288" height="22" rx="4" fill="currentColor" fill-opacity="0.07"></rect>
+<path d="M16 352H52.3Q56.3 352 56.3 356V370Q56.3 374 52.3 374H16Z" fill="currentColor" fill-opacity="0.32"></path>
+<text x="64.3" y="368" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">14 %</text>
+<text x="16" y="394" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">0 %</text>
+<text x="160" y="394" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">50 %</text>
+<text x="304" y="394" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">100 %</text>
+<text x="16" y="428" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Des anticipations d'entreprises,</text>
+<text x="16" y="448" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">pas des mesures.</text>
+<text x="16" y="468" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Champ : 20 salariés ou plus.</text>
+<text x="16" y="494" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Banque de France, Bulletin 266/1,</text>
+<text x="16" y="512" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">3 sept. 2026</text>
+</svg>
 <p>Ces études situent où le marché bouge : l'entrée dans les métiers exposés. La part qui revient à l'IA reste à établir, la Banque de France citant aussi le télétravail et le cycle économique. Aux États-Unis, une étude du <abbr title="National Bureau of Economic Research, institut américain de recherche économique">NBER</abbr> (septembre) observe un chômage des jeunes diplômés sans hausse marquée à l'été 2026.</p>
 <p>Pour qui code ou bricole, la timeline demande donc de se réinventer et de suivre cette révolution. Stanford relève que les baisses se concentrent là où l'IA sert à automatiser des tâches. Là où elle complète le travail, l'emploi est stable ou monte, surtout chez les expérimentés. Ce sont des indicateurs descriptifs, pas des causes établies. Concrètement, cela passe par apprendre en continu et suivre les outils et les publications. Le métier s'élargit : juger ce que l'IA produit, expliquer ses choix à voix haute et, pour qui encadre une équipe, former des débutants. Ces outils servent une équipe quand ils aident chacun à progresser.</p>
 <p>Les modèles derrière ces IA sont entre les mains de quelques fournisseurs. S'ils changent leurs prix ou leurs règles, la décision revient à ces seuls fournisseurs.</p>
@@ -404,7 +528,128 @@ const englishContent: PostContent = {
 <p>There is a dystopian reading of this timeline, and it holds up. Jobs are changing, and the worry about employment is legitimate. Here is what the publications from 11 July to 11 October 2026 show.</p>
 <p>Beginners are first in line. According to the <abbr title="The French central bank, which also publishes economic research">Banque de France</abbr> (8 October), permanent-contract hires of 21-29 year-olds stood in March 2026 about 28% below their November 2022 level in the fifth of occupations most exposed to <abbr title="Artificial intelligence that produces text, code or images from an instruction">generative AI</abbr>, against 8% in the least exposed fifth. According to the <abbr title="A Stanford University lab that studies the digital economy">Stanford Digital Economy Lab</abbr> (12 August), US employment of 22-25 year-olds in exposed occupations is 19% below that of their less exposed peers, based on payroll data from <abbr title="Automatic Data Processing, a US payroll company">ADP</abbr>. In both studies, the gap runs through hiring.</p>
 <p>For developers, the <abbr title="A Paris research institute for economics">Paris School of Economics</abbr> (7 September) finds in <abbr title="The French public employment service, formerly Pôle emploi">France Travail</abbr> postings that specialist <abbr title="Information technology: software, systems, networks">IT</abbr> occupations were about 30% lower in early 2025 than at the end of 2022, against occupations that need no IT skills. In those postings, the share asking for programming falls. The share asking for public speaking rises.</p>
+<svg viewBox="0 0 640 594" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three gaps observed by three different studies, each with its own measure and its own reference. Banque de France, 8 October 2026: in March 2026, permanent-contract hires of 21-29 year-olds in France were about 28% below their November 2022 level in the fifth of occupations most exposed to generative AI, against 8% in the least exposed fifth. Stanford Digital Economy Lab, 12 August 2026: in the United States, employment of 22-25 year-olds in exposed occupations is 19% below that of their less exposed peers, based on ADP payroll data through June 2026. Paris School of Economics, 7 September 2026: in France, postings for specialist IT occupations were about 30% lower in early 2025 than at the end of 2022, against a control group. These are observed gaps, and the share due to AI remains to be established." class="diagram-svg diagram-wide">
+<line x1="608" y1="142" x2="608" y2="490" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">THREE STUDIES, THREE MEASURES</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">What the data measures.</text>
+<text text-anchor="end" x="608" y="114" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">0 = each study’s reference</text>
+<text x="188" y="134" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−30%</text>
+<text x="328" y="134" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−20%</text>
+<text x="468" y="134" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−10%</text>
+<text x="608" y="134" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">0</text>
+<line x1="188" y1="142" x2="188" y2="148" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="328" y1="142" x2="328" y2="148" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="468" y1="142" x2="468" y2="148" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="32" y="172" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Permanent-contract hires, ages 21-29, most exposed fifth</text>
+<path d="M608 182H220Q216 182 216 186V200Q216 204 220 204H608Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="208" y="198" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −28%</text>
+<text x="32" y="230" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Same hires, least exposed fifth</text>
+<path d="M608 240H500Q496 240 496 244V258Q496 262 500 262H608Z" fill="currentColor" fill-opacity="0.32"></path>
+<text x="488" y="256" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −8%</text>
+<text x="32" y="284" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Banque de France, 8 Oct 2026 · France</text>
+<text x="32" y="302" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Reference: November 2022. Measured: March 2026.</text>
+<text x="32" y="342" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Employment of 22-25 year-olds, exposed occupations</text>
+<path d="M608 352H346Q342 352 342 356V370Q342 374 346 374H608Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="334" y="368" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">−19%</text>
+<text x="32" y="396" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Stanford Digital Economy Lab, 12 Aug 2026 · United States</text>
+<text x="32" y="414" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Reference: less exposed peers. ADP data through June 2026.</text>
+<text x="32" y="454" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Specialist IT job postings</text>
+<path d="M608 464H192Q188 464 188 468V482Q188 486 192 486H608Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="180" y="480" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −30%</text>
+<text x="32" y="508" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Paris School of Economics, 7 Sep 2026 · France</text>
+<text x="32" y="526" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Reference: end of 2022, against a control group. Measured: early 2025.</text>
+<text x="32" y="558" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Each bar measures something different, against its own reference.</text>
+<text x="32" y="578" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Observed gaps: the share due to AI remains to be established.</text>
+</svg>
+<svg viewBox="0 0 320 810" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three gaps observed by three different studies, each with its own measure and its own reference. Banque de France, 8 October 2026: in March 2026, permanent-contract hires of 21-29 year-olds in France were about 28% below their November 2022 level in the fifth of occupations most exposed to generative AI, against 8% in the least exposed fifth. Stanford Digital Economy Lab, 12 August 2026: in the United States, employment of 22-25 year-olds in exposed occupations is 19% below that of their less exposed peers, based on ADP payroll data through June 2026. Paris School of Economics, 7 September 2026: in France, postings for specialist IT occupations were about 30% lower in early 2025 than at the end of 2022, against a control group. These are observed gaps, and the share due to AI remains to be established." class="diagram-svg diagram-narrow">
+<line x1="304" y1="192" x2="304" y2="630" stroke="currentColor" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="16" y="30" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">THREE STUDIES,</text>
+<text x="16" y="50" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">THREE MEASURES</text>
+<text x="16" y="92" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">What the data</text>
+<text x="16" y="126" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">measures.</text>
+<text text-anchor="end" x="304" y="164" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">0 = each study’s reference</text>
+<text x="100" y="184" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−30%</text>
+<text x="168" y="184" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−20%</text>
+<text x="236" y="184" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">−10%</text>
+<text x="304" y="184" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">0</text>
+<line x1="100" y1="192" x2="100" y2="198" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="168" y1="192" x2="168" y2="198" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<line x1="236" y1="192" x2="236" y2="198" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"></line>
+<text x="16" y="222" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Permanent-contract hires,</text>
+<text x="16" y="240" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">ages 21-29, most exposed fifth</text>
+<path d="M304 250H117.6Q113.6 250 113.6 254V268Q113.6 272 117.6 272H304Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="105.6" y="266" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −28%</text>
+<text x="16" y="298" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Least exposed fifth</text>
+<path d="M304 308H253.6Q249.6 308 249.6 312V326Q249.6 330 253.6 330H304Z" fill="currentColor" fill-opacity="0.32"></path>
+<text x="241.6" y="324" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −8%</text>
+<text x="16" y="352" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Banque de France, 8 Oct 2026</text>
+<text x="16" y="370" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">France. Reference: November 2022.</text>
+<text x="16" y="388" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Measured: March 2026.</text>
+<text x="16" y="428" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Employment of 22-25 year-olds,</text>
+<text x="16" y="446" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">exposed occupations</text>
+<path d="M304 456H178.8Q174.8 456 174.8 460V474Q174.8 478 178.8 478H304Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="166.8" y="472" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">−19%</text>
+<text x="16" y="500" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Stanford Digital Economy Lab,</text>
+<text x="16" y="518" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">12 Aug 2026. United States.</text>
+<text x="16" y="536" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Reference: less exposed peers.</text>
+<text x="16" y="554" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">ADP data through June 2026.</text>
+<text x="16" y="594" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Specialist IT job postings</text>
+<path d="M304 604H104Q100 604 100 608V622Q100 626 104 626H304Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="92" y="620" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">≈ −30%</text>
+<text x="16" y="648" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Paris School of Economics,</text>
+<text x="16" y="666" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">7 Sep 2026. France.</text>
+<text x="16" y="684" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Reference: end of 2022, against a</text>
+<text x="16" y="702" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">control group. Measured: early 2025.</text>
+<text x="16" y="734" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Each bar measures something</text>
+<text x="16" y="754" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">different, against its own reference.</text>
+<text x="16" y="774" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Observed gaps: the share due</text>
+<text x="16" y="794" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">to AI remains to be established.</text>
+</svg>
 <p>According to the Banque de France survey published on 3 September, 21% of firms that use or plan to use AI expect a headcount reduction within three years. These are expectations.</p>
+<svg viewBox="0 0 640 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Banque de France survey run from 25 February to 3 April 2026 among firms with 20 or more employees that use or plan to use AI, published on 3 September 2026 (Bulletin 266/1). 21% expect a headcount reduction within three years. On a net basis, reductions minus increases, the share is 14%. These are firms’ expectations, not measurements." class="diagram-svg diagram-wide">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">BANQUE DE FRANCE SURVEY, 25 FEB-3 APR 2026</text>
+<text x="32" y="76" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">What firms expect.</text>
+<text x="32" y="104" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Firms that use or plan to use AI, within three years</text>
+<text x="32" y="144" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Expect a headcount reduction</text>
+<rect x="32" y="154" width="576" height="22" rx="4" fill="currentColor" fill-opacity="0.07"></rect>
+<path d="M32 154H149Q153 154 153 158V172Q153 176 149 176H32Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="161" y="170" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">21%</text>
+<text x="32" y="202" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">On a net basis (reductions minus increases)</text>
+<rect x="32" y="212" width="576" height="22" rx="4" fill="currentColor" fill-opacity="0.07"></rect>
+<path d="M32 212H108.6Q112.6 212 112.6 216V230Q112.6 234 108.6 234H32Z" fill="currentColor" fill-opacity="0.32"></path>
+<text x="120.6" y="228" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">14%</text>
+<text x="32" y="254" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">0%</text>
+<text x="320" y="254" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">50%</text>
+<text x="608" y="254" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">100%</text>
+<text x="32" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Firms’ expectations, not measurements.</text>
+<text x="32" y="308" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Scope: firms with 20 or more employees.</text>
+<text x="32" y="334" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Banque de France, Bulletin 266/1, 3 Sep 2026</text>
+</svg>
+<svg viewBox="0 0 320 474" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Banque de France survey run from 25 February to 3 April 2026 among firms with 20 or more employees that use or plan to use AI, published on 3 September 2026 (Bulletin 266/1). 21% expect a headcount reduction within three years. On a net basis, reductions minus increases, the share is 14%. These are firms’ expectations, not measurements." class="diagram-svg diagram-narrow">
+<text x="16" y="30" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">BANQUE DE FRANCE SURVEY</text>
+<text x="16" y="50" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">25 FEB-3 APR 2026</text>
+<text x="16" y="92" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">What firms</text>
+<text x="16" y="126" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650" opacity="1">expect.</text>
+<text x="16" y="154" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Firms that use or plan to use AI,</text>
+<text x="16" y="172" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">within three years</text>
+<text x="16" y="212" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">Expect a headcount reduction</text>
+<rect x="16" y="222" width="288" height="22" rx="4" fill="currentColor" fill-opacity="0.07"></rect>
+<path d="M16 222H72.5Q76.5 222 76.5 226V240Q76.5 244 72.5 244H16Z" fill="var(--diagram-accent)" fill-opacity="0.8"></path>
+<text x="84.5" y="238" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">21%</text>
+<text x="16" y="270" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">On a net basis</text>
+<text x="16" y="288" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13.5" font-weight="600" opacity="0.85">(reductions minus increases)</text>
+<rect x="16" y="298" width="288" height="22" rx="4" fill="currentColor" fill-opacity="0.07"></rect>
+<path d="M16 298H52.3Q56.3 298 56.3 302V316Q56.3 320 52.3 320H16Z" fill="currentColor" fill-opacity="0.32"></path>
+<text x="64.3" y="314" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" opacity="0.9">14%</text>
+<text x="16" y="340" text-anchor="start" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">0%</text>
+<text x="160" y="340" text-anchor="middle" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">50%</text>
+<text x="304" y="340" text-anchor="end" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.5">100%</text>
+<text x="16" y="374" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Firms’ expectations,</text>
+<text x="16" y="394" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">not measurements.</text>
+<text x="16" y="414" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">Scope: 20 or more employees.</text>
+<text x="16" y="440" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">Banque de France, Bulletin 266/1,</text>
+<text x="16" y="458" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.6">3 Sep 2026</text>
+</svg>
 <p>These studies show where the market moves: the entry to exposed occupations. The share due to AI remains to be established, since the Banque de France also names remote work and the economic cycle. In the United States, an <abbr title="National Bureau of Economic Research, a US economics research institute">NBER</abbr> paper (September) sees no marked rise in unemployment among recent graduates in summer 2026.</p>
 <p>For anyone who codes or tinkers, the timeline therefore asks us to reinvent ourselves and to keep up with this revolution. Stanford finds that the declines concentrate where AI is used to automate tasks. Where it complements the work, employment is flat or rising, especially for experienced workers. These are descriptive indicators, not established causes. In practice, that means learning continuously and following the tools and the publications. The craft widens: judging what the AI produces, explaining one's choices aloud and, for anyone leading a team, training beginners. These tools serve a team when they help everyone grow.</p>
 <p>The models behind these AIs sit with a handful of providers. If those providers change their prices or their rules, those providers alone decide.</p>
