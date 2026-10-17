@@ -1,0 +1,58 @@
+name: PR checks
+
+# Runs on every pull request, so "merge once the build passes" (CLAUDE.md §5)
+# rests on a real check. Release only builds after the merge, inside Docker.
+#
+# The post validator (.claude/hooks/check-post.mjs) is otherwise a Claude Code
+# PostToolUse hook: it never fires for agents on another runtime, nor in CI.
+# Here it runs on the posts the PR adds or changes. Older posts still carry
+# violations (`--all` reports them); they are not checked until someone edits
+# them.
+on:
+  pull_request:
+    branches:
+      - master
+
+concurrency:
+  group: pr-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Post rules and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check changed posts
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          mapfile -t posts < <(git diff --name-only --diff-filter=AMR "$BASE_SHA" HEAD -- 'src/posts/*.vue')
+          if [ "${#posts[@]}" -eq 0 ]; then
+            echo "No post changed."
+            exit 0
+          fi
+          printf 'Checking %s\n' "${posts[@]}"
+          node .claude/hooks/check-post.mjs "${posts[@]}"
+
+      - name: Build
+        run: npm run build
