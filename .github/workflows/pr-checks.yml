@@ -54,5 +54,8 @@ jobs:
           printf 'Checking %s\n' "${posts[@]}"
           node .claude/hooks/check-post.mjs "${posts[@]}"
 
+      - name: Lint
+        run: npm run lint
+
       - name: Build
         run: npm run build
