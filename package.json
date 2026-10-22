@@ -8,6 +8,7 @@
     "optimize:images": "node scripts/optimize-images.mjs",
     "build": "node scripts/optimize-images.mjs && vite build && node scripts/generate-og.mjs && node scripts/generate-rss.mjs && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
+    "lint": "OXLINT_TSGOLINT_PATH=\"$(tsrslint-path)\" oxlint --type-aware",
     "docker:build": "docker build -t wifsimster/wifsimster-blog .",
     "docker:run": "docker run -p 8080:80 wifsimster/wifsimster-blog",
     "docker:publish": "docker build -t wifsimster/wifsimster-blog:latest . && docker push wifsimster/wifsimster-blog:latest"
@@ -31,9 +32,11 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@maschwenk/tsrslint": "0.1.5",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.1.18",
     "@vitejs/plugin-vue": "^6.0.3",
+    "oxlint": "1.89.0",
     "satori": "^0.12.2",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18",
