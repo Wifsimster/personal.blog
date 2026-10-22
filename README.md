@@ -10,7 +10,7 @@ Le blog est accessible publiquement : <https://blog.battistella.ovh/>
 
 Blog personnel dédié au DIY, à la domotique et aux projets électroniques (ESP8266, Raspberry Pi, etc.). Le site propose des articles détaillés sur des réalisations concrètes : montages électroniques, rénovation, automatisation de la maison.
 
-Le blog est bilingue (français/anglais) et conçu comme une application Vue 3 statique déployée sur GitHub Pages.
+Le blog est bilingue (français/anglais). C'est un site statique généré avec Astro : chaque page est un fichier HTML servi par nginx, dans un conteneur Docker auto-hébergé.
 
 ## Fonctionnalités
 
@@ -22,7 +22,7 @@ Le blog est bilingue (français/anglais) et conçu comme une application Vue 3 s
 - **Tags** : Système de tags avec pages dédiées
 - **Archives** : Page d'archives avec tous les articles
 - **SEO-friendly** : Structure optimisée pour les moteurs de recherche
-- **Performance** : Optimisations Vite et code splitting
+- **Performance** : pages HTML statiques, quelques scripts légers, pas de framework côté navigateur
 
 ## Licence
 

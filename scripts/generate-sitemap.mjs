@@ -3,7 +3,7 @@
 /**
  * Post-build script: generates a multilingual sitemap.xml.
  *
- * Reads post data from Vue SFC source files and writes:
+ * Reads post data from the post source files (src/posts/*.ts) and writes:
  *   - dist/sitemap.xml   (FR + EN URLs with xhtml:link hreflang alternates)
  *
  * Usage: node scripts/generate-sitemap.mjs
@@ -71,7 +71,7 @@ function extractTitleFor(content, varName) {
 
 /**
  * True when the post's metadata block carries `draft: true`. Drafts stay
- * reachable in the SPA for review, but are excluded from everything a crawler
+ * reachable at their URL for review, but are excluded from everything a crawler
  * or a feed reader sees.
  */
 function isDraft(content) {
@@ -155,11 +155,11 @@ function main() {
   console.log(`  Site URL: ${SITE_URL}`)
 
   if (!existsSync(DIST)) {
-    console.error(`  Error: ${DIST} not found. Run "vite build" first.`)
+    console.error(`  Error: ${DIST} not found. Run "astro build" first.`)
     process.exit(1)
   }
 
-  const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.vue'))
+  const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.ts') && f !== 'index.ts')
   const parsed = postFiles.map(f => extractPostData(join(POSTS_SRC, f))).filter(Boolean)
   const draftCount = parsed.filter(p => p.draft).length
   const scheduledCount = parsed.filter(p => !p.draft && p.scheduled).length

@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { t } from '@/lib/i18n'
+import { alternatesFor, localPath, pageTitle } from '@/lib/seo'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  lang: Language
+}
+
+const { lang } = Astro.props
+const alternates = alternatesFor('/privacy')
+const sections = ['analytics', 'legalBasis', 'rights', 'thirdParty']
+---
+<BaseLayout
+  lang={lang}
+  path={localPath(lang, '/privacy')}
+  title={pageTitle(t(lang, 'privacy.title'))}
+  canonical={alternates[lang]}
+  alternates={alternates}
+>
+  <div class="max-w-3xl mx-auto">
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-zinc-100 mb-2">
+        {t(lang, 'privacy.title')}
+      </h1>
+      <p class="text-sm text-gray-500 dark:text-zinc-400">
+        {t(lang, 'privacy.lastUpdated')}
+      </p>
+    </header>
+    <article class="prose dark:prose-invert max-w-none">
+      <p class="text-lg text-gray-700 dark:text-zinc-300 mb-8">
+        {t(lang, 'privacy.intro')}
+      </p>
+      {sections.map((key) => (
+        <section class="mb-6">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-zinc-100 mb-3">
+            {t(lang, `privacy.${key}Title`)}
+          </h2>
+          <p class="text-gray-700 dark:text-zinc-300 leading-relaxed">
+            {t(lang, `privacy.${key}Body`)}
+          </p>
+        </section>
+      ))}
+    </article>
+  </div>
+</BaseLayout>

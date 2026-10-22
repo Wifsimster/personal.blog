@@ -1,0 +1,12 @@
+---
+/** Light/dark switch. Both icons are rendered; the `.dark` class picks one. */
+---
+<button
+  type="button"
+  data-theme-toggle
+  class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center focus-ring"
+  aria-label="Switch to dark mode"
+>
+  <i class="pi pi-moon text-sm text-gray-700 dark:text-zinc-300 hidden dark:inline-block"></i>
+  <i class="pi pi-sun text-sm text-gray-700 dark:text-zinc-300 dark:hidden"></i>
+</button>

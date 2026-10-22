@@ -1,0 +1,88 @@
+---
+/**
+ * Everything in <head>: the site-wide defaults the SPA shipped in index.html,
+ * plus the per-page SEO block (canonical, hreflang, Open Graph, JSON-LD) that
+ * scripts/generate-og.mjs used to patch into pre-rendered copies of it.
+ */
+import type { Language } from '@/types/i18n'
+import themeInitUrl from '@/scripts/theme-init.js?url'
+
+export interface Alternates {
+  fr?: string
+  en?: string
+}
+
+export interface Props {
+  lang: Language
+  title: string
+  description?: string
+  canonical?: string
+  alternates?: Alternates
+  og?: {
+    title: string
+    description: string
+    image: string
+    url: string
+    type: 'article' | 'website'
+  }
+  jsonLd?: Record<string, unknown>
+  noindex?: boolean
+}
+
+const { lang, title, description, canonical, alternates, og, jsonLd, noindex } = Astro.props
+const DEFAULT_DESCRIPTION = 'Passionate Web Dev, Tech Geek, Raspberry Pi & ESP8266 Lover 💻 ❤️'
+const locale = lang === 'en' ? 'en_US' : 'fr_FR'
+const jsonLdText = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null
+---
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content={description ?? DEFAULT_DESCRIPTION}>
+<meta name="author" content="Wifsimster">
+{noindex && <meta name="robots" content="noindex, nofollow">}
+<meta property="og:site_name" content="Wifsimster Blog">
+<link rel="alternate" type="application/rss+xml" title="Wifsimster Blog - Flux RSS" href="/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="Wifsimster Blog - RSS Feed" href="/en/rss.xml">
+<title>{title}</title>
+<!-- Applies the saved theme before first paint, so dark mode never flashes
+     white. A file rather than an inline script: the CSP forbids inline JS. -->
+<script is:inline src={themeInitUrl}></script>
+<!-- Umami — mesure d'audience auto-hébergée, sans cookie ni bandeau de
+     consentement. Les paramètres d'URL sont conservés : ils portent
+     l'attribution UTM des campagnes. -->
+<script is:inline defer src="https://umami.battistella.ovh/stats.js"
+  data-website-id="acb4f274-58c4-4acb-b114-7fc7ac2e1510"></script>
+<!-- Heatmaps. Script distinct du tracker : `stats.js` ne l'embarque pas.
+     `replayEnabled` est OFF côté serveur, donc la charge utile ne contient
+     que des coordonnées de clic et de scroll — aucun DOM, aucun texte. -->
+<script is:inline defer src="https://umami.battistella.ovh/recorder.js"
+  data-website-id="acb4f274-58c4-4acb-b114-7fc7ac2e1510"></script>
+{canonical && <link rel="canonical" href={canonical}>}
+{alternates?.fr && <link rel="alternate" hreflang="fr" href={alternates.fr}>}
+{alternates?.en && <link rel="alternate" hreflang="en" href={alternates.en}>}
+{alternates?.fr && <link rel="alternate" hreflang="x-default" href={alternates.fr}>}
+{og ? (
+  <>
+    <meta property="og:title" content={og.title}>
+    <meta property="og:description" content={og.description}>
+    <meta property="og:image" content={og.image}>
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content={og.url}>
+    <meta property="og:type" content={og.type}>
+    <meta property="og:locale" content={locale}>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={og.title}>
+    <meta name="twitter:description" content={og.description}>
+    <meta name="twitter:image" content={og.image}>
+  </>
+) : (
+  <>
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/og/default.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+  </>
+)}
+{jsonLdText && <script is:inline type="application/ld+json" set:html={jsonLdText}></script>}

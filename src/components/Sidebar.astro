@@ -1,0 +1,124 @@
+---
+import LanguageSwitch from '@/components/LanguageSwitch.astro'
+import ThemeToggle from '@/components/ThemeToggle.astro'
+import { homePath, langPrefix, t } from '@/lib/i18n'
+import { topTags } from '@/lib/listing'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  lang: Language
+  path: string
+}
+
+const { lang, path } = Astro.props
+const prefix = langPrefix(lang)
+const rssFeedUrl = lang === 'en' ? '/en/rss.xml' : '/rss.xml'
+const topKeywords = topTags()
+
+const aboutMeText = t(lang, 'sidebar.aboutMeText')
+const token = 'Damien BATTISTELLA'
+const tokenIdx = aboutMeText.indexOf(token)
+const linkClass = 'flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded transition-colors focus-ring'
+---
+<aside class="hidden lg:flex lg:flex-col w-80 border-r border-gray-200/70 dark:border-zinc-800/70 bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md sticky top-0 h-screen">
+  <div class="flex-1 overflow-y-auto p-6">
+    <!-- Top Section: Name and Theme Toggles -->
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-2">
+        <a
+          href={homePath(lang)}
+          class="text-lg font-semibold text-gray-900 dark:text-zinc-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer"
+        >
+          Damien BATTISTELLA
+        </a>
+      </div>
+      <div class="flex items-center gap-2">
+        <LanguageSwitch lang={lang} path={path} id="sidebar" />
+        <ThemeToggle />
+      </div>
+    </div>
+
+    <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
+
+    <!-- Search Section -->
+    <div class="mb-6">
+      <div class="relative">
+        <input
+          type="text"
+          data-search-shortcut
+          data-home={homePath(lang)}
+          placeholder={t(lang, 'home.searchPlaceholder')}
+          class="w-full px-4 py-2 pl-10 pr-10 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-900 text-sm"
+        />
+        <i class="pi pi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-500 text-sm"></i>
+        <button
+          type="button"
+          data-search-shortcut-clear
+          hidden
+          class="absolute right-3 top-1/2 transform -translate-y-1/2 rounded text-gray-500 dark:text-zinc-500 hover:text-gray-700 dark:hover:text-zinc-300 transition-colors focus-ring"
+          aria-label="Clear search"
+        >
+          <i class="pi pi-times text-sm"></i>
+        </button>
+      </div>
+      <!-- Top Tags -->
+      {topKeywords.length > 0 && (
+        <div class="mt-3 flex flex-wrap gap-2">
+          {topKeywords.map((tag) => (
+            <a
+              href={`${prefix}/tags/${encodeURIComponent(tag)}`}
+              class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-zinc-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 transition-colors focus-ring"
+            >
+              {tag}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
+
+    <!-- About Me Section -->
+    <div class="mb-6">
+      <h2 class="text-sm font-semibold text-gray-900 dark:text-zinc-100 mb-3">
+        {t(lang, 'sidebar.aboutMe')}
+      </h2>
+      <p class="text-sm text-gray-600 dark:text-zinc-400 leading-relaxed mb-3">
+        {tokenIdx === -1 ? aboutMeText : (
+          <>{aboutMeText.slice(0, tokenIdx)}<span class="text-primary-600 dark:text-primary-400">{token}</span>{aboutMeText.slice(tokenIdx + token.length)}</>
+        )}
+      </p>
+      <a href="https://cv.battistella.ovh/" target="_blank" rel="noopener noreferrer" class={linkClass}>
+        <i class="pi pi-user text-base"></i>
+        <span>{t(lang, 'sidebar.viewCV')}</span>
+      </a>
+    </div>
+
+    <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
+
+    <!-- Stay Connected Section -->
+    <div>
+      <h2 class="text-sm font-semibold text-gray-900 dark:text-zinc-100 mb-3">
+        {t(lang, 'sidebar.stayConnected')}
+      </h2>
+      <div class="space-y-1">
+        <a href="https://github.com/Wifsimster" target="_blank" rel="noopener noreferrer" class={linkClass}>
+          <i class="pi pi-github text-base"></i>
+          <span>{t(lang, 'sidebar.github')}</span>
+        </a>
+        <a href="https://www.linkedin.com/in/damien-battistella-💻-67964115" target="_blank" rel="noopener noreferrer" class={linkClass}>
+          <i class="pi pi-linkedin text-base"></i>
+          <span>{t(lang, 'sidebar.linkedin')}</span>
+        </a>
+        <a href="https://x.com/Wifsimster" target="_blank" rel="noopener noreferrer" class={linkClass}>
+          <i class="pi pi-twitter text-base"></i>
+          <span>{t(lang, 'sidebar.x')}</span>
+        </a>
+        <a href={rssFeedUrl} target="_blank" rel="noopener noreferrer" type="application/rss+xml" class={linkClass}>
+          <i class="pi pi-rss text-base"></i>
+          <span>{t(lang, 'sidebar.rssFeed')}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>

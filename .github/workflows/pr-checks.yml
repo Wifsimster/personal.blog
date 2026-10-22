@@ -46,7 +46,12 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           set -euo pipefail
-          mapfile -t posts < <(git diff --name-only --diff-filter=AMR "$BASE_SHA" HEAD -- 'src/posts/*.vue')
+          # Added or edited posts only. A rename carries no new prose: the move
+          # from .vue to .ts renamed all 45 posts without touching their text,
+          # and must not drag the older posts' known violations in. The
+          # pathspec covers the whole folder so git can pair each rename.
+          mapfile -t posts < <(git diff --name-only -M --diff-filter=AM "$BASE_SHA" HEAD -- src/posts/ \
+            | grep -E '^src/posts/[^/]+\.ts$' | grep -vx 'src/posts/index.ts' || true)
           if [ "${#posts[@]}" -eq 0 ]; then
             echo "No post changed."
             exit 0
@@ -56,6 +61,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
 
       - name: Build
         run: npm run build

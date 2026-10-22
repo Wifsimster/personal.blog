@@ -1,0 +1,32 @@
+---
+/** Markup for the article photo gallery; behaviour in src/scripts/gallery.ts. */
+const navButton = 'absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center text-white bg-black/50 hover:bg-black/70 backdrop-blur-sm transition-colors focus-ring'
+---
+<dialog data-gallery class="image-gallery" aria-label="Gallery">
+  <button
+    type="button"
+    data-gallery-close
+    class="absolute top-[calc(1rem+env(safe-area-inset-top))] right-4 z-50 text-white hover:text-gray-200 transition-all p-2.5 rounded-full hover:bg-white/20 bg-black/50 backdrop-blur-md shadow-lg hover:scale-110"
+    aria-label="Close gallery"
+  >
+    <i class="pi pi-times text-xl font-semibold"></i>
+  </button>
+  <!-- Position counter, so readers know where they are in the series -->
+  <div
+    data-gallery-counter
+    class="absolute top-[calc(1.5rem+env(safe-area-inset-top))] left-5 z-50 text-sm font-medium text-white/90 bg-black/50 backdrop-blur-md rounded-full px-3 py-1 tabular-nums pointer-events-none"
+    aria-live="polite"
+  ></div>
+  <div class="h-full flex flex-col justify-center">
+    <div data-gallery-stage class="relative flex-1 min-h-0 w-full flex items-center justify-center p-2 sm:p-4">
+      <button type="button" data-gallery-prev class={`${navButton} left-2 sm:left-4`} aria-label="Previous image">
+        <i class="pi pi-chevron-left"></i>
+      </button>
+      <img data-gallery-image-main src="data:," alt="" class="max-w-[96vw] object-contain rounded-lg shadow-2xl" />
+      <button type="button" data-gallery-next class={`${navButton} right-2 sm:right-4`} aria-label="Next image">
+        <i class="pi pi-chevron-right"></i>
+      </button>
+    </div>
+    <div data-gallery-thumbs class="no-scrollbar flex gap-2 justify-center-safe overflow-x-auto bg-black/40 backdrop-blur-md rounded-t-lg p-4"></div>
+  </div>
+</dialog>

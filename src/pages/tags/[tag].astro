@@ -1,0 +1,13 @@
+---
+import TagView from '@/views/TagView.astro'
+import { postRegistry } from '@/posts'
+
+export function getStaticPaths() {
+  // Tags of drafts included, so a tag link on a draft never dead-ends.
+  const tags = new Set(Object.values(postRegistry).flatMap((info) => info.metadata.tags || []))
+  return [...tags].map((tag) => ({ params: { tag } }))
+}
+
+const { tag } = Astro.params
+---
+<TagView lang="fr" tag={tag!} />

@@ -1,0 +1,68 @@
+---
+/** Mobile header (below lg): slides away while reading down, back on scroll up. */
+import LanguageSwitch from '@/components/LanguageSwitch.astro'
+import ThemeToggle from '@/components/ThemeToggle.astro'
+import { homePath, langPrefix, t } from '@/lib/i18n'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  lang: Language
+  path: string
+  class?: string
+}
+
+const { lang, path, class: className } = Astro.props
+const navItems = [
+  { path: homePath(lang), label: t(lang, 'nav.home') },
+  { path: `${langPrefix(lang)}/archives`, label: t(lang, 'nav.archives') }
+]
+const roundButton = 'w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center focus-ring'
+---
+<header
+  data-site-header
+  class:list={['sticky top-0 z-40 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-zinc-800 transition-transform duration-300 ease-out pt-[env(safe-area-inset-top)] motion-reduce:transition-none translate-y-0', className]}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-14">
+      <a href={homePath(lang)} class="text-lg font-bold text-gray-900 dark:text-zinc-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+        Wifsimster Blog
+      </a>
+      <div class="flex items-center gap-3">
+        <LanguageSwitch lang={lang} path={path} id="header" />
+        <ThemeToggle />
+        <button type="button" data-menu-toggle class={roundButton} aria-label="Toggle menu" aria-expanded="false">
+          <i class="pi pi-bars text-sm text-gray-700 dark:text-zinc-300"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile Menu Dropdown -->
+  <div data-menu hidden class="mobile-menu border-t border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
+    <nav class="px-4 py-3 space-y-1">
+      {navItems.map((item) => (
+        <a
+          href={item.path}
+          class:list={[
+            'block px-3 py-2 text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-md transition-colors focus-ring',
+            item.path === path && 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+    <!-- Search -->
+    <div class="px-4 py-3 border-t border-gray-200 dark:border-zinc-800">
+      <div class="relative">
+        <input
+          type="text"
+          data-search-shortcut
+          data-home={homePath(lang)}
+          placeholder={t(lang, 'home.searchPlaceholder')}
+          class="w-full px-4 py-2 pl-10 border border-gray-300 dark:border-zinc-700 rounded-lg bg-white dark:bg-zinc-800 text-gray-900 dark:text-zinc-100 placeholder-gray-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-900 text-sm"
+        />
+        <i class="pi pi-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-zinc-500 text-sm"></i>
+      </div>
+    </div>
+  </div>
+</header>

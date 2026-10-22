@@ -1,0 +1,15 @@
+---
+import PostCard from '@/components/PostCard.astro'
+import type { Post } from '@/lib/posts'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  posts: Post[]
+  lang: Language
+}
+
+const { posts, lang } = Astro.props
+---
+<div class="space-y-6">
+  {posts.map((post) => <PostCard post={post} lang={lang} />)}
+</div>

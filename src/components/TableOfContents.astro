@@ -1,0 +1,33 @@
+---
+import { t } from '@/lib/i18n'
+import type { Heading } from '@/lib/render'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  lang: Language
+  headings: Heading[]
+}
+
+const { lang, headings } = Astro.props
+---
+<aside data-toc class="hidden lg:flex lg:flex-col w-56 2xl:w-64 border-l border-gray-200 dark:border-zinc-800 bg-gray-50 dark:bg-zinc-900/50">
+  <div class="sticky top-0 max-h-screen overflow-y-auto p-6">
+    <h2 class="text-sm font-semibold text-gray-900 dark:text-zinc-100 mb-4">
+      {t(lang, 'toc.title')}
+    </h2>
+    <nav class="space-y-1">
+      {headings.map((heading) => (
+        <a
+          href={`#${heading.id}`}
+          class:list={[
+            'block text-sm transition-colors rounded px-2 py-1 focus-ring',
+            heading.level === 2 ? 'text-gray-700 dark:text-zinc-300 font-medium' : 'text-gray-600 dark:text-zinc-400 pl-6',
+            'hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-zinc-800'
+          ]}
+        >
+          {heading.text}
+        </a>
+      ))}
+    </nav>
+  </div>
+</aside>

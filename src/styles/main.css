@@ -116,7 +116,7 @@
 @layer components {
   /* Single source of truth for keyboard focus on interactive controls
      (buttons, icon buttons, pills, block/list links). Mirrors the ring
-     BackToTop.vue already used. Text inputs keep their own `focus:` ring
+     the back-to-top button already used. Text inputs keep their own `focus:` ring
      but reuse the same offset colors inline. */
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900;
@@ -360,7 +360,7 @@
   /* On a phone the diagram is wider than the screen and has to scroll —
      that's correct per the rule above, but with no signal it just reads as
      cut off (verified on a real device: the headline and bars end abruptly
-     at the screen edge). PostContent.vue toggles these two classes from
+     at the screen edge). src/scripts/post.ts toggles these two classes from
      the scroll position; the mask fades whichever edge still hides
      content, so it reveals the real page background instead of an
      approximated overlay color. No fade at all once nothing is hidden. */
@@ -494,7 +494,7 @@
   }
 
   /* The title attribute never fires on touch, so abbr is silent on mobile —
-     the site's own primary device. PostContent.vue adds a tap/click handler
+     the site's own primary device. src/scripts/post.ts adds a tap/click handler
      that shows this as a positioned popover; these two rules are just the
      affordance (a visibly tappable underline) and the popover's look. */
   .prose abbr[title] {
@@ -506,5 +506,70 @@
   .abbr-tooltip {
     @apply fixed z-50 max-w-[260px] rounded-lg bg-gray-900 px-3 py-2 text-sm leading-snug text-white shadow-lg dark:bg-zinc-100 dark:text-zinc-900;
     pointer-events: none;
+  }
+}
+
+@layer components {
+  .post-content pre {
+    @apply overflow-x-auto;
+  }
+
+  .post-content code {
+    @apply font-mono text-sm;
+  }
+
+  /* Back-to-top: out of sight (and out of the way) until the reader has
+     scrolled about a viewport down. */
+  .back-to-top {
+    @apply transition-all duration-300 ease-out motion-reduce:transition-none;
+  }
+
+  /* `invisible` also takes it out of the accessibility tree; with
+     transition-all, visibility flips only once the fade has finished. */
+  .back-to-top.back-to-top-hidden {
+    @apply invisible opacity-0 translate-y-3 pointer-events-none;
+  }
+
+  /* Mobile menu dropdown entrance. */
+  .mobile-menu:not([hidden]) {
+    animation: menu-in 200ms ease-out;
+  }
+
+  @keyframes menu-in {
+    from { opacity: 0; transform: translateY(-0.5rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu:not([hidden]) { animation: none; }
+  }
+
+  /* Article photo gallery. A near-black mask, so the article never shows
+     through; the dialog itself is a transparent full-screen stage. */
+  .image-gallery {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  .image-gallery::backdrop {
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(4px);
+  }
+
+  .image-gallery .gallery-thumb {
+    opacity: 0.6;
+    transition: opacity 150ms ease;
+  }
+
+  .image-gallery .gallery-thumb.is-active,
+  .image-gallery .gallery-thumb:hover {
+    opacity: 1;
   }
 }

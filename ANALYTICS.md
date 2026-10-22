@@ -17,7 +17,7 @@ privacy-friendly, cookieless way.
 ```
 ┌─────────────────────┐   stats.js + engaged_read event   ┌──────────────────────┐
 │  blog.battistella   │ ────────────────────────────────▶ │ umami.battistella    │
-│  (nginx + SPA)      │                                    │ (Umami + Postgres)  │
+│  (nginx + Astro)    │                                    │ (Umami + Postgres)  │
 └─────────────────────┘                                    └──────────────────────┘
 ```
 

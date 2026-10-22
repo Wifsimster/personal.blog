@@ -18,14 +18,12 @@ A homelab/DIY post, or an edit to an existing piece, does not.
 
 ## 2. Scaffold
 
-One file, `src/posts/PascalCaseName.vue`. Copy the shape from the most recent
+One file, `src/posts/PascalCaseName.ts`. Copy the shape from the most recent
 post in the canon table (CLAUDE.md §8) rather than from memory — the scaffold
 has drifted before.
 
 ```
-<script lang="ts">
-import { defineComponent, computed } from 'vue'
-import type { PostMetadata, PostContent } from '@/utils/posts'
+import type { PostMetadata, PostContent } from '@/lib/posts'
 
 export const metadata: PostMetadata = {
   slug: 'kebab-case-slug',        // must match the registry key exactly
@@ -40,21 +38,6 @@ const frenchContent: PostContent = { title, description, html: `…` }
 export function getContent(locale: 'fr' | 'en'): PostContent {
   return locale === 'fr' ? frenchContent : englishContent
 }
-
-export default defineComponent({
-  name: 'PascalCaseName',
-  props: { locale: { type: String as () => 'fr' | 'en', required: true } },
-  setup(props) {
-    const content = computed(() => getContent(props.locale))
-    return { content }
-  },
-  template: '<div v-html="content.html"></div>'
-})
-</script>
-
-<template>
-  <div v-html="content.html"></div>
-</template>
 ```
 
 `draft: true` keeps the post out of every listing, feed, sitemap and OG image
@@ -68,8 +51,8 @@ in **different words** from the TL;DR, the opening line and the blockquote.
 
 `src/posts/index.ts`, three edits, all required:
 
-1. the `import Foo, { metadata as fooMetadata, getContent as getFooContent } from './Foo.vue'` line;
-2. the `'kebab-case-slug': { metadata, getContent, component }` entry in `postRegistry`;
+1. the `import { metadata as fooMetadata, getContent as getFooContent } from './Foo'` line;
+2. the `'kebab-case-slug': { metadata, getContent }` entry in `postRegistry`;
 3. nothing else — `getAllPosts`, `getAllTags` and the RSS/sitemap generators all read the registry.
 
 A post that is written but not registered builds green and 404s. The hook
@@ -78,7 +61,7 @@ catches this; do not rely on noticing it.
 ## 4. The sanitizer is the real constraint
 
 Post HTML is rendered `v-html` through DOMPurify in
-`src/components/blog/PostContent.vue`. **Any tag or attribute outside
+`src/lib/render.ts`, at build time. **Any tag or attribute outside
 `ALLOWED_TAGS` / `ALLOWED_ATTR` is deleted at render with no error** — the
 build passes, the content is simply gone.
 
@@ -111,11 +94,11 @@ its axes.
 ## 6. Check before committing
 
 ```
-node .claude/hooks/check-post.mjs src/posts/YourPost.vue
+node .claude/hooks/check-post.mjs src/posts/YourPost.ts
 ```
 
 Runs automatically after every Edit/Write via the `PostToolUse` hook in
-`.claude/settings.json`. It reads the allowlist out of `PostContent.vue`
+`.claude/settings.json`. It reads the allowlist out of `src/lib/render.ts`
 directly, so it cannot fall out of date.
 
 It checks the mechanical rules only — registration, the sanitizer allowlist,
@@ -125,8 +108,8 @@ blockquote / description, the "what still belongs to humans" beat, `<abbr>` on
 every acronym at first use per language — those are still yours to verify by
 reading, in both languages.
 
-There is no lint, typecheck or test in this repo. `npm run build` is the only
-other gate and it is slow (image optimization + Vite + OG + RSS + sitemap).
+`npm run lint` and `npm run typecheck` are fast; `npm run build` is the other
+gate and it is slower (image optimization + Astro + OG + RSS + sitemap).
 Run it once before opening the PR, not per edit.
 
 ## 7. Ship
