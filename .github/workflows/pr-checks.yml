@@ -48,8 +48,10 @@ jobs:
           set -euo pipefail
           # Added or edited posts only. A rename carries no new prose: the move
           # from .vue to .ts renamed all 45 posts without touching their text,
-          # and must not drag the older posts' known violations in.
-          mapfile -t posts < <(git diff --name-only --diff-filter=AM "$BASE_SHA" HEAD -- 'src/posts/*.ts' ':!src/posts/index.ts')
+          # and must not drag the older posts' known violations in. The
+          # pathspec covers the whole folder so git can pair each rename.
+          mapfile -t posts < <(git diff --name-only -M --diff-filter=AM "$BASE_SHA" HEAD -- src/posts/ \
+            | grep -E '^src/posts/[^/]+\.ts$' | grep -vx 'src/posts/index.ts' || true)
           if [ "${#posts[@]}" -eq 0 ]; then
             echo "No post changed."
             exit 0
