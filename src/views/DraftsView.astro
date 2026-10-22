@@ -1,0 +1,31 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PostList from '@/components/PostList.astro'
+import { getDraftPosts } from '@/posts'
+import { sortPostsByDate } from '@/lib/posts'
+import { t } from '@/lib/i18n'
+import { localPath, pageTitle } from '@/lib/seo'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  lang: Language
+}
+
+// Unlinked from the navigation and never indexed: this page exists so the
+// author can open a work in progress in the real site.
+const { lang } = Astro.props
+const drafts = sortPostsByDate(getDraftPosts(lang))
+---
+<BaseLayout lang={lang} path={localPath(lang, '/drafts')} title={pageTitle(t(lang, 'drafts.title'))} noindex>
+  <div>
+    <h1 class="text-4xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
+      {t(lang, 'drafts.title')}
+    </h1>
+    <p class="text-gray-600 dark:text-zinc-400 mb-8">
+      {t(lang, 'drafts.description')}
+    </p>
+    {drafts.length > 0
+      ? <PostList posts={drafts} lang={lang} />
+      : <p class="text-gray-500 dark:text-zinc-500">{t(lang, 'drafts.empty')}</p>}
+  </div>
+</BaseLayout>

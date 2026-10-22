@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
  * Post validator — enforces the mechanical rules from CLAUDE.md §2 that no
- * build step catches. Posts are Vue SFCs whose body is an HTML template
+ * build step catches. Posts are TypeScript modules whose body is an HTML template
  * literal rendered through DOMPurify; anything outside the sanitizer's
  * allowlist disappears at render time with no error anywhere.
  *
- * Run standalone:  node .claude/hooks/check-post.mjs src/posts/Foo.vue
+ * Run standalone:  node .claude/hooks/check-post.mjs src/posts/Foo.ts
  * Run corpus-wide: node .claude/hooks/check-post.mjs --all
  * Wired as a PostToolUse hook on Edit|Write in .claude/settings.json.
  */
@@ -13,10 +13,10 @@ import { readFileSync, readdirSync } from 'node:fs'
 import { resolve, basename } from 'node:path'
 
 const ROOT = resolve(import.meta.dirname, '../..')
-const SANITIZER = resolve(ROOT, 'src/components/blog/PostContent.vue')
+const SANITIZER = resolve(ROOT, 'src/lib/render.ts')
 const REGISTRY = resolve(ROOT, 'src/posts/index.ts')
 
-/** Read the live allowlist out of PostContent.vue so it can never drift. */
+/** Read the live allowlist out of src/lib/render.ts so it can never drift. */
 function allowlist() {
   const src = readFileSync(SANITIZER, 'utf8')
   const grab = (key) => {
@@ -65,7 +65,7 @@ function checkFile(file, { tags, attrs }, registry) {
   if (!slug) add(1, 'no-slug', 'metadata.slug is missing')
   else if (!registry.includes(`'${slug}'`))
     add(1, 'unregistered', `slug '${slug}' is not in src/posts/index.ts — the post will 404`)
-  if (!registry.includes(`from './${basename(file)}'`))
+  if (!registry.includes(`from './${basename(file, '.ts')}'`))
     add(1, 'unimported', `${basename(file)} is not imported in src/posts/index.ts`)
 
   // --- bilingual ----------------------------------------------------------
@@ -149,8 +149,8 @@ const registry = readFileSync(REGISTRY, 'utf8')
 const lists = allowlist()
 
 const files = args.includes('--all')
-  ? readdirSync(resolve(ROOT, 'src/posts')).filter((f) => f.endsWith('.vue')).map((f) => resolve(ROOT, 'src/posts', f))
-  : args.filter((f) => /src\/posts\/.*\.vue$/.test(f))
+  ? readdirSync(resolve(ROOT, 'src/posts')).filter((f) => f.endsWith('.ts') && f !== 'index.ts').map((f) => resolve(ROOT, 'src/posts', f))
+  : args.filter((f) => /src\/posts\/(?!index\.ts$)[^/]*\.ts$/.test(f))
 
 if (files.length === 0) process.exit(0)
 

@@ -1,0 +1,26 @@
+---
+import { t } from '@/lib/i18n'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  lang: Language
+}
+
+const label = t(Astro.props.lang, 'post.backToTop')
+---
+<!-- Positioning lives on the wrapper so the show/hide transition never fights
+     the button's own idle/engaged opacity. Bottom offset clears the mobile
+     gesture bar via the safe-area inset. -->
+<div data-back-to-top class="back-to-top back-to-top-hidden fixed right-6 bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-40">
+  <button
+    type="button"
+    tabindex="-1"
+    aria-label={label}
+    title={label}
+    class="flex h-11 w-11 items-center justify-center rounded-full bg-primary-600 text-white shadow-lg shadow-primary-600/25 transition-[opacity,transform,background-color] duration-200 hover:bg-primary-700 hover:opacity-100 hover:scale-100 focus-visible:opacity-100 focus-visible:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white active:scale-95 dark:bg-primary-500 dark:shadow-primary-900/40 dark:hover:bg-primary-600 dark:focus-visible:ring-offset-zinc-900 motion-reduce:transition-none opacity-60 scale-90"
+  >
+    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
+</div>

@@ -78,7 +78,7 @@ The author's working method, documented in
    - Each persona produces findings + open questions, and explicitly flags what to **endorse**, what to **push back on**, and what to **escalate**.
 2. **Mid-meeting escalation** — anything architectural goes back to the author for a yes/no. Don't bury big choices inside a "Round 2" synthesis.
 3. **Round 2 — convergence**, where the personas independently agreed, where they disagreed, and how disagreements resolve. The author makes the final calls.
-4. **Consolidated action plan** with file-level pointers (`src/posts/Foo.vue`, `nginx.conf:77`).
+4. **Consolidated action plan** with file-level pointers (`src/posts/Foo.ts`, `nginx.conf:77`).
 5. **Decisions** + **Follow-ups for Wifsimster (the human)** — a short closing list of what only the human can do.
 
 Use this when: writing a new opinion article, doing a non-trivial review, redesigning a workflow, or auditing the site. Use it once and document it as a markdown file at the repo root (e.g. `TOPIC-MEETING-YYYY-MM-DD.md`) so the next Claude can see how you arrived at the choice.
@@ -89,13 +89,15 @@ Don't use it for one-shot tasks — a typo fix doesn't need four personas.
 
 ## 4. The stack (what to expect when you open the repo)
 
-- **Vue 3 + Vite + TypeScript SPA.** No SSR. Pre-rendered per-post HTML is emitted by `scripts/generate-og.mjs` at build time for OG tags; serving it to crawlers is an open SEO follow-up (see `SEO-MEETING-2026-05-14.md`).
-- **Posts are Vue components**, not Markdown files (legacy posts are still in `public/data/posts-*.json`; new posts are `.vue` files in `src/posts/` and registered in `src/posts/index.ts`). Each component exports `metadata`, `getContent(locale)`, and a Vue `default` component.
-- **Draft status.** Add `draft: true` to a post's `metadata` while it is being written. A draft is excluded from the home page, the archives, the tag pages and tag counts, the related-posts block, the RSS feeds, the sitemap, the OG images and the pre-rendered HTML — and it sends no analytics beacon. It stays **readable live** at `/posts/<slug>` (and `/en/posts/<slug>`) with an amber "brouillon" banner and a `noindex, nofollow` meta, so a work in progress can be reviewed on the real site. All drafts are listed at `/drafts` (`/en/drafts`), an unlisted page that is not in the navigation, not in the sitemap and disallowed in `robots.txt`. **Publishing is deleting the line:** remove `draft: true` and the post rejoins every listing on the next build. Note that cross-links written into already-published posts still point at a slug you flag back to draft — the flag governs the post's own publication, not other posts' bodies.
-- **Bilingual content via `frenchContent` / `englishContent` objects.** The template is `<div v-html="content.html"></div>`. HTML is sanitized by DOMPurify upstream — when you add new tags (e.g. `srcset`), the allowlist in `PostContent.vue` may need extending.
+- **Astro, static output, TypeScript.** Every route is pre-rendered to its own HTML file at build time (`src/pages/` → `dist/`), head metadata included (title, description, canonical, hreflang, Open Graph, JSON-LD). No framework runtime in the browser: the interactive bits (search, tag filter, theme, mobile header, table of contents, gallery, abbr tooltips, analytics beacon) are small scripts in `src/scripts/`. Migrated off Vue on 2026-10-22.
+- **Posts are TypeScript modules**, not Markdown files (legacy posts are still in `public/data/posts-*.json`; posts are `.ts` files in `src/posts/` and registered in `src/posts/index.ts`). Each module exports `metadata` and `getContent(locale)`.
+- **Draft status.** Add `draft: true` to a post's `metadata` while it is being written. A draft is excluded from the home page, the archives, the tag pages and tag counts, the related-posts block, the RSS feeds, the sitemap and the OG images — and it sends no analytics beacon. It stays **readable live** at `/posts/<slug>` (and `/en/posts/<slug>`) with an amber "brouillon" banner and a `noindex, nofollow` meta, so a work in progress can be reviewed on the real site. All drafts are listed at `/drafts` (`/en/drafts`), an unlisted page that is not in the navigation, not in the sitemap and disallowed in `robots.txt`. **Publishing is deleting the line:** remove `draft: true` and the post rejoins every listing on the next build. Note that cross-links written into already-published posts still point at a slug you flag back to draft — the flag governs the post's own publication, not other posts' bodies.
+- **Bilingual content via `frenchContent` / `englishContent` objects.** The `html` string is rendered at build time by `src/lib/render.ts`: image grids, diagram wrappers, then DOMPurify — when you add new tags (e.g. `srcset`), the allowlist in `src/lib/render.ts` may need extending.
 - **Styling:** Tailwind 4, with the typography handled per post via inline HTML. There's a `.diagram-svg` class for inline SVGs.
 - **Build pipeline:**
-  - `npm run build` = `vite build` + image optimization (`scripts/optimize-images.mjs`) + OG generation + RSS + sitemap.
+  - `npm run build` = image optimization (`scripts/optimize-images.mjs`) + `astro build` + OG images + RSS + sitemap.
+  - Checks: `npm run lint` (oxlint, type-aware) and `npm run typecheck` (tsrs). Both run in the PR workflow.
+  - **Scheduled posts need a rebuild to go live**: the date filter runs at build time. The daily cron in `release.yml` does it.
   - The Docker image is built on `ubuntu-latest`, pushed to Docker Hub, then pulled by the self-hosted runner — see `.github/workflows/release.yml`. This round-trip is intentional (decided 2026-05-17).
   - Deploy is `deploy/deploy.sh` — records the running image, pulls, restarts, polls `/`, rolls back on failure. **The repo, not the host, owns deploy logic.**
 - **Analytics:** self-hosted GoatCounter at `stats.battistella.ovh`. Cookieless, CNIL-exempt, "engaged read" beacon at 10 s dwell or 50 % scroll. See `ANALYTICS.md`.
@@ -142,7 +144,7 @@ When you spawn a subagent persona, brief it like a colleague joining the meeting
 ```
 Role: <name>, <one-line lens> (e.g. "Adrien, DevOps & DORA research specialist")
 Context:
-  - The blog runs at https://blog.battistella.ovh, Vue 3 SPA on a self-hosted box.
+  - The blog runs at https://blog.battistella.ovh, a static Astro site on a self-hosted box.
   - Author is an engineering lead on regulated healthcare software, French native.
   - House style: TL;DR, blockquotes for punchy claims, bilingual FR+EN, "What still belongs to humans" honest section.
   - The series so far: sdlc-is-dead → coder-is-dead-engineer-is-born → ai-team-reflex → dora-ai-roi-report.

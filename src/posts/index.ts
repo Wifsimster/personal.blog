@@ -1,281 +1,235 @@
-import type { Post, PostMetadata, PostContent } from '@/utils/posts'
-import AffichageI2cEsp8266, { metadata as affichageMetadata, getContent as getAffichageContent } from './AffichageI2cEsp8266.vue'
-import AmbilightWs2801RaspberryPiHyperion, { metadata as ambilightWs2801Metadata, getContent as getAmbilightWs2801Content } from './AmbilightWs2801RaspberryPiHyperion.vue'
-import AmbilightWs2812bTeensy, { metadata as ambilightWs2812bMetadata, getContent as getAmbilightWs2812bContent } from './AmbilightWs2812bTeensy.vue'
-import BureauSurMesurePcIntegre, { metadata as bureauMetadata, getContent as getBureauContent } from './BureauSurMesurePcIntegre.vue'
-import CommunicationSansFilEsp8266, { metadata as communicationMetadata, getContent as getCommunicationContent } from './CommunicationSansFilEsp8266.vue'
-import ControlePriseChaconRaspberryPi, { metadata as controlePriseMetadata, getContent as getControlePriseContent } from './ControlePriseChaconRaspberryPi.vue'
-import DistributeurCroquettesJeedomEsp8266, { metadata as distributeurMetadata, getContent as getDistributeurContent } from './DistributeurCroquettesJeedomEsp8266.vue'
-import FlashEsp8266, { metadata as flashMetadata, getContent as getFlashContent } from './FlashEsp8266.vue'
-import LuminositeJeedomEsp8266, { metadata as luminositeMetadata, getContent as getLuminositeContent } from './LuminositeJeedomEsp8266.vue'
-import LuminairePlafondSuspendu, { metadata as luminaireMetadata, getContent as getLuminaireContent } from './LuminairePlafondSuspendu.vue'
-import TemperaturePressionBmp180JeedomEsp8266, { metadata as temperatureMetadata, getContent as getTemperatureContent } from './TemperaturePressionBmp180JeedomEsp8266.vue'
-import RenovationSalleDeBainAppartement2008, { metadata as renovationSalleDeBainMetadata, getContent as getRenovationSalleDeBainContent } from './RenovationSalleDeBainAppartement2008.vue'
-import StructureRackBoisMurPlaco, { metadata as structureRackBoisMurPlacoMetadata, getContent as getStructureRackBoisMurPlacoContent } from './StructureRackBoisMurPlaco.vue'
-import AmenagementPlacardPieceBureau, { metadata as amenagementPlacardMetadata, getContent as getAmenagementPlacardContent } from './AmenagementPlacardPieceBureau.vue'
-import EmplacementRefrigerateurCuisineOuverte, { metadata as emplacementRefrigerateurMetadata, getContent as getEmplacementRefrigerateurContent } from './EmplacementRefrigerateurCuisineOuverte.vue'
-import VisiteChoixMaisonRenovation, { metadata as visiteChoixMaisonMetadata, getContent as getVisiteChoixMaisonContent } from './VisiteChoixMaisonRenovation.vue'
-import RenovationSalleDeBainMaison1970, { metadata as renovationSalleDeBainMaison1970Metadata, getContent as getRenovationSalleDeBainMaison1970Content } from './RenovationSalleDeBainMaison1970.vue'
-import RenovationWcMaison1970, { metadata as renovationWcMaison1970Metadata, getContent as getRenovationWcMaison1970Content } from './RenovationWcMaison1970.vue'
-import RenovationCouloirMaison1970, { metadata as renovationCouloirMaison1970Metadata, getContent as getRenovationCouloirMaison1970Content } from './RenovationCouloirMaison1970.vue'
-import RenovationEntreeMaison1970, { metadata as renovationEntreeMaison1970Metadata, getContent as getRenovationEntreeMaison1970Content } from './RenovationEntreeMaison1970.vue'
-import RenovationCuisineMaison1970, { metadata as renovationCuisineMaison1970Metadata, getContent as getRenovationCuisineMaison1970Content } from './RenovationCuisineMaison1970.vue'
-import RenovationSalonMaison1970, { metadata as renovationSalonMaison1970Metadata, getContent as getRenovationSalonMaison1970Content } from './RenovationSalonMaison1970.vue'
-import RenovationChambreParentaleMaison1970, { metadata as renovationChambreParentaleMaison1970Metadata, getContent as getRenovationChambreParentaleMaison1970Content } from './RenovationChambreParentaleMaison1970.vue'
-import RenovationChambresMaison1970, { metadata as renovationChambresMaison1970Metadata, getContent as getRenovationChambresMaison1970Content } from './RenovationChambresMaison1970.vue'
-import RenovationCellierBureauMaison1970, { metadata as renovationCellierBureauMaison1970Metadata, getContent as getRenovationCellierBureauMaison1970Content } from './RenovationCellierBureauMaison1970.vue'
-import SdlcIsDead, { metadata as sdlcIsDeadMetadata, getContent as getSdlcIsDeadContent } from './SdlcIsDead.vue'
-import CoderIsDeadEngineerIsBorn, { metadata as coderIsDeadMetadata, getContent as getCoderIsDeadContent } from './CoderIsDeadEngineerIsBorn.vue'
-import AiMarketSegmentation, { metadata as aiMarketSegmentationMetadata, getContent as getAiMarketSegmentationContent } from './AiMarketSegmentation.vue'
-import LanIsDead, { metadata as lanIsDeadMetadata, getContent as getLanIsDeadContent } from './LanIsDead.vue'
-import AiTeamReflex, { metadata as aiTeamReflexMetadata, getContent as getAiTeamReflexContent } from './AiTeamReflex.vue'
-import DoraAiRoiReport, { metadata as doraAiRoiReportMetadata, getContent as getDoraAiRoiReportContent } from './DoraAiRoiReport.vue'
-import ProxmoxNvmeMigration, { metadata as proxmoxNvmeMigrationMetadata, getContent as getProxmoxNvmeMigrationContent } from './ProxmoxNvmeMigration.vue'
-import ForfaitJoursSalariesDares, { metadata as forfaitJoursMetadata, getContent as getForfaitJoursContent } from './ForfaitJoursSalariesDares.vue'
-import AiAgentsH1Verdict, { metadata as aiAgentsH1VerdictMetadata, getContent as getAiAgentsH1VerdictContent } from './AiAgentsH1Verdict.vue'
-import AgenticAddiction, { metadata as agenticAddictionMetadata, getContent as getAgenticAddictionContent } from './AgenticAddiction.vue'
-import PoIsDeadJudgmentIsNot, { metadata as poIsDeadMetadata, getContent as getPoIsDeadContent } from './PoIsDeadJudgmentIsNot.vue'
-import DoctrineAsCode, { metadata as doctrineAsCodeMetadata, getContent as getDoctrineAsCodeContent } from './DoctrineAsCode.vue'
-import QualityIsExecuted, { metadata as qualityIsExecutedMetadata, getContent as getQualityIsExecutedContent } from './QualityIsExecuted.vue'
-import SkillsNotSeats, { metadata as skillsNotSeatsMetadata, getContent as getSkillsNotSeatsContent } from './SkillsNotSeats.vue'
-import HomeAssistantConstellation, { metadata as costOfTryingMetadata, getContent as getCostOfTryingContent } from './HomeAssistantConstellation.vue'
-import DixAnsDeDomotique, { metadata as tenYearsMetadata, getContent as getTenYearsContent } from './DixAnsDeDomotique.vue'
-import RythmeDeLaJournee, { metadata as dailyRhythmMetadata, getContent as getDailyRhythmContent } from './RythmeDeLaJournee.vue'
-import AnnoncesSansChoix, { metadata as noChoicesMetadata, getContent as getNoChoicesContent } from './AnnoncesSansChoix.vue'
-import PasLeSoleil, { metadata as notTheSunMetadata, getContent as getNotTheSunContent } from './PasLeSoleil.vue'
-import NerdInTheAiEra, { metadata as nerdInTheAiEraMetadata, getContent as getNerdInTheAiEraContent } from './NerdInTheAiEra.vue'
+import type { Post, PostMetadata, PostContent } from '@/lib/posts'
+import { metadata as affichageMetadata, getContent as getAffichageContent } from './AffichageI2cEsp8266'
+import { metadata as ambilightWs2801Metadata, getContent as getAmbilightWs2801Content } from './AmbilightWs2801RaspberryPiHyperion'
+import { metadata as ambilightWs2812bMetadata, getContent as getAmbilightWs2812bContent } from './AmbilightWs2812bTeensy'
+import { metadata as bureauMetadata, getContent as getBureauContent } from './BureauSurMesurePcIntegre'
+import { metadata as communicationMetadata, getContent as getCommunicationContent } from './CommunicationSansFilEsp8266'
+import { metadata as controlePriseMetadata, getContent as getControlePriseContent } from './ControlePriseChaconRaspberryPi'
+import { metadata as distributeurMetadata, getContent as getDistributeurContent } from './DistributeurCroquettesJeedomEsp8266'
+import { metadata as flashMetadata, getContent as getFlashContent } from './FlashEsp8266'
+import { metadata as luminositeMetadata, getContent as getLuminositeContent } from './LuminositeJeedomEsp8266'
+import { metadata as luminaireMetadata, getContent as getLuminaireContent } from './LuminairePlafondSuspendu'
+import { metadata as temperatureMetadata, getContent as getTemperatureContent } from './TemperaturePressionBmp180JeedomEsp8266'
+import { metadata as renovationSalleDeBainMetadata, getContent as getRenovationSalleDeBainContent } from './RenovationSalleDeBainAppartement2008'
+import { metadata as structureRackBoisMurPlacoMetadata, getContent as getStructureRackBoisMurPlacoContent } from './StructureRackBoisMurPlaco'
+import { metadata as amenagementPlacardMetadata, getContent as getAmenagementPlacardContent } from './AmenagementPlacardPieceBureau'
+import { metadata as emplacementRefrigerateurMetadata, getContent as getEmplacementRefrigerateurContent } from './EmplacementRefrigerateurCuisineOuverte'
+import { metadata as visiteChoixMaisonMetadata, getContent as getVisiteChoixMaisonContent } from './VisiteChoixMaisonRenovation'
+import { metadata as renovationSalleDeBainMaison1970Metadata, getContent as getRenovationSalleDeBainMaison1970Content } from './RenovationSalleDeBainMaison1970'
+import { metadata as renovationWcMaison1970Metadata, getContent as getRenovationWcMaison1970Content } from './RenovationWcMaison1970'
+import { metadata as renovationCouloirMaison1970Metadata, getContent as getRenovationCouloirMaison1970Content } from './RenovationCouloirMaison1970'
+import { metadata as renovationEntreeMaison1970Metadata, getContent as getRenovationEntreeMaison1970Content } from './RenovationEntreeMaison1970'
+import { metadata as renovationCuisineMaison1970Metadata, getContent as getRenovationCuisineMaison1970Content } from './RenovationCuisineMaison1970'
+import { metadata as renovationSalonMaison1970Metadata, getContent as getRenovationSalonMaison1970Content } from './RenovationSalonMaison1970'
+import { metadata as renovationChambreParentaleMaison1970Metadata, getContent as getRenovationChambreParentaleMaison1970Content } from './RenovationChambreParentaleMaison1970'
+import { metadata as renovationChambresMaison1970Metadata, getContent as getRenovationChambresMaison1970Content } from './RenovationChambresMaison1970'
+import { metadata as renovationCellierBureauMaison1970Metadata, getContent as getRenovationCellierBureauMaison1970Content } from './RenovationCellierBureauMaison1970'
+import { metadata as sdlcIsDeadMetadata, getContent as getSdlcIsDeadContent } from './SdlcIsDead'
+import { metadata as coderIsDeadMetadata, getContent as getCoderIsDeadContent } from './CoderIsDeadEngineerIsBorn'
+import { metadata as aiMarketSegmentationMetadata, getContent as getAiMarketSegmentationContent } from './AiMarketSegmentation'
+import { metadata as lanIsDeadMetadata, getContent as getLanIsDeadContent } from './LanIsDead'
+import { metadata as aiTeamReflexMetadata, getContent as getAiTeamReflexContent } from './AiTeamReflex'
+import { metadata as doraAiRoiReportMetadata, getContent as getDoraAiRoiReportContent } from './DoraAiRoiReport'
+import { metadata as proxmoxNvmeMigrationMetadata, getContent as getProxmoxNvmeMigrationContent } from './ProxmoxNvmeMigration'
+import { metadata as forfaitJoursMetadata, getContent as getForfaitJoursContent } from './ForfaitJoursSalariesDares'
+import { metadata as aiAgentsH1VerdictMetadata, getContent as getAiAgentsH1VerdictContent } from './AiAgentsH1Verdict'
+import { metadata as agenticAddictionMetadata, getContent as getAgenticAddictionContent } from './AgenticAddiction'
+import { metadata as poIsDeadMetadata, getContent as getPoIsDeadContent } from './PoIsDeadJudgmentIsNot'
+import { metadata as doctrineAsCodeMetadata, getContent as getDoctrineAsCodeContent } from './DoctrineAsCode'
+import { metadata as qualityIsExecutedMetadata, getContent as getQualityIsExecutedContent } from './QualityIsExecuted'
+import { metadata as skillsNotSeatsMetadata, getContent as getSkillsNotSeatsContent } from './SkillsNotSeats'
+import { metadata as costOfTryingMetadata, getContent as getCostOfTryingContent } from './HomeAssistantConstellation'
+import { metadata as tenYearsMetadata, getContent as getTenYearsContent } from './DixAnsDeDomotique'
+import { metadata as dailyRhythmMetadata, getContent as getDailyRhythmContent } from './RythmeDeLaJournee'
+import { metadata as noChoicesMetadata, getContent as getNoChoicesContent } from './AnnoncesSansChoix'
+import { metadata as notTheSunMetadata, getContent as getNotTheSunContent } from './PasLeSoleil'
+import { metadata as nerdInTheAiEraMetadata, getContent as getNerdInTheAiEraContent } from './NerdInTheAiEra'
 
-export interface PostComponentInfo {
+export interface PostEntry {
   metadata: PostMetadata
   getContent: (locale: 'fr' | 'en') => PostContent
-  component: any
 }
 
-const postRegistry: Record<string, PostComponentInfo> = {
+const postRegistry: Record<string, PostEntry> = {
   'affichage-i2c-esp8266': {
     metadata: affichageMetadata,
-    getContent: getAffichageContent,
-    component: AffichageI2cEsp8266
+    getContent: getAffichageContent
   },
   'ambilight-ws2801-raspberry-pi-hyperion': {
     metadata: ambilightWs2801Metadata,
-    getContent: getAmbilightWs2801Content,
-    component: AmbilightWs2801RaspberryPiHyperion
+    getContent: getAmbilightWs2801Content
   },
   'ambilight-ws2812b-teensy': {
     metadata: ambilightWs2812bMetadata,
-    getContent: getAmbilightWs2812bContent,
-    component: AmbilightWs2812bTeensy
+    getContent: getAmbilightWs2812bContent
   },
   'bureau-sur-mesure-pc-integre': {
     metadata: bureauMetadata,
-    getContent: getBureauContent,
-    component: BureauSurMesurePcIntegre
+    getContent: getBureauContent
   },
   'communication-sans-fil-esp8266': {
     metadata: communicationMetadata,
-    getContent: getCommunicationContent,
-    component: CommunicationSansFilEsp8266
+    getContent: getCommunicationContent
   },
   'controle-prise-chacon-raspberry-pi': {
     metadata: controlePriseMetadata,
-    getContent: getControlePriseContent,
-    component: ControlePriseChaconRaspberryPi
+    getContent: getControlePriseContent
   },
   'distributeur-croquettes-jeedom-esp8266': {
     metadata: distributeurMetadata,
-    getContent: getDistributeurContent,
-    component: DistributeurCroquettesJeedomEsp8266
+    getContent: getDistributeurContent
   },
   'flash-esp8266': {
     metadata: flashMetadata,
-    getContent: getFlashContent,
-    component: FlashEsp8266
+    getContent: getFlashContent
   },
   'luminosite-jeedom-esp8266': {
     metadata: luminositeMetadata,
-    getContent: getLuminositeContent,
-    component: LuminositeJeedomEsp8266
+    getContent: getLuminositeContent
   },
   'luminaire-plafond-suspendu': {
     metadata: luminaireMetadata,
-    getContent: getLuminaireContent,
-    component: LuminairePlafondSuspendu
+    getContent: getLuminaireContent
   },
   'temperature-pression-bmp180-jeedom-esp8266': {
     metadata: temperatureMetadata,
-    getContent: getTemperatureContent,
-    component: TemperaturePressionBmp180JeedomEsp8266
+    getContent: getTemperatureContent
   },
   'renovation-salle-de-bain-appartement-2008': {
     metadata: renovationSalleDeBainMetadata,
-    getContent: getRenovationSalleDeBainContent,
-    component: RenovationSalleDeBainAppartement2008
+    getContent: getRenovationSalleDeBainContent
   },
   'structure-rack-bois-mur-placo': {
     metadata: structureRackBoisMurPlacoMetadata,
-    getContent: getStructureRackBoisMurPlacoContent,
-    component: StructureRackBoisMurPlaco
+    getContent: getStructureRackBoisMurPlacoContent
   },
   'amenagement-placard-piece-bureau': {
     metadata: amenagementPlacardMetadata,
-    getContent: getAmenagementPlacardContent,
-    component: AmenagementPlacardPieceBureau
+    getContent: getAmenagementPlacardContent
   },
   'emplacement-refrigerateur-cuisine-ouverte': {
     metadata: emplacementRefrigerateurMetadata,
-    getContent: getEmplacementRefrigerateurContent,
-    component: EmplacementRefrigerateurCuisineOuverte
+    getContent: getEmplacementRefrigerateurContent
   },
   'visite-choix-maison-renovation': {
     metadata: visiteChoixMaisonMetadata,
-    getContent: getVisiteChoixMaisonContent,
-    component: VisiteChoixMaisonRenovation
+    getContent: getVisiteChoixMaisonContent
   },
   'renovation-salle-de-bain-maison-1970': {
     metadata: renovationSalleDeBainMaison1970Metadata,
-    getContent: getRenovationSalleDeBainMaison1970Content,
-    component: RenovationSalleDeBainMaison1970
+    getContent: getRenovationSalleDeBainMaison1970Content
   },
   'renovation-wc-maison-1970': {
     metadata: renovationWcMaison1970Metadata,
-    getContent: getRenovationWcMaison1970Content,
-    component: RenovationWcMaison1970
+    getContent: getRenovationWcMaison1970Content
   },
   'renovation-couloir-maison-1970': {
     metadata: renovationCouloirMaison1970Metadata,
-    getContent: getRenovationCouloirMaison1970Content,
-    component: RenovationCouloirMaison1970
+    getContent: getRenovationCouloirMaison1970Content
   },
   'renovation-entree-maison-1970': {
     metadata: renovationEntreeMaison1970Metadata,
-    getContent: getRenovationEntreeMaison1970Content,
-    component: RenovationEntreeMaison1970
+    getContent: getRenovationEntreeMaison1970Content
   },
   'renovation-cuisine-maison-1970': {
     metadata: renovationCuisineMaison1970Metadata,
-    getContent: getRenovationCuisineMaison1970Content,
-    component: RenovationCuisineMaison1970
+    getContent: getRenovationCuisineMaison1970Content
   },
   'renovation-salon-maison-1970': {
     metadata: renovationSalonMaison1970Metadata,
-    getContent: getRenovationSalonMaison1970Content,
-    component: RenovationSalonMaison1970
+    getContent: getRenovationSalonMaison1970Content
   },
   'renovation-chambre-parentale-maison-1970': {
     metadata: renovationChambreParentaleMaison1970Metadata,
-    getContent: getRenovationChambreParentaleMaison1970Content,
-    component: RenovationChambreParentaleMaison1970
+    getContent: getRenovationChambreParentaleMaison1970Content
   },
   'renovation-chambres-maison-1970': {
     metadata: renovationChambresMaison1970Metadata,
-    getContent: getRenovationChambresMaison1970Content,
-    component: RenovationChambresMaison1970
+    getContent: getRenovationChambresMaison1970Content
   },
   'renovation-cellier-bureau-maison-1970': {
     metadata: renovationCellierBureauMaison1970Metadata,
-    getContent: getRenovationCellierBureauMaison1970Content,
-    component: RenovationCellierBureauMaison1970
+    getContent: getRenovationCellierBureauMaison1970Content
   },
   'sdlc-is-dead': {
     metadata: sdlcIsDeadMetadata,
-    getContent: getSdlcIsDeadContent,
-    component: SdlcIsDead
+    getContent: getSdlcIsDeadContent
   },
   'coder-is-dead-engineer-is-born': {
     metadata: coderIsDeadMetadata,
-    getContent: getCoderIsDeadContent,
-    component: CoderIsDeadEngineerIsBorn
+    getContent: getCoderIsDeadContent
   },
   'ai-market-segmentation': {
     metadata: aiMarketSegmentationMetadata,
-    getContent: getAiMarketSegmentationContent,
-    component: AiMarketSegmentation
+    getContent: getAiMarketSegmentationContent
   },
   'the-lan-is-dead': {
     metadata: lanIsDeadMetadata,
-    getContent: getLanIsDeadContent,
-    component: LanIsDead
+    getContent: getLanIsDeadContent
   },
   'ai-team-reflex': {
     metadata: aiTeamReflexMetadata,
-    getContent: getAiTeamReflexContent,
-    component: AiTeamReflex
+    getContent: getAiTeamReflexContent
   },
   'dora-ai-roi-report': {
     metadata: doraAiRoiReportMetadata,
-    getContent: getDoraAiRoiReportContent,
-    component: DoraAiRoiReport
+    getContent: getDoraAiRoiReportContent
   },
   'proxmox-nvme-migration': {
     metadata: proxmoxNvmeMigrationMetadata,
-    getContent: getProxmoxNvmeMigrationContent,
-    component: ProxmoxNvmeMigration
+    getContent: getProxmoxNvmeMigrationContent
   },
   'forfait-jours-salaries-france-2024': {
     metadata: forfaitJoursMetadata,
-    getContent: getForfaitJoursContent,
-    component: ForfaitJoursSalariesDares
+    getContent: getForfaitJoursContent
   },
   'ai-agents-h1-2026-verdict': {
     metadata: aiAgentsH1VerdictMetadata,
-    getContent: getAiAgentsH1VerdictContent,
-    component: AiAgentsH1Verdict
+    getContent: getAiAgentsH1VerdictContent
   },
   'agentic-ai-addiction': {
     metadata: agenticAddictionMetadata,
-    getContent: getAgenticAddictionContent,
-    component: AgenticAddiction
+    getContent: getAgenticAddictionContent
   },
   'po-is-dead-judgment-is-not': {
     metadata: poIsDeadMetadata,
-    getContent: getPoIsDeadContent,
-    component: PoIsDeadJudgmentIsNot
+    getContent: getPoIsDeadContent
   },
   'doctrine-as-code': {
     metadata: doctrineAsCodeMetadata,
-    getContent: getDoctrineAsCodeContent,
-    component: DoctrineAsCode
+    getContent: getDoctrineAsCodeContent
   },
   'quality-is-executed': {
     metadata: qualityIsExecutedMetadata,
-    getContent: getQualityIsExecutedContent,
-    component: QualityIsExecuted
+    getContent: getQualityIsExecutedContent
   },
   'skills-not-seats': {
     metadata: skillsNotSeatsMetadata,
-    getContent: getSkillsNotSeatsContent,
-    component: SkillsNotSeats
+    getContent: getSkillsNotSeatsContent
   },
   'nerd-in-the-ai-era': {
     metadata: nerdInTheAiEraMetadata,
-    getContent: getNerdInTheAiEraContent,
-    component: NerdInTheAiEra
+    getContent: getNerdInTheAiEraContent
   },
   'cost-of-trying': {
     metadata: costOfTryingMetadata,
-    getContent: getCostOfTryingContent,
-    component: HomeAssistantConstellation
+    getContent: getCostOfTryingContent
   },
   'ten-years-of-home-automation': {
     metadata: tenYearsMetadata,
-    getContent: getTenYearsContent,
-    component: DixAnsDeDomotique
+    getContent: getTenYearsContent
   },
   'daily-rhythm': {
     metadata: dailyRhythmMetadata,
-    getContent: getDailyRhythmContent,
-    component: RythmeDeLaJournee
+    getContent: getDailyRhythmContent
   },
   'no-choices': {
     metadata: noChoicesMetadata,
-    getContent: getNoChoicesContent,
-    component: AnnoncesSansChoix
+    getContent: getNoChoicesContent
   },
   'not-the-sun': {
     metadata: notTheSunMetadata,
-    getContent: getNotTheSunContent,
-    component: PasLeSoleil
+    getContent: getNotTheSunContent
   }
 }
 
@@ -284,7 +238,7 @@ export interface PostQueryOptions {
   includeDrafts?: boolean
 }
 
-export function isDraft(info: PostComponentInfo): boolean {
+export function isDraft(info: PostEntry): boolean {
   return info.metadata.draft === true
 }
 
@@ -294,16 +248,16 @@ export function isDraft(info: PostComponentInfo): boolean {
  * its own date — so a series can be queued in one go and come out on its own.
  * Like a draft, it remains readable at its URL.
  */
-export function isScheduled(info: PostComponentInfo): boolean {
+export function isScheduled(info: PostEntry): boolean {
   return info.metadata.date > new Date().toISOString().slice(0, 10)
 }
 
 /** Anything the public listings must not show yet. */
-function isHidden(info: PostComponentInfo): boolean {
+function isHidden(info: PostEntry): boolean {
   return isDraft(info) || isScheduled(info)
 }
 
-function toPost(info: PostComponentInfo, locale: 'fr' | 'en'): Post {
+function toPost(info: PostEntry, locale: 'fr' | 'en'): Post {
   const content = info.getContent(locale)
   return {
     slug: info.metadata.slug,
@@ -338,7 +292,7 @@ export function getDraftPosts(locale: 'fr' | 'en' = 'fr'): Post[] {
  * Resolves a slug whatever its draft state: a draft must stay readable live at
  * its own URL while it is being written and reviewed.
  */
-export function getPostBySlug(slug: string): PostComponentInfo | undefined {
+export function getPostBySlug(slug: string): PostEntry | undefined {
   return postRegistry[slug]
 }
 

@@ -5,8 +5,7 @@
     "typescript",
     "unicorn",
     "oxc",
-    "import",
-    "vue"
+    "import"
   ],
   "categories": {
     "correctness": "error"
@@ -19,7 +18,8 @@
   "ignorePatterns": [
     "**/dist/**",
     "**/node_modules/**",
-    "**/coverage/**"
+    "**/coverage/**",
+    ".astro/**"
   ],
   "rules": {
     "typescript/no-array-delete": "off",

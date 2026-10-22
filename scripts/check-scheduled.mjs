@@ -39,7 +39,7 @@ function isDraft(content) {
 }
 
 const posts = readdirSync(POSTS_DIR)
-  .filter(f => f.endsWith('.vue'))
+  .filter(f => f.endsWith('.ts') && f !== 'index.ts')
   .map(f => {
     const content = readFileSync(join(POSTS_DIR, f), 'utf-8')
     const slug = extractStringAfterKey(content, 'slug')

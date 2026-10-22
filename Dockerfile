@@ -8,10 +8,6 @@ FROM node:24-alpine AS build
 
 WORKDIR /app
 
-# Re-declare build-time args inside the stage so they're visible to `npm run build`.
-# Vite only inlines env vars prefixed with VITE_ into the client bundle, and they
-# must be present in the process env when `vite build` runs — hence the ENV line.
-
 # Copy package files
 COPY package*.json ./
 

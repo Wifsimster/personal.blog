@@ -2,7 +2,7 @@
 
 /**
  * Source-prep script: emits AVIF siblings next to every JPG/PNG image under
- * public/images/. The siblings are committed to the repo, so vite copies them
+ * public/images/. The siblings are committed to the repo, so the build copies them
  * verbatim into dist/images/ at build time and CI never re-encodes.
  *
  * This is why it runs against the *source* tree, not dist/: a git checkout does

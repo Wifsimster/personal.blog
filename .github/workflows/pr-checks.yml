@@ -46,7 +46,7 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           set -euo pipefail
-          mapfile -t posts < <(git diff --name-only --diff-filter=AMR "$BASE_SHA" HEAD -- 'src/posts/*.vue')
+          mapfile -t posts < <(git diff --name-only --diff-filter=AMR "$BASE_SHA" HEAD -- 'src/posts/*.ts' ':!src/posts/index.ts')
           if [ "${#posts[@]}" -eq 0 ]; then
             echo "No post changed."
             exit 0
@@ -56,6 +56,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
 
       - name: Build
         run: npm run build

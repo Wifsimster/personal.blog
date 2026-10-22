@@ -1,0 +1,61 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PostList from '@/components/PostList.astro'
+import { getAllPosts } from '@/posts'
+import { sortPostsByDate, type Post } from '@/lib/posts'
+import { t } from '@/lib/i18n'
+import { alternatesFor, localPath, pageTitle } from '@/lib/seo'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  lang: Language
+}
+
+const { lang } = Astro.props
+const monthNames = lang === 'fr'
+  ? ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
+  : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+// Same shape and order as the Vue page: a plain object keyed by year (so
+// years list oldest first, the way JS orders integer-like keys) holding the
+// months in the order posts appear, newest first.
+const grouped: Record<string, Record<string, Post[]>> = {}
+for (const post of sortPostsByDate(getAllPosts(lang))) {
+  const date = new Date(post.date)
+  const year = date.getFullYear().toString()
+  const month = monthNames[date.getMonth()]
+  grouped[year] ??= {}
+  grouped[year][month] ??= []
+  grouped[year][month].push(post)
+}
+const alternates = alternatesFor('/archives')
+---
+<BaseLayout
+  lang={lang}
+  path={localPath(lang, '/archives')}
+  title={pageTitle(t(lang, 'archives.title'))}
+  canonical={alternates[lang]}
+  alternates={alternates}
+>
+  <div>
+    <h1 class="text-4xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
+      {t(lang, 'archives.title')}
+    </h1>
+    <p class="text-gray-600 dark:text-zinc-400 mb-8">
+      {t(lang, 'archives.description')}
+    </p>
+    <div>
+      {Object.entries(grouped).map(([year, months]) => (
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-zinc-100 mb-6">{year}</h2>
+          {Object.entries(months).map(([month, posts]) => (
+            <div class="mb-8">
+              <h3 class="text-xl font-semibold text-gray-700 dark:text-zinc-300 mb-4">{month}</h3>
+              <PostList posts={posts} lang={lang} />
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

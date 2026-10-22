@@ -1,0 +1,46 @@
+---
+import { estimateReadingTime, formatDate, type Post } from '@/lib/posts'
+import { excerpt } from '@/lib/listing'
+import { langPrefix, t } from '@/lib/i18n'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  post: Post
+  lang: Language
+}
+
+const { post, lang } = Astro.props
+const summary = excerpt(post)
+---
+<article
+  data-post-card
+  data-slug={post.slug}
+  data-tags={(post.tags || []).join('|')}
+  data-title={post.title.toLowerCase()}
+  data-description={(post.description || '').toLowerCase()}
+  class="bg-white/70 dark:bg-zinc-800/60 backdrop-blur-sm rounded-lg shadow-sm hover:shadow-md border border-gray-200/80 dark:border-zinc-700/80 hover:border-primary-300/70 dark:hover:border-primary-600/50 transition-[box-shadow,border-color]"
+>
+  <a href={`${langPrefix(lang)}/posts/${post.slug}`} class="block p-5 sm:p-6 rounded-lg focus-ring">
+    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+      {post.title}
+    </h2>
+    <div class="flex items-center gap-3 text-sm text-gray-500 dark:text-zinc-400 mb-3">
+      {post.draft && (
+        <span class="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full border border-amber-300 dark:border-amber-700/60 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300">
+          {t(lang, 'post.draft.badge')}
+        </span>
+      )}
+      <time datetime={post.date}>{formatDate(post.date, lang)}</time>
+      <span class="text-gray-300 dark:text-zinc-600">|</span>
+      <span>{t(lang, 'post.readingTime', { min: String(estimateReadingTime(post.html, lang)) })}</span>
+    </div>
+    {summary && <p class="text-gray-700 dark:text-zinc-300 mb-4 line-clamp-2">{summary}</p>}
+    {post.tags && post.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2">
+        {post.tags.map((tag) => (
+          <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-400 rounded-full">{tag}</span>
+        ))}
+      </div>
+    )}
+  </a>
+</article>

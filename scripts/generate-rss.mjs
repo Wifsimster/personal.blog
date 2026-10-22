@@ -3,7 +3,7 @@
 /**
  * Post-build script: generates RSS 2.0 feeds for both languages.
  *
- * Reads post data from Vue SFC source files and writes:
+ * Reads post data from the post source files (src/posts/*.ts) and writes:
  *   - dist/rss.xml     (French feed)
  *   - dist/en/rss.xml  (English feed)
  *
@@ -124,7 +124,7 @@ function extractContentBlock(content, varName) {
 
 /**
  * True when the post's metadata block carries `draft: true`. Drafts stay
- * reachable in the SPA for review, but are excluded from everything a crawler
+ * reachable at their URL for review, but are excluded from everything a crawler
  * or a feed reader sees.
  */
 function isDraft(content) {
@@ -134,7 +134,7 @@ function isDraft(content) {
 }
 
 /**
- * Parse a Vue SFC file and extract post metadata + content for both languages.
+ * Parse a post source file and extract post metadata + content for both languages.
  */
 function extractPostData(filePath) {
   const content = readFileSync(filePath, 'utf-8')
@@ -259,11 +259,11 @@ function main() {
   console.log(`  Site URL: ${SITE_URL}`)
 
   if (!existsSync(DIST)) {
-    console.error('  Error: dist/ not found. Run "vite build" first.')
+    console.error('  Error: dist/ not found. Run "astro build" first.')
     process.exit(1)
   }
 
-  const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.vue'))
+  const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.ts') && f !== 'index.ts')
   const parsed = postFiles
     .map(f => extractPostData(join(POSTS_SRC, f)))
     .filter(Boolean)
