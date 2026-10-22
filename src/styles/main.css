@@ -136,6 +136,11 @@
     @apply max-w-none font-serif;
   }
 
+  /* Deep links to a heading land below the sticky mobile header. */
+  .post-content :is(h2, h3)[id] {
+    scroll-margin-top: 5rem;
+  }
+
   .prose h1,
   .prose h2,
   .prose h3,
