@@ -22,6 +22,18 @@ function initThemeToggle(): void {
       sync()
     })
   }
+  // No saved choice (or 'auto'): follow the system theme when it changes.
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    let stored: string | null = null
+    try {
+      stored = localStorage.getItem(STORAGE_KEY)
+    } catch {
+      // Private mode: treat as no saved choice.
+    }
+    if (stored && stored !== 'auto') return
+    document.documentElement.classList.toggle('dark', e.matches)
+    sync()
+  })
   sync()
 }
 
