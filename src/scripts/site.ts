@@ -8,7 +8,8 @@ function initThemeToggle(): void {
   const sync = () => {
     const dark = document.documentElement.classList.contains('dark')
     for (const button of buttons) {
-      button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode')
+      const label = dark ? button.dataset.labelLight : button.dataset.labelDark
+      if (label) button.setAttribute('aria-label', label)
     }
   }
   for (const button of buttons) {
