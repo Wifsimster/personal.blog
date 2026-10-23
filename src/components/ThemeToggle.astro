@@ -1,12 +1,33 @@
 ---
-/** Light/dark switch. Both icons are rendered; the `.dark` class picks one. */
+/**
+ * Light/dark switch. Both icons are rendered; the `.dark` class picks one.
+ * `hidden`/`dark:hidden` sit on wrapper spans, never on the `<i class="pi">`:
+ * primeicons.css is unlayered, so its `.pi { display: inline-block }` beats
+ * any Tailwind utility (layered) and both icons would show.
+ */
+import { t } from '@/lib/i18n'
+import type { Language } from '@/types/i18n'
+
+export interface Props {
+  lang: Language
+}
+
+const { lang } = Astro.props
+const toDark = t(lang, 'theme.toDark')
+const toLight = t(lang, 'theme.toLight')
 ---
 <button
   type="button"
   data-theme-toggle
+  data-label-dark={toDark}
+  data-label-light={toLight}
   class="w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-gray-300 dark:hover:bg-zinc-600 transition-colors flex items-center justify-center focus-ring"
-  aria-label="Switch to dark mode"
+  aria-label={toDark}
 >
-  <i class="pi pi-moon text-sm text-gray-700 dark:text-zinc-300 hidden dark:inline-block"></i>
-  <i class="pi pi-sun text-sm text-gray-700 dark:text-zinc-300 dark:hidden"></i>
+  <span class="hidden dark:inline-flex" aria-hidden="true">
+    <i class="pi pi-moon text-sm text-gray-700 dark:text-zinc-300"></i>
+  </span>
+  <span class="inline-flex dark:hidden" aria-hidden="true">
+    <i class="pi pi-sun text-sm text-gray-700 dark:text-zinc-300"></i>
+  </span>
 </button>

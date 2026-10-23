@@ -29,7 +29,7 @@ const roundButton = 'w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-
       </a>
       <div class="flex items-center gap-3">
         <LanguageSwitch lang={lang} path={path} id="header" />
-        <ThemeToggle />
+        <ThemeToggle lang={lang} />
         <button type="button" data-menu-toggle class={roundButton} aria-label="Toggle menu" aria-expanded="false">
           <i class="pi pi-bars text-sm text-gray-700 dark:text-zinc-300"></i>
         </button>
