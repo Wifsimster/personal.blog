@@ -3,8 +3,6 @@ import PostView from '@/views/PostView.astro'
 import { postRegistry } from '@/posts'
 
 export function getStaticPaths() {
-  // Every post, drafts and scheduled ones included: they stay readable at
-  // their URL for review (PostView marks them noindex).
   return Object.keys(postRegistry).map((slug) => ({ params: { slug } }))
 }
 

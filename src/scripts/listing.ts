@@ -1,13 +1,3 @@
-/**
- * Client-side filtering for the home page and the tag pages: free-text search
- * over title, description and body, plus (home only) one tag filter. Cards are
- * already in the page; this only toggles their visibility.
- *
- * Body text is not in the page. It loads once, from /search/<lang>.json, the
- * first time the reader focuses or types in the search box. Until it arrives,
- * the search matches titles and descriptions only.
- */
-
 type SearchIndex = Record<string, string>
 
 const indexCache: Partial<Record<string, Promise<SearchIndex>>> = {}
@@ -88,7 +78,6 @@ export function initListing(): void {
       button.setAttribute('aria-pressed', String(active))
     }
 
-    // Keep the query in the URL, so Back from an article restores the list.
     if (isHome) {
       const url = new URL(window.location.href)
       if (input.value.trim()) url.searchParams.set('q', input.value)
@@ -120,7 +109,6 @@ export function initListing(): void {
     })
   }
 
-  // The sidebar and mobile-menu search boxes hand their query over here.
   document.addEventListener('blog:search', (event) => {
     input.value = (event as CustomEvent<string>).detail
     ensureIndex()

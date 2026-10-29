@@ -1,13 +1,5 @@
 name: PR checks
 
-# Runs on every pull request, so "merge once the build passes" (CLAUDE.md §5)
-# rests on a real check. Release only builds after the merge, inside Docker.
-#
-# The post validator (.claude/hooks/check-post.mjs) is otherwise a Claude Code
-# PostToolUse hook: it never fires for agents on another runtime, nor in CI.
-# Here it runs on the posts the PR adds or changes. Older posts still carry
-# violations (`--all` reports them); they are not checked until someone edits
-# them.
 on:
   pull_request:
     branches:

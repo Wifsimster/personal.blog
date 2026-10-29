@@ -25,7 +25,6 @@ const alternates = alternatesFor(pathWithoutLang)
   alternates={alternates}
 >
   <div>
-    <!-- Introduction Section -->
     <section class="mb-4">
       <h1 class="text-5xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
         {t(lang, 'tags.title')}: {tag}
@@ -35,7 +34,6 @@ const alternates = alternatesFor(pathWithoutLang)
       </p>
     </section>
 
-    <!-- Blog Section -->
     <PostListing lang={lang} posts={posts} currentTag={tag} />
   </div>
 </BaseLayout>

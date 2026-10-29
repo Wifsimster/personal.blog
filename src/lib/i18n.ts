@@ -7,12 +7,10 @@ export function langPrefix(lang: Language): string {
   return lang === 'en' ? '/en' : ''
 }
 
-/** Home path for a language: `/` or `/en`. */
 export function homePath(lang: Language): string {
   return langPrefix(lang) || '/'
 }
 
-/** The same page in the other language: `/posts/x` ⇄ `/en/posts/x`. */
 export function switchLanguagePath(path: string, target: Language): string {
   if (target === 'en') {
     return path.startsWith('/en') ? path : '/en' + (path === '/' ? '' : path)

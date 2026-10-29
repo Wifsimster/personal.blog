@@ -29,8 +29,6 @@ const post: Post = {
   lang,
   draft: info.metadata.draft === true
 }
-// Drafts and scheduled posts stay readable at their URL for review, but are
-// never indexed and get no social card.
 const hidden = isDraft(info) || isScheduled(info)
 const prefix = langPrefix(lang)
 const rendered = renderPostHtml(post.html, lang)
@@ -75,9 +73,6 @@ const titlePrefix = post.draft ? `[${t(lang, 'post.draft.badge')}] ` : ''
   {...head}
 >
   <div>
-    <!-- Reading progress bar. On mobile it sits just under the sticky header
-         and follows it to the very top when the header slides away; on
-         desktop (no header) it always hugs the top edge. -->
     <div
       data-reading-progress
       class="fixed left-0 z-50 h-[3px] bg-primary-500 transition-all duration-150 ease-out top-[calc(3.5rem+env(safe-area-inset-top))] [[data-header-hidden=true]_&]:top-0 lg:top-0"
@@ -135,7 +130,6 @@ const titlePrefix = post.draft ? `[${t(lang, 'post.draft.badge')}] ` : ''
         </main>
       </article>
 
-      <!-- Related Posts -->
       {related.length > 0 && (
         <section class="mt-12 pt-8 border-t border-gray-200 dark:border-zinc-800">
           <h2 class="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-6">

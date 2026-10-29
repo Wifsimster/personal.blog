@@ -1,31 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Source-prep script: emits AVIF siblings next to every JPG/PNG image under
- * public/images/. The siblings are committed to the repo, so the build copies them
- * verbatim into dist/images/ at build time and CI never re-encodes.
- *
- * This is why it runs against the *source* tree, not dist/: a git checkout does
- * not preserve mtimes, so a build container would otherwise re-encode all ~300
- * images every release. Committing the AVIFs makes the encode a one-time,
- * local, incremental cost (only newly-added images convert).
- *
- * AVIF compresses 30–50% smaller than the original JPG/PNG and is widely
- * supported (Chrome, Edge, Firefox, Safari 16+). Browsers that don't support
- * AVIF fall back via the <picture><source>/<img> wrapper emitted in
- * src/utils/imageProcessing.ts.
- *
- * The script is idempotent: it skips any image that already has an AVIF
- * sibling. Editing an image *in place* (same filename, new content) needs an
- * explicit IMAGE_AVIF_FORCE=1 to regenerate its stale sibling.
- *
- * Usage: node scripts/optimize-images.mjs   (aliased as `npm run optimize:images`)
- * Env:   IMAGE_AVIF_QUALITY   (default 65)
- *        IMAGE_AVIF_EFFORT    (default 4 — range 0..9, higher = slower & smaller)
- *        IMAGE_AVIF_MAX_WIDTH (default 1600 — downscale only, never upscale)
- *        IMAGE_AVIF_FORCE     (set to "1" to regenerate every sibling)
- */
-
 import { readdirSync, statSync, existsSync, unlinkSync } from 'fs'
 import { join, dirname, extname, relative } from 'path'
 import { fileURLToPath } from 'url'
@@ -42,13 +16,8 @@ const MAX_WIDTH = parseInt(process.env.IMAGE_AVIF_MAX_WIDTH || '1600', 10)
 const FORCE = process.env.IMAGE_AVIF_FORCE === '1'
 
 const SOURCE_EXTS = new Set(['.jpg', '.jpeg', '.png'])
-// Sharp uses libvips with internal multi-threading sized to libuv's pool. Stacking
-// JS-level concurrency on top causes thread contention and slows wall-clock time.
-// Process one image at a time and let libvips fan out across all cores.
 const CONCURRENCY = 1
 
-// OG card PNGs (images/og/) are referenced as .png in OG meta and don't
-// benefit from AVIF siblings, so skip that subtree.
 const SKIP_DIRS = new Set([join(IMAGES_DIR, 'og')])
 
 function* walk(dir) {
@@ -71,10 +40,6 @@ async function convertOne(srcPath) {
   const dst = avifPathFor(srcPath)
   const srcStat = statSync(srcPath)
 
-  // Skip whenever a sibling already exists. mtime comparison is deliberately
-  // avoided: the AVIFs are committed and a git checkout rewrites mtimes to the
-  // checkout time in no guaranteed order, which would re-encode everything in
-  // CI. Regenerate a stale sibling with IMAGE_AVIF_FORCE=1.
   if (!FORCE && existsSync(dst)) {
     const dstStat = statSync(dst)
     return { status: 'skipped', src: srcPath, srcSize: srcStat.size, dstSize: dstStat.size }
@@ -89,8 +54,6 @@ async function convertOne(srcPath) {
 
   const dstStat = statSync(dst)
 
-  // If AVIF turned out larger than the source (rare, mostly tiny diagrams),
-  // drop it so the browser doesn't waste a request fetching a worse file.
   if (dstStat.size >= srcStat.size) {
     unlinkSync(dst)
     return { status: 'rejected', src: srcPath, srcSize: srcStat.size, dstSize: dstStat.size }

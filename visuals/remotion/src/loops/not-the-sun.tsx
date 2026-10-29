@@ -1,7 +1,6 @@
 import React from 'react';
 import {Frame, LoopProps, ramp, THEMES, useSteps} from './common';
 
-// 1. Six décisions séparées : le soleil passe, chaque volet descend à son tour.
 export const Shutters: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];
   const s = useSteps();
@@ -26,18 +25,16 @@ export const Shutters: React.FC<LoopProps> = ({theme}) => {
   );
 };
 
-// 2. Le cadastre : une façade s'allume quand le soleil est à moins de 65° de sa normale.
 export const Facades: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];
   const s = useSteps();
   const cx = 120;
   const cy = 60;
-  const rot = -24; // faîtage désaxé, comme une vraie parcelle
-  const sunA = (s / 60) * 360; // un tour par boucle
+  const rot = -24;
+  const sunA = (s / 60) * 360;
   const sun = {x: cx + 96 * Math.cos(((sunA - 90) * Math.PI) / 180), y: cy + 48 * Math.sin(((sunA - 90) * Math.PI) / 180)};
   const hw = 32;
   const hh = 20;
-  // façades : normale (degrés, 0 = nord, sens horaire) et segment
   const faces = [
     {n: 0, a: [-hw, -hh], b: [hw, -hh]},
     {n: 90, a: [hw, -hh], b: [hw, hh]},
@@ -63,7 +60,6 @@ export const Facades: React.FC<LoopProps> = ({theme}) => {
   );
 };
 
-// 3. Le tableau électrique : A reste calme, B et C font des pointes brèves.
 export const Phases: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];
   const s = useSteps();

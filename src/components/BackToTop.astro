@@ -8,9 +8,6 @@ export interface Props {
 
 const label = t(Astro.props.lang, 'post.backToTop')
 ---
-<!-- Positioning lives on the wrapper so the show/hide transition never fights
-     the button's own idle/engaged opacity. Bottom offset clears the mobile
-     gesture bar via the safe-area inset. -->
 <div data-back-to-top class="back-to-top back-to-top-hidden fixed right-6 bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-40">
   <button
     type="button"

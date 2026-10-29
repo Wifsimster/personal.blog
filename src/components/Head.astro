@@ -1,9 +1,4 @@
 ---
-/**
- * Everything in <head>: the site-wide defaults the SPA shipped in index.html,
- * plus the per-page SEO block (canonical, hreflang, Open Graph, JSON-LD) that
- * scripts/generate-og.mjs used to patch into pre-rendered copies of it.
- */
 import type { Language } from '@/types/i18n'
 import themeInitUrl from '@/scripts/theme-init.js?url'
 
@@ -44,17 +39,9 @@ const jsonLdText = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : nu
 <link rel="alternate" type="application/rss+xml" title="Wifsimster Blog - Flux RSS" href="/rss.xml">
 <link rel="alternate" type="application/rss+xml" title="Wifsimster Blog - RSS Feed" href="/en/rss.xml">
 <title>{title}</title>
-<!-- Applies the saved theme before first paint, so dark mode never flashes
-     white. A file rather than an inline script: the CSP forbids inline JS. -->
 <script is:inline src={themeInitUrl}></script>
-<!-- Umami — mesure d'audience auto-hébergée, sans cookie ni bandeau de
-     consentement. Les paramètres d'URL sont conservés : ils portent
-     l'attribution UTM des campagnes. -->
 <script is:inline defer src="https://umami.battistella.ovh/stats.js"
   data-website-id="acb4f274-58c4-4acb-b114-7fc7ac2e1510"></script>
-<!-- Heatmaps. Script distinct du tracker : `stats.js` ne l'embarque pas.
-     `replayEnabled` est OFF côté serveur, donc la charge utile ne contient
-     que des coordonnées de clic et de scroll — aucun DOM, aucun texte. -->
 <script is:inline defer src="https://umami.battistella.ovh/recorder.js"
   data-website-id="acb4f274-58c4-4acb-b114-7fc7ac2e1510"></script>
 {canonical && <link rel="canonical" href={canonical}>}

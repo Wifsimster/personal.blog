@@ -2,7 +2,6 @@ import React from 'react';
 import {Easing, interpolate} from 'remotion';
 import {clamp, Frame, LoopProps, ramp, THEMES, useSteps} from './common';
 
-// 1. Le soir, brique par brique : cinq briques s'empilent en escalier.
 export const Bricks: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];
   const s = useSteps();
@@ -24,7 +23,6 @@ export const Bricks: React.FC<LoopProps> = ({theme}) => {
   );
 };
 
-// 2. Mercredi, tout glisse : les repères de la soirée se décalent, puis reviennent.
 export const Slide: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];
   const s = useSteps();
@@ -43,15 +41,12 @@ export const Slide: React.FC<LoopProps> = ({theme}) => {
           <circle cx={0} cy={i % 2 ? 40 : 36} r={5} fill={shift > 1 ? c.accent : c.ink} fillOpacity={shift > 1 ? 1 : 0.55} />
         </g>
       ))}
-      {/* flèche du décalage */}
       <path d={`M 42 84 H ${42 + shift}`} stroke={c.accent} strokeOpacity={shift > 2 ? 0.8 : 0} strokeWidth={1.6} strokeLinecap="round" />
       <path d={`M ${38 + shift} 80 L ${42 + shift} 84 L ${38 + shift} 88`} fill="none" stroke={c.accent} strokeOpacity={shift > 2 ? 0.8 : 0} strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" />
     </Frame>
   );
 };
 
-// 3. Un jeu de données pour seize semaines : les semaines de vacances se colorent.
-// Répartition indicative (zone A) : Toussaint, Noël, hiver, printemps, été.
 const HOLIDAY_WEEKS = [1, 7, 8, 15, 16, 27, 28, 29, 30, 31, 32, 33, 34, 43, 44, 52];
 export const Calendar: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];

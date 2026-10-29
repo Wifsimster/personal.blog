@@ -174,3 +174,18 @@ write the convergence yourself.
 The AI/engineering arc is the spine. New opinion posts should either continue
 it, branch from it credibly, or stay in the homelab/DIY lane. Don't write
 generic tech-blog content that could have been written by anyone.
+
+---
+
+## Comments
+
+Decision 2026-10-29: **no comments in code** (any language, including YAML, Dockerfile, shell, CSS, Astro templates, nginx). They go stale and mislead agents; the why goes in the commit message and the PR.
+
+Only exceptions: tool directives that change behaviour, and license headers.
+
+- `eslint-disable*`, `oxlint-disable*`, `@ts-expect-error`, `@ts-ignore`, `@ts-nocheck`, `/// <reference …>`
+- shebang (`#!/usr/bin/env …`), `# syntax=` (Dockerfile), `# shellcheck …`, `# noqa`
+- bundler magic comments (`webpackChunkName`, `@vite-ignore`, …)
+- license headers
+
+Generated files (lockfiles, `*.gen.ts`, migrations, files marked generated) and Markdown (articles included) are left untouched.

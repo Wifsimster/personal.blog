@@ -234,7 +234,6 @@ const postRegistry: Record<string, PostEntry> = {
 }
 
 export interface PostQueryOptions {
-  /** Include posts flagged `draft: true`. Off everywhere the public reads. */
   includeDrafts?: boolean
 }
 
@@ -242,17 +241,10 @@ export function isDraft(info: PostEntry): boolean {
   return info.metadata.draft === true
 }
 
-/**
- * True when the post's date is still in the future. A scheduled post is
- * written and merged, but stays out of every listing, feed and sitemap until
- * its own date — so a series can be queued in one go and come out on its own.
- * Like a draft, it remains readable at its URL.
- */
 export function isScheduled(info: PostEntry): boolean {
   return info.metadata.date > new Date().toISOString().slice(0, 10)
 }
 
-/** Anything the public listings must not show yet. */
 function isHidden(info: PostEntry): boolean {
   return isDraft(info) || isScheduled(info)
 }
@@ -271,27 +263,18 @@ function toPost(info: PostEntry, locale: 'fr' | 'en'): Post {
   }
 }
 
-/**
- * Every public listing goes through here, so drafts are excluded by default.
- * Direct access by slug is deliberately not filtered — see getPostBySlug.
- */
 export function getAllPosts(locale: 'fr' | 'en' = 'fr', options: PostQueryOptions = {}): Post[] {
   return Object.values(postRegistry)
     .filter(info => options.includeDrafts || !isHidden(info))
     .map(info => toPost(info, locale))
 }
 
-/** Drafts and scheduled posts, for the private /drafts review page. */
 export function getDraftPosts(locale: 'fr' | 'en' = 'fr'): Post[] {
   return Object.values(postRegistry)
     .filter(isHidden)
     .map(info => toPost(info, locale))
 }
 
-/**
- * Resolves a slug whatever its draft state: a draft must stay readable live at
- * its own URL while it is being written and reviewed.
- */
 export function getPostBySlug(slug: string): PostEntry | undefined {
   return postRegistry[slug]
 }

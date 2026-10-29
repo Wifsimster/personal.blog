@@ -1,12 +1,9 @@
-# Dependencies
 node_modules/
 
-# Build output
 dist/
 .vite/
 .astro/
 
-# Logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -14,7 +11,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -25,14 +21,9 @@ lerna-debug.log*
 *.sln
 *.sw?
 
-# Environment variables
 .env
 .env.local
 .env.*.local
 
-# OS files
 .DS_Store
 Thumbs.db
-
-# Generated data (uncomment if JSON files are auto-generated)
-# public/data/

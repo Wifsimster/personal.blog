@@ -2,7 +2,6 @@ import React from 'react';
 import {Easing, interpolate} from 'remotion';
 import {clamp, Frame, LoopProps, ramp, THEMES, useSteps} from './common';
 
-// 1. La chaîne audio n'était pas en cause : l'enceinte émet, sans accroc.
 export const Speaker: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];
   const s = useSteps();
@@ -24,7 +23,6 @@ export const Speaker: React.FC<LoopProps> = ({theme}) => {
   );
 };
 
-// 2. Huit règles, écrites après coup : les lignes s'écrivent une à une.
 export const Rules: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];
   const s = useSteps();
@@ -47,7 +45,6 @@ export const Rules: React.FC<LoopProps> = ({theme}) => {
   );
 };
 
-// 3. Le réveil : la musique monte d'abord, la consigne arrive à la fin.
 export const Wakeup: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];
   const s = useSteps();

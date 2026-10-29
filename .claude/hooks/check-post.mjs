@@ -1,14 +1,4 @@
 #!/usr/bin/env node
-/**
- * Post validator — enforces the mechanical rules from CLAUDE.md §2 that no
- * build step catches. Posts are TypeScript modules whose body is an HTML template
- * literal rendered through DOMPurify; anything outside the sanitizer's
- * allowlist disappears at render time with no error anywhere.
- *
- * Run standalone:  node .claude/hooks/check-post.mjs src/posts/Foo.ts
- * Run corpus-wide: node .claude/hooks/check-post.mjs --all
- * Wired as a PostToolUse hook on Edit|Write in .claude/settings.json.
- */
 import { readFileSync, readdirSync } from 'node:fs'
 import { resolve, basename } from 'node:path'
 
@@ -16,7 +6,6 @@ const ROOT = resolve(import.meta.dirname, '../..')
 const SANITIZER = resolve(ROOT, 'src/lib/render.ts')
 const REGISTRY = resolve(ROOT, 'src/posts/index.ts')
 
-/** Read the live allowlist out of src/lib/render.ts so it can never drift. */
 function allowlist() {
   const src = readFileSync(SANITIZER, 'utf8')
   const grab = (key) => {
@@ -27,7 +16,6 @@ function allowlist() {
   return { tags: grab('ALLOWED_TAGS'), attrs: grab('ALLOWED_ATTR') }
 }
 
-/** Extract each `html:` template literal, with its line offset in the file. */
 function htmlBlocks(src) {
   const blocks = []
   const re = /html:\s*`/g
@@ -48,7 +36,6 @@ function htmlBlocks(src) {
 }
 
 const VOID_OK = new Set(['br', 'img', 'source'])
-// Self-closing is legal inside <svg> (foreign content), illegal in HTML.
 const SVG_TAGS = new Set(['svg', 'g', 'rect', 'line', 'polygon', 'polyline', 'path',
   'circle', 'ellipse', 'text', 'tspan'])
 
@@ -58,9 +45,8 @@ function checkFile(file, { tags, attrs }, registry) {
   const add = (line, code, msg) => out.push({ file, line, code, msg })
 
   const blocks = htmlBlocks(src)
-  if (blocks.length === 0) return out // not a post component
+  if (blocks.length === 0) return out
 
-  // --- registration -------------------------------------------------------
   const slug = src.match(/slug:\s*'([^']+)'/)?.[1]
   if (!slug) add(1, 'no-slug', 'metadata.slug is missing')
   else if (!registry.includes(`'${slug}'`))
@@ -68,14 +54,12 @@ function checkFile(file, { tags, attrs }, registry) {
   if (!registry.includes(`from './${basename(file, '.ts')}'`))
     add(1, 'unimported', `${basename(file)} is not imported in src/posts/index.ts`)
 
-  // --- bilingual ----------------------------------------------------------
   for (const k of ['frenchContent', 'englishContent'])
     if (!src.includes(`const ${k}`)) add(1, 'missing-locale', `${k} is missing — posts are FR + EN, always`)
 
   for (const { html, line: base } of blocks) {
     const lineOf = (idx) => base + html.slice(0, idx).split('\n').length - 1
 
-    // --- sanitizer allowlist ---------------------------------------------
     for (const t of html.matchAll(/<([a-zA-Z][a-zA-Z0-9]*)\b([^>]*)>/g)) {
       const [full, tag, rawAttrs] = t
       const name = tag.toLowerCase()
@@ -94,7 +78,6 @@ function checkFile(file, { tags, attrs }, registry) {
         add(lineOf(t.index), 'self-closed', `<${tag}/> self-closes; HTML parsers ignore that — use <${tag}>…</${tag}>`)
     }
 
-    // --- diagram rules (CLAUDE.md §2) ------------------------------------
     for (const svg of html.matchAll(/<svg\b[^>]*class="[^"]*\bdiagram-svg\b[^"]*"[\s\S]*?<\/svg>/g)) {
       const body = svg[0]
       const at = (i) => lineOf(svg.index + i)
@@ -112,14 +95,8 @@ function checkFile(file, { tags, attrs }, registry) {
         add(at(c.index), 'hardcoded-color',
           `${c[1]} will not invert under dark mode — use fill="currentColor" with fill-opacity`)
 
-      // Author's ruling 2026-08-29: draw on 640 units. At 640 the scale never
-      // drops below 1, so a nominal font size is the size the reader gets.
-      // A wider canvas shrinks every label (800 units put a 13px label at
-      // 9.9px, and near 5.7px on a phone).
       const vb = open.match(/viewBox="0 0 (\d+)/)
       const w = vb ? Number(vb[1]) : 0
-      // The opt-in phone drawing (class diagram-narrow, see main.css) is drawn
-      // on 320 units, the column of a 360px phone, for the same reason.
       if (/\bdiagram-narrow\b/.test(open)) {
         if (w && w !== 320)
           add(at(0), 'canvas-width',
@@ -136,14 +113,12 @@ function checkFile(file, { tags, attrs }, registry) {
       }
     }
 
-    // --- house style ------------------------------------------------------
     const emoji = /[\u{1F300}-\u{1FAFF}]|\u{FE0F}/u.exec(html)
     if (emoji) add(lineOf(emoji.index), 'emoji', 'no emojis (CLAUDE.md §2)')
   }
   return out
 }
 
-// ---------------------------------------------------------------------------
 const args = process.argv.slice(2)
 const registry = readFileSync(REGISTRY, 'utf8')
 const lists = allowlist()
