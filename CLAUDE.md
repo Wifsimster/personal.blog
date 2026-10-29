@@ -189,3 +189,5 @@ Only exceptions: tool directives that change behaviour, and license headers.
 - license headers
 
 Generated files (lockfiles, `*.gen.ts`, migrations, files marked generated) and Markdown (articles included) are left untouched.
+
+`public/downloads/**` (files readers download, instructions included) is exempt: its comments stay.
