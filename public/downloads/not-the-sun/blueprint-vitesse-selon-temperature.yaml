@@ -95,6 +95,8 @@ variables:
   seuils: !input seuils
   mois: !input mois
   temperature: !input capteur
+  # Déclaré ici parce qu'il est lu dans un template plus bas : `!input` ne se
+  # substitue pas à l'intérieur d'une expression Jinja.
   consigne: !input consigne
   cible: >-
     {% set t = states(temperature) | float(-273) %}
@@ -110,6 +112,7 @@ conditions:
     state: "on"
   - condition: template
     value_template: "{{ now().month | string in mois }}"
+  # Un capteur muet ne doit pas être lu comme 0 °C et couper le ventilateur.
   - condition: template
     value_template: "{{ states(temperature) not in ['unknown', 'unavailable', 'none'] }}"
 
