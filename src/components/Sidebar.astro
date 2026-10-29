@@ -22,7 +22,6 @@ const linkClass = 'flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:
 ---
 <aside class="hidden lg:flex lg:flex-col w-80 border-r border-gray-200/70 dark:border-zinc-800/70 bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md sticky top-0 h-screen">
   <div class="flex-1 overflow-y-auto p-6">
-    <!-- Top Section: Name and Theme Toggles -->
     <div class="flex items-center justify-between mb-6">
       <div class="flex items-center gap-2">
         <a
@@ -40,7 +39,6 @@ const linkClass = 'flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:
 
     <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
 
-    <!-- Search Section -->
     <div class="mb-6">
       <div class="relative">
         <input
@@ -61,7 +59,6 @@ const linkClass = 'flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:
           <i class="pi pi-times text-sm"></i>
         </button>
       </div>
-      <!-- Top Tags -->
       {topKeywords.length > 0 && (
         <div class="mt-3 flex flex-wrap gap-2">
           {topKeywords.map((tag) => (
@@ -78,7 +75,6 @@ const linkClass = 'flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:
 
     <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
 
-    <!-- About Me Section -->
     <div class="mb-6">
       <h2 class="text-sm font-semibold text-gray-900 dark:text-zinc-100 mb-3">
         {t(lang, 'sidebar.aboutMe')}
@@ -96,7 +92,6 @@ const linkClass = 'flex items-center gap-3 px-3 py-2 text-sm text-gray-700 dark:
 
     <hr class="border-gray-200 dark:border-zinc-800 mb-6" />
 
-    <!-- Stay Connected Section -->
     <div>
       <h2 class="text-sm font-semibold text-gray-900 dark:text-zinc-100 mb-3">
         {t(lang, 'sidebar.stayConnected')}

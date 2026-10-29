@@ -11,8 +11,6 @@ export interface Props {
   lang: Language
 }
 
-// Unlinked from the navigation and never indexed: this page exists so the
-// author can open a work in progress in the real site.
 const { lang } = Astro.props
 const drafts = sortPostsByDate(getDraftPosts(lang))
 ---

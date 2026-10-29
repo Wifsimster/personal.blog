@@ -1,9 +1,3 @@
-/**
- * Full-screen image gallery for article photos (replaces PrimeVue Galleria).
- * Click a photo to open it; arrows, thumbnails or ←/→ move through every photo
- * of the article, circularly; Esc, the close button or a click beside the
- * image closes it.
- */
 export function initGallery(content: HTMLElement): void {
   const dialog = document.querySelector<HTMLDialogElement>('[data-gallery]')
   const images = Array.from(content.querySelectorAll<HTMLImageElement>('img[data-gallery-image]'))
@@ -54,10 +48,8 @@ export function initGallery(content: HTMLElement): void {
   }
 
   images.forEach((img, i) => {
-    // Two photos can share a file; open on the first one, as before.
     const first = sources.findIndex((s) => s.src === img.getAttribute('src'))
     img.addEventListener('click', () => {
-      // Open first: the thumbnail strip can only scroll once it is laid out.
       dialog.showModal()
       show(first >= 0 ? first : i)
     })
@@ -66,8 +58,6 @@ export function initGallery(content: HTMLElement): void {
   prev.addEventListener('click', () => show(index - 1))
   next.addEventListener('click', () => show(index + 1))
   dialog.querySelector('[data-gallery-close]')!.addEventListener('click', () => dialog.close())
-  // The dialog fills the screen, so a click on the empty space around the
-  // image lands on the stage itself.
   stage.addEventListener('click', (event) => {
     if (event.target === stage) dialog.close()
   })

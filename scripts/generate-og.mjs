@@ -1,16 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Post-build script: generates the OG (Open Graph) thumbnail images for social
- * media sharing — one 1200x630 PNG per post × language, plus the default one.
- *
- * The OG meta tags themselves are written by Astro into each page's <head>
- * (src/views/PostView.astro); this script checks they are there.
- *
- * Usage: node scripts/generate-og.mjs
- * Env:   SITE_URL (default: https://wifsimster.github.io)
- */
-
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
@@ -19,7 +8,6 @@ import { Resvg } from '@resvg/resvg-js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-/** Posts dated after today are scheduled: written, merged, not yet published. */
 const TODAY_ISO = new Date().toISOString().slice(0, 10)
 const ROOT = join(__dirname, '..')
 const DIST = join(ROOT, 'dist')
@@ -30,12 +18,6 @@ const SITE_NAME = 'Wifsimster Blog'
 const OG_WIDTH = 1200
 const OG_HEIGHT = 630
 
-// ─── Post data extraction ──────────────────────────────────────────
-
-/**
- * Extract a quoted string value after a given key in text.
- * Handles single quotes, double quotes, and escaped characters.
- */
 function extractStringAfterKey(text, key) {
   const pattern = new RegExp(`${key}:\\s*(['"\`])`)
   const match = pattern.exec(text)
@@ -65,10 +47,6 @@ function extractStringAfterKey(text, key) {
   return value.trim()
 }
 
-/**
- * Extract title and description from a named content block
- * (e.g. frenchContent or englishContent).
- */
 function extractContentBlock(content, varName) {
   const blockRegex = new RegExp(`const\\s+${varName}\\s*:\\s*PostContent\\s*=\\s*\\{`, 'm')
   const blockMatch = blockRegex.exec(content)
@@ -76,7 +54,6 @@ function extractContentBlock(content, varName) {
 
   const blockStart = blockMatch.index + blockMatch[0].length
 
-  // Find the html: field which marks the end of simple fields
   let htmlIdx = content.indexOf('\n  html:', blockStart)
   if (htmlIdx === -1) htmlIdx = content.indexOf('\n\thtml:', blockStart)
   if (htmlIdx === -1) htmlIdx = content.indexOf('html:', blockStart)
@@ -90,20 +67,12 @@ function extractContentBlock(content, varName) {
   }
 }
 
-/**
- * True when the post's metadata block carries `draft: true`. Drafts stay
- * reachable at their URL for review, but are excluded from everything a crawler
- * or a feed reader sees.
- */
 function isDraft(content) {
   const match = /export\s+const\s+metadata\s*:\s*PostMetadata\s*=\s*\{([\s\S]*?)\n\}/.exec(content)
   const block = match ? match[1] : ''
   return /\bdraft\s*:\s*true\b/.test(block)
 }
 
-/**
- * Parse a post source file and extract post metadata + content for both languages.
- */
 function extractPostData(filePath) {
   const content = readFileSync(filePath, 'utf-8')
 
@@ -123,12 +92,9 @@ function extractPostData(filePath) {
   return { slug, date, tags, fr, en, draft: isDraft(content), scheduled: date > TODAY_ISO }
 }
 
-// ─── Font loading ───────────────────────────────────────────────────
-
 async function loadFonts() {
   const cssUrl = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700'
 
-  // Use IE 11 user-agent to get WOFF format (supported by satori)
   const cssRes = await fetch(cssUrl, {
     headers: {
       'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko'
@@ -163,8 +129,6 @@ async function loadFonts() {
   return fonts
 }
 
-// ─── OG image generation ────────────────────────────────────────────
-
 function createOgElement(title, description, tags) {
   const titleFontSize = title.length > 80 ? 32 : title.length > 50 ? 40 : 48
   const descText = description
@@ -185,7 +149,6 @@ function createOgElement(title, description, tags) {
         fontFamily: 'Inter',
       },
       children: [
-        // Accent bar
         {
           type: 'div',
           props: {
@@ -197,7 +160,6 @@ function createOgElement(title, description, tags) {
             }
           }
         },
-        // Title + description
         {
           type: 'div',
           props: {
@@ -237,7 +199,6 @@ function createOgElement(title, description, tags) {
             ]
           }
         },
-        // Footer: blog name + tags
         {
           type: 'div',
           props: {
@@ -297,8 +258,6 @@ async function generateOgImage(element, fonts, outputPath) {
   writeFileSync(outputPath, png)
 }
 
-// ─── Default homepage OG image ──────────────────────────────────────
-
 function createDefaultOgElement() {
   return {
     type: 'div',
@@ -356,8 +315,6 @@ function createDefaultOgElement() {
   }
 }
 
-// ─── Main ───────────────────────────────────────────────────────────
-
 async function main() {
   console.log('Generating OG pages and images...')
   console.log(`  Site URL: ${SITE_URL}`)
@@ -366,17 +323,13 @@ async function main() {
     console.warn('  Warning: Using default SITE_URL. Set SITE_URL env var for production.')
   }
 
-  // 1. Extract post data from the post source files
   const postFiles = readdirSync(POSTS_SRC).filter(f => f.endsWith('.ts') && f !== 'index.ts')
   const parsed = postFiles.map(f => extractPostData(join(POSTS_SRC, f))).filter(Boolean)
   const draftCount = parsed.filter(p => p.draft).length
   const scheduledCount = parsed.filter(p => !p.draft && p.scheduled).length
-  // Drafts and scheduled posts get no OG image: their page carries a noindex
-  // tag and no social card.
   const posts = parsed.filter(p => !p.draft && !p.scheduled)
   console.log(`  Found ${posts.length} posts (${draftCount} draft(s), ${scheduledCount} scheduled skipped)`)
 
-  // 2. Load fonts
   let fonts
   try {
     fonts = await loadFonts()
@@ -387,19 +340,16 @@ async function main() {
     fonts = null
   }
 
-  // 3. Generate OG images
   const ogDir = join(DIST, 'images', 'og')
   let imageCount = 0
 
   if (fonts) {
     mkdirSync(ogDir, { recursive: true })
 
-    // Default blog OG image
     const defaultElement = createDefaultOgElement()
     await generateOgImage(defaultElement, fonts, join(ogDir, 'default.png'))
     imageCount++
 
-    // Per-post OG images
     for (const post of posts) {
       for (const lang of ['fr', 'en']) {
         const content = lang === 'en' ? post.en : post.fr
@@ -414,7 +364,6 @@ async function main() {
     console.log(`  Generated ${imageCount} OG images`)
   }
 
-  // 4. Validate the pages Astro wrote
   let errors = 0
   let htmlCount = 0
 

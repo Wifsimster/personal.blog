@@ -1,9 +1,4 @@
 ---
-/**
- * Search box, tag filters and the year-grouped post list, shared by the home
- * page and the tag pages. Every card is rendered here; src/scripts/listing.ts
- * only hides and shows them as the reader types or picks a tag.
- */
 import PostList from '@/components/PostList.astro'
 import { groupByYear, filterTags } from '@/lib/listing'
 import { langPrefix, t } from '@/lib/i18n'
@@ -14,7 +9,6 @@ import type { Language } from '@/types/i18n'
 export interface Props {
   lang: Language
   posts: Post[]
-  /** Set on a tag page: tag pills become links and this one is highlighted. */
   currentTag?: string
 }
 
@@ -36,7 +30,6 @@ const pillActive = 'bg-primary-600 dark:bg-primary-500 text-white'
   data-pill-idle={pillIdle}
   data-pill-active={pillActive}
 >
-  <!-- Search Input -->
   <div class="mb-6">
     <div class="relative">
       <input
@@ -58,7 +51,6 @@ const pillActive = 'bg-primary-600 dark:bg-primary-500 text-white'
     </div>
   </div>
 
-  <!-- Tag Filters — single scrollable row on mobile, wrapping cloud on larger screens -->
   <div class="mb-6">
     <div class="flex gap-2 flex-nowrap overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:overflow-visible">
       {availableTags.map((tag) => currentTag ? (
@@ -73,7 +65,6 @@ const pillActive = 'bg-primary-600 dark:bg-primary-500 text-white'
     </div>
   </div>
 
-  <!-- Clear Filters Button -->
   <div data-listing-clear-filters hidden class="mb-6">
     <button
       type="button"

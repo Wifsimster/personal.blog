@@ -8,8 +8,6 @@ import * as noChoices from './loops/no-choices';
 import * as notTheSun from './loops/not-the-sun';
 import * as tenYears from './loops/ten-years-of-home-automation';
 
-// Une composition par boucle et par thème : `<nom>-<thème>`, rendue dans
-// public/visuals/<slug>/. fps bas = fichier plus léger quand tout bouge.
 const LOOPS = [
   {slug: 'ten-years-of-home-automation', name: 'solder', component: tenYears.Solder, fps: 20},
   {slug: 'ten-years-of-home-automation', name: 'inventory', component: tenYears.Inventory, fps: 20},

@@ -1,28 +1,3 @@
-# =============================================================================
-# Annonce vocale — script Home Assistant
-#
-# Point de passage unique pour toutes les annonces parlées de la maison.
-# Vos automatisations n'adressent jamais une enceinte : elles appellent ce
-# script avec un message, une pièce et un volume. Le jour où les enceintes
-# changent de nom, il y a un seul fichier à corriger.
-#
-# INSTALLATION
-#   1. Coller ce bloc dans `scripts.yaml`, ou dans un package.
-#   2. Adapter la table `cibles` ci-dessous à vos enceintes.
-#   3. Recharger les scripts (Outils de développement → YAML → Scripts).
-#
-# APPEL
-#   action: script.annonce
-#   data:
-#     message: "Sam, brosse tes dents."
-#     piece: chambre      # chambre | salon | toutes
-#     volume: 35          # volume du CLIP, pas de l'enceinte
-#     nuit: false         # true pour passer outre les heures calmes
-#
-# Testé sur Home Assistant 2026.7 avec des enceintes Sonos et une synthèse
-# vocale Piper locale (intégration Wyoming).
-# =============================================================================
-
 annonce:
   alias: Annonce vocale
   icon: mdi:bullhorn
@@ -66,21 +41,11 @@ annonce:
         boolean:
 
   sequence:
-    # -------------------------------------------------------------------------
-    # 1. Heures calmes. Rien ne sort entre 21 h 45 et 7 h 00, sauf `nuit: true`.
-    #    Ajustez les deux horaires à votre maison.
-    # -------------------------------------------------------------------------
     - alias: "Heures calmes : on ne réveille personne sauf urgence"
       condition: template
       value_template: >-
         {{ (nuit | default(false)) or (today_at('07:00') <= now() <= today_at('21:45')) }}
 
-    # -------------------------------------------------------------------------
-    # 2. À PERSONNALISER — la table des cibles.
-    #    Une clé par pièce, la valeur étant la liste des media_player.
-    #    Le filtre `has_value` écarte les enceintes absentes ou injoignables,
-    #    ce qui évite une erreur quand l'une d'elles est débranchée.
-    # -------------------------------------------------------------------------
     - variables:
         cibles: >-
           {% set p = piece | default('toutes') %}
@@ -91,21 +56,10 @@ annonce:
           {% set toutes = ['media_player.sonos_chambre_enfant', 'media_player.sonos_salon'] %}
           {{ table.get(p, toutes) | select('has_value') | list }}
 
-    # -------------------------------------------------------------------------
-    # 3. Aucune enceinte joignable : on sort proprement, sans lever d'erreur.
-    # -------------------------------------------------------------------------
     - alias: "Aucune enceinte joignable : sortie silencieuse"
       condition: template
       value_template: "{{ cibles | count > 0 }}"
 
-    # -------------------------------------------------------------------------
-    # 4. Diffusion.
-    #    `announce: true` + `extra.volume` = API AudioClip sur Sonos.
-    #    NE PAS appeler media_player.volume_set avant : ça changerait
-    #    durablement le volume d'écoute pour rien.
-    #    Remplacez `tts.piper` par votre moteur (tts.google_translate_say,
-    #    tts.cloud_say, etc.).
-    # -------------------------------------------------------------------------
     - action: media_player.play_media
       target:
         entity_id: "{{ cibles }}"
@@ -116,11 +70,3 @@ annonce:
         announce: true
         extra:
           volume: "{{ volume | default(45) }}"
-
-# =============================================================================
-# NOTE DE DIAGNOSTIC
-# Pendant une annonce AudioClip, l'état du media_player ne bouge pas : ni
-# `state`, ni `media_title`, ni la position. Sonder cet état pour vérifier
-# qu'une annonce est passée donne un faux négatif. Le témoin fiable est la
-# ligne `Playing ... using websocket audioclip` dans le journal du serveur.
-# =============================================================================

@@ -1,9 +1,7 @@
-/** Shared list logic for the home, tag, archive and post pages. */
 import { getAllPosts, getAllTags } from '@/posts'
 import { sortPostsByDate, type Post } from '@/lib/posts'
 import type { Language } from '@/types/i18n'
 
-/** Tags offered as filters: used by more than one post, most used first. */
 export function filterTags(): string[] {
   return Object.entries(getAllTags())
     .filter(([, count]) => count > 1)
@@ -11,7 +9,6 @@ export function filterTags(): string[] {
     .map(([tag]) => tag)
 }
 
-/** The three most used tags, shown under the sidebar search. */
 export function topTags(): string[] {
   return Object.entries(getAllTags())
     .sort(([, a], [, b]) => b - a)
@@ -31,7 +28,6 @@ export function groupByYear(posts: Post[]): Array<{ year: number; posts: Post[] 
     .sort((a, b) => b.year - a.year)
 }
 
-/** Up to three published posts sharing the most tags with this one. */
 export function relatedPosts(post: Post, lang: Language): Post[] {
   if (!post.tags?.length) return []
   const currentTags = new Set(post.tags)
@@ -44,7 +40,6 @@ export function relatedPosts(post: Post, lang: Language): Post[] {
     .map((s) => s.post)
 }
 
-/** Short excerpt for posts without a description. */
 export function excerpt(post: Post): string {
   if (post.description) return post.description
   const text = post.html

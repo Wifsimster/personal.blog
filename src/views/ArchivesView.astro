@@ -16,9 +16,6 @@ const monthNames = lang === 'fr'
   ? ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
   : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-// Same shape and order as the Vue page: a plain object keyed by year (so
-// years list oldest first, the way JS orders integer-like keys) holding the
-// months in the order posts appear, newest first.
 const grouped: Record<string, Record<string, Post[]>> = {}
 for (const post of sortPostsByDate(getAllPosts(lang))) {
   const date = new Date(post.date)

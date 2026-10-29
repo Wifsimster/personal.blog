@@ -1,4 +1,3 @@
-/** Leading + trailing throttle, like VueUse's useThrottleFn defaults. */
 export function throttle(fn: () => void, ms: number): () => void {
   let last = 0
   let timer: ReturnType<typeof setTimeout> | undefined

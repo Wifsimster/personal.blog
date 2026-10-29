@@ -1,15 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-# Authoritative production deploy script for the blog.
-# Invoked by the Release workflow (.github/workflows/release.yml) on the
-# self-hosted runner. Pulls the freshly published image, restarts the
-# container, verifies the live site responds, and rolls back on failure.
-#
-# Overridable via environment:
-#   BLOG_COMPOSE_DIR  directory holding compose.yml      (default /opt/docker/personal-blog)
-#   BLOG_HEALTH_URL   URL probed to confirm the deploy   (default public site)
-
 COMPOSE_DIR="${BLOG_COMPOSE_DIR:-/opt/docker/personal-blog}"
 HEALTH_URL="${BLOG_HEALTH_URL:-https://blog.battistella.ovh/}"
 CONTAINER="personal-blog"
@@ -18,7 +9,6 @@ IMAGE="wifsimster/wifsimster-blog:latest"
 
 cd "$COMPOSE_DIR"
 
-# Record the currently-running image so a bad release can be rolled back.
 PREVIOUS_IMAGE="$(docker inspect --format '{{.Image}}' "$CONTAINER" 2>/dev/null || true)"
 
 echo "Pulling latest image..."
@@ -27,8 +17,6 @@ docker compose pull "$SERVICE"
 echo "Restarting service..."
 docker compose up -d "$SERVICE"
 
-# Poll the live site instead of trusting `up -d`, which returns as soon as the
-# container *starts* — not when it actually serves content.
 verify() {
   for attempt in $(seq 1 10); do
     if curl -fsSL --max-time 5 "$HEALTH_URL" >/dev/null 2>&1; then

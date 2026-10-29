@@ -1,30 +1,17 @@
 #!/usr/bin/env node
 
-/**
- * Post-build script: generates a multilingual sitemap.xml.
- *
- * Reads post data from the post source files (src/posts/*.ts) and writes:
- *   - dist/sitemap.xml   (FR + EN URLs with xhtml:link hreflang alternates)
- *
- * Usage: node scripts/generate-sitemap.mjs
- * Env:   SITE_URL (default: https://blog.battistella.ovh)
- */
-
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-/** Posts dated after today are scheduled: written, merged, not yet published. */
 const TODAY_ISO = new Date().toISOString().slice(0, 10)
 const ROOT = join(__dirname, '..')
 const DIST = join(ROOT, 'dist')
 const POSTS_SRC = join(ROOT, 'src', 'posts')
 
 const SITE_URL = (process.env.SITE_URL || 'https://blog.battistella.ovh').replace(/\/$/, '')
-
-// ─── Post data extraction (mirrors generate-rss.mjs / generate-og.mjs) ─
 
 function extractStringAfterKey(text, key) {
   const pattern = new RegExp(`${key}:\\s*(['"\`])`)
@@ -69,11 +56,6 @@ function extractTitleFor(content, varName) {
   return extractStringAfterKey(fieldsBlock, 'title')
 }
 
-/**
- * True when the post's metadata block carries `draft: true`. Drafts stay
- * reachable at their URL for review, but are excluded from everything a crawler
- * or a feed reader sees.
- */
 function isDraft(content) {
   const match = /export\s+const\s+metadata\s*:\s*PostMetadata\s*=\s*\{([\s\S]*?)\n\}/.exec(content)
   const block = match ? match[1] : ''
@@ -92,16 +74,10 @@ function extractPostData(filePath) {
   return { slug, date, hasFr, hasEn, draft: isDraft(content), scheduled: date > TODAY_ISO }
 }
 
-// ─── Tag collection ────────────────────────────────────────────────
-
 function collectTags(posts) {
   const tags = new Set()
-  // Tags live inside `tags: [...]` arrays in each SFC; re-parse them here so
-  // we don't depend on a build-time registry.
   return tags
 }
-
-// ─── XML escaping ──────────────────────────────────────────────────
 
 function escapeXml(str) {
   if (!str) return ''
@@ -119,8 +95,6 @@ function toIsoDate(dateString) {
   if (isNaN(d.getTime())) return new Date().toISOString()
   return d.toISOString()
 }
-
-// ─── URL entry generation ──────────────────────────────────────────
 
 function urlEntry({ loc, lastmod, changefreq = 'monthly', priority = '0.7', alternates = [] }) {
   const altLinks = alternates
@@ -142,13 +116,10 @@ function buildHreflangSet(frUrl, enUrl, hasFr, hasEn) {
   const set = []
   if (hasFr) set.push({ hreflang: 'fr', href: frUrl })
   if (hasEn) set.push({ hreflang: 'en', href: enUrl })
-  // x-default: FR is the historical primary locale.
   if (hasFr) set.push({ hreflang: 'x-default', href: frUrl })
   else if (hasEn) set.push({ hreflang: 'x-default', href: enUrl })
   return set
 }
-
-// ─── Main ──────────────────────────────────────────────────────────
 
 function main() {
   console.log('Generating sitemap.xml...')
@@ -169,7 +140,6 @@ function main() {
   const today = new Date().toISOString()
   const entries = []
 
-  // Homepage (FR + EN)
   entries.push(urlEntry({
     loc: `${SITE_URL}/`,
     lastmod: today,
@@ -185,7 +155,6 @@ function main() {
     alternates: buildHreflangSet(`${SITE_URL}/`, `${SITE_URL}/en`, true, true)
   }))
 
-  // Archives (FR + EN)
   entries.push(urlEntry({
     loc: `${SITE_URL}/archives`,
     lastmod: today,
@@ -201,7 +170,6 @@ function main() {
     alternates: buildHreflangSet(`${SITE_URL}/archives`, `${SITE_URL}/en/archives`, true, true)
   }))
 
-  // Posts
   for (const post of posts) {
     const lastmod = toIsoDate(post.date)
     const frUrl = `${SITE_URL}/posts/${post.slug}`

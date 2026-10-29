@@ -1,4 +1,3 @@
-/** Behaviour shared by every page: theme, mobile header, search shortcuts, spotlight. */
 import { throttle } from '@/scripts/throttle'
 
 const STORAGE_KEY = 'vueuse-color-scheme'
@@ -18,18 +17,15 @@ function initThemeToggle(): void {
       try {
         localStorage.setItem(STORAGE_KEY, dark ? 'dark' : 'light')
       } catch {
-        // Private mode: the choice lasts for this page only.
       }
       sync()
     })
   }
-  // No saved choice (or 'auto'): follow the system theme when it changes.
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     let stored: string | null = null
     try {
       stored = localStorage.getItem(STORAGE_KEY)
     } catch {
-      // Private mode: treat as no saved choice.
     }
     if (stored && stored !== 'auto') return
     document.documentElement.classList.toggle('dark', e.matches)
@@ -38,13 +34,6 @@ function initThemeToggle(): void {
   sync()
 }
 
-/**
- * Slide the mobile header away while reading down, bring it back on the first
- * upward scroll. Small deltas are ignored so it doesn't flicker on momentum
- * bounce; the header always stays visible near the top and while the menu is
- * open. The state is mirrored on <html data-header-hidden> for the reading
- * progress bar, which follows the header edge.
- */
 function initHeader(): void {
   const header = document.querySelector<HTMLElement>('[data-site-header]')
   if (!header) return
@@ -84,10 +73,6 @@ function initHeader(): void {
   )
 }
 
-/**
- * Sidebar and mobile-menu search: Enter sends the query to the home page's
- * list — directly when it is on screen, through `?q=` otherwise.
- */
 function initSearchShortcuts(): void {
   const inputs = Array.from(document.querySelectorAll<HTMLInputElement>('[data-search-shortcut]'))
   const clear = document.querySelector<HTMLButtonElement>('[data-search-shortcut-clear]')
@@ -123,11 +108,6 @@ function initSearchShortcuts(): void {
   document.addEventListener('blog:search-changed', (event) => mirror((event as CustomEvent<string>).detail))
 }
 
-/**
- * Cursor spotlight over the background dot grid. Decorative only — the layer
- * lives in CSS (.tech-spotlight); this feeds it the pointer position,
- * rAF-throttled so the DOM is touched once a frame.
- */
 function initSpotlight(): void {
   const el = document.querySelector<HTMLElement>('.tech-spotlight')
   if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return

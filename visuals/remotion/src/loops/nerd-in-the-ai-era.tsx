@@ -2,12 +2,8 @@ import React from 'react';
 import {Easing, interpolate} from 'remotion';
 import {clamp, Frame, LoopProps, ramp, THEMES, useSteps} from './common';
 
-// Chaque boucle est décalée pour que l'image 0 (le PNG servi sous
-// prefers-reduced-motion) montre l'état complet, pas un cadre vide.
 const shifted = (s: number, offset: number) => (s + offset) % 60;
 
-// 1. Une timeline déjà racontée : un point parcourt la ligne, les récits
-// s'allument au passage, et « aujourd'hui » répond par une onde.
 export const Timeline: React.FC<LoopProps> = ({theme}) => {
   const c = THEMES[theme];
   const s = shifted(useSteps(), 46);

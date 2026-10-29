@@ -1,6 +1,3 @@
-// Rend chaque boucle en WebP animé transparent (façon GIF, assemblé par Pillow) + un PNG fixe
-// servi sous prefers-reduced-motion, dans public/visuals/<slug>/ (le slug vient des props de la composition).
-//   node render.mjs [filtre]      REMOTION_BROWSER=<chrome> pour un navigateur local
 import {bundle} from '@remotion/bundler';
 import {renderFrames, getCompositions, selectComposition} from '@remotion/renderer';
 import {execFileSync} from 'node:child_process';

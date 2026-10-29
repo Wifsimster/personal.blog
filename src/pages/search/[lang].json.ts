@@ -1,8 +1,3 @@
-/**
- * /search/fr.json and /search/en.json: the lower-cased plain text of every
- * published post, keyed by slug. The home and tag pages load it on first use
- * of the search box (src/scripts/listing.ts).
- */
 import type { APIRoute, GetStaticPaths } from 'astro'
 import { getAllPosts } from '@/posts'
 import { htmlToText } from '@/lib/render'

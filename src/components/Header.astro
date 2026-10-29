@@ -1,5 +1,4 @@
 ---
-/** Mobile header (below lg): slides away while reading down, back on scroll up. */
 import LanguageSwitch from '@/components/LanguageSwitch.astro'
 import ThemeToggle from '@/components/ThemeToggle.astro'
 import { homePath, langPrefix, t } from '@/lib/i18n'
@@ -36,7 +35,6 @@ const roundButton = 'w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-
       </div>
     </div>
   </div>
-  <!-- Mobile Menu Dropdown -->
   <div data-menu hidden class="mobile-menu border-t border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
     <nav class="px-4 py-3 space-y-1">
       {navItems.map((item) => (
@@ -51,7 +49,6 @@ const roundButton = 'w-8 h-8 rounded-full bg-gray-200 dark:bg-zinc-700 hover:bg-
         </a>
       ))}
     </nav>
-    <!-- Search -->
     <div class="px-4 py-3 border-t border-gray-200 dark:border-zinc-800">
       <div class="relative">
         <input

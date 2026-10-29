@@ -1,4 +1,3 @@
-/** Absolute URLs and head metadata shared by the page views. */
 import type { Language } from '@/types/i18n'
 import { langPrefix } from '@/lib/i18n'
 
@@ -6,7 +5,6 @@ export const SITE_URL = 'https://blog.battistella.ovh'
 export const SITE_NAME = 'Wifsimster Blog'
 export const AUTHOR_NAME = 'Wifsimster'
 
-/** `/archives` → `{ fr: …/archives, en: …/en/archives }`. */
 export function alternatesFor(pathWithoutLang: string) {
   return {
     fr: `${SITE_URL}${pathWithoutLang || '/'}`,

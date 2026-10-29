@@ -20,22 +20,15 @@
 }
 
 @layer base {
-  /* Techy background system — dot grid + corner glow.
-     CSS/SVG-free (pure CSS gradients), theme-safe, self-hosted.
-     Tuned per theme via variables so it inverts cleanly. */
   :root {
     --tech-dot: rgba(15, 23, 42, 0.035);
     --tech-dot-hot: rgba(14, 165, 233, 0.55);
     --tech-glow-1: rgba(14, 165, 233, 0.10);
     --tech-glow-2: rgba(99, 102, 241, 0.05);
     --tech-grid: 26px;
-    /* Cursor spotlight — position tracked from JS, radius fixed. */
     --spot-x: 50%;
     --spot-y: 50%;
     --spot-r: 120px;
-    /* Diagram accent. One colour, used on the single element that carries a
-       diagram's conclusion. Declared per theme so inline SVGs stay theme-safe
-       without hard-coded hex — `fill="var(--diagram-accent)"` in the markup. */
     --diagram-accent: #0284c7;
     --diagram-accent-soft: rgba(2, 132, 199, 0.18);
   }
@@ -71,11 +64,6 @@
     }
   }
 
-  /* Cursor spotlight over the dot grid.
-     A brighter copy of the same grid, aligned via background-attachment: fixed,
-     revealed only inside a soft radius that tracks the pointer. Purely
-     decorative: fixed, non-interactive, sits above the body background but
-     behind all content. */
   .tech-spotlight {
     position: fixed;
     inset: 0;
@@ -105,7 +93,6 @@
     opacity: 1;
   }
 
-  /* Motion-sensitive readers get no cursor animation at all. */
   @media (prefers-reduced-motion: reduce) {
     .tech-spotlight {
       display: none;
@@ -114,15 +101,10 @@
 }
 
 @layer components {
-  /* Single source of truth for keyboard focus on interactive controls
-     (buttons, icon buttons, pills, block/list links). Mirrors the ring
-     the back-to-top button already used. Text inputs keep their own `focus:` ring
-     but reuse the same offset colors inline. */
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900;
   }
 
-  /* Horizontal scroll containers (mobile tag row) — scrollable but chromeless. */
   .no-scrollbar {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -136,7 +118,6 @@
     @apply max-w-none font-serif;
   }
 
-  /* Deep links to a heading land below the sticky mobile header. */
   .post-content :is(h2, h3)[id] {
     scroll-margin-top: 5rem;
   }
@@ -225,25 +206,6 @@
     word-break: normal;
   }
 
-  /* Diagrams read small because the 800-unit viewBox scales to the rendered
-     width: in the prose column a 13px label lands near 10px.
-
-     There is almost no room to widen them. This layout has a table of
-     contents rail on each side, and the column already fills the space
-     between them — measured gap from the column's right edge to the right
-     rail is a constant 49px at 1024/1280/1440. An earlier attempt to break
-     out to min(68rem, ...) did not widen anything, it slid 215px underneath
-     the right rail. So the bleed here is deliberately small enough to fit
-     that gap, and verified not to overlap at 390 through 1920.
-
-     The real lever is the viewBox itself, not the CSS: a diagram drawn on a
-     narrower canvas gets a larger effective type size at the same rendered
-     width. New diagrams should be authored for the width they actually get.
-
-     On narrow viewports no width exists at all, and shrinking the SVG only
-     destroys the type, so .diagram-scroll holds a min-width equal to the
-     640-unit canvas and scrolls horizontally instead. At that floor the
-     scale never drops below 1, so a 13px label never renders below 13px. */
   .prose .diagram-scroll {
     width: 100%;
     margin-top: 2.5rem;
@@ -258,9 +220,6 @@
     }
   }
 
-  /* Section loops: small silent animated WebP (Remotion, visuals/remotion)
-     under a heading. Decorative (alt=""); one file per theme, and a still
-     PNG under prefers-reduced-motion via <source media>. */
   .prose .section-loop { display: block; margin: -0.25rem 0 1.25rem; }
   .prose .section-loop img {
     display: block;
@@ -276,9 +235,6 @@
   .dark .prose .section-loop.loop-light { display: none; }
   .dark .prose .section-loop.loop-dark { display: block; }
 
-  /* Small cover or poster beside the passage that cites the work. On a
-     phone it is a compact row (thumbnail + caption) so the text column
-     keeps its width; from 768px it floats right of the paragraph. */
   .prose .post-cover {
     display: grid;
     grid-template-columns: 5.5rem 1fr;
@@ -309,8 +265,6 @@
       margin: 0.375rem 0 1rem 1.75rem;
     }
     .prose .post-cover figcaption { margin-top: 0.5rem; }
-    /* Alternate sides when covers follow each other, so each one lines up
-       with its own paragraph instead of queuing under the previous float. */
     .prose .post-cover.post-cover-left {
       float: left;
       clear: left;
@@ -334,14 +288,6 @@
     margin: 0;
   }
 
-  /* Phone layout, opt-in. A diagram that must read whole on a phone ships
-     two drawings in a row: `diagram-wide` on the usual 640 units and
-     `diagram-narrow` on 320 units (the column of a 360px phone, so its
-     nominal sizes hold there too). Each wrapper is a size container and
-     only the drawing that fits its column shows; the other one is
-     display:none, out of layout and out of the accessibility tree. The
-     margins move from the wrapper to the SVG so the hidden one takes no
-     space. Diagrams without these classes keep the scroll above. */
   .prose .diagram-scroll:has(> .diagram-wide, > .diagram-narrow) {
     container-type: inline-size;
     margin-top: 0;
@@ -362,13 +308,6 @@
     .prose .diagram-svg.diagram-wide { display: none; }
   }
 
-  /* On a phone the diagram is wider than the screen and has to scroll —
-     that's correct per the rule above, but with no signal it just reads as
-     cut off (verified on a real device: the headline and bars end abruptly
-     at the screen edge). src/scripts/post.ts toggles these two classes from
-     the scroll position; the mask fades whichever edge still hides
-     content, so it reveals the real page background instead of an
-     approximated overlay color. No fade at all once nothing is hidden. */
   .prose .diagram-scroll {
     -webkit-mask-image: none;
     mask-image: none;
@@ -389,21 +328,12 @@
     mask-image: linear-gradient(to right, transparent 0%, black 28px, black calc(100% - 28px), transparent 100%);
   }
 
-  /* Dark-mode legibility floor for diagrams. Every diagram draws with
-     currentColor + per-element opacity; the tonality ladder that reads fine
-     on white (text at 0.45-0.65) drops below comfortable contrast on
-     zinc-900. Rather than editing 40+ inline SVGs, dark mode lifts the low
-     end of the ladder here — each step keeps its rank, so the typographic
-     hierarchy survives. Values are matched exactly as authored; new diagrams
-     should keep using the same ladder. */
   .dark .prose .diagram-svg text[opacity="0.45"] { opacity: 0.65; }
   .dark .prose .diagram-svg text[opacity="0.5"]  { opacity: 0.68; }
   .dark .prose .diagram-svg text[opacity="0.55"] { opacity: 0.72; }
   .dark .prose .diagram-svg text[opacity="0.6"]  { opacity: 0.76; }
   .dark .prose .diagram-svg text[opacity="0.65"] { opacity: 0.8; }
 
-  /* Same idea for faint panel fills: data boxes need to read as surfaces
-     against the deep background, so the faint band gets a ~+0.04 lift. */
   .dark .prose .diagram-svg [fill-opacity="0.07"] { fill-opacity: 0.11; }
   .dark .prose .diagram-svg [fill-opacity="0.09"] { fill-opacity: 0.13; }
   .dark .prose .diagram-svg [fill-opacity="0.10"] { fill-opacity: 0.14; }
@@ -449,12 +379,6 @@
     }
   }
 
-  /* The article title belongs to the article, not to the interface. It was
-     sans-serif while every heading inside the piece was Charter, so the page
-     switched type family halfway down its own hierarchy. Title, section
-     headings and body are now one voice; the sans family stays for chrome
-     (nav, sidebar, cards, meta). Leading was 1.11, which made a three-line
-     title on a phone nearly touch. */
   .post-title {
     font-family: var(--font-serif);
     @apply font-bold;
@@ -469,16 +393,11 @@
     }
   }
 
-  /* The standfirst was 20px sans at near-title weight and competed with the
-     title it was meant to introduce. */
   .subtitle {
     font-family: var(--font-serif);
     line-height: 1.5;
   }
 
-  /* Was a saturated fill plus a coloured border plus a coloured label: the
-     loudest element on the page, louder than the title. A summary should be
-     calmer than what it summarises. Now a single left rule carries it. */
   .prose .post-tldr {
     @apply my-6 py-1 pl-5 pr-0 text-gray-700 dark:text-zinc-300;
     border-left: 3px solid var(--diagram-accent);
@@ -498,10 +417,6 @@
     opacity: 0.5;
   }
 
-  /* The title attribute never fires on touch, so abbr is silent on mobile —
-     the site's own primary device. src/scripts/post.ts adds a tap/click handler
-     that shows this as a positioned popover; these two rules are just the
-     affordance (a visibly tappable underline) and the popover's look. */
   .prose abbr[title] {
     @apply cursor-help border-b border-dotted border-gray-400 dark:border-zinc-500;
     text-decoration: none;
@@ -523,19 +438,14 @@
     @apply font-mono text-sm;
   }
 
-  /* Back-to-top: out of sight (and out of the way) until the reader has
-     scrolled about a viewport down. */
   .back-to-top {
     @apply transition-all duration-300 ease-out motion-reduce:transition-none;
   }
 
-  /* `invisible` also takes it out of the accessibility tree; with
-     transition-all, visibility flips only once the fade has finished. */
   .back-to-top.back-to-top-hidden {
     @apply invisible opacity-0 translate-y-3 pointer-events-none;
   }
 
-  /* Mobile menu dropdown entrance. */
   .mobile-menu:not([hidden]) {
     animation: menu-in 200ms ease-out;
   }
@@ -549,8 +459,6 @@
     .mobile-menu:not([hidden]) { animation: none; }
   }
 
-  /* Article photo gallery. A near-black mask, so the article never shows
-     through; the dialog itself is a transparent full-screen stage. */
   .image-gallery {
     width: 100vw;
     max-width: 100vw;

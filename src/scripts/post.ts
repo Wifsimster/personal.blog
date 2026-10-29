@@ -1,8 +1,3 @@
-/**
- * Article page behaviour: reading progress, back-to-top, table-of-contents
- * highlight, tap-to-read abbreviations, diagram scroll hints, the image
- * gallery and the "engaged read" analytics beacon.
- */
 import { throttle } from '@/scripts/throttle'
 import { initGallery } from '@/scripts/gallery'
 
@@ -26,8 +21,6 @@ function initReadingProgress(): void {
   update()
 }
 
-// Show the button once the reader has scrolled roughly one viewport down, and
-// fade it back to its idle state shortly after the last scroll event.
 const SCROLL_THRESHOLD = 400
 const SCROLL_IDLE_DELAY = 1200
 
@@ -60,15 +53,14 @@ function initBackToTop(): void {
     { passive: true }
   )
   button.addEventListener('click', () => {
-    // Honor the reader's motion preference; jump instantly if they opted out.
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })
   })
   updateVisibility()
 }
 
-const SCROLL_OFFSET = 80 // Room for the sticky header when jumping to a heading
-const ACTIVE_HEADING_OFFSET = 100 // A heading this close to the top counts as current
+const SCROLL_OFFSET = 80
+const ACTIVE_HEADING_OFFSET = 100
 
 function initTableOfContents(): void {
   const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-toc] a[href^="#"]'))
@@ -100,16 +92,10 @@ function initTableOfContents(): void {
     })
   })
   window.addEventListener('scroll', throttle(update, 100), { passive: true })
-  // Lazy images above a heading push it down after they load.
   window.addEventListener('load', update)
   update()
 }
 
-/**
- * abbr's title attribute never fires on touch — mobile, the site's primary
- * device, can't read it at all. Tap/click toggles a positioned popover
- * instead; one shared tooltip node, reused for every abbr on the page.
- */
 function initAbbrTooltips(content: HTMLElement): void {
   let tooltip: HTMLDivElement | null = null
   let activeAbbr: HTMLElement | null = null
@@ -183,12 +169,6 @@ function initAbbrTooltips(content: HTMLElement): void {
   window.addEventListener('resize', onViewportChange)
 }
 
-/**
- * A diagram wider than the viewport scrolls (see .diagram-scroll in main.css)
- * but gave no sign of it on a real phone. These classes drive the edge-fade
- * mask, set from the actual scroll position, so the fade only ever covers an
- * edge that still hides content.
- */
 function initDiagramScrollFades(content: HTMLElement): void {
   const scrollers = Array.from(content.querySelectorAll<HTMLElement>('.diagram-scroll'))
   const update = (el: HTMLElement) => {
@@ -202,18 +182,10 @@ function initDiagramScrollFades(content: HTMLElement): void {
   window.addEventListener('resize', () => scrollers.forEach(update))
 }
 
-/**
- * Privacy-friendly "engaged read" beacon: one `engaged_read` event to Umami
- * once the reader has stayed 10 s on the article or scrolled past half of it,
- * whichever comes first. Leaving before that sends nothing. No cookies, no
- * client IDs, no PII. Without the Umami tracker (dev, blocked script) this is
- * a no-op.
- */
 const ENGAGEMENT_DWELL_MS = 10_000
 const ENGAGEMENT_SCROLL_PCT = 50
 
 function initEngagedReadBeacon(article: HTMLElement): void {
-  // A draft is only read by its author. Don't pollute the stats with it.
   if (article.dataset.draft === 'true') return
   let fired = false
   const fire = () => {
@@ -227,11 +199,9 @@ function initEngagedReadBeacon(article: HTMLElement): void {
       try {
         if (document.referrer && new URL(document.referrer).origin === window.location.origin) referrer = document.referrer
       } catch {
-        // Unparseable referrer: send none.
       }
       umami.track('engaged_read', { path: window.location.pathname, title: article.dataset.title || '', referrer })
     } catch {
-      // Analytics must never break the page.
     }
   }
   const onScroll = () => {
@@ -241,7 +211,6 @@ function initEngagedReadBeacon(article: HTMLElement): void {
   }
   setTimeout(fire, ENGAGEMENT_DWELL_MS)
   window.addEventListener('scroll', onScroll, { passive: true })
-  // A post shorter than the viewport counts as read straight away.
   onScroll()
 }
 

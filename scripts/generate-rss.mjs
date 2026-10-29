@@ -1,23 +1,11 @@
 #!/usr/bin/env node
 
-/**
- * Post-build script: generates RSS 2.0 feeds for both languages.
- *
- * Reads post data from the post source files (src/posts/*.ts) and writes:
- *   - dist/rss.xml     (French feed)
- *   - dist/en/rss.xml  (English feed)
- *
- * Usage: node scripts/generate-rss.mjs
- * Env:   SITE_URL (default: https://blog.battistella.ovh)
- */
-
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-/** Posts dated after today are scheduled: written, merged, not yet published. */
 const TODAY_ISO = new Date().toISOString().slice(0, 10)
 const ROOT = join(__dirname, '..')
 const DIST = join(ROOT, 'dist')
@@ -28,12 +16,6 @@ const SITE_NAME = 'Wifsimster Blog'
 const AUTHOR_EMAIL = 'battistella@proton.me'
 const AUTHOR_NAME = 'Wifsimster'
 
-// ─── Post data extraction ──────────────────────────────────────────
-
-/**
- * Extract a quoted string value after a given key in text.
- * Handles single quotes, double quotes, and escaped characters.
- */
 function extractStringAfterKey(text, key) {
   const pattern = new RegExp(`${key}:\\s*(['"\`])`)
   const match = pattern.exec(text)
@@ -63,11 +45,6 @@ function extractStringAfterKey(text, key) {
   return value.trim()
 }
 
-/**
- * Extract the html template literal from a PostContent block.
- * Looks for: html: `...` where the content is a plain template literal
- * without escaped backticks (matches the project convention).
- */
 function extractHtmlBlock(content, varName) {
   const blockRegex = new RegExp(`const\\s+${varName}\\s*:\\s*PostContent\\s*=\\s*\\{`, 'm')
   const blockMatch = blockRegex.exec(content)
@@ -77,13 +54,11 @@ function extractHtmlBlock(content, varName) {
   const htmlKeyIdx = content.indexOf('html:', blockStart)
   if (htmlKeyIdx === -1) return ''
 
-  // Find the opening backtick after html:
   let i = htmlKeyIdx + 'html:'.length
   while (i < content.length && content[i] !== '`') i++
   if (i >= content.length) return ''
   const htmlStart = i + 1
 
-  // Find the closing backtick (assumes no escaped backticks inside)
   let j = htmlStart
   while (j < content.length) {
     if (content[j] === '\\' && j + 1 < content.length) {
@@ -98,9 +73,6 @@ function extractHtmlBlock(content, varName) {
   return content.substring(htmlStart, j)
 }
 
-/**
- * Extract title and description from a named content block.
- */
 function extractContentBlock(content, varName) {
   const blockRegex = new RegExp(`const\\s+${varName}\\s*:\\s*PostContent\\s*=\\s*\\{`, 'm')
   const blockMatch = blockRegex.exec(content)
@@ -122,20 +94,12 @@ function extractContentBlock(content, varName) {
   }
 }
 
-/**
- * True when the post's metadata block carries `draft: true`. Drafts stay
- * reachable at their URL for review, but are excluded from everything a crawler
- * or a feed reader sees.
- */
 function isDraft(content) {
   const match = /export\s+const\s+metadata\s*:\s*PostMetadata\s*=\s*\{([\s\S]*?)\n\}/.exec(content)
   const block = match ? match[1] : ''
   return /\bdraft\s*:\s*true\b/.test(block)
 }
 
-/**
- * Parse a post source file and extract post metadata + content for both languages.
- */
 function extractPostData(filePath) {
   const content = readFileSync(filePath, 'utf-8')
 
@@ -155,8 +119,6 @@ function extractPostData(filePath) {
   return { slug, date, tags, fr, en, draft: isDraft(content), scheduled: date > TODAY_ISO }
 }
 
-// ─── RSS generation ────────────────────────────────────────────────
-
 function escapeXml(str) {
   if (!str) return ''
   return String(str)
@@ -169,14 +131,10 @@ function escapeXml(str) {
 
 function wrapCdata(str) {
   if (!str) return '<![CDATA[]]>'
-  // Avoid breaking out of CDATA: split any literal "]]>" sequences.
   const safe = String(str).replace(/]]>/g, ']]]]><![CDATA[>')
   return `<![CDATA[${safe}]]>`
 }
 
-/**
- * Ensure relative image/link URLs become absolute URLs in the feed.
- */
 function absolutizeUrls(html, baseUrl) {
   if (!html) return ''
   return html
@@ -252,8 +210,6 @@ ${items}
 `
 }
 
-// ─── Main ───────────────────────────────────────────────────────────
-
 function main() {
   console.log('Generating RSS feeds...')
   console.log(`  Site URL: ${SITE_URL}`)
@@ -275,12 +231,10 @@ function main() {
 
   console.log(`  Found ${posts.length} posts (${drafts.length} draft(s), ${scheduled.length} scheduled skipped)`)
 
-  // French feed → dist/rss.xml
   const frFeed = buildRssFeed(posts, 'fr')
   writeFileSync(join(DIST, 'rss.xml'), frFeed)
   console.log('  Wrote dist/rss.xml')
 
-  // English feed → dist/en/rss.xml
   const enDir = join(DIST, 'en')
   mkdirSync(enDir, { recursive: true })
   const enFeed = buildRssFeed(posts, 'en')
