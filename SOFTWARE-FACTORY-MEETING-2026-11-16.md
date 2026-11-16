@@ -41,7 +41,7 @@ After reading the first draft, the author overruled the first three:
 
 - Title: « Software factory : d'où vient le mot, et ce que nous en faisons » / "Software Factory: Where the Word Comes From, and What We Do With It".
 - About 1,800 words per language.
-- Visuals: the isometric factory scene from the talk, replayed as an animated WebP in French and in English, without the employer logo, slide number or progress bar, with a still for reduced motion. It is a light image in both themes. Two flat diagrams complete it: the 1968-2026 timeline and the six steps against three human decisions.
+- Visuals: the isometric factory scene from the talk, replayed as an animated WebP in French and in English, without the employer logo, slide number or progress bar, with a still for reduced motion. The isometric two-loops symbol (quality, cost) follows the same treatment, with labels added. Both are light images in both themes. Two flat diagrams complete it: the 1968-2026 timeline and the six steps against three human decisions.
 - The class-driven flat animation of the first draft is removed from `src/styles/main.css`.
 
 ## Follow-ups for the author
