@@ -53,6 +53,9 @@ After reading the first draft, the author overruled the first three:
 - The fourth-round block is not theoretical. Measured on the repository's label events: never posed before 14 November, then 11 times on 8 pull requests between 14 and 16 November, each lifted by a developer. The speaker notes dated 9 November predate the first case.
 - The prose is rewritten in the author's voice, calibrated on `sdlc-is-dead`: direct address, short assertive sentences, fewer hedges.
 
+- Figures refreshed on 16 November from the repository: about 640 pull requests merged since 14 October; 93 % with no review from another human, 64 % with no recorded review, 22 % with the keep-control label. Over the last week, two merges in three carry a review published by an agent or an automated tool. The earlier window (14 October to 9 November) reproduces the talk's figures.
+- French pass against translated-sounding phrasing: about thirty sentences reworded, one label of the two-loops visual changed.
+
 ## Follow-ups for the author
 
 - Read both languages on `/drafts`, then delete `draft: true` to publish.
