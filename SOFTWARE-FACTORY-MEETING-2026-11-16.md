@@ -44,6 +44,15 @@ After reading the first draft, the author overruled the first three:
 - Visuals: the isometric factory scene from the talk, replayed as an animated WebP in French and in English, without the employer logo, slide number or progress bar, with a still for reduced motion. The isometric two-loops symbol (quality, cost) follows the same treatment, with labels added. Both are light images in both themes. Two flat diagrams complete it: the 1968-2026 timeline and the six steps against three human decisions.
 - The class-driven flat animation of the first draft is removed from `src/styles/main.css`.
 
+## Later rulings by the author
+
+- Internal figures are rounded on purpose.
+- The paragraph on the team's own use of the two loops is removed.
+- Anglicisms are replaced in the French text and in the French scene.
+- Position on comprehension debt: understanding the code line by line is the agents' responsibility; the human one is the business need and how to solve it.
+- The fourth-round block is not theoretical. Measured on the repository's label events: never posed before 14 November, then 11 times on 8 pull requests between 14 and 16 November, each lifted by a developer. The speaker notes dated 9 November predate the first case.
+- The prose is rewritten in the author's voice, calibrated on `sdlc-is-dead`: direct address, short assertive sentences, fewer hedges.
+
 ## Follow-ups for the author
 
 - Read both languages on `/drafts`, then delete `draft: true` to publish.
