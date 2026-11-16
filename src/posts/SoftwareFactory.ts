@@ -170,11 +170,11 @@ const englishContent: PostContent = {
 <p><strong>Test counts are still typed in.</strong> The check establishes that the cited run is green on that commit. It does not cross-check how many tests were skipped. So the rule born from the incident would catch only half of the incident.</p>
 <p><strong>The security pass is one line.</strong> The risk tier is solid: it is computed from the changed paths, and a pull request cannot lower it. At the high tier, the proof must contain a security pass. The reviewing agent writes it.</p>
 <p><strong>The loop limit has never fired.</strong> At the fourth refused review round, the merge blocks until a developer decides. That case has not come up. It is a design, not a result.</p>
-<p>One objection remains, and it has a name, comprehension debt: we understand less of the code we ship. True, and I think that is no longer our place. Understanding the code line by line is now the agents' responsibility. Ours is in the need, the rules and the evidence. It is a bet, not a result: the on-site tests will say whether it holds.</p>
+<p>One objection remains, and it has a name, comprehension debt: we understand less of the code we ship. True, and I think that is no longer our place. Understanding the code line by line is now the agents' responsibility. Ours is to understand the business need. The rules and the evidence come next. It is a bet, not a result: the on-site tests will say whether it holds.</p>
 <p>I also owe my August post a correction. It described one perimeter kept human on purpose, the surface reachable from outside. I wrote that this kind of mistake should cost a conversation. The rule still demands a non-author on that perimeter. Today that non-author can be an agent. The conversation became optional, and I do not know yet which of the two posts is right.</p>
 
 <h2>What still belongs to humans</h2>
-<p>The need. Saying what to build, why, and in what order. On the drawing it is the cart on the left, and no agent pushes it.</p>
+<p>Understanding the business need. That is the core of it. Saying what to build, why, and in what order. On the drawing it is the cart on the left, and no agent pushes it.</p>
 <p>The three decisions: arbitrate, override, release.</p>
 <p>Understanding the system, not every line. What the software must guarantee, and how we prove it. The detail of the code is the agents' business.</p>
 <p>Proving it on site. The first tests in a hospital are under way. I have no number to give yet. They will tell what a merge without a human reviewer is worth.</p>
@@ -365,11 +365,11 @@ const frenchContent: PostContent = {
 <p><strong>Les décomptes de tests sont encore tapés.</strong> Le contrôle établit que l'exécution citée est verte sur ce commit. Il ne recoupe pas le nombre de tests sautés. La règle née de l'incident n'attraperait donc que la moitié de l'incident.</p>
 <p><strong>La relecture de sécurité tient en une ligne.</strong> Le niveau de risque est solide : il se calcule depuis les chemins modifiés, et une proposition ne peut pas l'abaisser. Au niveau élevé, la preuve doit contenir une relecture de sécurité. C'est l'agent relecteur qui l'écrit.</p>
 <p><strong>La limite de boucle n'a jamais servi.</strong> Au quatrième tour de revue refusé, la fusion se bloque jusqu'à la décision d'un développeur. Ce cas ne s'est pas présenté. C'est un dessin, pas un résultat.</p>
-<p>Reste l'objection qui a un nom, la dette de compréhension : nous comprenons moins le code livré. C'est vrai, et je pense que notre place n'est plus là. Comprendre le code ligne à ligne est désormais la responsabilité des agents. La nôtre est dans le besoin, dans les règles et dans les preuves. C'est un pari, pas un résultat : les tests sur site diront s'il tient.</p>
+<p>Reste l'objection qui a un nom, la dette de compréhension : nous comprenons moins le code livré. C'est vrai, et je pense que notre place n'est plus là. Comprendre le code ligne à ligne est désormais la responsabilité des agents. La nôtre est de comprendre le besoin métier. Viennent ensuite les règles et les preuves. C'est un pari, pas un résultat : les tests sur site diront s'il tient.</p>
 <p>Et je dois une correction à mon billet d'août. J'y décrivais un périmètre gardé humain exprès, la surface joignable de l'extérieur. J'écrivais que cette erreur-là devait coûter une conversation. La règle exige toujours un non-auteur sur ce périmètre. Ce non-auteur peut aujourd'hui être un agent. La conversation est devenue facultative, et je ne sais pas encore lequel des deux billets a raison.</p>
 
 <h2>Ce qui reste aux humains</h2>
-<p>Le besoin. Dire ce qu'il faut construire, pourquoi, et dans quel ordre. Sur le dessin, c'est le chariot à gauche, et aucun agent ne le pousse.</p>
+<p>Comprendre le besoin métier. C'est l'essentiel. Dire ce qu'il faut construire, pourquoi, et dans quel ordre. Sur le dessin, c'est le chariot à gauche, et aucun agent ne le pousse.</p>
 <p>Les trois décisions : trancher, passer outre, publier.</p>
 <p>Comprendre le système, pas chaque ligne. Ce que le logiciel doit garantir, et comment on le prouve. Le détail du code est l'affaire des agents.</p>
 <p>Éprouver sur site. Les premiers tests chez un établissement sont en cours. Je n'ai pas encore de chiffre à donner. Ce sont eux qui diront ce que vaut une fusion sans relecteur humain.</p>
