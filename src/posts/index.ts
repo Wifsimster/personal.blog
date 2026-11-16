@@ -44,7 +44,7 @@ import { metadata as dailyRhythmMetadata, getContent as getDailyRhythmContent } 
 import { metadata as noChoicesMetadata, getContent as getNoChoicesContent } from './AnnoncesSansChoix'
 import { metadata as notTheSunMetadata, getContent as getNotTheSunContent } from './PasLeSoleil'
 import { metadata as nerdInTheAiEraMetadata, getContent as getNerdInTheAiEraContent } from './NerdInTheAiEra'
-import { metadata as softwareFactoryMetadata, getContent as getSoftwareFactoryContent } from './SoftwareFactoryOrTenCraftsmen'
+import { metadata as softwareFactoryMetadata, getContent as getSoftwareFactoryContent } from './SoftwareFactory'
 
 export interface PostEntry {
   metadata: PostMetadata
@@ -232,7 +232,7 @@ const postRegistry: Record<string, PostEntry> = {
     metadata: notTheSunMetadata,
     getContent: getNotTheSunContent
   },
-  'software-factory-or-ten-craftsmen': {
+  'software-factory': {
     metadata: softwareFactoryMetadata,
     getContent: getSoftwareFactoryContent
   }

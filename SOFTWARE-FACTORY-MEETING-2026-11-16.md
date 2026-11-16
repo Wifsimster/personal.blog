@@ -1,6 +1,6 @@
 # Software factory article — meeting, 2026-11-16
 
-Post: `src/posts/SoftwareFactoryOrTenCraftsmen.ts`, slug `software-factory-or-ten-craftsmen`, shipped as `draft: true`.
+Post: `src/posts/SoftwareFactory.ts`, slug `software-factory`, shipped as `draft: true`.
 
 Material: the author's internal year review given on 12 November after BDX I/O (29-30 October), its speaker notes, and the Solstice* repository rules on review proof. All internal, anonymised.
 
@@ -16,28 +16,38 @@ Material: the author's internal year review given on 12 November after BDX I/O (
 
 ## Escalation to the author
 
-1. Animated factory visual from the deck: **redraw it for the blog** (not reuse the isometric scene).
-2. Angle: **factory or ten craftsmen**.
-3. Internal figures: **ratios only**. No credit volumes, no group policy, no third-party company named from the conference.
-4. Product status: **on-site tests in progress**. No result figure available.
+First round of rulings:
+
+1. Animated factory visual from the deck: redraw it for the blog.
+2. Angle: factory or ten craftsmen.
+3. Internal figures: ratios only.
+4. Product status: on-site tests in progress, no result figure available.
+
+After reading the first draft, the author overruled the first three:
+
+- **No section on AI consumption or usage.** Seat concentration, credits and model cost are out.
+- **The subject is the software factory and the SDLC only**: where the word comes from, what it means today, what the team does with it.
+- **Reuse the team's isometric visuals** instead of the redraw.
 
 ## Round 2 — convergence
 
-- All four agreed the full line is a target and only code, tests and review run. The animation carries that with solid and dashed stations.
+- The history comes first. Bemer at General Electric in 1968, Hitachi in 1969, System Development Corporation in the mid-1970s, Microsoft in 2004, then the DevOps sense of "usine logicielle". Source: Cusumano's historical work. The thread: every factory standardised what surrounds the programmer, never the station where code is written.
+- All four personas agreed the full line is a target and only code, tests and review run. The article says so before any figure.
 - Claire and Marc-Antoine both refused "75 % without human review" as a trophy. Resolved: the three figures are listed together, followed by "a fact about our process, not about our code".
-- Élise wanted an explicit retraction of an August line; Marc-Antoine found the August claim still partly holds (a non-author is still required on the outside-facing perimeter, it may now be an agent). Resolved: one paragraph that states the change and leaves the verdict open.
-- Dropped: "agents are better than you" (a position, unmeasured, reads as a headcount argument), tool recommendations, provider questions, model names.
-- The slide's animated isometric scene is not reused. The redraw is a flat 640-unit SVG with a 320-unit phone variant, animated by classes in `src/styles/main.css`, static under reduced motion.
+- Élise wanted an explicit retraction of an August line; Marc-Antoine found the August claim still partly holds. Resolved: one paragraph that states the change and leaves the verdict open.
+- Dropped: "agents are better than you", tool recommendations, provider questions, model names, every usage and cost figure.
 
 ## Decisions
 
-- Title: « Une usine logicielle, ou dix artisans très équipés ? » / "A Software Factory, or Ten Very Well-Equipped Craftsmen?"
-- About 1,700 words per language, three diagrams.
-- No sanitizer change: the animation uses only allowed tags and the `class` attribute.
+- Title: « Software factory : d'où vient le mot, et ce que nous en faisons » / "Software Factory: Where the Word Comes From, and What We Do With It".
+- About 1,800 words per language.
+- Visuals: the isometric factory scene from the talk, replayed as an animated WebP in French and in English, without the employer logo, slide number or progress bar, with a still for reduced motion. It is a light image in both themes. Two flat diagrams complete it: the 1968-2026 timeline and the six steps against three human decisions.
+- The class-driven flat animation of the first draft is removed from `src/styles/main.css`.
 
 ## Follow-ups for the author
 
 - Read both languages on `/drafts`, then delete `draft: true` to publish.
-- Confirm the three external links and the Warp attribution of the two loops.
+- Confirm the external links; page fetches were blocked in the session. The Cusumano dates were confirmed by search.
+- On a phone the scene labels are small; tapping the image opens it in the gallery.
 - Decide whether to add this post to the series blocks of earlier posts once it is published.
 - Add an escaped-defect figure when the on-site tests produce one.
