@@ -170,13 +170,13 @@ const englishContent: PostContent = {
 <p><strong>Test counts are still typed in.</strong> The check establishes that the cited run is green on that commit. It does not cross-check how many tests were skipped. So the rule born from the incident would catch only half of the incident.</p>
 <p><strong>The security pass is one line.</strong> The risk tier is solid: it is computed from the changed paths, and a pull request cannot lower it. At the high tier, the proof must contain a security pass. The reviewing agent writes it.</p>
 <p><strong>The loop limit has never fired.</strong> At the fourth refused review round, the merge blocks until a developer decides. That case has not come up. It is a design, not a result.</p>
-<p>Add one debt that nothing counts: we understand less of the code we ship. None of our checks measures what nobody can explain any more.</p>
+<p>One objection remains, and it has a name, comprehension debt: we understand less of the code we ship. True, and I think that is no longer our place. Our place is in the need, the rules and the evidence. It is a bet, not a result: the on-site tests will say whether it holds.</p>
 <p>I also owe my August post a correction. It described one perimeter kept human on purpose, the surface reachable from outside. I wrote that this kind of mistake should cost a conversation. The rule still demands a non-author on that perimeter. Today that non-author can be an agent. The conversation became optional, and I do not know yet which of the two posts is right.</p>
 
 <h2>What still belongs to humans</h2>
 <p>The need. Saying what to build, why, and in what order. On the drawing it is the cart on the left, and no agent pushes it.</p>
 <p>The three decisions: arbitrate, override, release.</p>
-<p>Still understanding what we ship. Reading code is what lets you write a good intention and handle an exception.</p>
+<p>Understanding the system, not every line. What the software must guarantee, and how we prove it.</p>
 <p>Proving it on site. The first tests in a hospital are under way. I have no number to give yet. They will tell what a merge without a human reviewer is worth.</p>
 <p>And the new. That is where the 1969 factories stalled, by Cusumano's account. Nothing tells me the 2026 one will do better when the need itself is vague.</p>
 <p>Two questions stay open. Should every customer ship on one release train, with features switched on by flags? And is the pull request still the right object, when agents open them faster than a queue drains?</p>
@@ -197,7 +197,7 @@ const englishContent: PostContent = {
 <li>Jack Greenfield and Keith Short, <em>Software Factories: Assembling Applications with Patterns, Models, Frameworks, and Tools</em> (Wiley, 2004): the Microsoft version of the word. A tool vendor's book: read it as a promise, not as a track record.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://simonwillison.net/2026/Feb/7/software-factory/">Simon Willison, "Software Factory" (7 February 2026)</a>: write-up of a visit to StrongDM. Keep the scenarios hidden from the agents. Discard the amounts the company reports, never cross-checked. Greenfield, three people, no outcome published since.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, on the improvement loop of a software factory (2026)</a>: the idea of two loops comes from there. It is a vendor selling the matching tooling. I take the thinking scheme and none of its numbers.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, "Comprehension Debt" (2026)</a>: the name of the debt I describe. A practitioner's essay, not a measurement.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, "Comprehension Debt" (2026)</a>: the name of the objection I answer. A practitioner's essay, not a measurement.</li>
 <li>Solstice*: the proof rule, the orders of magnitude on PRs and the three decisions come from the repository, as read in early November 2026. Figures are rounded on purpose. Internal, no links: the codename is fictitious and the real project, its products and its vendor are anonymized.</li>
 </ul>`
 }
@@ -365,13 +365,13 @@ const frenchContent: PostContent = {
 <p><strong>Les décomptes de tests sont encore tapés.</strong> Le contrôle établit que l'exécution citée est verte sur ce commit. Il ne recoupe pas le nombre de tests sautés. La règle née de l'incident n'attraperait donc que la moitié de l'incident.</p>
 <p><strong>La relecture de sécurité tient en une ligne.</strong> Le niveau de risque est solide : il se calcule depuis les chemins modifiés, et une proposition ne peut pas l'abaisser. Au niveau élevé, la preuve doit contenir une relecture de sécurité. C'est l'agent relecteur qui l'écrit.</p>
 <p><strong>La limite de boucle n'a jamais servi.</strong> Au quatrième tour de revue refusé, la fusion se bloque jusqu'à la décision d'un développeur. Ce cas ne s'est pas présenté. C'est un dessin, pas un résultat.</p>
-<p>J'ajoute une dette que rien ne compte : nous comprenons moins le code livré. Aucun de nos contrôles ne mesure ce que plus personne ne sait expliquer.</p>
+<p>Reste l'objection qui a un nom, la dette de compréhension : nous comprenons moins le code livré. C'est vrai, et je pense que notre place n'est plus là. Elle est dans le besoin, dans les règles et dans les preuves. C'est un pari, pas un résultat : les tests sur site diront s'il tient.</p>
 <p>Et je dois une correction à mon billet d'août. J'y décrivais un périmètre gardé humain exprès, la surface joignable de l'extérieur. J'écrivais que cette erreur-là devait coûter une conversation. La règle exige toujours un non-auteur sur ce périmètre. Ce non-auteur peut aujourd'hui être un agent. La conversation est devenue facultative, et je ne sais pas encore lequel des deux billets a raison.</p>
 
 <h2>Ce qui reste aux humains</h2>
 <p>Le besoin. Dire ce qu'il faut construire, pourquoi, et dans quel ordre. Sur le dessin, c'est le chariot à gauche, et aucun agent ne le pousse.</p>
 <p>Les trois décisions : trancher, passer outre, publier.</p>
-<p>Comprendre encore ce qu'on livre. Savoir lire du code reste ce qui permet d'écrire une bonne intention et de traiter une exception.</p>
+<p>Comprendre le système, pas chaque ligne. Ce que le logiciel doit garantir, et comment on le prouve.</p>
 <p>Éprouver sur site. Les premiers tests chez un établissement sont en cours. Je n'ai pas encore de chiffre à donner. Ce sont eux qui diront ce que vaut une fusion sans relecteur humain.</p>
 <p>Et l'inédit. C'est là que les usines de 1969 ont calé, d'après Cusumano. Rien ne me prouve que celle de 2026 fera mieux quand le besoin lui-même est flou.</p>
 <p>Deux questions restent ouvertes. Faut-il livrer tous les clients sur un même flot, en activant les fonctions par drapeaux ? Et la demande de fusion est-elle encore le bon objet, quand des agents en ouvrent plus vite qu'une file ne se vide ?</p>
@@ -392,7 +392,7 @@ const frenchContent: PostContent = {
 <li>Jack Greenfield et Keith Short, <em>Software Factories: Assembling Applications with Patterns, Models, Frameworks, and Tools</em> (Wiley, 2004) : la version Microsoft du mot. Un livre d'éditeur d'outils : à lire comme une promesse, pas comme un bilan.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://simonwillison.net/2026/Feb/7/software-factory/">Simon Willison, « Software Factory » (7 février 2026)</a> : compte rendu d'une visite chez StrongDM. À garder : les scénarios cachés aux agents. À laisser : les montants déclarés par l'entreprise, jamais recoupés. Projet neuf, trois personnes, aucun résultat publié depuis.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, sur la boucle d'amélioration d'une software factory (2026)</a> : l'idée des deux boucles vient de là. C'est un éditeur qui vend l'outillage correspondant. Je reprends le schéma de pensée, aucun de ses chiffres.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, « Comprehension Debt » (2026)</a> : le nom de la dette que je décris. Un essai de praticien, pas une mesure.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, « Comprehension Debt » (2026)</a> : le nom de l'objection à laquelle je réponds. Un essai de praticien, pas une mesure.</li>
 <li>Solstice* : la règle de preuve, les ordres de grandeur sur les demandes de fusion et les trois décisions viennent du dépôt, relevé de début novembre 2026. Les chiffres sont arrondis exprès. Interne, sans lien : le nom de code est fictif et le projet réel, ses produits et son éditeur sont anonymisés.</li>
 </ul>`
 }
