@@ -163,7 +163,6 @@ const englishContent: PostContent = {
 <p>A factory also has to improve its own stations. The scheme I keep fits in two loops.</p>
 <picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-en-still.webp"><img src="/visuals/software-factory/loops-en.webp" alt="Animated isometric infinity symbol: on the left the quality loop, which scores each conversation and fixes the misses; on the right the cost loop, which replays the work elsewhere and keeps the cheapest that holds. A dot travels both loops endlessly." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
 <p>The quality loop scores the agents' work and starts from the misses to fix their instructions. The cost loop replays known tasks on another model and keeps the cheapest one that holds. Neither fixes the software. They fix the agent.</p>
-<p>On my team, the first one does not exist. The second ran once, in August, on some fifty sets of agent instructions. Old and new versions replayed a few frozen tasks, and a judge compared them without knowing which was which. Nearly all the new versions were kept. Once, by hand: that is not a loop yet.</p>
 
 <h2>Where the proof is still a statement</h2>
 <p>A hostile reader will strike here, and will be right on four counts.</p>
@@ -359,7 +358,6 @@ const frenchContent: PostContent = {
 <p>Une usine doit aussi améliorer ses propres postes. Le schéma que je retiens tient en deux boucles.</p>
 <picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-fr-still.webp"><img src="/visuals/software-factory/loops-fr.webp" alt="Symbole infini isométrique animé : à gauche la boucle qualité, qui note chaque conversation et corrige les ratés ; à droite la boucle coût, qui rejoue le travail ailleurs et garde le moins cher qui tient. Un point parcourt les deux boucles sans fin." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
 <p>La boucle qualité note le travail des agents et repart des ratés pour corriger leurs consignes. La boucle coût rejoue des tâches connues sur un autre modèle et garde le moins cher qui tient. Aucune ne corrige le logiciel. Elles corrigent l'agent.</p>
-<p>Chez nous, la première n'existe pas. La seconde a tourné une fois, en août, sur une cinquantaine de jeux de consignes pour agents. Ancienne et nouvelle version rejouaient quelques tâches gelées, et un juge comparait sans savoir laquelle était laquelle. Presque toutes les nouvelles versions ont été gardées. Une fois, à la main : ce n'est pas encore une boucle.</p>
 
 <h2>Là où la preuve reste une déclaration</h2>
 <p>Un lecteur hostile attaquera ici, et il aura raison sur quatre points.</p>
