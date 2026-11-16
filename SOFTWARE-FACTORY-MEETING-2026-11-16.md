@@ -1,6 +1,6 @@
 # Software factory article — meeting, 2026-11-16
 
-Post: `src/posts/SoftwareFactory.ts`, slug `software-factory`, shipped as `draft: true`.
+Post: `src/posts/SoftwareFactory.ts`, slug `software-factory`, first shipped as `draft: true`, published on 2026-11-16 at the author's request.
 
 Material: the author's internal year review given on 12 November after BDX I/O (29-30 October), its speaker notes, and the Solstice* repository rules on review proof. All internal, anonymised.
 
@@ -58,7 +58,6 @@ After reading the first draft, the author overruled the first three:
 
 ## Follow-ups for the author
 
-- Read both languages on `/drafts`, then delete `draft: true` to publish.
 - Confirm the external links; page fetches were blocked in the session. The Cusumano dates were confirmed by search.
 - On a phone the scene labels are small; tapping the image opens it in the gallery.
 - Decide whether to add this post to the series blocks of earlier posts once it is published.

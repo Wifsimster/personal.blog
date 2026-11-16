@@ -3,14 +3,13 @@ import type { PostMetadata, PostContent } from '@/lib/posts'
 export const metadata: PostMetadata = {
   slug: 'software-factory',
   date: '2026-11-16',
-  tags: ['Software', 'AI', 'Opinion'],
-  draft: true
+  tags: ['Software', 'AI', 'Opinion']
 }
 
 const englishContent: PostContent = {
   title: "Software Factory: Where the Word Comes From, and What We Do With It",
   description: "The term dates back to General Electric and Hitachi, and every revival since has industrialized what surrounds the programmer. The agent-era version goes after the development cycle itself. A field report from a regulated hospital ERP: the history, the line as we drew it, the part that actually runs, and the limits of merging on machine-checked evidence.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> "Software factory" is a word from 1968, and it has let down several generations already. Each factory standardized what surrounds the developer: tools, process, models, the pipeline. None touched the station where code gets written. In 2026 that station falls. The whole development cycle, the <abbr title="Software Development Life Cycle: the path from need to delivery">SDLC</abbr>, becomes one line held by agents. On <abbr title="Fictitious codename: the real project, its products and its vendor are anonymized.">Solstice*</abbr>, the middle of that line already runs: code, tests, review, correction. Since 14 October, nobody approves our merges any more. A machine checks a proof. We are left with three decisions, and one job: the customer's need.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> "Software factory" is a word from 1968, and it has let down several generations already. Each factory standardized what surrounds the developer: tools, process, models, the pipeline. None touched the station where code gets written. In 2026, agents take it. The whole development cycle, the <abbr title="Software Development Life Cycle: the path from need to delivery">SDLC</abbr>, becomes one line held by agents. On <abbr title="Fictitious codename: the real project, its products and its vendor are anonymized.">Solstice*</abbr>, the middle of that line already runs: code, tests, review, correction. Since 14 October, nobody approves our merges any more. A machine checks a proof. We are left with three decisions, and one job: the customer's need.</p></div>
 <hr>
 <p>People ask me whether the software factory is the new buzzword. No. It is a fifty-eight-year-old word, and it has already failed several times.</p>
 <p>In late October, at <abbr title="BDX I/O: yearly tech conference in Bordeaux, France, held on 29 and 30 October 2026">BDX I/O</abbr>, it was in every conversation about agents. Two weeks later I made it the thread of the year review I gave my team.</p>
@@ -18,8 +17,8 @@ const englishContent: PostContent = {
 
 <h2>Where the word comes from</h2>
 <p>In 1968, <abbr title="Robert W. Bemer: American computer scientist, one of the fathers of ASCII">R. W. Bemer</abbr>, an engineer at General Electric, proposes a "software factory". His idea: reduce the productivity gaps between programmers with standard tools and a database of measurements. The same year, <abbr title="M. Douglas McIlroy: Bell Labs researcher, the mind behind Unix pipes">Doug McIlroy</abbr> argues for mass-produced software components.</p>
-<p>According to the historian <abbr title="Michael Cusumano: MIT professor, author of Japan's Software Factories (1991)">Michael Cusumano</abbr>, Hitachi opens the first site to carry the name in 1969. The large Japanese manufacturers follow. In the United States, System Development Corporation sets up its own in the mid-1970s. It lapses in under three years.</p>
-<p>Cusumano sums it up this way: the factory worked for products that look alike. Far less for anything new.</p>
+<p>According to the historian <abbr title="Michael Cusumano: MIT professor, author of Japan's Software Factories (1991)">Michael Cusumano</abbr>, Hitachi opens the first site to carry the name in 1969. The large Japanese manufacturers follow. In the United States, System Development Corporation sets up its own in the mid-1970s. It folds in under three years.</p>
+<p>Cusumano's takeaway: the factory worked for products that resembled each other, and much less well for anything that had never been built.</p>
 <p>In 2004, Microsoft picks the word up again. Jack Greenfield and Keith Short promise to assemble applications from models and dedicated languages. Then <abbr title="DevOps: bringing development and operations together, tooled by continuous integration and deployment">DevOps</abbr> recycles it once more. In French, "usine logicielle" ends up meaning the integration and deployment toolchain.</p>
 <svg viewBox="0 0 640 276" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From 1968 to 2026, each generation of software factory standardized something else: tools, process, models, the pipeline. Code was still written by hand until the latest one, where agents hold the stations." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">WHAT EACH FACTORY STANDARDIZED</text>
@@ -71,29 +70,29 @@ const englishContent: PostContent = {
 <text x="128" y="385" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">agents</text>
 <text x="32" y="420" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">1968, 1969: Cusumano (1989)</text>
 </svg>
-<p>Four factories, one blind spot. They industrialized everything around the programmer. None touched the act of writing.</p>
+<p>Four factories, and the same limit every time.</p>
 <blockquote><p>For close to sixty years, the factory standardized everything except the station where the writing happens.</p></blockquote>
 
 <h2>What the word means now</h2>
-<p>In 2026, that station is the one that goes. A software factory is now a line where the need goes in at one end and the delivery comes out at the other. In between, agents.</p>
+<p>In 2026, that is exactly the station agents hold. A software factory is now a line where the need goes in at one end and the delivery comes out at the other. Every station in between is held by an agent.</p>
 <p>The account that revived the word is the one from <abbr title="StrongDM: US vendor of access-management software">StrongDM</abbr>, in February. Three engineers, one rule: no human writes or reviews the code. Scenarios hidden from the agents judge the outcome. <abbr title="Simon Willison: British developer and writer, co-creator of the Django framework">Simon Willison</abbr>, who visited the team, calls it a glimpse of one possible future. He also doubts you can do without review.</p>
-<p>I keep the mechanism: scenarios the agent cannot see. I leave the figures. Nobody has cross-checked them.</p>
+<p>What I take from it is the mechanism, those scenarios the agent cannot see. I do not take the figures, which nobody has cross-checked.</p>
 <p>Here is the line as I drew it for my team. The steps of the development cycle, in order, on a single conveyor.</p>
 <picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/factory-en-still.webp"><img src="/visuals/software-factory/factory-en.webp" alt="Animated isometric scene of a software line: the human need enters on the left, a lot goes through the spec, code, tests and review stations, is refused, takes the correction lane back, runs the tests and the review again, then is delivered to the customer." width="1120" height="620" loading="lazy" decoding="async" data-gallery-image="true"></picture>
 <p>The lot carries three boxes: S for the specification, C for the code, T for the tests. Each one fills at the station that produces it. The need is not a station. It is the input, and it stays human.</p>
-<p>Look at the blue lane. It matters more than the conveyor. A lot refused at review does not ship "with reservations". It goes back to code, runs the same tests, then gets a new review.</p>
-<blockquote><p>A fix voids the evidence. You replay it. You do not copy it over.</p></blockquote>
-<p>A line like this also has to improve its own stations. Two loops say it all.</p>
-<picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-en-still.webp"><img src="/visuals/software-factory/loops-en.webp" alt="Animated isometric infinity symbol: on the left the quality loop, which scores each conversation and fixes the misses; on the right the cost loop, which replays the work elsewhere and keeps the cheapest that holds. A dot travels both loops endlessly." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
-<p>The quality loop scores the agents' work and starts from the misses to fix their instructions. The cost loop replays known tasks on another model and keeps the cheapest one that holds. Neither fixes the software. They fix the agent.</p>
+<p>Look at the blue lane: that is the part that matters. A lot refused at review never ships "with reservations". It goes back to code, runs the same tests, then gets a new review.</p>
+<blockquote><p>After a fix, the evidence is worth nothing. It has to be replayed.</p></blockquote>
+<p>A line like this also has to improve itself. Two loops take care of that.</p>
+<picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-en-still.webp"><img src="/visuals/software-factory/loops-en.webp" alt="Animated isometric infinity symbol: on the left the quality loop, which scores each conversation and fixes the misses; on the right the cost loop, which replays the work elsewhere and keeps the cheapest that does the job. A dot travels both loops endlessly." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
+<p>The quality loop scores the agents' work and starts from the misses to fix their instructions. The cost loop replays known tasks on another model and keeps the cheapest one that does the job. Neither fixes the software: they fix the agent.</p>
 <p>In March I wrote that the SDLC was dead. I stand by it. Every one of its steps is on this drawing. What died is the handoff between people, and the wait at each one.</p>
 
 <h2>What we do with it</h2>
 <p>Let me be clear: this drawing is a target. On Solstice*, a hospital <abbr title="Enterprise Resource Planning: the administrative backbone of a hospital group">ERP</abbr>, the middle of the line is what runs. Agents write the code and its tests. The integration pipeline executes them. An agent reviews, in a separate session.</p>
 <p>The two ends do not run yet. Turning meeting transcripts into a specification is a trial. Automatic delivery stops at the development environment.</p>
-<p>The real switch dates from 14 October. That day, the main branch stopped requiring an approval. A required check asks for a review proof in its place. The proof names the commit that was reviewed and one run of the integration pipeline. The machine checks for itself that this run exists, covers this code and ended in success.</p>
-<p>That rule comes from an incident. An approval stated close to 1,800 tests, zero failures, green pipeline. In fact some twenty tests had been skipped and the run had failed. The reviewer noticed on his own, a few minutes later. No machine had seen it.</p>
-<p>Our documentation kept one line of it: a count of green tests says nothing about the files that never ran.</p>
+<p>The real shift dates from 14 October. That day, the main branch stopped requiring an approval. A required check asks for a review proof in its place. The proof names the commit that was reviewed and one run of the integration pipeline. The machine checks for itself that this run exists, covers this code and ended in success.</p>
+<p>That rule comes from an incident. An approval stated close to 1,800 tests, zero failures, green pipeline. In fact some twenty tests had been skipped and the run had failed. The reviewer noticed on his own, a few minutes later. No automated check had caught it.</p>
+<p>We wrote one rule down from it: a count of green tests says nothing about the files that never ran.</p>
 <blockquote><p>An approval is an opinion. A proof can be checked.</p></blockquote>
 <p>Over five weeks, more than 600 pull requests were merged. Three proportions over that set:</p>
 <ul>
@@ -165,29 +164,29 @@ const englishContent: PostContent = {
 <text x="32" y="478" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">release: the version, and every</text>
 <text x="32" y="496" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">promotion past dev</text>
 </svg>
-<p>No agent takes any of these three decisions. Only the development environment receives code without a human gesture. Every move to a later environment is triggered by hand.</p>
+<p>No agent takes any of these three decisions. Only the development environment receives code with no human involved. To go any further, someone has to start the deployment.</p>
 <p>Arbitrating is not theoretical. At the fourth refused review round, the merge blocks until a developer decides. In early November that case had never come up. In mid-November it came up about ten times in three days. Each time, someone looked and decided: carry on, or change approach.</p>
 
 <h2>Where the proof is still a statement</h2>
-<p>A hostile reader will strike here. They will be right on three counts.</p>
-<p><strong>The reviewer can be the same model.</strong> Same agent, same account, a different session. A fresh context reduces anchoring. It proves no diversity of judgement. The machine checks that the review session differs from the commit sessions. It does not check that the review happened anywhere other than in a form.</p>
-<p><strong>Test counts are still typed in.</strong> The check establishes that the cited run is green on that commit. It does not cross-check how many tests were skipped. So the rule born from the incident would catch only half of the incident.</p>
-<p><strong>The security review is one line.</strong> The risk tier is solid: it is computed from the changed paths, and a pull request cannot lower it. At the high tier, the proof must contain a security review. The reviewing agent writes it.</p>
-<p>One objection remains, and it has a name, comprehension debt: we understand less of the code we ship. True. And I think that is no longer our place. Understanding the code line by line is now the agents' responsibility. There will always be an agent to answer the technical need. Our responsibility is to understand the business need, and the way to solve it. The on-site tests will say whether I am right.</p>
-<p>I also owe my August post a correction. It described one perimeter kept human on purpose, the surface reachable from outside. I wrote that this kind of mistake should cost a conversation. The rule still demands a non-author on that perimeter. Today that non-author can be an agent. The conversation became optional. I own that, and I am watching what it gives.</p>
+<p>This is where a skeptical reader will push back. On three points, they will be right.</p>
+<p><strong>The reviewer can be the same model.</strong> Same agent, same account, a different session. Starting from a clean context limits anchoring, without guaranteeing a different pair of eyes. The machine checks that the review session is not the one that wrote the code. It does not check that the review actually took place.</p>
+<p><strong>Test counts are still typed in.</strong> The check establishes that the cited run is green on that commit. It does not cross-check how many tests were skipped. So our rule would catch only half of the incident that produced it.</p>
+<p><strong>The security review is one line.</strong> The risk tier itself is reliable: it is computed from the changed files, and a pull request cannot lower it. At the high tier, the proof must contain a security review. The reviewing agent writes it.</p>
+<p>One objection remains, and it has a name: comprehension debt. We understand less of the code we ship. True. And I think that is no longer our place. Understanding the code line by line is now the agents' responsibility. There will always be an agent to answer the technical need. Our responsibility is to understand the business need, and the way to solve it. The on-site tests will say whether I am right.</p>
+<p>I also owe my August post a correction. It described one perimeter kept human on purpose, the surface reachable from outside. I wrote that a mistake there should force two people to talk. The rule still demands a non-author on that perimeter. Today that non-author can be an agent. So two people no longer have to talk. I own that, and I am watching how it turns out.</p>
 
 <h2>What still belongs to humans</h2>
 <blockquote><p>What matters is understanding the business need and how to solve it. The rest no longer matters.</p></blockquote>
 <p>Saying what to build, why, and in what order. On the drawing it is the cart on the left. No agent pushes it.</p>
 <p>The three decisions: arbitrate, override, release.</p>
-<p>Understanding the system, not every line. What the software must guarantee, and how we prove it. The detail of the code is the agents' business.</p>
-<p>Proving it on site. The first tests in a hospital are under way. I have no number to give yet. They will tell what a merge without a human reviewer is worth.</p>
-<p>And the new. That is where the 1969 factories stalled, by Cusumano's account. Nothing tells me the 2026 one will do better when the need itself is vague.</p>
-<p>Two questions stay open. Should every customer ship on one release train, with features switched on by flags? And is the pull request still the right object, when agents open them faster than a queue drains?</p>
+<p>Understanding the system as a whole: what the software must guarantee, and how we prove it. The detail of the code is the agents' business.</p>
+<p>Putting the software to the test on site. The first tests in a hospital are under way. I have no number to give yet. They will tell what a merge without a human reviewer is worth.</p>
+<p>And what has never been built. That is where the 1969 factories failed, by Cusumano's account. Nothing tells me the 2026 one will do better when the need itself is vague.</p>
+<p>Two questions stay open. Should every customer ship on one release train, with features switched on by flags? And is the pull request still the right object, when agents open them faster than anyone can process them?</p>
 
 <h2>What to do Monday morning</h2>
 <ol>
-<li><strong>Draw your line, station by station.</strong> Mark what runs and what is a target. The honest drawing is often shorter than the pitch.</li>
+<li><strong>Draw your line, station by station.</strong> Mark what runs and what is a target. An honest drawing is usually more modest than the pitch.</li>
 <li><strong>Replace the approval with a proof.</strong> It names a commit and a run, and a machine checks both.</li>
 <li><strong>Write down what stays declarative.</strong> Our documentation does, in plain words. It is the part I reread most.</li>
 <li><strong>Bound the correction loop.</strong> A number of rounds, then a person. On my team, the limit gets used.</li>
@@ -198,10 +197,10 @@ const englishContent: PostContent = {
 <h2>Sources</h2>
 <ul>
 <li>Michael A. Cusumano, "The Software Factory: A Historical Interpretation", <em>IEEE Software</em>, March 1989, and <a target="_blank" rel="noopener noreferrer" href="https://dspace.mit.edu/handle/1721.1/47992">"Factory Concepts and Practices in Software Development: An Historical Overview"</a> (MIT): Bemer in 1968, Hitachi in 1969, the System Development Corporation factory and its end. A historian's work, from archives and interviews. It is the source for the whole first part.</li>
-<li>Jack Greenfield and Keith Short, <em>Software Factories: Assembling Applications with Patterns, Models, Frameworks, and Tools</em> (Wiley, 2004): the Microsoft version of the word. A tool vendor's book: read it as a promise, not as a track record.</li>
+<li>Jack Greenfield and Keith Short, <em>Software Factories: Assembling Applications with Patterns, Models, Frameworks, and Tools</em> (Wiley, 2004): the Microsoft version of the word. A tool vendor's book, to be read as a promise.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://simonwillison.net/2026/Feb/7/software-factory/">Simon Willison, "Software Factory" (7 February 2026)</a>: write-up of a visit to StrongDM. Keep the scenarios hidden from the agents. Discard the amounts the company reports, never cross-checked. Greenfield, three people, no outcome published since.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, on the improvement loop of a software factory (2026)</a>: the idea of two loops comes from there. It is a vendor selling the matching tooling. I take the thinking scheme and none of its numbers.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, "Comprehension Debt" (2026)</a>: the name of the objection I answer. A practitioner's essay, not a measurement.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, on the improvement loop of a software factory (2026)</a>: the idea of two loops comes from there. It is a vendor selling the matching tooling. I take the idea, not the numbers.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, "Comprehension Debt" (2026)</a>: the name of the objection I answer. A practitioner's essay, with no measurement behind it.</li>
 <li>Solstice*: the proof rule, the orders of magnitude on pull requests, the fourth-round blocks and the three decisions come from the repository, as read on 16 November 2026. Figures are rounded on purpose. Internal, no links: the codename is fictitious and the real project, its products and its vendor are anonymized.</li>
 </ul>`
 }
