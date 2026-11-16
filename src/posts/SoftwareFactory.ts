@@ -95,13 +95,14 @@ const englishContent: PostContent = {
 <p>That rule comes from an incident. An approval stated close to 1,800 tests, zero failures, green pipeline. In fact some twenty tests had been skipped and the run had failed. The reviewer noticed on his own, a few minutes later. No machine had seen it.</p>
 <p>Our documentation kept one line of it: a count of green tests says nothing about the files that never ran.</p>
 <blockquote><p>An approval is an opinion. A proof can be checked.</p></blockquote>
-<p>Over four weeks, close to 500 pull requests were merged. Three orders of magnitude over that same set:</p>
+<p>Over five weeks, more than 600 pull requests were merged. Three proportions over that set:</p>
 <ul>
-<li><strong>Three in four</strong> carry no recorded review on the platform.</li>
-<li><strong>Fewer than one in ten</strong> carry a review from another human account.</li>
-<li><strong>One in four</strong> carried a label through which someone kept a hand on the merge.</li>
+<li><strong>More than nine in ten</strong> were reviewed by no other human.</li>
+<li><strong>Close to two thirds</strong> carry no recorded review on the platform.</li>
+<li><strong>One in five</strong> carried a label through which someone kept a hand on the merge.</li>
 </ul>
-<p>These proportions do not add up to a whole. They answer three different questions. And I am not waving them around: three merges in four without a human reviewer is a fact about our process. Not about our code.</p>
+<p>The last week already changes the picture. The review done by an agent is now recorded on the platform: two merges in three carry one.</p>
+<p>These proportions do not add up to a whole. They answer different questions. And I am not waving them around: nine merges in ten without a human reviewer is a fact about how we work. It says nothing about the quality of the code.</p>
 <svg viewBox="0 0 640 322" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six steps are automatic, from the specification to the development environment. Three decisions stay human, each attached to one step: arbitrate under review, override under merge, release under the development environment." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SOLSTICE*, SINCE 14 OCTOBER</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Six steps, three decisions.</text>
@@ -201,14 +202,14 @@ const englishContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://simonwillison.net/2026/Feb/7/software-factory/">Simon Willison, "Software Factory" (7 February 2026)</a>: write-up of a visit to StrongDM. Keep the scenarios hidden from the agents. Discard the amounts the company reports, never cross-checked. Greenfield, three people, no outcome published since.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, on the improvement loop of a software factory (2026)</a>: the idea of two loops comes from there. It is a vendor selling the matching tooling. I take the thinking scheme and none of its numbers.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, "Comprehension Debt" (2026)</a>: the name of the objection I answer. A practitioner's essay, not a measurement.</li>
-<li>Solstice*: the proof rule, the orders of magnitude on pull requests, the fourth-round blocks and the three decisions come from the repository, as read between early and mid-November 2026. Figures are rounded on purpose. Internal, no links: the codename is fictitious and the real project, its products and its vendor are anonymized.</li>
+<li>Solstice*: the proof rule, the orders of magnitude on pull requests, the fourth-round blocks and the three decisions come from the repository, as read on 16 November 2026. Figures are rounded on purpose. Internal, no links: the codename is fictitious and the real project, its products and its vendor are anonymized.</li>
 </ul>`
 }
 
 const frenchContent: PostContent = {
   title: "Software factory : d’où vient le mot, et ce que nous en faisons",
   description: "Le terme remonte à General Electric et à Hitachi, et chacune de ses résurrections a industrialisé ce qui entoure le programmeur. La version de l'ère des agents s'attaque au cycle de développement lui-même. Retour de terrain sur un ERP hospitalier régulé : l'histoire, la chaîne telle que nous l'avons dessinée, la partie qui tourne vraiment, et les limites d'une fusion sur preuve.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> « Software factory » est un mot de 1968, et il a déjà déçu plusieurs générations. Chaque usine a standardisé ce qui entoure le développeur : les outils, le procédé, les modèles, la chaîne de livraison. Aucune n'a touché au poste où l'on écrit le code. En 2026, c'est ce poste qui tombe. Le cycle de développement entier, le <abbr title="Software Development Life Cycle : le cycle de développement logiciel, du besoin à la livraison">SDLC</abbr>, devient une chaîne tenue par des agents. Sur <abbr title="Nom de code fictif : le projet réel, ses produits et son éditeur sont anonymisés.">Solstice*</abbr>, le milieu de cette chaîne tourne déjà : code, tests, revue, correction. Depuis le 14 octobre, plus personne n'approuve nos fusions. Une machine vérifie une preuve. Il nous reste trois décisions, et un métier : le besoin du client.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> « Software factory » est un mot de 1968, et il a déjà déçu plusieurs générations. Chaque usine a standardisé ce qui entoure le développeur : les outils, le procédé, les modèles, la chaîne de livraison. Aucune n'a touché au poste où l'on écrit le code. En 2026, ce sont les agents qui le prennent. Le cycle de développement entier, le <abbr title="Software Development Life Cycle : le cycle de développement logiciel, du besoin à la livraison">SDLC</abbr>, devient une chaîne tenue par des agents. Sur <abbr title="Nom de code fictif : le projet réel, ses produits et son éditeur sont anonymisés.">Solstice*</abbr>, le milieu de cette chaîne tourne déjà : code, tests, revue, correction. Depuis le 14 octobre, plus personne n'approuve nos fusions. Une machine vérifie une preuve. Il nous reste trois décisions, et un métier : le besoin du client.</p></div>
 <hr>
 <p>On me demande si la software factory est le nouveau mot à la mode. Non. C'est un mot de cinquante-huit ans, et il a déjà échoué plusieurs fois.</p>
 <p>Fin octobre, à <abbr title="BDX I/O : conférence technique annuelle à Bordeaux, tenue les 29 et 30 octobre 2026">BDX I/O</abbr>, il était dans toutes les conversations sur les agents. Deux semaines plus tard, j'en ai fait le fil du bilan d'année devant mon équipe.</p>
@@ -217,7 +218,7 @@ const frenchContent: PostContent = {
 <h2>D'où vient le mot</h2>
 <p>En 1968, <abbr title="Robert W. Bemer : informaticien américain, l'un des pères du code ASCII">R. W. Bemer</abbr>, ingénieur chez General Electric, propose une « software factory ». Son idée : réduire les écarts de productivité entre programmeurs par des outils standardisés et une base de mesures. La même année, <abbr title="M. Douglas McIlroy : chercheur des Bell Labs, à l'origine des tubes Unix">Doug McIlroy</abbr> plaide pour des composants logiciels produits en série.</p>
 <p>D'après l'historien <abbr title="Michael Cusumano : professeur au MIT, auteur de Japan's Software Factories (1991)">Michael Cusumano</abbr>, Hitachi ouvre en 1969 le premier site à porter ce nom. Les grands industriels japonais suivent. Aux États-Unis, System Development Corporation monte la sienne au milieu des années 1970. Elle s'éteint en moins de trois ans.</p>
-<p>Cusumano le résume ainsi : l'usine marchait pour des produits qui se ressemblent. Beaucoup moins pour l'inédit.</p>
+<p>Cusumano en tire un constat : l'usine fonctionnait pour des produits qui se ressemblent, beaucoup moins bien pour ce qui n'avait jamais été fait.</p>
 <p>En 2004, Microsoft reprend le mot. Jack Greenfield et Keith Short promettent d'assembler des applications à partir de modèles et de langages dédiés. Puis le <abbr title="DevOps : rapprochement du développement et de l'exploitation, outillé par l'intégration et le déploiement continus">DevOps</abbr> le recycle encore. En français, « usine logicielle » finit par désigner la chaîne d'intégration et de déploiement.</p>
 <svg viewBox="0 0 640 276" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="De 1968 à 2026, chaque génération d'usine logicielle a standardisé autre chose : les outils, le procédé, les modèles, la chaîne de livraison. Le code restait écrit à la main jusqu'à la dernière, où des agents tiennent les postes." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">CE QUE CHAQUE USINE A STANDARDISÉ</text>
@@ -269,37 +270,38 @@ const frenchContent: PostContent = {
 <text x="128" y="385" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">agents</text>
 <text x="32" y="420" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">1968, 1969 : Cusumano (1989)</text>
 </svg>
-<p>Quatre usines, le même angle mort. Elles ont tout industrialisé autour du programmeur. Aucune n'a touché au geste d'écrire.</p>
+<p>Quatre usines, et chaque fois la même limite.</p>
 <blockquote><p>Pendant près de soixante ans, l'usine a tout standardisé sauf le poste où l'on écrit.</p></blockquote>
 
 <h2>Ce que le mot désigne aujourd'hui</h2>
-<p>En 2026, c'est ce poste-là qui saute. Une usine logicielle est maintenant une chaîne où le besoin entre d'un côté et la livraison sort de l'autre. Entre les deux, des agents.</p>
+<p>En 2026, c'est justement ce poste que les agents occupent. Une usine logicielle est maintenant une chaîne où le besoin entre d'un côté et la livraison sort de l'autre. Entre les deux, tous les postes sont tenus par des agents.</p>
 <p>Le récit qui a relancé le mot est celui de <abbr title="StrongDM : éditeur américain de logiciels de gestion des accès">StrongDM</abbr>, en février. Trois ingénieurs, une règle : aucun humain n'écrit ni ne relit le code. Des scénarios cachés aux agents jugent le résultat. <abbr title="Simon Willison : développeur et auteur britannique, cocréateur du framework Django">Simon Willison</abbr>, qui a visité l'équipe, y voit un aperçu d'un futur possible. Il doute aussi qu'on puisse se passer de revue.</p>
-<p>Je garde le mécanisme : des scénarios que l'agent ne voit pas. Je laisse les chiffres. Personne ne les a recoupés.</p>
+<p>J'en retiens le mécanisme, ces scénarios que l'agent ne voit pas. Je n'en retiens pas les chiffres, que personne n'a recoupés.</p>
 <p>Voici la chaîne telle que je l'ai dessinée pour mon équipe. Les étapes du cycle de développement, dans l'ordre, sur un seul convoyeur.</p>
 <picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/factory-fr-still.webp"><img src="/visuals/software-factory/factory-fr.webp" alt="Scène isométrique animée d'une chaîne logicielle : le besoin humain entre à gauche, un lot traverse les postes spec, code, tests et revue, est refusé, repart par la voie de correction, repasse les tests et la revue, puis est livré au client." width="1120" height="620" loading="lazy" decoding="async" data-gallery-image="true"></picture>
 <p>Le lot porte trois cases : S pour la spécification, C pour le code, T pour les tests. Chacune se remplit au poste qui la produit. Le besoin, lui, n'est pas un poste. C'est l'entrée, et elle reste humaine.</p>
-<p>Regardez la voie bleue. Elle compte plus que le convoyeur. Un lot refusé en revue ne part pas « avec réserve ». Il retourne au code, repasse les mêmes tests, puis une nouvelle revue.</p>
-<blockquote><p>Une correction invalide les preuves. On les rejoue, on ne les recopie pas.</p></blockquote>
-<p>Une telle chaîne doit aussi améliorer ses propres postes. Deux boucles suffisent à le dire.</p>
-<picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-fr-still.webp"><img src="/visuals/software-factory/loops-fr.webp" alt="Symbole infini isométrique animé : à gauche la boucle qualité, qui note chaque conversation et corrige les ratés ; à droite la boucle coût, qui rejoue le travail ailleurs et garde le moins cher qui tient. Un point parcourt les deux boucles sans fin." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
-<p>La boucle qualité note le travail des agents et repart des ratés pour corriger leurs consignes. La boucle coût rejoue des tâches connues sur un autre modèle et garde le moins cher qui tient. Aucune ne corrige le logiciel. Elles corrigent l'agent.</p>
+<p>Regardez la voie bleue : c'est elle qui compte. Un lot refusé en revue n'est jamais livré « sous réserve ». Il retourne au code, repasse les mêmes tests, puis une nouvelle revue.</p>
+<blockquote><p>Après une correction, les preuves ne valent plus rien. Il faut les rejouer.</p></blockquote>
+<p>Une chaîne pareille doit aussi s'améliorer elle-même. Deux boucles s'en chargent.</p>
+<picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-fr-still.webp"><img src="/visuals/software-factory/loops-fr.webp" alt="Symbole infini isométrique animé : à gauche la boucle qualité, qui note chaque conversation et corrige les ratés ; à droite la boucle coût, qui rejoue le travail ailleurs et retient le moins cher qui suffit. Un point parcourt les deux boucles sans fin." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
+<p>La boucle qualité note le travail des agents et repart des ratés pour corriger leurs consignes. La boucle coût rejoue des tâches connues sur un autre modèle et retient le moins cher de ceux qui font le travail. Ni l'une ni l'autre ne corrige le logiciel : elles corrigent l'agent.</p>
 <p>En mars, j'écrivais que le SDLC était mort. Je maintiens. Ses étapes sont toutes sur ce dessin. Ce qui est mort, ce sont les passages de relais entre personnes, et l'attente à chacun d'eux.</p>
 
 <h2>Ce que nous en faisons</h2>
 <p>Soyons clairs : ce dessin est une cible. Sur Solstice*, un <abbr title="Enterprise Resource Planning : la colonne vertébrale administrative d'un groupement hospitalier">ERP</abbr> hospitalier, c'est le milieu de la chaîne qui tourne. Des agents écrivent le code et ses tests. La chaîne d'intégration les exécute. Un agent relit, dans une session séparée.</p>
-<p>Les deux bouts ne tournent pas encore. La spécification tirée des comptes rendus de réunion est un essai. La livraison automatique s'arrête à l'environnement de développement.</p>
+<p>Les deux extrémités ne fonctionnent pas encore. La spécification tirée des comptes rendus de réunion est un essai. La livraison automatique s'arrête à l'environnement de développement.</p>
 <p>Le vrai basculement date du 14 octobre. Ce jour-là, la branche principale a cessé d'exiger une approbation. À la place, un contrôle obligatoire réclame une preuve de revue. La preuve cite le <abbr title="Commit : un état du code enregistré, daté et identifié dans l'historique">commit</abbr> relu et une exécution de la chaîne d'intégration. La machine vérifie elle-même que cette exécution existe, porte sur ce code et s'est terminée avec succès.</p>
-<p>Cette règle vient d'un incident. Une approbation annonçait près de 1 800 tests, zéro échec, chaîne verte. En réalité, une vingtaine de tests avaient été sautés et l'exécution avait échoué. Le relecteur s'en est aperçu seul, quelques minutes plus tard. Aucune machine ne l'avait vu.</p>
-<p>Notre documentation en a gardé une ligne : un décompte de tests verts n'atteste rien sur les fichiers qui n'ont pas tourné.</p>
+<p>Cette règle vient d'un incident. Une approbation annonçait près de 1 800 tests, zéro échec, chaîne verte. En réalité, une vingtaine de tests avaient été sautés et l'exécution avait échoué. Le relecteur s'en est aperçu seul, quelques minutes plus tard. Aucun contrôle automatique ne l'avait détecté.</p>
+<p>Nous en avons tiré une règle écrite : un nombre de tests verts ne dit rien des fichiers qui n'ont pas été exécutés.</p>
 <blockquote><p>Une approbation est un avis. Une preuve se vérifie.</p></blockquote>
-<p>En quatre semaines, près de 500 demandes de fusion ont été acceptées. Trois ordres de grandeur, sur ce même ensemble :</p>
+<p>En cinq semaines, plus de 600 demandes de fusion ont été acceptées. Sur cet ensemble, trois proportions :</p>
 <ul>
-<li><strong>Les trois quarts</strong> n'ont aucune revue enregistrée sur la plateforme.</li>
-<li><strong>Moins d'une sur dix</strong> porte la revue d'un autre compte humain.</li>
-<li><strong>Une sur quatre</strong> portait une étiquette par laquelle quelqu'un gardait la main sur la fusion.</li>
+<li><strong>Plus de neuf sur dix</strong> n'ont été relues par aucun autre humain.</li>
+<li><strong>Près des deux tiers</strong> n'ont aucune revue enregistrée sur la plateforme.</li>
+<li><strong>Une sur cinq</strong> portait une étiquette par laquelle quelqu'un gardait la main sur la fusion.</li>
 </ul>
-<p>Ces proportions ne s'additionnent pas. Elles répondent à trois questions différentes. Et je ne les brandis pas : trois fusions sur quatre sans relecteur humain, c'est un fait sur notre processus. Pas sur notre code.</p>
+<p>La dernière semaine change déjà le tableau. La revue faite par un agent s'enregistre maintenant sur la plateforme : deux fusions sur trois en portent une.</p>
+<p>Ces proportions ne s'additionnent pas, elles répondent à des questions différentes. Je ne les brandis pas non plus. Neuf fusions sur dix sans relecteur humain, cela décrit notre façon de travailler. Cela ne dit rien de la qualité du code.</p>
 <svg viewBox="0 0 640 322" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six étapes sont automatiques, de la spécification à l'environnement de développement. Trois décisions restent humaines, chacune accrochée à une étape : trancher sous la revue, passer outre sous la fusion, publier sous l'environnement de développement." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SOLSTICE*, DEPUIS LE 14 OCTOBRE</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">Six étapes, trois décisions.</text>
@@ -362,29 +364,29 @@ const frenchContent: PostContent = {
 <text x="32" y="478" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">publier : la version, et tout</text>
 <text x="32" y="496" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">passage au-delà du dev</text>
 </svg>
-<p>Un agent ne prend aucune de ces trois décisions. Seul l'environnement de développement reçoit le code sans geste humain. Tout passage à un environnement suivant se déclenche à la main.</p>
+<p>Un agent ne prend aucune de ces trois décisions. Seul l'environnement de développement reçoit le code sans intervention humaine. Pour aller plus loin, quelqu'un doit lancer le déploiement.</p>
 <p>Trancher n'a rien de théorique. Au quatrième tour de revue refusé, la fusion se bloque jusqu'à la décision d'un développeur. Début novembre, ce cas ne s'était jamais présenté. Mi-novembre, il s'est présenté une dizaine de fois en trois jours. À chaque fois, quelqu'un a regardé et décidé : continuer, ou changer d'approche.</p>
 
 <h2>Là où la preuve reste une déclaration</h2>
-<p>Un lecteur hostile attaquera ici. Il aura raison sur trois points.</p>
-<p><strong>Le relecteur peut être le même modèle.</strong> Même agent, même compte, autre session. Un contexte neuf réduit l'ancrage. Il ne prouve aucune diversité de jugement. La machine vérifie que la session de revue diffère de celles des commits. Elle ne vérifie pas que la revue a eu lieu ailleurs que dans un formulaire.</p>
-<p><strong>Les décomptes de tests sont encore tapés.</strong> Le contrôle établit que l'exécution citée est verte sur ce commit. Il ne recoupe pas le nombre de tests sautés. La règle née de l'incident n'attraperait donc que la moitié de l'incident.</p>
-<p><strong>La relecture de sécurité tient en une ligne.</strong> Le niveau de risque est solide : il se calcule depuis les chemins modifiés, et une proposition ne peut pas l'abaisser. Au niveau élevé, la preuve doit contenir une relecture de sécurité. C'est l'agent relecteur qui l'écrit.</p>
-<p>Reste l'objection qui a un nom, la dette de compréhension : nous comprenons moins le code livré. C'est vrai. Et je pense que notre place n'est plus là. Comprendre le code ligne à ligne est désormais la responsabilité des agents. Il y aura toujours un agent pour répondre au besoin technique. Notre responsabilité est de comprendre le besoin métier, et la façon de le résoudre. Les tests sur site diront si j'ai raison.</p>
-<p>Je dois aussi une correction à mon billet d'août. J'y décrivais un périmètre gardé humain exprès, la surface joignable de l'extérieur. J'écrivais que cette erreur-là devait coûter une conversation. La règle exige toujours un non-auteur sur ce périmètre. Ce non-auteur peut aujourd'hui être un agent. La conversation est devenue facultative. Je l'assume, et je regarde ce que ça donne.</p>
+<p>C'est ici qu'un lecteur sceptique trouvera à redire. Sur trois points, il aura raison.</p>
+<p><strong>Le relecteur peut être le même modèle.</strong> Même agent, même compte, autre session. Repartir d'un contexte vierge limite le biais d'ancrage, sans garantir un regard différent. La machine vérifie que la session de revue n'est pas celle qui a écrit le code. Elle ne vérifie pas que la revue a réellement eu lieu.</p>
+<p><strong>Les nombres de tests sont encore saisis à la main.</strong> Le contrôle établit que l'exécution citée est verte sur ce commit. Il ne recoupe pas le nombre de tests sautés. Notre règle ne détecterait donc que la moitié de l'incident qui l'a fait naître.</p>
+<p><strong>La relecture de sécurité tient en une ligne.</strong> Le niveau de risque, lui, est fiable : il est calculé à partir des fichiers modifiés, et une demande de fusion ne peut pas l'abaisser. Au niveau élevé, la preuve doit contenir une relecture de sécurité. C'est l'agent relecteur qui l'écrit.</p>
+<p>Reste une objection, qui porte un nom : la dette de compréhension. Nous comprenons moins le code livré. C'est vrai. Et je pense que notre place n'est plus là. Comprendre le code ligne à ligne est désormais la responsabilité des agents. Il y aura toujours un agent pour répondre au besoin technique. Notre responsabilité est de comprendre le besoin métier, et la façon de le résoudre. Les tests sur site diront si j'ai raison.</p>
+<p>Je dois aussi une correction à mon billet d'août. J'y décrivais un périmètre gardé humain exprès, la surface joignable de l'extérieur. J'écrivais qu'une erreur à cet endroit devait obliger deux personnes à se parler. La règle exige toujours un non-auteur sur ce périmètre. Ce non-auteur peut aujourd'hui être un agent. Deux personnes ne se parlent donc plus forcément. Je l'assume, et je regarde ce que ça donne.</p>
 
 <h2>Ce qui reste aux humains</h2>
 <blockquote><p>L'important, c'est de comprendre le besoin métier et comment le résoudre. Le reste n'a plus d'importance.</p></blockquote>
 <p>Dire ce qu'il faut construire, pourquoi, et dans quel ordre. Sur le dessin, c'est le chariot à gauche. Aucun agent ne le pousse.</p>
 <p>Les trois décisions : trancher, passer outre, publier.</p>
-<p>Comprendre le système, pas chaque ligne. Ce que le logiciel doit garantir, et comment on le prouve. Le détail du code est l'affaire des agents.</p>
-<p>Éprouver sur site. Les premiers tests chez un établissement sont en cours. Je n'ai pas encore de chiffre à donner. Ce sont eux qui diront ce que vaut une fusion sans relecteur humain.</p>
-<p>Et l'inédit. C'est là que les usines de 1969 ont calé, d'après Cusumano. Rien ne me prouve que celle de 2026 fera mieux quand le besoin lui-même est flou.</p>
-<p>Deux questions restent ouvertes. Faut-il livrer tous les clients sur un même flot, en activant les fonctions par drapeaux ? Et la demande de fusion est-elle encore le bon objet, quand des agents en ouvrent plus vite qu'une file ne se vide ?</p>
+<p>Comprendre le système dans son ensemble : ce que le logiciel doit garantir, et comment on le prouve. Le détail du code est l'affaire des agents.</p>
+<p>Mettre le logiciel à l'épreuve sur site. Les premiers tests chez un établissement sont en cours. Je n'ai pas encore de chiffre à donner. Ce sont eux qui diront ce que vaut une fusion sans relecteur humain.</p>
+<p>Et ce qui n'a jamais été fait. C'est là que les usines de 1969 ont échoué, d'après Cusumano. Rien ne me dit que celle de 2026 fera mieux quand le besoin lui-même est flou.</p>
+<p>Deux questions restent ouvertes. Faut-il livrer tous les clients sur un même flot, en activant les fonctions par drapeaux ? Et la demande de fusion est-elle encore le bon objet, quand des agents en ouvrent plus vite qu'on ne peut les traiter ?</p>
 
 <h2>Quoi faire lundi matin</h2>
 <ol>
-<li><strong>Dessinez votre chaîne, poste par poste.</strong> Marquez ce qui tourne et ce qui est une cible. Le dessin honnête est souvent plus court que le discours.</li>
+<li><strong>Dessinez votre chaîne, poste par poste.</strong> Marquez ce qui tourne et ce qui est une cible. Un schéma honnête est souvent plus modeste que le discours.</li>
 <li><strong>Remplacez l'approbation par une preuve.</strong> Elle cite un commit et une exécution, et une machine vérifie les deux.</li>
 <li><strong>Écrivez ce qui reste déclaratif.</strong> Notre documentation le fait, noir sur blanc. C'est la partie que je relis le plus.</li>
 <li><strong>Bornez la boucle de correction.</strong> Un nombre de tours, puis un humain. Chez nous, la limite sert.</li>
@@ -395,11 +397,11 @@ const frenchContent: PostContent = {
 <h2>Sources</h2>
 <ul>
 <li>Michael A. Cusumano, « The Software Factory: A Historical Interpretation », <em>IEEE Software</em>, mars 1989, et <a target="_blank" rel="noopener noreferrer" href="https://dspace.mit.edu/handle/1721.1/47992">« Factory Concepts and Practices in Software Development: An Historical Overview »</a> (MIT) : Bemer en 1968, Hitachi en 1969, l'usine de System Development Corporation et sa fin. Travail d'historien, sur archives et entretiens. C'est la source de toute la première partie.</li>
-<li>Jack Greenfield et Keith Short, <em>Software Factories: Assembling Applications with Patterns, Models, Frameworks, and Tools</em> (Wiley, 2004) : la version Microsoft du mot. Un livre d'éditeur d'outils : à lire comme une promesse, pas comme un bilan.</li>
+<li>Jack Greenfield et Keith Short, <em>Software Factories: Assembling Applications with Patterns, Models, Frameworks, and Tools</em> (Wiley, 2004) : la version Microsoft du mot. C'est le livre d'un éditeur d'outils, à lire comme une promesse.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://simonwillison.net/2026/Feb/7/software-factory/">Simon Willison, « Software Factory » (7 février 2026)</a> : compte rendu d'une visite chez StrongDM. À garder : les scénarios cachés aux agents. À laisser : les montants déclarés par l'entreprise, jamais recoupés. Projet neuf, trois personnes, aucun résultat publié depuis.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, sur la boucle d'amélioration d'une software factory (2026)</a> : l'idée des deux boucles vient de là. C'est un éditeur qui vend l'outillage correspondant. Je reprends le schéma de pensée, aucun de ses chiffres.</li>
-<li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, « Comprehension Debt » (2026)</a> : le nom de l'objection à laquelle je réponds. Un essai de praticien, pas une mesure.</li>
-<li>Solstice* : la règle de preuve, les ordres de grandeur sur les demandes de fusion, les blocages au quatrième tour et les trois décisions viennent du dépôt, relevés entre début et mi-novembre 2026. Les chiffres sont arrondis exprès. Interne, sans lien : le nom de code est fictif et le projet réel, ses produits et son éditeur sont anonymisés.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, sur la boucle d'amélioration d'une software factory (2026)</a> : l'idée des deux boucles vient de là. C'est un éditeur qui vend l'outillage correspondant. J'en reprends l'idée, sans les chiffres.</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, « Comprehension Debt » (2026)</a> : le nom de l'objection à laquelle je réponds. Un essai de praticien, sans mesure à l'appui.</li>
+<li>Solstice* : la règle de preuve, les ordres de grandeur sur les demandes de fusion, les blocages au quatrième tour et les trois décisions viennent du dépôt, relevés le 16 novembre 2026. Les chiffres sont arrondis exprès. Interne, sans lien : le nom de code est fictif et le projet réel, ses produits et son éditeur sont anonymisés.</li>
 </ul>`
 }
 
