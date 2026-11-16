@@ -87,15 +87,15 @@ const englishContent: PostContent = {
 <h2>What we do with it</h2>
 <p>This drawing is a target, not our current state. On Solstice*, a hospital <abbr title="Enterprise Resource Planning: the administrative backbone of a hospital group">ERP</abbr>, the middle of the line runs: agents write the code and its tests, the integration pipeline executes them, an agent reviews in a separate session. The two ends do not run. Turning meeting transcripts into a specification is a trial. Automatic delivery stops at the development environment.</p>
 <p>The clearest step dates from 14 October. That day, the main branch stopped requiring an approval. A required check asks for a review proof in its place. The proof names the commit that was reviewed and one run of the integration pipeline. The machine then checks for itself that this run exists, covers this code and ended in success.</p>
-<p>The rule comes from an incident. An approval stated 1,781 tests, zero failures, green pipeline. In fact 21 tests had been skipped and the run had failed. The reviewer noticed on his own, eight minutes later. No machine had seen it.</p>
+<p>The rule comes from an incident. An approval stated close to 1,800 tests, zero failures, green pipeline. In fact some twenty tests had been skipped and the run had failed. The reviewer noticed on his own, a few minutes later. No machine had seen it.</p>
 <p>Our documentation keeps one line of it: a count of green tests says nothing about the files that never ran. An approval is an opinion. A proof can be checked.</p>
-<p>Between 14 October and 9 November, 469 <abbr title="Pull request: a proposed change submitted before it is merged into the main branch">PRs</abbr> were merged. Three measurements over that same set:</p>
+<p>Over four weeks, close to 500 <abbr title="Pull request: a proposed change submitted before it is merged into the main branch">PRs</abbr> were merged. Three orders of magnitude over that same set:</p>
 <ul>
-<li><strong>75%</strong> carry no recorded review on the platform.</li>
-<li><strong>9%</strong> carry a review from another human account.</li>
-<li><strong>25%</strong> carried a label through which someone kept a hand on the merge.</li>
+<li><strong>Three in four</strong> carry no recorded review on the platform.</li>
+<li><strong>Fewer than one in ten</strong> carry a review from another human account.</li>
+<li><strong>One in four</strong> carried a label through which someone kept a hand on the merge.</li>
 </ul>
-<p>These figures do not add up to a whole. They answer three different questions. And the first one says less than it seems to: "no recorded review" does not mean nobody looked.</p>
+<p>These proportions do not add up to a whole. They answer three different questions. And the first one says less than it seems to: "no recorded review" does not mean nobody looked.</p>
 <blockquote><p>Three merges in four without a human reviewer is a fact about our process. It is not a fact about our code.</p></blockquote>
 <svg viewBox="0 0 640 322" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six steps are automatic, from the specification to the development environment. Three decisions stay human, each attached to one step: arbitrate under review, override under merge, release under the development environment." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SOLSTICE*, SINCE 14 OCTOBER</text>
@@ -163,7 +163,7 @@ const englishContent: PostContent = {
 <p>A factory also has to improve its own stations. The scheme I keep fits in two loops.</p>
 <picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-en-still.webp"><img src="/visuals/software-factory/loops-en.webp" alt="Animated isometric infinity symbol: on the left the quality loop, which scores each conversation and fixes the misses; on the right the cost loop, which replays the work elsewhere and keeps the cheapest that holds. A dot travels both loops endlessly." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
 <p>The quality loop scores the agents' work and starts from the misses to fix their instructions. The cost loop replays known tasks on another model and keeps the cheapest one that holds. Neither fixes the software. They fix the agent.</p>
-<p>On my team, the first one does not exist. The second ran once, in August, on 47 sets of agent instructions. Old and new versions replayed four frozen tasks, and a judge compared them without knowing which was which. 46 new versions kept, one old version retained. Once, by hand: that is not a loop yet.</p>
+<p>On my team, the first one does not exist. The second ran once, in August, on some fifty sets of agent instructions. Old and new versions replayed a few frozen tasks, and a judge compared them without knowing which was which. Nearly all the new versions were kept. Once, by hand: that is not a loop yet.</p>
 
 <h2>Where the proof is still a statement</h2>
 <p>A hostile reader will strike here, and will be right on four counts.</p>
@@ -199,7 +199,7 @@ const englishContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://simonwillison.net/2026/Feb/7/software-factory/">Simon Willison, "Software Factory" (7 February 2026)</a>: write-up of a visit to StrongDM. Keep the scenarios hidden from the agents. Discard the amounts the company reports, never cross-checked. Greenfield, three people, no outcome published since.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, on the improvement loop of a software factory (2026)</a>: the idea of two loops comes from there. It is a vendor selling the matching tooling. I take the thinking scheme and none of its numbers.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, "Comprehension Debt" (2026)</a>: the name of the debt I describe. A practitioner's essay, not a measurement.</li>
-<li>Solstice*: the proof rule, the 469 PRs and the three decisions come from the repository, as read on 9 November 2026. Internal, no links: the codename is fictitious and the real project, its products and its vendor are anonymized.</li>
+<li>Solstice*: the proof rule, the orders of magnitude on PRs and the three decisions come from the repository, as read in early November 2026. Figures are rounded on purpose. Internal, no links: the codename is fictitious and the real project, its products and its vendor are anonymized.</li>
 </ul>`
 }
 
@@ -283,15 +283,15 @@ const frenchContent: PostContent = {
 <h2>Ce que nous en faisons</h2>
 <p>Ce dessin est une cible, pas notre état. Sur Solstice*, un <abbr title="Enterprise Resource Planning : la colonne vertébrale administrative d'un groupement hospitalier">ERP</abbr> hospitalier, le milieu de la chaîne tourne : des agents écrivent le code et ses tests, la chaîne d'intégration les exécute, un agent relit dans une session séparée. Les deux bouts ne tournent pas. La spécification tirée des comptes rendus de réunion est un essai. La livraison automatique s'arrête à l'environnement de développement.</p>
 <p>Le pas le plus net date du 14 octobre. Ce jour-là, la branche principale a cessé d'exiger une approbation. À la place, un contrôle obligatoire réclame une preuve de revue. La preuve cite le commit relu et une exécution de la chaîne d'intégration. La machine va vérifier elle-même que cette exécution existe, porte sur ce code et s'est terminée en succès.</p>
-<p>La règle vient d'un incident. Une approbation annonçait 1 781 tests, zéro échec, chaîne verte. En réalité, 21 tests avaient été sautés et l'exécution avait échoué. Le relecteur s'en est aperçu seul, huit minutes plus tard. Aucune machine ne l'avait vu.</p>
+<p>La règle vient d'un incident. Une approbation annonçait près de 1 800 tests, zéro échec, chaîne verte. En réalité, une vingtaine de tests avaient été sautés et l'exécution avait échoué. Le relecteur s'en est aperçu seul, quelques minutes plus tard. Aucune machine ne l'avait vu.</p>
 <p>Notre documentation en garde une ligne : un décompte de tests verts n'atteste rien sur les fichiers qui n'ont pas tourné. Une approbation est un avis. Une preuve se vérifie.</p>
-<p>Entre le 14 octobre et le 9 novembre, 469 <abbr title="Pull request : proposition de modification soumise avant fusion dans la branche principale">PR</abbr> ont été fusionnées. Trois mesures, sur ce même ensemble :</p>
+<p>En quatre semaines, près de 500 <abbr title="Pull request : proposition de modification soumise avant fusion dans la branche principale">PR</abbr> ont été fusionnées. Trois ordres de grandeur, sur ce même ensemble :</p>
 <ul>
-<li><strong>75 %</strong> n'ont aucune revue enregistrée sur la plateforme.</li>
-<li><strong>9 %</strong> portent la revue d'un autre compte humain.</li>
-<li><strong>25 %</strong> portaient une étiquette par laquelle quelqu'un gardait la main sur la fusion.</li>
+<li><strong>Les trois quarts</strong> n'ont aucune revue enregistrée sur la plateforme.</li>
+<li><strong>Moins d'une sur dix</strong> porte la revue d'un autre compte humain.</li>
+<li><strong>Une sur quatre</strong> portait une étiquette par laquelle quelqu'un gardait la main sur la fusion.</li>
 </ul>
-<p>Ces chiffres ne s'additionnent pas. Ils répondent à trois questions différentes. Et le premier dit moins qu'il n'en a l'air : « aucune revue enregistrée » ne veut pas dire que personne n'a regardé.</p>
+<p>Ces proportions ne s'additionnent pas. Elles répondent à trois questions différentes. Et la première dit moins qu'elle n'en a l'air : « aucune revue enregistrée » ne veut pas dire que personne n'a regardé.</p>
 <blockquote><p>Trois fusions sur quatre sans relecteur humain : c'est un fait sur notre processus, pas sur notre code.</p></blockquote>
 <svg viewBox="0 0 640 322" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six étapes sont automatiques, de la spécification à l'environnement de développement. Trois décisions restent humaines, chacune accrochée à une étape : trancher sous la revue, passer outre sous la fusion, publier sous l'environnement de développement." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">SOLSTICE*, DEPUIS LE 14 OCTOBRE</text>
@@ -359,7 +359,7 @@ const frenchContent: PostContent = {
 <p>Une usine doit aussi améliorer ses propres postes. Le schéma que je retiens tient en deux boucles.</p>
 <picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-fr-still.webp"><img src="/visuals/software-factory/loops-fr.webp" alt="Symbole infini isométrique animé : à gauche la boucle qualité, qui note chaque conversation et corrige les ratés ; à droite la boucle coût, qui rejoue le travail ailleurs et garde le moins cher qui tient. Un point parcourt les deux boucles sans fin." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
 <p>La boucle qualité note le travail des agents et repart des ratés pour corriger leurs consignes. La boucle coût rejoue des tâches connues sur un autre modèle et garde le moins cher qui tient. Aucune ne corrige le logiciel. Elles corrigent l'agent.</p>
-<p>Chez nous, la première n'existe pas. La seconde a tourné une fois, en août, sur 47 jeux de consignes pour agents. Ancienne et nouvelle version rejouaient quatre tâches gelées, et un juge comparait sans savoir laquelle était laquelle. 46 nouvelles versions gardées, une ancienne conservée. Une fois, à la main : ce n'est pas encore une boucle.</p>
+<p>Chez nous, la première n'existe pas. La seconde a tourné une fois, en août, sur une cinquantaine de jeux de consignes pour agents. Ancienne et nouvelle version rejouaient quelques tâches gelées, et un juge comparait sans savoir laquelle était laquelle. Presque toutes les nouvelles versions ont été gardées. Une fois, à la main : ce n'est pas encore une boucle.</p>
 
 <h2>Là où la preuve reste une déclaration</h2>
 <p>Un lecteur hostile attaquera ici, et il aura raison sur quatre points.</p>
@@ -395,7 +395,7 @@ const frenchContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://simonwillison.net/2026/Feb/7/software-factory/">Simon Willison, « Software Factory » (7 février 2026)</a> : compte rendu d'une visite chez StrongDM. À garder : les scénarios cachés aux agents. À laisser : les montants déclarés par l'entreprise, jamais recoupés. Projet neuf, trois personnes, aucun résultat publié depuis.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, sur la boucle d'amélioration d'une software factory (2026)</a> : l'idée des deux boucles vient de là. C'est un éditeur qui vend l'outillage correspondant. Je reprends le schéma de pensée, aucun de ses chiffres.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, « Comprehension Debt » (2026)</a> : le nom de la dette que je décris. Un essai de praticien, pas une mesure.</li>
-<li>Solstice* : la règle de preuve, les 469 PR et les trois décisions viennent du dépôt, relevé du 9 novembre 2026. Interne, sans lien : le nom de code est fictif et le projet réel, ses produits et son éditeur sont anonymisés.</li>
+<li>Solstice* : la règle de preuve, les ordres de grandeur sur les PR et les trois décisions viennent du dépôt, relevé de début novembre 2026. Les chiffres sont arrondis exprès. Interne, sans lien : le nom de code est fictif et le projet réel, ses produits et son éditeur sont anonymisés.</li>
 </ul>`
 }
 
