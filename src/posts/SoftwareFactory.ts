@@ -3,8 +3,7 @@ import type { PostMetadata, PostContent } from '@/lib/posts'
 export const metadata: PostMetadata = {
   slug: 'software-factory',
   date: '2026-11-16',
-  tags: ['Software', 'AI', 'Opinion'],
-  draft: true
+  tags: ['Software', 'AI', 'Opinion']
 }
 
 const englishContent: PostContent = {
