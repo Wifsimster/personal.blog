@@ -9,8 +9,8 @@ export const metadata: PostMetadata = {
 
 const englishContent: PostContent = {
   title: "Software Factory: Where the Word Comes From, and What We Do With It",
-  description: "The term dates back to General Electric and Hitachi, and every revival since has industrialised what surrounds the programmer. The agent-era version goes after the development cycle itself. A field report from a regulated hospital ERP: the history, the line as we drew it, the part that actually runs, and the limits of merging on machine-checked evidence.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> "Software factory" is a word from 1968. Since then, each generation of factory has standardised something around the developer: tools, process, models, the pipeline. The station where code gets written stayed human. In 2026 the word means something else: the whole <abbr title="Software Development Life Cycle: the path from need to delivery">SDLC</abbr> seen as one line, with agents at the stations. On <abbr title="Fictitious codename: the real project, its products and its vendor are anonymized.">Solstice*</abbr>, we run the middle of it: code, tests, review, correction. Since 14 October, a merge no longer waits for a human approval but for a proof the machine checks. Specification and delivery are still a target. Three human decisions are left, and a proof that is still partly declarative.</p></div>
+  description: "The term dates back to General Electric and Hitachi, and every revival since has industrialized what surrounds the programmer. The agent-era version goes after the development cycle itself. A field report from a regulated hospital ERP: the history, the line as we drew it, the part that actually runs, and the limits of merging on machine-checked evidence.",
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> "Software factory" is a word from 1968. Since then, each generation of factory has standardized something around the developer: tools, process, models, the pipeline. The station where code gets written stayed human. In 2026 the word means something else: the whole <abbr title="Software Development Life Cycle: the path from need to delivery">SDLC</abbr> seen as one line, with agents at the stations. On <abbr title="Fictitious codename: the real project, its products and its vendor are anonymized.">Solstice*</abbr>, we run the middle of it: code, tests, review, correction. Since 14 October, a merge no longer waits for a human approval but for a proof the machine checks. Specification and delivery are still a target. Three human decisions are left, and a proof that is still partly declarative.</p></div>
 <hr>
 <p>The word is fifty-eight years old, and it has already failed several times.</p>
 <p>In late October, at <abbr title="BDX I/O: yearly tech conference in Bordeaux, France, held on 29 and 30 October 2026">BDX I/O</abbr>, "software factory" kept coming back in the talk about agents. Two weeks later I made it the thread of the year review I gave my team. Before saying what we do with it, I have to say where it comes from. Its history is why I handle it with care.</p>
@@ -20,8 +20,8 @@ const englishContent: PostContent = {
 <p>According to the historian <abbr title="Michael Cusumano: MIT professor, author of Japan's Software Factories (1991)">Michael Cusumano</abbr>, Hitachi opens the first site to carry the name in 1969. The large Japanese manufacturers follow. In the United States, System Development Corporation sets up its own in the mid-1970s. It lapses in under three years.</p>
 <p>Cusumano's reading fits in one sentence: the factory worked for families of similar products, and far less for anything new.</p>
 <p>In 2004, Microsoft picks the word up again. Jack Greenfield and Keith Short promise to assemble applications from models and dedicated languages. Then <abbr title="DevOps: bringing development and operations together, tooled by continuous integration and deployment">DevOps</abbr> recycles it once more: in French, "usine logicielle" ends up meaning the integration and deployment toolchain.</p>
-<svg viewBox="0 0 640 276" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From 1968 to 2026, each generation of software factory standardised something else: tools, process, models, the pipeline. Code was still written by hand until the latest one, where agents hold the stations." class="diagram-svg diagram-wide">
-<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">WHAT EACH FACTORY STANDARDISED</text>
+<svg viewBox="0 0 640 276" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From 1968 to 2026, each generation of software factory standardized something else: tools, process, models, the pipeline. Code was still written by hand until the latest one, where agents hold the stations." class="diagram-svg diagram-wide">
+<text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">WHAT EACH FACTORY STANDARDIZED</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">58 years to reach the code.</text>
 <text x="32" y="122" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650">1968</text>
 <text x="32" y="146" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">the tools</text>
@@ -44,7 +44,7 @@ const englishContent: PostContent = {
 <text x="554" y="209" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="650" text-anchor="middle">agents</text>
 <text x="32" y="254" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">1968 and 1969 dates: Cusumano (1989); 2004: Greenfield and Short</text>
 </svg>
-<svg viewBox="0 0 320 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From 1968 to 2026, each generation of software factory standardised something else: tools, process, models, the pipeline. Code was still written by hand until the latest one, where agents hold the stations." class="diagram-svg diagram-narrow">
+<svg viewBox="0 0 320 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="From 1968 to 2026, each generation of software factory standardized something else: tools, process, models, the pipeline. Code was still written by hand until the latest one, where agents hold the stations." class="diagram-svg diagram-narrow">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">FROM 1968 TO 2026</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">58 years to</text>
 <text x="32" y="106" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">reach the code.</text>
@@ -70,8 +70,8 @@ const englishContent: PostContent = {
 <text x="128" y="385" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">agents</text>
 <text x="32" y="420" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">1968, 1969: Cusumano (1989)</text>
 </svg>
-<p>Four factories, one blind spot. Each industrialised what surrounds the programmer. None touched the act of writing.</p>
-<blockquote><p>For close to sixty years, the factory standardised everything except the station where the writing happens.</p></blockquote>
+<p>Four factories, one blind spot. Each industrialized what surrounds the programmer. None touched the act of writing.</p>
+<blockquote><p>For close to sixty years, the factory standardized everything except the station where the writing happens.</p></blockquote>
 
 <h2>What the word means now</h2>
 <p>The 2026 meaning starts from that station. A software factory is now a line where the need goes in at one end and the delivery comes out at the other. Agents hold the stations in between.</p>
@@ -82,6 +82,9 @@ const englishContent: PostContent = {
 <p>The lot carries three boxes: S for the specification, C for the code, T for the tests. Each one fills at the station that produces it. The need is not a station: it is the input, and it stays human.</p>
 <p>The blue lane matters more than the conveyor. A lot refused at review does not ship "with reservations". It goes back to code, runs the same tests, then gets a new review.</p>
 <blockquote><p>A fix voids the evidence. You replay it. You do not copy it over.</p></blockquote>
+<p>A line like this also has to improve its own stations. The scheme I keep fits in two loops.</p>
+<picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-en-still.webp"><img src="/visuals/software-factory/loops-en.webp" alt="Animated isometric infinity symbol: on the left the quality loop, which scores each conversation and fixes the misses; on the right the cost loop, which replays the work elsewhere and keeps the cheapest that holds. A dot travels both loops endlessly." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
+<p>The quality loop scores the agents' work and starts from the misses to fix their instructions. The cost loop replays known tasks on another model and keeps the cheapest one that holds. Neither fixes the software. They fix the agent.</p>
 <p>In March I wrote that the SDLC was dead. Let me be precise: every one of its steps is on this drawing. What goes away is the handoff between people, and the wait at each one.</p>
 
 <h2>What we do with it</h2>
@@ -160,9 +163,6 @@ const englishContent: PostContent = {
 <text x="32" y="496" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">promotion past dev</text>
 </svg>
 <p>No agent takes any of these three decisions. Only the development environment receives code without a human gesture. Every promotion beyond it is triggered by hand.</p>
-<p>A factory also has to improve its own stations. The scheme I keep fits in two loops.</p>
-<picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-en-still.webp"><img src="/visuals/software-factory/loops-en.webp" alt="Animated isometric infinity symbol: on the left the quality loop, which scores each conversation and fixes the misses; on the right the cost loop, which replays the work elsewhere and keeps the cheapest that holds. A dot travels both loops endlessly." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
-<p>The quality loop scores the agents' work and starts from the misses to fix their instructions. The cost loop replays known tasks on another model and keeps the cheapest one that holds. Neither fixes the software. They fix the agent.</p>
 
 <h2>Where the proof is still a statement</h2>
 <p>A hostile reader will strike here, and will be right on four counts.</p>
@@ -205,7 +205,7 @@ const englishContent: PostContent = {
 const frenchContent: PostContent = {
   title: "Software factory : d’où vient le mot, et ce que nous en faisons",
   description: "Le terme remonte à General Electric et à Hitachi, et chacune de ses résurrections a industrialisé ce qui entoure le programmeur. La version de l'ère des agents s'attaque au cycle de développement lui-même. Retour de terrain sur un ERP hospitalier régulé : l'histoire, la chaîne telle que nous l'avons dessinée, la partie qui tourne vraiment, et les limites d'une fusion sur preuve.",
-  html: `<div class="post-tldr"><p><strong>TL;DR</strong> « Software factory » est un mot de 1968. Depuis, chaque génération d'usine a standardisé quelque chose autour du développeur : les outils, le procédé, les modèles, le pipeline. Le poste où l'on écrit le code restait humain. En 2026, le mot désigne autre chose : le <abbr title="Software Development Life Cycle : le cycle de développement logiciel, du besoin à la livraison">SDLC</abbr> entier vu comme une chaîne, avec des agents aux postes. Sur <abbr title="Nom de code fictif : le projet réel, ses produits et son éditeur sont anonymisés.">Solstice*</abbr>, nous en faisons tourner le milieu : code, tests, revue, correction. Depuis le 14 octobre, une fusion n'attend plus d'approbation humaine mais une preuve vérifiée par la machine. La spécification et la livraison restent une cible. Il reste trois décisions humaines, et une preuve encore en partie déclarative.</p></div>
+  html: `<div class="post-tldr"><p><strong>TL;DR</strong> « Software factory » est un mot de 1968. Depuis, chaque génération d'usine a standardisé quelque chose autour du développeur : les outils, le procédé, les modèles, la chaîne de livraison. Le poste où l'on écrit le code restait humain. En 2026, le mot désigne autre chose : le cycle de développement entier, le <abbr title="Software Development Life Cycle : le cycle de développement logiciel, du besoin à la livraison">SDLC</abbr>, vu comme une chaîne, avec des agents aux postes. Sur <abbr title="Nom de code fictif : le projet réel, ses produits et son éditeur sont anonymisés.">Solstice*</abbr>, nous en faisons tourner le milieu : code, tests, revue, correction. Depuis le 14 octobre, une fusion n'attend plus d'approbation humaine mais une preuve vérifiée par la machine. La spécification et la livraison restent une cible. Il reste trois décisions humaines, et une preuve encore en partie déclarative.</p></div>
 <hr>
 <p>Le mot a cinquante-huit ans, et il a déjà échoué plusieurs fois.</p>
 <p>Fin octobre, à <abbr title="BDX I/O : conférence technique annuelle à Bordeaux, tenue les 29 et 30 octobre 2026">BDX I/O</abbr>, « software factory » revenait dans les conversations sur les agents. Deux semaines plus tard, j'en ai fait le fil du bilan d'année présenté à mon équipe. Avant de dire ce que nous en faisons, il faut dire d'où il vient. Son histoire explique pourquoi je m'en méfie.</p>
@@ -215,7 +215,7 @@ const frenchContent: PostContent = {
 <p>D'après l'historien <abbr title="Michael Cusumano : professeur au MIT, auteur de Japan's Software Factories (1991)">Michael Cusumano</abbr>, Hitachi ouvre en 1969 le premier site à porter ce nom. Les grands industriels japonais suivent. Aux États-Unis, System Development Corporation monte la sienne au milieu des années 1970. Elle s'éteint en moins de trois ans.</p>
 <p>La lecture de Cusumano tient en une phrase : l'usine marchait pour des familles de produits qui se ressemblent, beaucoup moins pour l'inédit.</p>
 <p>En 2004, Microsoft reprend le mot. Jack Greenfield et Keith Short promettent d'assembler des applications à partir de modèles et de langages dédiés. Puis le <abbr title="DevOps : rapprochement du développement et de l'exploitation, outillé par l'intégration et le déploiement continus">DevOps</abbr> le recycle encore : en français, « usine logicielle » finit par désigner la chaîne d'intégration et de déploiement.</p>
-<svg viewBox="0 0 640 276" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="De 1968 à 2026, chaque génération d'usine logicielle a standardisé autre chose : les outils, le procédé, les modèles, le pipeline. Le code restait écrit à la main jusqu'à la dernière, où des agents tiennent les postes." class="diagram-svg diagram-wide">
+<svg viewBox="0 0 640 276" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="De 1968 à 2026, chaque génération d'usine logicielle a standardisé autre chose : les outils, le procédé, les modèles, la chaîne de livraison. Le code restait écrit à la main jusqu'à la dernière, où des agents tiennent les postes." class="diagram-svg diagram-wide">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">CE QUE CHAQUE USINE A STANDARDISÉ</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">58 ans pour atteindre le code.</text>
 <text x="32" y="122" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650">1968</text>
@@ -228,7 +228,7 @@ const frenchContent: PostContent = {
 <text x="266" y="146" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">les modèles</text>
 <text x="266" y="165" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">Microsoft</text>
 <text x="383" y="122" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650">2010+</text>
-<text x="383" y="146" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">le pipeline</text>
+<text x="383" y="146" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">la chaîne</text>
 <text x="383" y="165" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">DevOps</text>
 <text x="500" y="122" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650">2026</text>
 <text x="500" y="146" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">les postes</text>
@@ -239,7 +239,7 @@ const frenchContent: PostContent = {
 <text x="554" y="209" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="650" text-anchor="middle">agents</text>
 <text x="32" y="254" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-style="italic" opacity="0.6">dates de 1968 et 1969 : Cusumano (1989) ; 2004 : Greenfield et Short</text>
 </svg>
-<svg viewBox="0 0 320 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="De 1968 à 2026, chaque génération d'usine logicielle a standardisé autre chose : les outils, le procédé, les modèles, le pipeline. Le code restait écrit à la main jusqu'à la dernière, où des agents tiennent les postes." class="diagram-svg diagram-narrow">
+<svg viewBox="0 0 320 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="De 1968 à 2026, chaque génération d'usine logicielle a standardisé autre chose : les outils, le procédé, les modèles, la chaîne de livraison. Le code restait écrit à la main jusqu'à la dernière, où des agents tiennent les postes." class="diagram-svg diagram-narrow">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">DE 1968 À 2026</text>
 <text x="32" y="72" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">58 ans pour</text>
 <text x="32" y="106" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="650">atteindre le code.</text>
@@ -257,7 +257,7 @@ const frenchContent: PostContent = {
 <text x="128" y="277" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">Microsoft</text>
 <rect x="32" y="294" width="256" height="46" rx="8" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
 <text x="46" y="324" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650">2010+</text>
-<text x="128" y="314" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">le pipeline</text>
+<text x="128" y="314" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">la chaîne</text>
 <text x="128" y="331" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.7">DevOps</text>
 <rect x="32" y="348" width="256" height="46" rx="8" fill="currentColor" fill-opacity="0.34" stroke="currentColor" stroke-opacity="0.22" stroke-width="1"></rect>
 <text x="46" y="378" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="650">2026</text>
@@ -269,22 +269,25 @@ const frenchContent: PostContent = {
 <blockquote><p>Pendant près de soixante ans, l'usine a tout standardisé sauf le poste où l'on écrit.</p></blockquote>
 
 <h2>Ce que le mot désigne aujourd'hui</h2>
-<p>Le sens de 2026 part de ce poste-là. Une software factory est maintenant une chaîne où le besoin entre d'un côté et la livraison sort de l'autre. Des agents tiennent les postes intermédiaires.</p>
+<p>Le sens de 2026 part de ce poste-là. Une usine logicielle est maintenant une chaîne où le besoin entre d'un côté et la livraison sort de l'autre. Des agents tiennent les postes intermédiaires.</p>
 <p>Le récit qui a relancé le mot est celui de <abbr title="StrongDM : éditeur américain de logiciels de gestion des accès">StrongDM</abbr>, en février. Trois ingénieurs, et une règle : aucun humain n'écrit ni ne relit le code. Des scénarios cachés aux agents jugent le résultat. <abbr title="Simon Willison : développeur et auteur britannique, cocréateur du framework Django">Simon Willison</abbr>, qui a visité l'équipe, y voit un aperçu d'un futur possible. Il doute aussi que l'absence de revue soit raisonnable.</p>
 <p>Je garde le mécanisme, les scénarios que l'agent ne voit pas. Je laisse les chiffres du récit : personne ne les a recoupés.</p>
-<p>Voici la chaîne telle que je l'ai dessinée pour mon équipe. Ce sont les étapes du SDLC, dans l'ordre, sur un seul convoyeur.</p>
+<p>Voici la chaîne telle que je l'ai dessinée pour mon équipe. Ce sont les étapes du cycle de développement, dans l'ordre, sur un seul convoyeur.</p>
 <picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/factory-fr-still.webp"><img src="/visuals/software-factory/factory-fr.webp" alt="Scène isométrique animée d'une chaîne logicielle : le besoin humain entre à gauche, un lot traverse les postes spec, code, tests et revue, est refusé, repart par la voie de correction, repasse les tests et la revue, puis est livré au client." width="1120" height="620" loading="lazy" decoding="async" data-gallery-image="true"></picture>
 <p>Le lot porte trois cases : S pour la spécification, C pour le code, T pour les tests. Chacune se remplit au poste qui la produit. Le besoin, lui, n'est pas un poste : c'est l'entrée, et elle reste humaine.</p>
 <p>La voie bleue compte plus que le convoyeur. Un lot refusé en revue ne part pas « avec réserve ». Il retourne au code, repasse les mêmes tests, puis une nouvelle revue.</p>
 <blockquote><p>Une correction invalide les preuves. On les rejoue, on ne les recopie pas.</p></blockquote>
+<p>Une telle chaîne doit aussi améliorer ses propres postes. Le schéma que je retiens tient en deux boucles.</p>
+<picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-fr-still.webp"><img src="/visuals/software-factory/loops-fr.webp" alt="Symbole infini isométrique animé : à gauche la boucle qualité, qui note chaque conversation et corrige les ratés ; à droite la boucle coût, qui rejoue le travail ailleurs et garde le moins cher qui tient. Un point parcourt les deux boucles sans fin." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
+<p>La boucle qualité note le travail des agents et repart des ratés pour corriger leurs consignes. La boucle coût rejoue des tâches connues sur un autre modèle et garde le moins cher qui tient. Aucune ne corrige le logiciel. Elles corrigent l'agent.</p>
 <p>En mars, j'écrivais que le SDLC était mort. Je précise : ses étapes sont toutes sur ce dessin. Ce qui disparaît, ce sont les passages de relais entre personnes, et l'attente à chacun d'eux.</p>
 
 <h2>Ce que nous en faisons</h2>
 <p>Ce dessin est une cible, pas notre état. Sur Solstice*, un <abbr title="Enterprise Resource Planning : la colonne vertébrale administrative d'un groupement hospitalier">ERP</abbr> hospitalier, le milieu de la chaîne tourne : des agents écrivent le code et ses tests, la chaîne d'intégration les exécute, un agent relit dans une session séparée. Les deux bouts ne tournent pas. La spécification tirée des comptes rendus de réunion est un essai. La livraison automatique s'arrête à l'environnement de développement.</p>
-<p>Le pas le plus net date du 14 octobre. Ce jour-là, la branche principale a cessé d'exiger une approbation. À la place, un contrôle obligatoire réclame une preuve de revue. La preuve cite le commit relu et une exécution de la chaîne d'intégration. La machine va vérifier elle-même que cette exécution existe, porte sur ce code et s'est terminée en succès.</p>
+<p>Le pas le plus net date du 14 octobre. Ce jour-là, la branche principale a cessé d'exiger une approbation. À la place, un contrôle obligatoire réclame une preuve de revue. La preuve cite le <abbr title="Commit : un état du code enregistré, daté et identifié dans l'historique">commit</abbr> relu et une exécution de la chaîne d'intégration. La machine va vérifier elle-même que cette exécution existe, porte sur ce code et s'est terminée avec succès.</p>
 <p>La règle vient d'un incident. Une approbation annonçait près de 1 800 tests, zéro échec, chaîne verte. En réalité, une vingtaine de tests avaient été sautés et l'exécution avait échoué. Le relecteur s'en est aperçu seul, quelques minutes plus tard. Aucune machine ne l'avait vu.</p>
 <p>Notre documentation en garde une ligne : un décompte de tests verts n'atteste rien sur les fichiers qui n'ont pas tourné. Une approbation est un avis. Une preuve se vérifie.</p>
-<p>En quatre semaines, près de 500 <abbr title="Pull request : proposition de modification soumise avant fusion dans la branche principale">PR</abbr> ont été fusionnées. Trois ordres de grandeur, sur ce même ensemble :</p>
+<p>En quatre semaines, près de 500 demandes de fusion ont été acceptées. Trois ordres de grandeur, sur ce même ensemble :</p>
 <ul>
 <li><strong>Les trois quarts</strong> n'ont aucune revue enregistrée sur la plateforme.</li>
 <li><strong>Moins d'une sur dix</strong> porte la revue d'un autre compte humain.</li>
@@ -320,7 +323,7 @@ const frenchContent: PostContent = {
 <text x="565" y="207" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="650" text-anchor="middle">publier</text>
 <text x="32" y="262" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">trancher : au quatrième tour de revue refusé (jamais déclenché à ce jour)</text>
 <text x="32" y="282" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">passer outre : en urgence, par un administrateur, avec un ticket de suivi</text>
-<text x="32" y="302" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">publier : la version, et toute promotion après l'environnement de dev</text>
+<text x="32" y="302" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">publier : la version, et tout passage au-delà de l'environnement de dev</text>
 </svg>
 <svg viewBox="0 0 320 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Six étapes sont automatiques, de la spécification à l'environnement de développement. Trois décisions restent humaines, chacune accrochée à une étape : trancher sous la revue, passer outre sous la fusion, publier sous l'environnement de développement." class="diagram-svg diagram-narrow">
 <text x="32" y="32" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14.5" font-weight="600" opacity="0.55" letter-spacing="0.14em">DEPUIS LE 14 OCTOBRE</text>
@@ -351,19 +354,16 @@ const frenchContent: PostContent = {
 <text x="32" y="424" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">jamais déclenché à ce jour</text>
 <text x="32" y="442" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">passer outre : en urgence,</text>
 <text x="32" y="460" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">par un administrateur</text>
-<text x="32" y="478" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">publier : la version, et toute</text>
-<text x="32" y="496" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">promotion après la dev</text>
+<text x="32" y="478" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">publier : la version, et tout</text>
+<text x="32" y="496" fill="currentColor" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" opacity="0.75">passage au-delà du dev</text>
 </svg>
-<p>Un agent ne prend aucune de ces trois décisions. Seul l'environnement de développement reçoit le code sans geste humain. Toute promotion au-delà se déclenche à la main.</p>
-<p>Une usine doit aussi améliorer ses propres postes. Le schéma que je retiens tient en deux boucles.</p>
-<picture class="iso-scene"><source media="(prefers-reduced-motion: reduce)" srcset="/visuals/software-factory/loops-fr-still.webp"><img src="/visuals/software-factory/loops-fr.webp" alt="Symbole infini isométrique animé : à gauche la boucle qualité, qui note chaque conversation et corrige les ratés ; à droite la boucle coût, qui rejoue le travail ailleurs et garde le moins cher qui tient. Un point parcourt les deux boucles sans fin." width="1120" height="455" loading="lazy" decoding="async" data-gallery-image="true"></picture>
-<p>La boucle qualité note le travail des agents et repart des ratés pour corriger leurs consignes. La boucle coût rejoue des tâches connues sur un autre modèle et garde le moins cher qui tient. Aucune ne corrige le logiciel. Elles corrigent l'agent.</p>
+<p>Un agent ne prend aucune de ces trois décisions. Seul l'environnement de développement reçoit le code sans geste humain. Tout passage à un environnement suivant se déclenche à la main.</p>
 
 <h2>Là où la preuve reste une déclaration</h2>
 <p>Un lecteur hostile attaquera ici, et il aura raison sur quatre points.</p>
 <p><strong>Le relecteur peut être le même modèle.</strong> Même agent, même compte, autre session. Un contexte neuf réduit l'ancrage. Il ne prouve aucune diversité de jugement. La machine vérifie que la session de revue diffère de celles des commits. Elle ne vérifie pas que la revue a eu lieu ailleurs que dans un formulaire.</p>
 <p><strong>Les décomptes de tests sont encore tapés.</strong> Le contrôle établit que l'exécution citée est verte sur ce commit. Il ne recoupe pas le nombre de tests sautés. La règle née de l'incident n'attraperait donc que la moitié de l'incident.</p>
-<p><strong>La passe de sécurité est une ligne.</strong> Le niveau de risque est solide : il se calcule depuis les chemins modifiés, et une proposition ne peut pas l'abaisser. Au niveau élevé, la preuve doit contenir une passe de sécurité. C'est l'agent relecteur qui l'écrit.</p>
+<p><strong>La relecture de sécurité tient en une ligne.</strong> Le niveau de risque est solide : il se calcule depuis les chemins modifiés, et une proposition ne peut pas l'abaisser. Au niveau élevé, la preuve doit contenir une relecture de sécurité. C'est l'agent relecteur qui l'écrit.</p>
 <p><strong>La limite de boucle n'a jamais servi.</strong> Au quatrième tour de revue refusé, la fusion se bloque jusqu'à la décision d'un développeur. Ce cas ne s'est pas présenté. C'est un dessin, pas un résultat.</p>
 <p>J'ajoute une dette que rien ne compte : nous comprenons moins le code livré. Aucun de nos contrôles ne mesure ce que plus personne ne sait expliquer.</p>
 <p>Et je dois une correction à mon billet d'août. J'y décrivais un périmètre gardé humain exprès, la surface joignable de l'extérieur. J'écrivais que cette erreur-là devait coûter une conversation. La règle exige toujours un non-auteur sur ce périmètre. Ce non-auteur peut aujourd'hui être un agent. La conversation est devenue facultative, et je ne sais pas encore lequel des deux billets a raison.</p>
@@ -374,7 +374,7 @@ const frenchContent: PostContent = {
 <p>Comprendre encore ce qu'on livre. Savoir lire du code reste ce qui permet d'écrire une bonne intention et de traiter une exception.</p>
 <p>Éprouver sur site. Les premiers tests chez un établissement sont en cours. Je n'ai pas encore de chiffre à donner. Ce sont eux qui diront ce que vaut une fusion sans relecteur humain.</p>
 <p>Et l'inédit. C'est là que les usines de 1969 ont calé, d'après Cusumano. Rien ne me prouve que celle de 2026 fera mieux quand le besoin lui-même est flou.</p>
-<p>Deux questions restent ouvertes. Faut-il livrer tous les clients sur un même flot, en activant les fonctions par drapeaux ? Et la PR est-elle encore le bon objet, quand des agents en ouvrent plus vite qu'une file ne se vide ?</p>
+<p>Deux questions restent ouvertes. Faut-il livrer tous les clients sur un même flot, en activant les fonctions par drapeaux ? Et la demande de fusion est-elle encore le bon objet, quand des agents en ouvrent plus vite qu'une file ne se vide ?</p>
 
 <h2>Quoi faire lundi matin</h2>
 <ol>
@@ -393,7 +393,7 @@ const frenchContent: PostContent = {
 <li><a target="_blank" rel="noopener noreferrer" href="https://simonwillison.net/2026/Feb/7/software-factory/">Simon Willison, « Software Factory » (7 février 2026)</a> : compte rendu d'une visite chez StrongDM. À garder : les scénarios cachés aux agents. À laisser : les montants déclarés par l'entreprise, jamais recoupés. Projet neuf, trois personnes, aucun résultat publié depuis.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://www.warp.dev/articles/self-improvement-loop-software-factory">Warp, sur la boucle d'amélioration d'une software factory (2026)</a> : l'idée des deux boucles vient de là. C'est un éditeur qui vend l'outillage correspondant. Je reprends le schéma de pensée, aucun de ses chiffres.</li>
 <li><a target="_blank" rel="noopener noreferrer" href="https://addyosmani.com/blog/comprehension-debt/">Addy Osmani, « Comprehension Debt » (2026)</a> : le nom de la dette que je décris. Un essai de praticien, pas une mesure.</li>
-<li>Solstice* : la règle de preuve, les ordres de grandeur sur les PR et les trois décisions viennent du dépôt, relevé de début novembre 2026. Les chiffres sont arrondis exprès. Interne, sans lien : le nom de code est fictif et le projet réel, ses produits et son éditeur sont anonymisés.</li>
+<li>Solstice* : la règle de preuve, les ordres de grandeur sur les demandes de fusion et les trois décisions viennent du dépôt, relevé de début novembre 2026. Les chiffres sont arrondis exprès. Interne, sans lien : le nom de code est fictif et le projet réel, ses produits et son éditeur sont anonymisés.</li>
 </ul>`
 }
 
