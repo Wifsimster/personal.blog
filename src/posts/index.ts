@@ -45,6 +45,17 @@ import { metadata as noChoicesMetadata, getContent as getNoChoicesContent } from
 import { metadata as notTheSunMetadata, getContent as getNotTheSunContent } from './PasLeSoleil'
 import { metadata as nerdInTheAiEraMetadata, getContent as getNerdInTheAiEraContent } from './NerdInTheAiEra'
 import { metadata as softwareFactoryMetadata, getContent as getSoftwareFactoryContent } from './SoftwareFactory'
+import { metadata as sdlcChain01NeedMetadata, getContent as getSdlcChain01NeedContent } from './SdlcChain01Need'
+import { metadata as sdlcChain02MandateMetadata, getContent as getSdlcChain02MandateContent } from './SdlcChain02Mandate'
+import { metadata as sdlcChain03CodeMetadata, getContent as getSdlcChain03CodeContent } from './SdlcChain03Code'
+import { metadata as sdlcChain04ProposalMetadata, getContent as getSdlcChain04ProposalContent } from './SdlcChain04Proposal'
+import { metadata as sdlcChain05CiMetadata, getContent as getSdlcChain05CiContent } from './SdlcChain05Ci'
+import { metadata as sdlcChain06ReviewMetadata, getContent as getSdlcChain06ReviewContent } from './SdlcChain06Review'
+import { metadata as sdlcChain07RetryMetadata, getContent as getSdlcChain07RetryContent } from './SdlcChain07Retry'
+import { metadata as sdlcChain08MergeMetadata, getContent as getSdlcChain08MergeContent } from './SdlcChain08Merge'
+import { metadata as sdlcChain09DeliveryMetadata, getContent as getSdlcChain09DeliveryContent } from './SdlcChain09Delivery'
+import { metadata as sdlcChain10QualificationMetadata, getContent as getSdlcChain10QualificationContent } from './SdlcChain10Qualification'
+import { metadata as sdlcChain11MeasureMetadata, getContent as getSdlcChain11MeasureContent } from './SdlcChain11Measure'
 
 export interface PostEntry {
   metadata: PostMetadata
@@ -235,6 +246,50 @@ const postRegistry: Record<string, PostEntry> = {
   'software-factory': {
     metadata: softwareFactoryMetadata,
     getContent: getSoftwareFactoryContent
+  },
+  'sdlc-chain-01-need': {
+    metadata: sdlcChain01NeedMetadata,
+    getContent: getSdlcChain01NeedContent
+  },
+  'sdlc-chain-02-mandate': {
+    metadata: sdlcChain02MandateMetadata,
+    getContent: getSdlcChain02MandateContent
+  },
+  'sdlc-chain-03-code': {
+    metadata: sdlcChain03CodeMetadata,
+    getContent: getSdlcChain03CodeContent
+  },
+  'sdlc-chain-04-proposal': {
+    metadata: sdlcChain04ProposalMetadata,
+    getContent: getSdlcChain04ProposalContent
+  },
+  'sdlc-chain-05-ci': {
+    metadata: sdlcChain05CiMetadata,
+    getContent: getSdlcChain05CiContent
+  },
+  'sdlc-chain-06-review': {
+    metadata: sdlcChain06ReviewMetadata,
+    getContent: getSdlcChain06ReviewContent
+  },
+  'sdlc-chain-07-retry': {
+    metadata: sdlcChain07RetryMetadata,
+    getContent: getSdlcChain07RetryContent
+  },
+  'sdlc-chain-08-merge': {
+    metadata: sdlcChain08MergeMetadata,
+    getContent: getSdlcChain08MergeContent
+  },
+  'sdlc-chain-09-delivery': {
+    metadata: sdlcChain09DeliveryMetadata,
+    getContent: getSdlcChain09DeliveryContent
+  },
+  'sdlc-chain-10-qualification': {
+    metadata: sdlcChain10QualificationMetadata,
+    getContent: getSdlcChain10QualificationContent
+  },
+  'sdlc-chain-11-measure': {
+    metadata: sdlcChain11MeasureMetadata,
+    getContent: getSdlcChain11MeasureContent
   }
 }
 
